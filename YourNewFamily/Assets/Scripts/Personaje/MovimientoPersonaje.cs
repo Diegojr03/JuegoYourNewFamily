@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovimientoPersonaje : MonoBehaviour
 {
-    [Header("Configuración de Movimiento")]
+    [Header("Configuraciï¿½n de Movimiento")]
     public float moveSpeed = 2.5f;
 
     private Rigidbody2D rb;
@@ -32,7 +32,7 @@ public class MovimientoPersonaje : MonoBehaviour
     {
         if (rb != null)
         {
-            rb.velocity = movement * moveSpeed;
+            rb.linearVelocity = movement * moveSpeed;
         }
         else
         {
@@ -40,7 +40,7 @@ public class MovimientoPersonaje : MonoBehaviour
         }
     }
 
-    // Detectar colisión con los objetos de transición
+    // Detectar colisiï¿½n con los objetos de transiciï¿½n
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Transition"))
