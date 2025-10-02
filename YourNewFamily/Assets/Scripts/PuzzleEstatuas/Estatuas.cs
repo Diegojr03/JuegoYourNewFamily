@@ -14,14 +14,28 @@ public class Estatua : MonoBehaviour
     public Sprite spriteIzquierda;
     public Sprite spriteDerecha;
 
+    [Header("Sprite para tecla E")]
+    public Sprite spriteTeclaE; // Sprite que muestra la tecla E
+
+    [Header("Configuración Tecla E")]
+    public Vector3 posicionTeclaE = new Vector3(0, 1.5f, 0); // Posición relativa
+    public Vector3 escalaTeclaE = new Vector3(0.25f, 0.25f, 0.25f); // Tamaño del sprite
+    public float velocidadAnimacion = 3f; // Velocidad de la animación flotante
+    public float amplitudAnimacion = 0.1f; // Qué tan alto llega la animación
+
     [Header("Referencias")]
     public SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteTeclaERenderer; // SpriteRenderer para mostrar la tecla E
 
     // Evento para notificar cuando una estatua cambia de dirección
     public System.Action<Estatua> OnDireccionCambiada;
 
     private Direccion direccionActual;
     private bool jugadorCerca = false;
+    private GameObject teclaEObj; // Referencia al GameObject de la tecla E
+    private Vector3 ultimaPosicionTeclaE;
+    private Vector3 ultimaEscalaTeclaE;
+    private Sprite ultimoSpriteTeclaE;
 
     // Propiedad pública para acceder a la dirección actual
     public Direccion DireccionActual
@@ -36,18 +50,7 @@ public class Estatua : MonoBehaviour
 
     void Start()
     {
-        // Validar que tenemos el SpriteRenderer
-        if (spriteRenderer == null)
-        {
-            spriteRenderer = GetComponent<SpriteRenderer>();
-            if (spriteRenderer == null)
-            {
-                Debug.LogError($"No se encontró SpriteRenderer en la estatua {estatuaID}");
-            }
-        }
-
-        DireccionActual = direccionInicial;
-        ActualizarSprite();
+        InicializarEstatua();
     }
 
     void Update()
@@ -56,6 +59,21 @@ public class Estatua : MonoBehaviour
         if (jugadorCerca && Input.GetKeyDown(KeyCode.E))
         {
             RotarEstatua();
+        }
+
+        // Verificar cambios en las variables del inspector
+        VerificarCambios();
+
+        // Animación flotante para la tecla E cuando está visible
+        if (jugadorCerca && spriteTeclaERenderer != null && spriteTeclaERenderer.enabled)
+        {
+            // Movimiento suave arriba y abajo
+            float offsetY = Mathf.Sin(Time.time * velocidadAnimacion) * amplitudAnimacion;
+            Vector3 nuevaPosicion = posicionTeclaE + new Vector3(0, offsetY, 0);
+            if (teclaEObj != null)
+            {
+                teclaEObj.transform.localPosition = nuevaPosicion;
+            }
         }
     }
 
@@ -66,8 +84,8 @@ public class Estatua : MonoBehaviour
             jugadorCerca = true;
             Debug.Log($"Jugador cerca de estatua {estatuaID}");
 
-            // Mostrar UI indicador (opcional)
-            MostrarIndicador(true);
+            // Mostrar indicador de tecla E
+            MostrarIndicadorTeclaE(true);
         }
     }
 
@@ -78,8 +96,87 @@ public class Estatua : MonoBehaviour
             jugadorCerca = false;
             Debug.Log($"Jugador se alejó de estatua {estatuaID}");
 
-            // Ocultar UI indicador (opcional)
-            MostrarIndicador(false);
+            // Ocultar indicador de tecla E
+            MostrarIndicadorTeclaE(false);
+
+            // Restablecer posición original cuando el jugador se va
+            if (teclaEObj != null)
+            {
+                teclaEObj.transform.localPosition = posicionTeclaE;
+            }
+        }
+    }
+
+    private void InicializarEstatua()
+    {
+        // Validar que tenemos el SpriteRenderer de la estatua
+        if (spriteRenderer == null)
+        {
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            if (spriteRenderer == null)
+            {
+                Debug.LogError($"No se encontró SpriteRenderer en la estatua {estatuaID}");
+            }
+        }
+
+        // Configurar el SpriteRenderer para la tecla E
+        if (spriteTeclaERenderer == null)
+        {
+            // Crear un GameObject hijo para la tecla E si no existe
+            teclaEObj = new GameObject("TeclaE_Indicator");
+            teclaEObj.transform.SetParent(transform);
+            teclaEObj.transform.localPosition = posicionTeclaE;
+            teclaEObj.transform.localScale = escalaTeclaE;
+
+            spriteTeclaERenderer = teclaEObj.AddComponent<SpriteRenderer>();
+            spriteTeclaERenderer.sprite = spriteTeclaE;
+            spriteTeclaERenderer.sortingOrder = 10; // Para que aparezca por encima de la estatua
+        }
+        else
+        {
+            // Si ya existe una referencia, obtener el GameObject padre
+            teclaEObj = spriteTeclaERenderer.gameObject;
+            // Aplicar la escala y posición configuradas
+            teclaEObj.transform.localPosition = posicionTeclaE;
+            teclaEObj.transform.localScale = escalaTeclaE;
+        }
+
+        // Guardar los valores actuales para detectar cambios
+        ultimaPosicionTeclaE = posicionTeclaE;
+        ultimaEscalaTeclaE = escalaTeclaE;
+        ultimoSpriteTeclaE = spriteTeclaE;
+
+        // Ocultar indicador al inicio
+        if (spriteTeclaERenderer != null)
+        {
+            spriteTeclaERenderer.enabled = false;
+        }
+
+        DireccionActual = direccionInicial;
+        ActualizarSprite();
+    }
+
+    private void VerificarCambios()
+    {
+        // Verificar si cambió la posición
+        if (teclaEObj != null && posicionTeclaE != ultimaPosicionTeclaE)
+        {
+            teclaEObj.transform.localPosition = posicionTeclaE;
+            ultimaPosicionTeclaE = posicionTeclaE;
+        }
+
+        // Verificar si cambió la escala
+        if (teclaEObj != null && escalaTeclaE != ultimaEscalaTeclaE)
+        {
+            teclaEObj.transform.localScale = escalaTeclaE;
+            ultimaEscalaTeclaE = escalaTeclaE;
+        }
+
+        // Verificar si cambió el sprite
+        if (spriteTeclaERenderer != null && spriteTeclaE != ultimoSpriteTeclaE)
+        {
+            spriteTeclaERenderer.sprite = spriteTeclaE;
+            ultimoSpriteTeclaE = spriteTeclaE;
         }
     }
 
@@ -128,10 +225,18 @@ public class Estatua : MonoBehaviour
         }
     }
 
-    private void MostrarIndicador(bool mostrar)
+    private void MostrarIndicadorTeclaE(bool mostrar)
     {
-        // Aquí puedes implementar un indicador visual (como un "Presiona E")
-        // Por ejemplo, activar/desactivar un GameObject hijo con el texto
+        if (spriteTeclaERenderer != null)
+        {
+            spriteTeclaERenderer.enabled = mostrar;
+
+            // Asegurarse de que el sprite esté asignado
+            if (mostrar && spriteTeclaERenderer.sprite == null && spriteTeclaE != null)
+            {
+                spriteTeclaERenderer.sprite = spriteTeclaE;
+            }
+        }
     }
 
     // Método para forzar una dirección específica (útil para debugging)
@@ -141,9 +246,21 @@ public class Estatua : MonoBehaviour
         ActualizarSprite();
     }
 
-    // Método para obtener el sprite actual (útil para el manager)
-    public Sprite GetSpriteActual()
+    // Método para actualizar manualmente la tecla E (útil si cambias valores por código)
+    public void ActualizarTeclaE()
     {
-        return spriteRenderer.sprite;
+        if (teclaEObj != null)
+        {
+            teclaEObj.transform.localPosition = posicionTeclaE;
+            teclaEObj.transform.localScale = escalaTeclaE;
+        }
+        if (spriteTeclaERenderer != null && spriteTeclaE != null)
+        {
+            spriteTeclaERenderer.sprite = spriteTeclaE;
+        }
+
+        ultimaPosicionTeclaE = posicionTeclaE;
+        ultimaEscalaTeclaE = escalaTeclaE;
+        ultimoSpriteTeclaE = spriteTeclaE;
     }
 }
