@@ -4,28 +4,64 @@ using UnityEngine;
 
 public class MovimientoPersonaje : MonoBehaviour
 {
-    [Header("Configuraci�n de Movimiento")]
+    [Header("Configuración de Movimiento")]
     public float moveSpeed = 2.5f;
 
     private Rigidbody2D rb;
     private Vector2 movement;
+    private ControlSettings controlManager;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        controlManager = FindObjectOfType<ControlSettings>();
 
         if (rb != null)
         {
             rb.gravityScale = 0;
             rb.freezeRotation = true;
         }
+
+        if (controlManager == null)
+        {
+            Debug.LogWarning("ControlManager no encontrado. Usando controles por defecto.");
+        }
     }
 
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        // Obtener input usando los controles personalizados
+        movement = GetMovementInput();
         movement = movement.normalized;
+    }
+
+    Vector2 GetMovementInput()
+    {
+        Vector2 input = Vector2.zero;
+
+        if (controlManager != null)
+        {
+            // Usar controles personalizados del ControlManager
+            if (Input.GetKey(controlManager.GetKeyForAction("Arriba")))
+                input.y += 1f;
+
+            if (Input.GetKey(controlManager.GetKeyForAction("Abajo")))
+                input.y -= 1f;
+
+            if (Input.GetKey(controlManager.GetKeyForAction("Izquierda")))
+                input.x -= 1f;
+
+            if (Input.GetKey(controlManager.GetKeyForAction("Derecha")))
+                input.x += 1f;
+        }
+        else
+        {
+            // Fallback a controles por defecto si no hay ControlManager
+            input.x = Input.GetAxisRaw("Horizontal");
+            input.y = Input.GetAxisRaw("Vertical");
+        }
+
+        return input;
     }
 
     void FixedUpdate()
@@ -40,7 +76,7 @@ public class MovimientoPersonaje : MonoBehaviour
         }
     }
 
-    // Detectar colisi�n con los objetos de transici�n
+    // Detectar colisión con los objetos de transición
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Transition"))
