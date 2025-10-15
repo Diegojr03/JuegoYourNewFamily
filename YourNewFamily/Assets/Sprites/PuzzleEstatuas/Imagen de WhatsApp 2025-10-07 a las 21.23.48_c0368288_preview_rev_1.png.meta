@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7d1700cfad96f414ea3c1217a30003e7
+guid: 8807c842cebbb264f92002626a321fe2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5395357193329207108
-    second: cuadro rojo_0
+      213: 297462794546579842
+    second: Imagen de WhatsApp 2025-10-07 a las 21.23.48_c0368288_preview_rev_1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,43 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cuadro rojo_0
+      name: Imagen de WhatsApp 2025-10-07 a las 21.23.48_c0368288_preview_rev_1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 894
-        height: 894
+        x: 159
+        y: 76
+        width: 136
+        height: 251
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cb8934fe737df15b0800000000000000
-      internalID: -5395357193329207108
+      spriteID: 28908dae5dcc02400800000000000000
+      internalID: 297462794546579842
       vertices: []
       indices: 
       edges: []
@@ -135,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cuadro rojo_0: -5395357193329207108
+      Imagen de WhatsApp 2025-10-07 a las 21.23.48_c0368288_preview_rev_1_0: 297462794546579842
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

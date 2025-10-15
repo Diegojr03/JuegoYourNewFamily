@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 82c777a0ce583324381d20b8f4943229
+guid: dc25f0505ca69964597d85f2062f951d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3547401875931220847
-    second: Imagen de WhatsApp 2025-10-07 a las 21.21.36_da27e4f9_preview_rev_1_0
+      213: -1054239462953457313
+    second: zona calle_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,43 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Imagen de WhatsApp 2025-10-07 a las 21.21.36_da27e4f9_preview_rev_1_0
+      name: zona calle_0
       rect:
         serializedVersion: 2
-        x: 126
-        y: 76
-        width: 136
-        height: 251
+        x: 0
+        y: 0
+        width: 3840
+        height: 2160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f6b4f621637ea3130800000000000000
-      internalID: 3547401875931220847
+      spriteID: f59e5764bc69e51f0800000000000000
+      internalID: -1054239462953457313
       vertices: []
       indices: 
       edges: []
@@ -135,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Imagen de WhatsApp 2025-10-07 a las 21.21.36_da27e4f9_preview_rev_1_0: 3547401875931220847
+      zona calle_0: -1054239462953457313
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
