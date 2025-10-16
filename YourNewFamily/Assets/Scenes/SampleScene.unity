@@ -416,6 +416,8 @@ MonoBehaviour:
   colliderPuerta: {fileID: 489089757}
   animatorPuerta: {fileID: 0}
   triggerAbrirPuerta: Abrir
+  scriptMovimientoJugador: {fileID: 1476943280}
+  scriptInputJugador: {fileID: 0}
   sonidoCompletado: {fileID: 0}
   particulasCompletado: {fileID: 0}
 --- !u!4 &188801044
@@ -487,9 +489,10 @@ MonoBehaviour:
   teclaInteraccion: 101
   textoInteraccion: {fileID: 0}
   spriteTeclaE: {fileID: 21300000, guid: 94cd47901f0f07747b1203ae0fdb6036, type: 3}
-  posicionTeclaE: {x: 0, y: 1.5}
-  "tama\xF1oTeclaE": {x: 50, y: 50}
-  mostrarTeclaE: 1
+  posicionTeclaE: {x: 0, y: 5, z: 0}
+  escalaTeclaE: {x: 0.75, y: 0.75, z: 0.75}
+  velocidadAnimacion: 3
+  amplitudAnimacion: 0.1
   camaraJugador: {fileID: 519420031}
 --- !u!4 &277822076
 Transform:
@@ -2855,9 +2858,10 @@ MonoBehaviour:
   teclaInteraccion: 101
   textoInteraccion: {fileID: 0}
   spriteTeclaE: {fileID: 21300000, guid: 94cd47901f0f07747b1203ae0fdb6036, type: 3}
-  posicionTeclaE: {x: 0, y: 1.5}
-  "tama\xF1oTeclaE": {x: 50, y: 50}
-  mostrarTeclaE: 1
+  posicionTeclaE: {x: 0, y: 5, z: 0}
+  escalaTeclaE: {x: 0.75, y: 0.75, z: 0.75}
+  velocidadAnimacion: 3
+  amplitudAnimacion: 0.1
   camaraJugador: {fileID: 519420031}
 --- !u!1 &1036124764
 GameObject:
@@ -4691,9 +4695,10 @@ MonoBehaviour:
   teclaInteraccion: 101
   textoInteraccion: {fileID: 0}
   spriteTeclaE: {fileID: 21300000, guid: 94cd47901f0f07747b1203ae0fdb6036, type: 3}
-  posicionTeclaE: {x: 0, y: 0}
-  "tama\xF1oTeclaE": {x: 100, y: 100}
-  mostrarTeclaE: 1
+  posicionTeclaE: {x: 0, y: 5, z: 0}
+  escalaTeclaE: {x: 0.75, y: 0.75, z: 0.75}
+  velocidadAnimacion: 3
+  amplitudAnimacion: 0.1
   camaraJugador: {fileID: 519420031}
 --- !u!4 &1670769023
 Transform:
@@ -6013,9 +6018,10 @@ MonoBehaviour:
   teclaInteraccion: 101
   textoInteraccion: {fileID: 0}
   spriteTeclaE: {fileID: 21300000, guid: 94cd47901f0f07747b1203ae0fdb6036, type: 3}
-  posicionTeclaE: {x: 0, y: 1.5}
-  "tama\xF1oTeclaE": {x: 50, y: 50}
-  mostrarTeclaE: 1
+  posicionTeclaE: {x: 0, y: 5, z: 0}
+  escalaTeclaE: {x: 0.75, y: 0.75, z: 0.75}
+  velocidadAnimacion: 3
+  amplitudAnimacion: 0.1
   camaraJugador: {fileID: 519420031}
 --- !u!4 &2027195464
 Transform:

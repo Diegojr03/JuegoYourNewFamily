@@ -3,15 +3,15 @@ using System.Collections.Generic;
 
 public class GestorPuzzleSemaforos2D : MonoBehaviour
 {
-    [Header("Configuración Semaforos")]
+    [Header("Configuraciï¿½n Semaforos")]
     public List<SemaforoPuzzle2D> semaforos = new List<SemaforoPuzzle2D>();
 
-    [Header("Configuración Puzzle")]
-    [Tooltip("Número total de semáforos que deben tener el botón ARRIBA activo")]
+    [Header("Configuraciï¿½n Puzzle")]
+    [Tooltip("Nï¿½mero total de semï¿½foros que deben tener el botï¿½n ARRIBA activo")]
     public int requeridosArriba = 2;
-    [Tooltip("Número total de semáforos que deben tener el botón MEDIO activo")]
+    [Tooltip("Nï¿½mero total de semï¿½foros que deben tener el botï¿½n MEDIO activo")]
     public int requeridosMedio = 3;
-    [Tooltip("Número total de semáforos que deben tener el botón ABAJO activo")]
+    [Tooltip("Nï¿½mero total de semï¿½foros que deben tener el botï¿½n ABAJO activo")]
     public int requeridosAbajo = 1;
 
     [Header("Objetivos del Puzzle 2D")]
@@ -20,18 +20,30 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
     public Animator animatorPuerta;
     public string triggerAbrirPuerta = "Abrir";
 
+    [Header("Configuraciï¿½n Jugador")]
+    public MonoBehaviour scriptMovimientoJugador; // Script que controla el movimiento del jugador
+    public MonoBehaviour scriptInputJugador; // Script que maneja el input del jugador (para frenado mï¿½s brusco)
+
     [Header("Feedback 2D")]
     public AudioClip sonidoCompletado;
     public ParticleSystem particulasCompletado;
 
     private bool puzzleCompletado = false;
     private AudioSource audioSource;
+    private Rigidbody2D rbJugador; // Para frenado mï¿½s brusco
+    private Vector2 velocidadAntesDeBloquear; // Guardar velocidad antes de bloquear
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
             audioSource = gameObject.AddComponent<AudioSource>();
+
+        // Obtener referencia al Rigidbody2D del jugador para frenado brusco
+        if (scriptMovimientoJugador != null)
+        {
+            rbJugador = scriptMovimientoJugador.GetComponent<Rigidbody2D>();
+        }
 
         ConfigurarSemaforos();
         VerificarPuzzle();
@@ -44,11 +56,12 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
             if (semaforo != null)
             {
                 semaforo.OnEstadoCambiado += OnSemaforoCambiado;
+                semaforo.OnInterfazAbierta += OnInterfazSemaforoAbierta;
                 Debug.Log($"Semaforo 2D {semaforo.name} configurado en el gestor");
             }
             else
             {
-                Debug.LogError("Hay un semáforo nulo en la lista del gestor!");
+                Debug.LogError("Hay un semï¿½foro nulo en la lista del gestor!");
             }
         }
     }
@@ -62,14 +75,62 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
         }
     }
 
+    private void OnInterfazSemaforoAbierta(bool abierta)
+    {
+        // Bloquear/desbloquear movimiento del jugador cuando se abre/cierra la interfaz
+        BloquearMovimientoJugador(abierta);
+    }
+
+    private void BloquearMovimientoJugador(bool bloquear)
+    {
+        if (bloquear)
+        {
+            // Guardar velocidad actual antes de bloquear
+            if (rbJugador != null)
+            {
+                velocidadAntesDeBloquear = rbJugador.linearVelocity;
+            }
+
+            // Frenado BRUSCO: detener inmediatamente el movimiento fï¿½sico
+            if (rbJugador != null)
+            {
+                rbJugador.linearVelocity = Vector2.zero;
+                rbJugador.angularVelocity = 0f;
+            }
+        }
+        else
+        {
+            // Al desbloquear, restaurar la velocidad anterior (opcional)
+            // Si quieres que continï¿½e con la misma velocidad, descomenta:
+            // if (rbJugador != null)
+            // {
+            //     rbJugador.velocity = velocidadAntesDeBloquear;
+            // }
+        }
+
+        // Bloquear/desbloquear scripts de movimiento
+        if (scriptMovimientoJugador != null)
+        {
+            scriptMovimientoJugador.enabled = !bloquear;
+        }
+
+        // Bloquear/desbloquear script de input si estï¿½ asignado
+        if (scriptInputJugador != null)
+        {
+            scriptInputJugador.enabled = !bloquear;
+        }
+
+        Debug.Log($"Movimiento del jugador {(bloquear ? "BLOQUEADO (frenado brusco)" : "DESBLOQUEADO")}");
+    }
+
     private void VerificarPuzzle()
     {
-        // Contadores para cada tipo de botón
+        // Contadores para cada tipo de botï¿½n
         int contadorArriba = 0;
         int contadorMedio = 0;
         int contadorAbajo = 0;
 
-        // Contar cuántos semáforos tienen cada botón activo
+        // Contar cuï¿½ntos semï¿½foros tienen cada botï¿½n activo
         foreach (var semaforo in semaforos)
         {
             if (semaforo != null)
@@ -99,9 +160,12 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
     private void CompletarPuzzle()
     {
         puzzleCompletado = true;
-        Debug.Log("¡Puzzle de semáforos 2D completado!");
+        Debug.Log("ï¿½Puzzle de semï¿½foros 2D completado!");
 
-        // NUEVO: Desactivar todos los semáforos
+        // Asegurarse de que el movimiento estï¿½ desbloqueado
+        BloquearMovimientoJugador(false);
+
+        // Desactivar todos los semï¿½foros
         DesactivarTodosLosSemaforos();
 
         // Abrir puerta en 2D
@@ -110,7 +174,7 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
             puerta.SetActive(false);
         }
 
-        // Animación de puerta 2D
+        // Animaciï¿½n de puerta 2D
         if (animatorPuerta != null)
         {
             animatorPuerta.SetTrigger(triggerAbrirPuerta);
@@ -122,7 +186,7 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
             audioSource.PlayOneShot(sonidoCompletado);
         }
 
-        // Partículas
+        // Partï¿½culas
         if (particulasCompletado != null)
         {
             particulasCompletado.Play();
@@ -134,11 +198,12 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
             if (semaforo != null)
             {
                 semaforo.OnEstadoCambiado -= OnSemaforoCambiado;
+                semaforo.OnInterfazAbierta -= OnInterfazSemaforoAbierta;
             }
         }
     }
 
-    // NUEVO MÉTODO: Desactivar todos los semáforos
+    // NUEVO Mï¿½TODO: Desactivar todos los semï¿½foros
     private void DesactivarTodosLosSemaforos()
     {
         foreach (var semaforo in semaforos)
@@ -148,10 +213,10 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
                 semaforo.DesactivarSemaforo();
             }
         }
-        Debug.Log("Todos los semáforos han sido desactivados");
+        Debug.Log("Todos los semï¿½foros han sido desactivados");
     }
 
-    [ContextMenu("Forzar Verificación")]
+    [ContextMenu("Forzar Verificaciï¿½n")]
     public void ForzarVerificacion()
     {
         VerificarPuzzle();
@@ -162,12 +227,12 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
     {
         puzzleCompletado = false;
 
-        // Reactivar todos los semáforos
+        // Reactivar todos los semï¿½foros
         foreach (var semaforo in semaforos)
         {
             if (semaforo != null)
             {
-                // Aquí necesitaríamos un método para reactivar los semáforos
+                // Aquï¿½ necesitarï¿½amos un mï¿½todo para reactivar los semï¿½foros
                 // Por ahora solo reseteamos el estado del puzzle
                 Debug.Log($"Semaforo 2D {semaforo.name} - Estado actual: Arriba:{semaforo.GetArribaActivo()}, Medio:{semaforo.GetMedioActivo()}, Abajo:{semaforo.GetAbajoActivo()}");
             }
@@ -185,6 +250,7 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
             if (semaforo != null)
             {
                 semaforo.OnEstadoCambiado -= OnSemaforoCambiado;
+                semaforo.OnInterfazAbierta -= OnInterfazSemaforoAbierta;
             }
         }
     }

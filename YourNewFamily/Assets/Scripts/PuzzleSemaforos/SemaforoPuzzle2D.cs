@@ -24,25 +24,30 @@ public class SemaforoPuzzle2D : MonoBehaviour
     public float distanciaInteraccion = 2f;
     public KeyCode teclaInteraccion = KeyCode.E;
     public GameObject textoInteraccion;
-
-    [Header("Configuración Tecla E")]
     public Sprite spriteTeclaE;
-    public Vector2 posicionTeclaE = new Vector2(0f, 1.5f);
-    public Vector2 tamañoTeclaE = new Vector2(50f, 50f);
-    public bool mostrarTeclaE = true;
+
+    [Header("Configuración Tecla E en Pantalla")]
+    public Vector3 posicionTeclaE = new Vector3(0, 1.5f, 0);
+    public Vector3 escalaTeclaE = new Vector3(0.25f, 0.25f, 0.25f);
+    public float velocidadAnimacion = 3f;
+    public float amplitudAnimacion = 0.1f;
 
     [Header("Referencias")]
     public Camera camaraJugador;
 
     // Eventos
     public event Action<SemaforoPuzzle2D> OnEstadoCambiado;
+    public event Action<bool> OnInterfazAbierta;
 
     private bool estaMirando = false;
     private bool interfazAbierta = false;
     private bool puzzleCompletado = false;
     private GameObject jugador;
+    private SpriteRenderer spriteTeclaERenderer;
     private GameObject teclaEObj;
-    private Image imagenTeclaE;
+    private Vector3 ultimaPosicionTeclaE;
+    private Vector3 ultimaEscalaTeclaE;
+    private Sprite ultimoSpriteTeclaE;
 
     private void Start()
     {
@@ -69,11 +74,11 @@ public class SemaforoPuzzle2D : MonoBehaviour
             collider.isTrigger = true;
         }
 
-        // Crear el sprite de la tecla E
-        CrearTeclaE();
+        // Crear el sistema de tecla E similar a las estatuas
+        CrearSistemaTeclaE();
     }
 
-    private void CrearTeclaE()
+    private void CrearSistemaTeclaE()
     {
         // Si ya existe, destruirlo para recrearlo
         if (teclaEObj != null)
@@ -81,32 +86,31 @@ public class SemaforoPuzzle2D : MonoBehaviour
             Destroy(teclaEObj);
         }
 
-        if (spriteTeclaE != null && mostrarTeclaE)
+        if (spriteTeclaE != null)
         {
-            // Crear un nuevo GameObject para la tecla E
-            teclaEObj = new GameObject("TeclaE_Visual");
+            // Crear GameObject hijo para la tecla E
+            teclaEObj = new GameObject("TeclaE_Indicator");
             teclaEObj.transform.SetParent(transform);
-            teclaEObj.transform.localPosition = Vector3.zero;
+            teclaEObj.transform.localPosition = posicionTeclaE;
+            teclaEObj.transform.localScale = escalaTeclaE;
 
-            // Agregar CanvasRenderer y Image
-            teclaEObj.AddComponent<CanvasRenderer>();
-            imagenTeclaE = teclaEObj.AddComponent<Image>();
-            imagenTeclaE.sprite = spriteTeclaE;
-            imagenTeclaE.preserveAspect = true;
+            spriteTeclaERenderer = teclaEObj.AddComponent<SpriteRenderer>();
+            spriteTeclaERenderer.sprite = spriteTeclaE;
+            spriteTeclaERenderer.sortingOrder = 10;
 
-            // Configurar RectTransform
-            RectTransform rectTransform = teclaEObj.GetComponent<RectTransform>();
-            rectTransform.sizeDelta = tamañoTeclaE;
-            rectTransform.anchoredPosition = posicionTeclaE;
+            // Guardar los valores actuales para detectar cambios
+            ultimaPosicionTeclaE = posicionTeclaE;
+            ultimaEscalaTeclaE = escalaTeclaE;
+            ultimoSpriteTeclaE = spriteTeclaE;
 
-            // Ocultar inicialmente
-            teclaEObj.SetActive(false);
+            // Ocultar indicador al inicio
+            spriteTeclaERenderer.enabled = false;
 
-            Debug.Log($"Tecla E creada en semáforo {name} - Posición: {posicionTeclaE}, Tamaño: {tamañoTeclaE}");
+            Debug.Log($"Sistema Tecla E creado para {name}");
         }
         else
         {
-            Debug.LogWarning($"No hay sprite Tecla E asignado en {name} o mostrarTeclaE está desactivado");
+            Debug.LogWarning($"No hay sprite Tecla E asignado en {name}");
         }
     }
 
@@ -119,20 +123,42 @@ public class SemaforoPuzzle2D : MonoBehaviour
 
         ManejarInputInteraccion();
 
-        // Actualizar posición y tamaño en tiempo real (para debugging)
-        ActualizarTeclaE();
+        // Animación flotante para la tecla E cuando está visible
+        if (estaMirando && !interfazAbierta && !puzzleCompletado && spriteTeclaERenderer != null && spriteTeclaERenderer.enabled)
+        {
+            float offsetY = Mathf.Sin(Time.time * velocidadAnimacion) * amplitudAnimacion;
+            Vector3 nuevaPosicion = posicionTeclaE + new Vector3(0, offsetY, 0);
+            if (teclaEObj != null)
+            {
+                teclaEObj.transform.localPosition = nuevaPosicion;
+            }
+        }
+
+        // Verificar cambios en las variables del inspector
+        VerificarCambiosTeclaE();
     }
 
-    private void ActualizarTeclaE()
+    private void VerificarCambiosTeclaE()
     {
-        if (teclaEObj != null && imagenTeclaE != null)
+        // Verificar si cambió la posición
+        if (teclaEObj != null && posicionTeclaE != ultimaPosicionTeclaE)
         {
-            RectTransform rectTransform = teclaEObj.GetComponent<RectTransform>();
-            if (rectTransform != null)
-            {
-                rectTransform.sizeDelta = tamañoTeclaE;
-                rectTransform.anchoredPosition = posicionTeclaE;
-            }
+            teclaEObj.transform.localPosition = posicionTeclaE;
+            ultimaPosicionTeclaE = posicionTeclaE;
+        }
+
+        // Verificar si cambió la escala
+        if (teclaEObj != null && escalaTeclaE != ultimaEscalaTeclaE)
+        {
+            teclaEObj.transform.localScale = escalaTeclaE;
+            ultimaEscalaTeclaE = escalaTeclaE;
+        }
+
+        // Verificar si cambió el sprite
+        if (spriteTeclaERenderer != null && spriteTeclaE != ultimoSpriteTeclaE)
+        {
+            spriteTeclaERenderer.sprite = spriteTeclaE;
+            ultimoSpriteTeclaE = spriteTeclaE;
         }
     }
 
@@ -187,9 +213,9 @@ public class SemaforoPuzzle2D : MonoBehaviour
 
     private void MostrarTeclaE(bool mostrar)
     {
-        if (teclaEObj != null && mostrarTeclaE)
+        if (spriteTeclaERenderer != null)
         {
-            teclaEObj.SetActive(mostrar && !puzzleCompletado);
+            spriteTeclaERenderer.enabled = mostrar && !puzzleCompletado;
         }
 
         if (textoInteraccion != null)
@@ -229,6 +255,9 @@ public class SemaforoPuzzle2D : MonoBehaviour
         MostrarInterfaz();
         MostrarTeclaE(false);
 
+        // Notificar que la interfaz se abrió (para bloquear movimiento)
+        OnInterfazAbierta?.Invoke(true);
+
         Debug.Log($"Interfaz ABIERTA: {gameObject.name}");
     }
 
@@ -236,6 +265,9 @@ public class SemaforoPuzzle2D : MonoBehaviour
     {
         interfazAbierta = false;
         OcultarInterfaz();
+
+        // Notificar que la interfaz se cerró (para desbloquear movimiento)
+        OnInterfazAbierta?.Invoke(false);
 
         if (estaMirando && !puzzleCompletado)
         {
@@ -273,28 +305,42 @@ public class SemaforoPuzzle2D : MonoBehaviour
             collider.enabled = false;
         }
 
+        // Notificar que la interfaz se cerró
+        OnInterfazAbierta?.Invoke(false);
+
+        // Destruir el objeto de la tecla E
+        if (teclaEObj != null)
+        {
+            Destroy(teclaEObj);
+        }
+
         Debug.Log($"Semáforo {name} desactivado");
     }
 
-    // Método para forzar la recreación de la tecla E (útil si cambias el sprite)
+    // Método para forzar la recreación de la tecla E
     [ContextMenu("Recrear Tecla E")]
     public void RecrearTeclaE()
     {
-        CrearTeclaE();
+        CrearSistemaTeclaE();
         Debug.Log("Tecla E recreada");
     }
 
-    // Método para probar la tecla E
-    [ContextMenu("Mostrar Tecla E")]
-    public void TestMostrarTeclaE()
+    // Método para actualizar manualmente la tecla E
+    public void ActualizarTeclaE()
     {
-        MostrarTeclaE(true);
-    }
+        if (teclaEObj != null)
+        {
+            teclaEObj.transform.localPosition = posicionTeclaE;
+            teclaEObj.transform.localScale = escalaTeclaE;
+        }
+        if (spriteTeclaERenderer != null && spriteTeclaE != null)
+        {
+            spriteTeclaERenderer.sprite = spriteTeclaE;
+        }
 
-    [ContextMenu("Ocultar Tecla E")]
-    public void TestOcultarTeclaE()
-    {
-        MostrarTeclaE(false);
+        ultimaPosicionTeclaE = posicionTeclaE;
+        ultimaEscalaTeclaE = escalaTeclaE;
+        ultimoSpriteTeclaE = spriteTeclaE;
     }
 
     // Métodos públicos para acceder al estado
@@ -310,8 +356,8 @@ public class SemaforoPuzzle2D : MonoBehaviour
         Debug.Log($"=== DEBUG {name} ===");
         Debug.Log($"Botones - Arriba: {GetArribaActivo()}, Medio: {GetMedioActivo()}, Abajo: {GetAbajoActivo()}");
         Debug.Log($"Estado - Interfaz: {interfazAbierta}, Puzzle: {puzzleCompletado}, Mirando: {estaMirando}");
-        Debug.Log($"Tecla E - Objeto: {teclaEObj != null}, Activo: {teclaEObj != null && teclaEObj.activeInHierarchy}");
-        Debug.Log($"Posición Tecla E: {posicionTeclaE}, Tamaño: {tamañoTeclaE}");
+        Debug.Log($"Tecla E - Renderer: {spriteTeclaERenderer != null}, Activo: {spriteTeclaERenderer != null && spriteTeclaERenderer.enabled}");
+        Debug.Log($"Posición: {posicionTeclaE}, Escala: {escalaTeclaE}");
     }
 
     // Detección cuando el jugador entra en el trigger
@@ -341,6 +387,15 @@ public class SemaforoPuzzle2D : MonoBehaviour
             {
                 CerrarInterfaz();
             }
+        }
+    }
+
+    private void OnDestroy()
+    {
+        // Limpiar el objeto cuando se destruya el semáforo
+        if (teclaEObj != null)
+        {
+            Destroy(teclaEObj);
         }
     }
 }
