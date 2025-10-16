@@ -1,10 +1,10 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class GestorPuzzleSemaforos : MonoBehaviour
+public class GestorPuzzleSemaforos2D : MonoBehaviour
 {
     [Header("Configuración Semaforos")]
-    public List<SemaforoPuzzle> semaforos = new List<SemaforoPuzzle>();
+    public List<SemaforoPuzzle2D> semaforos = new List<SemaforoPuzzle2D>();
 
     [Header("Configuración Puzzle")]
     [Tooltip("Número total de semáforos que deben tener el botón ARRIBA activo")]
@@ -14,12 +14,13 @@ public class GestorPuzzleSemaforos : MonoBehaviour
     [Tooltip("Número total de semáforos que deben tener el botón ABAJO activo")]
     public int requeridosAbajo = 1;
 
-    [Header("Objetivos del Puzzle")]
+    [Header("Objetivos del Puzzle 2D")]
     public GameObject puerta;
+    public Collider2D colliderPuerta;
     public Animator animatorPuerta;
     public string triggerAbrirPuerta = "Abrir";
 
-    [Header("Feedback")]
+    [Header("Feedback 2D")]
     public AudioClip sonidoCompletado;
     public ParticleSystem particulasCompletado;
 
@@ -43,14 +44,20 @@ public class GestorPuzzleSemaforos : MonoBehaviour
             if (semaforo != null)
             {
                 semaforo.OnEstadoCambiado += OnSemaforoCambiado;
+                Debug.Log($"Semaforo 2D {semaforo.name} configurado en el gestor");
+            }
+            else
+            {
+                Debug.LogError("Hay un semáforo nulo en la lista del gestor!");
             }
         }
     }
 
-    private void OnSemaforoCambiado(SemaforoPuzzle semaforo)
+    private void OnSemaforoCambiado(SemaforoPuzzle2D semaforo)
     {
         if (!puzzleCompletado)
         {
+            Debug.Log($"Estado cambiado en {semaforo.name}, verificando puzzle...");
             VerificarPuzzle();
         }
     }
@@ -73,12 +80,12 @@ public class GestorPuzzleSemaforos : MonoBehaviour
             }
         }
 
-        // Verificar si se cumplen los requisitos (no importa qué semáforos específicos)
+        // Verificar si se cumplen los requisitos
         bool condicionCumplida = contadorArriba == requeridosArriba &&
                                 contadorMedio == requeridosMedio &&
                                 contadorAbajo == requeridosAbajo;
 
-        Debug.Log($"Estado Puzzle - " +
+        Debug.Log($"Estado Puzzle 2D - " +
                  $"Arriba: {contadorArriba}/{requeridosArriba}, " +
                  $"Medio: {contadorMedio}/{requeridosMedio}, " +
                  $"Abajo: {contadorAbajo}/{requeridosAbajo}");
@@ -92,23 +99,34 @@ public class GestorPuzzleSemaforos : MonoBehaviour
     private void CompletarPuzzle()
     {
         puzzleCompletado = true;
-        Debug.Log("¡Puzzle de semáforos completado!");
+        Debug.Log("¡Puzzle de semáforos 2D completado!");
 
-        // Abrir puerta
+        // NUEVO: Desactivar todos los semáforos
+        DesactivarTodosLosSemaforos();
+
+        // Abrir puerta en 2D
         if (puerta != null)
+        {
             puerta.SetActive(false);
+        }
 
-        // Animación de puerta
+        // Animación de puerta 2D
         if (animatorPuerta != null)
+        {
             animatorPuerta.SetTrigger(triggerAbrirPuerta);
+        }
 
         // Sonido
         if (sonidoCompletado != null)
+        {
             audioSource.PlayOneShot(sonidoCompletado);
+        }
 
         // Partículas
         if (particulasCompletado != null)
+        {
             particulasCompletado.Play();
+        }
 
         // Limpiar suscripciones
         foreach (var semaforo in semaforos)
@@ -120,35 +138,38 @@ public class GestorPuzzleSemaforos : MonoBehaviour
         }
     }
 
+    // NUEVO MÉTODO: Desactivar todos los semáforos
+    private void DesactivarTodosLosSemaforos()
+    {
+        foreach (var semaforo in semaforos)
+        {
+            if (semaforo != null)
+            {
+                semaforo.DesactivarSemaforo();
+            }
+        }
+        Debug.Log("Todos los semáforos han sido desactivados");
+    }
+
     [ContextMenu("Forzar Verificación")]
     public void ForzarVerificacion()
     {
         VerificarPuzzle();
     }
 
-    [ContextMenu("Reiniciar Puzzle")]
+    [ContextMenu("Reiniciar Puzzle 2D")]
     public void ReiniciarPuzzle()
     {
         puzzleCompletado = false;
 
+        // Reactivar todos los semáforos
         foreach (var semaforo in semaforos)
         {
             if (semaforo != null)
             {
-                // Resetear todos los botones
-                var botones = new List<SemaforoPuzzle.BotonSemaforo>
-                {
-                    semaforo.botonArriba,
-                    semaforo.botonMedio,
-                    semaforo.botonAbajo
-                };
-
-                foreach (var boton in botones)
-                {
-                    boton.estaActivo = false;
-                    if (boton.imagen != null && boton.spriteApagado != null)
-                        boton.imagen.sprite = boton.spriteApagado;
-                }
+                // Aquí necesitaríamos un método para reactivar los semáforos
+                // Por ahora solo reseteamos el estado del puzzle
+                Debug.Log($"Semaforo 2D {semaforo.name} - Estado actual: Arriba:{semaforo.GetArribaActivo()}, Medio:{semaforo.GetMedioActivo()}, Abajo:{semaforo.GetAbajoActivo()}");
             }
         }
 
