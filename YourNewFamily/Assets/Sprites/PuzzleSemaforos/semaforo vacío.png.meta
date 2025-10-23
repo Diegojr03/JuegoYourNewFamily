@@ -1,0 +1,403 @@
+fileFormatVersion: 2
+guid: 17a127c959241b14ca3c751329335783
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7439339486458829453
+    second: "semaforo vac\xEDo_0"
+  - first:
+      213: 8236373725053365465
+    second: "semaforo vac\xEDo_1"
+  - first:
+      213: 479642071617323413
+    second: "semaforo vac\xEDo_2"
+  - first:
+      213: 6478191915551208635
+    second: "semaforo vac\xEDo_3"
+  - first:
+      213: 2592499863158660142
+    second: "semaforo vac\xEDo_4"
+  - first:
+      213: 6418306327075616577
+    second: "semaforo vac\xEDo_5"
+  - first:
+      213: 3817673998891825731
+    second: "semaforo vac\xEDo_6"
+  - first:
+      213: -1611122510980493655
+    second: "semaforo vac\xEDo_7"
+  - first:
+      213: -6522677331804641609
+    second: "semaforo vac\xEDo_8"
+  - first:
+      213: -7981967833597951891
+    second: "semaforo vac\xEDo_9"
+  - first:
+      213: 2655514198036240120
+    second: "semaforo vac\xEDo_10"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "semaforo vac\xEDo_0"
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 2110
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 375a512072822c890800000000000000
+      internalID: -7439339486458829453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "semaforo vac\xEDo_1"
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 454
+        width: 1068
+        height: 3338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dcaa27c34a7d4270800000000000000
+      internalID: 8236373725053365465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "semaforo vac\xEDo_2"
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 1345
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59145124ce708a600800000000000000
+      internalID: 479642071617323413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "semaforo vac\xEDo_3"
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 1228
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb4bc39693927e950800000000000000
+      internalID: 6478191915551208635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "semaforo vac\xEDo_4"
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 1242
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2c12dfc3e86af320800000000000000
+      internalID: 2592499863158660142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "semaforo vac\xEDo_5"
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 1188
+        width: 23
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 147fbfc4997621950800000000000000
+      internalID: 6418306327075616577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "semaforo vac\xEDo_6"
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 1209
+        width: 10
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34a313c664a1bf430800000000000000
+      internalID: 3817673998891825731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "semaforo vac\xEDo_7"
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 1229
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ae4f53cc9424a9e0800000000000000
+      internalID: -1611122510980493655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "semaforo vac\xEDo_8"
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 1032
+        width: 36
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b6aa4d768bca75a0800000000000000
+      internalID: -6522677331804641609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "semaforo vac\xEDo_9"
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1066
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d60cccdab8a5a3190800000000000000
+      internalID: -7981967833597951891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "semaforo vac\xEDo_10"
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 1073
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f6d4f5f7184ad420800000000000000
+      internalID: 2655514198036240120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "semaforo vac\xEDo_0": -7439339486458829453
+      "semaforo vac\xEDo_1": 8236373725053365465
+      "semaforo vac\xEDo_10": 2655514198036240120
+      "semaforo vac\xEDo_2": 479642071617323413
+      "semaforo vac\xEDo_3": 6478191915551208635
+      "semaforo vac\xEDo_4": 2592499863158660142
+      "semaforo vac\xEDo_5": 6418306327075616577
+      "semaforo vac\xEDo_6": 3817673998891825731
+      "semaforo vac\xEDo_7": -1611122510980493655
+      "semaforo vac\xEDo_8": -6522677331804641609
+      "semaforo vac\xEDo_9": -7981967833597951891
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
