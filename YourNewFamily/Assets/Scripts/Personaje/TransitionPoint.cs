@@ -83,6 +83,21 @@ public class TransitionPoint : MonoBehaviour
         isTransitioning = false;
     }
 
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log($"Trigger entered with: {other.name}, Tag: {other.tag}");
+
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log($"Initiating transition with player: {other.name}");
+            InitiateTransition(other.gameObject);
+        }
+        else
+        {
+            Debug.Log($"Collider tag is not Player. Actual tag: {other.tag}");
+        }
+    }
     // Dibujar gizmos en el editor para visualizar mejor
     void OnDrawGizmosSelected()
     {
