@@ -42,6 +42,9 @@ public class DialogueSystem : MonoBehaviour
     public GameObject[] objectsToDestroyAfter;
     public bool destroyAfterDialogue = false;
 
+    [Header("Activación")]
+    public bool autoActivate = false;
+
     private bool isDialogueActive = false;
     private MovimientoPersonaje playerMovement;
     private Camera mainCamera;
@@ -267,42 +270,32 @@ public class DialogueSystem : MonoBehaviour
         dialogueText.text = "";
         string fullText = dialogue.dialogueText;
 
-        // Variable para controlar la escritura del texto
+        // Iniciar escritura del texto
         Coroutine typingCoroutine = StartCoroutine(TypeText(fullText));
 
-        // Esperar a que termine la escritura o el jugador presione Space
+        // Esperar avance del diálogo
         yield return StartCoroutine(WaitForDialogueAdvance(typingCoroutine, fullText));
     }
 
     private IEnumerator WaitForDialogueAdvance(Coroutine typingCoroutine, string fullText)
     {
-        float timer = 0f;
-        bool inputReceived = false;
         bool typingCompleted = false;
+        bool skipRequested = false;
 
-        while ((timer < autoAdvanceTime && !inputReceived) || !typingCompleted)
+        // Fase 1: mientras se escribe el texto, permitir saltar con espacio
+        while (!typingCompleted)
         {
-            timer += Time.deltaTime;
-
-            // Verificar si se presiona Space
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                // Si todavía se está escribiendo, completar el texto
-                if (typingCoroutine != null)
-                {
-                    StopCoroutine(typingCoroutine);
-                    dialogueText.text = fullText;
-                    typingCompleted = true;
-                }
-                else
-                {
-                    // Si ya terminó de escribir, marcar para avanzar
-                    inputReceived = true;
-                }
+                // Saltar la escritura
+                skipRequested = true;
+                StopCoroutine(typingCoroutine);
+                dialogueText.text = fullText;
+                typingCompleted = true;
             }
 
-            // Verificar si terminó de escribir
-            if (typingCoroutine == null && !typingCompleted)
+            // Verificar si ya terminó la escritura (el texto está completo)
+            if (dialogueText.text == fullText)
             {
                 typingCompleted = true;
             }
@@ -310,7 +303,22 @@ public class DialogueSystem : MonoBehaviour
             yield return null;
         }
 
-        // Pequeña pausa adicional si se usó input manual
+        // Fase 2: esperar a que el jugador pulse espacio o pase el tiempo automático
+        float timer = 0f;
+        bool inputReceived = false;
+
+        while (timer < autoAdvanceTime && !inputReceived)
+        {
+            timer += Time.deltaTime;
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                inputReceived = true;
+            }
+
+            yield return null;
+        }
+
         if (inputReceived)
         {
             yield return new WaitForSeconds(0.1f);
@@ -328,27 +336,6 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    private IEnumerator WaitForInputOrTimeout()
-    {
-        float timer = 0f;
-        bool inputReceived = false;
-
-        while (timer < autoAdvanceTime && !inputReceived)
-        {
-            timer += Time.deltaTime;
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                inputReceived = true;
-            }
-            yield return null;
-        }
-
-        if (inputReceived)
-        {
-            yield return new WaitForSeconds(0.1f);
-        }
-    }
-
     void Update()
     {
         // Si los personajes están ocultos, que sigan la cámara
@@ -357,6 +344,18 @@ public class DialogueSystem : MonoBehaviour
             CalculateHiddenPosition();
             characterLeft.position = hiddenPosition;
             characterRight.position = hiddenPosition;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player") && !isDialogueActive)
+        {
+            if (autoActivate)
+            {
+                // Activación automática
+                StartDialogue();
+            }
         }
     }
 
