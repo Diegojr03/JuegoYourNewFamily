@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using TMPro;
+using System.Collections;
 
 public class PuzzleTuberiasBotones : MonoBehaviour
 {
@@ -44,6 +46,25 @@ public class PuzzleTuberiasBotones : MonoBehaviour
 
     [Header("REFERENCIAS")]
     public Camera camaraJugador;
+
+    [Header("DIÁLOGO AL COMPLETAR")]
+    public bool activarDialogoAlCompletar = true;
+    public GameObject panelDialogo;
+    public TextMeshProUGUI textoDialogo;
+    public string[] lineasDialogo;
+    public float velocidadTexto = 0.05f;
+    public float tiempoAutoAvance = 2f;
+    public GameObject[] objetosParaActivar;
+    public bool destruirDespuesDeDialogo = true;
+    public GameObject speakerContainer;
+    public TextMeshProUGUI speakerText;
+
+    [Header("SONIDO AL COMPLETAR")]
+    public AudioClip sonidoCompletado;
+
+    private bool dialogoActivo = false;
+    private int lineaActual = 0;
+    private Coroutine corrutinaEscritura;
 
     // Eventos
     public event Action<PuzzleTuberiasBotones> OnEstadoCambiado;
@@ -132,6 +153,9 @@ public class PuzzleTuberiasBotones : MonoBehaviour
         {
             PuzzleCompletado();
         }
+
+        // AÑADE ESTA LÍNEA:
+        if (dialogoActivo) UpdateDialogo();
     }
 
     private void InicializarTuberias()
@@ -325,6 +349,127 @@ public class PuzzleTuberiasBotones : MonoBehaviour
         return true;
     }
 
+    private void IniciarDialogo()
+    {
+        if (!activarDialogoAlCompletar || lineasDialogo.Length == 0) return;
+
+        speakerContainer.SetActive(false);
+        speakerText.text = "";
+        dialogoActivo = true;
+        lineaActual = 0;
+
+        if (panelDialogo != null)
+        {
+            panelDialogo.SetActive(true);
+        }
+
+        MostrarLineaDialogo(lineaActual);
+    }
+
+    private void MostrarLineaDialogo(int index)
+    {
+        if (index >= lineasDialogo.Length) return;
+
+        if (corrutinaEscritura != null)
+        {
+            StopCoroutine(corrutinaEscritura);
+        }
+        corrutinaEscritura = StartCoroutine(EscribirTexto(lineasDialogo[index]));
+    }
+
+    private IEnumerator EscribirTexto(string texto)
+    {
+        textoDialogo.text = "";
+
+        foreach (char letra in texto.ToCharArray())
+        {
+            textoDialogo.text += letra;
+            yield return new WaitForSeconds(velocidadTexto);
+        }
+
+        corrutinaEscritura = null;
+        StartCoroutine(AutoAvanzarDialogo());
+    }
+
+    private IEnumerator AutoAvanzarDialogo()
+    {
+        yield return new WaitForSeconds(tiempoAutoAvance);
+        AvanzarDialogo();
+    }
+
+    private void AvanzarDialogo()
+    {
+        lineaActual++;
+
+        if (lineaActual < lineasDialogo.Length)
+        {
+            MostrarLineaDialogo(lineaActual);
+        }
+        else
+        {
+            FinalizarDialogo();
+        }
+    }
+
+    private void FinalizarDialogo()
+    {
+        dialogoActivo = false;
+
+        if (panelDialogo != null)
+        {
+            panelDialogo.SetActive(false);
+        }
+
+        // REPRODUCIR SONIDO ANTES DE ACTIVAR OBJETOS
+        if (sonidoCompletado != null)
+        {
+            AudioSource.PlayClipAtPoint(sonidoCompletado, transform.position);
+        }
+
+        // Pequeña pausa para que suene el sonido antes de activar objetos
+        StartCoroutine(CompletarDespuesDeSonido());
+    }
+
+    private IEnumerator CompletarDespuesDeSonido()
+    {
+        // Esperar un frame para que el sonido empiece
+        yield return null;
+
+        // Activar objetos
+        foreach (GameObject obj in objetosParaActivar)
+        {
+            if (obj != null)
+            {
+                obj.SetActive(true);
+            }
+        }
+
+        // Destruir si está configurado
+        if (destruirDespuesDeDialogo)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    // Para permitir skip con Space
+    private void UpdateDialogo()
+    {
+        if (dialogoActivo && Input.GetKeyDown(KeyCode.Space))
+        {
+            if (corrutinaEscritura != null)
+            {
+                StopCoroutine(corrutinaEscritura);
+                textoDialogo.text = lineasDialogo[lineaActual];
+                corrutinaEscritura = null;
+                StartCoroutine(AutoAvanzarDialogo());
+            }
+            else
+            {
+                AvanzarDialogo();
+            }
+        }
+    }
+
     private void PuzzleCompletado()
     {
         puzzleCompletado = true;
@@ -336,6 +481,36 @@ public class PuzzleTuberiasBotones : MonoBehaviour
 
         MostrarTeclaE(false);
         if (teclaEObj != null) Destroy(teclaEObj);
+
+        if (activarDialogoAlCompletar && lineasDialogo.Length > 0)
+        {
+            IniciarDialogo();
+        }
+        else
+        {
+            // AÑADE EL SONIDO TAMBIÉN AQUÍ
+            if (sonidoCompletado != null)
+            {
+                AudioSource.PlayClipAtPoint(sonidoCompletado, transform.position);
+            }
+
+            // Activar objetos directamente
+            foreach (GameObject obj in objetosParaActivar)
+            {
+                if (obj != null) obj.SetActive(true);
+            }
+            if (destruirDespuesDeDialogo)
+            {
+                // Pequeña pausa antes de destruir
+                StartCoroutine(DestruirDespuesDeSonido());
+            }
+        }
+    }
+
+    private IEnumerator DestruirDespuesDeSonido()
+    {
+        yield return new WaitForSeconds(0.1f); // Pausa mínima para que suene el sonido
+        Destroy(gameObject);
     }
 
     // Métodos públicos

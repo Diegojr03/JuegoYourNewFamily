@@ -1,22 +1,30 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using static System.Collections.Specialized.BitVector32;
 
+[System.Serializable]
+public class DialogueSection
+{
+    public string speakerName = "";
+    [TextArea(3, 5)]
+    public string dialogueText;
+}
 public class SimpleDialogueSystem : MonoBehaviour
 {
     [Header("Configuración del Diálogo")]
-    public string speakerName = "";
-    [TextArea(3, 5)]
-    public string[] dialogueLines;
     public float textSpeed = 0.05f;
     public bool autoActivate = true;
 
     [Header("Auto Avance")]
     public float autoAdvanceTime = 1f; // Tiempo para auto-skip (1 segundo)
 
+    [Header("Secciones de Diálogo")]
+    public DialogueSection[] dialogueSections; // AÑADE ESTA LÍNEA
+
     [Header("Referencias UI")]
     public GameObject dialoguePanel;
-    public GameObject SpeakerContainer;
+    public GameObject speakerContainer;
     public TextMeshProUGUI speakerText;
     public TextMeshProUGUI dialogueText;
 
@@ -28,6 +36,9 @@ public class SimpleDialogueSystem : MonoBehaviour
     public AudioClip dialogueSound;
     public bool destroyAfterDialogue = true;
     public GameObject[] objectsToActivateAfter;
+
+    [Header("Objetos a Destruir")]
+    public GameObject[] objectsToDestroyAfter;
 
     private bool isDialogueActive = false;
     private bool canInteract = false;
@@ -119,11 +130,23 @@ public class SimpleDialogueSystem : MonoBehaviour
         }
     }
 
+    string FormatDialogueText(string text, string speaker)
+    {
+        if (!string.IsNullOrEmpty(speaker))
+        {
+            return speaker + ": " + text;
+        }
+        else
+        {
+            return text;
+        }
+    }
+
     public void StartDialogue()
     {
-        if (isDialogueActive || dialogueLines.Length == 0) return;
+        if (isDialogueActive || dialogueSections.Length == 0) return;
 
-        SpeakerContainer.SetActive(true);
+        speakerContainer.SetActive(true);
         isDialogueActive = true;
         currentLine = 0;
 
@@ -159,22 +182,30 @@ public class SimpleDialogueSystem : MonoBehaviour
 
     void ShowLine(int lineIndex)
     {
-        if (lineIndex >= dialogueLines.Length) return;
+        if (lineIndex >= dialogueSections.Length) return;
 
+        // CONFIGURAR SPEAKER NAME
         if (speakerText != null)
         {
-            speakerText.text = speakerName;
+            speakerText.text = dialogueSections[lineIndex].speakerName;
+        }
+
+        // MOSTRAR/OCULTAR CONTAINER SEGÚN SI HAY SPEAKER
+        if (speakerContainer != null)
+        {
+            speakerContainer.SetActive(!string.IsNullOrEmpty(dialogueSections[lineIndex].speakerName));
         }
 
         if (typingCoroutine != null)
         {
             StopCoroutine(typingCoroutine);
         }
-        typingCoroutine = StartCoroutine(TypeText(dialogueLines[lineIndex]));
+        typingCoroutine = StartCoroutine(TypeText(dialogueSections[lineIndex].dialogueText));
     }
 
     IEnumerator TypeText(string text)
     {
+        // SOLO EL TEXTO DEL DIÁLOGO, SIN EL SPEAKER
         dialogueText.text = "";
 
         foreach (char letter in text.ToCharArray())
@@ -184,8 +215,6 @@ public class SimpleDialogueSystem : MonoBehaviour
         }
 
         typingCoroutine = null;
-
-        // Iniciar auto-avance después de terminar de escribir
         StartAutoAdvance();
     }
 
@@ -220,10 +249,9 @@ public class SimpleDialogueSystem : MonoBehaviour
         if (typingCoroutine != null)
         {
             StopCoroutine(typingCoroutine);
-            dialogueText.text = dialogueLines[currentLine];
+            dialogueText.text = dialogueSections[currentLine].dialogueText; // Solo el texto
             typingCoroutine = null;
 
-            // Reiniciar auto-avance con el texto completo
             StartAutoAdvance();
             return;
         }
@@ -231,7 +259,7 @@ public class SimpleDialogueSystem : MonoBehaviour
         // Pasar a la siguiente línea
         currentLine++;
 
-        if (currentLine < dialogueLines.Length)
+        if (currentLine < dialogueSections.Length)
         {
             ShowLine(currentLine);
         }
@@ -245,7 +273,6 @@ public class SimpleDialogueSystem : MonoBehaviour
     {
         isDialogueActive = false;
 
-        // Detener todas las corrutinas
         if (typingCoroutine != null)
         {
             StopCoroutine(typingCoroutine);
@@ -267,11 +294,27 @@ public class SimpleDialogueSystem : MonoBehaviour
             playerMovement.enabled = true;
         }
 
+        // RESTAURAR FÍSICAS DEL JUGADOR
+        if (playerRigidbody != null)
+        {
+            playerRigidbody.linearVelocity = originalVelocity;
+        }
+
+        // ACTIVAR OBJETOS (ya existente)
         foreach (GameObject obj in objectsToActivateAfter)
         {
             if (obj != null)
             {
                 obj.SetActive(true);
+            }
+        }
+
+        // DESTRUIR OBJETOS (nuevo)
+        foreach (GameObject obj in objectsToDestroyAfter)
+        {
+            if (obj != null)
+            {
+                Destroy(obj);
             }
         }
 
@@ -288,6 +331,8 @@ public class SimpleDialogueSystem : MonoBehaviour
             }
         }
     }
+
+    
 
     void OnDrawGizmos()
     {

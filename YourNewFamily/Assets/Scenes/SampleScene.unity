@@ -164,23 +164,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speakerName: Lilith
-  dialogueLines:
-  - "\xBFOtra vez?"
-  - "Seguro que es \xE9l... Ya se cansar\xE1\t"
   textSpeed: 0.05
   autoActivate: 1
-  autoAdvanceTime: 1.5
+  autoAdvanceTime: 2.5
+  dialogueSections:
+  - speakerName: Lilith
+    dialogueText: "\xBFOtra vez? Seguro que es \xE9l\u2026Ya se cansara."
   dialoguePanel: {fileID: 1834269160}
-  SpeakerContainer: {fileID: 1863344623}
+  speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
   dialogueText: {fileID: 78300818}
-  interactPrompt: {fileID: 1720112823}
+  interactPrompt: {fileID: 0}
   promptOffset: {x: 0, y: 0.5, z: 0}
   dialogueSound: {fileID: 8300000, guid: bea4eddbf6863494fb75cadea0058b29, type: 3}
   destroyAfterDialogue: 1
   objectsToActivateAfter:
   - {fileID: 1631850743}
+  objectsToDestroyAfter: []
 --- !u!61 &31946996
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -777,6 +777,208 @@ MonoBehaviour:
   cameraMoveSpeed: 15
   targetCameraSize: 7.5
   cameraSizeChangeSpeed: 10
+--- !u!1 &176374043
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 176374046}
+  - component: {fileID: 176374045}
+  - component: {fileID: 176374044}
+  m_Layer: 0
+  m_Name: ConvSinCuchillo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &176374044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176374043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textSpeed: 0.05
+  autoActivate: 1
+  autoAdvanceTime: 1.5
+  dialogueSections:
+  - speakerName: Casero
+    dialogueText: "Le he dado otra vuelta al asunto y \xA1ESTOY HARTO DE TI!"
+  - speakerName: Casero
+    dialogueText: "\xA1SEGUIRE AQUI HASTA QUE TE VAYAS!"
+  - speakerName: Lilith
+    dialogueText: "\xA1Oye! No hace falta que rompas la puerta."
+  - speakerName: Lilith
+    dialogueText: Ya te dije que en cuanto tenga el dinero te voy a pagar. No estoy
+      huyendo de nada.
+  - speakerName: Casero
+    dialogueText: "\xA1NO VOY A ESPERAR M\xC1S! \u2026 "
+  - speakerName: Casero
+    dialogueText: "Claro, eso es si no quieres empezar a trabajar para m\xED\u2026
+      como las dem\xE1s."
+  - speakerName: Lilith
+    dialogueText: "(Que asco... No pienso ser como 'las dem\xE1s')"
+  - speakerName: Lilith
+    dialogueText: "(Tengo que salir de aqu\xED... Y r\xE1pido. \xBFPero c\xF3mo?,
+      buscar\xE9 algo en mi habitaci\xF3n)"
+  dialoguePanel: {fileID: 1834269160}
+  speakerContainer: {fileID: 1863344623}
+  speakerText: {fileID: 1659188321}
+  dialogueText: {fileID: 78300818}
+  interactPrompt: {fileID: 0}
+  promptOffset: {x: 0, y: 0.5, z: 0}
+  dialogueSound: {fileID: 0}
+  destroyAfterDialogue: 1
+  objectsToActivateAfter:
+  - {fileID: 1708311295}
+  objectsToDestroyAfter:
+  - {fileID: 774619458}
+  - {fileID: 1319324203}
+--- !u!61 &176374045
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176374043}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.0040440857, y: 0.0075086355}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.3680954, y: 0.74472237}
+  m_EdgeRadius: 0
+--- !u!4 &176374046
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176374043}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.09, y: -5.92, z: 0}
+  m_LocalScale: {x: 1.8822852, y: 0.40217504, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 261238168}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &184573627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 184573628}
+  - component: {fileID: 184573630}
+  - component: {fileID: 184573629}
+  m_Layer: 5
+  m_Name: FadeNegro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &184573628
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184573627}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1807184149}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &184573629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184573627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &184573630
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184573627}
+  m_CullTransparentMesh: 1
 --- !u!1 &188801042
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,6 +1131,15 @@ Transform:
   - {fileID: 1292930906}
   - {fileID: 31946994}
   - {fileID: 1631850744}
+  - {fileID: 1336976086}
+  - {fileID: 1777960495}
+  - {fileID: 1718562111}
+  - {fileID: 774619459}
+  - {fileID: 1319324204}
+  - {fileID: 176374046}
+  - {fileID: 1424677305}
+  - {fileID: 1708311296}
+  - {fileID: 566591178}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &261238169
@@ -2547,7 +2758,7 @@ GameObject:
   - component: {fileID: 558906526}
   - component: {fileID: 558906525}
   m_Layer: 0
-  m_Name: CharacterLeft
+  m_Name: Peter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2596,7 +2807,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 8510307177790919905, guid: 26747d8a827689f42ad90e7f0d3fdfe2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2623,6 +2834,107 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &566591177
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 566591178}
+  - component: {fileID: 566591181}
+  - component: {fileID: 566591180}
+  m_Layer: 0
+  m_Name: RompeVentana
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &566591178
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566591177}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20.14, y: 2.56, z: 0}
+  m_LocalScale: {x: 0.5519162, y: 0.59924084, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 261238168}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &566591180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566591177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea45d6ed3fa5364684eaeb1968283a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRoomCenter: {fileID: 609719902}
+  targetPlayerPosition: {x: 8.03, y: 12.68}
+  transitionName: RomperVentana
+  cameraMoveSpeed: 5
+  targetCameraSize: 7
+  cameraSizeChangeSpeed: 10
+  fadeDuration: 1.5
+  fadeImage: {fileID: 184573629}
+  transitionSound: {fileID: 8300000, guid: 0ae1b80ab38650d42ab466578ed51abf, type: 3}
+  soundVolume: 0.5
+--- !u!61 &566591181
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566591177}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.0040440857, y: 0.0075086355}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.3680954, y: 0.74472237}
+  m_EdgeRadius: 0
 --- !u!1 &571179204
 GameObject:
   m_ObjectHideFlags: 0
@@ -2888,71 +3200,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!1 &598479940
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 598479942}
-  - component: {fileID: 598479941}
-  m_Layer: 0
-  m_Name: DialogueSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &598479941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 598479940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58c785d1312487d48bae41c65e986f1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterLeft: {fileID: 558906526}
-  characterRight: {fileID: 1654459073}
-  spriteLeft: {fileID: 558906525}
-  spriteRight: {fileID: 1654459072}
-  moveSpeed: 3
-  dialogueCooldown: 0.05
-  horizontalOffsetPercent: 0.4
-  verticalOffsetPercent: 0.2
-  autoAdvanceTime: 1.5
-  dialoguePanel: {fileID: 1834269160}
-  dialogueText: {fileID: 78300818}
-  dialogues:
-  - speakerName: Lilith
-    dialogueText: "Este sitio me da una sensaci\xF3n extra\xF1a, como si escondiera
-      algo m\xE1s de lo que se ve."
-    leftSpeaker: 0
-  - speakerName: Lina
-    dialogueText: "\xBFSab\xEDas que este lugar era un almac\xE9n antes? Dicen que
-      a\xFAn tienen habitaciones secretas abajo\u2026 aunque algunos creen que es
-      pura leyenda."
-    leftSpeaker: 1
---- !u!4 &598479942
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 598479940}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.756601, y: 0.10030552, z: -0.07115734}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &607917964
 GameObject:
   m_ObjectHideFlags: 0
@@ -3065,7 +3312,7 @@ Transform:
   m_GameObject: {fileID: 609719901}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.089, z: 0}
   m_LocalScale: {x: 0.10234999, y: 0.6999999, z: 0.09999998}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3653,6 +3900,119 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &774619458
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 774619459}
+  - component: {fileID: 774619461}
+  - component: {fileID: 774619460}
+  m_Layer: 0
+  m_Name: Cuchillo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &774619459
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774619458}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.2, y: -4.32, z: 0}
+  m_LocalScale: {x: 0.9656957, y: 0.28388825, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 261238168}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &774619460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774619458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textSpeed: 0.05
+  autoActivate: 0
+  autoAdvanceTime: 1.5
+  dialogueSections:
+  - speakerName: 
+    dialogueText: 'Has encontrado un cuchillo
+
+'
+  - speakerName: Lilith
+    dialogueText: Veremos si con esto sigue molestando.
+  dialoguePanel: {fileID: 1834269160}
+  speakerContainer: {fileID: 1863344623}
+  speakerText: {fileID: 1659188321}
+  dialogueText: {fileID: 78300818}
+  interactPrompt: {fileID: 1720112823}
+  promptOffset: {x: 0, y: 0.75, z: 0}
+  dialogueSound: {fileID: 8300000, guid: 7b1c3fe199690164c85e222cf7fc1c7d, type: 3}
+  destroyAfterDialogue: 1
+  objectsToActivateAfter:
+  - {fileID: 1319324203}
+  objectsToDestroyAfter:
+  - {fileID: 176374043}
+--- !u!61 &774619461
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774619458}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.027911305, y: 0.0075086355}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.3203609, y: 0.74472237}
+  m_EdgeRadius: 0
 --- !u!1 &776411971
 GameObject:
   m_ObjectHideFlags: 0
@@ -3956,6 +4316,135 @@ MonoBehaviour:
   amplitudAnimacion: 0.1
   spriteRenderer: {fileID: 0}
   spriteTeclaERenderer: {fileID: 0}
+--- !u!1 &832527190
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 832527192}
+  - component: {fileID: 832527191}
+  m_Layer: 0
+  m_Name: SonidoDelJuego
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &832527191
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832527190}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 8ae00a1342e29cf4491ad22ec0496c93, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &832527192
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832527190}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &866926487
 GameObject:
   m_ObjectHideFlags: 0
@@ -4861,7 +5350,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1015713710
 Transform:
   m_ObjectHideFlags: 0
@@ -5736,18 +6225,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speakerName: Lilith
-  dialogueLines:
-  - "Esto me vale\u2026 aunque... genial, es la \xFAltima. Tendr\xE9 que comprar
-    m\xE1s tarde. "
-  - "Supongo que el supermercado ser\xE1 mi \xFAnico plan para hoy. Pero bueno, ya
-    ir\xE9 m\xE1s tarde."
-  - "Por ahora me relajar\xE9 viendo algo.\n"
   textSpeed: 0.05
   autoActivate: 0
   autoAdvanceTime: 1
+  dialogueSections:
+  - speakerName: Lilith
+    dialogueText: "Esto me vale\u2026 aunque... genial, es la \xFAltima. Tendr\xE9
+      que comprar m\xE1s tarde. "
+  - speakerName: Lilith
+    dialogueText: "Supongo que el supermercado ser\xE1 mi \xFAnico plan para hoy.
+      Pero bueno, ya ir\xE9 m\xE1s tarde. "
+  - speakerName: Lilith
+    dialogueText: "Por ahora me tumbar\xE9 a ver algo."
   dialoguePanel: {fileID: 1834269160}
-  SpeakerContainer: {fileID: 1863344623}
+  speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
   dialogueText: {fileID: 78300818}
   interactPrompt: {fileID: 1720112823}
@@ -5756,6 +6247,7 @@ MonoBehaviour:
   destroyAfterDialogue: 1
   objectsToActivateAfter:
   - {fileID: 31946993}
+  objectsToDestroyAfter: []
 --- !u!61 &1292930908
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5801,6 +6293,126 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Size: {x: 1.1559792, y: 0.08811951}
+  m_EdgeRadius: 0
+--- !u!1 &1319324203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1319324204}
+  - component: {fileID: 1319324206}
+  - component: {fileID: 1319324205}
+  m_Layer: 0
+  m_Name: ConvConCuchillo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1319324204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319324203}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.09, y: -5.92, z: 0}
+  m_LocalScale: {x: 1.8822852, y: 0.40217504, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 261238168}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1319324205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319324203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textSpeed: 0.05
+  autoActivate: 1
+  autoAdvanceTime: 1.5
+  dialogueSections:
+  - speakerName: Lilith
+    dialogueText: "\xA1Esc\xFAchame bien! No vuelvas a amenazarme. Ya te dije que
+      cuando tenga el dinero, lo tendr\xE1s."
+  - speakerName: Lilith
+    dialogueText: "Hasta entonces\u2026 espera. Y deja de molestarme."
+  - speakerName: Casero
+    dialogueText: "\xBFCrees que puedes intimidarme?"
+  - speakerName: Casero
+    dialogueText: "Tienes una semana m\xE1s\u2026 si no, te saco de aqu\xED aunque
+      tenga que hacerlo yo mismo."
+  - speakerName: Lilith
+    dialogueText: "Ser\xE1 suficiente. Y ahora qu\xEDtate de mi puerta."
+  - speakerName: Lilith
+    dialogueText: "(Madre m\xEDa... por fin podr\xE9 salir)"
+  dialoguePanel: {fileID: 1834269160}
+  speakerContainer: {fileID: 1863344623}
+  speakerText: {fileID: 1659188321}
+  dialogueText: {fileID: 78300818}
+  interactPrompt: {fileID: 0}
+  promptOffset: {x: 0, y: 0.5, z: 0}
+  dialogueSound: {fileID: 0}
+  destroyAfterDialogue: 1
+  objectsToActivateAfter:
+  - {fileID: 1424677304}
+  objectsToDestroyAfter: []
+--- !u!61 &1319324206
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319324203}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.0062146187, y: 0.0075086355}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.3637543, y: 0.74472237}
   m_EdgeRadius: 0
 --- !u!1 &1334703872
 GameObject:
@@ -5889,6 +6501,120 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1336976085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1336976086}
+  - component: {fileID: 1336976088}
+  - component: {fileID: 1336976087}
+  m_Layer: 0
+  m_Name: "IntroPuzzleTuber\xEDas"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1336976086
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336976085}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.73, y: 2.65, z: 0}
+  m_LocalScale: {x: 0.31897599, y: 2.4329832, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 261238168}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1336976087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336976085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textSpeed: 0.05
+  autoActivate: 1
+  autoAdvanceTime: 1.5
+  dialogueSections:
+  - speakerName: Casero
+    dialogueText: "\xA1DEJA DE HUIR Y SAL YA, Y SI QUIERES LA FIANZA, ARREGLA LAS
+      MALDITAS TUBERIAS! "
+  - speakerName: Lilith
+    dialogueText: "En fin, deber\xEDa arreglar las tuber\xEDas si quiero recuperar
+      ese dinero."
+  - speakerName: Lilith
+    dialogueText: "No me puedo permitir nada\u2026 ugh"
+  dialoguePanel: {fileID: 1834269160}
+  speakerContainer: {fileID: 1863344623}
+  speakerText: {fileID: 1659188321}
+  dialogueText: {fileID: 78300818}
+  interactPrompt: {fileID: 0}
+  promptOffset: {x: 0, y: 0.5, z: 0}
+  dialogueSound: {fileID: 8300000, guid: 558a35f4644a3ec4b96de315354c8a35, type: 3}
+  destroyAfterDialogue: 1
+  objectsToActivateAfter:
+  - {fileID: 1777960494}
+  objectsToDestroyAfter: []
+--- !u!61 &1336976088
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336976085}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.027911305, y: 0.0075086355}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.3203609, y: 0.74472237}
+  m_EdgeRadius: 0
 --- !u!1 &1374562929
 GameObject:
   m_ObjectHideFlags: 0
@@ -6073,6 +6799,107 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1424677304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1424677305}
+  - component: {fileID: 1424677307}
+  - component: {fileID: 1424677308}
+  m_Layer: 0
+  m_Name: SalidaCalle1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1424677305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424677304}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.09, y: -6.65, z: 0}
+  m_LocalScale: {x: 1.8822852, y: 0.40217504, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 261238168}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1424677307
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424677304}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.0040440857, y: 0.0075086355}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.3680954, y: 0.74472237}
+  m_EdgeRadius: 0
+--- !u!114 &1424677308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424677304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea45d6ed3fa5364684eaeb1968283a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRoomCenter: {fileID: 609719902}
+  targetPlayerPosition: {x: 4.94, y: 10.69}
+  transitionName: SalidaCalle1
+  cameraMoveSpeed: 5
+  targetCameraSize: 7
+  cameraSizeChangeSpeed: 10
+  fadeDuration: 1.5
+  fadeImage: {fileID: 184573629}
+  transitionSound: {fileID: 8300000, guid: 8c431eeb6e897804181aa02e3cf97819, type: 3}
+  soundVolume: 0.5
 --- !u!1 &1476943276
 GameObject:
   m_ObjectHideFlags: 0
@@ -6157,7 +6984,7 @@ Transform:
   m_GameObject: {fileID: 1476943276}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.99, y: 27.79, z: 0}
+  m_LocalPosition: {x: 26.03, y: 27.75, z: 0}
   m_LocalScale: {x: 0.23128237, y: 0.23128237, z: 0.23128237}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6641,23 +7468,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speakerName: Casero
-  dialogueLines:
-  - "\xA1SE QUE ESTAS AH\xCD DENTRO! \xA1SAL A PAGAR EL ALQUILER!"
-  - "\xA1LLEVAS MESES DE RETRASO Y NO VOY A PERMITIR QUE SIGAS AQU\xCD!"
-  - "\xA1LLAMAR\xC9 A LA POLIC\xCDA!"
   textSpeed: 0.05
   autoActivate: 1
   autoAdvanceTime: 1.5
+  dialogueSections:
+  - speakerName: Casero
+    dialogueText: "\xA1SE QUE EST\xC1S AHI DENTRO! \xA1SAL A PAGAR EL ALQUILER!"
+  - speakerName: Casero
+    dialogueText: "\xA1LLEVAS MESES DE RETRASO Y NO VOY A PERMITIR QUE SIGAS AQUI!"
+  - speakerName: Casero
+    dialogueText: "\xA1LLAMARE A LA POLICIA!\n"
+  - speakerName: Lilith
+    dialogueText: "Qu\xE9 pesado\u2026 \xBFAcaso no tiene otra cosa que hacer en
+      su vida?"
+  - speakerName: Lilith
+    dialogueText: "\xBFHasta cu\xE1ndo piensa estar ah\xED plantado?"
   dialoguePanel: {fileID: 1834269160}
-  SpeakerContainer: {fileID: 1863344623}
+  speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
   dialogueText: {fileID: 78300818}
-  interactPrompt: {fileID: 1720112823}
+  interactPrompt: {fileID: 0}
   promptOffset: {x: 0, y: 0.5, z: 0}
   dialogueSound: {fileID: 8300000, guid: 558a35f4644a3ec4b96de315354c8a35, type: 3}
   destroyAfterDialogue: 1
-  objectsToActivateAfter: []
+  objectsToActivateAfter:
+  - {fileID: 1336976085}
+  objectsToDestroyAfter: []
 --- !u!61 &1631850746
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6715,7 +7551,7 @@ GameObject:
   - component: {fileID: 1654459073}
   - component: {fileID: 1654459072}
   m_Layer: 0
-  m_Name: CharacterRight
+  m_Name: Lilith
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6764,7 +7600,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7760461825656804723, guid: d6791877d912db24696b0fa79547a1b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6945,7 +7781,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.70000076, y: 0}
+  m_AnchoredPosition: {x: -0.70000076, y: -1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1659188321
@@ -6970,8 +7806,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: acb12ac65ecdca54cbe17c610fde0207, type: 2}
-  m_sharedMaterial: {fileID: -5822694132099746050, guid: acb12ac65ecdca54cbe17c610fde0207, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ba07bccbb71b3b447916a142f13d69e3, type: 2}
+  m_sharedMaterial: {fileID: -641147855262957520, guid: ba07bccbb71b3b447916a142f13d69e3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6995,8 +7831,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7320,6 +8156,226 @@ MonoBehaviour:
   cameraMoveSpeed: 15
   targetCameraSize: 5
   cameraSizeChangeSpeed: 10
+--- !u!1 &1708311295
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1708311296}
+  - component: {fileID: 1708311298}
+  - component: {fileID: 1708311297}
+  m_Layer: 0
+  m_Name: Destornillador
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1708311296
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708311295}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -17.34, y: -1.21, z: 0}
+  m_LocalScale: {x: 0.5519162, y: 0.59924084, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 261238168}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1708311297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708311295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textSpeed: 0.05
+  autoActivate: 0
+  autoAdvanceTime: 1.5
+  dialogueSections:
+  - speakerName: 
+    dialogueText: Has encontrado un destornillador
+  - speakerName: Lilith
+    dialogueText: "\xA1Perfecto! Con esto podr\xE9 salir por alguna ventana \n"
+  dialoguePanel: {fileID: 1834269160}
+  speakerContainer: {fileID: 1863344623}
+  speakerText: {fileID: 1659188321}
+  dialogueText: {fileID: 78300818}
+  interactPrompt: {fileID: 1720112823}
+  promptOffset: {x: 0, y: -0.5, z: 0}
+  dialogueSound: {fileID: 0}
+  destroyAfterDialogue: 1
+  objectsToActivateAfter:
+  - {fileID: 566591177}
+  objectsToDestroyAfter: []
+--- !u!61 &1708311298
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708311295}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.0040440857, y: 0.0075086355}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.3680954, y: 0.74472237}
+  m_EdgeRadius: 0
+--- !u!1 &1718562110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1718562111}
+  - component: {fileID: 1718562113}
+  - component: {fileID: 1718562112}
+  m_Layer: 0
+  m_Name: LlaveInglesa
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1718562111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718562110}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.89, y: 0.48, z: 0}
+  m_LocalScale: {x: 0.3472851, y: 2.3657355, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 261238168}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1718562112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718562110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textSpeed: 0.05
+  autoActivate: 0
+  autoAdvanceTime: 1.5
+  dialogueSections:
+  - speakerName: 
+    dialogueText: Has encontrado la llave inglesa
+  - speakerName: Lilith
+    dialogueText: "\xA1Genial! Con esto podr\xE9 arreglar las tuber\xEDas."
+  dialoguePanel: {fileID: 1834269160}
+  speakerContainer: {fileID: 1863344623}
+  speakerText: {fileID: 1659188321}
+  dialogueText: {fileID: 78300818}
+  interactPrompt: {fileID: 1720112823}
+  promptOffset: {x: 0, y: 0.5, z: 0}
+  dialogueSound: {fileID: 0}
+  destroyAfterDialogue: 1
+  objectsToActivateAfter:
+  - {fileID: 1015713709}
+  objectsToDestroyAfter: []
+--- !u!61 &1718562113
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718562110}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.027911305, y: 0.0075086355}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.3203609, y: 0.74472237}
+  m_EdgeRadius: 0
 --- !u!1 &1720112823
 GameObject:
   m_ObjectHideFlags: 0
@@ -7584,8 +8640,9 @@ GameObject:
   - component: {fileID: 1724160667}
   - component: {fileID: 1724160669}
   - component: {fileID: 1724160668}
+  - component: {fileID: 1724160670}
   m_Layer: 0
-  m_Name: CajaEjemploInteract
+  m_Name: PeterYLilith
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7601,7 +8658,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.126, y: 0.174, z: -0.03678211}
-  m_LocalScale: {x: 0.014123589, y: 0.028247178, z: 0}
+  m_LocalScale: {x: 0.016372101, y: 0.032744203, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 889452137}
@@ -7723,6 +8780,60 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.0561018, y: 2.491087}
   m_EdgeRadius: 0
+--- !u!114 &1724160670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724160665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58c785d1312487d48bae41c65e986f1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterLeft: {fileID: 558906526}
+  characterRight: {fileID: 1654459073}
+  spriteLeft: {fileID: 558906525}
+  spriteRight: {fileID: 1654459072}
+  dialoguePanel: {fileID: 1834269160}
+  speakerText: {fileID: 1659188321}
+  dialogueText: {fileID: 78300818}
+  speakerContainer: {fileID: 1863344623}
+  moveSpeed: 5
+  dialogueCooldown: 0.05
+  horizontalOffsetPercent: 0.4
+  verticalOffsetPercent: 0.2
+  autoAdvanceTime: 2
+  dialogues:
+  - speakerName: Peter
+    dialogueText: "Estoy harto del curro, t\xEDo. Cada d\xEDa es lo mismo. Si no
+      renuncio pronto, me van a encontrar muerto en esa oficina."
+    leftSpeaker: 1
+  - speakerName: Peter
+    dialogueText: "Ey, Lilith\u2026 tengo de nuevo el producto que te gusta. Ya sabes,
+      el de siempre."
+    leftSpeaker: 1
+  - speakerName: Peter
+    dialogueText: "Cinco d\xF3lares el gramo. No te preocupes, es de buena calidad."
+    leftSpeaker: 1
+  - speakerName: Lilith
+    dialogueText: "\xBFCinco d\xF3lares? Oye, recuerda que la \xFAltima vez te cubr\xED
+      las espaldas cuando casi te pilla el casero en el pasillo."
+    leftSpeaker: 0
+  - speakerName: Peter
+    dialogueText: Vale, vale, no hace falta que me eches en cara mis deudas.
+    leftSpeaker: 1
+  - speakerName: Peter
+    dialogueText: "Toma, esta es por cuenta de la casa. Pero que no se te suba a
+      la cabeza, \xBFeh?"
+    leftSpeaker: 1
+  - speakerName: 
+    dialogueText: (obtienes bolsa de Nieve Negra)
+    leftSpeaker: 0
+  objectsToActivateAfter: []
+  objectsToDestroyAfter: []
+  destroyAfterDialogue: 0
 --- !u!1 &1775169695
 GameObject:
   m_ObjectHideFlags: 0
@@ -7759,6 +8870,114 @@ Transform:
   - {fileID: 1527467146}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1777960494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1777960495}
+  - component: {fileID: 1777960497}
+  - component: {fileID: 1777960496}
+  m_Layer: 0
+  m_Name: LlaveInglesaAviso
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1777960495
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777960494}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.89, y: 3.7, z: 0}
+  m_LocalScale: {x: 0.79743993, y: 0.12164916, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 261238168}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1777960496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777960494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textSpeed: 0.05
+  autoActivate: 0
+  autoAdvanceTime: 1.5
+  dialogueSections:
+  - speakerName: Lilith
+    dialogueText: "Necesito una llave inglesa. Buscar\xE9 por el sal\xF3n\n"
+  dialoguePanel: {fileID: 1834269160}
+  speakerContainer: {fileID: 1863344623}
+  speakerText: {fileID: 1659188321}
+  dialogueText: {fileID: 78300818}
+  interactPrompt: {fileID: 1720112823}
+  promptOffset: {x: 0, y: 1, z: 0}
+  dialogueSound: {fileID: 0}
+  destroyAfterDialogue: 1
+  objectsToActivateAfter:
+  - {fileID: 1718562110}
+  objectsToDestroyAfter: []
+--- !u!61 &1777960497
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777960494}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.027911305, y: 0.0075086355}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.3203609, y: 0.74472237}
+  m_EdgeRadius: 0
 --- !u!1 &1780365457
 GameObject:
   m_ObjectHideFlags: 0
@@ -7975,6 +9194,7 @@ RectTransform:
   m_Children:
   - {fileID: 1720112824}
   - {fileID: 1834269161}
+  - {fileID: 184573628}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -8452,8 +9672,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -166.7, y: 34.040108}
-  m_SizeDelta: {x: 198.1451, y: 41.2802}
+  m_AnchoredPosition: {x: -166, y: 33.7}
+  m_SizeDelta: {x: 206.2402, y: 46.6}
   m_Pivot: {x: 0.35666844, y: 0.5}
 --- !u!114 &1863344625
 MonoBehaviour:
@@ -9193,6 +10413,20 @@ MonoBehaviour:
   amplitudAnimacion: 0.1
   scriptMovimientoJugador: {fileID: 1476943280}
   camaraJugador: {fileID: 519420031}
+  activarDialogoAlCompletar: 1
+  panelDialogo: {fileID: 1834269160}
+  textoDialogo: {fileID: 78300818}
+  lineasDialogo:
+  - "Has completado el puzzle de las tuber\xEDas"
+  velocidadTexto: 0.05
+  tiempoAutoAvance: 2
+  objetosParaActivar:
+  - {fileID: 774619458}
+  - {fileID: 176374043}
+  destruirDespuesDeDialogo: 1
+  speakerContainer: {fileID: 1863344623}
+  speakerText: {fileID: 1659188321}
+  sonidoCompletado: {fileID: 8300000, guid: bea4eddbf6863494fb75cadea0058b29, type: 3}
 --- !u!61 &2004928868
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9972,6 +11206,93 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1775169696}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2146275054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2146275056}
+  - component: {fileID: 2146275055}
+  m_Layer: 0
+  m_Name: Mary
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &2146275055
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146275054}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 8510307177790919905, guid: 26747d8a827689f42ad90e7f0d3fdfe2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.16, y: 0.16}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &2146275056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146275054}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5, y: -7.72, z: 0}
+  m_LocalScale: {x: 1.318184, y: 1.3558463, z: 0.8369422}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -9986,11 +11307,12 @@ SceneRoots:
   - {fileID: 1807184149}
   - {fileID: 438445352}
   - {fileID: 558906526}
+  - {fileID: 2146275056}
   - {fileID: 1654459073}
-  - {fileID: 598479942}
   - {fileID: 1036124766}
   - {fileID: 1422490185}
   - {fileID: 2137589523}
   - {fileID: 1775169696}
   - {fileID: 1200794358}
   - {fileID: 1015713710}
+  - {fileID: 832527192}

@@ -12,16 +12,18 @@ public class DialogueSystem : MonoBehaviour
     public SpriteRenderer spriteLeft;
     public SpriteRenderer spriteRight;
 
+    [Header("UI")]
+    public GameObject dialoguePanel;
+    public TextMeshProUGUI speakerText; // Texto separado para el nombre
+    public TextMeshProUGUI dialogueText;
+    public GameObject speakerContainer; // Contenedor del speaker (opcional)
+
     [Header("Configuración")]
     public float moveSpeed = 5f;
     public float dialogueCooldown = 0.05f;
-    public float horizontalOffsetPercent = 0.3f; // 30% del ancho de la cámara
-    public float verticalOffsetPercent = 0.2f;   // 20% de la altura de la cámara
+    public float horizontalOffsetPercent = 0.3f;
+    public float verticalOffsetPercent = 0.2f;
     public float autoAdvanceTime = 1.5f;
-
-    [Header("UI")]
-    public GameObject dialoguePanel;
-    public TextMeshProUGUI dialogueText;
 
     [Header("Diálogos")]
     public List<Dialogue> dialogues = new List<Dialogue>();
@@ -35,18 +37,43 @@ public class DialogueSystem : MonoBehaviour
         public bool leftSpeaker;
     }
 
+    [Header("Configuración Avanzada")]
+    public GameObject[] objectsToActivateAfter;
+    public GameObject[] objectsToDestroyAfter;
+    public bool destroyAfterDialogue = false;
+
     private bool isDialogueActive = false;
     private MovimientoPersonaje playerMovement;
     private Camera mainCamera;
     private Vector2 leftCharacterTarget;
     private Vector2 rightCharacterTarget;
     private Vector2 hiddenPosition;
+    private Rigidbody2D playerRigidbody;
+    private Vector2 originalVelocity;
+    private bool charactersHidden = true;
 
     void Start()
     {
         playerMovement = FindObjectOfType<MovimientoPersonaje>();
         mainCamera = Camera.main;
-        dialoguePanel.SetActive(false);
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            playerRigidbody = player.GetComponent<Rigidbody2D>();
+        }
+
+        // Ocultar UI al inicio
+        if (dialoguePanel != null)
+        {
+            dialoguePanel.SetActive(false);
+        }
+
+        if (speakerContainer != null)
+        {
+            speakerContainer.SetActive(false);
+        }
+
         HideCharacters();
     }
 
@@ -57,6 +84,7 @@ public class DialogueSystem : MonoBehaviour
             CalculateHiddenPosition();
             characterLeft.position = hiddenPosition;
             characterRight.position = hiddenPosition;
+            charactersHidden = true; // <-- Añadido
         }
     }
 
@@ -64,18 +92,15 @@ public class DialogueSystem : MonoBehaviour
     {
         if (mainCamera == null) return;
 
-        // Calcular el tamaño de la cámara en unidades del mundo
         float cameraHeight = mainCamera.orthographicSize * 2f;
         float cameraWidth = cameraHeight * mainCamera.aspect;
 
-        // Calcular offsets basados en porcentajes del tamaño de la cámara
         float horizontalOffset = cameraWidth * horizontalOffsetPercent;
         float verticalOffset = cameraHeight * verticalOffsetPercent;
 
         Vector3 cameraCenter = mainCamera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, mainCamera.nearClipPlane));
         Vector3 cameraBottom = mainCamera.ViewportToWorldPoint(new Vector3(0.5f, 0f, mainCamera.nearClipPlane));
 
-        // Calcular posiciones objetivo relativas al tamaño de la cámara
         leftCharacterTarget = new Vector2(
             cameraCenter.x - horizontalOffset,
             cameraBottom.y + verticalOffset
@@ -96,46 +121,98 @@ public class DialogueSystem : MonoBehaviour
         Vector3 cameraBottom = mainCamera.ViewportToWorldPoint(new Vector3(0.5f, 0f, mainCamera.nearClipPlane));
         float cameraHeight = mainCamera.orthographicSize * 2f;
 
-        // Esconder personajes una altura completa de cámara más abajo
         hiddenPosition = new Vector2(
             cameraBottom.x,
             cameraBottom.y - cameraHeight
         );
     }
 
-    public void StartDialogue(int dialogueIndex = 0)
+    public void StartDialogue()
     {
-        if (!isDialogueActive && dialogues.Count > dialogueIndex)
+        if (!isDialogueActive && dialogues.Count > 0)
         {
             CalculateTargetPositions();
-            StartCoroutine(DialogueSequence(dialogueIndex));
+            StartCoroutine(DialogueSequence());
         }
     }
 
-    private IEnumerator DialogueSequence(int dialogueIndex)
+    private IEnumerator DialogueSequence()
     {
         isDialogueActive = true;
 
+        // Bloquear movimiento del jugador
         if (playerMovement != null)
         {
             playerMovement.enabled = false;
         }
 
-        yield return StartCoroutine(MoveCharactersToPosition(true));
-        dialoguePanel.SetActive(true);
+        if (playerRigidbody != null)
+        {
+            originalVelocity = playerRigidbody.linearVelocity;
+            playerRigidbody.linearVelocity = Vector2.zero;
+        }
 
+        // Mover personajes a posición si existen
+        if (characterLeft != null && characterRight != null)
+        {
+            yield return StartCoroutine(MoveCharactersToPosition(true));
+        }
+
+        // Mostrar UI
+        if (dialoguePanel != null)
+        {
+            dialoguePanel.SetActive(true);
+        }
+
+        // Mostrar cada diálogo
         foreach (Dialogue dialogue in dialogues)
         {
             yield return StartCoroutine(ShowDialogue(dialogue));
-            yield return new WaitForSeconds(0.5f);
         }
 
-        dialoguePanel.SetActive(false);
-        yield return StartCoroutine(MoveCharactersToPosition(false));
+        // Ocultar UI
+        if (dialoguePanel != null)
+        {
+            dialoguePanel.SetActive(false);
+        }
 
+        if (speakerContainer != null)
+        {
+            speakerContainer.SetActive(false);
+        }
+
+        // Mover personajes fuera de escena si existen
+        if (characterLeft != null && characterRight != null)
+        {
+            yield return StartCoroutine(MoveCharactersToPosition(false));
+        }
+
+        // Reactivar movimiento del jugador
         if (playerMovement != null)
         {
             playerMovement.enabled = true;
+        }
+
+        if (playerRigidbody != null)
+        {
+            playerRigidbody.linearVelocity = originalVelocity;
+        }
+
+        // Activar y destruir objetos
+        foreach (GameObject obj in objectsToActivateAfter)
+        {
+            if (obj != null) obj.SetActive(true);
+        }
+
+        foreach (GameObject obj in objectsToDestroyAfter)
+        {
+            if (obj != null) Destroy(obj);
+        }
+
+        // Destruir este objeto si está configurado
+        if (destroyAfterDialogue)
+        {
+            Destroy(gameObject);
         }
 
         isDialogueActive = false;
@@ -145,6 +222,8 @@ public class DialogueSystem : MonoBehaviour
     {
         Vector2 leftTarget = enter ? leftCharacterTarget : hiddenPosition;
         Vector2 rightTarget = enter ? rightCharacterTarget : hiddenPosition;
+
+        charactersHidden = !enter; // <-- NUEVO
 
         while (Vector2.Distance(characterLeft.position, leftTarget) > 0.1f ||
                Vector2.Distance(characterRight.position, rightTarget) > 0.1f)
@@ -169,17 +248,84 @@ public class DialogueSystem : MonoBehaviour
 
     private IEnumerator ShowDialogue(Dialogue dialogue)
     {
-        HighlightCharacter(dialogue.leftSpeaker);
-        dialogueText.text = "";
-        string fullText = dialogue.speakerName + ": " + dialogue.dialogueText;
+        // Configurar speaker name en contenedor separado
+        if (speakerText != null)
+        {
+            speakerText.text = dialogue.speakerName;
+        }
 
-        foreach (char letter in fullText.ToCharArray())
+        // Mostrar/ocultar contenedor del speaker
+        if (speakerContainer != null)
+        {
+            speakerContainer.SetActive(!string.IsNullOrEmpty(dialogue.speakerName));
+        }
+
+        // Resaltar personaje que habla
+        HighlightCharacter(dialogue.leftSpeaker);
+
+        // Mostrar texto del diálogo
+        dialogueText.text = "";
+        string fullText = dialogue.dialogueText;
+
+        // Variable para controlar la escritura del texto
+        Coroutine typingCoroutine = StartCoroutine(TypeText(fullText));
+
+        // Esperar a que termine la escritura o el jugador presione Space
+        yield return StartCoroutine(WaitForDialogueAdvance(typingCoroutine, fullText));
+    }
+
+    private IEnumerator WaitForDialogueAdvance(Coroutine typingCoroutine, string fullText)
+    {
+        float timer = 0f;
+        bool inputReceived = false;
+        bool typingCompleted = false;
+
+        while ((timer < autoAdvanceTime && !inputReceived) || !typingCompleted)
+        {
+            timer += Time.deltaTime;
+
+            // Verificar si se presiona Space
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                // Si todavía se está escribiendo, completar el texto
+                if (typingCoroutine != null)
+                {
+                    StopCoroutine(typingCoroutine);
+                    dialogueText.text = fullText;
+                    typingCompleted = true;
+                }
+                else
+                {
+                    // Si ya terminó de escribir, marcar para avanzar
+                    inputReceived = true;
+                }
+            }
+
+            // Verificar si terminó de escribir
+            if (typingCoroutine == null && !typingCompleted)
+            {
+                typingCompleted = true;
+            }
+
+            yield return null;
+        }
+
+        // Pequeña pausa adicional si se usó input manual
+        if (inputReceived)
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+    private IEnumerator TypeText(string text)
+    {
+        dialogueText.text = "";
+
+        foreach (char letter in text.ToCharArray())
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(dialogueCooldown);
         }
-
-        yield return StartCoroutine(WaitForInputOrTimeout());
     }
 
     private IEnumerator WaitForInputOrTimeout()
@@ -187,7 +333,6 @@ public class DialogueSystem : MonoBehaviour
         float timer = 0f;
         bool inputReceived = false;
 
-        // Esperar hasta que se presione Space o pasen 2 segundos
         while (timer < autoAdvanceTime && !inputReceived)
         {
             timer += Time.deltaTime;
@@ -198,10 +343,20 @@ public class DialogueSystem : MonoBehaviour
             yield return null;
         }
 
-        // Pequeña pausa adicional si se usó input manual
         if (inputReceived)
         {
             yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+    void Update()
+    {
+        // Si los personajes están ocultos, que sigan la cámara
+        if (charactersHidden && mainCamera != null)
+        {
+            CalculateHiddenPosition();
+            characterLeft.position = hiddenPosition;
+            characterRight.position = hiddenPosition;
         }
     }
 
