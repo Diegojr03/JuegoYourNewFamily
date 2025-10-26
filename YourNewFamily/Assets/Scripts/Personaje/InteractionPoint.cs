@@ -7,6 +7,7 @@ public class InteractionPoint : MonoBehaviour
     [Header("Referencias")]
     public GameObject interactPrompt; // Imagen de tecla F (diálogo)
     public float interactionDistance = 2f;
+    public float promptOffsetY = 0.3f;
 
     [Header("Configuración")]
     public KeyCode interactionKey = KeyCode.F;
@@ -31,7 +32,7 @@ public class InteractionPoint : MonoBehaviour
         {
             gameObject.AddComponent<BoxCollider2D>();
         }
-        GetComponent<Collider2D>().isTrigger = false; // Importante: colisión normal
+        GetComponent<Collider2D>().isTrigger = true; // Importante: colisión normal
     }
 
     void Update()
@@ -41,16 +42,20 @@ public class InteractionPoint : MonoBehaviour
             TriggerInteraction();
         }
     }
-
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             canInteract = true;
+
             if (interactPrompt != null)
             {
                 interactPrompt.SetActive(true);
-                interactPrompt.transform.position = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * 1f);
+
+                // Mostrar el prompt justo encima del objeto
+                Vector3 worldPos = transform.position + Vector3.up * promptOffsetY;
+                Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                interactPrompt.transform.position = screenPos;
             }
         }
     }
@@ -60,6 +65,7 @@ public class InteractionPoint : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             canInteract = false;
+
             if (interactPrompt != null)
             {
                 interactPrompt.SetActive(false);

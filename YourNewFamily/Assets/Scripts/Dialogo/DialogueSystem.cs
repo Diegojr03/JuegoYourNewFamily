@@ -353,7 +353,6 @@ public class DialogueSystem : MonoBehaviour
         {
             if (autoActivate)
             {
-                // Activación automática
                 StartDialogue();
             }
         }
