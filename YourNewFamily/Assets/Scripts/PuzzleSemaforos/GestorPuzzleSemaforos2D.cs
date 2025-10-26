@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 public class GestorPuzzleSemaforos2D : MonoBehaviour
 {
@@ -27,6 +28,18 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
     [Header("Feedback 2D")]
     public AudioClip sonidoCompletado;
     public ParticleSystem particulasCompletado;
+
+    [Header("Diálogo de Completado")]
+    public bool mostrarMensajeCompletado = true;
+    public GameObject panelDialogoCompletado;
+    public TextMeshProUGUI textoDialogoCompletado;
+    public string mensajeCompletado = "Has completado el puzzle de los semáforos";
+    public float tiempoMostrarMensaje = 3f;
+
+    [Header("Objetos a Activar/Desactivar")]
+    public GameObject[] objetosParaActivar;
+    public GameObject[] objetosParaDesactivar;
+    public GameObject[] objetosParaDestruir;
 
     private bool puzzleCompletado = false;
     private AudioSource audioSource;
@@ -160,12 +173,12 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
     private void CompletarPuzzle()
     {
         puzzleCompletado = true;
-        Debug.Log("�Puzzle de sem�foros 2D completado!");
+        Debug.Log("¡Puzzle de semáforos 2D completado!");
 
-        // Asegurarse de que el movimiento est� desbloqueado
+        // Asegurarse de que el movimiento esté desbloqueado
         BloquearMovimientoJugador(false);
 
-        // Desactivar todos los sem�foros
+        // Desactivar todos los semáforos
         DesactivarTodosLosSemaforos();
 
         // Abrir puerta en 2D
@@ -174,7 +187,7 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
             puerta.SetActive(false);
         }
 
-        // Animaci�n de puerta 2D
+        // Animación de puerta 2D
         if (animatorPuerta != null)
         {
             animatorPuerta.SetTrigger(triggerAbrirPuerta);
@@ -186,11 +199,17 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
             audioSource.PlayOneShot(sonidoCompletado);
         }
 
-        // Part�culas
+        // Partículas
         if (particulasCompletado != null)
         {
             particulasCompletado.Play();
         }
+
+        // MOSTRAR MENSAJE DE COMPLETADO
+        MostrarMensajeCompletado();
+
+        // GESTIONAR OBJETOS
+        GestionarObjetos();
 
         // Limpiar suscripciones
         foreach (var semaforo in semaforos)
@@ -241,6 +260,59 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
         // Resuscribirse a eventos
         ConfigurarSemaforos();
         VerificarPuzzle();
+    }
+
+    private void MostrarMensajeCompletado()
+    {
+        if (mostrarMensajeCompletado && panelDialogoCompletado != null && textoDialogoCompletado != null)
+        {
+            textoDialogoCompletado.text = mensajeCompletado;
+            panelDialogoCompletado.SetActive(true);
+
+            // Ocultar el mensaje después del tiempo configurado
+            Invoke("OcultarMensajeCompletado", tiempoMostrarMensaje);
+        }
+    }
+
+    private void OcultarMensajeCompletado()
+    {
+        if (panelDialogoCompletado != null)
+        {
+            panelDialogoCompletado.SetActive(false);
+        }
+    }
+
+    private void GestionarObjetos()
+    {
+        // Activar objetos
+        foreach (GameObject obj in objetosParaActivar)
+        {
+            if (obj != null)
+            {
+                obj.SetActive(true);
+                Debug.Log($"Objeto activado: {obj.name}");
+            }
+        }
+
+        // Desactivar objetos
+        foreach (GameObject obj in objetosParaDesactivar)
+        {
+            if (obj != null)
+            {
+                obj.SetActive(false);
+                Debug.Log($"Objeto desactivado: {obj.name}");
+            }
+        }
+
+        // Destruir objetos
+        foreach (GameObject obj in objetosParaDestruir)
+        {
+            if (obj != null)
+            {
+                Destroy(obj);
+                Debug.Log($"Objeto destruido: {obj.name}");
+            }
+        }
     }
 
     private void OnDestroy()
