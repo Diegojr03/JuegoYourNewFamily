@@ -217,6 +217,7 @@ public class DialogueSystem : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
         if (gameObject.name == "PeterYLilith")
         {
             // Opción A: Si usas GameManager

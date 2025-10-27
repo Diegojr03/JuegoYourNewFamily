@@ -1,18 +1,19 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using System.Collections;
 
 public class GestorPuzzleSemaforos2D : MonoBehaviour
 {
-    [Header("Configuraci�n Semaforos")]
+    [Header("Configuración Semaforos")]
     public List<SemaforoPuzzle2D> semaforos = new List<SemaforoPuzzle2D>();
 
-    [Header("Configuraci�n Puzzle")]
-    [Tooltip("N�mero total de sem�foros que deben tener el bot�n ARRIBA activo")]
+    [Header("Configuración Puzzle")]
+    [Tooltip("Número total de semáforos que deben tener el botón ARRIBA activo")]
     public int requeridosArriba = 2;
-    [Tooltip("N�mero total de sem�foros que deben tener el bot�n MEDIO activo")]
+    [Tooltip("Número total de semáforos que deben tener el botón MEDIO activo")]
     public int requeridosMedio = 3;
-    [Tooltip("N�mero total de sem�foros que deben tener el bot�n ABAJO activo")]
+    [Tooltip("Número total de semáforos que deben tener el botón ABAJO activo")]
     public int requeridosAbajo = 1;
 
     [Header("Objetivos del Puzzle 2D")]
@@ -21,9 +22,9 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
     public Animator animatorPuerta;
     public string triggerAbrirPuerta = "Abrir";
 
-    [Header("Configuraci�n Jugador")]
+    [Header("Configuración Jugador")]
     public MonoBehaviour scriptMovimientoJugador; // Script que controla el movimiento del jugador
-    public MonoBehaviour scriptInputJugador; // Script que maneja el input del jugador (para frenado m�s brusco)
+    public MonoBehaviour scriptInputJugador; // Script que maneja el input del jugador (para frenado más brusco)
 
     [Header("Feedback 2D")]
     public AudioClip sonidoCompletado;
@@ -43,7 +44,7 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
 
     private bool puzzleCompletado = false;
     private AudioSource audioSource;
-    private Rigidbody2D rbJugador; // Para frenado m�s brusco
+    private Rigidbody2D rbJugador; // Para frenado más brusco
     private Vector2 velocidadAntesDeBloquear; // Guardar velocidad antes de bloquear
 
     private void Start()
@@ -56,6 +57,12 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
         if (scriptMovimientoJugador != null)
         {
             rbJugador = scriptMovimientoJugador.GetComponent<Rigidbody2D>();
+        }
+
+        // IMPORTANTE: Ocultar el panel de diálogo al inicio
+        if (panelDialogoCompletado != null)
+        {
+            panelDialogoCompletado.SetActive(false);
         }
 
         ConfigurarSemaforos();
@@ -74,7 +81,7 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Hay un sem�foro nulo en la lista del gestor!");
+                Debug.LogError("Hay un semáforo nulo en la lista del gestor!");
             }
         }
     }
@@ -104,7 +111,7 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
                 velocidadAntesDeBloquear = rbJugador.linearVelocity;
             }
 
-            // Frenado BRUSCO: detener inmediatamente el movimiento f�sico
+            // Frenado BRUSCO: detener inmediatamente el movimiento físico
             if (rbJugador != null)
             {
                 rbJugador.linearVelocity = Vector2.zero;
@@ -114,7 +121,7 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
         else
         {
             // Al desbloquear, restaurar la velocidad anterior (opcional)
-            // Si quieres que contin�e con la misma velocidad, descomenta:
+            // Si quieres que continúe con la misma velocidad, descomenta:
             // if (rbJugador != null)
             // {
             //     rbJugador.velocity = velocidadAntesDeBloquear;
@@ -127,7 +134,7 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
             scriptMovimientoJugador.enabled = !bloquear;
         }
 
-        // Bloquear/desbloquear script de input si est� asignado
+        // Bloquear/desbloquear script de input si está asignado
         if (scriptInputJugador != null)
         {
             scriptInputJugador.enabled = !bloquear;
@@ -138,12 +145,12 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
 
     private void VerificarPuzzle()
     {
-        // Contadores para cada tipo de bot�n
+        // Contadores para cada tipo de botón
         int contadorArriba = 0;
         int contadorMedio = 0;
         int contadorAbajo = 0;
 
-        // Contar cu�ntos sem�foros tienen cada bot�n activo
+        // Contar cuántos semáforos tienen cada botón activo
         foreach (var semaforo in semaforos)
         {
             if (semaforo != null)
@@ -205,24 +212,11 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
             particulasCompletado.Play();
         }
 
-        // MOSTRAR MENSAJE DE COMPLETADO
-        MostrarMensajeCompletado();
-
-        // GESTIONAR OBJETOS
-        GestionarObjetos();
-
-        // Limpiar suscripciones
-        foreach (var semaforo in semaforos)
-        {
-            if (semaforo != null)
-            {
-                semaforo.OnEstadoCambiado -= OnSemaforoCambiado;
-                semaforo.OnInterfazAbierta -= OnInterfazSemaforoAbierta;
-            }
-        }
+        // Mostrar mensaje de completado (nuevo flujo)
+        StartCoroutine(MostrarMensajeYCompletar());
     }
 
-    // NUEVO M�TODO: Desactivar todos los sem�foros
+    // NUEVO MÉTODO: Desactivar todos los semáforos
     private void DesactivarTodosLosSemaforos()
     {
         foreach (var semaforo in semaforos)
@@ -232,46 +226,39 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
                 semaforo.DesactivarSemaforo();
             }
         }
-        Debug.Log("Todos los sem�foros han sido desactivados");
-    }
-
-    [ContextMenu("Forzar Verificaci�n")]
-    public void ForzarVerificacion()
-    {
-        VerificarPuzzle();
-    }
-
-    [ContextMenu("Reiniciar Puzzle 2D")]
-    public void ReiniciarPuzzle()
-    {
-        puzzleCompletado = false;
-
-        // Reactivar todos los sem�foros
-        foreach (var semaforo in semaforos)
-        {
-            if (semaforo != null)
-            {
-                // Aqu� necesitar�amos un m�todo para reactivar los sem�foros
-                // Por ahora solo reseteamos el estado del puzzle
-                Debug.Log($"Semaforo 2D {semaforo.name} - Estado actual: Arriba:{semaforo.GetArribaActivo()}, Medio:{semaforo.GetMedioActivo()}, Abajo:{semaforo.GetAbajoActivo()}");
-            }
-        }
-
-        // Resuscribirse a eventos
-        ConfigurarSemaforos();
-        VerificarPuzzle();
+        Debug.Log("Todos los semáforos han sido desactivados");
     }
 
     private void MostrarMensajeCompletado()
     {
-        if (mostrarMensajeCompletado && panelDialogoCompletado != null && textoDialogoCompletado != null)
+        if (!mostrarMensajeCompletado)
         {
-            textoDialogoCompletado.text = mensajeCompletado;
-            panelDialogoCompletado.SetActive(true);
-
-            // Ocultar el mensaje después del tiempo configurado
-            Invoke("OcultarMensajeCompletado", tiempoMostrarMensaje);
+            Debug.Log("Mostrar mensaje completado está desactivado");
+            return;
         }
+
+        if (panelDialogoCompletado == null)
+        {
+            Debug.LogError("Panel de diálogo completado no asignado en el inspector");
+            return;
+        }
+
+        if (textoDialogoCompletado == null)
+        {
+            Debug.LogError("Texto de diálogo completado no asignado en el inspector");
+            return;
+        }
+
+        Debug.Log("Mostrando mensaje de completado: " + mensajeCompletado);
+
+        // Configurar el texto
+        textoDialogoCompletado.text = mensajeCompletado;
+
+        // Activar el panel
+        panelDialogoCompletado.SetActive(true);
+
+        // Ocultar el mensaje después del tiempo configurado
+        Invoke("OcultarMensajeCompletado", tiempoMostrarMensaje);
     }
 
     private void OcultarMensajeCompletado()
@@ -279,6 +266,7 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
         if (panelDialogoCompletado != null)
         {
             panelDialogoCompletado.SetActive(false);
+            Debug.Log("Mensaje de completado ocultado");
         }
     }
 
@@ -313,6 +301,67 @@ public class GestorPuzzleSemaforos2D : MonoBehaviour
                 Debug.Log($"Objeto destruido: {obj.name}");
             }
         }
+    }
+
+    private IEnumerator MostrarMensajeYCompletar()
+    {
+        // Mostrar panel de mensaje
+        if (mostrarMensajeCompletado && panelDialogoCompletado != null)
+        {
+            textoDialogoCompletado.text = mensajeCompletado;
+            panelDialogoCompletado.SetActive(true);
+            Debug.Log("Mostrando mensaje de completado: " + mensajeCompletado);
+        }
+
+        // Esperar el tiempo configurado
+        yield return new WaitForSeconds(tiempoMostrarMensaje);
+
+        // Ocultar el mensaje
+        if (panelDialogoCompletado != null)
+        {
+            panelDialogoCompletado.SetActive(false);
+            Debug.Log("Mensaje de completado ocultado");
+        }
+
+        // Ahora sí, gestionar los objetos (activar, desactivar o destruir)
+        GestionarObjetos();
+
+        // Limpiar eventos (evitar fugas de memoria)
+        foreach (var semaforo in semaforos)
+        {
+            if (semaforo != null)
+            {
+                semaforo.OnEstadoCambiado -= OnSemaforoCambiado;
+                semaforo.OnInterfazAbierta -= OnInterfazSemaforoAbierta;
+            }
+        }
+    }
+
+    [ContextMenu("Forzar Verificación")]
+    public void ForzarVerificacion()
+    {
+        VerificarPuzzle();
+    }
+
+    [ContextMenu("Reiniciar Puzzle 2D")]
+    public void ReiniciarPuzzle()
+    {
+        puzzleCompletado = false;
+
+        // Reactivar todos los semáforos
+        foreach (var semaforo in semaforos)
+        {
+            if (semaforo != null)
+            {
+                // Aquí necesitaríamos un método para reactivar los semáforos
+                // Por ahora solo reseteamos el estado del puzzle
+                Debug.Log($"Semaforo 2D {semaforo.name} - Estado actual: Arriba:{semaforo.GetArribaActivo()}, Medio:{semaforo.GetMedioActivo()}, Abajo:{semaforo.GetAbajoActivo()}");
+            }
+        }
+
+        // Resuscribirse a eventos
+        ConfigurarSemaforos();
+        VerificarPuzzle();
     }
 
     private void OnDestroy()

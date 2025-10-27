@@ -14,6 +14,10 @@ public class TriggerPathActivator : MonoBehaviour
     public bool faceDirection = true;
     public bool playOnce = true;
 
+    [Header("Configuración de Destrucción")]
+    public bool destroyAfterPath = false; // Destruir el objeto después del recorrido
+    public bool destroyThisObject = false; // Destruir este objeto (el que tiene el script)
+
     private bool hasPlayed = false;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -66,6 +70,20 @@ public class TriggerPathActivator : MonoBehaviour
     private void OnPathComplete()
     {
         Debug.Log($"{objectToMove.name} ha completado su recorrido.");
+
+        // Destruir el objeto que se movió si está marcado
+        if (destroyAfterPath && objectToMove != null)
+        {
+            Destroy(objectToMove);
+            Debug.Log($"Se ha destruido {objectToMove.name} después del recorrido.");
+        }
+
+        // Destruir este objeto (el que tiene el script) si está marcado
+        if (destroyThisObject)
+        {
+            Destroy(gameObject);
+            Debug.Log($"Se ha destruido el trigger {gameObject.name} después del recorrido.");
+        }
     }
 
     // Solo para visualizar en el editor

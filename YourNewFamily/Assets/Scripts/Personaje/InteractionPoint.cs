@@ -8,6 +8,7 @@ public class InteractionPoint : MonoBehaviour
     public GameObject interactPrompt; // Imagen de tecla F (diálogo)
     public float interactionDistance = 2f;
     public Vector3 promptOffset = new Vector3(0, 1f, 0);
+    public DialogueSystem dialogueSystem; // Referencia directa
 
     [Header("Configuración")]
     public KeyCode interactionKey = KeyCode.F;
@@ -27,12 +28,11 @@ public class InteractionPoint : MonoBehaviour
             interactPrompt.SetActive(false);
         }
 
-        // Asegurar que tiene Collider (NO trigger para colisión física)
-        if (GetComponent<Collider2D>() == null)
+        // Si no se asignó manualmente, buscar en el mismo objeto
+        if (dialogueSystem == null)
         {
-            gameObject.AddComponent<BoxCollider2D>();
+            dialogueSystem = GetComponent<DialogueSystem>();
         }
-        GetComponent<Collider2D>().isTrigger = false; // IMPORTANTE: colisión normal
     }
 
     void Update()
@@ -100,11 +100,15 @@ public class InteractionPoint : MonoBehaviour
 
     void StartDialogue()
     {
-        DialogueSystem dialogueSystem = FindObjectOfType<DialogueSystem>();
         if (dialogueSystem != null)
         {
             dialogueSystem.StartDialogue();
         }
+        else
+        {
+            Debug.LogError("No hay DialogueSystem asignado en " + gameObject.name);
+        }
+
     }
 
     // Métodos públicos para configuración
