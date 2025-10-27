@@ -7,7 +7,7 @@ public class InteractionPoint : MonoBehaviour
     [Header("Referencias")]
     public GameObject interactPrompt; // Imagen de tecla F (diálogo)
     public float interactionDistance = 2f;
-    public float promptOffsetY = 0.3f;
+    public Vector3 promptOffset = new Vector3(0, 1f, 0);
 
     [Header("Configuración")]
     public KeyCode interactionKey = KeyCode.F;
@@ -15,7 +15,7 @@ public class InteractionPoint : MonoBehaviour
 
     private Transform player;
     private bool canInteract = false;
-    private MovimientoPersonaje playerMovement; // Cambiado a tu script
+    private MovimientoPersonaje playerMovement;
 
     void Start()
     {
@@ -27,12 +27,12 @@ public class InteractionPoint : MonoBehaviour
             interactPrompt.SetActive(false);
         }
 
-        // Asegurar que tiene Collider (no trigger)
+        // Asegurar que tiene Collider (NO trigger para colisión física)
         if (GetComponent<Collider2D>() == null)
         {
             gameObject.AddComponent<BoxCollider2D>();
         }
-        GetComponent<Collider2D>().isTrigger = true; // Importante: colisión normal
+        GetComponent<Collider2D>().isTrigger = false; // IMPORTANTE: colisión normal
     }
 
     void Update()
@@ -41,7 +41,14 @@ public class InteractionPoint : MonoBehaviour
         {
             TriggerInteraction();
         }
+
+        // Actualizar posición del prompt en cada frame mientras esté activo
+        if (canInteract && interactPrompt != null && interactPrompt.activeInHierarchy)
+        {
+            UpdatePromptPosition();
+        }
     }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -51,11 +58,7 @@ public class InteractionPoint : MonoBehaviour
             if (interactPrompt != null)
             {
                 interactPrompt.SetActive(true);
-
-                // Mostrar el prompt justo encima del objeto
-                Vector3 worldPos = transform.position + Vector3.up * promptOffsetY;
-                Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
-                interactPrompt.transform.position = screenPos;
+                UpdatePromptPosition();
             }
         }
     }
@@ -71,6 +74,16 @@ public class InteractionPoint : MonoBehaviour
                 interactPrompt.SetActive(false);
             }
         }
+    }
+
+    void UpdatePromptPosition()
+    {
+        // Convertir posición mundial a posición en pantalla
+        Vector3 worldPosition = transform.position + promptOffset;
+        Vector3 screenPosition = Camera.main.WorldToScreenPoint(worldPosition);
+
+        // Asignar la posición al prompt
+        interactPrompt.transform.position = screenPosition;
     }
 
     void TriggerInteraction()

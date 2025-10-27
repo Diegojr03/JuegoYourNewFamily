@@ -217,6 +217,21 @@ public class DialogueSystem : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (gameObject.name == "PeterYLilith")
+        {
+            // Opción A: Si usas GameManager
+            GameManager gameManager = FindObjectOfType<GameManager>();
+            if (gameManager != null)
+            {
+                gameManager.SetTieneNieve(true);
+            }
+
+            // Opción B: Si prefieres solución simple
+            PlayerPrefs.SetInt("TieneNieve", 1);
+            PlayerPrefs.Save();
+
+            Debug.Log("¡Ahora tienes nieve!");
+        }
 
         isDialogueActive = false;
     }

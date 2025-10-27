@@ -129,67 +129,15 @@ GameObject:
   m_Component:
   - component: {fileID: 1288446}
   - component: {fileID: 1288445}
-  - component: {fileID: 1288444}
+  - component: {fileID: 1288448}
+  - component: {fileID: 1288447}
   m_Layer: 0
   m_Name: ConversacionTraperoSinNieve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1288444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1288443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textSpeed: 0.05
-  autoActivate: 0
-  autoAdvanceTime: 2
-  dialogueSections:
-  - speakerName: Trapero
-    dialogueText: "\xBFQu\xE9 haces aqu\xED fuera empapada? No me digas que el grandote
-      de la puerta no te deja entrar\u2026 jajaja"
-  - speakerName: Trapero
-    dialogueText: "Si quieres, puedo montar un esc\xE1ndalo."
-  - speakerName: Trapero
-    dialogueText: "Ya sabes, gritar, fingir que me desmayo o romper una botella\u2026
-      lo que elijas."
-  - speakerName: Trapero
-    dialogueText: "Pero eso s\xED, no trabajo gratis. \xBFNo tendr\xE1s por ah\xED
-      algo de ese nuevo producto que te deja volando?"
-  - speakerName: Lilith
-    dialogueText: "Pues no, no tengo nada de eso que tu dices que te deja volando,
-      si no ya me lo hubiese tomado yo\u2026 jajaja"
-  - speakerName: Trapero
-    dialogueText: "Venga va, por unos 5 d\xF3lares monto un esc\xE1ndalo y me llevo
-      al segurata."
-  - speakerName: Lilith
-    dialogueText: "Te vendes muy caro, \xBFqu\xE9 te crees, piensas que soy un cajero?"
-  - speakerName: Lilith
-    dialogueText: "Te vendes muy caro, \xBFqu\xE9 te crees, piensas que soy un cajero?"
-  - speakerName: Lilith
-    dialogueText: "Ugh\u2026 bueno, me lo quiero pasar bien as\xED que toma."
-  - speakerName: 
-    dialogueText: "(Entregas 5 d\xF3lares)"
-  - speakerName: 
-    dialogueText: "Muy bien, cruza a la otra acera y ver\xE1s la m\xE1gia"
-  dialoguePanel: {fileID: 1834269160}
-  speakerContainer: {fileID: 1863344623}
-  speakerText: {fileID: 1659188321}
-  dialogueText: {fileID: 78300818}
-  interactPrompt: {fileID: 1720112823}
-  promptOffset: {x: 0, y: 1, z: 0}
-  dialogueSound: {fileID: 0}
-  destroyAfterDialogue: 1
-  objectsToActivateAfter: []
-  objectsToDestroyAfter: []
+  m_IsActive: 0
 --- !u!61 &1288445
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -220,7 +168,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -234,7 +182,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
 --- !u!4 &1288446
 Transform:
@@ -245,12 +193,94 @@ Transform:
   m_GameObject: {fileID: 1288443}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.21, y: 2.4300005, z: 0}
-  m_LocalScale: {x: 0.532646, y: 0.5697963, z: 1}
+  m_LocalPosition: {x: 7.21, y: 2.4736, z: 0}
+  m_LocalScale: {x: 0.32784894, y: 0.35071534, z: 0.61551}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 651583700}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1288447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58c785d1312487d48bae41c65e986f1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterLeft: {fileID: 410075400}
+  characterRight: {fileID: 1538476114}
+  spriteLeft: {fileID: 410075399}
+  spriteRight: {fileID: 1654459072}
+  dialoguePanel: {fileID: 1834269160}
+  speakerText: {fileID: 1659188321}
+  dialogueText: {fileID: 78300818}
+  speakerContainer: {fileID: 1863344623}
+  moveSpeed: 5
+  dialogueCooldown: 0.05
+  horizontalOffsetPercent: 0.3
+  verticalOffsetPercent: 0.2
+  autoAdvanceTime: 1.5
+  dialogues:
+  - speakerName: Trapero
+    dialogueText: "\xBFQu\xE9 haces aqu\xED fuera empapada? No me digas que el grandote
+      de la puerta no te deja entrar\u2026 jajaja"
+    leftSpeaker: 1
+  - speakerName: Trapero
+    dialogueText: "Si quieres, puedo montar un esc\xE1ndalo."
+    leftSpeaker: 1
+  - speakerName: Trapero
+    dialogueText: "Ya sabes, gritar, fingir que me desmayo o romper una botella\u2026
+      lo que elijas."
+    leftSpeaker: 1
+  - speakerName: Trapero
+    dialogueText: "Pero eso s\xED, no trabajo gratis. \xBFNo tendr\xE1s por ah\xED
+      algo de ese nuevo producto que te deja volando?"
+    leftSpeaker: 1
+  - speakerName: Lilith
+    dialogueText: "Pues no, no tengo nada de eso que tu dices que te deja volando,
+      si no ya me lo hubiese tomado yo\u2026 jajaja"
+    leftSpeaker: 0
+  - speakerName: Trapero
+    dialogueText: "Venga va, por unos 5 d\xF3lares monto un esc\xE1ndalo y me llevo
+      al segurata."
+    leftSpeaker: 1
+  - speakerName: Lilith
+    dialogueText: "Te vendes muy caro, \xBFqu\xE9 te crees, piensas que soy un cajero?"
+    leftSpeaker: 0
+  - speakerName: Lilith
+    dialogueText: "Ugh\u2026 bueno, me lo quiero pasar bien as\xED que toma."
+    leftSpeaker: 0
+  - speakerName: 
+    dialogueText: "(Entregas 5 d\xF3lares)"
+    leftSpeaker: 0
+  - speakerName: Trapero
+    dialogueText: "Muy bien, cruza a la otra acera y ver\xE1s la magia"
+    leftSpeaker: 1
+  objectsToActivateAfter: []
+  objectsToDestroyAfter: []
+  destroyAfterDialogue: 1
+  autoActivate: 0
+--- !u!114 &1288448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7939d405151076242a34a8d27cc6a4a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactPrompt: {fileID: 1720112823}
+  interactionDistance: 1
+  promptOffset: {x: 0, y: 1, z: 0}
+  interactionKey: 102
+  isDialogueTrigger: 1
 --- !u!1 &31946993
 GameObject:
   m_ObjectHideFlags: 0
@@ -998,7 +1028,8 @@ MonoBehaviour:
   promptOffset: {x: 0, y: 1, z: 0}
   dialogueSound: {fileID: 0}
   destroyAfterDialogue: 1
-  objectsToActivateAfter: []
+  objectsToActivateAfter:
+  - {fileID: 1288443}
   objectsToDestroyAfter: []
 --- !u!114 &88194353
 MonoBehaviour:
@@ -2469,6 +2500,93 @@ Transform:
   m_Children: []
   m_Father: {fileID: 303747938}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &410075398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 410075400}
+  - component: {fileID: 410075399}
+  m_Layer: 0
+  m_Name: Trapero
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &410075399
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410075398}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 1208040086343421634, guid: dc11f414b2c702a4a94c2c3de4338ea0, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.16, y: 0.16}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &410075400
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410075398}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5, y: -7.72, z: 0}
+  m_LocalScale: {x: 0.374045, y: 0.374045, z: 0.374045}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &438445349
 GameObject:
   m_ObjectHideFlags: 0
@@ -2962,6 +3080,53 @@ MonoBehaviour:
   cameraMoveSpeed: 15
   targetCameraSize: 5
   cameraSizeChangeSpeed: 10
+--- !u!1 &474402256
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 474402258}
+  - component: {fileID: 474402257}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &474402257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474402256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5418e055fcbc574a84c9159fe33be31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TieneNieve: 0
+  objetoSinNieve: {fileID: 1288443}
+  objetoConNieve: {fileID: 846588585}
+--- !u!4 &474402258
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474402256}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.78532, y: 13.66615, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &482682083
 GameObject:
   m_ObjectHideFlags: 0
@@ -3028,7 +3193,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.03600718}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3038,7 +3203,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.96134233}
   m_EdgeRadius: 0
 --- !u!1 &492333762
 GameObject:
@@ -4451,7 +4616,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &651583700
 Transform:
   m_ObjectHideFlags: 0
@@ -4461,7 +4626,7 @@ Transform:
   m_GameObject: {fileID: 651583699}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: -1.66, z: 0}
+  m_LocalPosition: {x: 0.1, y: -1.725, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5448,7 +5613,8 @@ GameObject:
   m_Component:
   - component: {fileID: 846588586}
   - component: {fileID: 846588588}
-  - component: {fileID: 846588587}
+  - component: {fileID: 846588590}
+  - component: {fileID: 846588589}
   m_Layer: 0
   m_Name: ConversacionTraperoConNieve
   m_TagString: Untagged
@@ -5465,58 +5631,12 @@ Transform:
   m_GameObject: {fileID: 846588585}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.21, y: 2.4300005, z: 0}
-  m_LocalScale: {x: 0.532646, y: 0.5697963, z: 1}
+  m_LocalPosition: {x: 7.21, y: 2.4736, z: 0}
+  m_LocalScale: {x: 0.32784894, y: 0.35071534, z: 0.61551}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 651583700}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &846588587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 846588585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textSpeed: 0.05
-  autoActivate: 0
-  autoAdvanceTime: 2
-  dialogueSections:
-  - speakerName: Trapero
-    dialogueText: "\xBFQu\xE9 haces aqu\xED fuera empapada? No me digas que el grandote
-      de la puerta no te deja entrar\u2026 jajaja"
-  - speakerName: Trapero
-    dialogueText: "Si quieres, puedo montar un esc\xE1ndalo."
-  - speakerName: Trapero
-    dialogueText: "Ya sabes, gritar, fingir que me desmayo o romper una botella\u2026
-      lo que elijas."
-  - speakerName: Trapero
-    dialogueText: "Pero eso s\xED, no trabajo gratis. \xBFNo tendr\xE1s por ah\xED
-      algo de ese nuevo producto que te deja volando?"
-  - speakerName: Lilith
-    dialogueText: "Agh\u2026 En fin, quer\xEDa quedarme eso para m\xED pero esta
-      noche prefiero entretenerme de otra manera."
-  - speakerName: Lilith
-    dialogueText: "Supongo que no me quedar\xE1 otra opci\xF3n."
-  - speakerName: 
-    dialogueText: (Ya no tienes Nieve Negra)
-  - speakerName: Trapero
-    dialogueText: "Perfecto, cruza a la otra acera y ver\xE1s la magia."
-  dialoguePanel: {fileID: 1834269160}
-  speakerContainer: {fileID: 1863344623}
-  speakerText: {fileID: 1659188321}
-  dialogueText: {fileID: 78300818}
-  interactPrompt: {fileID: 1720112823}
-  promptOffset: {x: 0, y: 1, z: 0}
-  dialogueSound: {fileID: 0}
-  destroyAfterDialogue: 1
-  objectsToActivateAfter: []
-  objectsToDestroyAfter: []
 --- !u!61 &846588588
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5547,11 +5667,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.21894246}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5561,8 +5681,83 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2.8713698}
   m_EdgeRadius: 0
+--- !u!114 &846588589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846588585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58c785d1312487d48bae41c65e986f1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterLeft: {fileID: 410075400}
+  characterRight: {fileID: 1538476114}
+  spriteLeft: {fileID: 410075399}
+  spriteRight: {fileID: 1654459072}
+  dialoguePanel: {fileID: 1834269160}
+  speakerText: {fileID: 1659188321}
+  dialogueText: {fileID: 78300818}
+  speakerContainer: {fileID: 1863344623}
+  moveSpeed: 5
+  dialogueCooldown: 0.05
+  horizontalOffsetPercent: 0.3
+  verticalOffsetPercent: 0.2
+  autoAdvanceTime: 1.5
+  dialogues:
+  - speakerName: Trapero
+    dialogueText: "\xBFQu\xE9 haces aqu\xED fuera empapada? No me digas que el grandote
+      de la puerta no te deja entrar\u2026 jajaja"
+    leftSpeaker: 1
+  - speakerName: Trapero
+    dialogueText: "Si quieres, puedo montar un esc\xE1ndalo."
+    leftSpeaker: 1
+  - speakerName: Trapero
+    dialogueText: "Ya sabes, gritar, fingir que me desmayo o romper una botella\u2026
+      lo que elijas."
+    leftSpeaker: 1
+  - speakerName: Trapero
+    dialogueText: "Pero eso s\xED, no trabajo gratis. \xBFNo tendr\xE1s por ah\xED
+      algo de ese nuevo producto que te deja volando?"
+    leftSpeaker: 1
+  - speakerName: Lilith
+    dialogueText: "Agh\u2026 En fin, quer\xEDa quedarme eso para m\xED pero esta
+      noche prefiero entretenerme de otra manera."
+    leftSpeaker: 0
+  - speakerName: Lilith
+    dialogueText: "Supongo que no me quedar\xE1 otra opci\xF3n."
+    leftSpeaker: 0
+  - speakerName: 
+    dialogueText: (Ya no tienes Nieve Negra)
+    leftSpeaker: 0
+  - speakerName: Trapero
+    dialogueText: "Perfecto, cruza a la otra acera y ver\xE1s la magia."
+    leftSpeaker: 0
+  objectsToActivateAfter: []
+  objectsToDestroyAfter: []
+  destroyAfterDialogue: 1
+  autoActivate: 0
+--- !u!114 &846588590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846588585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7939d405151076242a34a8d27cc6a4a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactPrompt: {fileID: 1720112823}
+  interactionDistance: 1
+  promptOffset: {x: 0, y: 1, z: 0}
+  interactionKey: 102
+  isDialogueTrigger: 1
 --- !u!1 &866926487
 GameObject:
   m_ObjectHideFlags: 0
@@ -5839,6 +6034,7 @@ GameObject:
   m_Component:
   - component: {fileID: 946240480}
   - component: {fileID: 946240481}
+  - component: {fileID: 946240482}
   m_Layer: 0
   m_Name: Trapero
   m_TagString: Untagged
@@ -5905,7 +6101,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 7
-  m_Sprite: {fileID: 5765266049167129332, guid: 74efc49ef6c6e7842964696391a1a3e4, type: 3}
+  m_Sprite: {fileID: -299184943816940535, guid: 04a930800f0100d4eae6c8b205db5b79, type: 3}
   m_Color: {r: 0.74509805, g: 0.74509805, b: 0.74509805, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -5916,6 +6112,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &946240482
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946240479}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.091109455, y: 0.0065054893}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.36, y: 4.48}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 3.3851137, y: 4.2304783}
+  m_EdgeRadius: 0
 --- !u!1 &949560068
 GameObject:
   m_ObjectHideFlags: 0
@@ -7505,7 +7747,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1271155510
 Transform:
   m_ObjectHideFlags: 0
@@ -8438,7 +8680,7 @@ Transform:
   m_GameObject: {fileID: 1476943276}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.4, y: 10.57, z: 0}
+  m_LocalPosition: {x: -7.5, y: 10.97, z: 0}
   m_LocalScale: {x: 0.23128237, y: 0.23128237, z: 0.23128237}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8647,6 +8889,93 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 303747938}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1538476112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1538476114}
+  - component: {fileID: 1538476113}
+  m_Layer: 0
+  m_Name: LilithTrapero
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1538476113
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538476112}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 7760461825656804723, guid: d6791877d912db24696b0fa79547a1b6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.16, y: 0.16}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1538476114
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538476112}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5, y: -7.72, z: 0}
+  m_LocalScale: {x: 1.3146812, y: 1.3740538, z: 0.8481814}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1561903361
 GameObject:
@@ -9036,6 +9365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1621004146}
   - component: {fileID: 1621004147}
+  - component: {fileID: 1621004148}
   m_Layer: 0
   m_Name: Segurata
   m_TagString: Untagged
@@ -9113,6 +9443,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1621004148
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621004145}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.14, y: 4.66}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 4.14, y: 4.66}
+  m_EdgeRadius: 0
 --- !u!1 &1631850743
 GameObject:
   m_ObjectHideFlags: 0
@@ -10156,6 +10532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactPrompt: {fileID: 1720112823}
   interactionDistance: 1
+  promptOffset: {x: 0, y: 1, z: 0}
   interactionKey: 102
   isDialogueTrigger: 1
 --- !u!1 &1722583527
@@ -10422,6 +10799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactPrompt: {fileID: 1720112823}
   interactionDistance: 1
+  promptOffset: {x: 0, y: 1, z: 0}
   interactionKey: 102
   isDialogueTrigger: 1
 --- !u!61 &1724160669
@@ -13286,8 +13664,10 @@ SceneRoots:
   - {fileID: 1807184149}
   - {fileID: 438445352}
   - {fileID: 558906526}
+  - {fileID: 410075400}
   - {fileID: 2146275056}
   - {fileID: 1654459073}
+  - {fileID: 1538476114}
   - {fileID: 1036124766}
   - {fileID: 1422490185}
   - {fileID: 2137589523}
@@ -13296,3 +13676,4 @@ SceneRoots:
   - {fileID: 1015713710}
   - {fileID: 832527192}
   - {fileID: 303747938}
+  - {fileID: 474402258}
