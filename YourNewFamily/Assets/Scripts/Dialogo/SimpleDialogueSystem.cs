@@ -1,7 +1,6 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using static System.Collections.Specialized.BitVector32;
 
 [System.Serializable]
 public class DialogueSection
@@ -10,6 +9,7 @@ public class DialogueSection
     [TextArea(3, 5)]
     public string dialogueText;
 }
+
 public class SimpleDialogueSystem : MonoBehaviour
 {
     [Header("Configuración del Diálogo")]
@@ -17,10 +17,10 @@ public class SimpleDialogueSystem : MonoBehaviour
     public bool autoActivate = true;
 
     [Header("Auto Avance")]
-    public float autoAdvanceTime = 1f; // Tiempo para auto-skip (1 segundo)
+    public float autoAdvanceTime = 1f;
 
     [Header("Secciones de Diálogo")]
-    public DialogueSection[] dialogueSections; // AÑADE ESTA LÍNEA
+    public DialogueSection[] dialogueSections;
 
     [Header("Referencias UI")]
     public GameObject dialoguePanel;
@@ -31,6 +31,7 @@ public class SimpleDialogueSystem : MonoBehaviour
     [Header("Prompt de Interacción (F)")]
     public GameObject interactPrompt;
     public Vector3 promptOffset = new Vector3(0, 1f, 0);
+    public bool useWorldSpace = true; // <-- NUEVO: Opción para cambiar entre espacio mundo y UI
 
     [Header("Configuración Avanzada")]
     public AudioClip dialogueSound;
@@ -49,11 +50,25 @@ public class SimpleDialogueSystem : MonoBehaviour
     private Coroutine autoAdvanceCoroutine;
     private Rigidbody2D playerRigidbody;
     private Vector2 originalVelocity;
+    private Camera mainCamera;
+    private Canvas parentCanvas; // <-- NUEVO: Para detectar el tipo de canvas
 
     void Start()
     {
         playerMovement = FindObjectOfType<MovimientoPersonaje>();
+        mainCamera = Camera.main;
         audioSource = GetComponent<AudioSource>();
+
+        // <-- NUEVO: Detectar el canvas padre
+        if (interactPrompt != null)
+        {
+            parentCanvas = interactPrompt.GetComponentInParent<Canvas>();
+            if (parentCanvas == null)
+            {
+                parentCanvas = FindObjectOfType<Canvas>();
+            }
+        }
+
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
@@ -83,10 +98,7 @@ public class SimpleDialogueSystem : MonoBehaviour
 
     void Update()
     {
-        if (interactPrompt != null && interactPrompt.activeInHierarchy)
-        {
-            interactPrompt.transform.position = Camera.main.WorldToScreenPoint(transform.position + promptOffset);
-        }
+        UpdateInteractPromptPosition();
 
         if (!autoActivate && canInteract && Input.GetKeyDown(KeyCode.F) && !isDialogueActive)
         {
@@ -96,6 +108,30 @@ public class SimpleDialogueSystem : MonoBehaviour
         if (isDialogueActive && Input.GetKeyDown(KeyCode.Space))
         {
             AdvanceDialogue();
+        }
+    }
+
+    // <-- NUEVO: Método separado para actualizar la posición del prompt
+    void UpdateInteractPromptPosition()
+    {
+        if (interactPrompt != null && interactPrompt.activeInHierarchy)
+        {
+            if (useWorldSpace && mainCamera != null)
+            {
+                // Usar espacio mundo (como en DialogueSystem)
+                Vector3 worldPosition = transform.position + promptOffset;
+                Vector3 screenPosition = mainCamera.WorldToScreenPoint(worldPosition);
+
+                if (screenPosition.z > 0) // Solo si está frente a la cámara
+                {
+                    interactPrompt.transform.position = screenPosition;
+                }
+            }
+            else
+            {
+                // Usar espacio UI relativo al objeto
+                interactPrompt.transform.position = mainCamera.WorldToScreenPoint(transform.position + promptOffset);
+            }
         }
     }
 
@@ -113,6 +149,8 @@ public class SimpleDialogueSystem : MonoBehaviour
                 if (interactPrompt != null)
                 {
                     interactPrompt.SetActive(true);
+                    // <-- NUEVO: Forzar actualización inmediata
+                    UpdateInteractPromptPosition();
                 }
             }
         }
@@ -127,18 +165,6 @@ public class SimpleDialogueSystem : MonoBehaviour
             {
                 interactPrompt.SetActive(false);
             }
-        }
-    }
-
-    string FormatDialogueText(string text, string speaker)
-    {
-        if (!string.IsNullOrEmpty(speaker))
-        {
-            return speaker + ": " + text;
-        }
-        else
-        {
-            return text;
         }
     }
 
@@ -162,9 +188,8 @@ public class SimpleDialogueSystem : MonoBehaviour
 
         if (playerRigidbody != null)
         {
-            originalVelocity = playerRigidbody.linearVelocity; // Guardar velocidad original
-            playerRigidbody.linearVelocity = Vector2.zero; // Poner velocidad a cero
-                                                     // NO usar isKinematic = true porque afecta a las colisiones
+            originalVelocity = playerRigidbody.linearVelocity;
+            playerRigidbody.linearVelocity = Vector2.zero;
         }
 
         if (dialogueSound != null)
@@ -184,13 +209,11 @@ public class SimpleDialogueSystem : MonoBehaviour
     {
         if (lineIndex >= dialogueSections.Length) return;
 
-        // CONFIGURAR SPEAKER NAME
         if (speakerText != null)
         {
             speakerText.text = dialogueSections[lineIndex].speakerName;
         }
 
-        // MOSTRAR/OCULTAR CONTAINER SEGÚN SI HAY SPEAKER
         if (speakerContainer != null)
         {
             speakerContainer.SetActive(!string.IsNullOrEmpty(dialogueSections[lineIndex].speakerName));
@@ -205,7 +228,6 @@ public class SimpleDialogueSystem : MonoBehaviour
 
     IEnumerator TypeText(string text)
     {
-        // SOLO EL TEXTO DEL DIÁLOGO, SIN EL SPEAKER
         dialogueText.text = "";
 
         foreach (char letter in text.ToCharArray())
@@ -229,34 +251,28 @@ public class SimpleDialogueSystem : MonoBehaviour
 
     IEnumerator AutoAdvance()
     {
-        // Esperar el tiempo configurado (1 segundo por defecto)
         yield return new WaitForSeconds(autoAdvanceTime);
-
-        // Avanzar automáticamente al siguiente diálogo
         AdvanceDialogue();
     }
 
     void AdvanceDialogue()
     {
-        // Detener auto-avance si estaba activo
         if (autoAdvanceCoroutine != null)
         {
             StopCoroutine(autoAdvanceCoroutine);
             autoAdvanceCoroutine = null;
         }
 
-        // Si se está escribiendo el texto, completarlo inmediatamente
         if (typingCoroutine != null)
         {
             StopCoroutine(typingCoroutine);
-            dialogueText.text = dialogueSections[currentLine].dialogueText; // Solo el texto
+            dialogueText.text = dialogueSections[currentLine].dialogueText;
             typingCoroutine = null;
 
             StartAutoAdvance();
             return;
         }
 
-        // Pasar a la siguiente línea
         currentLine++;
 
         if (currentLine < dialogueSections.Length)
@@ -294,13 +310,11 @@ public class SimpleDialogueSystem : MonoBehaviour
             playerMovement.enabled = true;
         }
 
-        // RESTAURAR FÍSICAS DEL JUGADOR
         if (playerRigidbody != null)
         {
             playerRigidbody.linearVelocity = originalVelocity;
         }
 
-        // ACTIVAR OBJETOS (ya existente)
         foreach (GameObject obj in objectsToActivateAfter)
         {
             if (obj != null)
@@ -309,7 +323,6 @@ public class SimpleDialogueSystem : MonoBehaviour
             }
         }
 
-        // DESTRUIR OBJETOS (nuevo)
         foreach (GameObject obj in objectsToDestroyAfter)
         {
             if (obj != null)
@@ -332,7 +345,14 @@ public class SimpleDialogueSystem : MonoBehaviour
         }
     }
 
-    
+    // <-- NUEVO: Método para forzar reposicionamiento si es necesario
+    public void ForceRepositionPrompt()
+    {
+        if (interactPrompt != null && interactPrompt.activeInHierarchy)
+        {
+            UpdateInteractPromptPosition();
+        }
+    }
 
     void OnDrawGizmos()
     {
