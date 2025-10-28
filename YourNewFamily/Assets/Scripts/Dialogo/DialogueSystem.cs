@@ -12,6 +12,10 @@ public class DialogueSystem : MonoBehaviour
     public SpriteRenderer spriteLeft;
     public SpriteRenderer spriteRight;
 
+    [Header("Sprites por Defecto")]
+    public Sprite defaultLeftSprite;
+    public Sprite defaultRightSprite;
+
     [Header("UI")]
     public GameObject dialoguePanel;
     public TextMeshProUGUI speakerText; // Texto separado para el nombre
@@ -35,6 +39,7 @@ public class DialogueSystem : MonoBehaviour
         [TextArea(3, 5)]
         public string dialogueText;
         public bool leftSpeaker;
+        public Sprite characterSprite;
     }
 
     [Header("Configuración Avanzada")]
@@ -256,12 +261,36 @@ public class DialogueSystem : MonoBehaviour
         characterRight.position = rightTarget;
     }
 
-    private void HighlightCharacter(bool leftSpeaking)
+    private void HighlightCharacter(bool leftSpeaking, Sprite customSprite = null)
     {
         if (spriteLeft != null && spriteRight != null)
         {
-            spriteLeft.color = leftSpeaking ? Color.white : Color.gray;
-            spriteRight.color = leftSpeaking ? Color.gray : Color.white;
+            Vector3 targetScale = new Vector3(0.3885461f, 0.3996474f, 0.2466959f);
+
+            if (leftSpeaking)
+            {
+                // Personaje izquierdo HABLANDO - usa sprite personalizado o por defecto
+                spriteLeft.sprite = customSprite != null ? customSprite : defaultLeftSprite;
+                spriteLeft.color = Color.white;
+                characterLeft.localScale = targetScale;
+
+                // Personaje derecho EN GRIS - vuelve a su sprite por defecto
+                spriteRight.sprite = defaultRightSprite;
+                spriteRight.color = Color.gray;
+                characterRight.localScale = targetScale;
+            }
+            else
+            {
+                // Personaje derecho HABLANDO - usa sprite personalizado o por defecto
+                spriteRight.sprite = customSprite != null ? customSprite : defaultRightSprite;
+                spriteRight.color = Color.white;
+                characterRight.localScale = targetScale;
+
+                // Personaje izquierdo EN GRIS - vuelve a su sprite por defecto
+                spriteLeft.sprite = defaultLeftSprite;
+                spriteLeft.color = Color.gray;
+                characterLeft.localScale = targetScale;
+            }
         }
     }
 
@@ -280,7 +309,7 @@ public class DialogueSystem : MonoBehaviour
         }
 
         // Resaltar personaje que habla
-        HighlightCharacter(dialogue.leftSpeaker);
+        HighlightCharacter(dialogue.leftSpeaker, dialogue.characterSprite);
 
         // Mostrar texto del diálogo
         dialogueText.text = "";

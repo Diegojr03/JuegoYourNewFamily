@@ -22,6 +22,12 @@ public class TransitionPointWithFade : MonoBehaviour
     public AudioClip transitionSound;
     public float soundVolume = 1f;
 
+    [Header("Objetos a Activar después del Fade In")]
+    public GameObject[] objectsToActivateAfterFadeIn; // Se activan cuando todo está negro
+
+    [Header("Objetos a Activar al Final")]
+    public GameObject[] objectsToActivateAfter; // Objetos que se activarán al terminar la transición
+
     private Camera mainCamera;
     private bool isTransitioning = false;
     private MovimientoPersonaje playerMovement;
@@ -71,19 +77,25 @@ public class TransitionPointWithFade : MonoBehaviour
         // 2. Fade In (aparece negro)
         yield return StartCoroutine(Fade(0f, 1f, fadeDuration));
 
-        // 3. Realizar el teletransporte
+        // 3. Activar objetos después del Fade In (cuando todo está negro)
+        ActivateObjectsAfterFadeIn();
+
+        // 4. Realizar el teletransporte
         player.transform.position = targetPlayerPosition;
 
-        // 4. Mover cámara (si hay target)
+        // 5. Mover cámara (si hay target)
         if (mainCamera != null && targetRoomCenter != null)
         {
             yield return StartCoroutine(MoveCameraToRoom());
         }
 
-        // 5. Fade Out (desaparece negro)
+        // 6. Fade Out (desaparece negro)
         yield return StartCoroutine(Fade(1f, 0f, fadeDuration));
 
-        // 6. Desbloquear movimiento del jugador
+        // 7. Activar objetos al final de la transición
+        ActivateObjectsAfter();
+
+        // 8. Desbloquear movimiento del jugador
         BlockPlayerMovement(false);
 
         isTransitioning = false;
@@ -173,6 +185,38 @@ public class TransitionPointWithFade : MonoBehaviour
         }
     }
 
+    // Nuevo método para activar objetos después del Fade In
+    private void ActivateObjectsAfterFadeIn()
+    {
+        if (objectsToActivateAfterFadeIn != null && objectsToActivateAfterFadeIn.Length > 0)
+        {
+            foreach (GameObject obj in objectsToActivateAfterFadeIn)
+            {
+                if (obj != null)
+                {
+                    obj.SetActive(true);
+                    Debug.Log($"Objeto activado después del Fade In: {obj.name}");
+                }
+            }
+        }
+    }
+
+    // Método para activar objetos al final
+    private void ActivateObjectsAfter()
+    {
+        if (objectsToActivateAfter != null && objectsToActivateAfter.Length > 0)
+        {
+            foreach (GameObject obj in objectsToActivateAfter)
+            {
+                if (obj != null)
+                {
+                    obj.SetActive(true);
+                    Debug.Log($"Objeto activado al final: {obj.name}");
+                }
+            }
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log($"Trigger entered with: {other.name}, Tag: {other.tag}");
@@ -188,7 +232,7 @@ public class TransitionPointWithFade : MonoBehaviour
         }
     }
 
-    // Dibujar gizmos en el editor (igual que el anterior)
+    // Dibujar gizmos en el editor
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
