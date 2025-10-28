@@ -63,6 +63,11 @@ public class PuzzleBotonesMusicales : MonoBehaviour
     [Header("CONFIGURACI�N UI")] // NUEVO: Secci�n para configuraci�n UI
     public bool traerBotonesAlFrenteEnFaseFinal = true;
 
+    [Header("CONFIGURACIÓN FINALIZACIÓN")] // NUEVO: Sección para configuración al terminar
+    public GameObject[] objectsToActivateAfter; // Objetos a activar después de completar el puzzle
+    public GameObject[] objectsToDestroyAfter;  // Objetos a destruir después de completar el puzzle
+    public bool destroyAfterCompletion = false; // Si se debe destruir este objeto al terminar
+
     private bool estaMirando = false;
     private bool interfazAbierta = false;
     private bool puzzleCompletado = false;
@@ -527,7 +532,7 @@ public class PuzzleBotonesMusicales : MonoBehaviour
 
     private IEnumerator CompletarPuzzle()
     {
-        Debug.Log("�Bot�n correcto! Puzzle completado.");
+        Debug.Log("¡Botón correcto! Puzzle completado.");
 
         if (sonidoAcierto != null)
         {
@@ -553,7 +558,33 @@ public class PuzzleBotonesMusicales : MonoBehaviour
             Destroy(teclaEObj);
         }
 
-        Debug.Log("Puzzle completado. La m�sica contin�a reproduci�ndose.");
+        // NUEVO: Activar y destruir objetos configurados
+        foreach (GameObject obj in objectsToActivateAfter)
+        {
+            if (obj != null)
+            {
+                obj.SetActive(true);
+                Debug.Log($"Objeto activado: {obj.name}");
+            }
+        }
+
+        foreach (GameObject obj in objectsToDestroyAfter)
+        {
+            if (obj != null)
+            {
+                Destroy(obj);
+                Debug.Log($"Objeto destruido: {obj.name}");
+            }
+        }
+
+        // NUEVO: Destruir este objeto si está configurado
+        if (destroyAfterCompletion)
+        {
+            Debug.Log($"Destruyendo objeto del puzzle: {gameObject.name}");
+            Destroy(gameObject);
+        }
+
+        Debug.Log("Puzzle completado. La música continúa reproduciéndose.");
     }
 
     private void ActualizarAparienciaBoton(BotonConfig boton)
