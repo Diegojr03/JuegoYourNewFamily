@@ -2972,9 +2972,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -12949,7 +12949,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1422490184
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13309,7 +13309,7 @@ Transform:
   m_GameObject: {fileID: 1476943276}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.98, y: 27.85, z: 0}
+  m_LocalPosition: {x: 25.56, y: 28.02, z: 0}
   m_LocalScale: {x: 0.23128237, y: 0.23128237, z: 0.23128237}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18029,9 +18029,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -18399,6 +18399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1938861241}
   - component: {fileID: 1938861242}
+  - component: {fileID: 1938861243}
   m_Layer: 0
   m_Name: Mary
   m_TagString: Untagged
@@ -18476,6 +18477,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1938861243
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938861240}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.14, y: 4.66}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 4.14, y: 4.66}
+  m_EdgeRadius: 0
 --- !u!1 &1960823010
 GameObject:
   m_ObjectHideFlags: 0
@@ -18751,7 +18798,9 @@ MonoBehaviour:
   amplitudAnimacion: 0.1
   scriptMovimientoJugador: {fileID: 1476943280}
   camaraJugador: {fileID: 519420031}
+  tiempoCongeladoAlCompletar: 0.5
   activarDialogoAlCompletar: 1
+  sonidoCompletado: {fileID: 8300000, guid: bea4eddbf6863494fb75cadea0058b29, type: 3}
   panelDialogo: {fileID: 1834269160}
   textoDialogo: {fileID: 78300818}
   lineasDialogo:
@@ -18764,7 +18813,6 @@ MonoBehaviour:
   destruirDespuesDeDialogo: 1
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
-  sonidoCompletado: {fileID: 8300000, guid: bea4eddbf6863494fb75cadea0058b29, type: 3}
 --- !u!61 &2004928868
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18996,7 +19044,7 @@ MonoBehaviour:
     spriteEncendido: {fileID: -6921458515528473869, guid: a6fc59ee2ba715846a3e57bb9b84e5c0, type: 3}
     estaActivo: 0
   interfazSemaforo: {fileID: 1284702733}
-  distanciaInteraccion: 0.25
+  distanciaInteraccion: 1
   teclaInteraccion: 101
   textoInteraccion: {fileID: 0}
   spriteTeclaE: {fileID: 21300000, guid: 94cd47901f0f07747b1203ae0fdb6036, type: 3}

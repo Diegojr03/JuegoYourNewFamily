@@ -1,4 +1,4 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
 using UnityEngine.UI;
 using System;
 
@@ -14,19 +14,19 @@ public class SemaforoPuzzle2D : MonoBehaviour
         [HideInInspector] public bool estaActivo = false;
     }
 
-    [Header("ConfiguraciÛn Botones")]
+    [Header("Configuraci√≥n Botones")]
     public BotonSemaforo botonArriba;
     public BotonSemaforo botonMedio;
     public BotonSemaforo botonAbajo;
 
-    [Header("Interfaz y InteracciÛn")]
+    [Header("Interfaz y Interacci√≥n")]
     public GameObject interfazSemaforo;
     public float distanciaInteraccion = 2f;
     public KeyCode teclaInteraccion = KeyCode.E;
     public GameObject textoInteraccion;
     public Sprite spriteTeclaE;
 
-    [Header("ConfiguraciÛn Tecla E en Pantalla")]
+    [Header("Configuraci√≥n Tecla E en Pantalla")]
     public Vector3 posicionTeclaE = new Vector3(0, 1.5f, 0);
     public Vector3 escalaTeclaE = new Vector3(0.25f, 0.25f, 0.25f);
     public float velocidadAnimacion = 3f;
@@ -57,11 +57,11 @@ public class SemaforoPuzzle2D : MonoBehaviour
         if (camaraJugador == null)
             camaraJugador = Camera.main;
 
-        // Buscar jugador autom·ticamente
+        // Buscar jugador autom√°ticamente
         jugador = GameObject.FindGameObjectWithTag("Player");
         if (jugador == null)
         {
-            Debug.LogWarning("No se encontrÛ objeto con tag 'Player'.");
+            Debug.LogWarning("No se encontr√≥ objeto con tag 'Player'.");
         }
 
         if (textoInteraccion != null)
@@ -123,7 +123,7 @@ public class SemaforoPuzzle2D : MonoBehaviour
 
         ManejarInputInteraccion();
 
-        // AnimaciÛn flotante para la tecla E cuando est· visible
+        // Animaci√≥n flotante para la tecla E cuando est√° visible
         if (estaMirando && !interfazAbierta && !puzzleCompletado && spriteTeclaERenderer != null && spriteTeclaERenderer.enabled)
         {
             float offsetY = Mathf.Sin(Time.time * velocidadAnimacion) * amplitudAnimacion;
@@ -140,21 +140,21 @@ public class SemaforoPuzzle2D : MonoBehaviour
 
     private void VerificarCambiosTeclaE()
     {
-        // Verificar si cambiÛ la posiciÛn
+        // Verificar si cambi√≥ la posici√≥n
         if (teclaEObj != null && posicionTeclaE != ultimaPosicionTeclaE)
         {
             teclaEObj.transform.localPosition = posicionTeclaE;
             ultimaPosicionTeclaE = posicionTeclaE;
         }
 
-        // Verificar si cambiÛ la escala
+        // Verificar si cambi√≥ la escala
         if (teclaEObj != null && escalaTeclaE != ultimaEscalaTeclaE)
         {
             teclaEObj.transform.localScale = escalaTeclaE;
             ultimaEscalaTeclaE = escalaTeclaE;
         }
 
-        // Verificar si cambiÛ el sprite
+        // Verificar si cambi√≥ el sprite
         if (spriteTeclaERenderer != null && spriteTeclaE != ultimoSpriteTeclaE)
         {
             spriteTeclaERenderer.sprite = spriteTeclaE;
@@ -240,7 +240,7 @@ public class SemaforoPuzzle2D : MonoBehaviour
             }
         }
 
-        // Cerrar interfaz con ESC tambiÈn
+        // Cerrar interfaz con ESC tambi√©n
         if (interfazAbierta && Input.GetKeyDown(KeyCode.Escape))
         {
             CerrarInterfaz();
@@ -255,7 +255,7 @@ public class SemaforoPuzzle2D : MonoBehaviour
         MostrarInterfaz();
         MostrarTeclaE(false);
 
-        // Notificar que la interfaz se abriÛ (para bloquear movimiento)
+        // Notificar que la interfaz se abri√≥ (para bloquear movimiento)
         OnInterfazAbierta?.Invoke(true);
 
         Debug.Log($"Interfaz ABIERTA: {gameObject.name}");
@@ -266,7 +266,7 @@ public class SemaforoPuzzle2D : MonoBehaviour
         interfazAbierta = false;
         OcultarInterfaz();
 
-        // Notificar que la interfaz se cerrÛ (para desbloquear movimiento)
+        // Notificar que la interfaz se cerr√≥ (para desbloquear movimiento)
         OnInterfazAbierta?.Invoke(false);
 
         if (estaMirando && !puzzleCompletado)
@@ -305,7 +305,7 @@ public class SemaforoPuzzle2D : MonoBehaviour
             collider.enabled = false;
         }
 
-        // Notificar que la interfaz se cerrÛ
+        // Notificar que la interfaz se cerr√≥
         OnInterfazAbierta?.Invoke(false);
 
         // Destruir el objeto de la tecla E
@@ -314,10 +314,10 @@ public class SemaforoPuzzle2D : MonoBehaviour
             Destroy(teclaEObj);
         }
 
-        Debug.Log($"Sem·foro {name} desactivado");
+        Debug.Log($"Sem√°foro {name} desactivado");
     }
 
-    // MÈtodo para forzar la recreaciÛn de la tecla E
+    // M√©todo para forzar la recreaci√≥n de la tecla E
     [ContextMenu("Recrear Tecla E")]
     public void RecrearTeclaE()
     {
@@ -325,7 +325,7 @@ public class SemaforoPuzzle2D : MonoBehaviour
         Debug.Log("Tecla E recreada");
     }
 
-    // MÈtodo para actualizar manualmente la tecla E
+    // M√©todo para actualizar manualmente la tecla E
     public void ActualizarTeclaE()
     {
         if (teclaEObj != null)
@@ -343,7 +343,7 @@ public class SemaforoPuzzle2D : MonoBehaviour
         ultimoSpriteTeclaE = spriteTeclaE;
     }
 
-    // MÈtodos p˙blicos para acceder al estado
+    // M√©todos p√∫blicos para acceder al estado
     public bool GetArribaActivo() => botonArriba.estaActivo;
     public bool GetMedioActivo() => botonMedio.estaActivo;
     public bool GetAbajoActivo() => botonAbajo.estaActivo;
@@ -357,10 +357,10 @@ public class SemaforoPuzzle2D : MonoBehaviour
         Debug.Log($"Botones - Arriba: {GetArribaActivo()}, Medio: {GetMedioActivo()}, Abajo: {GetAbajoActivo()}");
         Debug.Log($"Estado - Interfaz: {interfazAbierta}, Puzzle: {puzzleCompletado}, Mirando: {estaMirando}");
         Debug.Log($"Tecla E - Renderer: {spriteTeclaERenderer != null}, Activo: {spriteTeclaERenderer != null && spriteTeclaERenderer.enabled}");
-        Debug.Log($"PosiciÛn: {posicionTeclaE}, Escala: {escalaTeclaE}");
+        Debug.Log($"Posici√≥n: {posicionTeclaE}, Escala: {escalaTeclaE}");
     }
 
-    // DetecciÛn cuando el jugador entra en el trigger
+    // Detecci√≥n cuando el jugador entra en el trigger
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (puzzleCompletado) return;
@@ -370,18 +370,18 @@ public class SemaforoPuzzle2D : MonoBehaviour
             jugador = other.gameObject;
             estaMirando = true;
             MostrarTeclaE(true);
-            Debug.Log($"Jugador entrÛ en trigger de {name}");
+            Debug.Log($"Jugador entr√≥ en trigger de {name}");
         }
     }
 
-    // DetecciÛn cuando el jugador sale del trigger
+    // Detecci√≥n cuando el jugador sale del trigger
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             estaMirando = false;
             MostrarTeclaE(false);
-            Debug.Log($"Jugador saliÛ del trigger de {name}");
+            Debug.Log($"Jugador sali√≥ del trigger de {name}");
 
             if (interfazAbierta)
             {
@@ -392,7 +392,7 @@ public class SemaforoPuzzle2D : MonoBehaviour
 
     private void OnDestroy()
     {
-        // Limpiar el objeto cuando se destruya el sem·foro
+        // Limpiar el objeto cuando se destruya el sem√°foro
         if (teclaEObj != null)
         {
             Destroy(teclaEObj);

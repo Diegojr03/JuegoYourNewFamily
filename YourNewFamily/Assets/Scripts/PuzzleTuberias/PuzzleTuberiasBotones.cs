@@ -47,8 +47,12 @@ public class PuzzleTuberiasBotones : MonoBehaviour
     [Header("REFERENCIAS")]
     public Camera camaraJugador;
 
-    [Header("DIÁLOGO AL COMPLETAR")]
+    [Header("CONFIGURACIÓN COMPLETADO")]
+    public float tiempoCongeladoAlCompletar = 1.5f;
     public bool activarDialogoAlCompletar = true;
+    public AudioClip sonidoCompletado;
+
+    [Header("DIÁLOGO AL COMPLETAR")]
     public GameObject panelDialogo;
     public TextMeshProUGUI textoDialogo;
     public string[] lineasDialogo;
@@ -58,9 +62,6 @@ public class PuzzleTuberiasBotones : MonoBehaviour
     public bool destruirDespuesDeDialogo = true;
     public GameObject speakerContainer;
     public TextMeshProUGUI speakerText;
-
-    [Header("SONIDO AL COMPLETAR")]
-    public AudioClip sonidoCompletado;
 
     private bool dialogoActivo = false;
     private int lineaActual = 0;
@@ -339,6 +340,8 @@ public class PuzzleTuberiasBotones : MonoBehaviour
 
     private bool VerificarPuzzleCompletado()
     {
+        if (puzzleCompletado) return false; // No verificar si ya está completado
+
         for (int i = 0; i < tuberias.Length; i++)
         {
             if (tuberias[i].direccionActual != tuberias[i].direccionCorrecta)
@@ -474,6 +477,24 @@ public class PuzzleTuberiasBotones : MonoBehaviour
     {
         puzzleCompletado = true;
         Debug.Log("¡Puzzle de tuberías completado!");
+
+        // Deshabilitar todos los botones para que no se puedan pulsar
+        foreach (TuberiaConfig tuberia in tuberias)
+        {
+            if (tuberia.botonTuberia != null)
+                tuberia.botonTuberia.interactable = false;
+        }
+
+        // Iniciar la pausa antes de cerrar la interfaz
+        StartCoroutine(PausaAntesDeCerrar());
+    }
+
+    private IEnumerator PausaAntesDeCerrar()
+    {
+        // Esperar el tiempo configurado en el inspector
+        yield return new WaitForSeconds(tiempoCongeladoAlCompletar);
+
+        // Ahora cerrar la interfaz y continuar con el flujo normal
         CerrarInterfaz();
 
         Collider2D collider = GetComponent<Collider2D>();
