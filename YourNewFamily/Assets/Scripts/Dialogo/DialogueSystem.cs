@@ -1,4 +1,4 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class DialogueSystem : MonoBehaviour
 {
-    [Header("Personajes del Di·logo")]
+    private BacklogManager backlogManager;
+
+    [Header("Personajes del Di√°logo")]
     public Transform characterLeft;
     public Transform characterRight;
     public SpriteRenderer spriteLeft;
@@ -18,18 +20,18 @@ public class DialogueSystem : MonoBehaviour
 
     [Header("UI")]
     public GameObject dialoguePanel;
-    public TextMeshProUGUI speakerText; // Texto separado para el nombre
+    public TextMeshProUGUI speakerText;
     public TextMeshProUGUI dialogueText;
-    public GameObject speakerContainer; // Contenedor del speaker (opcional)
+    public GameObject speakerContainer;
 
-    [Header("ConfiguraciÛn")]
+    [Header("Configuraci√≥n")]
     public float moveSpeed = 5f;
     public float dialogueCooldown = 0.05f;
     public float horizontalOffsetPercent = 0.3f;
     public float verticalOffsetPercent = 0.2f;
     public float autoAdvanceTime = 1.5f;
 
-    [Header("Di·logos")]
+    [Header("Di√°logos")]
     public List<Dialogue> dialogues = new List<Dialogue>();
 
     [System.Serializable]
@@ -42,12 +44,12 @@ public class DialogueSystem : MonoBehaviour
         public Sprite characterSprite;
     }
 
-    [Header("ConfiguraciÛn Avanzada")]
+    [Header("Configuraci√≥n Avanzada")]
     public GameObject[] objectsToActivateAfter;
     public GameObject[] objectsToDestroyAfter;
     public bool destroyAfterDialogue = false;
 
-    [Header("ActivaciÛn")]
+    [Header("Activaci√≥n")]
     public bool autoActivate = false;
 
     private bool isDialogueActive = false;
@@ -59,6 +61,10 @@ public class DialogueSystem : MonoBehaviour
     private Rigidbody2D playerRigidbody;
     private Vector2 originalVelocity;
     private bool charactersHidden = true;
+
+    // NUEVO: Para evitar reactivaciones inmediatas
+    public float reuseDelay = 0.5f;
+    private bool canReuse = true;
 
     void Start()
     {
@@ -83,6 +89,7 @@ public class DialogueSystem : MonoBehaviour
         }
 
         HideCharacters();
+        backlogManager = FindObjectOfType<BacklogManager>();
     }
 
     void HideCharacters()
@@ -92,7 +99,7 @@ public class DialogueSystem : MonoBehaviour
             CalculateHiddenPosition();
             characterLeft.position = hiddenPosition;
             characterRight.position = hiddenPosition;
-            charactersHidden = true; // <-- AÒadido
+            charactersHidden = true;
         }
     }
 
@@ -137,11 +144,11 @@ public class DialogueSystem : MonoBehaviour
 
     public void StartDialogue()
     {
-        if (!isDialogueActive && dialogues.Count > 0)
-        {
-            CalculateTargetPositions();
-            StartCoroutine(DialogueSequence());
-        }
+        if (isDialogueActive || dialogues.Count == 0 || !canReuse)
+            return;
+
+        CalculateTargetPositions();
+        StartCoroutine(DialogueSequence());
     }
 
     private IEnumerator DialogueSequence()
@@ -160,7 +167,7 @@ public class DialogueSystem : MonoBehaviour
             playerRigidbody.linearVelocity = Vector2.zero;
         }
 
-        // Mover personajes a posiciÛn si existen
+        // Mover personajes a posici√≥n si existen
         if (characterLeft != null && characterRight != null)
         {
             yield return StartCoroutine(MoveCharactersToPosition(true));
@@ -172,7 +179,7 @@ public class DialogueSystem : MonoBehaviour
             dialoguePanel.SetActive(true);
         }
 
-        // Mostrar cada di·logo
+        // Mostrar cada di√°logo
         foreach (Dialogue dialogue in dialogues)
         {
             yield return StartCoroutine(ShowDialogue(dialogue));
@@ -217,29 +224,26 @@ public class DialogueSystem : MonoBehaviour
             if (obj != null) Destroy(obj);
         }
 
-        // Destruir este objeto si est· configurado
+        // Destruir este objeto si est√° configurado
         if (destroyAfterDialogue)
         {
             Destroy(gameObject);
         }
-
-        if (gameObject.name == "PeterYLilith")
+        else
         {
-            // OpciÛn A: Si usas GameManager
-            GameManager gameManager = FindObjectOfType<GameManager>();
-            if (gameManager != null)
-            {
-                gameManager.SetTieneNieve(true);
-            }
-
-            // OpciÛn B: Si prefieres soluciÛn simple
-            PlayerPrefs.SetInt("TieneNieve", 1);
-            PlayerPrefs.Save();
-
-            Debug.Log("°Ahora tienes nieve!");
+            // üîÅ NUEVO: Permitir repetir di√°logos infinitamente.
+            // En lugar de destruir o desactivar, ponemos un peque√±o delay para evitar
+            // que el jugador lo reactive inmediatamente.
+            isDialogueActive = false;
+            StartCoroutine(AllowReuseAfterDelay());
         }
+    }
 
-        isDialogueActive = false;
+    private IEnumerator AllowReuseAfterDelay()
+    {
+        canReuse = false;
+        yield return new WaitForSeconds(reuseDelay);
+        canReuse = true;
     }
 
     private IEnumerator MoveCharactersToPosition(bool enter)
@@ -247,7 +251,7 @@ public class DialogueSystem : MonoBehaviour
         Vector2 leftTarget = enter ? leftCharacterTarget : hiddenPosition;
         Vector2 rightTarget = enter ? rightCharacterTarget : hiddenPosition;
 
-        charactersHidden = !enter; // <-- NUEVO
+        charactersHidden = !enter;
 
         while (Vector2.Distance(characterLeft.position, leftTarget) > 0.1f ||
                Vector2.Distance(characterRight.position, rightTarget) > 0.1f)
@@ -269,24 +273,20 @@ public class DialogueSystem : MonoBehaviour
 
             if (leftSpeaking)
             {
-                // Personaje izquierdo HABLANDO - usa sprite personalizado o por defecto
                 spriteLeft.sprite = customSprite != null ? customSprite : defaultLeftSprite;
                 spriteLeft.color = Color.white;
                 characterLeft.localScale = targetScale;
 
-                // Personaje derecho EN GRIS - vuelve a su sprite por defecto
                 spriteRight.sprite = defaultRightSprite;
                 spriteRight.color = Color.gray;
                 characterRight.localScale = targetScale;
             }
             else
             {
-                // Personaje derecho HABLANDO - usa sprite personalizado o por defecto
                 spriteRight.sprite = customSprite != null ? customSprite : defaultRightSprite;
                 spriteRight.color = Color.white;
                 characterRight.localScale = targetScale;
 
-                // Personaje izquierdo EN GRIS - vuelve a su sprite por defecto
                 spriteLeft.sprite = defaultLeftSprite;
                 spriteLeft.color = Color.gray;
                 characterLeft.localScale = targetScale;
@@ -296,50 +296,44 @@ public class DialogueSystem : MonoBehaviour
 
     private IEnumerator ShowDialogue(Dialogue dialogue)
     {
-        // Configurar speaker name en contenedor separado
         if (speakerText != null)
         {
             speakerText.text = dialogue.speakerName;
         }
 
-        // Mostrar/ocultar contenedor del speaker
         if (speakerContainer != null)
         {
             speakerContainer.SetActive(!string.IsNullOrEmpty(dialogue.speakerName));
         }
 
-        // Resaltar personaje que habla
+        if (backlogManager != null)
+        {
+            backlogManager.AddDialogueToBacklog(dialogue);
+        }
+
         HighlightCharacter(dialogue.leftSpeaker, dialogue.characterSprite);
 
-        // Mostrar texto del di·logo
         dialogueText.text = "";
         string fullText = dialogue.dialogueText;
 
-        // Iniciar escritura del texto
         Coroutine typingCoroutine = StartCoroutine(TypeText(fullText));
-
-        // Esperar avance del di·logo
         yield return StartCoroutine(WaitForDialogueAdvance(typingCoroutine, fullText));
+
     }
 
     private IEnumerator WaitForDialogueAdvance(Coroutine typingCoroutine, string fullText)
     {
         bool typingCompleted = false;
-        bool skipRequested = false;
 
-        // Fase 1: mientras se escribe el texto, permitir saltar con espacio
         while (!typingCompleted)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                // Saltar la escritura
-                skipRequested = true;
                 StopCoroutine(typingCoroutine);
                 dialogueText.text = fullText;
                 typingCompleted = true;
             }
 
-            // Verificar si ya terminÛ la escritura (el texto est· completo)
             if (dialogueText.text == fullText)
             {
                 typingCompleted = true;
@@ -348,7 +342,6 @@ public class DialogueSystem : MonoBehaviour
             yield return null;
         }
 
-        // Fase 2: esperar a que el jugador pulse espacio o pase el tiempo autom·tico
         float timer = 0f;
         bool inputReceived = false;
 
@@ -383,7 +376,6 @@ public class DialogueSystem : MonoBehaviour
 
     void Update()
     {
-        // Si los personajes est·n ocultos, que sigan la c·mara
         if (charactersHidden && mainCamera != null)
         {
             CalculateHiddenPosition();
@@ -394,16 +386,27 @@ public class DialogueSystem : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !isDialogueActive)
+        if (other.CompareTag("Player") && !isDialogueActive && canReuse)
         {
             if (autoActivate)
             {
                 StartDialogue();
             }
+            else
+            {
+                InteractionPromptManager.Instance?.ShowPrompt(this.GetComponent<InteractionPoint>());
+            }
         }
     }
 
-    // MÈtodo para debug visual en el editor
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            InteractionPromptManager.Instance?.HidePrompt();
+        }
+    }
+
     void OnDrawGizmosSelected()
     {
         if (mainCamera != null && Application.isPlaying)

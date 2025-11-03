@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class InteractionPoint : MonoBehaviour
 {
-    [Header("Referencias")]
-    public GameObject interactPrompt; // Imagen de tecla F (diálogo)
+    [Header("Configuración de Interacción")]
     public float interactionDistance = 2f;
     public Vector3 promptOffset = new Vector3(0, 1f, 0);
-    public DialogueSystem dialogueSystem; // Referencia directa
+    public DialogueSystem dialogueSystem; // Referencia al sistema de diálogo
 
     [Header("Configuración")]
     public KeyCode interactionKey = KeyCode.F;
@@ -20,12 +19,10 @@ public class InteractionPoint : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        playerMovement = player.GetComponent<MovimientoPersonaje>();
-
-        if (interactPrompt != null)
+        player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        if (player != null)
         {
-            interactPrompt.SetActive(false);
+            playerMovement = player.GetComponent<MovimientoPersonaje>();
         }
 
         // Si no se asignó manualmente, buscar en el mismo objeto
@@ -41,12 +38,6 @@ public class InteractionPoint : MonoBehaviour
         {
             TriggerInteraction();
         }
-
-        // Actualizar posición del prompt en cada frame mientras esté activo
-        if (canInteract && interactPrompt != null && interactPrompt.activeInHierarchy)
-        {
-            UpdatePromptPosition();
-        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -54,12 +45,7 @@ public class InteractionPoint : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             canInteract = true;
-
-            if (interactPrompt != null)
-            {
-                interactPrompt.SetActive(true);
-                UpdatePromptPosition();
-            }
+            InteractionPromptManager.Instance?.ShowPrompt(this);
         }
     }
 
@@ -68,22 +54,8 @@ public class InteractionPoint : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             canInteract = false;
-
-            if (interactPrompt != null)
-            {
-                interactPrompt.SetActive(false);
-            }
+            InteractionPromptManager.Instance?.HidePrompt();
         }
-    }
-
-    void UpdatePromptPosition()
-    {
-        // Convertir posición mundial a posición en pantalla
-        Vector3 worldPosition = transform.position + promptOffset;
-        Vector3 screenPosition = Camera.main.WorldToScreenPoint(worldPosition);
-
-        // Asignar la posición al prompt
-        interactPrompt.transform.position = screenPosition;
     }
 
     void TriggerInteraction()
@@ -102,13 +74,13 @@ public class InteractionPoint : MonoBehaviour
     {
         if (dialogueSystem != null)
         {
+            InteractionPromptManager.Instance?.HidePrompt();
             dialogueSystem.StartDialogue();
         }
         else
         {
             Debug.LogError("No hay DialogueSystem asignado en " + gameObject.name);
         }
-
     }
 
     // Métodos públicos para configuración

@@ -29,16 +29,12 @@ public class SimpleDialogueSystem : MonoBehaviour
     public TextMeshProUGUI dialogueText;
 
     [Header("Prompt de Interacción (F)")]
-    public GameObject interactPrompt;
     public Vector3 promptOffset = new Vector3(0, 1f, 0);
-    public bool useWorldSpace = true; // <-- NUEVO: Opción para cambiar entre espacio mundo y UI
 
     [Header("Configuración Avanzada")]
     public AudioClip dialogueSound;
     public bool destroyAfterDialogue = true;
     public GameObject[] objectsToActivateAfter;
-
-    [Header("Objetos a Destruir")]
     public GameObject[] objectsToDestroyAfter;
 
     private bool isDialogueActive = false;
@@ -51,23 +47,12 @@ public class SimpleDialogueSystem : MonoBehaviour
     private Rigidbody2D playerRigidbody;
     private Vector2 originalVelocity;
     private Camera mainCamera;
-    private Canvas parentCanvas; // <-- NUEVO: Para detectar el tipo de canvas
 
     void Start()
     {
         playerMovement = FindObjectOfType<MovimientoPersonaje>();
         mainCamera = Camera.main;
         audioSource = GetComponent<AudioSource>();
-
-        // <-- NUEVO: Detectar el canvas padre
-        if (interactPrompt != null)
-        {
-            parentCanvas = interactPrompt.GetComponentInParent<Canvas>();
-            if (parentCanvas == null)
-            {
-                parentCanvas = FindObjectOfType<Canvas>();
-            }
-        }
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
@@ -84,11 +69,6 @@ public class SimpleDialogueSystem : MonoBehaviour
             dialoguePanel.SetActive(false);
         }
 
-        if (interactPrompt != null)
-        {
-            interactPrompt.SetActive(false);
-        }
-
         Collider2D collider = GetComponent<Collider2D>();
         if (collider != null)
         {
@@ -98,8 +78,6 @@ public class SimpleDialogueSystem : MonoBehaviour
 
     void Update()
     {
-        UpdateInteractPromptPosition();
-
         if (!autoActivate && canInteract && Input.GetKeyDown(KeyCode.F) && !isDialogueActive)
         {
             StartDialogue();
@@ -108,30 +86,6 @@ public class SimpleDialogueSystem : MonoBehaviour
         if (isDialogueActive && Input.GetKeyDown(KeyCode.Space))
         {
             AdvanceDialogue();
-        }
-    }
-
-    // <-- NUEVO: Método separado para actualizar la posición del prompt
-    void UpdateInteractPromptPosition()
-    {
-        if (interactPrompt != null && interactPrompt.activeInHierarchy)
-        {
-            if (useWorldSpace && mainCamera != null)
-            {
-                // Usar espacio mundo (como en DialogueSystem)
-                Vector3 worldPosition = transform.position + promptOffset;
-                Vector3 screenPosition = mainCamera.WorldToScreenPoint(worldPosition);
-
-                if (screenPosition.z > 0) // Solo si está frente a la cámara
-                {
-                    interactPrompt.transform.position = screenPosition;
-                }
-            }
-            else
-            {
-                // Usar espacio UI relativo al objeto
-                interactPrompt.transform.position = mainCamera.WorldToScreenPoint(transform.position + promptOffset);
-            }
         }
     }
 
@@ -146,12 +100,7 @@ public class SimpleDialogueSystem : MonoBehaviour
             else
             {
                 canInteract = true;
-                if (interactPrompt != null)
-                {
-                    interactPrompt.SetActive(true);
-                    // <-- NUEVO: Forzar actualización inmediata
-                    UpdateInteractPromptPosition();
-                }
+                InteractionPromptManager.Instance?.ShowPrompt(this);
             }
         }
     }
@@ -161,10 +110,7 @@ public class SimpleDialogueSystem : MonoBehaviour
         if (other.CompareTag("Player") && !autoActivate)
         {
             canInteract = false;
-            if (interactPrompt != null)
-            {
-                interactPrompt.SetActive(false);
-            }
+            InteractionPromptManager.Instance?.HidePrompt();
         }
     }
 
@@ -172,14 +118,11 @@ public class SimpleDialogueSystem : MonoBehaviour
     {
         if (isDialogueActive || dialogueSections.Length == 0) return;
 
+        InteractionPromptManager.Instance?.HidePrompt();
+
         speakerContainer.SetActive(true);
         isDialogueActive = true;
         currentLine = 0;
-
-        if (interactPrompt != null)
-        {
-            interactPrompt.SetActive(false);
-        }
 
         if (playerMovement != null)
         {
@@ -337,27 +280,21 @@ public class SimpleDialogueSystem : MonoBehaviour
         }
         else
         {
-            Collider2D collider = GetComponent<Collider2D>();
-            if (collider != null)
-            {
-                collider.enabled = false;
-            }
-        }
-    }
-
-    // <-- NUEVO: Método para forzar reposicionamiento si es necesario
-    public void ForceRepositionPrompt()
-    {
-        if (interactPrompt != null && interactPrompt.activeInHierarchy)
-        {
-            UpdateInteractPromptPosition();
+            // Antes aquí se deshabilitaba el collider, provocando que no se pudiera volver a
+            // activar el diálogo. Para permitir repeticiones infinitas, NO tocamos el collider.
+            // Si en el futuro quieres impedir re-triggers inmediatos, podemos añadir un
+            // small cooldown (reuseDelay) aquí.
         }
     }
 
     void OnDrawGizmos()
     {
         Gizmos.color = autoActivate ? Color.yellow : Color.blue;
-        Gizmos.DrawWireCube(transform.position, GetComponent<Collider2D>().bounds.size);
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null)
+        {
+            Gizmos.DrawWireCube(transform.position, col.bounds.size);
+        }
 
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position + promptOffset, 0.2f);
