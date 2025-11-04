@@ -162,6 +162,15 @@ public class SimpleDialogueSystem : MonoBehaviour
             speakerContainer.SetActive(!string.IsNullOrEmpty(dialogueSections[lineIndex].speakerName));
         }
 
+        // LLAMADA AL BACKLOG MANAGER - NUEVA
+        if (BacklogManager.Instance != null)
+        {
+            BacklogManager.Instance.AddDialogueFromSimpleSystem(
+                dialogueSections[lineIndex].speakerName,
+                dialogueSections[lineIndex].dialogueText
+            );
+        }
+
         if (typingCoroutine != null)
         {
             StopCoroutine(typingCoroutine);

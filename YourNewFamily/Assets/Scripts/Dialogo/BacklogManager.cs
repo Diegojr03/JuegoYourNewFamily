@@ -9,19 +9,21 @@ public class BacklogManager : MonoBehaviour
     public GameObject backlogPanel;
     public KeyCode toggleKey = KeyCode.B;
 
-    [Header("Panel de Personajes")]
+    [Header("Panel de Personajes (LEFT)")]
     public Transform charactersPanel;
     public GameObject characterButtonPrefab;
 
-    [Header("Panel de Mensajes")]
+    [Header("Panel de Mensajes (RIGHT)")]
     public Transform messagesContent;
     public GameObject messageEntryPrefab;
     public TextMeshProUGUI selectedCharacterText;
 
     [Header("Configuración")]
     public int maxEntries = 100;
+    public Color playerColor = Color.cyan;
+    public Color npcColor = Color.white;
 
-    private List<DialogueEntry> dialogueHistory = new List<DialogueEntry>();
+    private List<DialogueEntry> allDialogueHistory = new List<DialogueEntry>();
     private Dictionary<string, List<DialogueEntry>> dialoguesByCharacter = new Dictionary<string, List<DialogueEntry>>();
     private string selectedCharacter = "Todos";
     private bool isBacklogOpen = false;
@@ -31,8 +33,6 @@ public class BacklogManager : MonoBehaviour
     {
         public string speakerName;
         public string dialogueText;
-        public bool leftSpeaker;
-        public Sprite characterSprite;
         public string timestamp;
     }
 
@@ -61,6 +61,7 @@ public class BacklogManager : MonoBehaviour
 
         // Inicializar con la opción "Todos"
         dialoguesByCharacter["Todos"] = new List<DialogueEntry>();
+        CreateCharacterButton("Todos");
     }
 
     void Update()
@@ -71,35 +72,52 @@ public class BacklogManager : MonoBehaviour
         }
     }
 
-    public void AddDialogueToBacklog(DialogueSystem.Dialogue dialogue)
+    // Método para DialogueSystem
+    public void AddDialogueFromDialogueSystem(string speakerName, string dialogueText, bool leftSpeaker)
     {
         DialogueEntry entry = new DialogueEntry
         {
-            speakerName = dialogue.speakerName,
-            dialogueText = dialogue.dialogueText,
-            leftSpeaker = dialogue.leftSpeaker,
-            characterSprite = dialogue.characterSprite,
+            speakerName = speakerName,
+            dialogueText = dialogueText,
             timestamp = System.DateTime.Now.ToString("HH:mm:ss")
         };
 
+        AddDialogueEntry(entry, speakerName);
+    }
+
+    // Método para SimpleDialogueSystem - CADA línea individual  
+    public void AddDialogueFromSimpleSystem(string speakerName, string dialogueText)
+    {
+        DialogueEntry entry = new DialogueEntry
+        {
+            speakerName = speakerName,
+            dialogueText = dialogueText,
+            timestamp = System.DateTime.Now.ToString("HH:mm:ss")
+        };
+
+        AddDialogueEntry(entry, speakerName);
+    }
+
+    private void AddDialogueEntry(DialogueEntry entry, string speakerName)
+    {
         // Agregar al historial general
-        dialogueHistory.Add(entry);
+        allDialogueHistory.Add(entry);
 
         // Limitar tamaño del historial
-        if (dialogueHistory.Count > maxEntries)
+        if (allDialogueHistory.Count > maxEntries)
         {
-            dialogueHistory.RemoveAt(0);
+            allDialogueHistory.RemoveAt(0);
         }
 
         // Agregar al diccionario por personaje
-        if (!string.IsNullOrEmpty(dialogue.speakerName))
+        if (!string.IsNullOrEmpty(speakerName))
         {
-            if (!dialoguesByCharacter.ContainsKey(dialogue.speakerName))
+            if (!dialoguesByCharacter.ContainsKey(speakerName))
             {
-                dialoguesByCharacter[dialogue.speakerName] = new List<DialogueEntry>();
-                CreateCharacterButton(dialogue.speakerName);
+                dialoguesByCharacter[speakerName] = new List<DialogueEntry>();
+                CreateCharacterButton(speakerName);
             }
-            dialoguesByCharacter[dialogue.speakerName].Add(entry);
+            dialoguesByCharacter[speakerName].Add(entry);
         }
 
         // También agregar a "Todos"
@@ -137,7 +155,7 @@ public class BacklogManager : MonoBehaviour
 
         if (selectedCharacterText != null)
         {
-            selectedCharacterText.text = $"Mensajes de: {characterName}";
+            selectedCharacterText.text = $"Conversación con: {characterName}";
         }
 
         RefreshMessagesUI();
@@ -173,81 +191,77 @@ public class BacklogManager : MonoBehaviour
 
         // Obtener mensajes según el personaje seleccionado
         List<DialogueEntry> messagesToShow = selectedCharacter == "Todos"
-            ? dialogueHistory
-            : dialoguesByCharacter.ContainsKey(selectedCharacter)
+            ? allDialogueHistory
+            : (dialoguesByCharacter.ContainsKey(selectedCharacter)
                 ? dialoguesByCharacter[selectedCharacter]
-                : new List<DialogueEntry>();
+                : new List<DialogueEntry>());
 
-        // Crear entradas para cada mensaje
-        for (int i = 0; i < messagesToShow.Count; i++)
+        // Crear entradas para cada mensaje (del más antiguo al más reciente)
+        foreach (var entry in messagesToShow)
         {
-            var entry = messagesToShow[i];
             GameObject messageObj = Instantiate(messageEntryPrefab, messagesContent);
-
-            // Configurar la entrada del mensaje
             SetupMessageEntry(messageObj, entry);
         }
 
-        // Hacer scroll al final
-        ScrollRect scrollRect = messagesContent.parent.GetComponent<ScrollRect>();
-        if (scrollRect != null)
-        {
-            Canvas.ForceUpdateCanvases();
-            scrollRect.verticalNormalizedPosition = 0f;
-        }
+        // Hacer scroll al final (mensajes más recientes)
+        ScrollToBottom();
     }
 
     private void SetupMessageEntry(GameObject messageObj, DialogueEntry entry)
     {
-        // Buscar los componentes (ajusta los nombres según tu prefab)
-        TextMeshProUGUI speakerText = messageObj.transform.Find("SpeakerText")?.GetComponent<TextMeshProUGUI>();
-        TextMeshProUGUI messageText = messageObj.transform.Find("MessageText")?.GetComponent<TextMeshProUGUI>();
+        // Buscar los componentes
+        TextMeshProUGUI speakerText = messageObj.transform.Find("SpeakerName")?.GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI messageText = messageObj.transform.Find("ContainerText/DialogueText")?.GetComponent<TextMeshProUGUI>();
         TextMeshProUGUI timeText = messageObj.transform.Find("TimeText")?.GetComponent<TextMeshProUGUI>();
-        Image speakerBackground = messageObj.transform.Find("SpeakerBackground")?.GetComponent<Image>();
-        Image characterIcon = messageObj.transform.Find("CharacterIcon")?.GetComponent<Image>();
 
-        // Configurar los textos
+        // Configurar los textos básicos
         if (speakerText != null) speakerText.text = entry.speakerName;
         if (messageText != null) messageText.text = entry.dialogueText;
         if (timeText != null) timeText.text = entry.timestamp;
 
-        // Configurar colores según el lado del speaker
-        if (speakerBackground != null)
+        // Usar el script de colores si existe
+        MessageEntryUI messageUI = messageObj.GetComponent<MessageEntryUI>();
+        if (messageUI != null)
         {
-            speakerBackground.color = entry.leftSpeaker ?
-                new Color(0.2f, 0.4f, 0.8f, 0.3f) : // Azul para izquierda
-                new Color(0.8f, 0.3f, 0.3f, 0.3f);  // Rojo para derecha
+            messageUI.Setup(entry.speakerName, entry.dialogueText, entry.timestamp);
         }
-
-        // Configurar icono del personaje si existe
-        if (characterIcon != null && entry.characterSprite != null)
+        else
         {
-            characterIcon.sprite = entry.characterSprite;
-            characterIcon.gameObject.SetActive(true);
-        }
-        else if (characterIcon != null)
-        {
-            characterIcon.gameObject.SetActive(false);
+            // Fallback: colores manuales
+            if (speakerText != null)
+            {
+                speakerText.color = (entry.speakerName == "Lilith") ? playerColor : npcColor;
+            }
         }
     }
 
-    public void ShowAllMessages()
+    private void ScrollToBottom()
     {
-        SelectCharacter("Todos");
+        Canvas.ForceUpdateCanvases();
+        ScrollRect scrollRect = messagesContent.parent.GetComponent<ScrollRect>();
+        if (scrollRect != null)
+        {
+            scrollRect.verticalNormalizedPosition = 0f;
+        }
     }
 
     public void ClearBacklog()
     {
-        dialogueHistory.Clear();
+        allDialogueHistory.Clear();
         dialoguesByCharacter.Clear();
         dialoguesByCharacter["Todos"] = new List<DialogueEntry>();
 
         // Limpiar botones de personajes (excepto "Todos")
         foreach (Transform child in charactersPanel)
         {
-            if (child.GetComponentInChildren<TextMeshProUGUI>()?.text != "Todos")
+            Button button = child.GetComponent<Button>();
+            if (button != null)
             {
-                Destroy(child.gameObject);
+                TextMeshProUGUI buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
+                if (buttonText != null && buttonText.text != "Todos")
+                {
+                    Destroy(child.gameObject);
+                }
             }
         }
 

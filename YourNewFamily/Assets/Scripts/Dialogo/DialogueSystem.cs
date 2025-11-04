@@ -306,9 +306,14 @@ public class DialogueSystem : MonoBehaviour
             speakerContainer.SetActive(!string.IsNullOrEmpty(dialogue.speakerName));
         }
 
-        if (backlogManager != null)
+        // 🎯 LLAMADA AL BACKLOG MANAGER - PARA CADA LÍNEA DE DIÁLOGO
+        if (BacklogManager.Instance != null)
         {
-            backlogManager.AddDialogueToBacklog(dialogue);
+            BacklogManager.Instance.AddDialogueFromDialogueSystem(
+                dialogue.speakerName,
+                dialogue.dialogueText,
+                dialogue.leftSpeaker
+            );
         }
 
         HighlightCharacter(dialogue.leftSpeaker, dialogue.characterSprite);
