@@ -306,13 +306,15 @@ public class DialogueSystem : MonoBehaviour
             speakerContainer.SetActive(!string.IsNullOrEmpty(dialogue.speakerName));
         }
 
-        // 🎯 LLAMADA AL BACKLOG MANAGER - PARA CADA LÍNEA DE DIÁLOGO
+        // 🎯 GUARDAR TODOS los diálogos asignados al NPC de la conversación
         if (BacklogManager.Instance != null)
         {
-            BacklogManager.Instance.AddDialogueFromDialogueSystem(
+            string conversationOwner = GetConversationOwner();
+
+            BacklogManager.Instance.AddDialogueWithConversationOwner(
                 dialogue.speakerName,
                 dialogue.dialogueText,
-                dialogue.leftSpeaker
+                conversationOwner
             );
         }
 
@@ -324,6 +326,19 @@ public class DialogueSystem : MonoBehaviour
         Coroutine typingCoroutine = StartCoroutine(TypeText(fullText));
         yield return StartCoroutine(WaitForDialogueAdvance(typingCoroutine, fullText));
 
+    }
+
+    private string GetConversationOwner()
+    {
+        // Buscar el primer NPC que habló en esta conversación
+        foreach (var dialogue in dialogues)
+        {
+            if (dialogue.leftSpeaker) // leftSpeaker = true significa NPC
+            {
+                return dialogue.speakerName;
+            }
+        }
+        return "Unknown";
     }
 
     private IEnumerator WaitForDialogueAdvance(Coroutine typingCoroutine, string fullText)
