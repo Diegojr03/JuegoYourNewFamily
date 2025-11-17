@@ -7,7 +7,10 @@ public class InteractionPoint : MonoBehaviour
     [Header("Configuración de Interacción")]
     public float interactionDistance = 2f;
     public Vector3 promptOffset = new Vector3(0, 1f, 0);
-    public DialogueSystem dialogueSystem; // Referencia al sistema de diálogo
+
+    [Header("Sistemas de Diálogo")]
+    public DialogueSystem dialogueSystem;
+    public DialogueChoiceSystem dialogueChoiceSystem;
 
     [Header("Configuración")]
     public KeyCode interactionKey = KeyCode.F;
@@ -20,16 +23,16 @@ public class InteractionPoint : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
+
         if (player != null)
-        {
             playerMovement = player.GetComponent<MovimientoPersonaje>();
-        }
 
         // Si no se asignó manualmente, buscar en el mismo objeto
         if (dialogueSystem == null)
-        {
             dialogueSystem = GetComponent<DialogueSystem>();
-        }
+
+        if (dialogueChoiceSystem == null)
+            dialogueChoiceSystem = GetComponent<DialogueChoiceSystem>();
     }
 
     void Update()
@@ -40,6 +43,7 @@ public class InteractionPoint : MonoBehaviour
         }
     }
 
+    // --- IMPORTANTE: USAS OnCollision, pero deberías usar Trigger si es diálogo ---
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -72,15 +76,23 @@ public class InteractionPoint : MonoBehaviour
 
     void StartDialogue()
     {
+        InteractionPromptManager.Instance?.HidePrompt();
+
+        // 1) PRIORIDAD: First DialogueChoiceSystem
+        if (dialogueChoiceSystem != null)
+        {
+            dialogueChoiceSystem.StartDialogue();
+            return;
+        }
+
+        // 2) Si no hay choice, usa el DialogueSystem normal
         if (dialogueSystem != null)
         {
-            InteractionPromptManager.Instance?.HidePrompt();
             dialogueSystem.StartDialogue();
+            return;
         }
-        else
-        {
-            Debug.LogError("No hay DialogueSystem asignado en " + gameObject.name);
-        }
+
+        Debug.LogError("No hay ningún sistema de diálogo asignado en " + gameObject.name);
     }
 
     // Métodos públicos para configuración

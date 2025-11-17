@@ -101,6 +101,7 @@ public class BacklogManager : MonoBehaviour
         }
     }
 
+
     // Método para añadir nuevos botones dinámicamente
     public void AddCharacterButton(Button newButton, string characterName)
     {
