@@ -54,10 +54,19 @@ public class DialogueChoiceSystem : MonoBehaviour
     public float horizontalOffsetPercent = 0.3f;
     public float verticalOffsetPercent = 0.2f;
 
+    // 🔥 NUEVO: Configuración avanzada del segundo script
+    [Header("Configuración Avanzada")]
+    public GameObject[] objectsToActivateAfter;
+    public GameObject[] objectsToDestroyAfter;
+    public bool destroyAfterDialogue = false;
+    public float reuseDelay = 0.5f;
+
     private int currentIndex = 0;
     private bool isDialogueActive = false;
     private bool typing = false;
     private bool canInteract = false;
+    private bool waitingForNextLine = false; // Control para esperar segunda pulsación
+    private bool canReuse = true; // 🔥 NUEVO: Para evitar reactivaciones inmediatas
 
     private MovimientoPersonaje playerMovement;
     private Rigidbody2D playerRb;
@@ -98,15 +107,16 @@ public class DialogueChoiceSystem : MonoBehaviour
             {
                 SkipTyping();    // Espacio 1 -> completa texto
             }
-            else if (!choicePanel.activeSelf)
+            else if (waitingForNextLine && !choicePanel.activeSelf) // Solo avanzar si estamos esperando
             {
                 // Espacio 2 -> avanzar (si no hay panel de opciones visible)
+                waitingForNextLine = false; // Dejar de esperar
                 AdvanceDialogue();
             }
         }
 
         // Activar diálogo con F
-        if (!isDialogueActive && canInteract && Input.GetKeyDown(KeyCode.F))
+        if (!isDialogueActive && canInteract && Input.GetKeyDown(KeyCode.F) && canReuse) // 🔥 MODIFICADO: Añadido canReuse
         {
             StartDialogue();
         }
@@ -117,12 +127,14 @@ public class DialogueChoiceSystem : MonoBehaviour
     // -------------------------
     public void StartDialogue()
     {
-        if (isDialogueActive || dialogueLines.Count == 0) return;
+        if (isDialogueActive || dialogueLines.Count == 0 || !canReuse) return; // 🔥 MODIFICADO: Añadido !canReuse
 
         InteractionPromptManager.Instance?.HidePrompt();
 
         currentIndex = 0;
         isDialogueActive = true;
+        waitingForNextLine = false;
+        canReuse = false; // 🔥 NUEVO: Evitar reactivación inmediata
 
         LockPlayer();
 
@@ -136,7 +148,7 @@ public class DialogueChoiceSystem : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (!isDialogueActive && other.CompareTag("Player"))
+        if (!isDialogueActive && other.CompareTag("Player") && canReuse) // 🔥 MODIFICADO: Añadido canReuse
         {
             canInteract = true;
 
@@ -157,7 +169,6 @@ public class DialogueChoiceSystem : MonoBehaviour
             InteractionPromptManager.Instance?.HidePrompt();
         }
     }
-
 
     // -------------------------
     // MOSTRAR UNA LÍNEA
@@ -198,6 +209,7 @@ public class DialogueChoiceSystem : MonoBehaviour
     IEnumerator TypeText(string text)
     {
         typing = true;
+        waitingForNextLine = false; // No estamos esperando todavía
         dialogueText.text = "";
 
         foreach (char c in text.ToCharArray())
@@ -233,7 +245,7 @@ public class DialogueChoiceSystem : MonoBehaviour
         }
 
         // No hay opciones -> esperar al siguiente espacio para avanzar
-        StartCoroutine(WaitForNextLine());
+        waitingForNextLine = true; // Ahora sí estamos esperando la segunda pulsación
     }
 
     void ShowChoices()
@@ -293,56 +305,17 @@ public class DialogueChoiceSystem : MonoBehaviour
             return;
         }
 
-        // Si hay opciones, mostrarlas; si no, esperar segundo espacio para avanzar
+        // Si hay opciones, mostrarlas; si no, esperar segunda pulsación de espacio
         if (line.choices != null && line.choices.Length > 0)
         {
             ShowChoices();
         }
         else
         {
-            // Esperar al siguiente espacio para avanzar
-            StartCoroutine(WaitForNextLine());
+            // Ahora esperamos la segunda pulsación explícitamente
+            waitingForNextLine = true;
         }
     }
-
-    // -------------------------
-    // OPCIONES
-    // -------------------------
-    /*void ShowChoicesIfNeeded()
-    {
-        DialogueLine line = dialogueLines[currentIndex];
-
-        if (line.choices != null && line.choices.Length > 0)
-        {
-            choicePanel.SetActive(true);
-
-            // borrar opciones anteriores
-            foreach (Transform child in choicesContainer)
-                Destroy(child.gameObject);
-
-            foreach (Choice choice in line.choices)
-            {
-                GameObject btnObj = Instantiate(choiceButtonPrefab, choicesContainer);
-
-                TextMeshProUGUI txt = btnObj.GetComponentInChildren<TextMeshProUGUI>();
-                txt.text = choice.choiceText;
-
-                Button btn = btnObj.GetComponent<Button>();
-                int targetIndex = choice.nextDialogueIndex;
-
-                btn.onClick.AddListener(() =>
-                {
-                    choicePanel.SetActive(false);
-                    SelectChoice(targetIndex);
-                });
-            }
-
-            return;
-        }
-
-        // No hay opciones → esperar Space para avanzar
-        StartCoroutine(WaitForNextLine());
-    }*/
 
     IEnumerator WaitForNextLine()
     {
@@ -392,11 +365,49 @@ public class DialogueChoiceSystem : MonoBehaviour
     {
         dialoguePanel.SetActive(false);
         choicePanel.SetActive(false);
+        waitingForNextLine = false;
 
         StartCoroutine(MoveCharactersToPosition(false));
 
         UnlockPlayer();
         isDialogueActive = false;
+
+        // 🔥 NUEVO: Ejecutar funcionalidades avanzadas
+        ExecuteAdvancedFunctionality();
+    }
+
+    // 🔥 NUEVO: Método para ejecutar funcionalidades avanzadas
+    void ExecuteAdvancedFunctionality()
+    {
+        // Activar objetos
+        foreach (GameObject obj in objectsToActivateAfter)
+        {
+            if (obj != null) obj.SetActive(true);
+        }
+
+        // Destruir objetos
+        foreach (GameObject obj in objectsToDestroyAfter)
+        {
+            if (obj != null) Destroy(obj);
+        }
+
+        // Destruir este objeto si está configurado
+        if (destroyAfterDialogue)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            // Permitir reutilización después de un delay
+            StartCoroutine(AllowReuseAfterDelay());
+        }
+    }
+
+    // 🔥 NUEVO: Corrutina para permitir reutilización
+    private IEnumerator AllowReuseAfterDelay()
+    {
+        yield return new WaitForSeconds(reuseDelay);
+        canReuse = true;
     }
 
     // -------------------------
