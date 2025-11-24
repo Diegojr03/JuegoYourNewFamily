@@ -16,9 +16,6 @@ public class SimpleDialogueSystem : MonoBehaviour
     public float textSpeed = 0.05f;
     public bool autoActivate = true;
 
-    [Header("Auto Avance")]
-    public float autoAdvanceTime = 1f;
-
     [Header("Secciones de Diálogo")]
     public DialogueSection[] dialogueSections;
 
@@ -43,10 +40,13 @@ public class SimpleDialogueSystem : MonoBehaviour
     private AudioSource audioSource;
     private MovimientoPersonaje playerMovement;
     private Coroutine typingCoroutine;
-    private Coroutine autoAdvanceCoroutine;
     private Rigidbody2D playerRigidbody;
     private Vector2 originalVelocity;
     private Camera mainCamera;
+
+    // 🔥 NUEVO: Variables para control de teclas
+    private bool isTyping = false;
+    private bool waitingForNextLine = false;
 
     void Start()
     {
@@ -83,9 +83,19 @@ public class SimpleDialogueSystem : MonoBehaviour
             StartDialogue();
         }
 
+        // 🔥 MODIFICADO: Comportamiento igual que DialogueChoiceSystem
         if (isDialogueActive && Input.GetKeyDown(KeyCode.Space))
         {
-            AdvanceDialogue();
+            if (isTyping)
+            {
+                SkipTyping();    // Espacio 1 -> completa texto
+            }
+            else if (waitingForNextLine) // Solo avanzar si estamos esperando
+            {
+                // Espacio 2 -> avanzar
+                waitingForNextLine = false;
+                AdvanceDialogue();
+            }
         }
     }
 
@@ -123,6 +133,8 @@ public class SimpleDialogueSystem : MonoBehaviour
         speakerContainer.SetActive(true);
         isDialogueActive = true;
         currentLine = 0;
+        waitingForNextLine = false;
+        isTyping = false;
 
         if (playerMovement != null)
         {
@@ -180,51 +192,52 @@ public class SimpleDialogueSystem : MonoBehaviour
 
     IEnumerator TypeText(string text)
     {
+        isTyping = true;
+        waitingForNextLine = false;
         dialogueText.text = "";
 
         foreach (char letter in text.ToCharArray())
         {
             dialogueText.text += letter;
+
+            // Si se skipea el typing, paramos el bucle
+            if (!isTyping)
+                break;
+
             yield return new WaitForSeconds(textSpeed);
         }
 
-        typingCoroutine = null;
-        StartAutoAdvance();
+        // Si se skipeó, aseguramos texto completo
+        dialogueText.text = text;
+
+        isTyping = false;
+
+        // Esperar segunda pulsación de espacio
+        waitingForNextLine = true;
     }
 
-    void StartAutoAdvance()
+    // 🔥 NUEVO: Método para saltar el typing
+    void SkipTyping()
     {
-        if (autoAdvanceCoroutine != null)
-        {
-            StopCoroutine(autoAdvanceCoroutine);
-        }
-        autoAdvanceCoroutine = StartCoroutine(AutoAdvance());
-    }
+        if (!isTyping) return;
 
-    IEnumerator AutoAdvance()
-    {
-        yield return new WaitForSeconds(autoAdvanceTime);
-        AdvanceDialogue();
-    }
-
-    void AdvanceDialogue()
-    {
-        if (autoAdvanceCoroutine != null)
-        {
-            StopCoroutine(autoAdvanceCoroutine);
-            autoAdvanceCoroutine = null;
-        }
+        isTyping = false;
 
         if (typingCoroutine != null)
         {
             StopCoroutine(typingCoroutine);
-            dialogueText.text = dialogueSections[currentLine].dialogueText;
             typingCoroutine = null;
-
-            StartAutoAdvance();
-            return;
         }
 
+        // Mostrar texto completo inmediatamente
+        dialogueText.text = dialogueSections[currentLine].dialogueText;
+
+        // Esperar segunda pulsación de espacio
+        waitingForNextLine = true;
+    }
+
+    void AdvanceDialogue()
+    {
         currentLine++;
 
         if (currentLine < dialogueSections.Length)
@@ -240,16 +253,13 @@ public class SimpleDialogueSystem : MonoBehaviour
     void EndDialogue()
     {
         isDialogueActive = false;
+        isTyping = false;
+        waitingForNextLine = false;
 
         if (typingCoroutine != null)
         {
             StopCoroutine(typingCoroutine);
             typingCoroutine = null;
-        }
-        if (autoAdvanceCoroutine != null)
-        {
-            StopCoroutine(autoAdvanceCoroutine);
-            autoAdvanceCoroutine = null;
         }
 
         if (dialoguePanel != null)
@@ -286,13 +296,6 @@ public class SimpleDialogueSystem : MonoBehaviour
         if (destroyAfterDialogue)
         {
             Destroy(gameObject);
-        }
-        else
-        {
-            // Antes aquí se deshabilitaba el collider, provocando que no se pudiera volver a
-            // activar el diálogo. Para permitir repeticiones infinitas, NO tocamos el collider.
-            // Si en el futuro quieres impedir re-triggers inmediatos, podemos añadir un
-            // small cooldown (reuseDelay) aquí.
         }
     }
 

@@ -232,8 +232,8 @@ public class DialogueChoiceSystem : MonoBehaviour
         // Si esta línea marca "terminar diálogo aquí", acabamos la conversación YA
         if (currentLine.endDialogueHere)
         {
-            // Ocultar paneles y terminar
-            EndDialogue();
+            // Ocultar paneles y terminar (esperando movimiento de personajes)
+            EndDialogue(); // Esto ahora llamará a la corrutina
             yield break;
         }
 
@@ -301,7 +301,7 @@ public class DialogueChoiceSystem : MonoBehaviour
         // Si la línea indica terminar diálogo -> terminar ya
         if (line.endDialogueHere)
         {
-            EndDialogue();
+            EndDialogue(); // Esto ahora llamará a la corrutina
             return;
         }
 
@@ -363,12 +363,21 @@ public class DialogueChoiceSystem : MonoBehaviour
     // -------------------------
     void EndDialogue()
     {
+        // Primero ocultamos la UI inmediatamente
         dialoguePanel.SetActive(false);
         choicePanel.SetActive(false);
         waitingForNextLine = false;
 
-        StartCoroutine(MoveCharactersToPosition(false));
+        // Iniciamos el movimiento de los personajes pero NO desactivamos todo aún
+        StartCoroutine(EndDialogueSequence());
+    }
 
+    private IEnumerator EndDialogueSequence()
+    {
+        // Esperar a que los personajes se muevan fuera de pantalla
+        yield return StartCoroutine(MoveCharactersToPosition(false));
+
+        // Solo ahora desbloqueamos al jugador y finalizamos completamente
         UnlockPlayer();
         isDialogueActive = false;
 

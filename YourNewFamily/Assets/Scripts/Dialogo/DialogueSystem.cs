@@ -345,6 +345,7 @@ public class DialogueSystem : MonoBehaviour
     {
         bool typingCompleted = false;
 
+        // Esperar a que termine el typing o se pulse espacio
         while (!typingCompleted)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -362,24 +363,15 @@ public class DialogueSystem : MonoBehaviour
             yield return null;
         }
 
-        float timer = 0f;
-        bool inputReceived = false;
-
-        while (timer < autoAdvanceTime && !inputReceived)
+        // 🔥 MODIFICADO: Esperar segunda pulsación de espacio (igual que DialogueChoiceSystem)
+        bool nextLineRequested = false;
+        while (!nextLineRequested)
         {
-            timer += Time.deltaTime;
-
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                inputReceived = true;
+                nextLineRequested = true;
             }
-
             yield return null;
-        }
-
-        if (inputReceived)
-        {
-            yield return new WaitForSeconds(0.1f);
         }
     }
 
