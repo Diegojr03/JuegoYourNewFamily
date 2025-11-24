@@ -10,9 +10,13 @@ public class MovimientoPersonaje : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
     private ControlSettings controlManager;
+    private float movimientoX;
+    private float movimientoY;
+    private Animator animator;
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         controlManager = FindObjectOfType<ControlSettings>();
 
@@ -30,6 +34,10 @@ public class MovimientoPersonaje : MonoBehaviour
 
     void Update()
     {
+        movimientoX = Input.GetAxisRaw("Horizontal");
+        movimientoY = Input.GetAxisRaw("Vertical");
+        animator.SetFloat("MovimientoX",movimientoX);
+        animator.SetFloat("MovimientoY", movimientoY);
         // Obtener input usando los controles personalizados
         movement = GetMovementInput();
         movement = movement.normalized;
@@ -57,8 +65,8 @@ public class MovimientoPersonaje : MonoBehaviour
         else
         {
             // Fallback a controles por defecto si no hay ControlManager
-            input.x = Input.GetAxisRaw("Horizontal");
-            input.y = Input.GetAxisRaw("Vertical");
+            input.x = movimientoX;
+            input.y = movimientoY;
         }
 
         return input;

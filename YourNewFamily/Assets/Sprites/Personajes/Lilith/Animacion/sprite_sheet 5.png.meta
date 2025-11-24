@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 02fd12cd799547d4298b58d4d52deb36
+guid: 9d95995204af01a4aa3f961171db1966
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2236312215111967845
-    second: lilith chibi_0
+      213: 1847800192849807265
+    second: sprite_sheet 5_0
+  - first:
+      213: 4391947968953907376
+    second: sprite_sheet 5_1
+  - first:
+      213: -394229706721061499
+    second: sprite_sheet 5_2
+  - first:
+      213: 6500093360539837838
+    second: sprite_sheet 5_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,41 +105,15 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lilith chibi_0
+      name: sprite_sheet 5_0
       rect:
         serializedVersion: 2
-        x: 27
-        y: 19
+        x: 499
+        y: 318
         width: 1944
         height: 1924
       alignment: 0
@@ -141,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 564ad947c1af80f10800000000000000
-      internalID: 2236312215111967845
+      spriteID: 1a706be3c74b4a910800000000000000
+      internalID: 1847800192849807265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet 5_1
+      rect:
+        serializedVersion: 2
+        x: 4466
+        y: 279
+        width: 1950
+        height: 1934
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b8fe71886553fc30800000000000000
+      internalID: 4391947968953907376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet 5_2
+      rect:
+        serializedVersion: 2
+        x: 8562
+        y: 330
+        width: 1931
+        height: 1928
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5851cf2ab2a678af0800000000000000
+      internalID: -394229706721061499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet 5_3
+      rect:
+        serializedVersion: 2
+        x: 12590
+        y: 282
+        width: 1922
+        height: 1931
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e852ad1f878f43a50800000000000000
+      internalID: 6500093360539837838
       vertices: []
       indices: 
       edges: []
@@ -161,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      lilith chibi_0: 2236312215111967845
+      sprite_sheet 5_0: 1847800192849807265
+      sprite_sheet 5_1: 4391947968953907376
+      sprite_sheet 5_2: -394229706721061499
+      sprite_sheet 5_3: 6500093360539837838
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
