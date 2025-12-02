@@ -35,6 +35,7 @@ public class PuzzlePeluchesSillas : MonoBehaviour
         [HideInInspector] public bool seleccionado = false;
         [HideInInspector] public Vector3 posicionOriginal;
         [HideInInspector] public Vector2 escalaOriginal;
+        [HideInInspector] public Vector3 rotacionOriginal;
     }
 
     [System.Serializable]
@@ -106,9 +107,6 @@ public class PuzzlePeluchesSillas : MonoBehaviour
     private PelucheConfig pelucheSeleccionado = null;
     private int[] colocacionesActuales = new int[4]; // -1 significa vacío
 
-    // Eventos
-    public event System.Action OnPuzzleCompletado;
-
     private void Start()
     {
         // Inicializar audio
@@ -143,6 +141,9 @@ public class PuzzlePeluchesSillas : MonoBehaviour
         // Configurar botones
         ConfigurarBotones();
 
+        // Inicializar posiciones originales
+        GuardarPosicionesOriginales();
+
         // Inicializar colocaciones
         ReiniciarColocaciones();
 
@@ -151,7 +152,7 @@ public class PuzzlePeluchesSillas : MonoBehaviour
 
     private void Update()
     {
-        // Animación tecla E
+        // **SOLO ANIMACIÓN - LA DETECCIÓN ES POR COLLIDER**
         if (estaMirando && !interfazAbierta && !puzzleCompletado && spriteTeclaERenderer != null && spriteTeclaERenderer.enabled)
         {
             float offsetY = Mathf.Sin(Time.time * velocidadAnimacion) * amplitudAnimacion;
@@ -162,7 +163,7 @@ public class PuzzlePeluchesSillas : MonoBehaviour
             }
         }
 
-        // Manejar input de interacción
+        // Manejar input de interacción (manteniendo tu lógica original)
         ManejarInputInteraccion();
     }
 
@@ -195,11 +196,6 @@ public class PuzzlePeluchesSillas : MonoBehaviour
         {
             if (peluches[i].botonPeluche != null)
             {
-                peluches[i].posicionOriginal = peluches[i].botonPeluche.transform.position;
-
-                // Guardar escala original
-                peluches[i].escalaOriginal = peluches[i].botonPeluche.transform.localScale;
-
                 // Guardar sprite original si no está asignado
                 if (peluches[i].imagenPeluche != null && peluches[i].spriteOriginal == null)
                 {
@@ -219,15 +215,12 @@ public class PuzzlePeluchesSillas : MonoBehaviour
         {
             if (sillas[i].botonSilla != null)
             {
-                // Guardar escala original de la silla
                 sillas[i].escalaOriginal = sillas[i].botonSilla.transform.localScale;
 
                 // Asegurar que la silla muestra el sprite vacío al inicio
                 if (sillas[i].imagenSilla != null && sillas[i].spriteSillaVacia != null)
                 {
                     sillas[i].imagenSilla.sprite = sillas[i].spriteSillaVacia;
-                    // Asegurar que no sea transparente
-                    sillas[i].imagenSilla.color = Color.white;
                 }
 
                 int index = i;
@@ -235,6 +228,31 @@ public class PuzzlePeluchesSillas : MonoBehaviour
 
                 // Configurar CanvasGroup
                 ConfigurarCanvasGroup(sillas[i].botonSilla.gameObject);
+            }
+        }
+    }
+
+    private void GuardarPosicionesOriginales()
+    {
+        for (int i = 0; i < peluches.Length; i++)
+        {
+            if (peluches[i].botonPeluche != null)
+            {
+                // Guardar posición original (en coordenadas del RectTransform si es UI)
+                RectTransform rectTransform = peluches[i].botonPeluche.GetComponent<RectTransform>();
+                if (rectTransform != null)
+                {
+                    peluches[i].posicionOriginal = rectTransform.anchoredPosition;
+                }
+                else
+                {
+                    peluches[i].posicionOriginal = peluches[i].botonPeluche.transform.localPosition;
+                }
+
+                peluches[i].escalaOriginal = peluches[i].botonPeluche.transform.localScale;
+                peluches[i].rotacionOriginal = peluches[i].botonPeluche.transform.localEulerAngles;
+
+                Debug.Log($"Peluche {i}: Posición original guardada: {peluches[i].posicionOriginal}");
             }
         }
     }
@@ -259,30 +277,13 @@ public class PuzzlePeluchesSillas : MonoBehaviour
         if (pelucheSeleccionado != null)
         {
             pelucheSeleccionado.seleccionado = false;
-            ActualizarAparienciaPeluche(pelucheSeleccionado, false);
         }
 
         // Seleccionar nuevo peluche
         pelucheSeleccionado = peluches[index];
         pelucheSeleccionado.seleccionado = true;
-        ActualizarAparienciaPeluche(pelucheSeleccionado, true);
-
-        // Sonido de selección
-        if (sonidoSeleccion != null)
-            audioSource.PlayOneShot(sonidoSeleccion);
 
         Debug.Log($"Peluche {index} seleccionado");
-    }
-
-    private void ActualizarAparienciaPeluche(PelucheConfig peluche, bool seleccionado)
-    {
-        if (peluche.imagenPeluche != null)
-        {
-            // Cambiar transparencia cuando está seleccionado
-            Color color = peluche.imagenPeluche.color;
-            color.a = seleccionado ? 0.7f : 1f;
-            peluche.imagenPeluche.color = color;
-        }
     }
 
     private void IntentarColocarEnSilla(int sillaIndex)
@@ -327,22 +328,18 @@ public class PuzzlePeluchesSillas : MonoBehaviour
         // Obtener el sprite correcto del peluche según la orientación de la silla
         Sprite spritePelucheEnSilla = ObtenerSpritePelucheParaSilla(peluche, sillas[sillaIndex].orientacion);
 
-        // **1. OCULTAR EL PELUCHE ORIGINAL** - ya no lo necesitamos visible
+        // 1. OCULTAR EL PELUCHE ORIGINAL EN EL PANEL
         if (peluche.imagenPeluche != null)
         {
             peluche.imagenPeluche.enabled = false;
         }
 
-        // **2. CAMBIAR EL SPRITE DE LA SILLA (NO EL PELUCHE)**
+        // 2. CAMBIAR EL SPRITE DE LA SILLA
         if (spritePelucheEnSilla != null && sillas[sillaIndex].imagenSilla != null)
         {
-            // Cambiar el sprite de la IMAGEN DE LA SILLA (no del peluche)
             sillas[sillaIndex].imagenSilla.sprite = spritePelucheEnSilla;
 
-            // **ARREGLAR TRANSPARENCIA** - asegurar color blanco sólido
-            sillas[sillaIndex].imagenSilla.color = Color.white;
-
-            // **ARREGLAR ESCALA** - usar la escala original de la silla
+            // Mantener la escala original
             if (sillas[sillaIndex].botonSilla != null)
             {
                 sillas[sillaIndex].botonSilla.transform.localScale = sillas[sillaIndex].escalaOriginal;
@@ -351,12 +348,20 @@ public class PuzzlePeluchesSillas : MonoBehaviour
             Debug.Log($"Silla {sillaIndex} cambió a sprite con peluche (orientación: {sillas[sillaIndex].orientacion})");
         }
 
-        // Mover el peluche a la posición de la silla (aunque esté oculto)
-        if (peluche.botonPeluche != null && sillas[sillaIndex].botonSilla != null)
+        // Mover el botón del peluche fuera de la pantalla (pero mantenerlo en el canvas para el reinicio)
+        if (peluche.botonPeluche != null)
         {
-            peluche.botonPeluche.transform.position = sillas[sillaIndex].botonSilla.transform.position;
-            // Restaurar escala original del peluche
-            peluche.botonPeluche.transform.localScale = peluche.escalaOriginal;
+            // Moverlo a una posición fuera de la vista pero mantenerlo en el panel
+            RectTransform rectTransform = peluche.botonPeluche.GetComponent<RectTransform>();
+            if (rectTransform != null)
+            {
+                // Mover fuera de la pantalla pero mantener en la jerarquía del canvas
+                rectTransform.anchoredPosition = new Vector2(-1000, -1000);
+            }
+            else
+            {
+                peluche.botonPeluche.transform.position = new Vector3(-1000, -1000, 0);
+            }
         }
 
         // Desactivar botón de la silla
@@ -375,13 +380,10 @@ public class PuzzlePeluchesSillas : MonoBehaviour
         if (sonidoColocacion != null)
             audioSource.PlayOneShot(sonidoColocacion);
 
-        // Actualizar apariencia del peluche deseleccionado
-        ActualizarAparienciaPeluche(peluche, false);
-
         // Deseleccionar peluche
         pelucheSeleccionado = null;
 
-        Debug.Log($"Peluche {pelucheIndex} colocado en silla {sillaIndex} (orientación: {sillas[sillaIndex].orientacion})");
+        Debug.Log($"Peluche {pelucheIndex} colocado en silla {sillaIndex}");
     }
 
     private Sprite ObtenerSpritePelucheParaSilla(PelucheConfig peluche, OrientacionSilla orientacion)
@@ -392,8 +394,6 @@ public class PuzzlePeluchesSillas : MonoBehaviour
             return peluche.spriteOriginal;
         }
 
-        // **CORRECCIÓN DEL BUG: Obtener sprite CORRECTO según orientación**
-        // Esto debe devolver el sprite del peluche SENTADO en esa orientación específica
         switch (orientacion)
         {
             case OrientacionSilla.Arriba:
@@ -483,11 +483,9 @@ public class PuzzlePeluchesSillas : MonoBehaviour
         {
             collider.enabled = false;
         }
-
-        OnPuzzleCompletado?.Invoke();
     }
 
-    // FUNCIÓN ÚNICA PARA MOSTRAR MENSAJES
+    // FUNCIÓN ÚNICA PARA MOSTRAR MENSAJES - IGUAL QUE EN TU VERSIÓN ORIGINAL
     private IEnumerator MostrarMensajeConDelay(string mensaje, bool esIncorrecto)
     {
         yield return new WaitForSeconds(delayAntesDeMensaje);
@@ -572,18 +570,47 @@ public class PuzzlePeluchesSillas : MonoBehaviour
             if (peluche.botonPeluche != null)
             {
                 peluche.botonPeluche.interactable = true;
-                peluche.botonPeluche.transform.position = peluche.posicionOriginal;
+
+                // Restaurar posición, escala y rotación originales
+                RectTransform rectTransform = peluche.botonPeluche.GetComponent<RectTransform>();
+                if (rectTransform != null)
+                {
+                    rectTransform.anchoredPosition = (Vector2)peluche.posicionOriginal;
+                }
+                else
+                {
+                    peluche.botonPeluche.transform.localPosition = peluche.posicionOriginal;
+                }
+
                 peluche.botonPeluche.transform.localScale = peluche.escalaOriginal;
+                peluche.botonPeluche.transform.localEulerAngles = peluche.rotacionOriginal;
+
+                // Asegurarnos de que el CanvasGroup esté activo
+                CanvasGroup canvasGroup = peluche.botonPeluche.GetComponent<CanvasGroup>();
+                if (canvasGroup != null)
+                {
+                    canvasGroup.alpha = 1f;
+                    canvasGroup.interactable = true;
+                    canvasGroup.blocksRaycasts = true;
+                }
+
+                Debug.Log($"Peluche restaurado a posición: {peluche.posicionOriginal}");
             }
 
             if (peluche.imagenPeluche != null)
             {
+                // IMPORTANTE: Habilitar la imagen del peluche
+                peluche.imagenPeluche.enabled = true;
+
+                // Restaurar el sprite original
                 if (peluche.spriteOriginal != null)
                 {
                     peluche.imagenPeluche.sprite = peluche.spriteOriginal;
                 }
-                peluche.imagenPeluche.color = Color.white; // Restaurar color
-                peluche.imagenPeluche.enabled = true; // Volver a mostrar
+                else if (peluche.imagenPeluche.sprite == null)
+                {
+                    Debug.LogWarning("Peluche no tiene sprite original asignado");
+                }
             }
         }
 
@@ -597,15 +624,20 @@ public class PuzzlePeluchesSillas : MonoBehaviour
             {
                 silla.botonSilla.interactable = true;
                 silla.botonSilla.transform.localScale = silla.escalaOriginal;
+
+                // Asegurarnos de que el CanvasGroup esté activo
+                CanvasGroup canvasGroup = silla.botonSilla.GetComponent<CanvasGroup>();
+                if (canvasGroup != null)
+                {
+                    canvasGroup.alpha = 1f;
+                    canvasGroup.interactable = true;
+                    canvasGroup.blocksRaycasts = true;
+                }
             }
 
-            if (silla.imagenSilla != null)
+            if (silla.imagenSilla != null && silla.spriteSillaVacia != null)
             {
-                if (silla.spriteSillaVacia != null)
-                {
-                    silla.imagenSilla.sprite = silla.spriteSillaVacia;
-                }
-                silla.imagenSilla.color = Color.white; // Asegurar color blanco sólido
+                silla.imagenSilla.sprite = silla.spriteSillaVacia;
             }
         }
 
@@ -624,7 +656,7 @@ public class PuzzlePeluchesSillas : MonoBehaviour
         }
     }
 
-    // MÉTODOS COPIADOS DEL PUZZLE4BOTONES PARA MANEJAR COLLIDER Y TECLA E
+    // **MÉTODOS PARA MANEJAR COLLIDER Y TECLA E - COMO EN PUZZLE4BOTONES2D**
 
     private void MostrarTeclaE(bool mostrar)
     {
@@ -675,11 +707,16 @@ public class PuzzlePeluchesSillas : MonoBehaviour
         BloquearMovimientoJugador(false);
 
         // Reiniciar puzzle si se cierra sin completar
-        if (!puzzleCompletado && pelucheSeleccionado != null)
+        if (!puzzleCompletado)
         {
-            pelucheSeleccionado.seleccionado = false;
-            ActualizarAparienciaPeluche(pelucheSeleccionado, false);
-            pelucheSeleccionado = null;
+            if (pelucheSeleccionado != null)
+            {
+                pelucheSeleccionado.seleccionado = false;
+                pelucheSeleccionado = null;
+            }
+
+            // Opcional: puedes reiniciar completamente si quieres
+            // ReiniciarPuzzle();
         }
 
         if (estaMirando && !puzzleCompletado)
@@ -733,8 +770,7 @@ public class PuzzlePeluchesSillas : MonoBehaviour
         }
     }
 
-    // MÉTODOS DE DETECCIÓN POR COLLIDER (¡ESTOS SON LOS IMPORTANTES!)
-
+    // **¡ESTOS SON LOS MÉTODOS IMPORTANTES DEL PUZZLE4BOTONES2D!**
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (puzzleCompletado) return;
@@ -820,23 +856,5 @@ public class PuzzlePeluchesSillas : MonoBehaviour
         MostrarTeclaE(false);
 
         Debug.Log("Puzzle de peluches reiniciado completamente");
-    }
-
-    [ContextMenu("Forzar Completar Puzzle")]
-    public void ForzarCompletarPuzzle()
-    {
-        // Colocar cada peluche en su silla correcta
-        for (int i = 0; i < 4; i++)
-        {
-            int pelucheId = combinacionCorrecta[i];
-            if (pelucheId >= 0 && pelucheId < peluches.Length &&
-                i >= 0 && i < sillas.Length)
-            {
-                ColocarPelucheEnSilla(peluches[pelucheId], i);
-            }
-        }
-
-        CompletarPuzzle();
-        Debug.Log("Puzzle forzado a completarse");
     }
 }
