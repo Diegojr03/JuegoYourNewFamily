@@ -147,6 +147,9 @@ public class DialogueSystem : MonoBehaviour
         if (isDialogueActive || dialogues.Count == 0 || !canReuse)
             return;
 
+        charactersHidden = false;
+        
+
         CalculateTargetPositions();
         StartCoroutine(DialogueSequence());
     }
@@ -154,6 +157,7 @@ public class DialogueSystem : MonoBehaviour
     private IEnumerator DialogueSequence()
     {
         isDialogueActive = true;
+        charactersHidden = false;
 
         // Bloquear movimiento del jugador
         if (playerMovement != null)
@@ -251,7 +255,18 @@ public class DialogueSystem : MonoBehaviour
         Vector2 leftTarget = enter ? leftCharacterTarget : hiddenPosition;
         Vector2 rightTarget = enter ? rightCharacterTarget : hiddenPosition;
 
-        charactersHidden = !enter;
+        // Solo marcamos como ocultos cuando terminamos de bajar
+        // No inmediatamente al empezar la animación
+        if (!enter)
+        {
+            // 🆕 Asegurar que HiddenPosition esté actualizada antes de bajar
+            CalculateHiddenPosition();
+            leftTarget = hiddenPosition;
+            rightTarget = hiddenPosition;
+        }
+
+        // NO marcamos charactersHidden aquí todavía
+        // Solo al final de la animación si es para ocultar
 
         while (Vector2.Distance(characterLeft.position, leftTarget) > 0.1f ||
                Vector2.Distance(characterRight.position, rightTarget) > 0.1f)
@@ -263,6 +278,12 @@ public class DialogueSystem : MonoBehaviour
 
         characterLeft.position = leftTarget;
         characterRight.position = rightTarget;
+
+        // 🆕 Solo marcamos como ocultos después de terminar la animación de bajada
+        if (!enter)
+        {
+            charactersHidden = true;
+        }
     }
 
     private void HighlightCharacter(bool leftSpeaking, Sprite customSprite = null)
@@ -388,11 +409,23 @@ public class DialogueSystem : MonoBehaviour
 
     void Update()
     {
-        if (charactersHidden && mainCamera != null)
+        /*if (charactersHidden && mainCamera != null)
         {
             CalculateHiddenPosition();
             characterLeft.position = hiddenPosition;
             characterRight.position = hiddenPosition;
+        }*/
+
+        if (charactersHidden && mainCamera != null && !isDialogueActive)
+        {
+            // Solo mover suavemente cuando están ocultos y NO estamos en diálogo
+            CalculateHiddenPosition();
+
+            // Usar Lerp para movimiento suave, no teleportación
+            if (characterLeft != null)
+                characterLeft.position = Vector2.Lerp(characterLeft.position, hiddenPosition, moveSpeed * Time.deltaTime);
+            if (characterRight != null)
+                characterRight.position = Vector2.Lerp(characterRight.position, hiddenPosition, moveSpeed * Time.deltaTime);
         }
     }
 
