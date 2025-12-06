@@ -25,8 +25,14 @@ public class TransitionPointWithFade : MonoBehaviour
     [Header("Objetos a Activar después del Fade In")]
     public GameObject[] objectsToActivateAfterFadeIn; // Se activan cuando todo está negro
 
+    [Header("Objetos a Destruir después del Fade In")]
+    public GameObject[] objectsToDestroyAfterFadeIn; // Se destruyen cuando todo está negro
+
     [Header("Objetos a Activar al Final")]
     public GameObject[] objectsToActivateAfter; // Objetos que se activarán al terminar la transición
+
+    [Header("Objetos a Destruir al Final")]
+    public GameObject[] objectsToDestroyAfter; // Objetos que se destruirán al terminar la transición
 
     private Camera mainCamera;
     private bool isTransitioning = false;
@@ -77,8 +83,9 @@ public class TransitionPointWithFade : MonoBehaviour
         // 2. Fade In (aparece negro)
         yield return StartCoroutine(Fade(0f, 1f, fadeDuration));
 
-        // 3. Activar objetos después del Fade In (cuando todo está negro)
+        // 3. Activar y destruir objetos después del Fade In (cuando todo está negro)
         ActivateObjectsAfterFadeIn();
+        DestroyObjectsAfterFadeIn();
 
         // 4. Realizar el teletransporte
         player.transform.position = targetPlayerPosition;
@@ -92,8 +99,9 @@ public class TransitionPointWithFade : MonoBehaviour
         // 6. Fade Out (desaparece negro)
         yield return StartCoroutine(Fade(1f, 0f, fadeDuration));
 
-        // 7. Activar objetos al final de la transición
+        // 7. Activar y destruir objetos al final de la transición
         ActivateObjectsAfter();
+        DestroyObjectsAfter();
 
         // 8. Desbloquear movimiento del jugador
         BlockPlayerMovement(false);
@@ -185,7 +193,7 @@ public class TransitionPointWithFade : MonoBehaviour
         }
     }
 
-    // Nuevo método para activar objetos después del Fade In
+    // Método para activar objetos después del Fade In
     private void ActivateObjectsAfterFadeIn()
     {
         if (objectsToActivateAfterFadeIn != null && objectsToActivateAfterFadeIn.Length > 0)
@@ -196,6 +204,22 @@ public class TransitionPointWithFade : MonoBehaviour
                 {
                     obj.SetActive(true);
                     Debug.Log($"Objeto activado después del Fade In: {obj.name}");
+                }
+            }
+        }
+    }
+
+    // Método para destruir objetos después del Fade In
+    private void DestroyObjectsAfterFadeIn()
+    {
+        if (objectsToDestroyAfterFadeIn != null && objectsToDestroyAfterFadeIn.Length > 0)
+        {
+            foreach (GameObject obj in objectsToDestroyAfterFadeIn)
+            {
+                if (obj != null)
+                {
+                    Destroy(obj);
+                    Debug.Log($"Objeto destruido después del Fade In: {obj.name}");
                 }
             }
         }
@@ -212,6 +236,22 @@ public class TransitionPointWithFade : MonoBehaviour
                 {
                     obj.SetActive(true);
                     Debug.Log($"Objeto activado al final: {obj.name}");
+                }
+            }
+        }
+    }
+
+    // Método para destruir objetos al final
+    private void DestroyObjectsAfter()
+    {
+        if (objectsToDestroyAfter != null && objectsToDestroyAfter.Length > 0)
+        {
+            foreach (GameObject obj in objectsToDestroyAfter)
+            {
+                if (obj != null)
+                {
+                    Destroy(obj);
+                    Debug.Log($"Objeto destruido al final: {obj.name}");
                 }
             }
         }
