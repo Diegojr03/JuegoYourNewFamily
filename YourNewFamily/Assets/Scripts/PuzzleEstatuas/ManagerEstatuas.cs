@@ -7,16 +7,14 @@ public class ManagerPuzleEstatuas : MonoBehaviour
     public Estatua[] estatuas; // Asignar las 4 estatuas en el inspector
     public Estatua.Direccion[] solucionCorrecta; // La combinación ganadora
 
-    [Header("Referencias Puerta")]
-    public SpriteRenderer puertaSpriteRenderer;
-    public Sprite puertaCerrada;
-    public Sprite puertaAbierta;
-    public Collider2D colliderPuerta; // Collider para bloquear el paso
-
     [Header("Efectos Visuales")]
     public ParticleSystem particulasExito;
     public AudioSource audioSource;
     public AudioClip sonidoApertura;
+
+    [Header("Objetos a mostrar / ocultar al resolver")]
+    public GameObject objetoQueAparece;
+    public GameObject objetoQueDesaparece;
 
     private bool puzleResuelto = false;
 
@@ -39,17 +37,6 @@ public class ManagerPuzleEstatuas : MonoBehaviour
         {
             estatuas[i].estatuaID = i;
             estatuas[i].OnDireccionCambiada += OnEstatuaRotada;
-        }
-
-        // Configurar la puerta inicialmente cerrada
-        if (puertaSpriteRenderer != null && puertaCerrada != null)
-        {
-            puertaSpriteRenderer.sprite = puertaCerrada;
-        }
-
-        if (colliderPuerta != null)
-        {
-            colliderPuerta.enabled = true;
         }
 
         // Verificar estado inicial
@@ -104,16 +91,13 @@ public class ManagerPuzleEstatuas : MonoBehaviour
     {
         puzleResuelto = true;
 
-        // Abrir puerta
-        if (puertaSpriteRenderer != null && puertaAbierta != null)
-        {
-            puertaSpriteRenderer.sprite = puertaAbierta;
-        }
+        // Mostrar uno
+        if (objetoQueAparece != null)
+            objetoQueAparece.SetActive(true);
 
-        if (colliderPuerta != null)
-        {
-            colliderPuerta.enabled = false;
-        }
+        // Ocultar otro
+        if (objetoQueDesaparece != null)
+            objetoQueDesaparece.SetActive(false);
 
         // Efectos de sonido
         if (audioSource != null && sonidoApertura != null)
@@ -144,17 +128,7 @@ public class ManagerPuzleEstatuas : MonoBehaviour
     public void ReiniciarPuzle()
     {
         puzleResuelto = false;
-
-        // Cerrar puerta
-        if (puertaSpriteRenderer != null && puertaCerrada != null)
-        {
-            puertaSpriteRenderer.sprite = puertaCerrada;
-        }
-
-        if (colliderPuerta != null)
-        {
-            colliderPuerta.enabled = true;
-        }
+        
 
         // Reiniciar estatuas
         for (int i = 0; i < estatuas.Length; i++)
