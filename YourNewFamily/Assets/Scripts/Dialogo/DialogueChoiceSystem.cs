@@ -76,6 +76,7 @@ public class DialogueChoiceSystem : MonoBehaviour
     private Vector2 leftCharacterTarget;
     private Vector2 rightCharacterTarget;
     private Vector2 hiddenPosition;
+    private bool charactersHidden = true; // 🆕 NUEVO: Para controlar cuando están ocultos
 
     private Coroutine typingCoroutine;
 
@@ -100,6 +101,19 @@ public class DialogueChoiceSystem : MonoBehaviour
 
     void Update()
     {
+        // 🆕 MODIFICADO: Personajes siguen a la cámara suavemente cuando están ocultos
+        // 🆕 MODIFICADO: Personajes siguen a la cámara suavemente cuando están ocultos
+        if (charactersHidden && mainCamera != null && !isDialogueActive)
+        {
+            CalculateHiddenPosition();
+
+            // Usar Lerp para movimiento suave, no teleportación
+            if (characterLeft != null)
+                characterLeft.position = Vector2.Lerp(characterLeft.position, hiddenPosition, moveSpeed * Time.deltaTime);
+            if (characterRight != null)
+                characterRight.position = Vector2.Lerp(characterRight.position, hiddenPosition, moveSpeed * Time.deltaTime);
+        }
+
         // Espacio: primero completa typewriter, la segunda vez avanza (si no hay opciones mostradas)
         if (isDialogueActive && Input.GetKeyDown(KeyCode.Space))
         {
@@ -122,6 +136,16 @@ public class DialogueChoiceSystem : MonoBehaviour
         }
     }
 
+    void CalculateHiddenPosition()
+    {
+        if (mainCamera == null) return;
+
+        Vector3 bottom = mainCamera.ViewportToWorldPoint(new Vector3(0.5f, 0f));
+        float height = mainCamera.orthographicSize * 2f;
+
+        hiddenPosition = new Vector2(bottom.x, bottom.y - height);
+    }
+
     // -------------------------
     // INICIO DEL DIÁLOGO
     // -------------------------
@@ -139,6 +163,9 @@ public class DialogueChoiceSystem : MonoBehaviour
         LockPlayer();
 
         dialoguePanel.SetActive(true);
+
+        // 🆕 Asegurar que no están marcados como ocultos
+        charactersHidden = false;
 
         CalculateTargetPositions();
         StartCoroutine(MoveCharactersToPosition(true));
@@ -464,6 +491,14 @@ public class DialogueChoiceSystem : MonoBehaviour
         Vector2 leftTarget = enter ? leftCharacterTarget : hiddenPosition;
         Vector2 rightTarget = enter ? rightCharacterTarget : hiddenPosition;
 
+        if (!enter)
+        {
+            // 🆕 Asegurar que HiddenPosition esté actualizada antes de bajar
+            CalculateHiddenPosition();
+            leftTarget = hiddenPosition;
+            rightTarget = hiddenPosition;
+        }
+
         while (Vector2.Distance(characterLeft.position, leftTarget) > 0.1f ||
                Vector2.Distance(characterRight.position, rightTarget) > 0.1f)
         {
@@ -474,18 +509,26 @@ public class DialogueChoiceSystem : MonoBehaviour
 
         characterLeft.position = leftTarget;
         characterRight.position = rightTarget;
+
+        // 🆕 Solo marcamos como ocultos después de terminar la animación de bajada
+        if (!enter)
+        {
+            charactersHidden = true;
+        }
+        else
+        {
+            charactersHidden = false;
+        }
     }
 
     void HideCharacters()
     {
         if (mainCamera == null) return;
 
-        Vector3 bottom = mainCamera.ViewportToWorldPoint(new Vector3(0.5f, 0f));
-        float height = mainCamera.orthographicSize * 2f;
-
-        hiddenPosition = new Vector2(bottom.x, bottom.y - height);
+        CalculateHiddenPosition(); // Usa el nuevo método
         characterLeft.position = hiddenPosition;
         characterRight.position = hiddenPosition;
+        charactersHidden = true; // 🆕 Asegurar que están marcados como ocultos
     }
 
     // -------------------------

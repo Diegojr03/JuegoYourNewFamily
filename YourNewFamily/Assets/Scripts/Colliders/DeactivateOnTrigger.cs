@@ -3,39 +3,45 @@ using System.Collections.Generic;
 
 public class DeactivateOnTrigger : MonoBehaviour
 {
-    [Header("Objetos a Desactivar")]
+    [Header("Objetos a ACTIVAR")]
+    public List<GameObject> objectsToActivate = new List<GameObject>();
+
+    [Header("Objetos a DESACTIVAR")]
     public List<GameObject> objectsToDeactivate = new List<GameObject>();
 
     [Header("Configuración")]
-    public bool destroyThisAfterDeactivate = false;
+    public bool destroyAfterTrigger = false;
     public bool showDebug = true;
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
-        {
-            // Desactivar todos los objetos de la lista
-            foreach (GameObject obj in objectsToDeactivate)
-            {
-                if (obj != null)
-                {
-                    obj.SetActive(false);
-                    if (showDebug)
-                    {
-                        Debug.Log($"Objeto desactivado: {obj.name}");
-                    }
-                }
-            }
+        if (!other.CompareTag("Player")) return;
 
-            // Destruir este objeto si está configurado
-            if (destroyThisAfterDeactivate)
+        // Activar objetos
+        foreach (var obj in objectsToActivate)
+        {
+            if (obj != null)
             {
-                if (showDebug)
-                {
-                    Debug.Log($"Destruyendo: {gameObject.name}");
-                }
-                Destroy(gameObject);
+                obj.SetActive(true);
+                if (showDebug) Debug.Log("Activado: " + obj.name);
             }
+        }
+
+        // Desactivar objetos
+        foreach (var obj in objectsToDeactivate)
+        {
+            if (obj != null)
+            {
+                obj.SetActive(false);
+                if (showDebug) Debug.Log("Desactivado: " + obj.name);
+            }
+        }
+
+        // Destruir el trigger si se desea
+        if (destroyAfterTrigger)
+        {
+            if (showDebug) Debug.Log("Destruyendo trigger: " + gameObject.name);
+            Destroy(gameObject);
         }
     }
 }
