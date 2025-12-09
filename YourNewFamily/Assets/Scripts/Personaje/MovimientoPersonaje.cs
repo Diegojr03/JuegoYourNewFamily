@@ -34,10 +34,20 @@ public class MovimientoPersonaje : MonoBehaviour
 
     void Update()
     {
+        // 🔥 VERIFICAR SI ESTE SCRIPT ESTÁ DESACTIVADO
+        if (!enabled)
+        {
+            // Si el script está desactivado, cancelar animación
+            animator.SetFloat("MovimientoX", 0);
+            animator.SetFloat("MovimientoY", 0);
+            return; // Salir temprano, no procesar más input
+        }
+
         movimientoX = Input.GetAxisRaw("Horizontal");
         movimientoY = Input.GetAxisRaw("Vertical");
-        animator.SetFloat("MovimientoX",movimientoX);
+        animator.SetFloat("MovimientoX", movimientoX);
         animator.SetFloat("MovimientoY", movimientoY);
+
         // Obtener input usando los controles personalizados
         movement = GetMovementInput();
         movement = movement.normalized;
@@ -74,6 +84,17 @@ public class MovimientoPersonaje : MonoBehaviour
 
     void FixedUpdate()
     {
+        // 🔥 TAMBIÉN VERIFICAR EN FIXEDUPDATE
+        if (!enabled)
+        {
+            // Si el script está desactivado, detener movimiento físico
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector2.zero;
+            }
+            return; // Salir temprano, no procesar más movimiento
+        }
+
         if (rb != null)
         {
             rb.linearVelocity = movement * moveSpeed;
@@ -82,6 +103,28 @@ public class MovimientoPersonaje : MonoBehaviour
         {
             transform.Translate(movement * moveSpeed * Time.fixedDeltaTime);
         }
+    }
+
+    // 🔥 NUEVO: Cuando se desactiva el script, también cancelar animación
+    void OnDisable()
+    {
+        if (animator != null)
+        {
+            animator.SetFloat("MovimientoX", 0);
+            animator.SetFloat("MovimientoY", 0);
+        }
+
+        // También detener movimiento físico al desactivar
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+        }
+    }
+
+    // 🔥 NUEVO: Cuando se activa el script, restaurar valores si es necesario
+    void OnEnable()
+    {
+        // Puedes agregar lógica de reinicio aquí si es necesario
     }
 
     // Detectar colisión con los objetos de transición
