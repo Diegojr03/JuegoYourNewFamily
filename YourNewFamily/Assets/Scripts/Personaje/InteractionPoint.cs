@@ -62,6 +62,24 @@ public class InteractionPoint : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            canInteract = true;
+            InteractionPromptManager.Instance?.ShowPrompt(this);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            canInteract = false;
+            InteractionPromptManager.Instance?.HidePrompt();
+        }
+    }
+
     void TriggerInteraction()
     {
         if (isDialogueTrigger)
