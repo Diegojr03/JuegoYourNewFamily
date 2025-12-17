@@ -2521,8 +2521,8 @@ Transform:
   m_GameObject: {fileID: 83407610}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.355, y: -1.906, z: 0}
-  m_LocalScale: {x: 0.022473447, y: 0.026208967, z: 0.040379725}
+  m_LocalPosition: {x: -2.3549, y: -1.906, z: 0}
+  m_LocalScale: {x: 0.028653644, y: 0.026208967, z: 0.040379725}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 470136899}
@@ -13245,6 +13245,7 @@ Transform:
   - {fileID: 1390948123}
   - {fileID: 19368394}
   - {fileID: 83407611}
+  - {fileID: 1021020568}
   - {fileID: 661371369}
   - {fileID: 1818855822}
   - {fileID: 1478617557}
@@ -17547,6 +17548,7 @@ Transform:
   - {fileID: 1923475968}
   - {fileID: 933943057}
   - {fileID: 1600009913}
+  - {fileID: 2133653338}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!68 &596204580
@@ -27088,6 +27090,111 @@ MonoBehaviour:
   maxEntries: 100
   playerColor: {r: 0, g: 1, b: 1, a: 1}
   npcColor: {r: 0.4327802, g: 0.764151, b: 0.28475437, a: 1}
+--- !u!1 &1021020567
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1021020568}
+  - component: {fileID: 1021020570}
+  - component: {fileID: 1021020569}
+  m_Layer: 0
+  m_Name: EntrarACasaDespues
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1021020568
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021020567}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.3549, y: -1.906, z: 0}
+  m_LocalScale: {x: 0.028653644, y: 0.026208967, z: 0.040379725}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 470136899}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1021020569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021020567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea45d6ed3fa5364684eaeb1968283a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRoomCenter: {fileID: 1427526966}
+  targetPlayerPosition: {x: -86.31, y: 26.88}
+  transitionName: Casas-Habitacion
+  cameraMoveSpeed: 10
+  targetCameraSize: 6
+  cameraSizeChangeSpeed: 2
+  fadeDuration: 1
+  fadeImage: {fileID: 184573629}
+  transitionSound: {fileID: 0}
+  soundVolume: 1
+  objectsToActivateAfterFadeIn: []
+  objectsToDestroyAfterFadeIn: []
+  objectsToActivateAfter: []
+  objectsToDestroyAfter: []
+--- !u!61 &1021020570
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021020567}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.023160934, y: 0.059047937}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 12.18, y: 14.86}
+    newSize: {x: 19.457987, y: 19.24}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 11.577353, y: 15.301853}
+  m_EdgeRadius: 0
 --- !u!1 &1023493338
 GameObject:
   m_ObjectHideFlags: 0
@@ -38486,7 +38593,7 @@ Transform:
   m_GameObject: {fileID: 1476943276}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.87, y: 28, z: 0}
+  m_LocalPosition: {x: -60.06, y: 18.59, z: 0}
   m_LocalScale: {x: 0.055475388, y: 0.055475388, z: 0.055475388}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -39906,9 +40013,11 @@ MonoBehaviour:
   - {fileID: 503323344}
   objectsToDestroyAfterFadeIn:
   - {fileID: 810055769}
-  objectsToActivateAfter: []
+  objectsToActivateAfter:
+  - {fileID: 1021020567}
   objectsToDestroyAfter:
   - {fileID: 1531094266}
+  - {fileID: 83407610}
 --- !u!1 &1533909864
 GameObject:
   m_ObjectHideFlags: 0
@@ -42350,9 +42459,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1600009913}
   - component: {fileID: 1600009915}
-  - component: {fileID: 1600009914}
+  - component: {fileID: 1600009916}
   m_Layer: 0
-  m_Name: FINDELACTO2
+  m_Name: FinDelActo2(SegundaSemilla)
   m_TagString: Transition
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42373,21 +42482,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 596204579}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1600009914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600009912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 273032ca86f2f8a428b98a7687308846, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: FinDelJuego
-  transitionSound: {fileID: 0}
-  fadeNegro: {fileID: 635668902}
 --- !u!61 &1600009915
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42434,6 +42528,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.22949865, y: 1.8251481}
   m_EdgeRadius: 0
+--- !u!114 &1600009916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600009912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textSpeed: 0.05
+  autoActivate: 1
+  dialogueSections:
+  - speakerName: 
+    dialogueText: Has enterrado la chapa de Bortis
+  dialoguePanel: {fileID: 1834269160}
+  speakerContainer: {fileID: 1863344623}
+  speakerText: {fileID: 1659188321}
+  dialogueText: {fileID: 78300818}
+  promptOffset: {x: 0, y: 1, z: 0}
+  dialogueSound: {fileID: 0}
+  destroyAfterDialogue: 1
+  objectsToActivateAfter:
+  - {fileID: 2133653337}
+  objectsToDestroyAfter: []
 --- !u!1 &1601734014
 GameObject:
   m_ObjectHideFlags: 0
@@ -57178,6 +57299,104 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132846737}
   m_CullTransparentMesh: 1
+--- !u!1 &2133653337
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2133653338}
+  - component: {fileID: 2133653340}
+  - component: {fileID: 2133653341}
+  m_Layer: 0
+  m_Name: MisionVuelveATuCasa
+  m_TagString: Transition
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2133653338
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133653337}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.4847, y: 1.1844, z: 0.08205679}
+  m_LocalScale: {x: 28.919521, y: 2.3781142, z: 1.4542713}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 596204579}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2133653340
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133653337}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.07601051, y: 0.67176616}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.22949865, y: 1.8251481}
+  m_EdgeRadius: 0
+--- !u!114 &2133653341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133653337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoNuevo: "Vuelve a tu caba\xF1a para descansar"
+  uiText: {fileID: 570216618}
+  duracionRevelado: 1.2
+  escalaInicial: 0.7
+  escalaFinal: 1
+  sacudidaIntensidad: 0.3
+  sacudidaDuracion: 0.15
 --- !u!1 &2134384428
 GameObject:
   m_ObjectHideFlags: 0
