@@ -17,6 +17,11 @@ public class DialogueChoiceSystem : MonoBehaviour
         public bool endDialogueHere = false;  // 🔥 NUEVO
 
         public Choice[] choices;
+
+        public bool giveItemAfterThisLine = false;
+        public string itemIdToGive = "";
+        public string itemNameToGive = "";
+        public Sprite itemIconToGive = null;
     }
 
     [System.Serializable]
@@ -25,6 +30,13 @@ public class DialogueChoiceSystem : MonoBehaviour
         public string choiceText;
         public int nextDialogueIndex = -1; // -1 = terminar diálogo
     }
+
+    [Header("Sistema de Inventario")]
+    public GameObject itemToAddToInventory; // Prefab del item a añadir
+    public Sprite inventoryItemIcon; // Icono alternativo si no hay prefab
+    public string inventoryItemId = "item_default";
+    public string inventoryItemName = "Nuevo Item";
+
 
     [Header("Diálogos")]
     public List<DialogueLine> dialogueLines = new List<DialogueLine>();
@@ -219,15 +231,50 @@ public class DialogueChoiceSystem : MonoBehaviour
             );
         }
 
+
+
         HighlightCharacter(line.leftSpeaker, line.characterSprite);
 
         if (typingCoroutine != null)
             StopCoroutine(typingCoroutine);
 
         typingCoroutine = StartCoroutine(TypeText(line.dialogueText));
-        return;
 
+        if (line.giveItemAfterThisLine)
+        {
+            GiveInventoryItem(
+                line.itemIdToGive,
+                line.itemNameToGive,
+                line.itemIconToGive
+            );
+        }
+
+        return;
         // Si hay opciones, se mostrarán después
+    }
+
+    private void GiveInventoryItem(string itemId, string itemName, Sprite itemIcon)
+    {
+        if (InventorySystem.Instance != null && !string.IsNullOrEmpty(itemId))
+        {
+            // Si tenemos un prefab asignado en el inspector
+            if (itemToAddToInventory != null)
+            {
+                InventorySystem.Instance.AddItemFromPrefab(itemToAddToInventory);
+            }
+            else if (itemIcon != null) // Si tenemos un icono específico
+            {
+                InventorySystem.Instance.AddSimpleItem(itemId, itemName, itemIcon);
+            }
+            else // Usar las configuraciones del script
+            {
+                InventorySystem.Instance.AddSimpleItem(
+                    inventoryItemId,
+                    inventoryItemName,
+                    inventoryItemIcon
+                );
+            }
+        }
     }
 
     // -------------------------

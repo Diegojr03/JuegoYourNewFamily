@@ -8,10 +8,21 @@ public class DialogueSection
     public string speakerName = "";
     [TextArea(3, 5)]
     public string dialogueText;
+
+    public bool giveItemAfterThisLine = false;
+    public string itemIdToGive = "";
+    public string itemNameToGive = "";
+    public Sprite itemIconToGive = null;
 }
 
 public class SimpleDialogueSystem : MonoBehaviour
 {
+    [Header("Sistema de Inventario")]
+    public GameObject itemToAddToInventory; // Prefab del item a añadir
+    public Sprite inventoryItemIcon; // Icono alternativo si no hay prefab
+    public string inventoryItemId = "item_default";
+    public string inventoryItemName = "Nuevo Item";
+
     [Header("Configuración del Diálogo")]
     public float textSpeed = 0.05f;
     public bool autoActivate = true;
@@ -182,12 +193,44 @@ public class SimpleDialogueSystem : MonoBehaviour
                 dialogueSections[lineIndex].dialogueText
             );
         }*/
+        if (dialogueSections[lineIndex].giveItemAfterThisLine)
+        {
+            GiveInventoryItem(
+                dialogueSections[lineIndex].itemIdToGive,
+                dialogueSections[lineIndex].itemNameToGive,
+                dialogueSections[lineIndex].itemIconToGive
+            );
+        }
 
         if (typingCoroutine != null)
         {
             StopCoroutine(typingCoroutine);
         }
         typingCoroutine = StartCoroutine(TypeText(dialogueSections[lineIndex].dialogueText));
+    }
+
+    private void GiveInventoryItem(string itemId, string itemName, Sprite itemIcon)
+    {
+        if (InventorySystem.Instance != null && !string.IsNullOrEmpty(itemId))
+        {
+            // Si tenemos un prefab asignado en el inspector
+            if (itemToAddToInventory != null)
+            {
+                InventorySystem.Instance.AddItemFromPrefab(itemToAddToInventory);
+            }
+            else if (itemIcon != null) // Si tenemos un icono específico
+            {
+                InventorySystem.Instance.AddSimpleItem(itemId, itemName, itemIcon);
+            }
+            else // Usar las configuraciones del script
+            {
+                InventorySystem.Instance.AddSimpleItem(
+                    inventoryItemId,
+                    inventoryItemName,
+                    inventoryItemIcon
+                );
+            }
+        }
     }
 
     IEnumerator TypeText(string text)
