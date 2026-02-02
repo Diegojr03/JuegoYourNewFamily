@@ -41245,7 +41245,7 @@ Transform:
   m_GameObject: {fileID: 1476943276}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.01, y: 11.53, z: 0}
+  m_LocalPosition: {x: -68.87, y: 68.36, z: 0}
   m_LocalScale: {x: 0.055475388, y: 0.055475388, z: 0.055475388}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45194,7 +45194,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1600009913
 Transform:
   m_ObjectHideFlags: 0
@@ -45204,8 +45204,8 @@ Transform:
   m_GameObject: {fileID: 1600009912}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.739652, y: 1.7257966, z: 0.08205679}
-  m_LocalScale: {x: 19.119081, y: 1.572203, z: 0.9614382}
+  m_LocalPosition: {x: -2.33, y: 2.58, z: 0.08205679}
+  m_LocalScale: {x: 12.188415, y: 1.572203, z: 0.9614382}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 596204579}
@@ -45244,7 +45244,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.07601051, y: 0.67176616}
+  m_Offset: {x: -0.0016251802, y: -0.023887783}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -45254,7 +45254,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.22949865, y: 1.8251481}
+  m_Size: {x: 0.38477004, y: 1.7115695}
   m_EdgeRadius: 0
 --- !u!114 &1600009916
 MonoBehaviour:
@@ -60964,7 +60964,7 @@ GameObject:
   - component: {fileID: 2133653340}
   - component: {fileID: 2133653341}
   m_Layer: 0
-  m_Name: MisionVuelveATuCasa
+  m_Name: TransicionCasaInicioActo3
   m_TagString: Transition
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61040,16 +61040,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2133653337}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 273032ca86f2f8a428b98a7687308846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textoNuevo: "Vuelve a tu caba\xF1a para descansar"
-  uiText: {fileID: 570216618}
-  duracionRevelado: 1.2
-  escalaInicial: 0.7
-  escalaFinal: 1
-  sacudidaIntensidad: 0.3
-  sacudidaDuracion: 0.15
+  sceneName: 2daParte
+  transitionSound: {fileID: 0}
+  fadeNegro: {fileID: 184573629}
 --- !u!1 &2134384428
 GameObject:
   m_ObjectHideFlags: 0

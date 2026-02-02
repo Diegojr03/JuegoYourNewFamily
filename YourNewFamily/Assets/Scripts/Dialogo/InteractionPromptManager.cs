@@ -48,7 +48,7 @@ public class InteractionPromptManager : MonoBehaviour
         if (promptImage != null)
         {
             promptImage.gameObject.SetActive(true);
-            UpdatePromptPosition(point.transform.position + point.promptOffset);
+            UpdatePromptPosition(point.transform.position + point.promptOffset);    
         }
     }
 
