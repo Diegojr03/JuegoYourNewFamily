@@ -614,4 +614,26 @@ public class DialogueChoiceSystem : MonoBehaviour
         }
         return "Unknown";
     }
+
+    void OnDestroy()
+    {
+        // Eliminamos la condición "&& characterLeft.parent == transform"
+        // Ahora se destruirá el objeto referenciado sin importar quién sea su padre.
+
+        if (characterLeft != null)
+            Destroy(characterLeft.gameObject);
+
+        if (characterRight != null)
+            Destroy(characterRight.gameObject);
+
+        // Verificamos != null extra por si el sprite estaba en el mismo objeto 
+        // que el character y ya fue destruido arriba.
+        if (spriteLeft != null)
+            Destroy(spriteLeft.gameObject);
+
+        if (spriteRight != null)
+            Destroy(spriteRight.gameObject);
+    }
 }
+
+

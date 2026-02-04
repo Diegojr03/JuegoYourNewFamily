@@ -10684,10 +10684,10 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
-  dialoguePanel: {fileID: 0}
-  speakerContainer: {fileID: 0}
-  speakerText: {fileID: 0}
-  dialogueText: {fileID: 0}
+  dialoguePanel: {fileID: 878597090}
+  speakerContainer: {fileID: 1723153709}
+  speakerText: {fileID: 160613714}
+  dialogueText: {fileID: 419537938}
   promptOffset: {x: -1, y: 0, z: 0}
   dialogueSound: {fileID: 0}
   destroyAfterDialogue: 0

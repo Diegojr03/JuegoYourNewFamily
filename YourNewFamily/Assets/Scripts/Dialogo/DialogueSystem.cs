@@ -507,4 +507,22 @@ public class DialogueSystem : MonoBehaviour
             Gizmos.DrawWireSphere(hiddenPosition, 0.3f);
         }
     }
+
+    void OnDestroy()
+    {
+        // Misma lógica: forzamos la destrucción de las referencias
+        // cuando este objeto principal muera.
+
+        if (characterLeft != null)
+            Destroy(characterLeft.gameObject);
+
+        if (characterRight != null)
+            Destroy(characterRight.gameObject);
+
+        if (spriteLeft != null)
+            Destroy(spriteLeft.gameObject);
+
+        if (spriteRight != null)
+            Destroy(spriteRight.gameObject);
+    }
 }
