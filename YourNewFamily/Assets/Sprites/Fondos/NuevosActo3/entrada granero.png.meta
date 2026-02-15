@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8947d79e646fd794681db43923ad83b4
+guid: 462d8325fffbe5049b4b481bd1923fdd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4475453166544224729
-    second: entrada bosque_0
+      213: -1563369384111860033
+    second: entrada granero_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: entrada bosque_0
+      name: entrada granero_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 3508
+        width: 3466
         height: 2480
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 72efb379e0ff3e1c0800000000000000
-      internalID: -4475453166544224729
+      spriteID: fb69a4704dbcd4ae0800000000000000
+      internalID: -1563369384111860033
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      entrada bosque_0: -4475453166544224729
+      entrada granero_0: -1563369384111860033
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
