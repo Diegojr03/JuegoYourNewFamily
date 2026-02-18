@@ -1,0 +1,2093 @@
+fileFormatVersion: 2
+guid: b79ccc1612f3ca345b2a3158756aef0f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6260117377913497499
+    second: zanahorias entrada bosque_0
+  - first:
+      213: 7841300063956015417
+    second: zanahorias entrada bosque_1
+  - first:
+      213: -976530218323142990
+    second: zanahorias entrada bosque_2
+  - first:
+      213: -7379819735826807470
+    second: zanahorias entrada bosque_3
+  - first:
+      213: -5765930667907975819
+    second: zanahorias entrada bosque_4
+  - first:
+      213: 8831332141343284057
+    second: zanahorias entrada bosque_5
+  - first:
+      213: 1405410557798977986
+    second: zanahorias entrada bosque_6
+  - first:
+      213: -9102339566407605374
+    second: zanahorias entrada bosque_7
+  - first:
+      213: 7047287021276051641
+    second: zanahorias entrada bosque_8
+  - first:
+      213: 2324258031975224159
+    second: zanahorias entrada bosque_9
+  - first:
+      213: -8977513279186700256
+    second: zanahorias entrada bosque_10
+  - first:
+      213: -8968523063877822876
+    second: zanahorias entrada bosque_11
+  - first:
+      213: 8400978289680828957
+    second: zanahorias entrada bosque_12
+  - first:
+      213: 7191712385855121049
+    second: zanahorias entrada bosque_13
+  - first:
+      213: -4395956763640349711
+    second: zanahorias entrada bosque_14
+  - first:
+      213: 1519973401778207694
+    second: zanahorias entrada bosque_15
+  - first:
+      213: 5618744771173563841
+    second: zanahorias entrada bosque_16
+  - first:
+      213: -4714555112760297942
+    second: zanahorias entrada bosque_17
+  - first:
+      213: -9123226298691033782
+    second: zanahorias entrada bosque_18
+  - first:
+      213: 5545658602624062731
+    second: zanahorias entrada bosque_19
+  - first:
+      213: -2715883837056822118
+    second: zanahorias entrada bosque_20
+  - first:
+      213: -113418758697908564
+    second: zanahorias entrada bosque_21
+  - first:
+      213: -2276193520921157606
+    second: zanahorias entrada bosque_22
+  - first:
+      213: 1761787743480690772
+    second: zanahorias entrada bosque_23
+  - first:
+      213: 5570204306111133621
+    second: zanahorias entrada bosque_24
+  - first:
+      213: 3410068043043780766
+    second: zanahorias entrada bosque_25
+  - first:
+      213: 3427253337810031560
+    second: zanahorias entrada bosque_26
+  - first:
+      213: 937398623889160846
+    second: zanahorias entrada bosque_27
+  - first:
+      213: 258096324588314871
+    second: zanahorias entrada bosque_28
+  - first:
+      213: 7965803650654525411
+    second: zanahorias entrada bosque_29
+  - first:
+      213: -1953195454997540387
+    second: zanahorias entrada bosque_30
+  - first:
+      213: -251667703710958233
+    second: zanahorias entrada bosque_31
+  - first:
+      213: -875036822960731727
+    second: zanahorias entrada bosque_32
+  - first:
+      213: -7437709967208203687
+    second: zanahorias entrada bosque_33
+  - first:
+      213: -9162028256257354712
+    second: zanahorias entrada bosque_34
+  - first:
+      213: 1906388949574605583
+    second: zanahorias entrada bosque_35
+  - first:
+      213: -5902752391081118579
+    second: zanahorias entrada bosque_36
+  - first:
+      213: -7130612713549392889
+    second: zanahorias entrada bosque_37
+  - first:
+      213: -1743738033706034861
+    second: zanahorias entrada bosque_38
+  - first:
+      213: 7877519301371081015
+    second: zanahorias entrada bosque_39
+  - first:
+      213: 7655200090126025616
+    second: zanahorias entrada bosque_40
+  - first:
+      213: 1131274457400275965
+    second: zanahorias entrada bosque_41
+  - first:
+      213: -4261585279966649247
+    second: zanahorias entrada bosque_42
+  - first:
+      213: -7637500639751471396
+    second: zanahorias entrada bosque_43
+  - first:
+      213: -2046864086944227996
+    second: zanahorias entrada bosque_44
+  - first:
+      213: -3982585313691481897
+    second: zanahorias entrada bosque_45
+  - first:
+      213: -7384605064760894877
+    second: zanahorias entrada bosque_46
+  - first:
+      213: 5669191360441921406
+    second: zanahorias entrada bosque_47
+  - first:
+      213: 5305192933208231773
+    second: zanahorias entrada bosque_48
+  - first:
+      213: -2514383530514978180
+    second: zanahorias entrada bosque_49
+  - first:
+      213: -8354503941416437878
+    second: zanahorias entrada bosque_50
+  - first:
+      213: 4202269218962808696
+    second: zanahorias entrada bosque_51
+  - first:
+      213: 2145125811796112278
+    second: zanahorias entrada bosque_52
+  - first:
+      213: 5457190917400677442
+    second: zanahorias entrada bosque_53
+  - first:
+      213: 3092510847883920354
+    second: zanahorias entrada bosque_54
+  - first:
+      213: -3164470678541116578
+    second: zanahorias entrada bosque_55
+  - first:
+      213: -5078658588006282922
+    second: zanahorias entrada bosque_56
+  - first:
+      213: 1767908551031143044
+    second: zanahorias entrada bosque_57
+  - first:
+      213: -6979435017286930136
+    second: zanahorias entrada bosque_58
+  - first:
+      213: 7299522737259139643
+    second: zanahorias entrada bosque_59
+  - first:
+      213: -6900566529432319380
+    second: zanahorias entrada bosque_60
+  - first:
+      213: 4451099312053660733
+    second: zanahorias entrada bosque_61
+  - first:
+      213: -3142390284715500380
+    second: zanahorias entrada bosque_62
+  - first:
+      213: 5537268210864698715
+    second: zanahorias entrada bosque_63
+  - first:
+      213: -8949154287701751695
+    second: zanahorias entrada bosque_64
+  - first:
+      213: -3947356474856519824
+    second: zanahorias entrada bosque_65
+  - first:
+      213: -2085071071199744692
+    second: zanahorias entrada bosque_66
+  - first:
+      213: 4795466122253120476
+    second: zanahorias entrada bosque_67
+  - first:
+      213: 1752834567308926384
+    second: zanahorias entrada bosque_68
+  - first:
+      213: 4152998848980530378
+    second: zanahorias entrada bosque_69
+  - first:
+      213: -8375946186823216142
+    second: zanahorias entrada bosque_70
+  - first:
+      213: -117408065004249310
+    second: zanahorias entrada bosque_71
+  - first:
+      213: -2239111816447565801
+    second: zanahorias entrada bosque_72
+  - first:
+      213: -5578968458581405316
+    second: zanahorias entrada bosque_73
+  - first:
+      213: 8728991945149870258
+    second: zanahorias entrada bosque_74
+  - first:
+      213: -1191923017585810766
+    second: zanahorias entrada bosque_75
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_0
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 1223
+        width: 29
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 568573d89689f19a0800000000000000
+      internalID: -6260117377913497499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_1
+      rect:
+        serializedVersion: 2
+        x: 1612
+        y: 1251
+        width: 90
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9399859fcd4e1dc60800000000000000
+      internalID: 7841300063956015417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_2
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 1282
+        width: 54
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b61a68b0faa272f0800000000000000
+      internalID: -976530218323142990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_3
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 1213
+        width: 71
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25540abdc0d959990800000000000000
+      internalID: -7379819735826807470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_4
+      rect:
+        serializedVersion: 2
+        x: 1463
+        y: 1192
+        width: 54
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57570d35b9c4bffa0800000000000000
+      internalID: -5765930667907975819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_5
+      rect:
+        serializedVersion: 2
+        x: 1524
+        y: 1161
+        width: 90
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95b914acac13f8a70800000000000000
+      internalID: 8831332141343284057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_6
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 1181
+        width: 40
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c11135c475018310800000000000000
+      internalID: 1405410557798977986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_7
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 1197
+        width: 66
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 283aa4ff36efda180800000000000000
+      internalID: -9102339566407605374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_8
+      rect:
+        serializedVersion: 2
+        x: 1783
+        y: 1233
+        width: 75
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b8316d253efcc160800000000000000
+      internalID: 7047287021276051641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_9
+      rect:
+        serializedVersion: 2
+        x: 1933
+        y: 1181
+        width: 52
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f535b3a9d5c614020800000000000000
+      internalID: 2324258031975224159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_10
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 1089
+        width: 31
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02879bbcc37796380800000000000000
+      internalID: -8977513279186700256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_11
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 1149
+        width: 82
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4661aa96ac7698380800000000000000
+      internalID: -8968523063877822876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_12
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 1086
+        width: 37
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1ac1328e35469470800000000000000
+      internalID: 8400978289680828957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_13
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 1154
+        width: 103
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 996eba5cf481ec360800000000000000
+      internalID: 7191712385855121049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_14
+      rect:
+        serializedVersion: 2
+        x: 1241
+        y: 1091
+        width: 52
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fbbd3f3d9c6ef2c0800000000000000
+      internalID: -4395956763640349711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_15
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 1143
+        width: 75
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecb380971c7081510800000000000000
+      internalID: 1519973401778207694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_16
+      rect:
+        serializedVersion: 2
+        x: 1556
+        y: 1091
+        width: 40
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cd3269999ac9fd40800000000000000
+      internalID: 5618744771173563841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_17
+      rect:
+        serializedVersion: 2
+        x: 1835
+        y: 1134
+        width: 75
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a26bbed8a19829eb0800000000000000
+      internalID: -4714555112760297942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_18
+      rect:
+        serializedVersion: 2
+        x: 1991
+        y: 1149
+        width: 91
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a45e40da40ac36180800000000000000
+      internalID: -9123226298691033782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1101
+        width: 31
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b051ffeed1326fc40800000000000000
+      internalID: 5545658602624062731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_20
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 1081
+        width: 71
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a94d0012a0e3f4ad0800000000000000
+      internalID: -2715883837056822118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_21
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 1050
+        width: 54
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca602f86d3e0d6ef0800000000000000
+      internalID: -113418758697908564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_22
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 1059
+        width: 91
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a10e2717d065960e0800000000000000
+      internalID: -2276193520921157606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_23
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 1107
+        width: 66
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 458bdcb4e90237810800000000000000
+      internalID: 1761787743480690772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_24
+      rect:
+        serializedVersion: 2
+        x: 1930
+        y: 1096
+        width: 66
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b7fa10ed475d4d40800000000000000
+      internalID: 5570204306111133621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_25
+      rect:
+        serializedVersion: 2
+        x: 2023
+        y: 1077
+        width: 38
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e98398d51def25f20800000000000000
+      internalID: 3410068043043780766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_26
+      rect:
+        serializedVersion: 2
+        x: 2101
+        y: 1046
+        width: 38
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c3507b90cc009f20800000000000000
+      internalID: 3427253337810031560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_27
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1019
+        width: 82
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8a7ad5f41f420d00800000000000000
+      internalID: 937398623889160846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_28
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 1019
+        width: 102
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f0abe06d31f49300800000000000000
+      internalID: 258096324588314871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_29
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 1028
+        width: 50
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e7d5c337383c8e60800000000000000
+      internalID: 7965803650654525411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_30
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 1049
+        width: 61
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd1d6f7051bd4e4e0800000000000000
+      internalID: -1953195454997540387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_31
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 1031
+        width: 66
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76dbede8e85e18cf0800000000000000
+      internalID: -251667703710958233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_32
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 1019
+        width: 90
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b90a0a45ae3bd3f0800000000000000
+      internalID: -875036822960731727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_33
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 987
+        width: 38
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95a3c260132f7c890800000000000000
+      internalID: -7437709967208203687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_34
+      rect:
+        serializedVersion: 2
+        x: 1316
+        y: 1044
+        width: 75
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82450bbe7dfe9d080800000000000000
+      internalID: -9162028256257354712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_35
+      rect:
+        serializedVersion: 2
+        x: 2166
+        y: 1054
+        width: 66
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0bdf1f26aad47a10800000000000000
+      internalID: 1906388949574605583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_36
+      rect:
+        serializedVersion: 2
+        x: 2252
+        y: 1010
+        width: 75
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d84b58479f5351ea0800000000000000
+      internalID: -5902752391081118579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_37
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 953
+        width: 38
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70411024489fa0d90800000000000000
+      internalID: -7130612713549392889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_38
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 942
+        width: 78
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3591d9f3f7ffcc7e0800000000000000
+      internalID: -1743738033706034861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_39
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 941
+        width: 70
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 731b1855112925d60800000000000000
+      internalID: 7877519301371081015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_40
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 949
+        width: 40
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09300884cebbc3a60800000000000000
+      internalID: 7655200090126025616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_41
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 965
+        width: 66
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df3f0d0102813bf00800000000000000
+      internalID: 1131274457400275965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_42
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 1001
+        width: 75
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 164ed8744cecbd4c0800000000000000
+      internalID: -4261585279966649247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_43
+      rect:
+        serializedVersion: 2
+        x: 997
+        y: 949
+        width: 52
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cde7bc322a5220690800000000000000
+      internalID: -7637500639751471396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_44
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 1006
+        width: 66
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46d5f2a25f31893e0800000000000000
+      internalID: -2046864086944227996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_45
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 966
+        width: 91
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d84bb102c30bb8c0800000000000000
+      internalID: -3982585313691481897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_46
+      rect:
+        serializedVersion: 2
+        x: 2177
+        y: 928
+        width: 52
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36a5064a1dc948990800000000000000
+      internalID: -7384605064760894877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_47
+      rect:
+        serializedVersion: 2
+        x: 2492
+        y: 943
+        width: 40
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7faad271830dae40800000000000000
+      internalID: 5669191360441921406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_48
+      rect:
+        serializedVersion: 2
+        x: 2959
+        y: 956
+        width: 38
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5f0ac85dd4df9940800000000000000
+      internalID: 5305192933208231773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_49
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 917
+        width: 91
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7aef82308d1b1dd0800000000000000
+      internalID: -2514383530514978180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_50
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 952
+        width: 66
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a87b549ede6de0c80800000000000000
+      internalID: -8354503941416437878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_51
+      rect:
+        serializedVersion: 2
+        x: 2771
+        y: 920
+        width: 75
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87f16de0795715a30800000000000000
+      internalID: 4202269218962808696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_52
+      rect:
+        serializedVersion: 2
+        x: 2866
+        y: 964
+        width: 66
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 693f0aa7f8405cd10800000000000000
+      internalID: 2145125811796112278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_53
+      rect:
+        serializedVersion: 2
+        x: 3353
+        y: 931
+        width: 62
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24cc727d936dbbb40800000000000000
+      internalID: 5457190917400677442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_54
+      rect:
+        serializedVersion: 2
+        x: 3441
+        y: 915
+        width: 43
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e3c9283b3ecaea20800000000000000
+      internalID: 3092510847883920354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_55
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 902
+        width: 75
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5bda671faa8514d0800000000000000
+      internalID: -3164470678541116578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_56
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 845
+        width: 38
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 659066e0ceaf489b0800000000000000
+      internalID: -5078658588006282922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_57
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 910
+        width: 75
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48a369bd57fd88810800000000000000
+      internalID: 1767908551031143044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_58
+      rect:
+        serializedVersion: 2
+        x: 2460
+        y: 862
+        width: 90
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 821b0b594d0142f90800000000000000
+      internalID: -6979435017286930136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_59
+      rect:
+        serializedVersion: 2
+        x: 2566
+        y: 853
+        width: 40
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b32d738414d1d4560800000000000000
+      internalID: 7299522737259139643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_60
+      rect:
+        serializedVersion: 2
+        x: 2869
+        y: 838
+        width: 52
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6a8c306d434c30a0800000000000000
+      internalID: -6900566529432319380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_61
+      rect:
+        serializedVersion: 2
+        x: 2927
+        y: 876
+        width: 91
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3ca1facd3b75cd30800000000000000
+      internalID: 4451099312053660733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_62
+      rect:
+        serializedVersion: 2
+        x: 3042
+        y: 869
+        width: 34
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4acd4e56facf364d0800000000000000
+      internalID: -3142390284715500380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_63
+      rect:
+        serializedVersion: 2
+        x: 3254
+        y: 900
+        width: 69
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5537ae991458dc40800000000000000
+      internalID: 5537268210864698715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_64
+      rect:
+        serializedVersion: 2
+        x: 3405
+        y: 831
+        width: 84
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1788f5907973ec380800000000000000
+      internalID: -8949154287701751695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_65
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 864
+        width: 66
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 077c65a333c2839c0800000000000000
+      internalID: -3947356474856519824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_66
+      rect:
+        serializedVersion: 2
+        x: 2399
+        y: 827
+        width: 54
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4d22bd68e65013e0800000000000000
+      internalID: -2085071071199744692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_67
+      rect:
+        serializedVersion: 2
+        x: 2632
+        y: 862
+        width: 66
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd3315dd70bec8240800000000000000
+      internalID: 4795466122253120476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_68
+      rect:
+        serializedVersion: 2
+        x: 3103
+        y: 868
+        width: 69
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bd597680c1535810800000000000000
+      internalID: 1752834567308926384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_69
+      rect:
+        serializedVersion: 2
+        x: 3335
+        y: 812
+        width: 60
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac4371a137a62a930800000000000000
+      internalID: 4152998848980530378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_70
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 772
+        width: 90
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f35d9c1259a2cb80800000000000000
+      internalID: -8375946186823216142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_71
+      rect:
+        serializedVersion: 2
+        x: 2719
+        y: 820
+        width: 75
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22fd7a7acf1ee5ef0800000000000000
+      internalID: -117408065004249310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_72
+      rect:
+        serializedVersion: 2
+        x: 3007
+        y: 793
+        width: 97
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71063409aa31de0e0800000000000000
+      internalID: -2239111816447565801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_73
+      rect:
+        serializedVersion: 2
+        x: 3107
+        y: 740
+        width: 45
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c71952ddeb58392b0800000000000000
+      internalID: -5578968458581405316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_74
+      rect:
+        serializedVersion: 2
+        x: 3182
+        y: 814
+        width: 79
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b077e90deb932970800000000000000
+      internalID: 8728991945149870258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zanahorias entrada bosque_75
+      rect:
+        serializedVersion: 2
+        x: 2645
+        y: 737
+        width: 54
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b2af21a450757fe0800000000000000
+      internalID: -1191923017585810766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      zanahorias entrada bosque_0: -6260117377913497499
+      zanahorias entrada bosque_1: 7841300063956015417
+      zanahorias entrada bosque_10: -8977513279186700256
+      zanahorias entrada bosque_11: -8968523063877822876
+      zanahorias entrada bosque_12: 8400978289680828957
+      zanahorias entrada bosque_13: 7191712385855121049
+      zanahorias entrada bosque_14: -4395956763640349711
+      zanahorias entrada bosque_15: 1519973401778207694
+      zanahorias entrada bosque_16: 5618744771173563841
+      zanahorias entrada bosque_17: -4714555112760297942
+      zanahorias entrada bosque_18: -9123226298691033782
+      zanahorias entrada bosque_19: 5545658602624062731
+      zanahorias entrada bosque_2: -976530218323142990
+      zanahorias entrada bosque_20: -2715883837056822118
+      zanahorias entrada bosque_21: -113418758697908564
+      zanahorias entrada bosque_22: -2276193520921157606
+      zanahorias entrada bosque_23: 1761787743480690772
+      zanahorias entrada bosque_24: 5570204306111133621
+      zanahorias entrada bosque_25: 3410068043043780766
+      zanahorias entrada bosque_26: 3427253337810031560
+      zanahorias entrada bosque_27: 937398623889160846
+      zanahorias entrada bosque_28: 258096324588314871
+      zanahorias entrada bosque_29: 7965803650654525411
+      zanahorias entrada bosque_3: -7379819735826807470
+      zanahorias entrada bosque_30: -1953195454997540387
+      zanahorias entrada bosque_31: -251667703710958233
+      zanahorias entrada bosque_32: -875036822960731727
+      zanahorias entrada bosque_33: -7437709967208203687
+      zanahorias entrada bosque_34: -9162028256257354712
+      zanahorias entrada bosque_35: 1906388949574605583
+      zanahorias entrada bosque_36: -5902752391081118579
+      zanahorias entrada bosque_37: -7130612713549392889
+      zanahorias entrada bosque_38: -1743738033706034861
+      zanahorias entrada bosque_39: 7877519301371081015
+      zanahorias entrada bosque_4: -5765930667907975819
+      zanahorias entrada bosque_40: 7655200090126025616
+      zanahorias entrada bosque_41: 1131274457400275965
+      zanahorias entrada bosque_42: -4261585279966649247
+      zanahorias entrada bosque_43: -7637500639751471396
+      zanahorias entrada bosque_44: -2046864086944227996
+      zanahorias entrada bosque_45: -3982585313691481897
+      zanahorias entrada bosque_46: -7384605064760894877
+      zanahorias entrada bosque_47: 5669191360441921406
+      zanahorias entrada bosque_48: 5305192933208231773
+      zanahorias entrada bosque_49: -2514383530514978180
+      zanahorias entrada bosque_5: 8831332141343284057
+      zanahorias entrada bosque_50: -8354503941416437878
+      zanahorias entrada bosque_51: 4202269218962808696
+      zanahorias entrada bosque_52: 2145125811796112278
+      zanahorias entrada bosque_53: 5457190917400677442
+      zanahorias entrada bosque_54: 3092510847883920354
+      zanahorias entrada bosque_55: -3164470678541116578
+      zanahorias entrada bosque_56: -5078658588006282922
+      zanahorias entrada bosque_57: 1767908551031143044
+      zanahorias entrada bosque_58: -6979435017286930136
+      zanahorias entrada bosque_59: 7299522737259139643
+      zanahorias entrada bosque_6: 1405410557798977986
+      zanahorias entrada bosque_60: -6900566529432319380
+      zanahorias entrada bosque_61: 4451099312053660733
+      zanahorias entrada bosque_62: -3142390284715500380
+      zanahorias entrada bosque_63: 5537268210864698715
+      zanahorias entrada bosque_64: -8949154287701751695
+      zanahorias entrada bosque_65: -3947356474856519824
+      zanahorias entrada bosque_66: -2085071071199744692
+      zanahorias entrada bosque_67: 4795466122253120476
+      zanahorias entrada bosque_68: 1752834567308926384
+      zanahorias entrada bosque_69: 4152998848980530378
+      zanahorias entrada bosque_7: -9102339566407605374
+      zanahorias entrada bosque_70: -8375946186823216142
+      zanahorias entrada bosque_71: -117408065004249310
+      zanahorias entrada bosque_72: -2239111816447565801
+      zanahorias entrada bosque_73: -5578968458581405316
+      zanahorias entrada bosque_74: 8728991945149870258
+      zanahorias entrada bosque_75: -1191923017585810766
+      zanahorias entrada bosque_8: 7047287021276051641
+      zanahorias entrada bosque_9: 2324258031975224159
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

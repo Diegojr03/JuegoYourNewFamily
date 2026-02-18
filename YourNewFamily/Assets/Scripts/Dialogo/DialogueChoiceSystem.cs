@@ -306,8 +306,7 @@ public class DialogueChoiceSystem : MonoBehaviour
         // Si esta línea marca "terminar diálogo aquí", acabamos la conversación YA
         if (currentLine.endDialogueHere)
         {
-            // Ocultar paneles y terminar (esperando movimiento de personajes)
-            EndDialogue(); // Esto ahora llamará a la corrutina
+            waitingForNextLine = true;
             yield break;
         }
 
@@ -375,7 +374,7 @@ public class DialogueChoiceSystem : MonoBehaviour
         // Si la línea indica terminar diálogo -> terminar ya
         if (line.endDialogueHere)
         {
-            EndDialogue(); // Esto ahora llamará a la corrutina
+            waitingForNextLine = true;
             return;
         }
 
@@ -421,6 +420,14 @@ public class DialogueChoiceSystem : MonoBehaviour
 
     void AdvanceDialogue()
     {
+        DialogueLine previousLine = dialogueLines[currentIndex];
+
+        if (previousLine.endDialogueHere)
+        {
+            EndDialogue();
+            return;
+        }
+
         currentIndex++;
 
         if (currentIndex >= dialogueLines.Count)
