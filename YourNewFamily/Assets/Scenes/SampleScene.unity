@@ -5684,8 +5684,8 @@ Transform:
   m_GameObject: {fileID: 161605747}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.36, y: 3.71, z: 0}
-  m_LocalScale: {x: 0.40549242, y: 0.4054925, z: 0}
+  m_LocalPosition: {x: -5.4000034, y: 3.6400023, z: 0}
+  m_LocalScale: {x: 0.104843, y: 0.104843, z: 0.104843}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 604768798}
@@ -5734,8 +5734,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 8949820458873236102, guid: 813264d13f33c2d45917df67bff1d3ee, type: 3}
-  m_Color: {r: 0.74509805, g: 0.74509805, b: 0.74509805, a: 1}
+  m_Sprite: {fileID: 6283731239380791341, guid: 1857a69ae1d2d974281b87d29d1cca16, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -14286,6 +14286,11 @@ MonoBehaviour:
   TieneNieve: 0
   objetoSinNieve: {fileID: 1288443}
   objetoConNieve: {fileID: 846588585}
+  tagObjetosMision: ObjetoLin
+  npcAAfecivar: {fileID: 0}
+  dialogoAActivar: {fileID: 0}
+  npcADesactivar: {fileID: 0}
+  dialogoADesactivar: {fileID: 0}
 --- !u!4 &474402258
 Transform:
   m_ObjectHideFlags: 0

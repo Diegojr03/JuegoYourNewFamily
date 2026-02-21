@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,9 +8,19 @@ public class GameManager : MonoBehaviour
     [Header("Estado del Juego")]
     public bool TieneNieve = false;
 
-    [Header("Objetos a Activar")]
-    public GameObject objetoSinNieve;   // Se activa si TieneNieve = false
-    public GameObject objetoConNieve;    // Se activa si TieneNieve = true
+    [Header("Objetos a Activar (Nieve)")]
+    public GameObject objetoSinNieve;
+    public GameObject objetoConNieve;
+
+    [Header("Configuración de Misión por Tags")]
+    public string tagObjetosMision = "ObjetoLin";
+    public GameObject npcAAfecivar;
+    public GameObject dialogoAActivar;
+    public GameObject npcADesactivar;
+    public GameObject dialogoADesactivar;
+    
+    private bool misionCompletada = false;
+    private bool objetosDetectadosAlMenosUnaVez = false;
 
     void Awake()
     {
@@ -27,8 +38,56 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         ActualizarObjetos();
+
+        // Aseguramos que el NPC empiece desactivado
+        if (npcAAfecivar != null) npcAAfecivar.SetActive(false);
     }
 
+    void Update()
+    {
+        // Solo comprobamos si la misión no ha terminado ya
+        if (!misionCompletada)
+        {
+            VerificarObjetosPorTag();
+        }
+    }
+
+    void VerificarObjetosPorTag()
+    {
+        // Buscamos objetos activos con el tag "ObjetoLin"
+        GameObject[] objetosRestantes = GameObject.FindGameObjectsWithTag(tagObjetosMision);
+
+        // 1. Primero confirmamos que los objetos existen en la escena
+        if (!objetosDetectadosAlMenosUnaVez && objetosRestantes.Length > 0)
+        {
+            objetosDetectadosAlMenosUnaVez = true;
+            Debug.Log("Objetos de misión detectados. Esperando a su destrucción...");
+        }
+
+        // 2. Solo si ya existían y ahora la cuenta es 0, completamos la misión
+        // Esto garantiza que se han DESTRUIDO (ya que FindGameObjectsWithTag no los encontrará)
+        if (objetosDetectadosAlMenosUnaVez && objetosRestantes.Length == 0)
+        {
+            CompletarMision();
+        }
+    }
+
+    void CompletarMision()
+    {
+        misionCompletada = true;
+
+        // Activar nuevos elementos
+        if (npcAAfecivar != null) npcAAfecivar.SetActive(true);
+        if (dialogoAActivar != null) dialogoAActivar.SetActive(true);
+
+        // Desactivar elementos antiguos
+        if (npcADesactivar != null) npcADesactivar.SetActive(false);
+        if (dialogoADesactivar != null) dialogoADesactivar.SetActive(false);
+
+        Debug.Log("Todos los objetos 'ObjetoLin' han sido destruidos. Cambiando NPCs y Diálogos.");
+    }
+
+    // --- Tus métodos anteriores ---
     public void SetTieneNieve(bool valor)
     {
         TieneNieve = valor;
