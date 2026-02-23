@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
     
     private bool misionCompletada = false;
     private bool objetosDetectadosAlMenosUnaVez = false;
+    public TextMeshProUGUI textoMision;
 
     void Awake()
     {
@@ -83,6 +85,8 @@ public class GameManager : MonoBehaviour
         // Desactivar elementos antiguos
         if (npcADesactivar != null) npcADesactivar.SetActive(false);
         if (dialogoADesactivar != null) dialogoADesactivar.SetActive(false);
+
+        textoMision.text = "VE A HABLAR CON LIN DE NUEVO";
 
         Debug.Log("Todos los objetos 'ObjetoLin' han sido destruidos. Cambiando NPCs y Diálogos.");
     }
