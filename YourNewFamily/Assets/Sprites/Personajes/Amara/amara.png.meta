@@ -1,0 +1,975 @@
+fileFormatVersion: 2
+guid: 9ece72e5fb730df44a65338a9f85fc5f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3745034310279683209
+    second: amara_0
+  - first:
+      213: -3316499006064440482
+    second: amara_1
+  - first:
+      213: -3039794377452767482
+    second: amara_2
+  - first:
+      213: 7477362661351094723
+    second: amara_3
+  - first:
+      213: -302085324863652815
+    second: amara_4
+  - first:
+      213: 1130151556291527615
+    second: amara_5
+  - first:
+      213: 4290428252301149396
+    second: amara_6
+  - first:
+      213: -1817628650569883539
+    second: amara_7
+  - first:
+      213: 1456273722820209590
+    second: amara_8
+  - first:
+      213: -1516789292359755718
+    second: amara_9
+  - first:
+      213: -4552295227408076845
+    second: amara_10
+  - first:
+      213: 1451459074687723785
+    second: amara_11
+  - first:
+      213: 7293310111336279553
+    second: amara_12
+  - first:
+      213: 5897847056781747677
+    second: amara_13
+  - first:
+      213: 6854906806491595030
+    second: amara_14
+  - first:
+      213: 7586228529888270806
+    second: amara_15
+  - first:
+      213: -2272643312110170707
+    second: amara_16
+  - first:
+      213: -8664892359202938111
+    second: amara_17
+  - first:
+      213: 533901188806681167
+    second: amara_18
+  - first:
+      213: 7748285082501144876
+    second: amara_19
+  - first:
+      213: 760224887389212628
+    second: amara_20
+  - first:
+      213: 9188920957440876273
+    second: amara_21
+  - first:
+      213: -8202352348358434939
+    second: amara_22
+  - first:
+      213: -5681793448574169197
+    second: amara_23
+  - first:
+      213: -7705107660857679925
+    second: amara_24
+  - first:
+      213: -8191087781582980499
+    second: amara_25
+  - first:
+      213: 8819362557816766973
+    second: amara_26
+  - first:
+      213: 609046955358322379
+    second: amara_27
+  - first:
+      213: 9000373531613021178
+    second: amara_28
+  - first:
+      213: -3003672815756736050
+    second: amara_29
+  - first:
+      213: -2361535804219272797
+    second: amara_30
+  - first:
+      213: -8897718331449450776
+    second: amara_31
+  - first:
+      213: -4142310698661295801
+    second: amara_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: amara_0
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 966
+        width: 602
+        height: 414
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98cded7fcd809f330800000000000000
+      internalID: 3745034310279683209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_1
+      rect:
+        serializedVersion: 2
+        x: 1947
+        y: 1290
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5bc79db9bd69f1d0800000000000000
+      internalID: -3316499006064440482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_2
+      rect:
+        serializedVersion: 2
+        x: 1953
+        y: 1266
+        width: 42
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 607b2b58e1b70d5d0800000000000000
+      internalID: -3039794377452767482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_3
+      rect:
+        serializedVersion: 2
+        x: 1908
+        y: 1280
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c9f99649bde4c760800000000000000
+      internalID: 7477362661351094723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_4
+      rect:
+        serializedVersion: 2
+        x: 1939
+        y: 1276
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13cb4af5ff6cecbf0800000000000000
+      internalID: -302085324863652815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_5
+      rect:
+        serializedVersion: 2
+        x: 1923
+        y: 1270
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb38c174ada1faf00800000000000000
+      internalID: 1130151556291527615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_6
+      rect:
+        serializedVersion: 2
+        x: 1910
+        y: 1261
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d4c5b883c9aa8b30800000000000000
+      internalID: 4290428252301149396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_7
+      rect:
+        serializedVersion: 2
+        x: 1925
+        y: 1255
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d60a53d5f5c76c6e0800000000000000
+      internalID: -1817628650569883539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_8
+      rect:
+        serializedVersion: 2
+        x: 1933
+        y: 1261
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bb2f683c39b53410800000000000000
+      internalID: 1456273722820209590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_9
+      rect:
+        serializedVersion: 2
+        x: 1943
+        y: 1240
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a38d7c5cc2843fae0800000000000000
+      internalID: -1516789292359755718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_10
+      rect:
+        serializedVersion: 2
+        x: 1956
+        y: 1260
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dfa2a91c9ff2d0c0800000000000000
+      internalID: -4552295227408076845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_11
+      rect:
+        serializedVersion: 2
+        x: 1901
+        y: 1235
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90967c8965e942410800000000000000
+      internalID: 1451459074687723785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_12
+      rect:
+        serializedVersion: 2
+        x: 1933
+        y: 1246
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10ea6f697ea073560800000000000000
+      internalID: 7293310111336279553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_13
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 1237
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd52f0766ac59d150800000000000000
+      internalID: 5897847056781747677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_14
+      rect:
+        serializedVersion: 2
+        x: 1994
+        y: 1235
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 611c651fb65812f50800000000000000
+      internalID: 6854906806491595030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_15
+      rect:
+        serializedVersion: 2
+        x: 1908
+        y: 1206
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d99ce487a2b74960800000000000000
+      internalID: 7586228529888270806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_16
+      rect:
+        serializedVersion: 2
+        x: 1921
+        y: 1220
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dad8188d2f2f570e0800000000000000
+      internalID: -2272643312110170707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_17
+      rect:
+        serializedVersion: 2
+        x: 1927
+        y: 1211
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10366b0de4e10c780800000000000000
+      internalID: -8664892359202938111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_18
+      rect:
+        serializedVersion: 2
+        x: 1943
+        y: 1217
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f422bff6d4cc86700800000000000000
+      internalID: 533901188806681167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_19
+      rect:
+        serializedVersion: 2
+        x: 1954
+        y: 1215
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2160f8fa30778b60800000000000000
+      internalID: 7748285082501144876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_20
+      rect:
+        serializedVersion: 2
+        x: 1968
+        y: 1204
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dfce3ad18cdc8a00800000000000000
+      internalID: 760224887389212628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_21
+      rect:
+        serializedVersion: 2
+        x: 1936
+        y: 1208
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fed7610dea958f70800000000000000
+      internalID: 9188920957440876273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_22
+      rect:
+        serializedVersion: 2
+        x: 1912
+        y: 1197
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58f11814ff36b2e80800000000000000
+      internalID: -8202352348358434939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_23
+      rect:
+        serializedVersion: 2
+        x: 1933
+        y: 1197
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39f489246f63621b0800000000000000
+      internalID: -5681793448574169197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_24
+      rect:
+        serializedVersion: 2
+        x: 1907
+        y: 1167
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcfdf66e765f11590800000000000000
+      internalID: -7705107660857679925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_25
+      rect:
+        serializedVersion: 2
+        x: 1927
+        y: 1189
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6a34b69f09635e80800000000000000
+      internalID: -8191087781582980499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_26
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 1187
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df18c04f48ba46a70800000000000000
+      internalID: 8819362557816766973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_27
+      rect:
+        serializedVersion: 2
+        x: 1952
+        y: 1174
+        width: 8
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bce7aa1aaf4c37800800000000000000
+      internalID: 609046955358322379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_28
+      rect:
+        serializedVersion: 2
+        x: 1910
+        y: 1151
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af34f9d7a00c7ec70800000000000000
+      internalID: 9000373531613021178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_29
+      rect:
+        serializedVersion: 2
+        x: 1927
+        y: 1161
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec9825bfc7fc056d0800000000000000
+      internalID: -3003672815756736050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_30
+      rect:
+        serializedVersion: 2
+        x: 1911
+        y: 1144
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a1d421b2b32a3fd0800000000000000
+      internalID: -2361535804219272797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_31
+      rect:
+        serializedVersion: 2
+        x: 1915
+        y: 1137
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ee5976d154f48480800000000000000
+      internalID: -8897718331449450776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amara_32
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 1081
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7494ef0dd5e8386c0800000000000000
+      internalID: -4142310698661295801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      amara_0: 3745034310279683209
+      amara_1: -3316499006064440482
+      amara_10: -4552295227408076845
+      amara_11: 1451459074687723785
+      amara_12: 7293310111336279553
+      amara_13: 5897847056781747677
+      amara_14: 6854906806491595030
+      amara_15: 7586228529888270806
+      amara_16: -2272643312110170707
+      amara_17: -8664892359202938111
+      amara_18: 533901188806681167
+      amara_19: 7748285082501144876
+      amara_2: -3039794377452767482
+      amara_20: 760224887389212628
+      amara_21: 9188920957440876273
+      amara_22: -8202352348358434939
+      amara_23: -5681793448574169197
+      amara_24: -7705107660857679925
+      amara_25: -8191087781582980499
+      amara_26: 8819362557816766973
+      amara_27: 609046955358322379
+      amara_28: 9000373531613021178
+      amara_29: -3003672815756736050
+      amara_3: 7477362661351094723
+      amara_30: -2361535804219272797
+      amara_31: -8897718331449450776
+      amara_32: -4142310698661295801
+      amara_4: -302085324863652815
+      amara_5: 1130151556291527615
+      amara_6: 4290428252301149396
+      amara_7: -1817628650569883539
+      amara_8: 1456273722820209590
+      amara_9: -1516789292359755718
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
