@@ -281,7 +281,7 @@ MonoBehaviour:
   panelRect: {fileID: 1498716295}
   zoneText: {fileID: 598427058}
   dropDistance: 500
-  dropDuration: 0.6
+  dropDuration: 0.4
   dropCurve:
     serializedVersion: 2
     m_Curve:
@@ -306,10 +306,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  swingAmount: 10
+  swingAmount: 8
   swingSpeed: 4
-  swingDuration: 2
-  displayTime: 1
+  swingDuration: 1
+  displayTime: 0.5
   playerTag: Player
 --- !u!61 &5490012
 BoxCollider2D:
@@ -1566,7 +1566,7 @@ MonoBehaviour:
   panelRect: {fileID: 42701173}
   zoneText: {fileID: 948375944}
   dropDistance: 500
-  dropDuration: 0.6
+  dropDuration: 0.4
   dropCurve:
     serializedVersion: 2
     m_Curve:
@@ -1591,10 +1591,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  swingAmount: 10
+  swingAmount: 8
   swingSpeed: 4
-  swingDuration: 2
-  displayTime: 1
+  swingDuration: 1
+  displayTime: 0.5
   playerTag: Player
 --- !u!61 &33596302
 BoxCollider2D:
@@ -1796,7 +1796,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &40461911
 Transform:
   m_ObjectHideFlags: 0
@@ -3005,7 +3005,7 @@ MonoBehaviour:
   panelRect: {fileID: 2057338064}
   zoneText: {fileID: 1574414351}
   dropDistance: 500
-  dropDuration: 0.6
+  dropDuration: 0.4
   dropCurve:
     serializedVersion: 2
     m_Curve:
@@ -3030,10 +3030,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  swingAmount: 10
+  swingAmount: 8
   swingSpeed: 4
-  swingDuration: 2
-  displayTime: 1
+  swingDuration: 1
+  displayTime: 0.5
   playerTag: Player
 --- !u!61 &83465067
 BoxCollider2D:
@@ -5591,7 +5591,7 @@ MonoBehaviour:
   panelRect: {fileID: 1524707941}
   zoneText: {fileID: 2037946154}
   dropDistance: 500
-  dropDuration: 0.6
+  dropDuration: 0.4
   dropCurve:
     serializedVersion: 2
     m_Curve:
@@ -5616,10 +5616,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  swingAmount: 10
+  swingAmount: 8
   swingSpeed: 4
-  swingDuration: 2
-  displayTime: 1
+  swingDuration: 1
+  displayTime: 0.5
   playerTag: Player
 --- !u!1 &215648284
 GameObject:
@@ -5670,7 +5670,7 @@ MonoBehaviour:
   panelRect: {fileID: 442626032}
   zoneText: {fileID: 589506093}
   dropDistance: 500
-  dropDuration: 0.6
+  dropDuration: 0.4
   dropCurve:
     serializedVersion: 2
     m_Curve:
@@ -5695,10 +5695,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  swingAmount: 10
+  swingAmount: 8
   swingSpeed: 4
-  swingDuration: 2
-  displayTime: 1
+  swingDuration: 1
+  displayTime: 0.5
   playerTag: Player
 --- !u!61 &215648287
 BoxCollider2D:
@@ -6423,7 +6423,7 @@ MonoBehaviour:
   panelRect: {fileID: 691098716}
   zoneText: {fileID: 33697677}
   dropDistance: 500
-  dropDuration: 0.6
+  dropDuration: 0.4
   dropCurve:
     serializedVersion: 2
     m_Curve:
@@ -6448,10 +6448,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  swingAmount: 10
+  swingAmount: 8
   swingSpeed: 4
-  swingDuration: 2
-  displayTime: 1
+  swingDuration: 1
+  displayTime: 0.5
   playerTag: Player
 --- !u!61 &292399674
 BoxCollider2D:
@@ -7639,7 +7639,7 @@ MonoBehaviour:
   panelRect: {fileID: 1869608050}
   zoneText: {fileID: 921513202}
   dropDistance: 500
-  dropDuration: 0.6
+  dropDuration: 0.4
   dropCurve:
     serializedVersion: 2
     m_Curve:
@@ -7664,10 +7664,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  swingAmount: 10
+  swingAmount: 8
   swingSpeed: 4
-  swingDuration: 2
-  displayTime: 1
+  swingDuration: 1
+  displayTime: 0.5
   playerTag: Player
 --- !u!61 &343609211
 BoxCollider2D:
@@ -11106,7 +11106,7 @@ Transform:
   m_GameObject: {fileID: 516495335}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -103.25, y: 25.07, z: 0}
+  m_LocalPosition: {x: -35.8, y: 6.1, z: 0}
   m_LocalScale: {x: 0.055475388, y: 0.055475388, z: 0.055475388}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11732,7 +11732,7 @@ MonoBehaviour:
   panelRect: {fileID: 1194587189}
   zoneText: {fileID: 151883052}
   dropDistance: 500
-  dropDuration: 0.6
+  dropDuration: 0.4
   dropCurve:
     serializedVersion: 2
     m_Curve:
@@ -11757,10 +11757,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  swingAmount: 10
+  swingAmount: 8
   swingSpeed: 4
-  swingDuration: 2
-  displayTime: 1
+  swingDuration: 1
+  displayTime: 0.5
   playerTag: Player
 --- !u!61 &548128979
 BoxCollider2D:
@@ -21818,7 +21818,7 @@ Transform:
   m_GameObject: {fileID: 991695602}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.1060004, y: 5.315999, z: 0}
+  m_LocalPosition: {x: -5.974, y: 5.425, z: 0}
   m_LocalScale: {x: 0.092427135, y: 0.092427135, z: 0.092427135}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21858,17 +21858,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.091097355, y: -0.37437296}
+  m_Offset: {x: -0.07748604, y: -0.8378477}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 11.43, y: 18}
+    oldSize: {x: 16.243721, y: 20.95}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 8.463775, y: 13.371951}
+  m_Size: {x: 12.845509, y: 18.680605}
   m_EdgeRadius: 0
 --- !u!212 &991695605
 SpriteRenderer:
@@ -21914,7 +21914,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -1152026526121992572, guid: c3461b231b5ee554ea9c33c3689c5931, type: 3}
+  m_Sprite: {fileID: 4718118455850635388, guid: 64238c533f092334e99943b8030fe632, type: 3}
   m_Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -22702,7 +22702,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 11.43, y: 18}
+    oldSize: {x: 13.042349, y: 19.71}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -22754,7 +22754,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -1152026526121992572, guid: c3461b231b5ee554ea9c33c3689c5931, type: 3}
+  m_Sprite: {fileID: -8825065294468937386, guid: 0c9aa93cca72e8640b66720e54948788, type: 3}
   m_Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -24096,7 +24096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1083851283
 Transform:
   m_ObjectHideFlags: 0
@@ -25340,7 +25340,7 @@ MonoBehaviour:
   panelRect: {fileID: 1271708112}
   zoneText: {fileID: 1327368792}
   dropDistance: 500
-  dropDuration: 0.6
+  dropDuration: 0.4
   dropCurve:
     serializedVersion: 2
     m_Curve:
@@ -25365,10 +25365,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  swingAmount: 10
+  swingAmount: 8
   swingSpeed: 4
-  swingDuration: 2
-  displayTime: 1
+  swingDuration: 1
+  displayTime: 0.5
   playerTag: Player
 --- !u!61 &1118762789
 BoxCollider2D:
@@ -26028,7 +26028,7 @@ MonoBehaviour:
   characterRight: {fileID: 2025212324}
   spriteLeft: {fileID: 1204225917}
   spriteRight: {fileID: 2025212325}
-  defaultLeftSprite: {fileID: -898178471685318745, guid: f70003e8f5ccb6d4d8c511e0e27bd740, type: 3}
+  defaultLeftSprite: {fileID: -4248094021219397344, guid: 8219e1d30c2e8c545b5eb55b5fc7ae1f, type: 3}
   defaultRightSprite: {fileID: -1674950913012282259, guid: 44412b1d030bb9c40b08a3042c899310, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
@@ -26044,7 +26044,7 @@ MonoBehaviour:
     dialogueText: Lilith, encantado de conocerte. Mira, necesito que vayas al invernadero,
       dile a Nira que necesito hoja dulce.
     leftSpeaker: 1
-    characterSprite: {fileID: -2472076170658201133, guid: 59c59bfd50dc2804cb457b9268ca8d4c, type: 3}
+    characterSprite: {fileID: -2707006300247289298, guid: 883d3aab279fd424fa1c73c24ca53983, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -26053,7 +26053,7 @@ MonoBehaviour:
     dialogueText: La mezcla huele incompleta, y no pienso permitir que un detalle
       tan trivial arruine mi trabajo.
     leftSpeaker: 1
-    characterSprite: {fileID: -2472076170658201133, guid: 59c59bfd50dc2804cb457b9268ca8d4c, type: 3}
+    characterSprite: {fileID: -2707006300247289298, guid: 883d3aab279fd424fa1c73c24ca53983, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -26061,7 +26061,7 @@ MonoBehaviour:
   - speakerName: Cael
     dialogueText: "D\xEDselo de mi parte. Ella entender\xE1 la urgencia"
     leftSpeaker: 1
-    characterSprite: {fileID: -2472076170658201133, guid: 59c59bfd50dc2804cb457b9268ca8d4c, type: 3}
+    characterSprite: {fileID: -2707006300247289298, guid: 883d3aab279fd424fa1c73c24ca53983, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -27321,7 +27321,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -898178471685318745, guid: f70003e8f5ccb6d4d8c511e0e27bd740, type: 3}
+  m_Sprite: {fileID: -4248094021219397344, guid: 8219e1d30c2e8c545b5eb55b5fc7ae1f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -31379,7 +31379,7 @@ MonoBehaviour:
   panelRect: {fileID: 2011124978}
   zoneText: {fileID: 2124108820}
   dropDistance: 500
-  dropDuration: 0.6
+  dropDuration: 0.4
   dropCurve:
     serializedVersion: 2
     m_Curve:
@@ -31404,10 +31404,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  swingAmount: 10
+  swingAmount: 8
   swingSpeed: 4
-  swingDuration: 2
-  displayTime: 1
+  swingDuration: 1
+  displayTime: 0.5
   playerTag: Player
 --- !u!1 &1390422300
 GameObject:
@@ -31504,7 +31504,7 @@ MonoBehaviour:
   panelRect: {fileID: 598294837}
   zoneText: {fileID: 2043217153}
   dropDistance: 500
-  dropDuration: 0.6
+  dropDuration: 0.4
   dropCurve:
     serializedVersion: 2
     m_Curve:
@@ -31529,10 +31529,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  swingAmount: 10
+  swingAmount: 8
   swingSpeed: 4
-  swingDuration: 2
-  displayTime: 1
+  swingDuration: 1
+  displayTime: 0.5
   playerTag: Player
 --- !u!1 &1399245687
 GameObject:
@@ -31670,7 +31670,7 @@ MonoBehaviour:
   panelRect: {fileID: 818537387}
   zoneText: {fileID: 1165017128}
   dropDistance: 500
-  dropDuration: 0.6
+  dropDuration: 0.4
   dropCurve:
     serializedVersion: 2
     m_Curve:
@@ -31695,10 +31695,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  swingAmount: 10
+  swingAmount: 8
   swingSpeed: 4
-  swingDuration: 2
-  displayTime: 1
+  swingDuration: 1
+  displayTime: 0.5
   playerTag: Player
 --- !u!61 &1402933723
 BoxCollider2D:
@@ -31913,7 +31913,7 @@ MonoBehaviour:
   panelRect: {fileID: 988929996}
   zoneText: {fileID: 1802578865}
   dropDistance: 500
-  dropDuration: 0.6
+  dropDuration: 0.4
   dropCurve:
     serializedVersion: 2
     m_Curve:
@@ -31938,10 +31938,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  swingAmount: 10
+  swingAmount: 8
   swingSpeed: 4
-  swingDuration: 2
-  displayTime: 1
+  swingDuration: 1
+  displayTime: 0.5
   playerTag: Player
 --- !u!61 &1432335921
 BoxCollider2D:
@@ -33584,7 +33584,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.007972717, y: -0.007260263}
+  m_Offset: {x: 0.046830982, y: -0.045015335}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -33594,7 +33594,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.3664875, y: 1.429324}
+  m_Size: {x: 1.4442041, y: 1.5048342}
   m_EdgeRadius: 0
 --- !u!114 &1538168164
 MonoBehaviour:
@@ -33612,7 +33612,7 @@ MonoBehaviour:
   characterRight: {fileID: 2114141634}
   spriteLeft: {fileID: 1835281968}
   spriteRight: {fileID: 2114141635}
-  defaultLeftSprite: {fileID: -898178471685318745, guid: f70003e8f5ccb6d4d8c511e0e27bd740, type: 3}
+  defaultLeftSprite: {fileID: -6843879689614897153, guid: 6edf71688f8d356499cd86c412b7026d, type: 3}
   defaultRightSprite: {fileID: -1674950913012282259, guid: 44412b1d030bb9c40b08a3042c899310, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
@@ -33629,7 +33629,7 @@ MonoBehaviour:
       de que los lazos entre todos est\xE9n intactos. Es un poco abstracto, pero
       importante."
     leftSpeaker: 1
-    characterSprite: {fileID: -2472076170658201133, guid: 59c59bfd50dc2804cb457b9268ca8d4c, type: 3}
+    characterSprite: {fileID: -7386572047975426078, guid: 5a683faa1ee8304458df8147f17a90e7, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -33646,7 +33646,7 @@ MonoBehaviour:
     dialogueText: "No exactamente. No son visibles, pero est\xE1n ah\xED. Vigilar
       que no se rompan evita problemas mayores."
     leftSpeaker: 1
-    characterSprite: {fileID: -2472076170658201133, guid: 59c59bfd50dc2804cb457b9268ca8d4c, type: 3}
+    characterSprite: {fileID: -7386572047975426078, guid: 5a683faa1ee8304458df8147f17a90e7, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -36031,7 +36031,7 @@ MonoBehaviour:
   panelRect: {fileID: 49647891}
   zoneText: {fileID: 532277950}
   dropDistance: 500
-  dropDuration: 0.6
+  dropDuration: 0.4
   dropCurve:
     serializedVersion: 2
     m_Curve:
@@ -36056,10 +36056,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  swingAmount: 10
+  swingAmount: 8
   swingSpeed: 4
-  swingDuration: 2
-  displayTime: 1
+  swingDuration: 1
+  displayTime: 0.5
   playerTag: Player
 --- !u!61 &1701372319
 BoxCollider2D:
@@ -38377,7 +38377,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -898178471685318745, guid: f70003e8f5ccb6d4d8c511e0e27bd740, type: 3}
+  m_Sprite: {fileID: -6843879689614897153, guid: 6edf71688f8d356499cd86c412b7026d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -39041,7 +39041,7 @@ MonoBehaviour:
     dialogueText: "Lilith, \xFAltimamente te veo m\xE1s alineada. La Voz siempre
       recompensa a quienes escuchan."
     leftSpeaker: 1
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: -325410527933720274, guid: 24dbb70e582dffd48822c8c6bfb8a87a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -39125,7 +39125,7 @@ MonoBehaviour:
   panelRect: {fileID: 1161087744}
   zoneText: {fileID: 1095702151}
   dropDistance: 500
-  dropDuration: 0.6
+  dropDuration: 0.4
   dropCurve:
     serializedVersion: 2
     m_Curve:
@@ -39150,10 +39150,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  swingAmount: 10
+  swingAmount: 8
   swingSpeed: 4
-  swingDuration: 2
-  displayTime: 1
+  swingDuration: 1
+  displayTime: 0.5
   playerTag: Player
 --- !u!61 &1892207059
 BoxCollider2D:
@@ -40415,7 +40415,7 @@ MonoBehaviour:
   panelRect: {fileID: 2117905749}
   zoneText: {fileID: 355928274}
   dropDistance: 500
-  dropDuration: 0.6
+  dropDuration: 0.4
   dropCurve:
     serializedVersion: 2
     m_Curve:
@@ -40440,10 +40440,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  swingAmount: 10
+  swingAmount: 8
   swingSpeed: 4
-  swingDuration: 2
-  displayTime: 1
+  swingDuration: 1
+  displayTime: 0.5
   playerTag: Player
 --- !u!61 &1934117761
 BoxCollider2D:
@@ -44025,7 +44025,7 @@ MonoBehaviour:
   panelRect: {fileID: 1720732143}
   zoneText: {fileID: 842456087}
   dropDistance: 500
-  dropDuration: 0.6
+  dropDuration: 0.4
   dropCurve:
     serializedVersion: 2
     m_Curve:
@@ -44050,10 +44050,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  swingAmount: 10
+  swingAmount: 8
   swingSpeed: 4
-  swingDuration: 2
-  displayTime: 1
+  swingDuration: 1
+  displayTime: 0.5
   playerTag: Player
 --- !u!61 &2103254632
 BoxCollider2D:
@@ -45794,7 +45794,7 @@ MonoBehaviour:
   panelRect: {fileID: 1459312308}
   zoneText: {fileID: 1211202054}
   dropDistance: 500
-  dropDuration: 0.6
+  dropDuration: 0.4
   dropCurve:
     serializedVersion: 2
     m_Curve:
@@ -45819,10 +45819,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  swingAmount: 10
+  swingAmount: 8
   swingSpeed: 4
-  swingDuration: 2
-  displayTime: 1
+  swingDuration: 1
+  displayTime: 0.5
   playerTag: Player
 --- !u!61 &2140510772
 BoxCollider2D:
