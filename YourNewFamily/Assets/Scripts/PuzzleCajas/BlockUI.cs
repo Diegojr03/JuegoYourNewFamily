@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -16,7 +16,7 @@ public class Block : MonoBehaviour, IPointerClickHandler
         Derecha
     }
 
-    // Variable estática para el bloque seleccionado
+    // Variable estÃ¡tica para el bloque seleccionado
     private static Block currentlySelectedBlock = null;
 
     public string blockName;
@@ -39,6 +39,50 @@ public class Block : MonoBehaviour, IPointerClickHandler
     void Start()
     {
         GetComponent<Image>().raycastTarget = true;
+    }
+
+    void Update()
+    {
+        // ðŸ”¥ NUEVO: Detectar teclas de flecha si este bloque estÃ¡ seleccionado
+        if (currentlySelectedBlock == this && type != BlockType.Conejo)
+        {
+            // Detectar teclas de flecha
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                TryMoveWithKeyboard(Vector2Int.down); // Invertido por la UI
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                TryMoveWithKeyboard(Vector2Int.up); // Invertido por la UI
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                TryMoveWithKeyboard(Vector2Int.left);
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                TryMoveWithKeyboard(Vector2Int.right);
+            }
+        }
+    }
+
+    // ðŸ”¥ NUEVO: MÃ©todo para intentar mover con teclado
+    private void TryMoveWithKeyboard(Vector2Int gridDirection)
+    {
+        Debug.Log($"Intento de movimiento con teclado: {gridDirection}");
+
+        if (GridManagerUI.Instance.CanMoveBlock(this, gridDirection))
+        {
+            GridManagerUI.Instance.MoveBlock(this, gridDirection);
+
+            // Ocultar flechas despuÃ©s de mover
+            HideArrows();
+            currentlySelectedBlock = null;
+        }
+        else
+        {
+            Debug.Log($"No se puede mover en direcciÃ³n {gridDirection} con teclado");
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -77,7 +121,7 @@ public class Block : MonoBehaviour, IPointerClickHandler
         if (type == BlockType.Conejo)
             return;
 
-        Debug.Log($"ShowArrows ejecutándose para {blockName}");
+        Debug.Log($"ShowArrows ejecutÃ¡ndose para {blockName}");
         HideArrows();
 
         CreateArrow(Vector2Int.up, Direccion.Arriba);
@@ -88,7 +132,7 @@ public class Block : MonoBehaviour, IPointerClickHandler
 
     void CreateArrow(Vector2Int direction, Direccion direccion)
     {
-        // Seleccionar el prefab según la dirección
+        // Seleccionar el prefab segÃºn la direcciÃ³n
         GameObject prefabToUse = null;
         switch (direccion)
         {
@@ -119,16 +163,16 @@ public class Block : MonoBehaviour, IPointerClickHandler
         Vector2 blockPos = blockRect.anchoredPosition;
         Vector2 blockSize = blockRect.sizeDelta;
 
-        // CORRECCIÓN: Ajustar al centro del bloque (porque el pivote está en esq. superior izq)
+        // CORRECCIÃ“N: Ajustar al centro del bloque (porque el pivote estÃ¡ en esq. superior izq)
         Vector2 blockCenter = new Vector2(
-            blockPos.x + blockSize.x / 2,  // Centro X = posición X + mitad del ancho
-            blockPos.y - blockSize.y / 2   // Centro Y = posición Y - mitad del alto (porque Y negativa es abajo en UI)
+            blockPos.x + blockSize.x / 2,  // Centro X = posiciÃ³n X + mitad del ancho
+            blockPos.y - blockSize.y / 2   // Centro Y = posiciÃ³n Y - mitad del alto (porque Y negativa es abajo en UI)
         );
 
         Vector2 arrowPos = blockCenter;
         float offset = arrowOffset;
 
-        // Posicionar según dirección
+        // Posicionar segÃºn direcciÃ³n
         if (direccion == Direccion.Arriba)
         {
             arrowPos.y += blockSize.y / 2 + offset;
@@ -148,7 +192,7 @@ public class Block : MonoBehaviour, IPointerClickHandler
 
         arrowRect.anchoredPosition = arrowPos;
 
-        // Determinar qué dirección enviar al grid
+        // Determinar quÃ© direcciÃ³n enviar al grid
         Vector2Int gridDirection;
         if (direccion == Direccion.Arriba)
         {
@@ -167,7 +211,7 @@ public class Block : MonoBehaviour, IPointerClickHandler
             gridDirection = Vector2Int.right;
         }
 
-        // Configurar botón
+        // Configurar botÃ³n
         Button arrowButton = arrow.GetComponent<Button>();
         arrowButton.onClick.RemoveAllListeners();
         arrowButton.onClick.AddListener(() => OnArrowClick(gridDirection));
@@ -183,7 +227,7 @@ public class Block : MonoBehaviour, IPointerClickHandler
 
     void OnArrowClick(Vector2Int gridDirection)
     {
-        Debug.Log($"OnArrowClick recibió dirección de grid: {gridDirection}");
+        Debug.Log($"OnArrowClick recibiÃ³ direcciÃ³n de grid: {gridDirection}");
 
         // Verificar si se puede mover
         if (GridManagerUI.Instance.CanMoveBlock(this, gridDirection))
@@ -192,7 +236,7 @@ public class Block : MonoBehaviour, IPointerClickHandler
         }
         else
         {
-            Debug.Log($"No se puede mover en dirección {gridDirection}");
+            Debug.Log($"No se puede mover en direcciÃ³n {gridDirection}");
         }
 
         HideArrows();
@@ -228,5 +272,11 @@ public class Block : MonoBehaviour, IPointerClickHandler
         {
             currentlySelectedBlock = null;
         }
+    }
+
+    // ðŸ”¥ NUEVO: MÃ©todo estÃ¡tico para obtener el bloque seleccionado actualmente
+    public static Block GetCurrentlySelectedBlock()
+    {
+        return currentlySelectedBlock;
     }
 }

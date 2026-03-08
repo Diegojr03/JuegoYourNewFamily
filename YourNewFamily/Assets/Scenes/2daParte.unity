@@ -956,6 +956,7 @@ Transform:
   - {fileID: 174124776}
   - {fileID: 1569605771}
   - {fileID: 483809022}
+  - {fileID: 1436984839}
   - {fileID: 2050891467}
   - {fileID: 1129043071}
   - {fileID: 1103459570}
@@ -1826,7 +1827,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: FinDelJuego
   transitionSound: {fileID: 0}
-  fadeNegro: {fileID: 754611767}
 --- !u!61 &40461913
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2460,7 +2460,7 @@ MonoBehaviour:
   - speakerName: Amara
     dialogueText: Si LIlith! No tardes eh?.
     leftSpeaker: 1
-    characterSprite: {fileID: -2145651702438150279, guid: 627580a089281b14288222df3486b075, type: 3}
+    characterSprite: {fileID: -4329823784585237373, guid: 8e03407ffd6ece243bd6500539fcefb1, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -4900,6 +4900,114 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 160613712}
   m_CullTransparentMesh: 1
+--- !u!1 &168493377
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 168493378}
+  - component: {fileID: 168493380}
+  - component: {fileID: 168493379}
+  m_Layer: 0
+  m_Name: TransicionArbol-Plaza (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &168493378
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168493377}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.42, y: -9.86, z: 0}
+  m_LocalScale: {x: 1.992016, y: 1.6771557, z: 2.045312}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 589755694}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &168493379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168493377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea45d6ed3fa5364684eaeb1968283a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRoomCenter: {fileID: 1011744228}
+  targetPlayerPosition: {x: -57, y: 52.1}
+  transitionName: Arbol-Plaza
+  cameraMoveSpeed: 15
+  targetCameraSize: 8
+  cameraSizeChangeSpeed: 10
+  fadeDuration: 1
+  fadeImage: {fileID: 205797062}
+  transitionSound: {fileID: 0}
+  soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
+  objectsToActivateAfterFadeIn: []
+  objectsToDestroyAfterFadeIn: []
+  objectsToActivateAfter: []
+  objectsToDestroyAfter: []
+--- !u!61 &168493380
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168493377}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.0017465949, y: 0.3594126}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.4794687, y: 0.234723}
+  m_EdgeRadius: 0
 --- !u!1 &174124775
 GameObject:
   m_ObjectHideFlags: 0
@@ -5833,6 +5941,105 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &233303668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 233303669}
+  - component: {fileID: 233303671}
+  - component: {fileID: 233303670}
+  m_Layer: 0
+  m_Name: MusicaAroblSacrificio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &233303669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233303668}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.48, y: -5.06, z: 0}
+  m_LocalScale: {x: 11.946487, y: 7.585071, z: 7.585071}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 589755694}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &233303670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233303668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bc6ad87cb00844cb187b7cbf5e33e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicClip: {fileID: 8300000, guid: 7de62180915324f40b9a554212882d84, type: 3}
+  fadeDuration: 2
+  volume: 0.2
+  useCustomVolume: 1
+  resetVolumeOnExit: 0
+  disableOnActivate: 1
+  playerTag: Player
+  restorePreviousVolumeOnExit: 0
+--- !u!61 &233303671
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233303668}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &234373607
 GameObject:
   m_ObjectHideFlags: 0
@@ -6053,6 +6260,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -6158,6 +6368,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -6800,6 +7013,105 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &310970345
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 310970346}
+  - component: {fileID: 310970348}
+  - component: {fileID: 310970347}
+  m_Layer: 0
+  m_Name: MusicaActo3_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &310970346
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310970345}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.48, y: 10.12, z: 0}
+  m_LocalScale: {x: 3.7842, y: 3.7842, z: 3.7842}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 820180749}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &310970347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310970345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bc6ad87cb00844cb187b7cbf5e33e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicClip: {fileID: 8300000, guid: d6eaefe2fc268ca46ab14308d08ebc76, type: 3}
+  fadeDuration: 2
+  volume: 0.15
+  useCustomVolume: 1
+  resetVolumeOnExit: 0
+  disableOnActivate: 1
+  playerTag: Player
+  restorePreviousVolumeOnExit: 0
+--- !u!61 &310970348
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310970345}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &319850777
 GameObject:
   m_ObjectHideFlags: 0
@@ -6855,6 +7167,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -6960,6 +7275,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 3183370251057435837, guid: 04a9af4a23d79a147a33a1e651110f31, type: 3}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -7183,6 +7501,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -8062,6 +8383,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -8287,6 +8611,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -8848,7 +9175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &423249625
 Transform:
   m_ObjectHideFlags: 0
@@ -9117,7 +9444,15 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   objectsToActivateAfter:
   - {fileID: 1269092135}
-  objectsToDestroyAfter: []
+  - {fileID: 1956157745}
+  - {fileID: 233303668}
+  - {fileID: 168493377}
+  - {fileID: 2145865917}
+  - {fileID: 1642039705}
+  - {fileID: 1083851282}
+  objectsToDestroyAfter:
+  - {fileID: 320484490}
+  - {fileID: 1325041696}
   destroyAfterDialogue: 1
   autoActivate: 1
   reuseDelay: 0.5
@@ -10114,13 +10449,23 @@ MonoBehaviour:
   speakerText: {fileID: 160613714}
   dialogueText: {fileID: 419537938}
   promptOffset: {x: 0, y: 1, z: 0}
-  dialogueSound: {fileID: 0}
+  dialogueSound: {fileID: 8300000, guid: 2e3bcd54e2f4c5c40a0306477c9ca39b, type: 3}
   destroyAfterDialogue: 1
   objectsToActivateAfter:
   - {fileID: 631035349}
   - {fileID: 1873086988}
   - {fileID: 688272330}
-  objectsToDestroyAfter: []
+  - {fileID: 1436984838}
+  - {fileID: 1848044238}
+  - {fileID: 1872020920}
+  objectsToDestroyAfter:
+  - {fileID: 483809021}
+  - {fileID: 521305461}
+  - {fileID: 1831599492}
+  - {fileID: 659946896}
+  - {fileID: 2024864277}
+  - {fileID: 7700996}
+  - {fileID: 1121080728}
 --- !u!61 &474100803
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10373,7 +10718,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1075537132}
         m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
         m_MethodName: BotonSalir
         m_Mode: 1
@@ -10555,6 +10900,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -10614,6 +10962,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 307189991294108015, guid: d035d85787d465c4ba9e2d877557804d, type: 3}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -10968,7 +11319,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5729ba9478eeb446914546720909379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2.5
+  moveSpeed: 2
+  sprintSpeed: 4
+  sprintKey: 304
 --- !u!61 &516495338
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11106,7 +11459,7 @@ Transform:
   m_GameObject: {fileID: 516495335}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.8, y: 6.1, z: 0}
+  m_LocalPosition: {x: -86.28, y: 27.8, z: 0}
   m_LocalScale: {x: 0.055475388, y: 0.055475388, z: 0.055475388}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11123,6 +11476,7 @@ GameObject:
   - component: {fileID: 521305462}
   - component: {fileID: 521305464}
   - component: {fileID: 521305463}
+  - component: {fileID: 521305465}
   m_Layer: 0
   m_Name: DeFogataABosque
   m_TagString: Untagged
@@ -11209,6 +11563,35 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.31531698, y: 5.0190687}
   m_EdgeRadius: 0
+--- !u!114 &521305465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521305461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea45d6ed3fa5364684eaeb1968283a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRoomCenter: {fileID: 943389710}
+  targetPlayerPosition: {x: -105.7, y: 15.34}
+  transitionName: 
+  cameraMoveSpeed: 10
+  targetCameraSize: 7.5
+  cameraSizeChangeSpeed: 10
+  fadeDuration: 1
+  fadeImage: {fileID: 205797062}
+  transitionSound: {fileID: 0}
+  soundVolume: 1
+  prefabToSpawn: {fileID: 2371366146087538323, guid: e6e23e60fce379a4ba654b4e7dcbdfeb, type: 3}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
+  objectsToActivateAfterFadeIn: []
+  objectsToDestroyAfterFadeIn: []
+  objectsToActivateAfter: []
+  objectsToDestroyAfter: []
 --- !u!1 &522384407
 GameObject:
   m_ObjectHideFlags: 0
@@ -12623,8 +13006,10 @@ Transform:
   - {fileID: 320681891}
   - {fileID: 85377484}
   - {fileID: 320484491}
+  - {fileID: 168493378}
   - {fileID: 1083851283}
   - {fileID: 40461911}
+  - {fileID: 233303669}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!68 &589755695
@@ -13046,6 +13431,7 @@ Transform:
   - {fileID: 1210511962}
   - {fileID: 770552863}
   - {fileID: 1325041697}
+  - {fileID: 2145865918}
   - {fileID: 2143941417}
   - {fileID: 1080390915}
   - {fileID: 1020887714}
@@ -13406,6 +13792,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -15236,6 +15625,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -15684,6 +16076,7 @@ MonoBehaviour:
   - {fileID: 1075007561}
   - {fileID: 898170343}
   - {fileID: 898170343}
+  - {fileID: 423249624}
   objectsToDestroyAfter: []
 --- !u!61 &688272333
 BoxCollider2D:
@@ -16829,6 +17222,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -17067,6 +17463,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -17722,6 +18121,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -17992,6 +18394,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -18621,7 +19026,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1777879295}
-  - {fileID: 1471735248}
+  - {fileID: 1689320975}
+  - {fileID: 310970346}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &824580561
@@ -22059,67 +22465,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &994224879
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 994224881}
-  - component: {fileID: 994224880}
-  m_Layer: 0
-  m_Name: BacklogManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &994224880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994224879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c16afdc0b0a488f4bba5e334544be715, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backlogPanel: {fileID: 0}
-  toggleKey: 98
-  charactersPanel: {fileID: 0}
-  characterButtons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  messagesContent: {fileID: 0}
-  messageEntryPrefab: {fileID: 3971697953119381147, guid: cdadd1a19985ba5449ae10e5f1491cb5, type: 3}
-  selectedCharacterText: {fileID: 0}
-  maxEntries: 100
-  playerColor: {r: 0, g: 1, b: 1, a: 1}
-  npcColor: {r: 0.4327802, g: 0.764151, b: 0.28475437, a: 1}
---- !u!4 &994224881
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994224879}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1304.2838, y: 543.8562, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1002819164
 GameObject:
   m_ObjectHideFlags: 0
@@ -22175,6 +22520,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -22360,11 +22708,15 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn:
   - {fileID: 2143941416}
   objectsToActivateAfter: []
-  objectsToDestroyAfter: []
+  objectsToDestroyAfter:
+  - {fileID: 1020887713}
 --- !u!61 &1020887716
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23636,7 +23988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec606a117ba5a8e48864dded68a4cf8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuPausa: {fileID: 0}
+  menuPausa: {fileID: 976095155}
   nombreEscenaMenu: MainMenu
 --- !u!4 &1075537133
 Transform:
@@ -23864,6 +24216,7 @@ MonoBehaviour:
   - {fileID: 1582104587}
   - {fileID: 111727740}
   - {fileID: 1602219585}
+  - {fileID: 310970345}
   objectsToDestroyAfter: []
   destroyAfterDialogue: 1
   autoActivate: 1
@@ -24425,6 +24778,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -27323,7 +27679,7 @@ SpriteRenderer:
   m_SortingOrder: 20
   m_Sprite: {fileID: -4248094021219397344, guid: 8219e1d30c2e8c545b5eb55b5fc7ae1f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.16, y: 0.16}
@@ -27387,6 +27743,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -28893,6 +29252,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -29816,6 +30178,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 28018635975214349, guid: 9d3f9b8f941989f4cb06d15bf4fce6f4, type: 3}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -30370,7 +30735,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1075537132}
         m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
         m_MethodName: BotonReanudar
         m_Mode: 1
@@ -31105,6 +31470,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -31989,6 +32357,114 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 19.475945, y: 14.18704}
   m_EdgeRadius: 0
+--- !u!1 &1436984838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1436984839}
+  - component: {fileID: 1436984841}
+  - component: {fileID: 1436984840}
+  m_Layer: 0
+  m_Name: DeBosqueAFogata (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1436984839
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436984838}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0.70710576, w: 0.70710784}
+  m_LocalPosition: {x: 8.85, y: 11.7, z: 0}
+  m_LocalScale: {x: 17.392809, y: 0.12616754, z: 1.2033756}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 17872172}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!114 &1436984840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436984838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea45d6ed3fa5364684eaeb1968283a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRoomCenter: {fileID: 2073445273}
+  targetPlayerPosition: {x: -105.9, y: 24}
+  transitionName: 
+  cameraMoveSpeed: 10
+  targetCameraSize: 6.5
+  cameraSizeChangeSpeed: 10
+  fadeDuration: 1
+  fadeImage: {fileID: 205797062}
+  transitionSound: {fileID: 0}
+  soundVolume: 1
+  prefabToSpawn: {fileID: 4268236059798576110, guid: 0e1e32e712418d440885b333cd575f80, type: 3}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
+  objectsToActivateAfterFadeIn: []
+  objectsToDestroyAfterFadeIn: []
+  objectsToActivateAfter: []
+  objectsToDestroyAfter: []
+--- !u!61 &1436984841
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436984838}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.020480048, y: 1.1770039}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.032549866, y: 88.93686}
+  m_EdgeRadius: 0
 --- !u!1 &1459312307
 GameObject:
   m_ObjectHideFlags: 0
@@ -32327,105 +32803,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1471735247
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1471735248}
-  - component: {fileID: 1471735250}
-  - component: {fileID: 1471735249}
-  m_Layer: 0
-  m_Name: Musica1 (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1471735248
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1471735247}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.46, y: -8.16, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 820180749}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1471735249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1471735247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01bc6ad87cb00844cb187b7cbf5e33e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicClip: {fileID: 8300000, guid: 5dd4f9155306800489e91e4851e36ca2, type: 3}
-  fadeDuration: 2
-  volume: 0.328
-  useCustomVolume: 1
-  resetVolumeOnExit: 0
-  disableOnActivate: 1
-  playerTag: Player
-  restorePreviousVolumeOnExit: 0
---- !u!61 &1471735250
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1471735247}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &1480415243
 GameObject:
   m_ObjectHideFlags: 0
@@ -32481,6 +32858,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -34006,6 +34386,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -34635,12 +35018,18 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
-  objectsToActivateAfterFadeIn:
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
+  objectsToActivateAfterFadeIn: []
+  objectsToDestroyAfterFadeIn: []
+  objectsToActivateAfter:
   - {fileID: 2143941416}
   - {fileID: 1080390914}
-  objectsToDestroyAfterFadeIn: []
-  objectsToActivateAfter: []
-  objectsToDestroyAfter: []
+  objectsToDestroyAfter:
+  - {fileID: 1597673193}
+  - {fileID: 1189717745}
+  - {fileID: 2107119273}
 --- !u!61 &1597673196
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35108,6 +35497,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -35378,6 +35770,104 @@ Transform:
   - {fileID: 650577791}
   - {fileID: 824580563}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1642039705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1642039708}
+  - component: {fileID: 1642039707}
+  - component: {fileID: 1642039706}
+  m_Layer: 0
+  m_Name: MisionRecoger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1642039706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642039705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoNuevo: "RECOGE LAS PERTENENCIAS DE AMARA Y NIRA Y D\xC9JALAS EN EL \xC1RBOL"
+  uiText: {fileID: 1067583673}
+  duracionRevelado: 1.2
+  escalaInicial: 0.7
+  escalaFinal: 1
+  sacudidaIntensidad: 0.3
+  sacudidaDuracion: 0.15
+--- !u!61 &1642039707
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642039705}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.64238834, y: 0.5000768}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 3.6527257, y: 2.0682836}
+  m_EdgeRadius: 0
+--- !u!4 &1642039708
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642039705}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3, y: -6.5, z: 0}
+  m_LocalScale: {x: 2.5419352, y: 2.9943135, z: 1.7233459}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1896329313}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1649058651
 GameObject:
@@ -35739,6 +36229,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -35844,6 +36337,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -35895,6 +36391,105 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.2579489}
   m_EdgeRadius: 0
+--- !u!1 &1689320972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1689320975}
+  - component: {fileID: 1689320974}
+  - component: {fileID: 1689320973}
+  m_Layer: 0
+  m_Name: MusicaActo3_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1689320973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689320972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bc6ad87cb00844cb187b7cbf5e33e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicClip: {fileID: 8300000, guid: df9f0ec3fdb83a949b66169ee2de6492, type: 3}
+  fadeDuration: 2
+  volume: 0.15
+  useCustomVolume: 1
+  resetVolumeOnExit: 0
+  disableOnActivate: 1
+  playerTag: Player
+  restorePreviousVolumeOnExit: 0
+--- !u!61 &1689320974
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689320972}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &1689320975
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689320972}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -28.49, y: -11.71, z: 0}
+  m_LocalScale: {x: 3.7842, y: 3.7842, z: 3.7842}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 820180749}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1695709434
 GameObject:
   m_ObjectHideFlags: 0
@@ -36543,6 +37138,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -37257,7 +37855,7 @@ GameObject:
   - component: {fileID: 1777879297}
   - component: {fileID: 1777879296}
   m_Layer: 0
-  m_Name: Musica1
+  m_Name: MusicaActo3_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37290,9 +37888,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bc6ad87cb00844cb187b7cbf5e33e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicClip: {fileID: 8300000, guid: 226533cc2de77f945baf696bd4adb691, type: 3}
+  musicClip: {fileID: 8300000, guid: dfbf6de8792878b4e97d9ff225893ce7, type: 3}
   fadeDuration: 2
-  volume: 0.557
+  volume: 0.15
   useCustomVolume: 1
   resetVolumeOnExit: 0
   disableOnActivate: 1
@@ -38379,7 +38977,7 @@ SpriteRenderer:
   m_SortingOrder: 20
   m_Sprite: {fileID: -6843879689614897153, guid: 6edf71688f8d356499cd86c412b7026d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.16, y: 0.16}
@@ -38454,6 +39052,133 @@ Transform:
   m_Children: []
   m_Father: {fileID: 835799058}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1848044238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1848044242}
+  - component: {fileID: 1848044241}
+  - component: {fileID: 1848044240}
+  - component: {fileID: 1848044239}
+  m_Layer: 0
+  m_Name: DeFogataABosque (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1848044239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848044238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea45d6ed3fa5364684eaeb1968283a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRoomCenter: {fileID: 943389710}
+  targetPlayerPosition: {x: -105.7, y: 15.34}
+  transitionName: 
+  cameraMoveSpeed: 10
+  targetCameraSize: 7.5
+  cameraSizeChangeSpeed: 10
+  fadeDuration: 1
+  fadeImage: {fileID: 205797062}
+  transitionSound: {fileID: 0}
+  soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
+  objectsToActivateAfterFadeIn: []
+  objectsToDestroyAfterFadeIn: []
+  objectsToActivateAfter: []
+  objectsToDestroyAfter: []
+--- !u!114 &1848044240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848044238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5627d39340ef63b4ba4eb6500fa97d9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRoomCenter: {fileID: 943389710}
+  targetPlayerPosition: {x: -105.7, y: 15.34}
+  transitionName: 
+  cameraMoveSpeed: 10
+  targetCameraSize: 7.5
+  cameraSizeChangeSpeed: 10
+--- !u!61 &1848044241
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848044238}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.00032054633, y: -0.035028934}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.31531698, y: 5.0190687}
+  m_EdgeRadius: 0
+--- !u!4 &1848044242
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848044238}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -1, w: 0.0000015199182}
+  m_LocalPosition: {x: -0.09, y: -10.03, z: 0}
+  m_LocalScale: {x: 12.827197, y: 0.12616754, z: 1.2033756}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1896329313}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
 --- !u!1 &1861309718
 GameObject:
   m_ObjectHideFlags: 0
@@ -39600,6 +40325,7 @@ Transform:
   m_Children:
   - {fileID: 2073445273}
   - {fileID: 521305462}
+  - {fileID: 1848044242}
   - {fileID: 1831599493}
   - {fileID: 659946897}
   - {fileID: 2024864278}
@@ -39611,10 +40337,12 @@ Transform:
   - {fileID: 1873086989}
   - {fileID: 688272331}
   - {fileID: 423249625}
+  - {fileID: 1956157746}
   - {fileID: 898170344}
   - {fileID: 747343254}
   - {fileID: 1654441847}
   - {fileID: 1075007562}
+  - {fileID: 1642039708}
   - {fileID: 1269092136}
   - {fileID: 199190687}
   m_Father: {fileID: 0}
@@ -40228,6 +40956,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter:
@@ -40700,6 +41431,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -40749,6 +41483,105 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Size: {x: 0.99241143, y: 0.054401413}
+  m_EdgeRadius: 0
+--- !u!1 &1956157745
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1956157746}
+  - component: {fileID: 1956157748}
+  - component: {fileID: 1956157747}
+  m_Layer: 0
+  m_Name: MusicaDespueDeAlpha
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1956157746
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956157745}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.02, y: -5.81, z: 0}
+  m_LocalScale: {x: 13.426833, y: 8.524973, z: 8.524973}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1896329313}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1956157747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956157745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bc6ad87cb00844cb187b7cbf5e33e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicClip: {fileID: 8300000, guid: 412a22f8a5b4dc349b5d6dfa2427ff72, type: 3}
+  fadeDuration: 2
+  volume: 0.2
+  useCustomVolume: 1
+  resetVolumeOnExit: 0
+  disableOnActivate: 1
+  playerTag: Player
+  restorePreviousVolumeOnExit: 0
+--- !u!61 &1956157748
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956157745}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &1968121938
 GameObject:
@@ -41122,6 +41955,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -41227,6 +42063,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -41374,12 +42213,12 @@ RectTransform:
   - {fileID: 729393277}
   - {fileID: 205797061}
   - {fileID: 754611766}
+  - {fileID: 853405515}
   - {fileID: 1761221873}
   - {fileID: 878597091}
   - {fileID: 437610597}
   - {fileID: 1067583672}
   - {fileID: 976095156}
-  - {fileID: 853405515}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -43926,6 +44765,9 @@ MonoBehaviour:
   fadeImage: {fileID: 205797062}
   transitionSound: {fileID: 0}
   soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn: []
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
@@ -44416,7 +45258,9 @@ MonoBehaviour:
   - {fileID: 23336178}
   - {fileID: 660021373}
   - {fileID: 782857851}
-  objectsToDestroyAfter: []
+  - {fileID: 1689320972}
+  objectsToDestroyAfter:
+  - {fileID: 956791346}
   destroyAfterDialogue: 0
   reuseDelay: 0.5
 --- !u!114 &2107119276
@@ -44557,7 +45401,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2109617060
 RectTransform:
   m_ObjectHideFlags: 0
@@ -44699,10 +45543,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -46117,6 +46961,114 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2145865917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2145865918}
+  - component: {fileID: 2145865920}
+  - component: {fileID: 2145865919}
+  m_Layer: 0
+  m_Name: TransicionPlaza-Arbol (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2145865918
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145865917}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.73, y: 3.51, z: 0}
+  m_LocalScale: {x: 2.5907986, y: 1.8886814, z: 1.8886814}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 604158710}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2145865919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145865917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea45d6ed3fa5364684eaeb1968283a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRoomCenter: {fileID: 320681891}
+  targetPlayerPosition: {x: -68.82, y: 64}
+  transitionName: 
+  cameraMoveSpeed: 15
+  targetCameraSize: 8
+  cameraSizeChangeSpeed: 10
+  fadeDuration: 1
+  fadeImage: {fileID: 205797062}
+  transitionSound: {fileID: 0}
+  soundVolume: 1
+  prefabToSpawn: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnAfterFadeIn: 1
+  objectsToActivateAfterFadeIn: []
+  objectsToDestroyAfterFadeIn: []
+  objectsToActivateAfter: []
+  objectsToDestroyAfter: []
+--- !u!61 &2145865920
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145865917}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.0017465949, y: 0.3594126}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.4794687, y: 0.234723}
+  m_EdgeRadius: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -46142,7 +47094,6 @@ SceneRoots:
   - {fileID: 477240461}
   - {fileID: 2111954376}
   - {fileID: 1075537133}
-  - {fileID: 994224881}
   - {fileID: 1194539002}
   - {fileID: 767214361}
   - {fileID: 1987290085}

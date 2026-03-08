@@ -16,23 +16,28 @@ public class TransitionPointWithFade : MonoBehaviour
 
     [Header("Configuración Fade")]
     public float fadeDuration = 1f;
-    public Image fadeImage; // Imagen negra para el fade (debe estar en Canvas)
+    public Image fadeImage;
 
     [Header("Configuración de Sonido")]
     public AudioClip transitionSound;
     public float soundVolume = 1f;
 
+    [Header("Instanciación de Prefabs")]
+    public GameObject prefabToSpawn; // El prefab del trigger de música
+    public Transform spawnPoint; // Punto opcional donde instanciar (si es null, usa targetPlayerPosition)
+    public bool spawnAfterFadeIn = true; // Si es true, sale cuando está en negro. Si es false, al final.
+
     [Header("Objetos a Activar después del Fade In")]
-    public GameObject[] objectsToActivateAfterFadeIn; // Se activan cuando todo está negro
+    public GameObject[] objectsToActivateAfterFadeIn;
 
     [Header("Objetos a Destruir después del Fade In")]
-    public GameObject[] objectsToDestroyAfterFadeIn; // Se destruyen cuando todo está negro
+    public GameObject[] objectsToDestroyAfterFadeIn;
 
     [Header("Objetos a Activar al Final")]
-    public GameObject[] objectsToActivateAfter; // Objetos que se activarán al terminar la transición
+    public GameObject[] objectsToActivateAfter;
 
     [Header("Objetos a Destruir al Final")]
-    public GameObject[] objectsToDestroyAfter; // Objetos que se destruirán al terminar la transición
+    public GameObject[] objectsToDestroyAfter;
 
     private Camera mainCamera;
     private bool isTransitioning = false;
@@ -51,7 +56,6 @@ public class TransitionPointWithFade : MonoBehaviour
             playerRigidbody = player.GetComponent<Rigidbody2D>();
         }
 
-        // Asegurar que la imagen de fade esté oculta al inicio
         if (fadeImage != null)
         {
             fadeImage.color = new Color(0, 0, 0, 0);
@@ -64,57 +68,63 @@ public class TransitionPointWithFade : MonoBehaviour
         if (!isTransitioning)
         {
             isTransitioning = true;
-
-            // Reproducir sonido al iniciar la transición
             if (transitionSound != null)
             {
                 AudioSource.PlayClipAtPoint(transitionSound, transform.position, soundVolume);
             }
-
             StartCoroutine(TransitionSequence(player));
         }
     }
 
     private IEnumerator TransitionSequence(GameObject player)
     {
-        // 1. Bloquear movimiento del jugador
         BlockPlayerMovement(true);
 
-        // 2. Fade In (aparece negro)
+        // 1. Fade In
         yield return StartCoroutine(Fade(0f, 1f, fadeDuration));
 
-        // 3. Activar y destruir objetos después del Fade In (cuando todo está negro)
+        // 2. Acciones en negro
         ActivateObjectsAfterFadeIn();
         DestroyObjectsAfterFadeIn();
 
-        // 4. Realizar el teletransporte
+        if (spawnAfterFadeIn) { SpawnRequestedPrefab(); } // <--- Instanciar aquí si se prefiere en negro
+
         player.transform.position = targetPlayerPosition;
 
-        // 5. Mover cámara (si hay target)
         if (mainCamera != null && targetRoomCenter != null)
         {
             yield return StartCoroutine(MoveCameraToRoom());
         }
 
-        // 6. Fade Out (desaparece negro)
+        // 3. Fade Out
         yield return StartCoroutine(Fade(1f, 0f, fadeDuration));
 
-        // 7. Activar y destruir objetos al final de la transición
+        // 4. Acciones finales
         ActivateObjectsAfter();
         DestroyObjectsAfter();
 
-        // 8. Desbloquear movimiento del jugador
-        BlockPlayerMovement(false);
+        if (!spawnAfterFadeIn) { SpawnRequestedPrefab(); } // <--- Instanciar aquí si se prefiere al final
 
+        BlockPlayerMovement(false);
         isTransitioning = false;
     }
+
+    private void SpawnRequestedPrefab()
+    {
+        if (prefabToSpawn != null)
+        {
+            Vector3 position = spawnPoint != null ? spawnPoint.position : (Vector3)targetPlayerPosition;
+            Instantiate(prefabToSpawn, position, Quaternion.identity);
+            Debug.Log($"Prefab {prefabToSpawn.name} instanciado correctamente.");
+        }
+    }
+
+    // --- MÉTODOS DE FADE, CÁMARA Y BLOQUEO (SIN CAMBIOS) ---
 
     private IEnumerator Fade(float startAlpha, float endAlpha, float duration)
     {
         if (fadeImage == null) yield break;
-
         float elapsedTime = 0f;
-
         while (elapsedTime < duration)
         {
             elapsedTime += Time.deltaTime;
@@ -122,42 +132,19 @@ public class TransitionPointWithFade : MonoBehaviour
             fadeImage.color = new Color(0, 0, 0, alpha);
             yield return null;
         }
-
         fadeImage.color = new Color(0, 0, 0, endAlpha);
     }
 
     private IEnumerator MoveCameraToRoom()
     {
-        Vector3 targetPosition = new Vector3(
-            targetRoomCenter.position.x,
-            targetRoomCenter.position.y,
-            mainCamera.transform.position.z
-        );
-
-        float startSize = mainCamera.orthographicSize;
+        Vector3 targetPosition = new Vector3(targetRoomCenter.position.x, targetRoomCenter.position.y, mainCamera.transform.position.z);
         float targetSize = targetCameraSize;
-
-        float distanceThreshold = 0.1f;
-        float sizeThreshold = 0.05f;
-
-        while (Vector3.Distance(mainCamera.transform.position, targetPosition) > distanceThreshold ||
-               Mathf.Abs(mainCamera.orthographicSize - targetSize) > sizeThreshold)
+        while (Vector3.Distance(mainCamera.transform.position, targetPosition) > 0.1f || Mathf.Abs(mainCamera.orthographicSize - targetSize) > 0.05f)
         {
-            mainCamera.transform.position = Vector3.Lerp(
-                mainCamera.transform.position,
-                targetPosition,
-                cameraMoveSpeed * Time.deltaTime
-            );
-
-            mainCamera.orthographicSize = Mathf.Lerp(
-                mainCamera.orthographicSize,
-                targetSize,
-                cameraSizeChangeSpeed * Time.deltaTime
-            );
-
+            mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, targetPosition, cameraMoveSpeed * Time.deltaTime);
+            mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, targetSize, cameraSizeChangeSpeed * Time.deltaTime);
             yield return null;
         }
-
         mainCamera.transform.position = targetPosition;
         mainCamera.orthographicSize = targetSize;
     }
@@ -166,144 +153,30 @@ public class TransitionPointWithFade : MonoBehaviour
     {
         if (block)
         {
-            // Guardar velocidad actual y detener movimiento
-            if (playerRigidbody != null)
-            {
-                originalVelocity = playerRigidbody.linearVelocity;
-                playerRigidbody.linearVelocity = Vector2.zero;
-            }
-
-            if (playerMovement != null)
-            {
-                playerMovement.enabled = false;
-            }
+            if (playerRigidbody != null) { originalVelocity = playerRigidbody.linearVelocity; playerRigidbody.linearVelocity = Vector2.zero; }
+            if (playerMovement != null) playerMovement.enabled = false;
         }
         else
         {
-            // Restaurar movimiento
-            if (playerMovement != null)
-            {
-                playerMovement.enabled = true;
-            }
-
-            if (playerRigidbody != null)
-            {
-                playerRigidbody.linearVelocity = originalVelocity;
-            }
+            if (playerMovement != null) playerMovement.enabled = true;
+            if (playerRigidbody != null) playerRigidbody.linearVelocity = originalVelocity;
         }
     }
 
-    // Método para activar objetos después del Fade In
-    private void ActivateObjectsAfterFadeIn()
-    {
-        if (objectsToActivateAfterFadeIn != null && objectsToActivateAfterFadeIn.Length > 0)
-        {
-            foreach (GameObject obj in objectsToActivateAfterFadeIn)
-            {
-                if (obj != null)
-                {
-                    obj.SetActive(true);
-                    Debug.Log($"Objeto activado después del Fade In: {obj.name}");
-                }
-            }
-        }
-    }
-
-    // Método para destruir objetos después del Fade In
-    private void DestroyObjectsAfterFadeIn()
-    {
-        if (objectsToDestroyAfterFadeIn != null && objectsToDestroyAfterFadeIn.Length > 0)
-        {
-            foreach (GameObject obj in objectsToDestroyAfterFadeIn)
-            {
-                if (obj != null)
-                {
-                    Destroy(obj);
-                    Debug.Log($"Objeto destruido después del Fade In: {obj.name}");
-                }
-            }
-        }
-    }
-
-    // Método para activar objetos al final
-    private void ActivateObjectsAfter()
-    {
-        if (objectsToActivateAfter != null && objectsToActivateAfter.Length > 0)
-        {
-            foreach (GameObject obj in objectsToActivateAfter)
-            {
-                if (obj != null)
-                {
-                    obj.SetActive(true);
-                    Debug.Log($"Objeto activado al final: {obj.name}");
-                }
-            }
-        }
-    }
-
-    // Método para destruir objetos al final
-    private void DestroyObjectsAfter()
-    {
-        if (objectsToDestroyAfter != null && objectsToDestroyAfter.Length > 0)
-        {
-            foreach (GameObject obj in objectsToDestroyAfter)
-            {
-                if (obj != null)
-                {
-                    Destroy(obj);
-                    Debug.Log($"Objeto destruido al final: {obj.name}");
-                }
-            }
-        }
-    }
+    private void ActivateObjectsAfterFadeIn() { foreach (GameObject obj in objectsToActivateAfterFadeIn) if (obj != null) obj.SetActive(true); }
+    private void DestroyObjectsAfterFadeIn() { foreach (GameObject obj in objectsToDestroyAfterFadeIn) if (obj != null) Destroy(obj); }
+    private void ActivateObjectsAfter() { foreach (GameObject obj in objectsToActivateAfter) if (obj != null) obj.SetActive(true); }
+    private void DestroyObjectsAfter() { foreach (GameObject obj in objectsToDestroyAfter) if (obj != null) Destroy(obj); }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log($"Trigger entered with: {other.name}, Tag: {other.tag}");
-
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log($"Initiating transition with fade for player: {other.name}");
-            InitiateTransition(other.gameObject);
-        }
-        else
-        {
-            Debug.Log($"Collider tag is not Player. Actual tag: {other.tag}");
-        }
+        if (other.CompareTag("Player")) InitiateTransition(other.gameObject);
     }
 
-    // Dibujar gizmos en el editor
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(targetPlayerPosition, 0.3f);
-
-        if (targetRoomCenter != null)
-        {
-            Camera cam = Camera.main;
-            float aspectRatio = 16f / 9f;
-
-            if (cam != null)
-            {
-                aspectRatio = cam.aspect;
-            }
-            else
-            {
-                Camera anyCamera = FindObjectOfType<Camera>();
-                if (anyCamera != null)
-                {
-                    aspectRatio = anyCamera.aspect;
-                }
-            }
-
-            Gizmos.color = Color.cyan;
-            Gizmos.DrawWireCube(
-                targetRoomCenter.position,
-                new Vector3(targetCameraSize * 2 * aspectRatio, targetCameraSize * 2, 0)
-            );
-
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawLine(transform.position, targetRoomCenter.position);
-        }
+        if (spawnPoint != null) { Gizmos.color = Color.magenta; Gizmos.DrawWireSphere(spawnPoint.position, 0.2f); }
     }
 }

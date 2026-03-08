@@ -1,13 +1,9 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using System.Collections; // Añadir este using
 
 public class SceneTransitionWithFade : MonoBehaviour
 {
     public string sceneName;
     public AudioClip transitionSound;
-    public Image fadeNegro; // Arrastra aquí tu objeto del Canvas
 
     private bool hasTriggered = false;
 
@@ -28,37 +24,16 @@ public class SceneTransitionWithFade : MonoBehaviour
             AudioSource.PlayClipAtPoint(transitionSound, transform.position);
         }
 
-        // Activar y hacer fade in del objeto negro
-        if (fadeNegro != null)
+        // Buscar el FadeManager (como es persistente, lo encontraremos)
+        FadeManager fadeManager = FindObjectOfType<FadeManager>();
+
+        if (fadeManager != null)
         {
-            fadeNegro.gameObject.SetActive(true);
-            StartCoroutine(FadeIn());
+            fadeManager.ChangeScene(sceneName);
         }
         else
         {
-            // Si no hay fadeNegro, cambiar escena directamente
-            SceneManager.LoadScene(sceneName);
+            Debug.LogError("No se encontró FadeManager. Asegúrate de que existe en la escena inicial");
         }
-    }
-
-    private IEnumerator FadeIn() // Cambiado de System.Collections.IEnumerator a IEnumerator
-    {
-        float duration = 1f; // Duración del fade
-        float elapsedTime = 0f;
-
-        fadeNegro.color = new Color(0, 0, 0, 0);
-
-        while (elapsedTime < duration)
-        {
-            elapsedTime += Time.deltaTime;
-            float alpha = Mathf.Lerp(0f, 1f, elapsedTime / duration);
-            fadeNegro.color = new Color(0, 0, 0, alpha);
-            yield return null;
-        }
-
-        fadeNegro.color = new Color(0, 0, 0, 1f);
-
-        // Cambiar escena cuando termine el fade
-        SceneManager.LoadScene(sceneName);
     }
 }

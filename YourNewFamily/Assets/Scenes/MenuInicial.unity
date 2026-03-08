@@ -2544,9 +2544,7 @@ MonoBehaviour:
   musicSlider: {fileID: 1666053438}
   sfxSlider: {fileID: 1650599808}
   musicTracks:
-  - {fileID: 8300000, guid: 384efa33c271d3d44a824e670cdb8e67, type: 3}
-  - {fileID: 8300000, guid: 8d6ba3689bae7d04a9b76ebc808b5035, type: 3}
-  - {fileID: 8300000, guid: 81a74b4e9e0f2364c8d371ec68e20482, type: 3}
+  - {fileID: 8300000, guid: 5dd4f9155306800489e91e4851e36ca2, type: 3}
   shuffleTracks: 0
 --- !u!82 &470641300
 AudioSource:
@@ -2559,9 +2557,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 384efa33c271d3d44a824e670cdb8e67, type: 3}
+  m_Resource: {fileID: 8300000, guid: 5dd4f9155306800489e91e4851e36ca2, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
   Mute: 0
