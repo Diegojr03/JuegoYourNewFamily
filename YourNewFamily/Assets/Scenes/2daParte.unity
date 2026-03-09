@@ -3319,7 +3319,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -2317544566924628521, guid: 4b6f621ca4c647647b6a1d59faed6d03, type: 3}
+  m_Sprite: {fileID: 3746130951141193781, guid: 079028b7731862a468a2419ae6435b0b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -41765,7 +41765,7 @@ MonoBehaviour:
   - speakerName: Amara
     dialogueText: "LILITH, \xA1\xA1\xA1\xA1\xBFTIENES UN MOMENTO?!!!"
     leftSpeaker: 1
-    characterSprite: {fileID: -4329823784585237373, guid: 8e03407ffd6ece243bd6500539fcefb1, type: 3}
+    characterSprite: {fileID: 3052107905330943212, guid: 37899709929761944875da259aa06b9f, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -41774,7 +41774,7 @@ MonoBehaviour:
     dialogueText: Es que creo que he perdido a mi conejo Nube. No lo encuentro por
       ninguna parte
     leftSpeaker: 1
-    characterSprite: {fileID: -4329823784585237373, guid: 8e03407ffd6ece243bd6500539fcefb1, type: 3}
+    characterSprite: {fileID: 3052107905330943212, guid: 37899709929761944875da259aa06b9f, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -41782,7 +41782,7 @@ MonoBehaviour:
   - speakerName: Amara
     dialogueText: "Es muy importante para mi y para el beb\xE9."
     leftSpeaker: 1
-    characterSprite: {fileID: -4329823784585237373, guid: 8e03407ffd6ece243bd6500539fcefb1, type: 3}
+    characterSprite: {fileID: 3052107905330943212, guid: 37899709929761944875da259aa06b9f, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -41799,7 +41799,7 @@ MonoBehaviour:
     dialogueText: "Lo llevaba conmigo esta ma\xF1ana y creo que lo dej\xE9 en alg\xFAn
       sitio mientras ayudaba a ordenar las mesas."
     leftSpeaker: 1
-    characterSprite: {fileID: -4329823784585237373, guid: 8e03407ffd6ece243bd6500539fcefb1, type: 3}
+    characterSprite: {fileID: 3052107905330943212, guid: 37899709929761944875da259aa06b9f, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -41808,7 +41808,7 @@ MonoBehaviour:
     dialogueText: "No me di cuenta hasta ahora. Es tonto, pero no puedo estar tranquila
       sin \xE9l."
     leftSpeaker: 1
-    characterSprite: {fileID: -4329823784585237373, guid: 8e03407ffd6ece243bd6500539fcefb1, type: 3}
+    characterSprite: {fileID: 3052107905330943212, guid: 37899709929761944875da259aa06b9f, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -41826,7 +41826,7 @@ MonoBehaviour:
     dialogueText: "Gracias, me han dicho que lo vieron irse por la izquierda en la
       zona de las casas. Debe estar en alg\xFAn sitio."
     leftSpeaker: 1
-    characterSprite: {fileID: -4329823784585237373, guid: 8e03407ffd6ece243bd6500539fcefb1, type: 3}
+    characterSprite: {fileID: 3052107905330943212, guid: 37899709929761944875da259aa06b9f, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -41834,7 +41834,7 @@ MonoBehaviour:
   - speakerName: Amara
     dialogueText: "Si lo encuentras me har\xEDas muy feliz y al beb\xE9 m\xE1s."
     leftSpeaker: 1
-    characterSprite: {fileID: -4329823784585237373, guid: 8e03407ffd6ece243bd6500539fcefb1, type: 3}
+    characterSprite: {fileID: 3052107905330943212, guid: 37899709929761944875da259aa06b9f, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
