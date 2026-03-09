@@ -1,9 +1,9 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections;
 
 public class MusicTrigger : MonoBehaviour
 {
-    [Header("Música a reproducir")]
+    [Header("MÃºsica a reproducir")]
     [SerializeField] private AudioClip musicClip;
     [SerializeField] private float fadeDuration = -1;
 
@@ -12,9 +12,13 @@ public class MusicTrigger : MonoBehaviour
     [SerializeField] private bool useCustomVolume = false;
     [SerializeField] private bool resetVolumeOnExit = false;
 
-    [Header("Configuración del Trigger")]
+    [Header("ConfiguraciÃ³n del Trigger")]
     [SerializeField] private bool disableOnActivate = true;
     [SerializeField] private string playerTag = "Player";
+
+    // ðŸ”¥ NUEVO: OpciÃ³n para detener la mÃºsica
+    [Header("Control de MÃºsica")]
+    [SerializeField] private bool stopMusicOnTrigger = false; // Si es true, detiene la mÃºsica en lugar de reproducir
 
     [Header("Eventos Opcionales")]
     [SerializeField] private bool restorePreviousVolumeOnExit = false;
@@ -24,6 +28,7 @@ public class MusicTrigger : MonoBehaviour
     private Collider2D triggerCollider2D;
     private float previousVolume;
     private bool wasVolumeChanged = false;
+    private AudioClip previousClip; // ðŸ”¥ NUEVO: Para guardar el clip anterior
 
     private void Start()
     {
@@ -42,12 +47,11 @@ public class MusicTrigger : MonoBehaviour
         if (triggerCollider2D != null)
             triggerCollider2D.isTrigger = true;
 
-        // Precargar la música al inicio para evitar el freeze
-        if (MusicManager.Instance != null && musicClip != null)
+        // Precargar la mÃºsica al inicio si hay clip asignado y no es modo stop
+        if (MusicManager.Instance != null && musicClip != null && !stopMusicOnTrigger)
         {
             MusicManager.Instance.PreloadMusic(musicClip);
 
-            // Si usamos volumen personalizado, lo aplicamos desde el inicio
             if (useCustomVolume)
             {
                 MusicManager.Instance.SetClipVolume(musicClip, volume);
@@ -97,30 +101,29 @@ public class MusicTrigger : MonoBehaviour
 
     private void ActivateMusic()
     {
-        if (musicClip == null)
-        {
-            Debug.LogWarning("No hay clip de música asignado en " + gameObject.name);
-            return;
-        }
+        if (MusicManager.Instance == null) return;
 
-        if (MusicManager.Instance != null)
+        // ðŸ”¥ MODIFICADO: Si stopMusicOnTrigger estÃ¡ activado, detener la mÃºsica
+        if (stopMusicOnTrigger)
         {
+            Debug.Log($"Deteniendo mÃºsica por trigger: {gameObject.name}");
+
+            // Guardar el clip actual antes de detenerlo (por si queremos restaurar despuÃ©s)
+            previousClip = MusicManager.Instance.GetCurrentClip();
+
+            // Detener la mÃºsica
+            if (fadeDuration > 0)
+            {
+                MusicManager.Instance.StopMusic(fadeDuration);
+            }
+            else
+            {
+                MusicManager.Instance.StopMusic();
+            }
+
             hasBeenActivated = true;
 
-            // Guardar el volumen actual antes de cambiarlo si es necesario
-            if (resetVolumeOnExit || restorePreviousVolumeOnExit)
-            {
-                previousVolume = MusicManager.Instance.GetClipVolume(musicClip);
-                wasVolumeChanged = true;
-            }
-
-            // Aplicar el volumen personalizado si está activado
-            if (useCustomVolume)
-            {
-                MusicManager.Instance.SetClipVolume(musicClip, volume);
-            }
-
-            // Desactivar collider inmediatamente si solo queremos una activación única
+            // Desactivar collider si estÃ¡ configurado
             if (disableOnActivate)
             {
                 if (triggerCollider != null)
@@ -130,28 +133,74 @@ public class MusicTrigger : MonoBehaviour
                     triggerCollider2D.enabled = false;
             }
 
-            // Iniciar la música (ahora sin freeze porque está precargada)
-            if (fadeDuration > 0)
-            {
-                MusicManager.Instance.ChangeMusic(musicClip, fadeDuration);
-            }
-            else
-            {
-                MusicManager.Instance.ChangeMusic(musicClip);
-            }
+            return;
+        }
 
-            // Desactivar el objeto si está configurado
-            if (disableOnActivate)
-            {
-                StartCoroutine(DisableAfterFrame());
-            }
+        // Si no es modo stop, continuar con la lÃ³gica normal de reproducciÃ³n
+        if (musicClip == null)
+        {
+            Debug.LogWarning("No hay clip de mÃºsica asignado en " + gameObject.name);
+            return;
+        }
+
+        hasBeenActivated = true;
+
+        if (resetVolumeOnExit || restorePreviousVolumeOnExit)
+        {
+            previousVolume = MusicManager.Instance.GetClipVolume(musicClip);
+            wasVolumeChanged = true;
+        }
+
+        if (useCustomVolume)
+        {
+            MusicManager.Instance.SetClipVolume(musicClip, volume);
+        }
+
+        if (disableOnActivate)
+        {
+            if (triggerCollider != null)
+                triggerCollider.enabled = false;
+
+            if (triggerCollider2D != null)
+                triggerCollider2D.enabled = false;
+        }
+
+        if (fadeDuration > 0)
+        {
+            MusicManager.Instance.ChangeMusic(musicClip, fadeDuration);
+        }
+        else
+        {
+            MusicManager.Instance.ChangeMusic(musicClip);
+        }
+
+        if (disableOnActivate)
+        {
+            StartCoroutine(DisableAfterFrame());
         }
     }
 
     private void DeactivateMusic()
     {
-        // Restaurar el volumen anterior si está configurado
-        if (wasVolumeChanged && (resetVolumeOnExit || restorePreviousVolumeOnExit))
+        if (MusicManager.Instance == null) return;
+
+        // Si es modo stop y queremos restaurar la mÃºsica anterior al salir
+        if (stopMusicOnTrigger && restorePreviousVolumeOnExit && previousClip != null)
+        {
+            Debug.Log($"Restaurando mÃºsica anterior: {previousClip.name}");
+
+            if (fadeDuration > 0)
+            {
+                MusicManager.Instance.ChangeMusic(previousClip, fadeDuration);
+            }
+            else
+            {
+                MusicManager.Instance.ChangeMusic(previousClip);
+            }
+        }
+
+        // Restaurar el volumen anterior si estÃ¡ configurado (solo para modo reproducciÃ³n normal)
+        if (!stopMusicOnTrigger && wasVolumeChanged && (resetVolumeOnExit || restorePreviousVolumeOnExit))
         {
             if (restorePreviousVolumeOnExit)
             {
@@ -166,28 +215,25 @@ public class MusicTrigger : MonoBehaviour
 
     private IEnumerator DisableAfterFrame()
     {
-        // Esperar un frame para asegurar que todo se procesó
         yield return null;
         gameObject.SetActive(false);
     }
 
-    // Método público para cambiar el volumen en tiempo de ejecución
     public void SetVolume(float newVolume)
     {
         volume = Mathf.Clamp01(newVolume);
 
-        if (useCustomVolume && musicClip != null && MusicManager.Instance != null)
+        if (useCustomVolume && musicClip != null && MusicManager.Instance != null && !stopMusicOnTrigger)
         {
             MusicManager.Instance.SetClipVolume(musicClip, volume);
         }
     }
 
-    // Método público para activar/desactivar el volumen personalizado
     public void SetUseCustomVolume(bool use)
     {
         useCustomVolume = use;
 
-        if (musicClip != null && MusicManager.Instance != null)
+        if (musicClip != null && MusicManager.Instance != null && !stopMusicOnTrigger)
         {
             if (use)
             {
@@ -202,7 +248,8 @@ public class MusicTrigger : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = new Color(0, 1, 0, 0.3f);
+        // Cambiar color segÃºn el modo (verde para reproducir, rojo para detener)
+        Gizmos.color = stopMusicOnTrigger ? new Color(1, 0, 0, 0.3f) : new Color(0, 1, 0, 0.3f);
 
         if (triggerCollider != null)
         {
@@ -220,14 +267,21 @@ public class MusicTrigger : MonoBehaviour
         else if (triggerCollider2D != null)
         {
             Gizmos.matrix = transform.localToWorldMatrix;
-            Gizmos.DrawCube(Vector3.zero, Vector3.one);
+
+            if (triggerCollider2D is BoxCollider2D box2D)
+            {
+                Gizmos.DrawCube(box2D.offset, box2D.size);
+            }
+            else if (triggerCollider2D is CircleCollider2D circle2D)
+            {
+                Gizmos.DrawSphere(circle2D.offset, circle2D.radius);
+            }
         }
     }
 
     private void OnDestroy()
     {
-        // Limpiar el volumen si el objeto es destruido y habíamos cambiado algo
-        if (wasVolumeChanged && musicClip != null && MusicManager.Instance != null)
+        if (wasVolumeChanged && musicClip != null && MusicManager.Instance != null && !stopMusicOnTrigger)
         {
             if (resetVolumeOnExit)
             {

@@ -24,19 +24,6 @@ public class GameManager : MonoBehaviour
     private bool objetosDetectadosAlMenosUnaVez = false;
     public TextMeshProUGUI textoMision;
 
-    void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
     void Start()
     {
         ActualizarObjetos();
