@@ -9608,9 +9608,8 @@ MonoBehaviour:
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
   - speakerName: Alpha
-    dialogueText: "\u201CLo s\xE9\u2026 lo s\xE9, tu coraz\xF3n es puro. Siempre
-      has querido cuidar de los dem\xE1s. Esa es la raz\xF3n por la que te conf\xEDo
-      estas tareas."
+    dialogueText: "Lo s\xE9\u2026 lo s\xE9, tu coraz\xF3n es puro. Siempre has querido
+      cuidar de los dem\xE1s. Esa es la raz\xF3n por la que te conf\xEDo estas tareas."
     leftSpeaker: 1
     characterSprite: {fileID: -8106269189103352243, guid: bd14f137295602c4d99506bc42db21b9, type: 3}
     giveItemAfterThisLine: 0
@@ -9724,7 +9723,7 @@ MonoBehaviour:
   - speakerName: 
     dialogueText: "*Bebes el n\xE9ctar de la botella que te da Alpha*"
     leftSpeaker: 0
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: -6751318744405601006, guid: 377001099d54d0f478295771fe716d43, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -18032,12 +18031,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 775189911}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1124.95, y: -530.34, z: 0}
-  m_LocalScale: {x: 2.6113749, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -164.69, y: 9.46, z: 0}
+  m_LocalScale: {x: 2.7745857, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1761221873}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &782857851
 GameObject:
@@ -20206,7 +20205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textoNuevo: VE AL POZO Y HABLA CON ORREN EN LA BILBIOTECA
+  textoNuevo: VE AL POZO Y HABLA CON ORREN EN LA BIBLIOTECA
   uiText: {fileID: 1067583673}
   duracionRevelado: 1.2
   escalaInicial: 0.7
@@ -38610,7 +38609,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1091969092}
-  - {fileID: 775189914}
   - {fileID: 1182598488}
   m_Father: {fileID: 1987290085}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -39260,7 +39258,8 @@ MonoBehaviour:
   - {fileID: 2114995721}
   - {fileID: 965613231}
   - {fileID: 1597673193}
-  objectsToDestroyAfter: []
+  objectsToDestroyAfter:
+  - {fileID: 562297081}
   destroyAfterDialogue: 1
   autoActivate: 1
   reuseDelay: 0.5
@@ -48094,6 +48093,7 @@ SceneRoots:
   - {fileID: 1075537133}
   - {fileID: 1194539002}
   - {fileID: 767214361}
+  - {fileID: 775189914}
   - {fileID: 1987290085}
   - {fileID: 1774207730}
   - {fileID: 1022132341}

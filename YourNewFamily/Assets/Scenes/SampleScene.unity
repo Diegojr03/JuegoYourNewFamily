@@ -4145,6 +4145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 105151659}
   - component: {fileID: 105151660}
+  - component: {fileID: 105151661}
   m_Layer: 0
   m_Name: BortisCasaLilith
   m_TagString: Untagged
@@ -4162,7 +4163,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.05, y: -3.57, z: 0}
-  m_LocalScale: {x: 0.5766007, y: 0.57660073, z: 0}
+  m_LocalScale: {x: 0.13666493, y: 0.12983169, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 503323347}
@@ -4211,7 +4212,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 8949820458873236102, guid: 813264d13f33c2d45917df67bff1d3ee, type: 3}
+  m_Sprite: {fileID: -3758451378132189153, guid: 7a372c112d6e6124c9e249609c7d2bbc, type: 3}
   m_Color: {r: 0.74509805, g: 0.74509805, b: 0.74509805, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -4222,6 +4223,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &105151661
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105151658}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 12.24, y: 19.64}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 12.24, y: 19.64}
+  m_EdgeRadius: 0
 --- !u!1 &107322269
 GameObject:
   m_ObjectHideFlags: 0
@@ -6572,6 +6619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 161605748}
   - component: {fileID: 161605749}
+  - component: {fileID: 161605750}
   m_Layer: 0
   m_Name: Delta
   m_TagString: Untagged
@@ -6589,7 +6637,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.4000034, y: 3.6400023, z: 0}
-  m_LocalScale: {x: 0.104843, y: 0.104843, z: 0.104843}
+  m_LocalScale: {x: 0.09557593, y: 0.09557593, z: 0.09557593}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 604768798}
@@ -6649,6 +6697,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &161605750
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161605747}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 11.852015, y: 19.16}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 11.852015, y: 19.16}
+  m_EdgeRadius: 0
 --- !u!1 &170496870
 GameObject:
   m_ObjectHideFlags: 0
@@ -7649,7 +7743,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8.8, y: -6.23, z: 0}
-  m_LocalScale: {x: 0.091779836, y: 0.091779836, z: 0.091779836}
+  m_LocalScale: {x: 0.090157166, y: 0.090157166, z: 0.090157166}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 604768798}
@@ -26615,7 +26709,7 @@ MonoBehaviour:
   inventoryItemId: item_default
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
-  autoActivate: 1
+  autoActivate: 0
   dialogueSections:
   - speakerName: 
     dialogueText: Has encontrado un cuchillo
@@ -33597,7 +33691,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.04, y: 2.14, z: 0}
-  m_LocalScale: {x: 0.1982546, y: 0.19825462, z: 0}
+  m_LocalScale: {x: 0.0476842, y: 0.045299996, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1209969548}
@@ -33636,17 +33730,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.025846124, y: 0.49764502}
+  m_Offset: {x: 0.1774652, y: -0.24339676}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.01, y: 4.12}
+    oldSize: {x: 12.24, y: 19.64}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.7051504, y: 3.4230464}
+  m_Size: {x: 11.249426, y: 19.30254}
   m_EdgeRadius: 0
 --- !u!212 &1075611100
 SpriteRenderer:
@@ -33692,7 +33786,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 8949820458873236102, guid: 813264d13f33c2d45917df67bff1d3ee, type: 3}
+  m_Sprite: {fileID: -3758451378132189153, guid: 7a372c112d6e6124c9e249609c7d2bbc, type: 3}
   m_Color: {r: 0.74509805, g: 0.74509805, b: 0.74509805, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -36150,7 +36244,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1114649894
 Transform:
   m_ObjectHideFlags: 0
@@ -46196,7 +46290,7 @@ Transform:
   m_GameObject: {fileID: 1476943276}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.81, y: 27.89, z: 0}
+  m_LocalPosition: {x: 25.8, y: 27.76, z: 0}
   m_LocalScale: {x: 0.055475388, y: 0.055475388, z: 0.055475388}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47089,7 +47183,7 @@ Transform:
   m_GameObject: {fileID: 1516737674}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.23155202, w: 0.9728225}
-  m_LocalPosition: {x: -0.21, y: -0.07, z: 0}
+  m_LocalPosition: {x: 1.07, y: 1.01, z: 0}
   m_LocalScale: {x: 0.8710266, y: 1.2245896, z: 0.057791848}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47308,6 +47402,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1519333700}
   - component: {fileID: 1519333701}
+  - component: {fileID: 1519333702}
   m_Layer: 0
   m_Name: DeltaPlaza
   m_TagString: Untagged
@@ -47385,6 +47480,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1519333702
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519333699}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 11.852015, y: 19.16}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 11.852015, y: 19.16}
+  m_EdgeRadius: 0
 --- !u!1 &1521650971
 GameObject:
   m_ObjectHideFlags: 0
@@ -50518,7 +50659,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1600009913
 Transform:
   m_ObjectHideFlags: 0
