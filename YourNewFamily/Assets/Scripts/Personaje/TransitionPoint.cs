@@ -108,33 +108,26 @@ public class TransitionPoint : MonoBehaviour
         // Dibujar área de la cámara destino (si hay room center)
         if (targetRoomCenter != null)
         {
-            // Obtener la cámara actual para el aspect ratio (o usar valor por defecto)
+            // Calcular aspect ratio de forma segura
+            float aspectRatio = 16f / 9f; // valor por defecto
             Camera cam = Camera.main;
-            float aspectRatio = 16f / 9f; // Valor por defecto común
+            if (cam == null) cam = FindObjectOfType<Camera>();
+            if (cam != null) aspectRatio = cam.aspect;
 
-            if (cam != null)
-            {
-                aspectRatio = cam.aspect;
-            }
-            else
-            {
-                // Si no hay cámara en la escena, buscar cualquier cámara
-                Camera anyCamera = FindObjectOfType<Camera>();
-                if (anyCamera != null)
-                {
-                    aspectRatio = anyCamera.aspect;
-                }
-            }
-
+            // Dibujar el rectángulo que representa la vista de cámara
             Gizmos.color = Color.cyan;
-            Gizmos.DrawWireCube(
-                targetRoomCenter.position,
-                new Vector3(targetCameraSize * 2 * aspectRatio, targetCameraSize * 2, 0)
-            );
+            Vector3 cameraRectSize = new Vector3(targetCameraSize * 2 * aspectRatio, targetCameraSize * 2, 0.01f);
+            Gizmos.DrawWireCube(targetRoomCenter.position, cameraRectSize);
 
-            // Dibujar línea desde este objeto hasta la posición destino
+            // Dibujar línea desde el punto de transición hasta el centro de la sala destino
             Gizmos.color = Color.yellow;
             Gizmos.DrawLine(transform.position, targetRoomCenter.position);
+        }
+        else
+        {
+            // Advertencia visual si no hay destino asignado
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, 0.5f);
         }
     }
 }

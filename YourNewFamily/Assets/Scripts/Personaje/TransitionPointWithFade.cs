@@ -175,8 +175,37 @@ public class TransitionPointWithFade : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
+        // Dibujar posición destino del jugador
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(targetPlayerPosition, 0.3f);
-        if (spawnPoint != null) { Gizmos.color = Color.magenta; Gizmos.DrawWireSphere(spawnPoint.position, 0.2f); }
+
+        // Dibujar punto de spawn (si existe)
+        if (spawnPoint != null)
+        {
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawWireSphere(spawnPoint.position, 0.2f);
+        }
+
+        // Dibujar área de cámara destino y línea de conexión
+        if (targetRoomCenter != null)
+        {
+            float aspectRatio = 16f / 9f;
+            Camera cam = Camera.main;
+            if (cam == null) cam = FindObjectOfType<Camera>();
+            if (cam != null) aspectRatio = cam.aspect;
+
+            Gizmos.color = Color.cyan;
+            Vector3 cameraRectSize = new Vector3(targetCameraSize * 2 * aspectRatio, targetCameraSize * 2, 0.01f);
+            Gizmos.DrawWireCube(targetRoomCenter.position, cameraRectSize);
+
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(transform.position, targetRoomCenter.position);
+        }
+        else
+        {
+            // Advertencia visual si falta room center
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, 0.5f);
+        }
     }
 }
