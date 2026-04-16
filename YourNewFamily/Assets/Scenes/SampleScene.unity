@@ -15335,7 +15335,7 @@ MonoBehaviour:
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 1.5
   dialogues:
-  - speakerName: Mary
+  - speakerName: Senna
     dialogueText: "\xA1Ey, Lilith! \xBFC\xF3mo lo llevas? D\xE9jame adivinar\u2026
       \xBFel casero volvi\xF3 a pasar a ofrecerte trabajar para \xE9l? "
     leftSpeaker: 1
@@ -15344,7 +15344,7 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
-  - speakerName: Mary
+  - speakerName: Senna
     dialogueText: "Te dir\xE9 algo, paga bastante bien, pero\u2026 bueno, ya sabes,
       es un trabajo pesado. Jajaja"
     leftSpeaker: 1

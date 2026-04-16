@@ -1,0 +1,884 @@
+fileFormatVersion: 2
+guid: 2d1a9a208c18d58419242eb4aa0b6524
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1175745631691827402
+    second: deco fondo comedor_0
+  - first:
+      213: 7944763324470366275
+    second: deco fondo comedor_1
+  - first:
+      213: 4956121907423229263
+    second: deco fondo comedor_2
+  - first:
+      213: -479450651260534266
+    second: deco fondo comedor_3
+  - first:
+      213: -7864727731819739358
+    second: deco fondo comedor_4
+  - first:
+      213: -157175858895947898
+    second: deco fondo comedor_5
+  - first:
+      213: 7156185222912647743
+    second: deco fondo comedor_6
+  - first:
+      213: -2705120803816355535
+    second: deco fondo comedor_7
+  - first:
+      213: -4190315129859840570
+    second: deco fondo comedor_8
+  - first:
+      213: -402375277034332528
+    second: deco fondo comedor_9
+  - first:
+      213: -6985570719356529536
+    second: deco fondo comedor_10
+  - first:
+      213: 4879643086394691824
+    second: deco fondo comedor_11
+  - first:
+      213: 5279618273256776193
+    second: deco fondo comedor_12
+  - first:
+      213: 1031129144927767192
+    second: deco fondo comedor_13
+  - first:
+      213: -462115553088048363
+    second: deco fondo comedor_14
+  - first:
+      213: -2259060654499473946
+    second: deco fondo comedor_15
+  - first:
+      213: 8145791576424361986
+    second: deco fondo comedor_16
+  - first:
+      213: -1487309214350951909
+    second: deco fondo comedor_17
+  - first:
+      213: -1652542350858469099
+    second: deco fondo comedor_18
+  - first:
+      213: 4192948679329510945
+    second: deco fondo comedor_19
+  - first:
+      213: -6448408639564899395
+    second: deco fondo comedor_20
+  - first:
+      213: -812582258399906781
+    second: deco fondo comedor_21
+  - first:
+      213: 8802761355334746866
+    second: deco fondo comedor_22
+  - first:
+      213: 4540266870246158167
+    second: deco fondo comedor_23
+  - first:
+      213: 6780056942594022257
+    second: deco fondo comedor_24
+  - first:
+      213: -5111440890908469397
+    second: deco fondo comedor_25
+  - first:
+      213: -1860229129391974662
+    second: deco fondo comedor_26
+  - first:
+      213: -374468412850500276
+    second: deco fondo comedor_27
+  - first:
+      213: -5195559164893197677
+    second: deco fondo comedor_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: deco fondo comedor_0
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 1897
+        width: 30
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6379accc399eeafe0800000000000000
+      internalID: -1175745631691827402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_1
+      rect:
+        serializedVersion: 2
+        x: 1484
+        y: 1871
+        width: 30
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3409b938628714e60800000000000000
+      internalID: 7944763324470366275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_2
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 1817
+        width: 52
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f453e7bbd9ea7c440800000000000000
+      internalID: 4956121907423229263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_3
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 1751
+        width: 30
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60249444c26a859f0800000000000000
+      internalID: -479450651260534266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_4
+      rect:
+        serializedVersion: 2
+        x: 2675
+        y: 1767
+        width: 52
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22788b90ccfdad290800000000000000
+      internalID: -7864727731819739358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_5
+      rect:
+        serializedVersion: 2
+        x: 2385
+        y: 1725
+        width: 52
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6877d3b936991ddf0800000000000000
+      internalID: -157175858895947898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_6
+      rect:
+        serializedVersion: 2
+        x: 2483
+        y: 1678
+        width: 30
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f32ab9e8b80ef4360800000000000000
+      internalID: 7156185222912647743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_7
+      rect:
+        serializedVersion: 2
+        x: 2737
+        y: 1734
+        width: 30
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 139c10616fa757ad0800000000000000
+      internalID: -2705120803816355535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_8
+      rect:
+        serializedVersion: 2
+        x: 2904
+        y: 1673
+        width: 30
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c562c3379209d5c0800000000000000
+      internalID: -4190315129859840570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_9
+      rect:
+        serializedVersion: 2
+        x: 2716
+        y: 1631
+        width: 52
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09e18f141d97a6af0800000000000000
+      internalID: -402375277034332528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_10
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 1435
+        width: 52
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 084526f11744e0f90800000000000000
+      internalID: -6985570719356529536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_11
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 1458
+        width: 30
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f01f3b9889f7b340800000000000000
+      internalID: 4879643086394691824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_12
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 1458
+        width: 488
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 102a12fc8d8f44940800000000000000
+      internalID: 5279618273256776193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_13
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 1369
+        width: 30
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89ac8f08e7e4f4e00800000000000000
+      internalID: 1031129144927767192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_14
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 1369
+        width: 52
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 513f0055a5c3699f0800000000000000
+      internalID: -462115553088048363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_15
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 1286
+        width: 52
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e55f72cd4436a0e0800000000000000
+      internalID: -2259060654499473946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_16
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 1173
+        width: 454
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 200b42fc74aab0170800000000000000
+      internalID: 8145791576424361986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_17
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 939
+        width: 571
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1a327f46240c5be0800000000000000
+      internalID: -1487309214350951909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_18
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 576
+        width: 30
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 511cac8cc7df019e0800000000000000
+      internalID: -1652542350858469099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_19
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 510
+        width: 52
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 126f0e0db98503a30800000000000000
+      internalID: 4192948679329510945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_20
+      rect:
+        serializedVersion: 2
+        x: 2264
+        y: 604
+        width: 532
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbb9c28e186a286a0800000000000000
+      internalID: -6448408639564899395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_21
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 436
+        width: 52
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 324f941cdb029b4f0800000000000000
+      internalID: -812582258399906781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_22
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 456
+        width: 52
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f2834b40d0b92a70800000000000000
+      internalID: 8802761355334746866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_23
+      rect:
+        serializedVersion: 2
+        x: 2354
+        y: 498
+        width: 30
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75f2f72c9a4420f30800000000000000
+      internalID: 4540266870246158167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_24
+      rect:
+        serializedVersion: 2
+        x: 2422
+        y: 494
+        width: 52
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17bdc34fdd9971e50800000000000000
+      internalID: 6780056942594022257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_25
+      rect:
+        serializedVersion: 2
+        x: 2539
+        y: 500
+        width: 30
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b679efe57938019b0800000000000000
+      internalID: -5111440890908469397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_26
+      rect:
+        serializedVersion: 2
+        x: 2642
+        y: 479
+        width: 66
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af6d1c576732f26e0800000000000000
+      internalID: -1860229129391974662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_27
+      rect:
+        serializedVersion: 2
+        x: 2316
+        y: 374
+        width: 68
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4d017866fe9dcaf0800000000000000
+      internalID: -374468412850500276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco fondo comedor_28
+      rect:
+        serializedVersion: 2
+        x: 2697
+        y: 368
+        width: 52
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39a040f777aa5e7b0800000000000000
+      internalID: -5195559164893197677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      deco fondo comedor_0: -1175745631691827402
+      deco fondo comedor_1: 7944763324470366275
+      deco fondo comedor_10: -6985570719356529536
+      deco fondo comedor_11: 4879643086394691824
+      deco fondo comedor_12: 5279618273256776193
+      deco fondo comedor_13: 1031129144927767192
+      deco fondo comedor_14: -462115553088048363
+      deco fondo comedor_15: -2259060654499473946
+      deco fondo comedor_16: 8145791576424361986
+      deco fondo comedor_17: -1487309214350951909
+      deco fondo comedor_18: -1652542350858469099
+      deco fondo comedor_19: 4192948679329510945
+      deco fondo comedor_2: 4956121907423229263
+      deco fondo comedor_20: -6448408639564899395
+      deco fondo comedor_21: -812582258399906781
+      deco fondo comedor_22: 8802761355334746866
+      deco fondo comedor_23: 4540266870246158167
+      deco fondo comedor_24: 6780056942594022257
+      deco fondo comedor_25: -5111440890908469397
+      deco fondo comedor_26: -1860229129391974662
+      deco fondo comedor_27: -374468412850500276
+      deco fondo comedor_28: -5195559164893197677
+      deco fondo comedor_3: -479450651260534266
+      deco fondo comedor_4: -7864727731819739358
+      deco fondo comedor_5: -157175858895947898
+      deco fondo comedor_6: 7156185222912647743
+      deco fondo comedor_7: -2705120803816355535
+      deco fondo comedor_8: -4190315129859840570
+      deco fondo comedor_9: -402375277034332528
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
