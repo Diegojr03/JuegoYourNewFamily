@@ -73,6 +73,10 @@ public class DialogueChoiceSystem : MonoBehaviour
     public bool destroyAfterDialogue = false;
     public float reuseDelay = 0.5f;
 
+    // 🔥 NUEVO: Activación automática (desde DialogueSystem)
+    [Header("Activación")]
+    public bool autoActivate = false;
+
     private int currentIndex = 0;
     private bool isDialogueActive = false;
     private bool typing = false;
@@ -114,7 +118,6 @@ public class DialogueChoiceSystem : MonoBehaviour
     void Update()
     {
         // 🆕 MODIFICADO: Personajes siguen a la cámara suavemente cuando están ocultos
-        // 🆕 MODIFICADO: Personajes siguen a la cámara suavemente cuando están ocultos
         if (charactersHidden && mainCamera != null && !isDialogueActive)
         {
             CalculateHiddenPosition();
@@ -141,8 +144,8 @@ public class DialogueChoiceSystem : MonoBehaviour
             }
         }
 
-        // Activar diálogo con F
-        if (!isDialogueActive && canInteract && Input.GetKeyDown(KeyCode.F) && canReuse) // 🔥 MODIFICADO: Añadido canReuse
+        // Activar diálogo con F (solo si no está en auto-activación)
+        if (!isDialogueActive && canInteract && Input.GetKeyDown(KeyCode.F) && canReuse && !autoActivate)
         {
             StartDialogue();
         }
@@ -163,7 +166,7 @@ public class DialogueChoiceSystem : MonoBehaviour
     // -------------------------
     public void StartDialogue()
     {
-        if (isDialogueActive || dialogueLines.Count == 0 || !canReuse) return; // 🔥 MODIFICADO: Añadido !canReuse
+        if (isDialogueActive || dialogueLines.Count == 0 || !canReuse) return;
 
         InteractionPromptManager.Instance?.HidePrompt();
 
@@ -187,14 +190,22 @@ public class DialogueChoiceSystem : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (!isDialogueActive && other.CompareTag("Player") && canReuse) // 🔥 MODIFICADO: Añadido canReuse
+        if (!isDialogueActive && other.CompareTag("Player") && canReuse)
         {
             canInteract = true;
 
-            // Mostrar la F
-            InteractionPromptManager.Instance?.ShowPrompt(
-                GetComponent<InteractionPoint>()
-            );
+            // Si está en auto-activación, iniciar diálogo automáticamente
+            if (autoActivate)
+            {
+                StartDialogue();
+            }
+            else
+            {
+                // Mostrar la F
+                InteractionPromptManager.Instance?.ShowPrompt(
+                    GetComponent<InteractionPoint>()
+                );
+            }
         }
     }
 
@@ -230,8 +241,6 @@ public class DialogueChoiceSystem : MonoBehaviour
                 owner
             );
         }
-
-
 
         HighlightCharacter(line.leftSpeaker, line.characterSprite);
 
@@ -642,5 +651,3 @@ public class DialogueChoiceSystem : MonoBehaviour
             Destroy(spriteRight.gameObject);
     }
 }
-
-
