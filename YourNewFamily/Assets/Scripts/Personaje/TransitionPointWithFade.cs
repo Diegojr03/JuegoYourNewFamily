@@ -80,6 +80,8 @@ public class TransitionPointWithFade : MonoBehaviour
     {
         BlockPlayerMovement(true);
 
+        PlayTransitionSound();
+
         // 1. Fade In
         yield return StartCoroutine(Fade(0f, 1f, fadeDuration));
 
@@ -207,5 +209,21 @@ public class TransitionPointWithFade : MonoBehaviour
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, 0.5f);
         }
+    }
+
+    private void PlayTransitionSound()
+    {
+        if (transitionSound == null) return;
+
+        // Crear GameObject temporal con AudioSource
+        GameObject tempAudio = new GameObject("TempAudio");
+        AudioSource audioSource = tempAudio.AddComponent<AudioSource>();
+        audioSource.clip = transitionSound;
+        audioSource.volume = soundVolume;
+        audioSource.spatialBlend = 0f; // Sonido 2D (no posicional)
+        audioSource.Play();
+
+        // Destruir después de que termine
+        Destroy(tempAudio, transitionSound.length);
     }
 }
