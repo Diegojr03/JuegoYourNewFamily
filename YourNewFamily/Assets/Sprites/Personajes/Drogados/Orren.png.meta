@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 3df332e40fe30c841bc0676ca4e67f2c
+guid: 7e1e496c7b42312458077289303fdc76
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1208040086343421634
-    second: image_0
+      213: 7733292912624221943
+    second: Orren_0
+  - first:
+      213: 5782850210315235681
+    second: Orren_1
+  - first:
+      213: 6900178057311710112
+    second: Orren_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: image_0
+      name: Orren_0
       rect:
         serializedVersion: 2
-        x: 49
-        y: 0
-        width: 1456
-        height: 1703
+        x: 1339
+        y: 1508
+        width: 196
+        height: 178
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +134,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2ce8eecde02d3c010800000000000000
-      internalID: 1208040086343421634
+      spriteID: 7fe33096eec225b60800000000000000
+      internalID: 7733292912624221943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orren_1
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 1678
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 161f12f90afc04050800000000000000
+      internalID: 5782850210315235681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orren_2
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 1477
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ab6209626b52cf50800000000000000
+      internalID: 6900178057311710112
       vertices: []
       indices: 
       edges: []
@@ -148,7 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      image_0: 1208040086343421634
+      Orren_0: 7733292912624221943
+      Orren_1: 5782850210315235681
+      Orren_2: 6900178057311710112
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

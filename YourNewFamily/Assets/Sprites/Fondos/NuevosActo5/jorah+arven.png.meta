@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 3df332e40fe30c841bc0676ca4e67f2c
+guid: a12e5f0362e51e848964acdcab429afc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1208040086343421634
-    second: image_0
+      213: 1210488039376684113
+    second: jorah+arven_0
+  - first:
+      213: -1726560497666620747
+    second: jorah+arven_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: image_0
+      name: jorah+arven_0
       rect:
         serializedVersion: 2
-        x: 49
-        y: 0
-        width: 1456
-        height: 1703
+        x: 1388
+        y: 1815
+        width: 211
+        height: 306
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2ce8eecde02d3c010800000000000000
-      internalID: 1208040086343421634
+      spriteID: 15408e755748cc010800000000000000
+      internalID: 1210488039376684113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jorah+arven_1
+      rect:
+        serializedVersion: 2
+        x: 1901
+        y: 1802
+        width: 211
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b20c5500660a08e0800000000000000
+      internalID: -1726560497666620747
       vertices: []
       indices: 
       edges: []
@@ -138,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      image_0: 1208040086343421634
+      jorah+arven_0: 1210488039376684113
+      jorah+arven_1: -1726560497666620747
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

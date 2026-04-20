@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: 3df332e40fe30c841bc0676ca4e67f2c
+guid: 34d88fc437db8bd4d8215115fa1d075e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1208040086343421634
-    second: image_0
+      213: 3811812838548005273
+    second: Silas_0
+  - first:
+      213: -5311337820159399511
+    second: Silas_1
+  - first:
+      213: 1154812055243996128
+    second: Silas_2
+  - first:
+      213: 2960201711114180528
+    second: Silas_3
+  - first:
+      213: -41417141903089939
+    second: Silas_4
+  - first:
+      213: -5052545485133909058
+    second: Silas_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: image_0
+      name: Silas_0
       rect:
         serializedVersion: 2
-        x: 49
-        y: 0
-        width: 1456
-        height: 1703
+        x: 2238
+        y: 1722
+        width: 7
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +143,118 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2ce8eecde02d3c010800000000000000
-      internalID: 1208040086343421634
+      spriteID: 9916defa49746e430800000000000000
+      internalID: 3811812838548005273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Silas_1
+      rect:
+        serializedVersion: 2
+        x: 2244
+        y: 1724
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a92d4ba4665a46b0800000000000000
+      internalID: -5311337820159399511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Silas_2
+      rect:
+        serializedVersion: 2
+        x: 2252
+        y: 1714
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eb382f1277b60010800000000000000
+      internalID: 1154812055243996128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Silas_3
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 1432
+        width: 1154
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b7d67eb5cfb41920800000000000000
+      internalID: 2960201711114180528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Silas_4
+      rect:
+        serializedVersion: 2
+        x: 2366
+        y: 1554
+        width: 28
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dee1141345bdc6ff0800000000000000
+      internalID: -41417141903089939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Silas_5
+      rect:
+        serializedVersion: 2
+        x: 2155
+        y: 1430
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb3f61b96a0c1e9b0800000000000000
+      internalID: -5052545485133909058
       vertices: []
       indices: 
       edges: []
@@ -148,7 +273,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      image_0: 1208040086343421634
+      Silas_0: 3811812838548005273
+      Silas_1: -5311337820159399511
+      Silas_2: 1154812055243996128
+      Silas_3: 2960201711114180528
+      Silas_4: -41417141903089939
+      Silas_5: -5052545485133909058
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
