@@ -10,21 +10,41 @@ public class FNFGameManager : MonoBehaviour
     public event Action OnPuzzleCompleted;
 
     [Header("Configuración de Flechas")]
-    public GameObject[] arrowPrefabs; // 0=Up, 1=Down, 2=Left, 3=Right
-    public RectTransform[] spawnPoints; // 0=Up, 1=Down, 2=Left, 3=Right
+    public GameObject[] arrowPrefabs;
+    public RectTransform[] spawnPoints;
     public RectTransform hitLine;
     public float arrowSpeed = 800f;
     public float spawnInterval = 1f;
     public float hitRange = 50f;
 
+    [Header("Puntuación")]
+    public int targetScore = 500;
+    public int pointsPerHit = 50;
+
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip puzzleMusic;
+
+    [Header("Fade de Salida")]
+    public float fadeOutDuration = 0.5f;
+    public CanvasGroup puzzleCanvasGroup;
+
+    [Header("Acciones al Completar Puzzle")]
+    public GameObject[] objectsToActivate;
+    public GameObject[] objectsToDeactivate;
+    public bool disablePuzzlePanelOnComplete = true;
+    public float delayBeforeActions = 1f;
+
     [Header("UI Elements")]
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI completionText;
-    public GameObject puzzlePanel; // Panel padre del juego de flechas
+    public GameObject puzzlePanel;
 
     private int score = 0;
     private bool puzzleActive = false;
     private Coroutine spawnCoroutine;
+    private bool puzzleCompleted = false;
+    private Coroutine autoCompleteCoroutine;
 
     private void Awake()
     {
@@ -38,7 +58,6 @@ public class FNFGameManager : MonoBehaviour
             return;
         }
 
-        // Validación inicial
         if (arrowPrefabs == null || arrowPrefabs.Length != 4)
         {
             Debug.LogError("Arrow prefabs not properly configured!");
@@ -48,6 +67,15 @@ public class FNFGameManager : MonoBehaviour
         {
             Debug.LogError("Spawn points not properly configured!");
         }
+
+        if (puzzleCanvasGroup == null && puzzlePanel != null)
+        {
+            puzzleCanvasGroup = puzzlePanel.GetComponent<CanvasGroup>();
+            if (puzzleCanvasGroup == null)
+            {
+                puzzleCanvasGroup = puzzlePanel.AddComponent<CanvasGroup>();
+            }
+        }
     }
 
     public void StartPuzzle()
@@ -56,7 +84,13 @@ public class FNFGameManager : MonoBehaviour
 
         score = 0;
         puzzleActive = true;
+        puzzleCompleted = false;
         UpdateScore();
+
+        if (puzzleCanvasGroup != null)
+        {
+            puzzleCanvasGroup.alpha = 1f;
+        }
 
         if (completionText != null)
         {
@@ -65,6 +99,29 @@ public class FNFGameManager : MonoBehaviour
 
         ClearExistingArrows();
         spawnCoroutine = StartCoroutine(SpawnArrows());
+
+        if (audioSource != null && puzzleMusic != null)
+        {
+            audioSource.clip = puzzleMusic;
+            audioSource.loop = false;
+            audioSource.Play();
+
+            if (autoCompleteCoroutine != null) StopCoroutine(autoCompleteCoroutine);
+            autoCompleteCoroutine = StartCoroutine(AutoCompleteWhenMusicEnds());
+        }
+    }
+
+    IEnumerator AutoCompleteWhenMusicEnds()
+    {
+        while (audioSource != null && audioSource.isPlaying)
+        {
+            yield return null;
+        }
+
+        if (puzzleActive && !puzzleCompleted)
+        {
+            StartCoroutine(CompletePuzzleWithDelay());
+        }
     }
 
     IEnumerator SpawnArrows()
@@ -85,7 +142,6 @@ public class FNFGameManager : MonoBehaviour
         {
             int randomArrow = UnityEngine.Random.Range(0, 4);
 
-            // Validación de arrays
             if (arrowPrefabs == null || arrowPrefabs.Length <= randomArrow || arrowPrefabs[randomArrow] == null)
             {
                 Debug.LogError($"Missing arrow prefab for index {randomArrow}");
@@ -147,7 +203,7 @@ public class FNFGameManager : MonoBehaviour
             if (distanceToHitLine <= hitRange)
             {
                 Destroy(arrow.gameObject);
-                AddScore(50);
+                AddScore(pointsPerHit);
                 break;
             }
         }
@@ -158,7 +214,7 @@ public class FNFGameManager : MonoBehaviour
         score += points;
         UpdateScore();
 
-        if (score >= 500 && puzzleActive)
+        if (score >= targetScore && puzzleActive && !puzzleCompleted)
         {
             StartCoroutine(CompletePuzzleWithDelay());
         }
@@ -168,12 +224,13 @@ public class FNFGameManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = $"Puntos: {score}";
+            scoreText.text = $"Puntos: {score}/{targetScore}";
         }
     }
 
     IEnumerator CompletePuzzleWithDelay()
     {
+        puzzleCompleted = true;
         puzzleActive = false;
 
         if (spawnCoroutine != null)
@@ -181,14 +238,62 @@ public class FNFGameManager : MonoBehaviour
             StopCoroutine(spawnCoroutine);
         }
 
+        if (autoCompleteCoroutine != null)
+        {
+            StopCoroutine(autoCompleteCoroutine);
+        }
+
+        if (audioSource != null && audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
+
         ClearExistingArrows();
 
-        // Esperar 1 segundo antes de desactivar el panel y disparar el evento
-        yield return new WaitForSecondsRealtime(1f);
+        // Fade out
+        if (puzzleCanvasGroup != null && fadeOutDuration > 0)
+        {
+            float elapsed = 0;
+            float startAlpha = puzzleCanvasGroup.alpha;
+
+            while (elapsed < fadeOutDuration)
+            {
+                elapsed += Time.unscaledDeltaTime;
+                float t = elapsed / fadeOutDuration;
+                puzzleCanvasGroup.alpha = Mathf.Lerp(startAlpha, 0, t);
+                yield return null;
+            }
+
+            puzzleCanvasGroup.alpha = 0;
+        }
+
+        yield return new WaitForSecondsRealtime(delayBeforeActions);
+
+        if (objectsToActivate != null)
+        {
+            foreach (GameObject obj in objectsToActivate)
+            {
+                if (obj != null)
+                {
+                    obj.SetActive(true);
+                }
+            }
+        }
+
+        if (objectsToDeactivate != null)
+        {
+            foreach (GameObject obj in objectsToDeactivate)
+            {
+                if (obj != null)
+                {
+                    obj.SetActive(false);
+                }
+            }
+        }
 
         OnPuzzleCompleted?.Invoke();
 
-        if (puzzlePanel != null)
+        if (disablePuzzlePanelOnComplete && puzzlePanel != null)
         {
             puzzlePanel.SetActive(false);
         }
