@@ -8376,7 +8376,7 @@ Transform:
   m_GameObject: {fileID: 196229376}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.302, y: -0.19, z: 0.022514619}
+  m_LocalPosition: {x: 1.342, y: -0.19, z: 0.022514619}
   m_LocalScale: {x: 0.9037218, y: 0.36614293, z: 0.26379797}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8533,8 +8533,8 @@ EdgeCollider2D:
   - {x: -9.051876, y: -1.4136117}
   - {x: -7.7344747, y: -1.4349482}
   - {x: -7.7418766, y: -8.810237}
-  - {x: 7.985544, y: -8.73929}
-  - {x: 7.9947953, y: 7.9981313}
+  - {x: 7.2195306, y: -8.816126}
+  - {x: 7.187188, y: 8.073242}
   - {x: -7.653054, y: 8.042839}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
@@ -34227,6 +34227,7 @@ MonoBehaviour:
   - {fileID: 300081260}
   destroyAfterDialogue: 1
   reuseDelay: 0.5
+  autoActivate: 0
 --- !u!114 &1076594705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44222,6 +44223,7 @@ MonoBehaviour:
   objectsToDestroyAfter: []
   destroyAfterDialogue: 1
   reuseDelay: 0.5
+  autoActivate: 0
 --- !u!114 &1401881629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46290,7 +46292,7 @@ Transform:
   m_GameObject: {fileID: 1476943276}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.8, y: 27.76, z: 0}
+  m_LocalPosition: {x: 25.8, y: 27.8, z: 0}
   m_LocalScale: {x: 0.055475388, y: 0.055475388, z: 0.055475388}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -50248,8 +50250,8 @@ EdgeCollider2D:
   - {x: -9.051876, y: -1.4136117}
   - {x: -7.7344747, y: -1.4349482}
   - {x: -7.7418766, y: -8.810237}
-  - {x: 7.985544, y: -8.73929}
-  - {x: 7.9947953, y: 8.372563}
+  - {x: 7.0292525, y: -8.73929}
+  - {x: 6.998668, y: 8.372563}
   - {x: 2.0115945, y: 8.378726}
   - {x: 2.0249162, y: 10.074743}
   - {x: -0.9554163, y: 10.079712}
