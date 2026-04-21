@@ -12,19 +12,24 @@ public class DialogueSystemGiantFocus : MonoBehaviour
     public Vector3 giantScale = new Vector3(2f, 2f, 1f);
 
     [Header("Posicionamiento")]
-    [Tooltip("0.5 es el centro exacto. Sube este valor (ej. 0.6 o 0.7) para que el personaje suba más.")]
     [Range(0f, 1f)]
-    public float verticalPositionPercent = 0.6f;
+    public float verticalPositionPercent = 0.65f;
     public float moveSpeed = 5f;
 
     [Header("UI")]
     public GameObject dialoguePanel;
     public TextMeshProUGUI speakerText;
     public TextMeshProUGUI dialogueText;
+    public GameObject speakerContainer;
 
     [Header("Visuales")]
     public Color dimmedColor = new Color(0.3f, 0.3f, 0.3f, 1f);
     public float dialogueCooldown = 0.05f;
+
+    [Header("Configuración Post-Diálogo")]
+    public GameObject[] objectsToActivateAfter;
+    public GameObject[] objectsToDestroyAfter;
+    public bool destroyAfterDialogue = false;
 
     public List<DialogueLine> dialogues = new List<DialogueLine>();
 
@@ -33,7 +38,6 @@ public class DialogueSystemGiantFocus : MonoBehaviour
     {
         public string speakerName;
         [TextArea(3, 5)] public string dialogueText;
-        [Tooltip("Si es falso, el gigante se queda oscuro")]
         public bool isGiantSpeaking;
     }
 
@@ -42,13 +46,21 @@ public class DialogueSystemGiantFocus : MonoBehaviour
     private Vector2 targetPosition;
     private Vector2 hiddenPosition;
     private MovimientoPersonaje playerMovement;
+    private Rigidbody2D playerRigidbody;
+    private Vector2 originalVelocity;
 
     void Start()
     {
         mainCamera = Camera.main;
-        playerMovement = FindObjectOfType<MovimientoPersonaje>();
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            playerMovement = player.GetComponent<MovimientoPersonaje>();
+            playerRigidbody = player.GetComponent<Rigidbody2D>();
+        }
 
         if (dialoguePanel != null) dialoguePanel.SetActive(false);
+        if (speakerContainer != null) speakerContainer.SetActive(false);
 
         CalculatePositions();
         if (giantCharacter != null) giantCharacter.position = hiddenPosition;
@@ -57,12 +69,7 @@ public class DialogueSystemGiantFocus : MonoBehaviour
     void CalculatePositions()
     {
         if (mainCamera == null) return;
-
-        // Calculamos el punto destino usando el porcentaje del inspector
-        // Viewport (0.5, verticalPositionPercent) -> Mundo
         targetPosition = mainCamera.ViewportToWorldPoint(new Vector3(0.5f, verticalPositionPercent, mainCamera.nearClipPlane));
-
-        // Posición oculta (completamente fuera por abajo)
         float cameraHeight = mainCamera.orthographicSize * 2f;
         hiddenPosition = new Vector2(targetPosition.x, targetPosition.y - cameraHeight * 1.5f);
     }
@@ -77,35 +84,44 @@ public class DialogueSystemGiantFocus : MonoBehaviour
     {
         isDialogueActive = true;
 
-        // Bloqueamos movimiento como en el script original
+        // Bloqueo de físicas y movimiento (Igual que el original)
         if (playerMovement != null) playerMovement.enabled = false;
+        if (playerRigidbody != null)
+        {
+            originalVelocity = playerRigidbody.linearVelocity;
+            playerRigidbody.linearVelocity = Vector2.zero;
+        }
 
-        // 1. Aparece el gigante
-        CalculatePositions(); // Recalcular por si acaso cambió la cámara
+        CalculatePositions();
         yield return StartCoroutine(MoveGiant(targetPosition));
 
         if (dialoguePanel != null) dialoguePanel.SetActive(true);
 
-        // 2. Ciclo de diálogos
         foreach (DialogueLine line in dialogues)
         {
             UpdateCharacterVisuals(line.isGiantSpeaking);
             yield return StartCoroutine(ShowLine(line));
         }
 
-        // 3. Finalizar y ocultar
         if (dialoguePanel != null) dialoguePanel.SetActive(false);
+        if (speakerContainer != null) speakerContainer.SetActive(false);
+
         yield return StartCoroutine(MoveGiant(hiddenPosition));
 
+        // Activar/Destruir objetos
+        foreach (GameObject obj in objectsToActivateAfter) if (obj != null) obj.SetActive(true);
+        foreach (GameObject obj in objectsToDestroyAfter) if (obj != null) Destroy(obj);
+
         if (playerMovement != null) playerMovement.enabled = true;
+        if (playerRigidbody != null) playerRigidbody.linearVelocity = originalVelocity;
+
         isDialogueActive = false;
+        if (destroyAfterDialogue) Destroy(gameObject);
     }
 
     private void UpdateCharacterVisuals(bool isGiantSpeaking)
     {
         if (giantSprite == null) return;
-
-        // Cambiamos el color para dar efecto de "apagado"
         giantSprite.color = isGiantSpeaking ? Color.white : dimmedColor;
         giantCharacter.localScale = giantScale;
     }
@@ -113,21 +129,44 @@ public class DialogueSystemGiantFocus : MonoBehaviour
     private IEnumerator ShowLine(DialogueLine line)
     {
         if (speakerText != null) speakerText.text = line.speakerName;
-        dialogueText.text = "";
+        if (speakerContainer != null) speakerContainer.SetActive(!string.IsNullOrEmpty(line.speakerName));
 
-        // Efecto de escribir texto
-        foreach (char letter in line.dialogueText.ToCharArray())
+        string fullText = line.dialogueText;
+        Coroutine typingCoroutine = StartCoroutine(TypeText(fullText));
+
+        // --- SISTEMA DE AVANCE IGUAL AL ORIGINAL ---
+        bool typingCompleted = false;
+
+        // 1. Esperar a que termine de escribir O que el jugador pulse Espacio para saltar
+        while (!typingCompleted)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                StopCoroutine(typingCoroutine);
+                dialogueText.text = fullText;
+                typingCompleted = true;
+            }
+            if (dialogueText.text == fullText) typingCompleted = true;
+            yield return null;
+        }
+
+        // 2. Esperar una segunda pulsación de Espacio para pasar de línea
+        yield return new WaitForSeconds(0.1f); // Pequeño respiro para evitar doble clic accidental
+        bool nextLineRequested = false;
+        while (!nextLineRequested)
+        {
+            if (Input.GetKeyDown(KeyCode.Space)) nextLineRequested = true;
+            yield return null;
+        }
+    }
+
+    private IEnumerator TypeText(string text)
+    {
+        dialogueText.text = "";
+        foreach (char letter in text.ToCharArray())
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(dialogueCooldown);
-        }
-
-        // Esperar pulsación de espacio para avanzar
-        bool skip = false;
-        while (!skip)
-        {
-            if (Input.GetKeyDown(KeyCode.Space)) skip = true;
-            yield return null;
         }
     }
 
@@ -143,9 +182,6 @@ public class DialogueSystemGiantFocus : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !isDialogueActive)
-        {
-            StartDialogue();
-        }
+        if (other.CompareTag("Player") && !isDialogueActive) StartDialogue();
     }
 }
