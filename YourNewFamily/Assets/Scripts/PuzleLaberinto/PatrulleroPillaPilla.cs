@@ -9,212 +9,189 @@ public class PatrulleroPillaPilla : MonoBehaviour
 
     [Header("Configuración de Movimiento")]
     [SerializeField] private float velocidadMovimiento = 5f; // Velocidad del objeto
-    [SerializeField] private int primerosPuntos = 3; // Cuántos primeros puntos recorrer en orden
+    [SerializeField] private ComportamientoFinal comportamientoFinal; // Qué hacer al llegar al último punto
 
-    [Header("Objetos a Activar/Desactivar")]
-    [SerializeField] private GameObject[] objetosAActivar; // Objetos a activar al ser pillado
-    [SerializeField] private GameObject[] objetosADesactivar; // Objetos a desactivar al ser pillado
+    [Header("Objetos a Activar/Desactivar al Completar/Ser Pillado")]
+    [SerializeField] private GameObject[] objetosAActivar; // Objetos a activar al completar ruta o ser pillado
+    [SerializeField] private GameObject[] objetosADesactivar; // Objetos a desactivar al completar ruta o ser pillado
 
-    private int puntoActual = 0;
-    private bool moviendoHaciaAdelante = true;
-    private bool haSidoPillado = false;
-    private bool enMovimiento = true;
-    private bool enMovimientoForzado = false; // Para saber si está en movimiento forzado de 2 puntos
-    private int puntosRestantesForzados = 0; // Cuántos puntos le quedan por recorrer en el movimiento forzado
-    private int direccionForzada = 0; // 1 = hacia adelante, -1 = hacia atrás
+    [Header("Colliders de Avance (Triggers)")]
+    [SerializeField] private Collider2D[] collidersAvance; // Orden: collider0 avanza al punto1, collider1 avanza al punto2, etc.
+
+    private int puntoActual = 0; // Índice del punto donde está actualmente
+    private int siguientePuntoIndex = 1; // Índice del punto al que debe ir cuando se active el collider
+    private bool enMovimiento = false; // Si se está moviendo entre puntos
+    private bool haCompletadoRuta = false; // Si ya completó toda la ruta
+    private bool haSidoPillado = false; // Si el personaje lo atrapó
+
+    private Collider2D miCollider; // Collider del patrullero (para que el player pueda atraparlo)
 
     void Start()
     {
         // Validar que hay puntos en el array
-        if (puntosRuta == null || puntosRuta.Length == 0)
+        if (puntosRuta == null || puntosRuta.Length < 2)
         {
-            Debug.LogError("No hay puntos de ruta asignados al patrullero");
-            enMovimiento = false;
+            Debug.LogError("El patrullero necesita al menos 2 puntos de ruta asignados");
+            enabled = false;
             return;
         }
 
-        // Asegurarse de que no se pidan más primeros puntos de los que existen
-        if (primerosPuntos > puntosRuta.Length)
+        // Obtener el collider del patrullero (para detección de atrapada)
+        miCollider = GetComponent<Collider2D>();
+        if (miCollider == null)
         {
-            primerosPuntos = puntosRuta.Length;
-            Debug.LogWarning("primerosPuntos excede la cantidad de puntos, se ajustó a: " + primerosPuntos);
+            Debug.LogWarning("El patrullero no tiene un Collider2D para detectar cuando el player lo atrapa");
         }
 
         // Iniciar en el primer punto
         puntoActual = 0;
         transform.position = puntosRuta[0].position;
+        siguientePuntoIndex = 1;
 
-        // Comenzar el movimiento
-        StartCoroutine(MoverEntrePuntos());
-    }
-
-    IEnumerator MoverEntrePuntos()
-    {
-        while (enMovimiento && !haSidoPillado)
+        // Validar que los colliders de avance coincidan con la cantidad de movimientos necesarios
+        int movimientosNecesarios = puntosRuta.Length - 1;
+        if (collidersAvance == null || collidersAvance.Length != movimientosNecesarios)
         {
-            int siguientePunto;
-
-            // Si estamos en movimiento forzado, continuar en la misma dirección
-            if (enMovimientoForzado)
-            {
-                siguientePunto = puntoActual + direccionForzada;
-                puntosRestantesForzados--;
-
-                // Si ya terminó el movimiento forzado
-                if (puntosRestantesForzados <= 0)
-                {
-                    enMovimientoForzado = false;
-                }
-            }
-            else
-            {
-                // Determinar el siguiente punto según la fase normal
-                siguientePunto = ObtenerSiguientePunto();
-
-                // Verificar si debemos iniciar un movimiento forzado
-                // Esto ocurre cuando se sale de la fase inicial y se cambia de dirección
-                if (!moviendoHaciaAdelante && siguientePunto != puntoActual)
-                {
-                    // Detectar si vamos a cambiar de dirección respecto al movimiento anterior
-                    int nuevaDireccion = (siguientePunto > puntoActual) ? 1 : -1;
-
-                    // Si hay un cambio de dirección (no es continuación del mismo movimiento)
-                    if (movimientoAnterior != 0 && nuevaDireccion != movimientoAnterior)
-                    {
-                        // Iniciar movimiento forzado de 2 puntos en la nueva dirección
-                        enMovimientoForzado = true;
-                        direccionForzada = nuevaDireccion;
-                        puntosRestantesForzados = 2;
-
-                        // El siguiente punto ya está calculado, continuamos
-                    }
-
-                    movimientoAnterior = nuevaDireccion;
-                }
-            }
-
-            // Mover hacia el siguiente punto
-            yield return StartCoroutine(MoverHaciaPunto(puntosRuta[siguientePunto].position));
-
-            // Actualizar punto actual
-            puntoActual = siguientePunto;
-
-            // Pequeña pausa entre movimientos (opcional)
-            yield return new WaitForSeconds(0.1f);
+            Debug.LogWarning($"Se esperaban {movimientosNecesarios} colliders de avance, pero hay {(collidersAvance == null ? 0 : collidersAvance.Length)}");
         }
     }
 
-    private int movimientoAnterior = 0; // Para detectar cambios de dirección
-
-    int ObtenerSiguientePunto()
+    void Update()
     {
-        // FASE 1: Recorrer los primeros X puntos en orden
-        if (puntoActual < primerosPuntos - 1 && moviendoHaciaAdelante)
-        {
-            return puntoActual + 1;
-        }
-
-        // Si llegamos al final de los primeros puntos, cambiamos a fase aleatoria
-        if (puntoActual == primerosPuntos - 1 && moviendoHaciaAdelante)
-        {
-            moviendoHaciaAdelante = false;
-        }
-
-        // FASE 2: Movimiento aleatorio entre punto anterior y siguiente
-        if (!moviendoHaciaAdelante)
-        {
-            // Opciones disponibles: punto anterior o punto siguiente (si existen)
-            List<int> opciones = new List<int>();
-
-            // Punto anterior (si existe)
-            if (puntoActual > 0)
-                opciones.Add(puntoActual - 1);
-
-            // Punto siguiente (si existe)
-            if (puntoActual < puntosRuta.Length - 1)
-                opciones.Add(puntoActual + 1);
-
-            // Si hay opciones, elegir una aleatoria
-            if (opciones.Count > 0)
-            {
-                int indiceAleatorio = Random.Range(0, opciones.Count);
-                return opciones[indiceAleatorio];
-            }
-
-            // Si no hay opciones (solo hay 1 punto en total), mantener el mismo
-            return puntoActual;
-        }
-
-        return puntoActual;
+        // Este método se puede usar para debug si es necesario
     }
 
-    IEnumerator MoverHaciaPunto(Vector3 destino)
+    // Método público para que los colliders de avance llamen cuando el player entra
+    public void AvanzarAlSiguientePunto()
     {
-        // Si ha sido pillado durante el movimiento, detener inmediatamente
+        // No hacer nada si ya completó la ruta, ya fue pillado, o ya se está moviendo
+        if (haCompletadoRuta || haSidoPillado || enMovimiento)
+            return;
+
+        // Verificar que aún hay puntos por recorrer
+        if (siguientePuntoIndex >= puntosRuta.Length)
+            return;
+
+        // Iniciar el movimiento hacia el siguiente punto
+        StartCoroutine(MoverHaciaPunto(puntosRuta[siguientePuntoIndex].position, siguientePuntoIndex));
+    }
+
+    IEnumerator MoverHaciaPunto(Vector3 destino, int indiceDestino)
+    {
+        enMovimiento = true;
+
+        // Moverse hacia el destino
         while (Vector3.Distance(transform.position, destino) > 0.01f && !haSidoPillado)
         {
             transform.position = Vector3.MoveTowards(transform.position, destino, velocidadMovimiento * Time.deltaTime);
             yield return null;
         }
 
-        // Solo ajustar la posición si no fue pillado
-        if (!haSidoPillado)
+        // Si fue pillado durante el movimiento, detener todo
+        if (haSidoPillado)
         {
-            transform.position = destino;
+            enMovimiento = false;
+            yield break;
+        }
+
+        // Asegurar posición exacta
+        transform.position = destino;
+
+        // Actualizar punto actual
+        puntoActual = indiceDestino;
+        siguientePuntoIndex = indiceDestino + 1;
+
+        enMovimiento = false;
+
+        // Verificar si se completó la ruta (llegó al último punto)
+        if (puntoActual == puntosRuta.Length - 1)
+        {
+            CompletarRuta();
+        }
+    }
+
+    void CompletarRuta()
+    {
+        haCompletadoRuta = true;
+        enMovimiento = false;
+
+        // Activar/Desactivar objetos según configuración
+        ActivarDesactivarObjetos();
+
+        // Comportamiento según selección
+        switch (comportamientoFinal)
+        {
+            case ComportamientoFinal.Destruirse:
+                Debug.Log("Patrullero completó la ruta y se destruye");
+                Destroy(gameObject);
+                break;
+            case ComportamientoFinal.QuedarseQuieto:
+                Debug.Log("Patrullero completó la ruta y se queda quieto");
+                // El collider sigue activo para que el player pueda atraparlo
+                break;
         }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Verificar que es el personaje
-        if (other.CompareTag("Player") && !haSidoPillado)
+        // Verificar que es el personaje y que no ha sido pillado ni ha completado ruta
+        if (other.CompareTag("Player") && !haSidoPillado && !haCompletadoRuta)
         {
-            haSidoPillado = true;
-            enMovimiento = false;
-            enMovimientoForzado = false;
-
-            // Detener cualquier corrutina en curso
-            StopAllCoroutines();
-
-            // Activar objetos especificados
-            if (objetosAActivar != null)
+            // Si el personaje toca el collider del patrullero, es atrapado
+            if (other == miCollider || other == GetComponent<Collider2D>())
             {
-                foreach (GameObject obj in objetosAActivar)
-                {
-                    if (obj != null)
-                        obj.SetActive(true);
-                }
+                SerPillado();
             }
-
-            // Desactivar objetos especificados
-            if (objetosADesactivar != null)
-            {
-                foreach (GameObject obj in objetosADesactivar)
-                {
-                    if (obj != null)
-                        obj.SetActive(false);
-                }
-            }
-
-            Debug.Log("¡Pillado! El patrullero se ha detenido en su posición actual: " + transform.position);
         }
     }
 
-    // Método público para reiniciar el patrullero
+    void SerPillado()
+    {
+        haSidoPillado = true;
+        enMovimiento = false;
+        StopAllCoroutines();
+
+        ActivarDesactivarObjetos();
+
+        Debug.Log("¡El patrullero ha sido pillado! Se detiene en: " + transform.position);
+    }
+
+    void ActivarDesactivarObjetos()
+    {
+        // Activar objetos especificados
+        if (objetosAActivar != null)
+        {
+            foreach (GameObject obj in objetosAActivar)
+            {
+                if (obj != null)
+                    obj.SetActive(true);
+            }
+        }
+
+        // Desactivar objetos especificados
+        if (objetosADesactivar != null)
+        {
+            foreach (GameObject obj in objetosADesactivar)
+            {
+                if (obj != null)
+                    obj.SetActive(false);
+            }
+        }
+    }
+
+    // Método público para reiniciar el patrullero (opcional)
     public void ReiniciarPatrullero()
     {
-        haSidoPillado = false;
-        enMovimiento = true;
-        enMovimientoForzado = false;
-        puntoActual = 0;
-        moviendoHaciaAdelante = true;
-        movimientoAnterior = 0;
+        if (puntosRuta == null || puntosRuta.Length < 2) return;
 
-        if (puntosRuta != null && puntosRuta.Length > 0)
-        {
-            transform.position = puntosRuta[0].position;
-            StartCoroutine(MoverEntrePuntos());
-        }
+        haSidoPillado = false;
+        haCompletadoRuta = false;
+        enMovimiento = false;
+        puntoActual = 0;
+        siguientePuntoIndex = 1;
+        transform.position = puntosRuta[0].position;
+
+        StopAllCoroutines();
     }
 
     // Método para dibujar los puntos en el editor (visual)
@@ -237,4 +214,11 @@ public class PatrulleroPillaPilla : MonoBehaviour
                 Gizmos.DrawLine(puntosRuta[i].position, puntosRuta[i + 1].position);
         }
     }
+}
+
+// Enum para el comportamiento al final de la ruta
+public enum ComportamientoFinal
+{
+    Destruirse,
+    QuedarseQuieto
 }
