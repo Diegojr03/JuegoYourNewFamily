@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: fd4938da9e153cf45b7343af5ee99671
+guid: 53dc25987e377734994c465d0e80dde1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4785954646795040756
-    second: spritesheet animacion_0
-  - first:
-      213: 5396794268060753339
-    second: spritesheet animacion_1
-  - first:
-      213: 4375517199405311879
-    second: spritesheet animacion_2
-  - first:
-      213: -6740014454872733201
-    second: spritesheet animacion_3
-  - first:
-      213: -6958412221970352081
-    second: spritesheet animacion_4
+      213: -719031095249381809
+    second: ARCADE PARA PUZLE (grande)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -84,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -125,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet animacion_0
+      name: ARCADE PARA PUZLE (grande)_0
       rect:
         serializedVersion: 2
-        x: 964
-        y: 1225
-        width: 863
-        height: 616
+        x: 0
+        y: 0
+        width: 3000
+        height: 2153
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,96 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c08c6a61b9fd49db0800000000000000
-      internalID: -4785954646795040756
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet animacion_1
-      rect:
-        serializedVersion: 2
-        x: 4474
-        y: 1225
-        width: 863
-        height: 616
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bbd10a91bc345ea40800000000000000
-      internalID: 5396794268060753339
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet animacion_2
-      rect:
-        serializedVersion: 2
-        x: 7984
-        y: 1225
-        width: 863
-        height: 616
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7876a2bd5b5f8bc30800000000000000
-      internalID: 4375517199405311879
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet animacion_3
-      rect:
-        serializedVersion: 2
-        x: 11494
-        y: 1225
-        width: 863
-        height: 616
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fe9005c3098a672a0800000000000000
-      internalID: -6740014454872733201
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet animacion_4
-      rect:
-        serializedVersion: 2
-        x: 15004
-        y: 1225
-        width: 863
-        height: 616
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f2878bc83f0ce6f90800000000000000
-      internalID: -6958412221970352081
+      spriteID: f465339470d7506f0800000000000000
+      internalID: -719031095249381809
       vertices: []
       indices: 
       edges: []
@@ -248,11 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      spritesheet animacion_0: -4785954646795040756
-      spritesheet animacion_1: 5396794268060753339
-      spritesheet animacion_2: 4375517199405311879
-      spritesheet animacion_3: -6740014454872733201
-      spritesheet animacion_4: -6958412221970352081
+      ARCADE PARA PUZLE (grande)_0: -719031095249381809
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

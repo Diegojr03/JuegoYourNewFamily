@@ -224,7 +224,7 @@ public class FNFGameManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = $"Puntos: {score}/{targetScore}";
+            scoreText.text = $"PUNTOS: {score}/{targetScore}";
         }
     }
 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 65355dbddb308e84d955ebc86de0f754
+guid: af223b61e0612e64b9fbc8b1da04ece9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6846966665210656969
-    second: Lilith_ConCuchilloDeRitual_Hablando_preview_rev_1_0
+      213: -9126739918380849739
+    second: MAPA BIEN_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lilith_ConCuchilloDeRitual_Hablando_preview_rev_1_0
+      name: MAPA BIEN_0
       rect:
         serializedVersion: 2
-        x: 70
-        y: 0
-        width: 350
-        height: 419
+        x: 101
+        y: 42
+        width: 2880
+        height: 2002
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9c872dcb7ef450f50800000000000000
-      internalID: 6846966665210656969
+      spriteID: 5b52887566e475180800000000000000
+      internalID: -9126739918380849739
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Lilith_ConCuchilloDeRitual_Hablando_preview_rev_1_0: 6846966665210656969
+      MAPA BIEN_0: -9126739918380849739
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
