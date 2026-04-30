@@ -3674,7 +3674,7 @@ GameObject:
   m_Component:
   - component: {fileID: 52844472}
   - component: {fileID: 52844474}
-  - component: {fileID: 52844473}
+  - component: {fileID: 52844475}
   m_Layer: 0
   m_Name: TransicionLilithLoca
   m_TagString: Untagged
@@ -3691,43 +3691,12 @@ Transform:
   m_GameObject: {fileID: 52844471}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.02, y: -12.5, z: 0}
+  m_LocalPosition: {x: 0.02, y: -11.21, z: 0}
   m_LocalScale: {x: 10.2712345, y: 8.6197815, z: 2.1482322}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1631213140}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &52844473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 52844471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ea45d6ed3fa5364684eaeb1968283a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetRoomCenter: {fileID: 1719264981}
-  targetPlayerPosition: {x: -415, y: 42.7}
-  transitionName: 
-  cameraMoveSpeed: 10
-  targetCameraSize: 9
-  cameraSizeChangeSpeed: 10
-  fadeDuration: 1
-  fadeImage: {fileID: 205797062}
-  transitionSound: {fileID: 0}
-  soundVolume: 1
-  prefabToSpawn: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  spawnAfterFadeIn: 1
-  objectsToActivateAfterFadeIn: []
-  objectsToDestroyAfterFadeIn: []
-  objectsToActivateAfter:
-  - {fileID: 1939648915}
-  objectsToDestroyAfter:
-  - {fileID: 52844471}
 --- !u!61 &52844474
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3774,6 +3743,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &52844475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52844471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273032ca86f2f8a428b98a7687308846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: DialogoFinalLilith
+  transitionSound: {fileID: 0}
 --- !u!1 &53011319
 GameObject:
   m_ObjectHideFlags: 0
@@ -14800,7 +14783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeImage: {fileID: 1131879191}
-  fadeDuration: 1
+  fadeDuration: 2
 --- !u!4 &251808725
 Transform:
   m_ObjectHideFlags: 0
@@ -21744,6 +21727,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   objectsToActivateAfter:
   - {fileID: 1624162012}
+  - {fileID: 507653063}
   objectsToDestroyAfter: []
   destroyAfterDialogue: 0
   autoActivate: 0
@@ -29328,8 +29312,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5729ba9478eeb446914546720909379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  sprintSpeed: 4
+  moveSpeed: 4
+  sprintSpeed: 5
   sprintKey: 304
 --- !u!61 &516495338
 BoxCollider2D:
@@ -29468,7 +29452,7 @@ Transform:
   m_GameObject: {fileID: 516495335}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -86.27, y: 27.7, z: 0}
+  m_LocalPosition: {x: -86.32, y: 27.86, z: 0}
   m_LocalScale: {x: 0.055475384, y: 0.055475384, z: 0.055475384}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -35264,6 +35248,9 @@ MonoBehaviour:
   objectsToDestroyAfter:
   - {fileID: 1543727566}
   - {fileID: 34178123}
+  - {fileID: 380635514}
+  - {fileID: 1192513143}
+  - {fileID: 186510017}
   destroyAfterDialogue: 1
   autoActivate: 0
   reuseDelay: 0.5
@@ -43826,99 +43813,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &760465809
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 760465810}
-  - component: {fileID: 760465812}
-  - component: {fileID: 760465813}
-  m_Layer: 0
-  m_Name: TransicionFinalDelJuego
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &760465810
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 760465809}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.40316, y: -10.04, z: 0}
-  m_LocalScale: {x: 6.1241302, y: 5.1394653, z: 1.2808638}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1631213140}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &760465812
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 760465809}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0.059608027, y: -0.028822303}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1.1192151, y: 1.0576445}
-  m_EdgeRadius: 0
---- !u!114 &760465813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 760465809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 273032ca86f2f8a428b98a7687308846, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Creditos
-  transitionSound: {fileID: 0}
 --- !u!1 &762947768
 GameObject:
   m_ObjectHideFlags: 0
@@ -73721,8 +73615,6 @@ MonoBehaviour:
   objectsToActivateAfter:
   - {fileID: 242611925}
   - {fileID: 955843768}
-  - {fileID: 507653063}
-  - {fileID: 507653063}
   - {fileID: 1166834220}
   objectsToDestroyAfter: []
   destroyAfterDialogue: 0
@@ -92942,9 +92834,7 @@ Transform:
   - {fileID: 2136719663}
   - {fileID: 1304470080}
   - {fileID: 52844472}
-  - {fileID: 1939648916}
   - {fileID: 898656212}
-  - {fileID: 760465810}
   m_Father: {fileID: 634673585}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!68 &1631213141
@@ -108841,135 +108731,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1939648915
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1939648916}
-  - component: {fileID: 1939648918}
-  - component: {fileID: 1939648919}
-  m_Layer: 0
-  m_Name: DialogoLilithEnorme2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1939648916
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1939648915}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.33651, y: -10.3, z: 0}
-  m_LocalScale: {x: 5.0052376, y: 4.2004733, z: 1.046847}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1631213140}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1939648918
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1939648915}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0.059608027, y: -0.028822303}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1.1192151, y: 1.0576445}
-  m_EdgeRadius: 0
---- !u!114 &1939648919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1939648915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1afc75cde4a42c94fbb3cce86bc9bc8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  giantCharacter: {fileID: 17100580}
-  giantSprite: {fileID: 17100581}
-  giantScale: {x: 0.85, y: 0.85, z: 0.85}
-  verticalPositionPercent: 0.65
-  moveSpeed: 5
-  dialoguePanel: {fileID: 878597090}
-  speakerText: {fileID: 160613714}
-  dialogueText: {fileID: 419537938}
-  speakerContainer: {fileID: 1723153709}
-  dimmedColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
-  dialogueCooldown: 0.05
-  objectsToActivateAfter:
-  - {fileID: 760465809}
-  objectsToDestroyAfter: []
-  destroyAfterDialogue: 1
-  dialogues:
-  - speakerName: 
-    dialogueText: "\u2026claro. Ahora lo veo. Alpha hablaba de Beta como si fuera
-      un dios."
-    isGiantSpeaking: 0
-  - speakerName: 
-    dialogueText: 'Como si fuera alguien que iba a venir. Pero no. No estaba esperando
-      a nadie.
-
-'
-    isGiantSpeaking: 0
-  - speakerName: 
-    dialogueText: "Siempre estuvo ah\xED. Desde el principio. No era Alpha quien
-      nos guiaba. Eres t\xFA, s\xED t\xFA el que est\xE1 leyendo esto. Beta eres
-      t\xFA. T\xFA elegiste."
-    isGiantSpeaking: 0
-  - speakerName: 
-    dialogueText: "T\xFA empujaste todo esto. Y yo solo era la que lo hac\xEDa. As\xED
-      que esc\xFAchame bien. Porque ahora s\xE9 que est\xE1s ah\xED. "
-    isGiantSpeaking: 0
-  - speakerName: 
-    dialogueText: "Y cuando te encuentre\u2026 T\xFA ser\xE1s el siguiente."
-    isGiantSpeaking: 0
 --- !u!1 &1941455261
 GameObject:
   m_ObjectHideFlags: 0

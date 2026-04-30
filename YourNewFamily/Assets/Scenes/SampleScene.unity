@@ -6022,8 +6022,7 @@ MonoBehaviour:
   destroyAfterDialogue: 1
   objectsToActivateAfter:
   - {fileID: 213144460}
-  objectsToDestroyAfter:
-  - {fileID: 1025315065}
+  objectsToDestroyAfter: []
 --- !u!61 &141601513
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6937,6 +6936,7 @@ MonoBehaviour:
   destroyAfterDialogue: 1
   objectsToActivateAfter:
   - {fileID: 1708311295}
+  - {fileID: 197674716}
   objectsToDestroyAfter:
   - {fileID: 774619458}
   - {fileID: 1319324203}
@@ -8457,6 +8457,163 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.22949865, y: 1.8251481}
   m_EdgeRadius: 0
+--- !u!1 &197674716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 197674717}
+  - component: {fileID: 197674720}
+  - component: {fileID: 197674719}
+  - component: {fileID: 197674718}
+  m_Layer: 0
+  m_Name: DestornilladorBrillo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &197674717
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197674716}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.56, y: -3.04, z: 0}
+  m_LocalScale: {x: 0.027989998, y: 0.032649998, z: 0.0503}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 977183604}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &197674718
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197674716}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 65a3a94ea2f2711438e3e2dc8d92f93c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!212 &197674719
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197674716}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: -8614084076710331820, guid: 5caaf78dc5719084198b24b19f70d109, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 19.457987, y: 19.24}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!61 &197674720
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197674716}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.023160934, y: 0.059047937}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 12.18, y: 14.86}
+    newSize: {x: 19.457987, y: 19.24}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 11.577353, y: 15.301853}
+  m_EdgeRadius: 0
 --- !u!1 &201970033
 GameObject:
   m_ObjectHideFlags: 0
@@ -8962,7 +9119,8 @@ MonoBehaviour:
   spawnAfterFadeIn: 1
   objectsToActivateAfterFadeIn:
   - {fileID: 1643536856}
-  objectsToDestroyAfterFadeIn: []
+  objectsToDestroyAfterFadeIn:
+  - {fileID: 1025315065}
   objectsToActivateAfter:
   - {fileID: 653360347}
   objectsToDestroyAfter: []
@@ -17518,6 +17676,7 @@ Transform:
   - {fileID: 1533909865}
   - {fileID: 1084341335}
   - {fileID: 1901991250}
+  - {fileID: 1779556712}
   - {fileID: 52129811}
   - {fileID: 869361714}
   - {fileID: 730593834}
@@ -18643,8 +18802,8 @@ Transform:
   m_GameObject: {fileID: 531276119}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.042, y: 0.16877, z: -0.03678211}
-  m_LocalScale: {x: 0.01755564, y: 0.03511128, z: 0}
+  m_LocalPosition: {x: 0.0473, y: 0.165, z: -0.03678211}
+  m_LocalScale: {x: 0.0044506267, y: 0.0083955005, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 889452137}
@@ -18693,8 +18852,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 8949820458873236102, guid: 813264d13f33c2d45917df67bff1d3ee, type: 3}
-  m_Color: {r: 0.74509805, g: 0.74509805, b: 0.74509805, a: 1}
+  m_Sprite: {fileID: -1152026526121992572, guid: c3461b231b5ee554ea9c33c3689c5931, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -18738,17 +18897,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.060288668, y: 0.06391716}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.01, y: 4.12}
+    oldSize: {x: 11.43, y: 18}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.01, y: 4.12}
+  m_Size: {x: 12.294367, y: 18.821568}
   m_EdgeRadius: 0
 --- !u!1 &532660507
 GameObject:
@@ -30776,6 +30935,7 @@ Transform:
   m_Children:
   - {fileID: 1960823011}
   - {fileID: 1025091754}
+  - {fileID: 197674717}
   - {fileID: 1563152354}
   - {fileID: 1605460973}
   - {fileID: 608626061}
@@ -46337,8 +46497,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5729ba9478eeb446914546720909379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  sprintSpeed: 4
+  moveSpeed: 4
+  sprintSpeed: 5
   sprintKey: 304
 --- !u!61 &1476943281
 BoxCollider2D:
@@ -58228,6 +58388,104 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778549339}
   m_CullTransparentMesh: 1
+--- !u!1 &1779556711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1779556712}
+  - component: {fileID: 1779556714}
+  - component: {fileID: 1779556713}
+  m_Layer: 0
+  m_Name: MisionInvestigarPueblo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1779556712
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779556711}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.0426, y: -3.5591, z: 0}
+  m_LocalScale: {x: 0.11334516, y: 0.24269632, z: 0.3308792}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 503323347}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1779556713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779556711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoNuevo: INVESTIGA EL PUEBLO
+  uiText: {fileID: 570216618}
+  duracionRevelado: 1.2
+  escalaInicial: 0.7
+  escalaFinal: 1
+  sacudidaIntensidad: 0.3
+  sacudidaDuracion: 0.15
+--- !u!61 &1779556714
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779556711}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.2425003, y: 0.059044838}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 12.18, y: 14.86}
+    newSize: {x: 19.457987, y: 19.24}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 83.33403, y: 27.149137}
+  m_EdgeRadius: 0
 --- !u!1 &1780365457
 GameObject:
   m_ObjectHideFlags: 0
@@ -62970,6 +63228,7 @@ MonoBehaviour:
   objectsToActivateAfter:
   - {fileID: 52129810}
   - {fileID: 110598582}
+  - {fileID: 1779556711}
   objectsToDestroyAfter: []
   destroyAfterDialogue: 1
   autoActivate: 0
@@ -68579,7 +68838,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2133653338
 Transform:
   m_ObjectHideFlags: 0
