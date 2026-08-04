@@ -17,9 +17,12 @@ public class DialogueSection
 
 public class SimpleDialogueSystem : MonoBehaviour
 {
+    [Header("Identificador de Diálogo")]
+    public string dialogueId = ""; // 🔥 NUEVO
+
     [Header("Sistema de Inventario")]
-    public GameObject itemToAddToInventory; // Prefab del item a añadir
-    public Sprite inventoryItemIcon; // Icono alternativo si no hay prefab
+    public GameObject itemToAddToInventory;
+    public Sprite inventoryItemIcon;
     public string inventoryItemId = "item_default";
     public string inventoryItemName = "Nuevo Item";
 
@@ -55,7 +58,6 @@ public class SimpleDialogueSystem : MonoBehaviour
     private Vector2 originalVelocity;
     private Camera mainCamera;
 
-    // 🔥 NUEVO: Variables para control de teclas
     private bool isTyping = false;
     private bool waitingForNextLine = false;
 
@@ -94,16 +96,14 @@ public class SimpleDialogueSystem : MonoBehaviour
             StartDialogue();
         }
 
-        // 🔥 MODIFICADO: Comportamiento igual que DialogueChoiceSystem
         if (isDialogueActive && Input.GetKeyDown(KeyCode.Space))
         {
             if (isTyping)
             {
-                SkipTyping();    // Espacio 1 -> completa texto
+                SkipTyping();
             }
-            else if (waitingForNextLine) // Solo avanzar si estamos esperando
+            else if (waitingForNextLine)
             {
-                // Espacio 2 -> avanzar
                 waitingForNextLine = false;
                 AdvanceDialogue();
             }
@@ -138,6 +138,10 @@ public class SimpleDialogueSystem : MonoBehaviour
     public void StartDialogue()
     {
         if (isDialogueActive || dialogueSections.Length == 0) return;
+
+        // 🔥 Registrar diálogo completado
+        if (!string.IsNullOrEmpty(dialogueId) && SaveManager.Instance != null)
+            SaveManager.Instance.RegisterDialogueCompleted(dialogueId);
 
         InteractionPromptManager.Instance?.HidePrompt();
 
@@ -185,14 +189,6 @@ public class SimpleDialogueSystem : MonoBehaviour
             speakerContainer.SetActive(!string.IsNullOrEmpty(dialogueSections[lineIndex].speakerName));
         }
 
-        /*// LLAMADA AL BACKLOG MANAGER - NUEVA
-        if (BacklogManager.Instance != null)
-        {
-            BacklogManager.Instance.AddDialogueFromSimpleSystem(
-                dialogueSections[lineIndex].speakerName,
-                dialogueSections[lineIndex].dialogueText
-            );
-        }*/
         if (dialogueSections[lineIndex].giveItemAfterThisLine)
         {
             GiveInventoryItem(
@@ -213,16 +209,15 @@ public class SimpleDialogueSystem : MonoBehaviour
     {
         if (InventorySystem.Instance != null && !string.IsNullOrEmpty(itemId))
         {
-            // Si tenemos un prefab asignado en el inspector
             if (itemToAddToInventory != null)
             {
                 InventorySystem.Instance.AddItemFromPrefab(itemToAddToInventory);
             }
-            else if (itemIcon != null) // Si tenemos un icono específico
+            else if (itemIcon != null)
             {
                 InventorySystem.Instance.AddSimpleItem(itemId, itemName, itemIcon);
             }
-            else // Usar las configuraciones del script
+            else
             {
                 InventorySystem.Instance.AddSimpleItem(
                     inventoryItemId,
@@ -243,23 +238,19 @@ public class SimpleDialogueSystem : MonoBehaviour
         {
             dialogueText.text += letter;
 
-            // Si se skipea el typing, paramos el bucle
             if (!isTyping)
                 break;
 
             yield return new WaitForSeconds(textSpeed);
         }
 
-        // Si se skipeó, aseguramos texto completo
         dialogueText.text = text;
 
         isTyping = false;
 
-        // Esperar segunda pulsación de espacio
         waitingForNextLine = true;
     }
 
-    // 🔥 NUEVO: Método para saltar el typing
     void SkipTyping()
     {
         if (!isTyping) return;
@@ -272,10 +263,8 @@ public class SimpleDialogueSystem : MonoBehaviour
             typingCoroutine = null;
         }
 
-        // Mostrar texto completo inmediatamente
         dialogueText.text = dialogueSections[currentLine].dialogueText;
 
-        // Esperar segunda pulsación de espacio
         waitingForNextLine = true;
     }
 
@@ -320,24 +309,35 @@ public class SimpleDialogueSystem : MonoBehaviour
             playerRigidbody.linearVelocity = originalVelocity;
         }
 
+        // 🔥 Activar objetos y registrar estado
         foreach (GameObject obj in objectsToActivateAfter)
         {
             if (obj != null)
             {
+                SaveableObject saveable = obj.GetComponent<SaveableObject>();
+                if (saveable != null && SaveManager.Instance != null)
+                    SaveManager.Instance.RegisterObjectState(saveable.objectId, true);
                 obj.SetActive(true);
             }
         }
 
+        // 🔥 Desactivar objetos (en lugar de destruir) y registrar estado
         foreach (GameObject obj in objectsToDestroyAfter)
         {
             if (obj != null)
             {
-                Destroy(obj);
+                SaveableObject saveable = obj.GetComponent<SaveableObject>();
+                if (saveable != null && SaveManager.Instance != null)
+                    SaveManager.Instance.RegisterObjectState(saveable.objectId, false);
+                obj.SetActive(false);
             }
         }
 
         if (destroyAfterDialogue)
         {
+            SaveableObject thisSaveable = GetComponent<SaveableObject>();
+            if (thisSaveable != null && SaveManager.Instance != null)
+                SaveManager.Instance.RegisterObjectState(thisSaveable.objectId, false);
             Destroy(gameObject);
         }
     }

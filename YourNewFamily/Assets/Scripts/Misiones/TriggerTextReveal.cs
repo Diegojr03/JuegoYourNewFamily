@@ -1,9 +1,12 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using TMPro;
 using System.Collections;
 
 public class TriggerTextReveal : MonoBehaviour
 {
+    [Header("Identificador (opcional)")]
+    public string triggerId = "";
+
     [TextArea]
     public string textoNuevo;
     public TMP_Text uiText;
@@ -16,15 +19,34 @@ public class TriggerTextReveal : MonoBehaviour
 
     private bool activado = false;
 
+    void Start()
+    {
+        // ðŸ”¥ CORRECCIÃ“N: Comprobamos si hay texto de misiÃ³n guardado en SaveManager
+        if (SaveManager.Instance != null && uiText != null)
+        {
+            if (SaveManager.Instance.TryGetLastMissionText(out string savedText))
+            {
+                uiText.text = savedText;
+            }
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (activado) return;
         if (!other.CompareTag("Player")) return;
 
         activado = true;
+
+        // ðŸ”¥ CORRECCIÃ“N: Registramos este texto como el Ãºltimo activado
+        if (SaveManager.Instance != null)
+        {
+            SaveManager.Instance.RegisterMissionText(textoNuevo);
+        }
+
         if (uiText == null)
         {
-            Debug.LogWarning("uiText no está asignado en " + gameObject.name);
+            Debug.LogWarning("uiText no estÃ¡ asignado en " + gameObject.name);
             return;
         }
 
@@ -33,7 +55,6 @@ public class TriggerTextReveal : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(EfectoBonito(uiText));
 
-        // Desactivar el collider para que no vuelva a activarse
         var col = GetComponent<Collider2D>();
         if (col != null) col.enabled = false;
     }
@@ -44,11 +65,9 @@ public class TriggerTextReveal : MonoBehaviour
         int total = text.textInfo.characterCount;
         text.maxVisibleCharacters = 0;
 
-        // Guarda escala original
         Vector3 escalaOriginal = text.transform.localScale;
         text.transform.localScale = escalaOriginal * escalaInicial;
 
-        // Empieza con alpha 0
         Color c = text.color;
         c.a = 0;
         text.color = c;
@@ -57,59 +76,37 @@ public class TriggerTextReveal : MonoBehaviour
         while (t < duracionRevelado)
         {
             float p = Mathf.Clamp01(t / duracionRevelado);
-
-            // Fade-in
             c.a = p;
             text.color = c;
-
-            // Revelado suave (no letra a letra exacta, sino progresivo)
             int visibles = Mathf.FloorToInt(total * p);
             text.maxVisibleCharacters = visibles;
-
-            // Escalado "pop"
             text.transform.localScale = Vector3.Lerp(escalaOriginal * escalaInicial, escalaOriginal * escalaFinal, p);
-
             t += Time.deltaTime;
             yield return null;
         }
 
-        // Asegura final
         c.a = 1f;
         text.color = c;
         text.maxVisibleCharacters = total;
         text.transform.localScale = escalaOriginal * escalaFinal;
 
-        // Llamar sacudida y esperar a que termine
         yield return StartCoroutine(Sacudida(text.transform));
-
-        // Garantía final: dejamos la coroutine con un yield break explícito
-        yield break;
     }
 
     IEnumerator Sacudida(Transform t)
     {
         Vector3 original = t.localPosition;
         float tiempo = 0f;
-
-        // Si la duración es 0 o negativa, salimos inmediatamente (y seguimos siendo un IEnumerator válido)
-        if (sacudidaDuracion <= 0f)
-        {
-            yield break;
-        }
+        if (sacudidaDuracion <= 0f) yield break;
 
         while (tiempo < sacudidaDuracion)
         {
             float x = Random.Range(-sacudidaIntensidad, sacudidaIntensidad);
             float y = Random.Range(-sacudidaIntensidad, sacudidaIntensidad);
             t.localPosition = original + new Vector3(x, y, 0f);
-
             tiempo += Time.deltaTime;
             yield return null;
         }
-
         t.localPosition = original;
-
-        // Aseguramos terminar la enumeración correctamente
-        yield break;
     }
 }

@@ -7,16 +7,19 @@ using UnityEngine.SceneManagement;
 [System.Serializable]
 public class SaveData
 {
-    public string sceneName;                // Nombre de la escena actual
-    public float playerX;                  // Posición X del jugador
-    public float playerY;                  // Posición Y del jugador
-    public List<string> dialoguesCompleted = new List<string>(); // IDs de diálogos ya vistos
-    public List<string> puzzlesCompleted = new List<string>();   // IDs de puzzles resueltos
-    public List<ObjectState> objectStates = new List<ObjectState>();  // Estados de objetos
-    public List<string> unlockedZones = new List<string>(); // Zonas del mapa desbloqueadas
+    public string sceneName;
+    public float playerX;
+    public float playerY;
+    public List<string> dialoguesCompleted = new List<string>();
+    public List<string> puzzlesCompleted = new List<string>();
+    public List<ObjectState> objectStates = new List<ObjectState>();
+    public List<string> unlockedZones = new List<string>();
     public float cameraX;
     public float cameraY;
     public float cameraSize;
+
+    public string lastMissionText = "";
+    public bool hasSavedMissionText = false;
 }
 
 [System.Serializable]
@@ -32,24 +35,26 @@ public class SaveManager : MonoBehaviour
 
     private string savePath;
     private SaveData currentSave = new SaveData();
-    private bool isLoadingFromSave = false; // 🔥 NUEVA BANDERA
+    private bool isLoadingFromSave = false;
+
+    // Propiedad pública para saber si estamos en proceso de carga
+    public bool IsLoading => isLoadingFromSave;
+
+    private Dictionary<string, bool> objectStates = new Dictionary<string, bool>();
 
     void Awake()
     {
-        // Patrón Singleton: solo debe existir uno en toda la partida
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject); // Persiste entre escenas
+        DontDestroyOnLoad(gameObject);
 
-        // Ruta donde se guardará el archivo
         savePath = Path.Combine(Application.persistentDataPath, "savegame.json");
         Debug.Log("📁 Ruta de guardado: " + savePath);
 
-        // Suscribirse al evento de carga de escenas
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -60,14 +65,12 @@ public class SaveManager : MonoBehaviour
 
     void Update()
     {
-        // Guardar con F5
         if (Input.GetKeyDown(KeyCode.G))
         {
             Debug.Log("🔹 G Presionada - Guardando...");
             SaveGame();
         }
 
-        // Cargar con F9
         if (Input.GetKeyDown(KeyCode.H))
         {
             Debug.Log("🔹 H Presionada - Cargando...");
@@ -78,10 +81,8 @@ public class SaveManager : MonoBehaviour
     // ---------- GUARDAR ----------
     public void SaveGame()
     {
-        // 1. Guardar nombre de la escena actual
         currentSave.sceneName = SceneManager.GetActiveScene().name;
 
-        // 2. Guardar posición del jugador
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
@@ -90,21 +91,31 @@ public class SaveManager : MonoBehaviour
             currentSave.playerY = pos.y;
         }
 
-        // Guardar cámara
         Camera mainCamera = Camera.main;
         if (mainCamera != null)
         {
             currentSave.cameraX = mainCamera.transform.position.x;
             currentSave.cameraY = mainCamera.transform.position.y;
             currentSave.cameraSize = mainCamera.orthographicSize;
-            Debug.Log($"📷 Cámara guardada: ({currentSave.cameraX}, {currentSave.cameraY}) size {currentSave.cameraSize}");
-        }
-        else
-        {
-            Debug.LogWarning("No se encontró Camera.main al guardar.");
         }
 
-        // 3. Convertir el JSON a texto y guardarlo en disco
+        // Registrar el estado actual de todos los SaveableObject presentes en la escena
+        SaveableObject[] allSaveables = FindObjectsOfType<SaveableObject>(true);
+        foreach (SaveableObject so in allSaveables)
+        {
+            if (!string.IsNullOrEmpty(so.objectId))
+            {
+                RegisterObjectState(so.objectId, so.gameObject.activeSelf);
+            }
+        }
+
+        // Convertir el diccionario a la lista serializable
+        currentSave.objectStates.Clear();
+        foreach (var kvp in objectStates)
+        {
+            currentSave.objectStates.Add(new ObjectState { objectId = kvp.Key, isActive = kvp.Value });
+        }
+
         string json = JsonUtility.ToJson(currentSave, true);
         File.WriteAllText(savePath, json);
         Debug.Log("💾 Partida guardada en: " + savePath);
@@ -128,80 +139,89 @@ public class SaveManager : MonoBehaviour
             return false;
         }
 
+        // 🔥 CORRECCIÓN CLAVE: Cargar el diccionario en memoria directamente del JSON guardado
+        objectStates.Clear();
+        foreach (var state in currentSave.objectStates)
+        {
+            objectStates[state.objectId] = state.isActive;
+        }
+
         Debug.Log("📂 Partida cargada correctamente. Escena: " + currentSave.sceneName);
 
-        // 🔥 MARCAR QUE ESTAMOS CARGANDO DESDE GUARDADO
         isLoadingFromSave = true;
-
         SceneManager.LoadScene(currentSave.sceneName);
         return true;
     }
 
-    // Evento que se dispara cuando se carga una escena
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("🔄 OnSceneLoaded: " + scene.name);
 
         if (isLoadingFromSave)
         {
-            // Restaurar jugador (inmediato, como antes)
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             if (player != null)
             {
                 player.transform.position = new Vector3(currentSave.playerX, currentSave.playerY, 0);
             }
 
-            // Restaurar cámara con un frame de retraso
             StartCoroutine(RestoreCameraAfterFrame());
+            RestoreObjectStates();
 
             isLoadingFromSave = false;
         }
-        else
-        {
-            Debug.Log("ℹ️ Carga de escena normal (sin restauración de posición).");
-        }
     }
 
-    // ---------- MÉTODOS PARA REGISTRAR PROGRESO ----------
+    // ---------- MÉTODOS DE TEXTO DE MISIÓN ----------
+    public void RegisterMissionText(string text)
+    {
+        currentSave.lastMissionText = text;
+        currentSave.hasSavedMissionText = true;
+        Debug.Log($"📝 Último texto de misión registrado: '{text}'");
+    }
 
+    public bool TryGetLastMissionText(out string text)
+    {
+        text = currentSave.lastMissionText;
+        return currentSave.hasSavedMissionText;
+    }
+
+    // ---------- REGISTRAR Y CONSULTAR ESTADO DE OBJETO ----------
+    public void RegisterObjectState(string objectId, bool isActive)
+    {
+        if (string.IsNullOrEmpty(objectId)) return;
+        objectStates[objectId] = isActive;
+    }
+
+    public bool GetObjectState(string objectId, bool defaultValue = true)
+    {
+        if (objectStates.TryGetValue(objectId, out bool state))
+            return state;
+        return defaultValue;
+    }
+
+    // ---------- OTROS MÉTODOS DE PROGRESO ----------
     public void RegisterDialogueCompleted(string dialogueId)
     {
         if (!currentSave.dialoguesCompleted.Contains(dialogueId))
-        {
             currentSave.dialoguesCompleted.Add(dialogueId);
-            Debug.Log($"📝 Diálogo registrado: {dialogueId}");
-        }
     }
 
     public void RegisterPuzzleCompleted(string puzzleId)
     {
         if (!currentSave.puzzlesCompleted.Contains(puzzleId))
-        {
             currentSave.puzzlesCompleted.Add(puzzleId);
-            Debug.Log($"🧩 Puzzle registrado: {puzzleId}");
-        }
     }
 
     public void RegisterZoneUnlocked(string zoneName)
     {
         if (!currentSave.unlockedZones.Contains(zoneName))
-        {
             currentSave.unlockedZones.Add(zoneName);
-            Debug.Log($"🗺️ Zona registrada: {zoneName}");
-        }
     }
 
-    public bool IsDialogueCompleted(string dialogueId)
-    {
-        return currentSave.dialoguesCompleted.Contains(dialogueId);
-    }
+    public bool IsDialogueCompleted(string dialogueId) => currentSave.dialoguesCompleted.Contains(dialogueId);
+    public bool IsPuzzleCompleted(string puzzleId) => currentSave.puzzlesCompleted.Contains(puzzleId);
 
-    public bool IsPuzzleCompleted(string puzzleId)
-    {
-        return currentSave.puzzlesCompleted.Contains(puzzleId);
-    }
-
-    // ---------- ELIMINAR GUARDADO ----------
     public void DeleteSave()
     {
         if (File.Exists(savePath))
@@ -210,18 +230,17 @@ public class SaveManager : MonoBehaviour
             Debug.Log("🗑️ Partida eliminada.");
         }
         currentSave = new SaveData();
-        isLoadingFromSave = false; // 🔥 Aseguramos que no se restaure nada
+        objectStates.Clear();
+        isLoadingFromSave = false;
     }
 
     void OnDestroy()
     {
-        // Limpiar suscripción al evento
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     private IEnumerator RestoreCameraAfterFrame()
     {
-        // Esperar un frame para que todos los scripts de inicio terminen
         yield return null;
 
         Camera mainCamera = Camera.main;
@@ -230,7 +249,27 @@ public class SaveManager : MonoBehaviour
             Vector3 camPos = new Vector3(currentSave.cameraX, currentSave.cameraY, mainCamera.transform.position.z);
             mainCamera.transform.position = camPos;
             mainCamera.orthographicSize = currentSave.cameraSize;
-            Debug.Log($"📷 Cámara restaurada (después de frame): ({currentSave.cameraX}, {currentSave.cameraY}) size {currentSave.cameraSize}");
         }
+    }
+
+    private void RestoreObjectStates()
+    {
+        // Busca todos los SaveableObject (activos e inactivos)
+        SaveableObject[] allSaveables = FindObjectsOfType<SaveableObject>(true);
+
+        int restoredCount = 0;
+        foreach (SaveableObject so in allSaveables)
+        {
+            if (string.IsNullOrEmpty(so.objectId)) continue;
+
+            // Si el objeto está registrado en nuestra partida guardada, le aplicamos su estado
+            if (objectStates.TryGetValue(so.objectId, out bool savedIsActive))
+            {
+                so.gameObject.SetActive(savedIsActive);
+                restoredCount++;
+            }
+        }
+
+        Debug.Log($"🔧 Restaurados {restoredCount} objetos.");
     }
 }

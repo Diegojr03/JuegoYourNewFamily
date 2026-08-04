@@ -14,7 +14,7 @@ public class DialogueChoiceSystem : MonoBehaviour
         public bool leftSpeaker = true;
         public Sprite characterSprite;
 
-        public bool endDialogueHere = false;  // 🔥 NUEVO
+        public bool endDialogueHere = false;
 
         public Choice[] choices;
 
@@ -28,15 +28,17 @@ public class DialogueChoiceSystem : MonoBehaviour
     public class Choice
     {
         public string choiceText;
-        public int nextDialogueIndex = -1; // -1 = terminar diálogo
+        public int nextDialogueIndex = -1;
     }
 
+    [Header("Identificador de Diálogo")]
+    public string dialogueId = ""; // 🔥 NUEVO
+
     [Header("Sistema de Inventario")]
-    public GameObject itemToAddToInventory; // Prefab del item a añadir
-    public Sprite inventoryItemIcon; // Icono alternativo si no hay prefab
+    public GameObject itemToAddToInventory;
+    public Sprite inventoryItemIcon;
     public string inventoryItemId = "item_default";
     public string inventoryItemName = "Nuevo Item";
-
 
     [Header("Diálogos")]
     public List<DialogueLine> dialogueLines = new List<DialogueLine>();
@@ -48,9 +50,9 @@ public class DialogueChoiceSystem : MonoBehaviour
     public GameObject speakerContainer;
 
     [Header("UI de Opciones")]
-    public GameObject choicePanel;          // Panel que contiene las opciones
-    public Transform choicesContainer;      // Contenedor vertical (Layout Group)
-    public GameObject choiceButtonPrefab;   // Prefab del botón
+    public GameObject choicePanel;
+    public Transform choicesContainer;
+    public GameObject choiceButtonPrefab;
 
     [Header("Personajes")]
     public Transform characterLeft;
@@ -66,14 +68,12 @@ public class DialogueChoiceSystem : MonoBehaviour
     public float horizontalOffsetPercent = 0.3f;
     public float verticalOffsetPercent = 0.2f;
 
-    // 🔥 NUEVO: Configuración avanzada del segundo script
     [Header("Configuración Avanzada")]
     public GameObject[] objectsToActivateAfter;
     public GameObject[] objectsToDestroyAfter;
     public bool destroyAfterDialogue = false;
     public float reuseDelay = 0.5f;
 
-    // 🔥 NUEVO: Activación automática (desde DialogueSystem)
     [Header("Activación")]
     public bool autoActivate = false;
 
@@ -81,8 +81,8 @@ public class DialogueChoiceSystem : MonoBehaviour
     private bool isDialogueActive = false;
     private bool typing = false;
     private bool canInteract = false;
-    private bool waitingForNextLine = false; // Control para esperar segunda pulsación
-    private bool canReuse = true; // 🔥 NUEVO: Para evitar reactivaciones inmediatas
+    private bool waitingForNextLine = false;
+    private bool canReuse = true;
 
     private MovimientoPersonaje playerMovement;
     private Rigidbody2D playerRb;
@@ -92,7 +92,7 @@ public class DialogueChoiceSystem : MonoBehaviour
     private Vector2 leftCharacterTarget;
     private Vector2 rightCharacterTarget;
     private Vector2 hiddenPosition;
-    private bool charactersHidden = true; // 🆕 NUEVO: Para controlar cuando están ocultos
+    private bool charactersHidden = true;
 
     private Coroutine typingCoroutine;
 
@@ -117,34 +117,29 @@ public class DialogueChoiceSystem : MonoBehaviour
 
     void Update()
     {
-        // 🆕 MODIFICADO: Personajes siguen a la cámara suavemente cuando están ocultos
         if (charactersHidden && mainCamera != null && !isDialogueActive)
         {
             CalculateHiddenPosition();
 
-            // Usar Lerp para movimiento suave, no teleportación
             if (characterLeft != null)
                 characterLeft.position = Vector2.Lerp(characterLeft.position, hiddenPosition, moveSpeed * Time.deltaTime);
             if (characterRight != null)
                 characterRight.position = Vector2.Lerp(characterRight.position, hiddenPosition, moveSpeed * Time.deltaTime);
         }
 
-        // Espacio: primero completa typewriter, la segunda vez avanza (si no hay opciones mostradas)
         if (isDialogueActive && Input.GetKeyDown(KeyCode.Space))
         {
             if (typing)
             {
-                SkipTyping();    // Espacio 1 -> completa texto
+                SkipTyping();
             }
-            else if (waitingForNextLine && !choicePanel.activeSelf) // Solo avanzar si estamos esperando
+            else if (waitingForNextLine && !choicePanel.activeSelf)
             {
-                // Espacio 2 -> avanzar (si no hay panel de opciones visible)
-                waitingForNextLine = false; // Dejar de esperar
+                waitingForNextLine = false;
                 AdvanceDialogue();
             }
         }
 
-        // Activar diálogo con F (solo si no está en auto-activación)
         if (!isDialogueActive && canInteract && Input.GetKeyDown(KeyCode.F) && canReuse && !autoActivate)
         {
             StartDialogue();
@@ -161,25 +156,25 @@ public class DialogueChoiceSystem : MonoBehaviour
         hiddenPosition = new Vector2(bottom.x, bottom.y - height);
     }
 
-    // -------------------------
-    // INICIO DEL DIÁLOGO
-    // -------------------------
     public void StartDialogue()
     {
         if (isDialogueActive || dialogueLines.Count == 0 || !canReuse) return;
+
+        // 🔥 Registrar diálogo completado
+        if (!string.IsNullOrEmpty(dialogueId) && SaveManager.Instance != null)
+            SaveManager.Instance.RegisterDialogueCompleted(dialogueId);
 
         InteractionPromptManager.Instance?.HidePrompt();
 
         currentIndex = 0;
         isDialogueActive = true;
         waitingForNextLine = false;
-        canReuse = false; // 🔥 NUEVO: Evitar reactivación inmediata
+        canReuse = false;
 
         LockPlayer();
 
         dialoguePanel.SetActive(true);
 
-        // 🆕 Asegurar que no están marcados como ocultos
         charactersHidden = false;
 
         CalculateTargetPositions();
@@ -194,14 +189,12 @@ public class DialogueChoiceSystem : MonoBehaviour
         {
             canInteract = true;
 
-            // Si está en auto-activación, iniciar diálogo automáticamente
             if (autoActivate)
             {
                 StartDialogue();
             }
             else
             {
-                // Mostrar la F
                 InteractionPromptManager.Instance?.ShowPrompt(
                     GetComponent<InteractionPoint>()
                 );
@@ -214,24 +207,17 @@ public class DialogueChoiceSystem : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             canInteract = false;
-
-            // Ocultar la F
             InteractionPromptManager.Instance?.HidePrompt();
         }
     }
 
-    // -------------------------
-    // MOSTRAR UNA LÍNEA
-    // -------------------------
     void ShowDialogueLine(int index)
     {
         DialogueLine line = dialogueLines[index];
 
-        // UI speaker
         speakerText.text = line.speakerName;
         speakerContainer.SetActive(!string.IsNullOrEmpty(line.speakerName));
 
-        // Backlog
         if (BacklogManager.Instance != null)
         {
             string owner = GetConversationOwner();
@@ -257,25 +243,21 @@ public class DialogueChoiceSystem : MonoBehaviour
                 line.itemIconToGive
             );
         }
-
-        return;
-        // Si hay opciones, se mostrarán después
     }
 
     private void GiveInventoryItem(string itemId, string itemName, Sprite itemIcon)
     {
         if (InventorySystem.Instance != null && !string.IsNullOrEmpty(itemId))
         {
-            // Si tenemos un prefab asignado en el inspector
             if (itemToAddToInventory != null)
             {
                 InventorySystem.Instance.AddItemFromPrefab(itemToAddToInventory);
             }
-            else if (itemIcon != null) // Si tenemos un icono específico
+            else if (itemIcon != null)
             {
                 InventorySystem.Instance.AddSimpleItem(itemId, itemName, itemIcon);
             }
-            else // Usar las configuraciones del script
+            else
             {
                 InventorySystem.Instance.AddSimpleItem(
                     inventoryItemId,
@@ -286,48 +268,40 @@ public class DialogueChoiceSystem : MonoBehaviour
         }
     }
 
-    // -------------------------
-    // TYPEWRITER
-    // -------------------------
     IEnumerator TypeText(string text)
     {
         typing = true;
-        waitingForNextLine = false; // No estamos esperando todavía
+        waitingForNextLine = false;
         dialogueText.text = "";
 
         foreach (char c in text.ToCharArray())
         {
             dialogueText.text += c;
 
-            // Si typing se pone a false desde SkipTyping, paramos el bucle
             if (!typing)
                 break;
 
             yield return new WaitForSeconds(dialogueCooldown);
         }
 
-        // Si el bucle terminó por skip (typing == false), aseguramos texto completo.
         DialogueLine currentLine = dialogueLines[currentIndex];
         dialogueText.text = currentLine.dialogueText;
 
         typing = false;
 
-        // Si esta línea marca "terminar diálogo aquí", acabamos la conversación YA
         if (currentLine.endDialogueHere)
         {
             waitingForNextLine = true;
             yield break;
         }
 
-        // Si hay choices, mostrarlas; si no, esperar espacio para avanzar
         if (currentLine.choices != null && currentLine.choices.Length > 0)
         {
-            ShowChoices(); // mostramos botones y esperamos interacción por botón
+            ShowChoices();
             yield break;
         }
 
-        // No hay opciones -> esperar al siguiente espacio para avanzar
-        waitingForNextLine = true; // Ahora sí estamos esperando la segunda pulsación
+        waitingForNextLine = true;
     }
 
     void ShowChoices()
@@ -339,7 +313,6 @@ public class DialogueChoiceSystem : MonoBehaviour
 
         choicePanel.SetActive(true);
 
-        // Borrar opciones anteriores
         foreach (Transform child in choicesContainer)
             Destroy(child.gameObject);
 
@@ -355,7 +328,6 @@ public class DialogueChoiceSystem : MonoBehaviour
 
             btn.onClick.AddListener(() =>
             {
-                // Ocultar panel y procesar la elección
                 choicePanel.SetActive(false);
                 SelectChoice(targetIndex);
             });
@@ -364,7 +336,6 @@ public class DialogueChoiceSystem : MonoBehaviour
 
     void SkipTyping()
     {
-        // Si ya no estamos escribiendo, no haga nada
         if (!typing) return;
 
         typing = false;
@@ -377,34 +348,28 @@ public class DialogueChoiceSystem : MonoBehaviour
 
         DialogueLine line = dialogueLines[currentIndex];
 
-        // Mostrar texto completo inmediatamente
         dialogueText.text = line.dialogueText;
 
-        // Si la línea indica terminar diálogo -> terminar ya
         if (line.endDialogueHere)
         {
             waitingForNextLine = true;
             return;
         }
 
-        // Si hay opciones, mostrarlas; si no, esperar segunda pulsación de espacio
         if (line.choices != null && line.choices.Length > 0)
         {
             ShowChoices();
         }
         else
         {
-            // Ahora esperamos la segunda pulsación explícitamente
             waitingForNextLine = true;
         }
     }
 
     IEnumerator WaitForNextLine()
     {
-        // Esperamos hasta que el jugador pulse espacio
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
 
-        // Comprobamos si la línea actual pide terminar
         DialogueLine line = dialogueLines[currentIndex];
         if (line.endDialogueHere)
         {
@@ -448,70 +413,71 @@ public class DialogueChoiceSystem : MonoBehaviour
         ShowDialogueLine(currentIndex);
     }
 
-    // -------------------------
-    // FIN DEL DIÁLOGO
-    // -------------------------
     void EndDialogue()
     {
-        // Primero ocultamos la UI inmediatamente
         dialoguePanel.SetActive(false);
         choicePanel.SetActive(false);
         waitingForNextLine = false;
 
-        // Iniciamos el movimiento de los personajes pero NO desactivamos todo aún
         StartCoroutine(EndDialogueSequence());
     }
 
     private IEnumerator EndDialogueSequence()
     {
-        // Esperar a que los personajes se muevan fuera de pantalla
         yield return StartCoroutine(MoveCharactersToPosition(false));
 
-        // Solo ahora desbloqueamos al jugador y finalizamos completamente
         UnlockPlayer();
         isDialogueActive = false;
 
-        // 🔥 NUEVO: Ejecutar funcionalidades avanzadas
         ExecuteAdvancedFunctionality();
     }
 
-    // 🔥 NUEVO: Método para ejecutar funcionalidades avanzadas
     void ExecuteAdvancedFunctionality()
     {
-        // Activar objetos
+        // 🔥 Activar objetos y registrar estado
         foreach (GameObject obj in objectsToActivateAfter)
         {
-            if (obj != null) obj.SetActive(true);
+            if (obj != null)
+            {
+                SaveableObject saveable = obj.GetComponent<SaveableObject>();
+                if (saveable != null && SaveManager.Instance != null)
+                    SaveManager.Instance.RegisterObjectState(saveable.objectId, true);
+                obj.SetActive(true);
+            }
         }
 
-        // Destruir objetos
+        // 🔥 Desactivar objetos (en lugar de destruir) y registrar estado
         foreach (GameObject obj in objectsToDestroyAfter)
         {
-            if (obj != null) Destroy(obj);
+            if (obj != null)
+            {
+                SaveableObject saveable = obj.GetComponent<SaveableObject>();
+                if (saveable != null && SaveManager.Instance != null)
+                    SaveManager.Instance.RegisterObjectState(saveable.objectId, false);
+                obj.SetActive(false);
+            }
         }
 
         // Destruir este objeto si está configurado
         if (destroyAfterDialogue)
         {
+            SaveableObject thisSaveable = GetComponent<SaveableObject>();
+            if (thisSaveable != null && SaveManager.Instance != null)
+                SaveManager.Instance.RegisterObjectState(thisSaveable.objectId, false);
             Destroy(gameObject);
         }
         else
         {
-            // Permitir reutilización después de un delay
             StartCoroutine(AllowReuseAfterDelay());
         }
     }
 
-    // 🔥 NUEVO: Corrutina para permitir reutilización
     private IEnumerator AllowReuseAfterDelay()
     {
         yield return new WaitForSeconds(reuseDelay);
         canReuse = true;
     }
 
-    // -------------------------
-    // SISTEMA DE PERSONAJES
-    // -------------------------
     void HighlightCharacter(bool left, Sprite custom)
     {
         if (left)
@@ -556,7 +522,6 @@ public class DialogueChoiceSystem : MonoBehaviour
 
         if (!enter)
         {
-            // 🆕 Asegurar que HiddenPosition esté actualizada antes de bajar
             CalculateHiddenPosition();
             leftTarget = hiddenPosition;
             rightTarget = hiddenPosition;
@@ -573,7 +538,6 @@ public class DialogueChoiceSystem : MonoBehaviour
         characterLeft.position = leftTarget;
         characterRight.position = rightTarget;
 
-        // 🆕 Solo marcamos como ocultos después de terminar la animación de bajada
         if (!enter)
         {
             charactersHidden = true;
@@ -588,15 +552,12 @@ public class DialogueChoiceSystem : MonoBehaviour
     {
         if (mainCamera == null) return;
 
-        CalculateHiddenPosition(); // Usa el nuevo método
+        CalculateHiddenPosition();
         characterLeft.position = hiddenPosition;
         characterRight.position = hiddenPosition;
-        charactersHidden = true; // 🆕 Asegurar que están marcados como ocultos
+        charactersHidden = true;
     }
 
-    // -------------------------
-    // JUGADOR
-    // -------------------------
     void LockPlayer()
     {
         if (playerMovement != null)
@@ -618,9 +579,6 @@ public class DialogueChoiceSystem : MonoBehaviour
             playerRb.linearVelocity = originalVelocity;
     }
 
-    // -------------------------
-    // BACKLOG: determinar NPC propietario
-    // -------------------------
     string GetConversationOwner()
     {
         foreach (var line in dialogueLines)
@@ -633,17 +591,12 @@ public class DialogueChoiceSystem : MonoBehaviour
 
     void OnDestroy()
     {
-        // Eliminamos la condición "&& characterLeft.parent == transform"
-        // Ahora se destruirá el objeto referenciado sin importar quién sea su padre.
-
         if (characterLeft != null)
             Destroy(characterLeft.gameObject);
 
         if (characterRight != null)
             Destroy(characterRight.gameObject);
 
-        // Verificamos != null extra por si el sprite estaba en el mismo objeto 
-        // que el character y ya fue destruido arriba.
         if (spriteLeft != null)
             Destroy(spriteLeft.gameObject);
 

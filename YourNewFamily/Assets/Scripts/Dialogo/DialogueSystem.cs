@@ -31,12 +31,15 @@ public class DialogueSystem : MonoBehaviour
     public float verticalOffsetPercent = 0.2f;
     public float autoAdvanceTime = 1.5f;
 
+    [Header("Identificador de Diálogo")]
+    public string dialogueId = ""; // 🔥 NUEVO
+
     [Header("Diálogos")]
     public List<Dialogue> dialogues = new List<Dialogue>();
 
     [Header("Sistema de Inventario")]
-    public GameObject itemToAddToInventory; // Prefab del item a añadir
-    public Sprite inventoryItemIcon; // Icono alternativo si no hay prefab
+    public GameObject itemToAddToInventory;
+    public Sprite inventoryItemIcon;
     public string inventoryItemId = "item_default";
     public string inventoryItemName = "Nuevo Item";
 
@@ -63,8 +66,6 @@ public class DialogueSystem : MonoBehaviour
     [Header("Activación")]
     public bool autoActivate = false;
 
-
-
     private bool isDialogueActive = false;
     private MovimientoPersonaje playerMovement;
     private Camera mainCamera;
@@ -75,7 +76,6 @@ public class DialogueSystem : MonoBehaviour
     private Vector2 originalVelocity;
     private bool charactersHidden = true;
 
-    // NUEVO: Para evitar reactivaciones inmediatas
     public float reuseDelay = 0.5f;
     private bool canReuse = true;
 
@@ -90,7 +90,6 @@ public class DialogueSystem : MonoBehaviour
             playerRigidbody = player.GetComponent<Rigidbody2D>();
         }
 
-        // Ocultar UI al inicio
         if (dialoguePanel != null)
         {
             dialoguePanel.SetActive(false);
@@ -160,8 +159,11 @@ public class DialogueSystem : MonoBehaviour
         if (isDialogueActive || dialogues.Count == 0 || !canReuse)
             return;
 
+        // 🔥 Registrar diálogo completado
+        if (!string.IsNullOrEmpty(dialogueId) && SaveManager.Instance != null)
+            SaveManager.Instance.RegisterDialogueCompleted(dialogueId);
+
         charactersHidden = false;
-        
 
         CalculateTargetPositions();
         StartCoroutine(DialogueSequence());
@@ -172,7 +174,6 @@ public class DialogueSystem : MonoBehaviour
         isDialogueActive = true;
         charactersHidden = false;
 
-        // Bloquear movimiento del jugador
         if (playerMovement != null)
         {
             playerMovement.enabled = false;
@@ -184,25 +185,21 @@ public class DialogueSystem : MonoBehaviour
             playerRigidbody.linearVelocity = Vector2.zero;
         }
 
-        // Mover personajes a posición si existen
         if (characterLeft != null && characterRight != null)
         {
             yield return StartCoroutine(MoveCharactersToPosition(true));
         }
 
-        // Mostrar UI
         if (dialoguePanel != null)
         {
             dialoguePanel.SetActive(true);
         }
 
-        // Mostrar cada diálogo
         foreach (Dialogue dialogue in dialogues)
         {
             yield return StartCoroutine(ShowDialogue(dialogue));
         }
 
-        // Ocultar UI
         if (dialoguePanel != null)
         {
             dialoguePanel.SetActive(false);
@@ -213,13 +210,11 @@ public class DialogueSystem : MonoBehaviour
             speakerContainer.SetActive(false);
         }
 
-        // Mover personajes fuera de escena si existen
         if (characterLeft != null && characterRight != null)
         {
             yield return StartCoroutine(MoveCharactersToPosition(false));
         }
 
-        // Reactivar movimiento del jugador
         if (playerMovement != null)
         {
             playerMovement.enabled = true;
@@ -230,27 +225,40 @@ public class DialogueSystem : MonoBehaviour
             playerRigidbody.linearVelocity = originalVelocity;
         }
 
-        // Activar y destruir objetos
+        // 🔥 Activar objetos y registrar estado
         foreach (GameObject obj in objectsToActivateAfter)
         {
-            if (obj != null) obj.SetActive(true);
+            if (obj != null)
+            {
+                SaveableObject saveable = obj.GetComponent<SaveableObject>();
+                if (saveable != null && SaveManager.Instance != null)
+                    SaveManager.Instance.RegisterObjectState(saveable.objectId, true);
+                obj.SetActive(true);
+            }
         }
 
+        // 🔥 Desactivar objetos (en lugar de destruir) y registrar estado
         foreach (GameObject obj in objectsToDestroyAfter)
         {
-            if (obj != null) Destroy(obj);
+            if (obj != null)
+            {
+                SaveableObject saveable = obj.GetComponent<SaveableObject>();
+                if (saveable != null && SaveManager.Instance != null)
+                    SaveManager.Instance.RegisterObjectState(saveable.objectId, false);
+                obj.SetActive(false);
+            }
         }
 
         // Destruir este objeto si está configurado
         if (destroyAfterDialogue)
         {
+            SaveableObject thisSaveable = GetComponent<SaveableObject>();
+            if (thisSaveable != null && SaveManager.Instance != null)
+                SaveManager.Instance.RegisterObjectState(thisSaveable.objectId, false);
             Destroy(gameObject);
         }
         else
         {
-            // 🔁 NUEVO: Permitir repetir diálogos infinitamente.
-            // En lugar de destruir o desactivar, ponemos un pequeño delay para evitar
-            // que el jugador lo reactive inmediatamente.
             isDialogueActive = false;
             StartCoroutine(AllowReuseAfterDelay());
         }
@@ -268,18 +276,12 @@ public class DialogueSystem : MonoBehaviour
         Vector2 leftTarget = enter ? leftCharacterTarget : hiddenPosition;
         Vector2 rightTarget = enter ? rightCharacterTarget : hiddenPosition;
 
-        // Solo marcamos como ocultos cuando terminamos de bajar
-        // No inmediatamente al empezar la animación
         if (!enter)
         {
-            // 🆕 Asegurar que HiddenPosition esté actualizada antes de bajar
             CalculateHiddenPosition();
             leftTarget = hiddenPosition;
             rightTarget = hiddenPosition;
         }
-
-        // NO marcamos charactersHidden aquí todavía
-        // Solo al final de la animación si es para ocultar
 
         while (Vector2.Distance(characterLeft.position, leftTarget) > 0.1f ||
                Vector2.Distance(characterRight.position, rightTarget) > 0.1f)
@@ -292,7 +294,6 @@ public class DialogueSystem : MonoBehaviour
         characterLeft.position = leftTarget;
         characterRight.position = rightTarget;
 
-        // 🆕 Solo marcamos como ocultos después de terminar la animación de bajada
         if (!enter)
         {
             charactersHidden = true;
@@ -340,7 +341,6 @@ public class DialogueSystem : MonoBehaviour
             speakerContainer.SetActive(!string.IsNullOrEmpty(dialogue.speakerName));
         }
 
-        // 🎯 GUARDAR TODOS los diálogos asignados al NPC de la conversación
         if (BacklogManager.Instance != null)
         {
             string conversationOwner = GetConversationOwner();
@@ -372,16 +372,15 @@ public class DialogueSystem : MonoBehaviour
     {
         if (InventorySystem.Instance != null && !string.IsNullOrEmpty(itemId))
         {
-            // Si tenemos un prefab asignado en el inspector
             if (itemToAddToInventory != null)
             {
                 InventorySystem.Instance.AddItemFromPrefab(itemToAddToInventory);
             }
-            else if (itemIcon != null) // Si tenemos un icono específico
+            else if (itemIcon != null)
             {
                 InventorySystem.Instance.AddSimpleItem(itemId, itemName, itemIcon);
             }
-            else // Usar las configuraciones del script
+            else
             {
                 InventorySystem.Instance.AddSimpleItem(
                     inventoryItemId,
@@ -394,10 +393,9 @@ public class DialogueSystem : MonoBehaviour
 
     private string GetConversationOwner()
     {
-        // Buscar el primer NPC que habló en esta conversación
         foreach (var dialogue in dialogues)
         {
-            if (dialogue.leftSpeaker) // leftSpeaker = true significa NPC
+            if (dialogue.leftSpeaker)
             {
                 return dialogue.speakerName;
             }
@@ -409,7 +407,6 @@ public class DialogueSystem : MonoBehaviour
     {
         bool typingCompleted = false;
 
-        // Esperar a que termine el typing o se pulse espacio
         while (!typingCompleted)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -427,7 +424,6 @@ public class DialogueSystem : MonoBehaviour
             yield return null;
         }
 
-        // 🔥 MODIFICADO: Esperar segunda pulsación de espacio (igual que DialogueChoiceSystem)
         bool nextLineRequested = false;
         while (!nextLineRequested)
         {
@@ -452,19 +448,10 @@ public class DialogueSystem : MonoBehaviour
 
     void Update()
     {
-        /*if (charactersHidden && mainCamera != null)
-        {
-            CalculateHiddenPosition();
-            characterLeft.position = hiddenPosition;
-            characterRight.position = hiddenPosition;
-        }*/
-
         if (charactersHidden && mainCamera != null && !isDialogueActive)
         {
-            // Solo mover suavemente cuando están ocultos y NO estamos en diálogo
             CalculateHiddenPosition();
 
-            // Usar Lerp para movimiento suave, no teleportación
             if (characterLeft != null)
                 characterLeft.position = Vector2.Lerp(characterLeft.position, hiddenPosition, moveSpeed * Time.deltaTime);
             if (characterRight != null)
@@ -510,9 +497,6 @@ public class DialogueSystem : MonoBehaviour
 
     void OnDestroy()
     {
-        // Misma lógica: forzamos la destrucción de las referencias
-        // cuando este objeto principal muera.
-
         if (characterLeft != null)
             Destroy(characterLeft.gameObject);
 

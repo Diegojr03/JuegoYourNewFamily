@@ -226,6 +226,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 1.5
+  dialogueId: 
   dialogues:
   - speakerName: Cairen
     dialogueText: "\xBFQu\xE9 haces aqu\xED fuera empapada? No me digas que el grandote
@@ -1197,6 +1198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -1657,6 +1659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 
   textoNuevo: ENCUENTRATE CON CAIREN EN EL COMEDOR
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
@@ -1762,6 +1765,7 @@ GameObject:
   - component: {fileID: 31946994}
   - component: {fileID: 31946996}
   - component: {fileID: 31946995}
+  - component: {fileID: 31946997}
   m_Layer: 0
   m_Name: "Sof\xE1Lilith"
   m_TagString: Untagged
@@ -1796,6 +1800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: SofaLilith
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -1818,7 +1823,9 @@ MonoBehaviour:
   destroyAfterDialogue: 1
   objectsToActivateAfter:
   - {fileID: 1631850743}
-  objectsToDestroyAfter: []
+  objectsToDestroyAfter:
+  - {fileID: 501772608}
+  - {fileID: 1675004761}
 --- !u!61 &31946996
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1865,6 +1872,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.3203609, y: 0.74472237}
   m_EdgeRadius: 0
+--- !u!114 &31946997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31946993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: SofaLilith
 --- !u!1 &36227997
 GameObject:
   m_ObjectHideFlags: 0
@@ -3473,6 +3493,7 @@ GameObject:
   - component: {fileID: 88194350}
   - component: {fileID: 88194349}
   - component: {fileID: 88194352}
+  - component: {fileID: 88194353}
   m_Layer: 0
   m_Name: NPCSConversacion
   m_TagString: Untagged
@@ -3608,6 +3629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: NPCSConversacion
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -3673,6 +3695,19 @@ MonoBehaviour:
   - {fileID: 1123261999}
   - {fileID: 188801042}
   objectsToDestroyAfter: []
+--- !u!114 &88194353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88194345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: NPCSConversacion
 --- !u!1 &90056529
 GameObject:
   m_ObjectHideFlags: 0
@@ -3805,6 +3840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -4037,6 +4073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -4664,6 +4701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 
   textoNuevo: 'VULEVE AL SITIO DEL ACCIDENTE PARA RECOGER LA CHAPA '
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
@@ -4818,6 +4856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -4926,6 +4965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 
   textoNuevo: 
   uiText: {fileID: 570216618}
   duracionRevelado: 0.75
@@ -5235,6 +5275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -5931,6 +5972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -6180,6 +6222,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 1.5
+  dialogueId: 
   dialogues:
   - speakerName: Alpha
     dialogueText: "Lilith... La muerte es parte de la vida, incluso en nuestro para\xEDso."
@@ -6850,6 +6893,7 @@ GameObject:
   - component: {fileID: 176374046}
   - component: {fileID: 176374045}
   - component: {fileID: 176374044}
+  - component: {fileID: 176374047}
   m_Layer: 0
   m_Name: ConvSinCuchillo
   m_TagString: Untagged
@@ -6869,6 +6913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: ConvSinCuchillo
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -7001,6 +7046,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 261238168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &176374047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176374043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: ConvSinCuchillo
 --- !u!1 &176635632
 GameObject:
   m_ObjectHideFlags: 0
@@ -7092,6 +7150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -9545,6 +9604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 
   textoNuevo: 
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
@@ -10171,6 +10231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 
   textoNuevo: "ARREGLA LAS TUBER\xCDAS DEL FREGADERO"
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
@@ -10977,6 +11038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -11421,6 +11483,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 1.5
+  dialogueId: 
   dialogues:
   - speakerName: Delta
     dialogueText: ...
@@ -12247,6 +12310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -13004,6 +13068,7 @@ GameObject:
   - component: {fileID: 367846541}
   - component: {fileID: 367846540}
   - component: {fileID: 367846539}
+  - component: {fileID: 367846543}
   m_Layer: 0
   m_Name: NPCSConversacionMovimiento
   m_TagString: Untagged
@@ -13175,6 +13240,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &367846543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367846537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: NPCSConversacionMovimiento
 --- !u!1 &368754108
 GameObject:
   m_ObjectHideFlags: 0
@@ -13677,6 +13755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -14850,6 +14929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 
   textoNuevo: 
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
@@ -15220,6 +15300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -15342,6 +15423,7 @@ GameObject:
   - component: {fileID: 453982325}
   - component: {fileID: 453982327}
   - component: {fileID: 453982328}
+  - component: {fileID: 453982329}
   m_Layer: 0
   m_Name: MaryYLilith
   m_TagString: Untagged
@@ -15492,6 +15574,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 1.5
+  dialogueId: MaryYLilith
   dialogues:
   - speakerName: Senna
     dialogueText: "\xA1Ey, Lilith! \xBFC\xF3mo lo llevas? D\xE9jame adivinar\u2026
@@ -15571,6 +15654,19 @@ MonoBehaviour:
   playOnce: 1
   destroyAfterPath: 0
   destroyThisObject: 0
+--- !u!114 &453982329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453982321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: MaryYLilith
 --- !u!1 &458291672
 GameObject:
   m_ObjectHideFlags: 0
@@ -16468,6 +16564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -17388,6 +17485,7 @@ GameObject:
   - component: {fileID: 501772609}
   - component: {fileID: 501772611}
   - component: {fileID: 501772610}
+  - component: {fileID: 501772612}
   m_Layer: 0
   m_Name: MisionNevera
   m_TagString: Untagged
@@ -17422,6 +17520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 
   textoNuevo: COGE ALGO DE BEBER
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
@@ -17475,6 +17574,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.3039665, y: 2.9956703}
   m_EdgeRadius: 0
+--- !u!114 &501772612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501772608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: MisionNevera
 --- !u!1 &503323344
 GameObject:
   m_ObjectHideFlags: 0
@@ -17854,6 +17966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -18667,6 +18780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 
   textoNuevo: "RESUELVE EL PUZZLE DE LAS ESTATUAS PARA AVANZAR AL CENTRO DEL JARD\xCDN"
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
@@ -19751,6 +19865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 
   textoNuevo: "VE AL \xC1RBOL"
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
@@ -20112,6 +20227,7 @@ GameObject:
   - component: {fileID: 566591178}
   - component: {fileID: 566591181}
   - component: {fileID: 566591180}
+  - component: {fileID: 566591182}
   m_Layer: 0
   m_Name: RompeVentana
   m_TagString: Untagged
@@ -20209,6 +20325,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.3680954, y: 0.74472237}
   m_EdgeRadius: 0
+--- !u!114 &566591182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566591177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: RompeVentana
 --- !u!1 &570216616
 GameObject:
   m_ObjectHideFlags: 0
@@ -20222,7 +20351,7 @@ GameObject:
   - component: {fileID: 570216618}
   m_Layer: 5
   m_Name: TextoMisiones
-  m_TagString: Untagged
+  m_TagString: MissionText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21338,6 +21467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -22881,6 +23011,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 1.5
+  dialogueId: 
   dialogues:
   - speakerName: Alpha
     dialogueText: "Se\xF1orita, antes que nada quiero agradecerle por escucharme. "
@@ -23739,6 +23870,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 1.5
+  dialogueId: 
   dialogues:
   - speakerName: Lyra
     dialogueText: "Cada cubierta es un puerto, \xBFsabes? Y al abrirlo, el ancla
@@ -24210,6 +24342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -24768,6 +24901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 
   textoNuevo: "CORRE AL CENTRO DEL JARD\xCDN A VER QUE HA PASADO"
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
@@ -25029,6 +25163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -25213,6 +25348,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 1.5
+  dialogueId: 
   dialogues:
   - speakerName: Nira
     dialogueText: "\xBFT\xFA eres\u2026 uno de los nuevos? S\xED, claro que lo eres."
@@ -25476,6 +25612,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 1.5
+  dialogueId: 
   dialogues:
   - speakerName: Cairen
     dialogueText: "Perdona, Lilith. Acabo de ver a Alpha, y me ha pedido que te avise
@@ -26359,6 +26496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -26783,6 +26921,7 @@ GameObject:
   - component: {fileID: 774619459}
   - component: {fileID: 774619461}
   - component: {fileID: 774619462}
+  - component: {fileID: 774619463}
   m_Layer: 0
   m_Name: Cuchillo
   m_TagString: Untagged
@@ -26863,6 +27002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: Cuchillo
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -26887,6 +27027,19 @@ MonoBehaviour:
   - {fileID: 1319324203}
   objectsToDestroyAfter:
   - {fileID: 176374043}
+--- !u!114 &774619463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774619458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: Cuchillo
 --- !u!1 &776411971
 GameObject:
   m_ObjectHideFlags: 0
@@ -27121,6 +27274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -28271,6 +28425,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 1.5
+  dialogueId: 
   dialogues:
   - speakerName: Cairen
     dialogueText: "\xBFQu\xE9 haces aqu\xED fuera empapada? No me digas que el grandote
@@ -28725,6 +28880,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 1.5
+  dialogueId: 
   dialogues:
   - speakerName: Lin
     dialogueText: "S\xED... aqu\xED... Aqu\xED puedo demostrar mi amor por Amara.
@@ -28979,6 +29135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 
   textoNuevo: HABLA CON ANORAH EN LA BIBLIOTECA
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
@@ -29345,6 +29502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 
   textoNuevo: "VE AL CENTRO DEL JARD\xCDN A HABLAR CON ALPHA"
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
@@ -30092,6 +30250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 
   textoNuevo: 
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
@@ -30528,6 +30687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -31808,6 +31968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -32047,7 +32208,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1003064889
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33816,6 +33977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 
   textoNuevo: "ENCUENTRA LA ZONA DEL \xC1RBOL"
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
@@ -34105,6 +34267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc22598762463945aebb97aba4847d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -34911,6 +35074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 
   textoNuevo: 
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
@@ -35026,6 +35190,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 1.5
+  dialogueId: 
   dialogues:
   - speakerName: Gamma
     dialogueText: "Anda Lilith, \xBFqu\xE9 tal vas con la gente?"
@@ -36433,6 +36598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -36732,6 +36898,7 @@ GameObject:
   - component: {fileID: 1123262003}
   - component: {fileID: 1123262002}
   - component: {fileID: 1123262001}
+  - component: {fileID: 1123262004}
   m_Layer: 0
   m_Name: NPCSConversacionRepetitivo
   m_TagString: Untagged
@@ -36766,6 +36933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: NPCSConversacionRepetitivo
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -36930,6 +37098,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1123262004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123261999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: NPCSConversacionRepetitivo
 --- !u!1 &1125517113
 GameObject:
   m_ObjectHideFlags: 0
@@ -37007,6 +37188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 
   textoNuevo: VE A LA PLAZA A HABLAR CON APLHA
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
@@ -37563,6 +37745,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 1.5
+  dialogueId: 
   dialogues:
   - speakerName: Segurata
     dialogueText: Con esas pintas no te voy a dejar pasar.
@@ -37875,6 +38058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 
   textoNuevo: COMPRUEBA QUE HA PASADO
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
@@ -38075,6 +38259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -41377,6 +41562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1287630623}
   - component: {fileID: 1287630624}
+  - component: {fileID: 1287630625}
   m_Layer: 0
   m_Name: CochesSalida
   m_TagString: Untagged
@@ -41417,6 +41603,19 @@ MonoBehaviour:
   destroyXPosition: -17.8
   gizmoColor: {r: 1, g: 0, b: 0, a: 1}
   moveLeftToRight: 1
+--- !u!114 &1287630625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287630622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: CochesSalida
 --- !u!1 &1292930905
 GameObject:
   m_ObjectHideFlags: 0
@@ -41428,6 +41627,7 @@ GameObject:
   - component: {fileID: 1292930906}
   - component: {fileID: 1292930908}
   - component: {fileID: 1292930907}
+  - component: {fileID: 1292930909}
   m_Layer: 0
   m_Name: "Di\xE1logoNevera"
   m_TagString: Untagged
@@ -41462,6 +41662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: DialogoNevera
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -41546,6 +41747,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.1559792, y: 0.08811951}
   m_EdgeRadius: 0
+--- !u!114 &1292930909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292930905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: DialogoNevera
 --- !u!1 &1293988468
 GameObject:
   m_ObjectHideFlags: 0
@@ -41831,6 +42045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -42161,6 +42376,7 @@ GameObject:
   - component: {fileID: 1319324204}
   - component: {fileID: 1319324206}
   - component: {fileID: 1319324205}
+  - component: {fileID: 1319324207}
   m_Layer: 0
   m_Name: ConvConCuchillo
   m_TagString: Untagged
@@ -42195,6 +42411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: ConvConCuchillo
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -42296,6 +42513,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.3637543, y: 0.74472237}
   m_EdgeRadius: 0
+--- !u!114 &1319324207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319324203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: ConvConCuchillo
 --- !u!1 &1322120009
 GameObject:
   m_ObjectHideFlags: 0
@@ -42526,6 +42756,7 @@ GameObject:
   - component: {fileID: 1336976086}
   - component: {fileID: 1336976088}
   - component: {fileID: 1336976087}
+  - component: {fileID: 1336976089}
   m_Layer: 0
   m_Name: "IntroPuzzleTuber\xEDas"
   m_TagString: Untagged
@@ -42560,6 +42791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: "IntroPuzzleTuber\xEDas"
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -42649,6 +42881,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.3203609, y: 0.74472237}
   m_EdgeRadius: 0
+--- !u!114 &1336976089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336976085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: "IntroPuzzleTuber\xEDas"
 --- !u!1 &1343999990
 GameObject:
   m_ObjectHideFlags: 0
@@ -42972,6 +43217,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 1.5
+  dialogueId: 
   dialogues:
   - speakerName: Anorah
     dialogueText: "T\xF3mate tu tiempo, querida. Los libros aqu\xED son... reconfortantes."
@@ -43517,6 +43763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 
   textoNuevo: "USA LAS INSTRUCCIONES PARA COMPLETAR EL PUZZLE DE LA MESA PEQUE\xD1A"
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
@@ -43931,6 +44178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -44155,6 +44403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc22598762463945aebb97aba4847d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -45003,6 +45252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -45270,6 +45520,7 @@ GameObject:
   - component: {fileID: 1424677305}
   - component: {fileID: 1424677307}
   - component: {fileID: 1424677308}
+  - component: {fileID: 1424677309}
   m_Layer: 0
   m_Name: SalidaCalle1
   m_TagString: Untagged
@@ -45367,6 +45618,19 @@ MonoBehaviour:
   objectsToDestroyAfterFadeIn: []
   objectsToActivateAfter: []
   objectsToDestroyAfter: []
+--- !u!114 &1424677309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424677304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: SalidaCalle1
 --- !u!1 &1427526965
 GameObject:
   m_ObjectHideFlags: 0
@@ -46644,6 +46908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -46757,6 +47022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -47047,6 +47313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -47363,6 +47630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -47822,6 +48090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -48126,6 +48395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 
   textoNuevo: PASADOS 2 DIAS
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
@@ -49206,6 +49476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -50658,6 +50929,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 1.5
+  dialogueId: 
   dialogues:
   - speakerName: Amara
     dialogueText: "\xA1Silas nos ha dicho que est\xE1s ayudando! Muchas gracias!"
@@ -50895,6 +51167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -52623,6 +52896,7 @@ GameObject:
   - component: {fileID: 1631850744}
   - component: {fileID: 1631850746}
   - component: {fileID: 1631850745}
+  - component: {fileID: 1631850747}
   m_Layer: 0
   m_Name: "Sof\xE1Casero"
   m_TagString: Untagged
@@ -52657,6 +52931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: SofaCasero
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -52751,6 +53026,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.3203609, y: 0.74472237}
   m_EdgeRadius: 0
+--- !u!114 &1631850747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631850743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: SofaCasero
 --- !u!1 &1633891252
 GameObject:
   m_ObjectHideFlags: 0
@@ -53392,6 +53680,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 1.5
+  dialogueId: 
   dialogues:
   - speakerName: Jorah
     dialogueText: "\xA1Ah, una cara nueva! Siempre es una bendici\xF3n. \xBFVes?
@@ -53491,6 +53780,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 1.5
+  dialogueId: 
   dialogues:
   - speakerName: Cairen
     dialogueText: Encantado de conocerte, Lilith
@@ -54551,6 +54841,7 @@ GameObject:
   - component: {fileID: 1675004762}
   - component: {fileID: 1675004764}
   - component: {fileID: 1675004763}
+  - component: {fileID: 1675004765}
   m_Layer: 0
   m_Name: FinMisionNevera
   m_TagString: Untagged
@@ -54585,6 +54876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 
   textoNuevo: 
   uiText: {fileID: 570216618}
   duracionRevelado: 0.75
@@ -54638,6 +54930,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.6829033, y: 0.7367668}
   m_EdgeRadius: 0
+--- !u!114 &1675004765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675004761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: FinMisionNevera
 --- !u!1 &1677640267
 GameObject:
   m_ObjectHideFlags: 0
@@ -55226,6 +55531,7 @@ GameObject:
   - component: {fileID: 1708311296}
   - component: {fileID: 1708311298}
   - component: {fileID: 1708311297}
+  - component: {fileID: 1708311299}
   m_Layer: 0
   m_Name: Destornillador
   m_TagString: Untagged
@@ -55260,6 +55566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: Destornillador
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -55335,6 +55642,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.3680954, y: 0.74472237}
   m_EdgeRadius: 0
+--- !u!114 &1708311299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708311295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: Destornillador
 --- !u!1 &1715195623
 GameObject:
   m_ObjectHideFlags: 0
@@ -55473,6 +55793,7 @@ GameObject:
   - component: {fileID: 1718562113}
   - component: {fileID: 1718562112}
   - component: {fileID: 1718562114}
+  - component: {fileID: 1718562116}
   m_Layer: 0
   m_Name: LlaveInglesa
   m_TagString: Untagged
@@ -55507,6 +55828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: LlaveInglesa
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -55659,6 +55981,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1718562116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718562110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: LlaveInglesa
 --- !u!1 &1719247916
 GameObject:
   m_ObjectHideFlags: 0
@@ -56101,6 +56436,7 @@ GameObject:
   - component: {fileID: 1724160669}
   - component: {fileID: 1724160668}
   - component: {fileID: 1724160670}
+  - component: {fileID: 1724160671}
   m_Layer: 0
   m_Name: PeterYLilith
   m_TagString: Untagged
@@ -56269,6 +56605,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 2
+  dialogueId: PeterYLilith
   dialogues:
   - speakerName: Peter
     dialogueText: "Estoy harto del curro, t\xEDo. Cada d\xEDa es lo mismo. Si no
@@ -56343,6 +56680,19 @@ MonoBehaviour:
   destroyAfterDialogue: 1
   autoActivate: 0
   reuseDelay: 0.5
+--- !u!114 &1724160671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724160665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: PeterYLilith
 --- !u!1 &1728128757
 GameObject:
   m_ObjectHideFlags: 0
@@ -56509,6 +56859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 
   textoNuevo: "HABLA CON JORAH EN LA CABA\xD1A CENTRAL DEL COMEDOR"
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
@@ -57055,6 +57406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -57819,6 +58171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 
   textoNuevo: 
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
@@ -58153,6 +58506,7 @@ GameObject:
   - component: {fileID: 1777960495}
   - component: {fileID: 1777960497}
   - component: {fileID: 1777960496}
+  - component: {fileID: 1777960498}
   m_Layer: 0
   m_Name: LlaveInglesaAviso
   m_TagString: Untagged
@@ -58187,6 +58541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: LlaveInglesaAviso
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -58209,7 +58564,8 @@ MonoBehaviour:
   destroyAfterDialogue: 1
   objectsToActivateAfter:
   - {fileID: 1718562110}
-  objectsToDestroyAfter: []
+  objectsToDestroyAfter:
+  - {fileID: 256757885}
 --- !u!61 &1777960497
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -58256,6 +58612,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.3203609, y: 0.74472237}
   m_EdgeRadius: 0
+--- !u!114 &1777960498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777960494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: LlaveInglesaAviso
 --- !u!1 &1778549339
 GameObject:
   m_ObjectHideFlags: 0
@@ -58433,6 +58802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf478d0bdcdf404396b185e16eeb4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 
   textoNuevo: INVESTIGA EL PUEBLO
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
@@ -60550,6 +60920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -61901,6 +62272,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 1.5
+  dialogueId: 
   dialogues:
   - speakerName: Jorah
     dialogueText: "\xA1Lilith, qu\xE9 sorpresa volverte a ver!"
@@ -63153,6 +63525,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 1.5
+  dialogueId: 
   dialogues:
   - speakerName: Bortis
     dialogueText: "\xBFQu\xE9 tal tu estancia Lilith? Espero que todo te est\xE9
@@ -63898,6 +64271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -64185,6 +64559,7 @@ GameObject:
   - component: {fileID: 1938861241}
   - component: {fileID: 1938861242}
   - component: {fileID: 1938861243}
+  - component: {fileID: 1938861244}
   m_Layer: 0
   m_Name: Mary
   m_TagString: Untagged
@@ -64308,6 +64683,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 12.537319, y: 19.153976}
   m_EdgeRadius: 0
+--- !u!114 &1938861244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938861240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: Mary
 --- !u!1 &1949568915
 GameObject:
   m_ObjectHideFlags: 0
@@ -64664,6 +65052,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 1.5
+  dialogueId: 
   dialogues:
   - speakerName: Alpha
     dialogueText: "Lilith. Ver tus pies en esta tierra sagrada es un buen presagio.
@@ -65902,6 +66291,7 @@ GameObject:
   - component: {fileID: 2004928869}
   - component: {fileID: 2004928868}
   - component: {fileID: 2004928867}
+  - component: {fileID: 2004928870}
   m_Layer: 0
   m_Name: ManagerPuzzleTuberias
   m_TagString: Untagged
@@ -66050,6 +66440,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1015713710}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2004928870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004928866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: ManagerPuzzleTuberias
 --- !u!1 &2007165817
 GameObject:
   m_ObjectHideFlags: 0
@@ -66245,6 +66648,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 1.5
+  dialogueId: 
   dialogues:
   - speakerName: Cairen
     dialogueText: "Mira Lilith, es esta mesa de aqu\xED. "
@@ -66570,6 +66974,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 1.5
+  dialogueId: 
   dialogues:
   - speakerName: Silas
     dialogueText: "\xA1Ah, uno de los nuevos! Ven, si\xE9ntate con nosotros."
@@ -68212,6 +68617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -69020,6 +69426,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 2
+  dialogueId: 
   dialogues:
   - speakerName: Jefe
     dialogueText: "Un momento\u2026 yo no te he visto entrar por la puerta. \xBFC\xF3mo
@@ -69136,6 +69543,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 1.5
+  dialogueId: 
   dialogues:
   - speakerName: Gamma
     dialogueText: "El N\xE9ctar es una locura... es mejor que cualquier mierda de

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -10,6 +10,9 @@ public class DialogueSystemGiantFocus : MonoBehaviour
     public Transform giantCharacter;
     public SpriteRenderer giantSprite;
     public Vector3 giantScale = new Vector3(2f, 2f, 1f);
+
+    [Header("Identificador de DiÃ¡logo")]
+    public string dialogueId = ""; // ðŸ”¥ NUEVO
 
     [Header("Posicionamiento")]
     [Range(0f, 1f)]
@@ -26,7 +29,7 @@ public class DialogueSystemGiantFocus : MonoBehaviour
     public Color dimmedColor = new Color(0.3f, 0.3f, 0.3f, 1f);
     public float dialogueCooldown = 0.05f;
 
-    [Header("Configuración Post-Diálogo")]
+    [Header("ConfiguraciÃ³n Post-DiÃ¡logo")]
     public GameObject[] objectsToActivateAfter;
     public GameObject[] objectsToDestroyAfter;
     public bool destroyAfterDialogue = false;
@@ -77,6 +80,11 @@ public class DialogueSystemGiantFocus : MonoBehaviour
     public void StartDialogue()
     {
         if (isDialogueActive || dialogues.Count == 0) return;
+
+        // ðŸ”¥ Registrar diÃ¡logo completado
+        if (!string.IsNullOrEmpty(dialogueId) && SaveManager.Instance != null)
+            SaveManager.Instance.RegisterDialogueCompleted(dialogueId);
+
         StartCoroutine(DialogueSequence());
     }
 
@@ -84,7 +92,6 @@ public class DialogueSystemGiantFocus : MonoBehaviour
     {
         isDialogueActive = true;
 
-        // Bloqueo de físicas y movimiento (Igual que el original)
         if (playerMovement != null) playerMovement.enabled = false;
         if (playerRigidbody != null)
         {
@@ -108,15 +115,41 @@ public class DialogueSystemGiantFocus : MonoBehaviour
 
         yield return StartCoroutine(MoveGiant(hiddenPosition));
 
-        // Activar/Destruir objetos
-        foreach (GameObject obj in objectsToActivateAfter) if (obj != null) obj.SetActive(true);
-        foreach (GameObject obj in objectsToDestroyAfter) if (obj != null) Destroy(obj);
+        // ðŸ”¥ Activar objetos y registrar estado
+        foreach (GameObject obj in objectsToActivateAfter)
+        {
+            if (obj != null)
+            {
+                SaveableObject saveable = obj.GetComponent<SaveableObject>();
+                if (saveable != null && SaveManager.Instance != null)
+                    SaveManager.Instance.RegisterObjectState(saveable.objectId, true);
+                obj.SetActive(true);
+            }
+        }
+
+        // ðŸ”¥ Desactivar objetos (en lugar de destruir) y registrar estado
+        foreach (GameObject obj in objectsToDestroyAfter)
+        {
+            if (obj != null)
+            {
+                SaveableObject saveable = obj.GetComponent<SaveableObject>();
+                if (saveable != null && SaveManager.Instance != null)
+                    SaveManager.Instance.RegisterObjectState(saveable.objectId, false);
+                obj.SetActive(false);
+            }
+        }
 
         if (playerMovement != null) playerMovement.enabled = true;
         if (playerRigidbody != null) playerRigidbody.linearVelocity = originalVelocity;
 
         isDialogueActive = false;
-        if (destroyAfterDialogue) Destroy(gameObject);
+        if (destroyAfterDialogue)
+        {
+            SaveableObject thisSaveable = GetComponent<SaveableObject>();
+            if (thisSaveable != null && SaveManager.Instance != null)
+                SaveManager.Instance.RegisterObjectState(thisSaveable.objectId, false);
+            Destroy(gameObject);
+        }
     }
 
     private void UpdateCharacterVisuals(bool isGiantSpeaking)
@@ -134,10 +167,8 @@ public class DialogueSystemGiantFocus : MonoBehaviour
         string fullText = line.dialogueText;
         Coroutine typingCoroutine = StartCoroutine(TypeText(fullText));
 
-        // --- SISTEMA DE AVANCE IGUAL AL ORIGINAL ---
         bool typingCompleted = false;
 
-        // 1. Esperar a que termine de escribir O que el jugador pulse Espacio para saltar
         while (!typingCompleted)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -150,8 +181,7 @@ public class DialogueSystemGiantFocus : MonoBehaviour
             yield return null;
         }
 
-        // 2. Esperar una segunda pulsación de Espacio para pasar de línea
-        yield return new WaitForSeconds(0.1f); // Pequeño respiro para evitar doble clic accidental
+        yield return new WaitForSeconds(0.1f);
         bool nextLineRequested = false;
         while (!nextLineRequested)
         {

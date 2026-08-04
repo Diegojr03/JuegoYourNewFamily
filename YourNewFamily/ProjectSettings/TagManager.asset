@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Transition
   - ObjetoLin
+  - MissionText
   layers:
   - Default
   - TransparentFX

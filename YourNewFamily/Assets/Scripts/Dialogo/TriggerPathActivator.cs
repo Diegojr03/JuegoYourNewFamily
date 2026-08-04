@@ -1,21 +1,21 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using UnityEngine;
 
 public class TriggerPathActivator : MonoBehaviour
 {
-    [Header("ConfiguraciÛn del Trigger")]
-    public string triggerTag = "Player"; // QuiÈn activa el recorrido
+    [Header("Configuraci√≥n del Trigger")]
+    public string triggerTag = "Player"; // Qui√©n activa el recorrido
 
     [Header("Objeto a mover")]
-    public GameObject objectToMove; // El objeto que se mover· (rata, coche, etc.)
+    public GameObject objectToMove; // El objeto que se mover√° (rata, coche, etc.)
     public Transform[] pathPoints;  // Puntos del recorrido
     public float moveSpeed = 3f;
     public float stoppingDistance = 0.1f;
     public bool faceDirection = true;
     public bool playOnce = true;
 
-    [Header("ConfiguraciÛn de DestrucciÛn")]
-    public bool destroyAfterPath = false; // Destruir el objeto despuÈs del recorrido
+    [Header("Configuraci√≥n de Destrucci√≥n")]
+    public bool destroyAfterPath = false; // Destruir el objeto despu√©s del recorrido
     public bool destroyThisObject = false; // Destruir este objeto (el que tiene el script)
 
     private bool hasPlayed = false;
@@ -33,7 +33,7 @@ public class TriggerPathActivator : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("TriggerPathActivator: Faltan puntos del recorrido o el objeto no est· asignado.");
+                Debug.LogWarning("TriggerPathActivator: Faltan puntos del recorrido o el objeto no est√° asignado.");
             }
         }
     }
@@ -71,18 +71,18 @@ public class TriggerPathActivator : MonoBehaviour
     {
         Debug.Log($"{objectToMove.name} ha completado su recorrido.");
 
-        // Destruir el objeto que se moviÛ si est· marcado
+        // Destruir el objeto que se movi√≥ si est√° marcado
         if (destroyAfterPath && objectToMove != null)
         {
             Destroy(objectToMove);
-            Debug.Log($"Se ha destruido {objectToMove.name} despuÈs del recorrido.");
+            Debug.Log($"Se ha destruido {objectToMove.name} despu√©s del recorrido.");
         }
 
-        // Destruir este objeto (el que tiene el script) si est· marcado
+        // Destruir este objeto (el que tiene el script) si est√° marcado
         if (destroyThisObject)
         {
             Destroy(gameObject);
-            Debug.Log($"Se ha destruido el trigger {gameObject.name} despuÈs del recorrido.");
+            Debug.Log($"Se ha destruido el trigger {gameObject.name} despu√©s del recorrido.");
         }
     }
 
