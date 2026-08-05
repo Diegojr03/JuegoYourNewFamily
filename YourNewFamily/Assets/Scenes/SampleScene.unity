@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 1288445}
   - component: {fileID: 1288448}
   - component: {fileID: 1288447}
+  - component: {fileID: 1288449}
   m_Layer: 0
   m_Name: ConversacionTraperoSinNieve
   m_TagString: Untagged
@@ -226,7 +227,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 1.5
-  dialogueId: 
+  dialogueId: ConversacionTraperoSinNieve
   dialogues:
   - speakerName: Cairen
     dialogueText: "\xBFQu\xE9 haces aqu\xED fuera empapada? No me digas que el grandote
@@ -342,6 +343,19 @@ MonoBehaviour:
   dialogueChoiceSystem: {fileID: 0}
   interactionKey: 102
   isDialogueTrigger: 1
+--- !u!114 &1288449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: ConversacionTraperoSinNieve
 --- !u!1 &1873086
 GameObject:
   m_ObjectHideFlags: 0
@@ -2475,6 +2489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341c14be36aa188458bed71b35a21bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 28c9a4c3-be28-4bb5-982b-67c9935d3ee6
   triggerTag: Player
   objectToMove: {fileID: 105151658}
   pathPoints:
@@ -4822,6 +4837,7 @@ GameObject:
   - component: {fileID: 123587626}
   - component: {fileID: 123587628}
   - component: {fileID: 123587627}
+  - component: {fileID: 123587629}
   m_Layer: 0
   m_Name: RecibimientoBar
   m_TagString: Untagged
@@ -4935,6 +4951,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2, y: 2.434812}
   m_EdgeRadius: 0
+--- !u!114 &123587629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123587625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: RecibimientoBar
 --- !u!1 &126576700
 GameObject:
   m_ObjectHideFlags: 0
@@ -5241,6 +5270,7 @@ GameObject:
   - component: {fileID: 133632133}
   - component: {fileID: 133632132}
   - component: {fileID: 133632134}
+  - component: {fileID: 133632136}
   m_Layer: 0
   m_Name: Boton1 (2)
   m_TagString: Untagged
@@ -5422,6 +5452,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &133632136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133632130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: Boton1 (2)
 --- !u!1 &133843869
 GameObject:
   m_ObjectHideFlags: 0
@@ -5660,6 +5703,142 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1209969548}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &139174956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 139174957}
+  - component: {fileID: 139174959}
+  - component: {fileID: 139174958}
+  m_Layer: 0
+  m_Name: TextoInstrucciones
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &139174957
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139174956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2132383757}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.026, y: 0.85170376}
+  m_AnchorMax: {x: 0.28235415, y: 0.9471482}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 208, y: -3}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &139174958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139174956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: ENCIENDE LA CANTIDAD DE LUCES CORRESPONDIENTE
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: acb12ac65ecdca54cbe17c610fde0207, type: 2}
+  m_sharedMaterial: {fileID: -5822694132099746050, guid: acb12ac65ecdca54cbe17c610fde0207, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 41.7
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 210.28082, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &139174959
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139174956}
+  m_CullTransparentMesh: 1
 --- !u!1 &141092653
 GameObject:
   m_ObjectHideFlags: 0
@@ -5938,6 +6117,7 @@ GameObject:
   - component: {fileID: 141601512}
   - component: {fileID: 141601514}
   - component: {fileID: 141601515}
+  - component: {fileID: 141601516}
   m_Layer: 0
   m_Name: DespuesDeHablarConJefe
   m_TagString: Untagged
@@ -6123,6 +6303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341c14be36aa188458bed71b35a21bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 0bc0024b-a4ad-4b07-a398-a1ca29476d14
   triggerTag: Player
   objectToMove: {fileID: 1025315065}
   pathPoints:
@@ -6148,6 +6329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341c14be36aa188458bed71b35a21bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 5cc5aa6d-3b00-453e-bd24-0bc636aece56
   triggerTag: Player
   objectToMove: {fileID: 1207502573}
   pathPoints:
@@ -6160,6 +6342,19 @@ MonoBehaviour:
   playOnce: 1
   destroyAfterPath: 0
   destroyThisObject: 0
+--- !u!114 &141601516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141601510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: DespuesDeHablarConJefe
 --- !u!1 &145471985
 GameObject:
   m_ObjectHideFlags: 0
@@ -7592,6 +7787,7 @@ GameObject:
   - component: {fileID: 188801044}
   - component: {fileID: 188801045}
   - component: {fileID: 188801046}
+  - component: {fileID: 188801047}
   m_Layer: 0
   m_Name: GestorSemaforos
   m_TagString: Untagged
@@ -7774,6 +7970,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &188801047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188801042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: GestorSemaforos
 --- !u!1 &189417899
 GameObject:
   m_ObjectHideFlags: 0
@@ -9129,6 +9338,7 @@ GameObject:
   - component: {fileID: 213144461}
   - component: {fileID: 213144463}
   - component: {fileID: 213144462}
+  - component: {fileID: 213144464}
   m_Layer: 0
   m_Name: DespuesDeIntervenirAlpha
   m_TagString: Untagged
@@ -9229,6 +9439,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2, y: 2.434812}
   m_EdgeRadius: 0
+--- !u!114 &213144464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213144460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: DespuesDeIntervenirAlpha
 --- !u!1 &213761213
 GameObject:
   m_ObjectHideFlags: 0
@@ -12276,6 +12499,7 @@ GameObject:
   - component: {fileID: 340037738}
   - component: {fileID: 340037740}
   - component: {fileID: 340037739}
+  - component: {fileID: 340037741}
   m_Layer: 0
   m_Name: NPCBarraConversacion
   m_TagString: Untagged
@@ -12384,6 +12608,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2, y: 2.434812}
   m_EdgeRadius: 0
+--- !u!114 &340037741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340037737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: NPCBarraConversacion
 --- !u!1 &344406659
 GameObject:
   m_ObjectHideFlags: 0
@@ -13103,6 +13340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341c14be36aa188458bed71b35a21bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: d2a32fc7-3985-4567-a599-8629845e4106
   triggerTag: Player
   objectToMove: {fileID: 1601734014}
   pathPoints:
@@ -13127,6 +13365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341c14be36aa188458bed71b35a21bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: NPCSConversacionMovimiento1
   triggerTag: Player
   objectToMove: {fileID: 1097533504}
   pathPoints:
@@ -15197,6 +15436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341c14be36aa188458bed71b35a21bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 6c74be36-5d65-4932-aea3-6d4e6131351b
   triggerTag: Player
   objectToMove: {fileID: 1872063075}
   pathPoints:
@@ -15220,6 +15460,7 @@ GameObject:
   - component: {fileID: 444919266}
   - component: {fileID: 444919267}
   - component: {fileID: 444919268}
+  - component: {fileID: 444919269}
   m_Layer: 0
   m_Name: ColliderCalle
   m_TagString: Untagged
@@ -15323,6 +15564,19 @@ MonoBehaviour:
   destroyAfterDialogue: 0
   objectsToActivateAfter: []
   objectsToDestroyAfter: []
+--- !u!114 &444919269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444919265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: ColliderCalle
 --- !u!1 &449575723
 GameObject:
   m_ObjectHideFlags: 0
@@ -15642,6 +15896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341c14be36aa188458bed71b35a21bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: f7c11ae6-7aca-4e12-8e71-13a57ca56a16
   triggerTag: Player
   objectToMove: {fileID: 1938861240}
   pathPoints:
@@ -16362,6 +16617,7 @@ GameObject:
   m_Component:
   - component: {fileID: 482682084}
   - component: {fileID: 482682085}
+  - component: {fileID: 482682086}
   m_Layer: 0
   m_Name: ProtegerTrapero
   m_TagString: Untagged
@@ -16430,6 +16686,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.96134233}
   m_EdgeRadius: 0
+--- !u!114 &482682086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482682083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: ProtegerTrapero
 --- !u!1 &483117811
 GameObject:
   m_ObjectHideFlags: 0
@@ -16530,6 +16799,7 @@ GameObject:
   - component: {fileID: 483174954}
   - component: {fileID: 483174953}
   - component: {fileID: 483174955}
+  - component: {fileID: 483174957}
   m_Layer: 0
   m_Name: Boton1 (1)
   m_TagString: Untagged
@@ -16711,6 +16981,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &483174957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483174951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: Boton1 (1)
 --- !u!1 &486449143
 GameObject:
   m_ObjectHideFlags: 0
@@ -17932,6 +18215,7 @@ GameObject:
   - component: {fileID: 510570278}
   - component: {fileID: 510570280}
   - component: {fileID: 510570279}
+  - component: {fileID: 510570281}
   m_Layer: 0
   m_Name: "NPCsCartasConversaci\xF3n"
   m_TagString: Untagged
@@ -18047,6 +18331,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2, y: 2.434812}
   m_EdgeRadius: 0
+--- !u!114 &510570281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510570277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: "NPCsCartasConversaci\xF3n"
 --- !u!1 &511622110
 GameObject:
   m_ObjectHideFlags: 0
@@ -22962,6 +23259,7 @@ GameObject:
   - component: {fileID: 653360348}
   - component: {fileID: 653360350}
   - component: {fileID: 653360349}
+  - component: {fileID: 653360351}
   m_Layer: 0
   m_Name: DespuesdelFadeNegro
   m_TagString: Untagged
@@ -23244,6 +23542,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2, y: 2.434812}
   m_EdgeRadius: 0
+--- !u!114 &653360351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653360347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: DespuesdelFadeNegro
 --- !u!1 &657849587
 GameObject:
   m_ObjectHideFlags: 0
@@ -23633,6 +23944,7 @@ GameObject:
   m_Component:
   - component: {fileID: 663972003}
   - component: {fileID: 663972004}
+  - component: {fileID: 663972005}
   m_Layer: 0
   m_Name: SistemaCollider
   m_TagString: Untagged
@@ -23675,6 +23987,19 @@ MonoBehaviour:
   colliderToActivate: {fileID: 1114556210}
   showDebugMessages: 1
   countDisabledColliders: 1
+--- !u!114 &663972005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663972002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: SistemaCollider
 --- !u!1 &664224209
 GameObject:
   m_ObjectHideFlags: 0
@@ -28330,6 +28655,7 @@ GameObject:
   - component: {fileID: 846588588}
   - component: {fileID: 846588590}
   - component: {fileID: 846588589}
+  - component: {fileID: 846588591}
   m_Layer: 0
   m_Name: ConversacionTraperoConNieve
   m_TagString: Untagged
@@ -28425,7 +28751,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 1.5
-  dialogueId: 
+  dialogueId: ConversacionTraperoConNieve
   dialogues:
   - speakerName: Cairen
     dialogueText: "\xBFQu\xE9 haces aqu\xED fuera empapada? No me digas que el grandote
@@ -28524,6 +28850,19 @@ MonoBehaviour:
   dialogueChoiceSystem: {fileID: 0}
   interactionKey: 102
   isDialogueTrigger: 1
+--- !u!114 &846588591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846588585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: ConversacionTraperoConNieve
 --- !u!1 &847622460
 GameObject:
   m_ObjectHideFlags: 0
@@ -30269,6 +30608,7 @@ GameObject:
   - component: {fileID: 946240480}
   - component: {fileID: 946240481}
   - component: {fileID: 946240482}
+  - component: {fileID: 946240483}
   m_Layer: 0
   m_Name: Cairen
   m_TagString: Untagged
@@ -30392,6 +30732,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 8.463775, y: 13.371951}
   m_EdgeRadius: 0
+--- !u!114 &946240483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946240479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: Cairen
 --- !u!1 &949560068
 GameObject:
   m_ObjectHideFlags: 0
@@ -30893,6 +31246,7 @@ GameObject:
   - component: {fileID: 973270121}
   - component: {fileID: 973270120}
   - component: {fileID: 973270122}
+  - component: {fileID: 973270123}
   m_Layer: 0
   m_Name: EntradaBar
   m_TagString: Untagged
@@ -31007,6 +31361,19 @@ MonoBehaviour:
   - {fileID: 0}
   destroyAfterTrigger: 0
   showDebug: 1
+--- !u!114 &973270123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973270118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: EntradaBar
 --- !u!1 &977183602
 GameObject:
   m_ObjectHideFlags: 0
@@ -31470,6 +31837,18 @@ MonoBehaviour:
   defaultFadeDuration: 3
   maxVolume: 0.2
   loopFadeDuration: 0.2
+  allMusicClips:
+  - {fileID: 8300000, guid: 5dd4f9155306800489e91e4851e36ca2, type: 3}
+  - {fileID: 8300000, guid: 2fd96e4df6e25ef4795c7d4e9fe85eea, type: 3}
+  - {fileID: 8300000, guid: a7ce7c9f6c0bb774bb50730e717caa1e, type: 3}
+  - {fileID: 8300000, guid: 030f7de4fb8d9084faa0fb311ab16850, type: 3}
+  - {fileID: 8300000, guid: 7de62180915324f40b9a554212882d84, type: 3}
+  - {fileID: 8300000, guid: dfbf6de8792878b4e97d9ff225893ce7, type: 3}
+  - {fileID: 8300000, guid: df9f0ec3fdb83a949b66169ee2de6492, type: 3}
+  - {fileID: 8300000, guid: faf34fa6980edc9489fef5453f0280ee, type: 3}
+  - {fileID: 8300000, guid: a054692dfd1f19e4e8efc7cdf5ee7670, type: 3}
+  - {fileID: 8300000, guid: d6eaefe2fc268ca46ab14308d08ebc76, type: 3}
+  - {fileID: 8300000, guid: 412a22f8a5b4dc349b5d6dfa2427ff72, type: 3}
   scenesToStopMusic:
   - MenuInicial
   scenesToResumeMusic:
@@ -31934,6 +32313,7 @@ GameObject:
   - component: {fileID: 1002015540}
   - component: {fileID: 1002015537}
   - component: {fileID: 1002015539}
+  - component: {fileID: 1002015541}
   m_Layer: 0
   m_Name: Boton1
   m_TagString: Untagged
@@ -32115,6 +32495,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1002015541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002015535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: Boton1
 --- !u!1 &1002974929
 GameObject:
   m_ObjectHideFlags: 0
@@ -33043,6 +33436,7 @@ GameObject:
   - component: {fileID: 1025315066}
   - component: {fileID: 1025315068}
   - component: {fileID: 1025315067}
+  - component: {fileID: 1025315069}
   m_Layer: 0
   m_Name: Alpha
   m_TagString: Untagged
@@ -33166,6 +33560,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1025315069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025315065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: AlphaBar1
 --- !u!1 &1030494232
 GameObject:
   m_ObjectHideFlags: 0
@@ -36357,6 +36764,7 @@ GameObject:
   - component: {fileID: 1114556211}
   - component: {fileID: 1114556210}
   - component: {fileID: 1114556212}
+  - component: {fileID: 1114556213}
   m_Layer: 0
   m_Name: ColliderGramola
   m_TagString: Untagged
@@ -36552,6 +36960,19 @@ MonoBehaviour:
   - {fileID: 2134384428}
   objectsToDestroyAfter: []
   destroyAfterCompletion: 0
+--- !u!114 &1114556213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114556209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: ColliderGramola
 --- !u!1 &1114649893
 GameObject:
   m_ObjectHideFlags: 0
@@ -36994,8 +37415,7 @@ MonoBehaviour:
   promptOffset: {x: 0, y: 1, z: 0}
   dialogueSound: {fileID: 0}
   destroyAfterDialogue: 0
-  objectsToActivateAfter:
-  - {fileID: 0}
+  objectsToActivateAfter: []
   objectsToDestroyAfter: []
 --- !u!61 &1123262002
 BoxCollider2D:
@@ -37632,6 +38052,7 @@ GameObject:
   - component: {fileID: 1146246542}
   - component: {fileID: 1146246543}
   - component: {fileID: 1146246544}
+  - component: {fileID: 1146246545}
   m_Layer: 0
   m_Name: ConversacionSegurata
   m_TagString: Untagged
@@ -37745,7 +38166,7 @@ MonoBehaviour:
   horizontalOffsetPercent: 0.4
   verticalOffsetPercent: 0.2
   autoAdvanceTime: 1.5
-  dialogueId: 
+  dialogueId: ConversacionSegurata
   dialogues:
   - speakerName: Segurata
     dialogueText: Con esas pintas no te voy a dejar pasar.
@@ -37773,6 +38194,19 @@ MonoBehaviour:
   destroyAfterDialogue: 0
   autoActivate: 0
   reuseDelay: 0.5
+--- !u!114 &1146246545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146246539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: ConversacionSegurata
 --- !u!1 &1147078429
 GameObject:
   m_ObjectHideFlags: 0
@@ -38720,6 +39154,7 @@ GameObject:
   - component: {fileID: 1207502574}
   - component: {fileID: 1207502576}
   - component: {fileID: 1207502575}
+  - component: {fileID: 1207502577}
   m_Layer: 0
   m_Name: Segurata
   m_TagString: Untagged
@@ -38843,6 +39278,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1207502577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207502573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: SegurataDentroBar
 --- !u!1 &1207901587
 GameObject:
   m_ObjectHideFlags: 0
@@ -41244,8 +41692,9 @@ GameObject:
   - component: {fileID: 1274660190}
   - component: {fileID: 1274660189}
   - component: {fileID: 1274660188}
+  - component: {fileID: 1274660193}
   m_Layer: 0
-  m_Name: TraperoConSegurataMovimientos
+  m_Name: TraperoConSegurataMovimiento
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41263,6 +41712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341c14be36aa188458bed71b35a21bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: e99d0fed-8339-4cfc-913d-0607c6f5a4fd
   triggerTag: Player
   objectToMove: {fileID: 1621004145}
   pathPoints:
@@ -41288,6 +41738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341c14be36aa188458bed71b35a21bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: fc818162-71ab-48c9-b69b-9e78d48255ce
   triggerTag: Player
   objectToMove: {fileID: 946240479}
   pathPoints:
@@ -41416,6 +41867,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 651583700}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1274660193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274660187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: TraperoConSegurataMovimiento
 --- !u!1 &1284287690
 GameObject:
   m_ObjectHideFlags: 0
@@ -44911,6 +45375,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1410001657}
   - component: {fileID: 1410001658}
+  - component: {fileID: 1410001659}
   m_Layer: 0
   m_Name: ColliderCalleBloqueo
   m_TagString: Untagged
@@ -44979,6 +45444,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 16.83896, y: 0.10037282}
   m_EdgeRadius: 0
+--- !u!114 &1410001659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410001656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: ColliderCalleBloqueo
 --- !u!1 &1414203951
 GameObject:
   m_ObjectHideFlags: 0
@@ -46289,6 +46767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341c14be36aa188458bed71b35a21bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: ae87a77e-ffe9-4fe4-b429-0c054798c3c1
   triggerTag: Player
   objectToMove: {fileID: 416299509}
   pathPoints:
@@ -47428,6 +47907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341c14be36aa188458bed71b35a21bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: c8acd116-9407-49e3-ba01-01ec54706df4
   triggerTag: Player
   objectToMove: {fileID: 771853451}
   pathPoints:
@@ -47765,6 +48245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341c14be36aa188458bed71b35a21bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: eeb29fdd-6a50-4717-bd1c-bd508590d0cf
   triggerTag: Player
   objectToMove: {fileID: 1519333699}
   pathPoints:
@@ -48056,6 +48537,7 @@ GameObject:
   - component: {fileID: 1524222718}
   - component: {fileID: 1524222717}
   - component: {fileID: 1524222719}
+  - component: {fileID: 1524222721}
   m_Layer: 0
   m_Name: Boton1 (3)
   m_TagString: Untagged
@@ -48237,6 +48719,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1524222721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524222715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: Boton1 (3)
 --- !u!1 &1531094266
 GameObject:
   m_ObjectHideFlags: 0
@@ -50254,6 +50749,7 @@ GameObject:
   - component: {fileID: 1586047262}
   - component: {fileID: 1586047263}
   - component: {fileID: 1586047264}
+  - component: {fileID: 1586047265}
   m_Layer: 0
   m_Name: DespuesDeUltimaConversacion
   m_TagString: Untagged
@@ -50369,6 +50865,19 @@ MonoBehaviour:
   - {fileID: 1114556209}
   destroyAfterTrigger: 0
   showDebug: 1
+--- !u!114 &1586047265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586047259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: DespuesDeUltimaConversacion
 --- !u!1 &1591358992
 GameObject:
   m_ObjectHideFlags: 0
@@ -51767,6 +52276,7 @@ GameObject:
   - component: {fileID: 1621004146}
   - component: {fileID: 1621004147}
   - component: {fileID: 1621004148}
+  - component: {fileID: 1621004149}
   m_Layer: 0
   m_Name: Segurata
   m_TagString: Untagged
@@ -51890,6 +52400,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4.14, y: 4.66}
   m_EdgeRadius: 0
+--- !u!114 &1621004149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621004145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: Segurata
 --- !u!1 &1621196269
 GameObject:
   m_ObjectHideFlags: 0
@@ -53394,6 +53917,7 @@ GameObject:
   - component: {fileID: 1643536857}
   - component: {fileID: 1643536859}
   - component: {fileID: 1643536858}
+  - component: {fileID: 1643536860}
   m_Layer: 0
   m_Name: AlphaParaLilith
   m_TagString: Untagged
@@ -53517,6 +54041,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1643536860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643536856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: AlphaParaLilith
 --- !u!1 &1644259087
 GameObject:
   m_ObjectHideFlags: 0
@@ -54988,6 +55525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341c14be36aa188458bed71b35a21bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 2a6393e8-c4b9-414b-96f6-a1d0e7fd187c
   triggerTag: Player
   objectToMove: {fileID: 84272299}
   pathPoints:
@@ -58449,6 +58987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341c14be36aa188458bed71b35a21bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: d1ecee79-df12-48db-9f96-9584828b5250
   triggerTag: Player
   objectToMove: {fileID: 1872063075}
   pathPoints:
@@ -62922,6 +63461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341c14be36aa188458bed71b35a21bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 57ad8fd3-ca01-422e-a4ee-b1f255395d42
   triggerTag: Player
   objectToMove: {fileID: 1075611097}
   pathPoints:
@@ -66529,6 +67069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341c14be36aa188458bed71b35a21bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerId: 859fe3a6-b402-49a8-accc-5ae79857bd11
   triggerTag: Player
   objectToMove: {fileID: 195365783}
   pathPoints:
@@ -68583,6 +69124,7 @@ GameObject:
   - component: {fileID: 2108206137}
   - component: {fileID: 2108206136}
   - component: {fileID: 2108206135}
+  - component: {fileID: 2108206138}
   m_Layer: 0
   m_Name: TraperoConSegurata
   m_TagString: Untagged
@@ -68617,7 +69159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueId: 
+  dialogueId: TraperoConSegurata
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -68759,6 +69301,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2108206138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108206131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: TraperoConSegurata
 --- !u!1 &2126878006
 GameObject:
   m_ObjectHideFlags: 0
@@ -69100,6 +69655,7 @@ RectTransform:
   - {fileID: 2001266485}
   - {fileID: 1002974930}
   - {fileID: 1104568923}
+  - {fileID: 139174957}
   m_Father: {fileID: 1200794358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -69331,6 +69887,7 @@ GameObject:
   - component: {fileID: 2134384429}
   - component: {fileID: 2134384431}
   - component: {fileID: 2134384432}
+  - component: {fileID: 2134384433}
   m_Layer: 0
   m_Name: "JefeBarSituaci\xF3n"
   m_TagString: Untagged
@@ -69448,6 +70005,19 @@ MonoBehaviour:
   destroyAfterDialogue: 0
   autoActivate: 1
   reuseDelay: 0.5
+--- !u!114 &2134384433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134384428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: "JefeBarSituaci\xF3n"
 --- !u!1 &2137589522
 GameObject:
   m_ObjectHideFlags: 0

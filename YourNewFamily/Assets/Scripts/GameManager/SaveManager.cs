@@ -10,8 +10,10 @@ public class SaveData
     public string sceneName;
     public float playerX;
     public float playerY;
+    public string currentMusicName = ""; // 👈 NUEVO: Nombre de la última música sonando
     public List<string> dialoguesCompleted = new List<string>();
     public List<string> puzzlesCompleted = new List<string>();
+    public List<string> completedPaths = new List<string>();
     public List<ObjectState> objectStates = new List<ObjectState>();
     public List<string> unlockedZones = new List<string>();
     public float cameraX;
@@ -37,7 +39,6 @@ public class SaveManager : MonoBehaviour
     private SaveData currentSave = new SaveData();
     private bool isLoadingFromSave = false;
 
-    // Propiedad pública para saber si estamos en proceso de carga
     public bool IsLoading => isLoadingFromSave;
 
     private Dictionary<string, bool> objectStates = new Dictionary<string, bool>();
@@ -99,7 +100,13 @@ public class SaveManager : MonoBehaviour
             currentSave.cameraSize = mainCamera.orthographicSize;
         }
 
-        // Registrar el estado actual de todos los SaveableObject presentes en la escena
+        // 🔥 NUEVO: Guardar la música actual que esté sonando
+        if (MusicManager.Instance != null)
+        {
+            AudioClip currentClip = MusicManager.Instance.GetCurrentClip();
+            currentSave.currentMusicName = currentClip != null ? currentClip.name : "";
+        }
+
         SaveableObject[] allSaveables = FindObjectsOfType<SaveableObject>(true);
         foreach (SaveableObject so in allSaveables)
         {
@@ -109,7 +116,6 @@ public class SaveManager : MonoBehaviour
             }
         }
 
-        // Convertir el diccionario a la lista serializable
         currentSave.objectStates.Clear();
         foreach (var kvp in objectStates)
         {
@@ -139,7 +145,6 @@ public class SaveManager : MonoBehaviour
             return false;
         }
 
-        // 🔥 CORRECCIÓN CLAVE: Cargar el diccionario en memoria directamente del JSON guardado
         objectStates.Clear();
         foreach (var state in currentSave.objectStates)
         {
@@ -168,8 +173,30 @@ public class SaveManager : MonoBehaviour
             StartCoroutine(RestoreCameraAfterFrame());
             RestoreObjectStates();
 
+            // 🔥 NUEVO: Restaurar la música de la partida guardada
+            if (MusicManager.Instance != null && !string.IsNullOrEmpty(currentSave.currentMusicName))
+            {
+                MusicManager.Instance.ChangeMusicByName(currentSave.currentMusicName);
+            }
+
             isLoadingFromSave = false;
         }
+    }
+
+    // ---------- MÉTODOS DE RECORRIDOS / TRIGGERS ----------
+    public void RegisterPathCompleted(string pathId)
+    {
+        if (!string.IsNullOrEmpty(pathId) && !currentSave.completedPaths.Contains(pathId))
+        {
+            currentSave.completedPaths.Add(pathId);
+            Debug.Log($"🚩 Recorrido registrado como activado/completado: '{pathId}'");
+        }
+    }
+
+    public bool IsPathCompleted(string pathId)
+    {
+        if (string.IsNullOrEmpty(pathId)) return false;
+        return currentSave.completedPaths.Contains(pathId);
     }
 
     // ---------- MÉTODOS DE TEXTO DE MISIÓN ----------
@@ -254,7 +281,6 @@ public class SaveManager : MonoBehaviour
 
     private void RestoreObjectStates()
     {
-        // Busca todos los SaveableObject (activos e inactivos)
         SaveableObject[] allSaveables = FindObjectsOfType<SaveableObject>(true);
 
         int restoredCount = 0;
@@ -262,7 +288,6 @@ public class SaveManager : MonoBehaviour
         {
             if (string.IsNullOrEmpty(so.objectId)) continue;
 
-            // Si el objeto está registrado en nuestra partida guardada, le aplicamos su estado
             if (objectStates.TryGetValue(so.objectId, out bool savedIsActive))
             {
                 so.gameObject.SetActive(savedIsActive);

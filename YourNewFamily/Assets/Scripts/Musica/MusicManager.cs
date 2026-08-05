@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,14 +7,18 @@ public class MusicManager : MonoBehaviour
 {
     public static MusicManager Instance { get; private set; }
 
-    [Header("Configuración")]
+    [Header("ConfiguraciÃ³n")]
     [SerializeField] private float defaultFadeDuration = 2f;
     [SerializeField][Range(0, 1)] private float maxVolume = 1f;
     [SerializeField] private float loopFadeDuration = 0.5f;
 
-    [Header("Configuración por Escena")]
-    [SerializeField] private string[] scenesToStopMusic = { "MenuInicial" }; // Escenas donde la música se detiene
-    [SerializeField] private string[] scenesToResumeMusic = { "SampleScene" }; // Escenas donde la música se reanuda
+    [Header("Biblioteca de Canciones (Opcional)")]
+    [Tooltip("Lista de canciones de tu juego para encontrarlas por nombre al cargar partida.")]
+    [SerializeField] private List<AudioClip> allMusicClips = new List<AudioClip>(); // ðŸ‘ˆ NUEVO: Lista de clips registrables
+
+    [Header("ConfiguraciÃ³n por Escena")]
+    [SerializeField] private string[] scenesToStopMusic = { "MenuInicial" };
+    [SerializeField] private string[] scenesToResumeMusic = { "SampleScene" };
 
     private AudioSource musicSource1;
     private AudioSource musicSource2;
@@ -29,10 +33,7 @@ public class MusicManager : MonoBehaviour
     private bool wasPlaying = false;
     private string currentScene;
 
-    // Diccionario para volúmenes específicos por clip
     private Dictionary<string, float> clipVolumes = new Dictionary<string, float>();
-
-    // Cache de audio clips precargados
     private Dictionary<string, AudioClip> loadedClips = new Dictionary<string, AudioClip>();
 
     private void Awake()
@@ -43,9 +44,17 @@ public class MusicManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             CreateAudioSources();
 
+            // Precargar clips asignados en el Inspector
+            foreach (var clip in allMusicClips)
+            {
+                if (clip != null && !loadedClips.ContainsKey(clip.name))
+                {
+                    loadedClips.Add(clip.name, clip);
+                }
+            }
+
             globalVolume = PlayerPrefs.GetFloat("VolumenMusica", 1f);
 
-            // Suscribirse al evento de cambio de escena
             SceneManager.sceneLoaded += OnSceneLoaded;
 
             Debug.Log($"MusicManager Awake - Volumen inicial: {globalVolume}");
@@ -65,7 +74,6 @@ public class MusicManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        // Limpiar la suscripción al evento
         SceneManager.sceneLoaded -= OnSceneLoaded;
 
         foreach (var clip in loadedClips.Values)
@@ -81,12 +89,18 @@ public class MusicManager : MonoBehaviour
     {
         Debug.Log($"Escena cargada: {scene.name}");
         currentScene = scene.name;
+
+        // ðŸ”¥ MODIFICADO: Si la partida se estÃ¡ cargando desde SaveManager, dejamos que SaveManager restaure la mÃºsica guardada
+        if (SaveManager.Instance != null && SaveManager.Instance.IsLoading)
+        {
+            return;
+        }
+
         CheckSceneMusicState(currentScene);
     }
 
     private void CheckSceneMusicState(string sceneName)
     {
-        // Verificar si la escena actual está en la lista de detener música
         bool shouldStopMusic = false;
         foreach (string scene in scenesToStopMusic)
         {
@@ -97,7 +111,6 @@ public class MusicManager : MonoBehaviour
             }
         }
 
-        // Verificar si la escena actual está en la lista de reanudar música
         bool shouldResumeMusic = false;
         foreach (string scene in scenesToResumeMusic)
         {
@@ -110,17 +123,15 @@ public class MusicManager : MonoBehaviour
 
         if (shouldStopMusic)
         {
-            Debug.Log($"Escena {sceneName} detectada - Deteniendo música");
+            Debug.Log($"Escena {sceneName} detectada - Deteniendo mÃºsica");
             StopMusic(0.5f);
             wasPlaying = false;
         }
         else if (shouldResumeMusic && lastPlayedClip != null)
         {
-            Debug.Log($"Escena {sceneName} detectada - Reanudando música");
-            // Reanudar la última música que estaba sonando
+            Debug.Log($"Escena {sceneName} detectada - Reanudando mÃºsica");
             ChangeMusic(lastPlayedClip, 0.5f);
 
-            // Restaurar el tiempo si es necesario
             if (currentSource != null && lastPlayedTime > 0)
             {
                 currentSource.time = lastPlayedTime;
@@ -159,7 +170,6 @@ public class MusicManager : MonoBehaviour
                 loopFadeCoroutine = StartCoroutine(LoopFade());
             }
 
-            // Guardar el tiempo actual para posible reanudación
             lastPlayedTime = currentSource.time;
             lastPlayedClip = currentSource.clip;
             wasPlaying = true;
@@ -234,6 +244,45 @@ public class MusicManager : MonoBehaviour
         }
     }
 
+    // ðŸ”¥ NUEVO: MÃ©todo para buscar y reproducir mÃºsica usando Ãºnicamente su nombre
+    public void ChangeMusicByName(string clipName, float fadeDuration = 0.5f)
+    {
+        if (string.IsNullOrEmpty(clipName)) return;
+
+        // Si ya es la que estÃ¡ sonando, no hacemos nada
+        if (currentSource != null && currentSource.isPlaying && currentSource.clip != null && currentSource.clip.name == clipName)
+        {
+            return;
+        }
+
+        // 1. Buscar en clips precargados o ya reproducidos
+        if (loadedClips.TryGetValue(clipName, out AudioClip clip))
+        {
+            ChangeMusic(clip, fadeDuration);
+            return;
+        }
+
+        // 2. Buscar en la lista pÃºblica allMusicClips (asignados por inspector)
+        foreach (var c in allMusicClips)
+        {
+            if (c != null && c.name == clipName)
+            {
+                ChangeMusic(c, fadeDuration);
+                return;
+            }
+        }
+
+        // 3. Intento de carga por Resources (si usas carpeta Resources)
+        AudioClip resClip = Resources.Load<AudioClip>(clipName);
+        if (resClip != null)
+        {
+            ChangeMusic(resClip, fadeDuration);
+            return;
+        }
+
+        Debug.LogWarning($"MusicManager: No se pudo encontrar ningÃºn AudioClip con el nombre '{clipName}'.");
+    }
+
     public void SetClipVolume(AudioClip clip, float volume)
     {
         if (clip == null) return;
@@ -295,10 +344,9 @@ public class MusicManager : MonoBehaviour
             fadeCoroutine = null;
         }
 
-        // Si el nuevo clip es null, detener la música
         if (newClip == null)
         {
-            Debug.Log("Cambiando a silencio (sin música)");
+            Debug.Log("Cambiando a silencio (sin mÃºsica)");
             StopMusic(fadeDuration);
             lastPlayedClip = null;
             wasPlaying = false;
@@ -416,13 +464,11 @@ public class MusicManager : MonoBehaviour
         loopFadeDuration = duration;
     }
 
-    // Método para verificar si hay música reproduciéndose
     public bool IsMusicPlaying()
     {
         return currentSource != null && currentSource.isPlaying;
     }
 
-    // Método para obtener el clip actual
     public AudioClip GetCurrentClip()
     {
         return currentSource != null ? currentSource.clip : null;
