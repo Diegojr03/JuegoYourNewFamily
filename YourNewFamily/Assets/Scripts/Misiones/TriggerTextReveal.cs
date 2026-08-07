@@ -38,7 +38,7 @@ public class TriggerTextReveal : MonoBehaviour
 
         activado = true;
 
-        // 🔥 CORRECCIÓN: Registramos este texto como el último activado
+        // Registramos el texto en el SaveManager
         if (SaveManager.Instance != null)
         {
             SaveManager.Instance.RegisterMissionText(textoNuevo);
@@ -47,19 +47,22 @@ public class TriggerTextReveal : MonoBehaviour
         if (uiText == null)
         {
             Debug.LogWarning("uiText no está asignado en " + gameObject.name);
+            // Si no hay UI, desactivamos el objeto directamente para no causar errores
+            gameObject.SetActive(false);
             return;
         }
 
         uiText.text = textoNuevo;
 
-        StopAllCoroutines();
-        StartCoroutine(EfectoBonito(uiText));
-
+        // Apagamos el collider inmediatamente para evitar dobles detecciones
         var col = GetComponent<Collider2D>();
         if (col != null) col.enabled = false;
+
+        StopAllCoroutines();
+        StartCoroutine(EfectoBonitoYDesactivar(uiText));
     }
 
-    IEnumerator EfectoBonito(TMP_Text text)
+    IEnumerator EfectoBonitoYDesactivar(TMP_Text text)
     {
         text.ForceMeshUpdate();
         int total = text.textInfo.characterCount;
@@ -91,6 +94,9 @@ public class TriggerTextReveal : MonoBehaviour
         text.transform.localScale = escalaOriginal * escalaFinal;
 
         yield return StartCoroutine(Sacudida(text.transform));
+
+        // 🟢 NUEVO: Una vez termina toda la animación y sacudida, desactivamos este GameObject
+        gameObject.SetActive(false);
     }
 
     IEnumerator Sacudida(Transform t)
