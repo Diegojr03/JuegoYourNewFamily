@@ -817,19 +817,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 12159026}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1020001715}
-        m_TargetAssemblyTypeName: BacklogManager, Assembly-CSharp
-        m_MethodName: SelectCharacter
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Peter
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &12159026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -949,19 +937,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 13127006}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1020001715}
-        m_TargetAssemblyTypeName: BacklogManager, Assembly-CSharp
-        m_MethodName: SelectCharacter
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Orren
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &13127006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2212,19 +2188,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 36464280}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1020001715}
-        m_TargetAssemblyTypeName: BacklogManager, Assembly-CSharp
-        m_MethodName: SelectCharacter
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Jorah
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &36464280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5854,19 +5818,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 133843872}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1020001715}
-        m_TargetAssemblyTypeName: BacklogManager, Assembly-CSharp
-        m_MethodName: SelectCharacter
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Silas
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &133843872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8130,19 +8082,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 185384786}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1020001715}
-        m_TargetAssemblyTypeName: BacklogManager, Assembly-CSharp
-        m_MethodName: SelectCharacter
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Delta
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &185384786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8163,7 +8103,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1208040086343421634, guid: 3df332e40fe30c841bc0676ca4e67f2c, type: 3}
+  m_Sprite: {fileID: -7582437012781546147, guid: 25ff455a92ad8cb4fb84cdd4e902f0d0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12965,19 +12905,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 329354471}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1020001715}
-        m_TargetAssemblyTypeName: BacklogManager, Assembly-CSharp
-        m_MethodName: SelectCharacter
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Jesal
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &329354471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15642,19 +15570,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 422731938}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1020001715}
-        m_TargetAssemblyTypeName: BacklogManager, Assembly-CSharp
-        m_MethodName: SelectCharacter
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Mary
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &422731938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16683,7 +16599,7 @@ MonoBehaviour:
   autoAdvanceTime: 1.5
   dialogueId: MaryYLilith
   dialogues:
-  - speakerName: Senna
+  - speakerName: Mary
     dialogueText: "\xA1Ey, Lilith! \xBFC\xF3mo lo llevas? D\xE9jame adivinar\u2026
       \xBFel casero volvi\xF3 a pasar a ofrecerte trabajar para \xE9l? "
     leftSpeaker: 1
@@ -16692,7 +16608,7 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
-  - speakerName: Senna
+  - speakerName: Mary
     dialogueText: "Te dir\xE9 algo, paga bastante bien, pero\u2026 bueno, ya sabes,
       es un trabajo pesado. Jajaja"
     leftSpeaker: 1
@@ -17984,19 +17900,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 486449146}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1020001715}
-        m_TargetAssemblyTypeName: BacklogManager, Assembly-CSharp
-        m_MethodName: SelectCharacter
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Amara
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &486449146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26049,19 +25953,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 693922819}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1020001715}
-        m_TargetAssemblyTypeName: BacklogManager, Assembly-CSharp
-        m_MethodName: SelectCharacter
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Cairen
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &693922819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27072,19 +26964,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 737361208}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1020001715}
-        m_TargetAssemblyTypeName: BacklogManager, Assembly-CSharp
-        m_MethodName: SelectCharacter
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Nira
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &737361208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27204,19 +27084,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 762169333}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1020001715}
-        m_TargetAssemblyTypeName: BacklogManager, Assembly-CSharp
-        m_MethodName: SelectCharacter
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Saira
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &762169333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27336,19 +27204,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 763274840}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1020001715}
-        m_TargetAssemblyTypeName: BacklogManager, Assembly-CSharp
-        m_MethodName: SelectCharacter
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Anorah
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &763274840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40632,19 +40488,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1188527917}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1020001715}
-        m_TargetAssemblyTypeName: BacklogManager, Assembly-CSharp
-        m_MethodName: SelectCharacter
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Lin
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1188527917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42686,19 +42530,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1255135319}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1020001715}
-        m_TargetAssemblyTypeName: BacklogManager, Assembly-CSharp
-        m_MethodName: SelectCharacter
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Lilith
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1255135319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44803,19 +44635,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1322120012}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1020001715}
-        m_TargetAssemblyTypeName: BacklogManager, Assembly-CSharp
-        m_MethodName: SelectCharacter
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Cael
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1322120012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45654,19 +45474,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1368985986}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1020001715}
-        m_TargetAssemblyTypeName: BacklogManager, Assembly-CSharp
-        m_MethodName: SelectCharacter
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: JefeBar
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1368985986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49092,7 +48900,7 @@ Transform:
   m_GameObject: {fileID: 1476943276}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -68.92, y: 68.33, z: 0}
+  m_LocalPosition: {x: 25.8, y: 28, z: 0}
   m_LocalScale: {x: 0.055475388, y: 0.055475388, z: 0.055475388}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -51410,13 +51218,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 904854747}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
-  m_MovementType: 1
+  m_MovementType: 2
   m_Elasticity: 0.1
-  m_Inertia: 1
+  m_Inertia: 0
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 75
   m_Viewport: {fileID: 1847078504}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 1449471500}
@@ -54140,19 +53948,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1603439432}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1020001715}
-        m_TargetAssemblyTypeName: BacklogManager, Assembly-CSharp
-        m_MethodName: SelectCharacter
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Gamma
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1603439432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54789,19 +54585,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1621261371}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1020001715}
-        m_TargetAssemblyTypeName: BacklogManager, Assembly-CSharp
-        m_MethodName: SelectCharacter
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Alpha
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1621261371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60260,19 +60044,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1738730412}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1020001715}
-        m_TargetAssemblyTypeName: BacklogManager, Assembly-CSharp
-        m_MethodName: SelectCharacter
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Bortis
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1738730412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61855,19 +61627,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1778549342}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1020001715}
-        m_TargetAssemblyTypeName: BacklogManager, Assembly-CSharp
-        m_MethodName: SelectCharacter
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Segurata
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1778549342
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,7 +12,7 @@ public class BacklogManager : MonoBehaviour
 
     [Header("Panel de Personajes (LEFT)")]
     public Transform charactersPanel;
-    public List<Button> characterButtons; // Cambiado a List para mejor manejo
+    public List<Button> characterButtons;
 
     [Header("Panel de Mensajes (RIGHT)")]
     public Transform messagesContent;
@@ -23,10 +24,22 @@ public class BacklogManager : MonoBehaviour
     public Color playerColor = Color.cyan;
     public Color npcColor = Color.white;
 
-    private List<DialogueEntry> allDialogueHistory = new List<DialogueEntry>();
-    private Dictionary<string, List<DialogueEntry>> dialoguesByCharacter = new Dictionary<string, List<DialogueEntry>>();
+    // =========================================================
+    // DATOS DEL BACKLOG
+    // =========================================================
+
+    private List<DialogueEntry> allDialogueHistory =
+        new List<DialogueEntry>();
+
+    private Dictionary<string, List<DialogueEntry>> dialoguesByCharacter =
+        new Dictionary<string, List<DialogueEntry>>();
+
     private string selectedCharacter = "Todos";
     private bool isBacklogOpen = false;
+
+    // =========================================================
+    // CLASE DE DIALOGO
+    // =========================================================
 
     [System.Serializable]
     public class DialogueEntry
@@ -36,79 +49,162 @@ public class BacklogManager : MonoBehaviour
         public string timestamp;
     }
 
-    // Singleton
+    // =========================================================
+    // SINGLETON
+    // =========================================================
+
     public static BacklogManager Instance { get; private set; }
 
-    void Awake()
+    // =========================================================
+    // AWAKE
+    // =========================================================
+
+    private void Awake()
     {
+        // -----------------------------------------------------
+        // PRIMER BACKLOG MANAGER
+        // -----------------------------------------------------
+
         if (Instance == null)
         {
             Instance = this;
+
+            // Este BacklogManager será el único que sobreviva
             DontDestroyOnLoad(gameObject);
+
+            Debug.Log(
+                "[BacklogManager] Instancia persistente creada: "
+                + gameObject.name
+            );
         }
-        else
+        else if (Instance != this)
         {
+            // -------------------------------------------------
+            // BACKLOG MANAGER DE UNA NUEVA ESCENA
+            // -------------------------------------------------
+
+            Debug.Log(
+                "[BacklogManager] Nueva escena detectada. "
+                + "Actualizando referencias de UI..."
+            );
+
+            // El Manager persistente recibe las referencias
+            // del Canvas de la nueva escena.
+            Instance.UpdateUIReferences(this);
+
+            // Este Manager NO debe sobrevivir.
             Destroy(gameObject);
         }
     }
 
-    void Start()
+    // =========================================================
+    // START
+    // =========================================================
+
+    private void Start()
     {
+        // Solo inicializamos datos en la instancia persistente.
+        if (Instance != this)
+            return;
+
+        // Crear "Todos" si todavía no existe.
+        if (!dialoguesByCharacter.ContainsKey("Todos"))
+        {
+            dialoguesByCharacter["Todos"] =
+                new List<DialogueEntry>();
+        }
+
+        // Detectar y configurar botones.
+        RefreshCharacterButtons();
+        SetupCharacterButtons();
+
+        // Debug
+        DebugButtons();
+
+        // Configurar raycast.
+        FixRaycastOrder();
+
+        // Ocultar backlog al iniciar.
         if (backlogPanel != null)
         {
             backlogPanel.SetActive(false);
         }
-
-        // Inicializar con la opción "Todos"
-        dialoguesByCharacter["Todos"] = new List<DialogueEntry>();
-
-        // IMPORTANTE: Forzar la búsqueda de todos los botones en el panel
-        RefreshCharacterButtons();
-
-        // Configurar los botones
-        SetupCharacterButtons();
-
-        // Debug para verificar que todos los botones se encontraron
-        DebugButtons();
-
-        FixRaycastOrder();
     }
 
-    void Update()
+    // =========================================================
+    // UPDATE
+    // =========================================================
+
+    private void Update()
     {
+        // Seguridad.
+        if (Instance != this)
+            return;
+
         if (Input.GetKeyDown(toggleKey))
         {
             ToggleBacklog();
         }
     }
 
-    // NUEVO: Método para refrescar la lista de botones desde el panel
+    // =========================================================
+    // DETECTAR BOTONES
+    // =========================================================
+
     public void RefreshCharacterButtons()
     {
-        if (charactersPanel != null)
+        if (charactersPanel == null)
         {
-            // Obtener TODOS los botones hijos (incluyendo los no activos)
-            Button[] foundButtons = charactersPanel.GetComponentsInChildren<Button>(true);
+            Debug.LogError(
+                "[BacklogManager] charactersPanel es NULL."
+            );
 
-            // Inicializar la lista si es null
-            if (characterButtons == null)
-                characterButtons = new List<Button>();
+            return;
+        }
 
-            // Limpiar la lista actual
-            characterButtons.Clear();
+        Button[] foundButtons =
+            charactersPanel.GetComponentsInChildren<Button>(true);
 
-            // Añadir todos los botones encontrados
-            characterButtons.AddRange(foundButtons);
+        if (characterButtons == null)
+        {
+            characterButtons = new List<Button>();
+        }
 
-            Debug.Log($"Se encontraron {foundButtons.Length} botones en el panel de personajes");
+        characterButtons.Clear();
+        characterButtons.AddRange(foundButtons);
+
+        Debug.Log(
+            "[BacklogManager] Se encontraron "
+            + foundButtons.Length
+            + " botones en "
+            + charactersPanel.name
+        );
+
+        foreach (Button button in foundButtons)
+        {
+            if (button != null)
+            {
+                Debug.Log(
+                    "[BacklogManager] Botón encontrado: "
+                    + button.name
+                );
+            }
         }
     }
 
+    // =========================================================
+    // CONFIGURAR BOTONES
+    // =========================================================
+
     private void SetupCharacterButtons()
     {
-        if (characterButtons == null || characterButtons.Count == 0)
+        if (characterButtons == null ||
+            characterButtons.Count == 0)
         {
-            Debug.LogWarning("No hay botones de personajes configurados");
+            Debug.LogWarning(
+                "[BacklogManager] No hay botones de personajes."
+            );
+
             return;
         }
 
@@ -121,207 +217,380 @@ public class BacklogManager : MonoBehaviour
         }
     }
 
+    // =========================================================
+    // CONFIGURAR UN BOTÓN
+    // =========================================================
+
     private void ConfigureCharacterButton(Button button)
     {
-        if (button == null) return;
+        if (button == null)
+            return;
 
-        // IMPORTANTE: Asegurar que el botón es interactuable
+        // El nombre del GameObject del botón es el nombre del personaje
+        string characterName = button.gameObject.name.Trim();
+
+        if (string.IsNullOrEmpty(characterName))
+        {
+            Debug.LogWarning(
+                "[BacklogManager] Un botón tiene el nombre vacío."
+            );
+
+            return;
+        }
+
+        // Eliminar listeners anteriores para evitar duplicados
+        button.onClick.RemoveAllListeners();
+
+        // Asegurarnos de que está activo
         button.interactable = true;
 
-        // Asegurar que la imagen tiene Raycast Target activado
-        Image buttonImage = button.GetComponent<Image>();
-        if (buttonImage != null)
+        Image image = button.GetComponent<Image>();
+
+        if (image != null)
         {
-            buttonImage.raycastTarget = true;
+            image.raycastTarget = true;
         }
 
-        TextMeshProUGUI buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
-        if (buttonText != null)
+        // Crear la lista del personaje si todavía no existe
+        if (characterName != "Todos" &&
+            !dialoguesByCharacter.ContainsKey(characterName))
         {
-            string characterName = buttonText.text.Trim(); // Limpiar espacios
+            dialoguesByCharacter[characterName] =
+                new List<DialogueEntry>();
+        }
 
-            // Limpiar listeners previos para evitar duplicados
-            button.onClick.RemoveAllListeners();
+        // =====================================================
+        // CREAR LISTENER
+        // =====================================================
 
-            // Añadir el nuevo listener
-            button.onClick.AddListener(() => SelectCharacter(characterName));
+        button.onClick.AddListener(() =>
+        {
+            Debug.Log(
+                "========== BOTÓN PULSADO =========="
+            );
 
-            // Inicializar la lista para este personaje si no existe
-            if (!dialoguesByCharacter.ContainsKey(characterName) && characterName != "Todos")
+            Debug.Log(
+                "Botón: " + button.gameObject.name
+            );
+
+            Debug.Log(
+                "Personaje: " + characterName
+            );
+
+            if (BacklogManager.Instance == null)
             {
-                dialoguesByCharacter[characterName] = new List<DialogueEntry>();
-                Debug.Log($"Lista inicializada para personaje: {characterName}");
+                Debug.LogError(
+                    "[BacklogManager] Instance es NULL."
+                );
+
+                return;
             }
-        }
-        else
-        {
-            Debug.LogWarning($"Botón {button.name} no tiene texto asignado");
-        }
+
+            Debug.Log(
+                "BacklogManager.Instance encontrado: " +
+                BacklogManager.Instance.gameObject.name
+            );
+
+            BacklogManager.Instance.SelectCharacter(
+                characterName
+            );
+        });
+
+        Debug.Log(
+            "[BacklogManager] Listener configurado para: "
+            + characterName
+        );
     }
+
+    // =========================================================
+    // RAYCAST
+    // =========================================================
 
     private void FixRaycastOrder()
     {
-        // Asegurar que los botones están por encima en el orden de raycast
-        Canvas canvas = backlogPanel.GetComponent<Canvas>();
+        if (backlogPanel == null)
+            return;
+
+        Canvas canvas =
+            backlogPanel.GetComponentInParent<Canvas>();
+
         if (canvas != null)
         {
-            // Esto fuerza que los hijos del panel tengan prioridad
             canvas.overrideSorting = true;
-            canvas.sortingOrder = 10; // Un número alto
+            canvas.sortingOrder = 10;
         }
-
-        // Si usas paneles con imágenes, asegúrate que los botones están físicamente
-        // encima en la jerarquía o ajusta sus posiciones Z
     }
 
+    // =========================================================
+    // AÑADIR BOTÓN DINÁMICAMENTE
+    // =========================================================
 
-    // Método para añadir nuevos botones dinámicamente en tiempo de ejecución
-    public void AddCharacterButton(Button newButton, string characterName)
+    public void AddCharacterButton(
+        Button newButton,
+        string characterName)
     {
-        if (newButton == null) return;
+        if (newButton == null)
+            return;
 
-        // Añadir a la lista
         if (characterButtons == null)
+        {
             characterButtons = new List<Button>();
+        }
 
         if (!characterButtons.Contains(newButton))
         {
             characterButtons.Add(newButton);
-
-            // Asignar nombre si el texto está vacío
-            TextMeshProUGUI buttonText = newButton.GetComponentInChildren<TextMeshProUGUI>();
-            if (buttonText != null && string.IsNullOrEmpty(buttonText.text))
-            {
-                buttonText.text = characterName;
-            }
-
-            ConfigureCharacterButton(newButton);
-            Debug.Log($"Botón añadido dinámicamente para: {characterName}");
         }
+
+        TextMeshProUGUI buttonText =
+            newButton.GetComponentInChildren<TextMeshProUGUI>();
+
+        if (buttonText != null &&
+            string.IsNullOrEmpty(buttonText.text))
+        {
+            buttonText.text = characterName;
+        }
+
+        ConfigureCharacterButton(newButton);
+
+        Debug.Log(
+            "[BacklogManager] Botón añadido: "
+            + characterName
+        );
     }
 
-    // Método para añadir diálogo desde DialogueSystem
-    public void AddDialogueFromDialogueSystem(string speakerName, string dialogueText, bool leftSpeaker)
+    // =========================================================
+    // AÑADIR DIÁLOGO DESDE DIALOGUESYSTEM
+    // =========================================================
+
+    public void AddDialogueFromDialogueSystem(
+        string speakerName,
+        string dialogueText,
+        bool leftSpeaker)
     {
         DialogueEntry entry = new DialogueEntry
         {
             speakerName = speakerName,
             dialogueText = dialogueText,
-            timestamp = System.DateTime.Now.ToString("HH:mm:ss")
+            timestamp =
+                System.DateTime.Now.ToString("HH:mm:ss")
         };
 
         AddDialogueEntry(entry, speakerName);
     }
 
-    // Método para añadir diálogo con dueño de conversación
-    public void AddDialogueWithConversationOwner(string speakerName, string dialogueText, string conversationOwner)
+    // =========================================================
+    // AÑADIR DIÁLOGO CON DUEÑO DE CONVERSACIÓN
+    // =========================================================
+
+    public void AddDialogueWithConversationOwner(
+        string speakerName,
+        string dialogueText,
+        string conversationOwner)
     {
         DialogueEntry entry = new DialogueEntry
         {
             speakerName = speakerName,
             dialogueText = dialogueText,
-            timestamp = System.DateTime.Now.ToString("HH:mm:ss")
+            timestamp =
+                System.DateTime.Now.ToString("HH:mm:ss")
         };
 
-        AddDialogueEntry(entry, conversationOwner);
+        AddDialogueEntry(
+            entry,
+            conversationOwner
+        );
     }
 
-    // Método común para agregar entradas
-    private void AddDialogueEntry(DialogueEntry entry, string speakerName)
+    // =========================================================
+    // AÑADIR ENTRADA
+    // =========================================================
+
+    private void AddDialogueEntry(
+        DialogueEntry entry,
+        string speakerName)
     {
-        // Agregar al historial general
         allDialogueHistory.Add(entry);
 
-        // Limitar tamaño del historial
+        // Limitar historial.
         if (allDialogueHistory.Count > maxEntries)
         {
             allDialogueHistory.RemoveAt(0);
         }
 
-        // Agregar al diccionario por personaje
+        // Añadir al personaje.
         if (!string.IsNullOrEmpty(speakerName))
         {
             if (!dialoguesByCharacter.ContainsKey(speakerName))
             {
-                dialoguesByCharacter[speakerName] = new List<DialogueEntry>();
+                dialoguesByCharacter[speakerName] =
+                    new List<DialogueEntry>();
             }
+
             dialoguesByCharacter[speakerName].Add(entry);
         }
 
-        // También agregar a "Todos"
-        if (dialoguesByCharacter.ContainsKey("Todos"))
+        // Añadir también a "Todos".
+        if (!dialoguesByCharacter.ContainsKey("Todos"))
         {
-            dialoguesByCharacter["Todos"].Add(entry);
+            dialoguesByCharacter["Todos"] =
+                new List<DialogueEntry>();
         }
 
-        // Si el backlog está abierto, actualizar la UI
+        dialoguesByCharacter["Todos"].Add(entry);
+
+        // Si está abierto, actualizar.
         if (isBacklogOpen)
         {
             RefreshMessagesUI();
         }
     }
 
+    // =========================================================
+    // SELECCIONAR PERSONAJE
+    // =========================================================
+
     public void SelectCharacter(string characterName)
     {
+        if (Instance != this)
+        {
+            Debug.LogWarning(
+                "[BacklogManager] Se intentó usar un BacklogManager " +
+                "que no es la instancia persistente."
+            );
+
+            return;
+        }
+
+        Debug.Log(
+            "[BacklogManager] SelectCharacter llamado con: " +
+            characterName
+        );
+
         selectedCharacter = characterName;
 
-        // ACTUALIZAR EL TEXTO
         if (selectedCharacterText != null)
         {
-            selectedCharacterText.text = $"Conversación con: {characterName}";
-            Debug.Log($"Cambiando a personaje: {characterName}");
+            selectedCharacterText.text =
+                "Conversación con: " + characterName;
+        }
+        else
+        {
+            Debug.LogError(
+                "[BacklogManager] selectedCharacterText es NULL."
+            );
         }
 
         RefreshMessagesUI();
     }
 
+    // =========================================================
+    // ABRIR / CERRAR BACKLOG
+    // =========================================================
+
     public void ToggleBacklog()
     {
+        if (Instance != this)
+            return;
+
         isBacklogOpen = !isBacklogOpen;
 
-        if (backlogPanel != null)
+        if (backlogPanel == null)
         {
-            backlogPanel.SetActive(isBacklogOpen);
+            Debug.LogError("[BacklogManager] backlogPanel es NULL.");
+            return;
+        }
 
-            if (isBacklogOpen)
-            {
-                // Antes de seleccionar personaje, refrescar botones
-                RefreshCharacterButtons();
-                SetupCharacterButtons();
+        backlogPanel.SetActive(isBacklogOpen);
 
-                SelectCharacter("Lilith");
-                Time.timeScale = 0f; // Pausar el juego
-            }
-            else
-            {
-                Time.timeScale = 1f; // Reanudar el juego
-            }
+        if (isBacklogOpen)
+        {
+            // NO volver a configurar los botones aquí.
+            // Ya se configuraron al entrar en la escena.
+
+            // Selección inicial
+            SelectCharacter("Lilith");
+
+            Time.timeScale = 0f;
+
+            Debug.Log("[BacklogManager] Backlog abierto.");
+        }
+        else
+        {
+            Time.timeScale = 1f;
+
+            Debug.Log("[BacklogManager] Backlog cerrado.");
         }
     }
 
+    // =========================================================
+    // ACTUALIZAR UI DE MENSAJES
+    // =========================================================
+
     private void RefreshMessagesUI()
     {
-        // Limpiar contenido anterior de mensajes
+        if (messagesContent == null)
+        {
+            Debug.LogError(
+                "[BacklogManager] messagesContent es NULL."
+            );
+
+            return;
+        }
+
+        if (messageEntryPrefab == null)
+        {
+            Debug.LogError(
+                "[BacklogManager] messageEntryPrefab es NULL."
+            );
+
+            return;
+        }
+
+        // -----------------------------------------------------
+        // BORRAR MENSAJES ANTERIORES
+        // -----------------------------------------------------
+
         foreach (Transform child in messagesContent)
         {
             Destroy(child.gameObject);
         }
 
-        // Obtener mensajes según el personaje seleccionado
-        List<DialogueEntry> messagesToShow = GetFilteredMessages(selectedCharacter);
+        // -----------------------------------------------------
+        // OBTENER MENSAJES
+        // -----------------------------------------------------
 
-        // Crear entradas para cada mensaje
-        foreach (var entry in messagesToShow)
+        List<DialogueEntry> messagesToShow =
+            GetFilteredMessages(selectedCharacter);
+
+        // -----------------------------------------------------
+        // CREAR MENSAJES
+        // -----------------------------------------------------
+
+        foreach (DialogueEntry entry in messagesToShow)
         {
-            GameObject messageObj = Instantiate(messageEntryPrefab, messagesContent);
-            SetupMessageEntry(messageObj, entry);
+            GameObject messageObj =
+                Instantiate(
+                    messageEntryPrefab,
+                    messagesContent
+                );
+
+            SetupMessageEntry(
+                messageObj,
+                entry
+            );
         }
 
-        // Hacer scroll al final
+        // Scroll.
         ScrollToBottom();
     }
 
-    private List<DialogueEntry> GetFilteredMessages(string characterName)
+    // =========================================================
+    // FILTRAR MENSAJES
+    // =========================================================
+
+    private List<DialogueEntry> GetFilteredMessages(
+        string characterName)
     {
         if (characterName == "Todos")
         {
@@ -336,91 +605,267 @@ public class BacklogManager : MonoBehaviour
         return new List<DialogueEntry>();
     }
 
-    private void SetupMessageEntry(GameObject messageObj, DialogueEntry entry)
+    // =========================================================
+    // CONFIGURAR ENTRADA DE MENSAJE
+    // =========================================================
+
+    private void SetupMessageEntry(
+        GameObject messageObj,
+        DialogueEntry entry)
     {
-        // Intentar usar el script MessageEntryUI primero
-        MessageEntryUI messageUI = messageObj.GetComponent<MessageEntryUI>();
+        MessageEntryUI messageUI =
+            messageObj.GetComponent<MessageEntryUI>();
+
         if (messageUI != null)
         {
-            messageUI.Setup(entry.speakerName, entry.dialogueText, entry.timestamp);
+            messageUI.Setup(
+                entry.speakerName,
+                entry.dialogueText,
+                entry.timestamp
+            );
         }
         else
         {
-            // Fallback: configuración manual
-            TextMeshProUGUI speakerText = messageObj.transform.Find("SpeakerName")?.GetComponent<TextMeshProUGUI>();
-            TextMeshProUGUI messageText = messageObj.transform.Find("ContainerText/DialogueText")?.GetComponent<TextMeshProUGUI>();
-            TextMeshProUGUI timeText = messageObj.transform.Find("TimeText")?.GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI speakerText =
+                messageObj.transform
+                    .Find("SpeakerName")
+                    ?.GetComponent<TextMeshProUGUI>();
+
+            TextMeshProUGUI messageText =
+                messageObj.transform
+                    .Find("ContainerText/DialogueText")
+                    ?.GetComponent<TextMeshProUGUI>();
+
+            TextMeshProUGUI timeText =
+                messageObj.transform
+                    .Find("TimeText")
+                    ?.GetComponent<TextMeshProUGUI>();
 
             if (speakerText != null)
             {
-                speakerText.text = entry.speakerName;
-                speakerText.color = (entry.speakerName == "Lilith") ? playerColor : npcColor;
+                speakerText.text =
+                    entry.speakerName;
+
+                speakerText.color =
+                    entry.speakerName == "Lilith"
+                        ? playerColor
+                        : npcColor;
             }
-            if (messageText != null) messageText.text = entry.dialogueText;
-            if (timeText != null) timeText.text = entry.timestamp;
+
+            if (messageText != null)
+            {
+                messageText.text =
+                    entry.dialogueText;
+            }
+
+            if (timeText != null)
+            {
+                timeText.text =
+                    entry.timestamp;
+            }
         }
     }
+
+    // =========================================================
+    // SCROLL
+    // =========================================================
 
     private void ScrollToBottom()
     {
         Canvas.ForceUpdateCanvases();
-        ScrollRect scrollRect = messagesContent.parent.GetComponent<ScrollRect>();
+
+        if (messagesContent == null)
+            return;
+
+        ScrollRect scrollRect =
+            messagesContent.parent
+                .GetComponent<ScrollRect>();
+
         if (scrollRect != null)
         {
             scrollRect.verticalNormalizedPosition = 0f;
         }
     }
 
+    // =========================================================
+    // LIMPIAR BACKLOG
+    // =========================================================
+
     public void ClearBacklog()
     {
         allDialogueHistory.Clear();
+
         dialoguesByCharacter.Clear();
-        dialoguesByCharacter["Todos"] = new List<DialogueEntry>();
+
+        dialoguesByCharacter["Todos"] =
+            new List<DialogueEntry>();
 
         RefreshMessagesUI();
     }
 
-    // NUEVO: Método de debug para verificar botones
+    // =========================================================
+    // DEBUG BOTONES
+    // =========================================================
+
     private void DebugButtons()
     {
-        Debug.Log("=== DEBUG DE BOTONES DE PERSONAJES ===");
+        Debug.Log(
+            "=== BACKLOG DEBUG: BOTONES ==="
+        );
 
         if (characterButtons == null)
         {
-            Debug.LogError("characterButtons es null");
+            Debug.LogError(
+                "[BacklogManager] characterButtons es NULL."
+            );
+
             return;
         }
 
-        Debug.Log($"Total botones en lista: {characterButtons.Count}");
+        Debug.Log(
+            "Total botones: "
+            + characterButtons.Count
+        );
 
-        foreach (Button btn in characterButtons)
+        foreach (Button button in characterButtons)
         {
-            if (btn == null)
+            if (button == null)
             {
-                Debug.LogWarning("Botón null encontrado en la lista");
+                Debug.LogWarning(
+                    "Botón NULL encontrado."
+                );
+
                 continue;
             }
 
-            TextMeshProUGUI txt = btn.GetComponentInChildren<TextMeshProUGUI>();
-            string buttonName = txt != null ? txt.text : "SIN TEXTO";
-            Image img = btn.GetComponent<Image>();
+            TextMeshProUGUI text =
+                button.GetComponentInChildren<TextMeshProUGUI>();
 
-            Debug.Log($"Botón: {buttonName} | " +
-                     $"Interactable: {btn.interactable} | " +
-                     $"RaycastTarget: {(img != null ? img.raycastTarget.ToString() : "NO IMAGE")} | " +
-                     $"Listeners: {btn.onClick.GetPersistentEventCount()}");
+            string buttonName =
+                text != null
+                    ? text.text
+                    : "SIN TEXTO";
+
+            Image image =
+                button.GetComponent<Image>();
+
+            Debug.Log(
+                "Botón: "
+                + buttonName
+                + " | Interactable: "
+                + button.interactable
+                + " | Raycast: "
+                + (
+                    image != null
+                        ? image.raycastTarget.ToString()
+                        : "NO IMAGE"
+                  )
+                + " | PersistentListeners: "
+                + button.onClick.GetPersistentEventCount()
+            );
         }
 
-        Debug.Log("=== FIN DEBUG ===");
+        Debug.Log(
+            "=== FIN BACKLOG DEBUG ==="
+        );
     }
 
-    // NUEVO: Método para forzar la actualización desde el Inspector
+    // =========================================================
+    // ACTUALIZAR BOTONES MANUALMENTE
+    // =========================================================
+
     [ContextMenu("Forzar Actualización de Botones")]
     public void ForceRefreshButtons()
     {
         RefreshCharacterButtons();
         SetupCharacterButtons();
         DebugButtons();
-        Debug.Log("Actualización de botones forzada completada");
+
+        Debug.Log(
+            "[BacklogManager] Actualización forzada completada."
+        );
+    }
+
+    // =========================================================
+    // CAMBIO DE ESCENA
+    // =========================================================
+
+    public void UpdateUIReferences(
+        BacklogManager newSceneManager)
+    {
+        if (newSceneManager == null)
+        {
+            Debug.LogError(
+                "[BacklogManager] newSceneManager es NULL."
+            );
+
+            return;
+        }
+
+        Debug.Log(
+            "[BacklogManager] Actualizando referencias "
+            + "con la UI de la nueva escena."
+        );
+
+        // -----------------------------------------------------
+        // REFERENCIAS DEL NUEVO CANVAS
+        // -----------------------------------------------------
+
+        backlogPanel =
+            newSceneManager.backlogPanel;
+
+        charactersPanel =
+            newSceneManager.charactersPanel;
+
+        messagesContent =
+            newSceneManager.messagesContent;
+
+        messageEntryPrefab =
+            newSceneManager.messageEntryPrefab;
+
+        selectedCharacterText =
+            newSceneManager.selectedCharacterText;
+
+        // -----------------------------------------------------
+        // CERRAR BACKLOG
+        // -----------------------------------------------------
+
+        isBacklogOpen = false;
+
+        if (backlogPanel != null)
+        {
+            backlogPanel.SetActive(false);
+        }
+
+        // -----------------------------------------------------
+        // MUY IMPORTANTE:
+        // DETECTAR LOS BOTONES DEL NUEVO CANVAS
+        // -----------------------------------------------------
+
+        RefreshCharacterButtons();
+
+        // -----------------------------------------------------
+        // CREAR LOS LISTENERS SOBRE LOS NUEVOS BOTONES
+        // -----------------------------------------------------
+
+        SetupCharacterButtons();
+
+        // -----------------------------------------------------
+        // RAYCAST
+        // -----------------------------------------------------
+
+        FixRaycastOrder();
+
+        // -----------------------------------------------------
+        // DEBUG
+        // -----------------------------------------------------
+
+        DebugButtons();
+
+        Debug.Log(
+            "[BacklogManager] Referencias de UI actualizadas "
+            + "correctamente."
+        );
     }
 }
+
