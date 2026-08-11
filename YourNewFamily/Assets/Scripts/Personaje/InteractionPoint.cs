@@ -110,7 +110,7 @@ public class InteractionPoint : MonoBehaviour
             return;
         }
 
-        Debug.LogError("No hay ningún sistema de diálogo asignado en " + gameObject.name);
+        Debug.Log("No hay ningún sistema de diálogo asignado en " + gameObject.name);
     }
 
     // Métodos públicos para configuración
