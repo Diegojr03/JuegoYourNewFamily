@@ -16,7 +16,6 @@ public class LoreNoteSystem : MonoBehaviour
     [Header("Nota Gigante (Visual en Pantalla)")]
     public Transform giantNoteTransform;
     public SpriteRenderer giantSprite;
-    public Vector3 giantScale = new Vector3(1.5f, 1.5f, 1f);
 
     [Range(0f, 1f)]
     public float verticalPositionPercent = 0.5f; // 0.5 = Centro exacto de la pantalla
@@ -178,7 +177,6 @@ public class LoreNoteSystem : MonoBehaviour
         if (giantNoteTransform != null)
         {
             giantNoteTransform.position = hiddenPosition;
-            giantNoteTransform.localScale = giantScale;
 
             yield return StartCoroutine(
                 MoveNote(targetPosition)
@@ -198,6 +196,8 @@ public class LoreNoteSystem : MonoBehaviour
         {
             scrollRect.verticalNormalizedPosition = 1f;
         }
+
+        PrepareTextForDisplay();
 
         // Activar UI y hacer el Fade In
         if (noteUIPanel != null)
@@ -384,79 +384,45 @@ public class LoreNoteSystem : MonoBehaviour
 
         if (noteTextAsset == null)
         {
-            Debug.LogWarning(
-                "No se ha asignado un archivo de texto a esta nota."
-            );
-
+            Debug.LogWarning("No se ha asignado un archivo de texto a esta nota.");
             yield break;
         }
 
         isTyping = true;
 
-        // Obtener el texto del archivo .txt
-        // y añadir dos líneas vacías al final.
+        // 1. Asignar el texto de la nota
         string text = noteTextAsset.text + "\n\n";
-
-        // Poner el texto completo temporalmente
-        // para que TMP pueda calcular correctamente
-        // su tamaño real.
         noteTextUI.text = text;
-        noteTextUI.maxVisibleCharacters = int.MaxValue;
+        noteTextUI.maxVisibleCharacters = 0; // Ocultar texto mientras se calcula
 
-        // Forzar actualización de TMP
+        // 2. Esperar a que los canvas y el layout de TMP se actualicen tras la activación
+        yield return new WaitForEndOfFrame();
+
         noteTextUI.ForceMeshUpdate();
-
-        // Esperar un frame para que Unity actualice el Layout
-        yield return null;
-
         Canvas.ForceUpdateCanvases();
 
-        // Obtener la altura real que necesita el texto
-        float textHeight = noteTextUI.preferredHeight;
-
-        Debug.Log(
-            "ALTURA REAL DEL TEXTO: " + textHeight
-        );
-
-        // Cambiar la altura del Content
+        // 3. Ajustar la altura del Content en el ScrollView
         if (scrollRect != null && scrollRect.content != null)
         {
-            RectTransform content = scrollRect.content;
-
-            content.SetSizeWithCurrentAnchors(
-                RectTransform.Axis.Vertical,
-                textHeight
-            );
+            float textHeight = noteTextUI.preferredHeight;
+            scrollRect.content.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, textHeight);
 
             Canvas.ForceUpdateCanvases();
-
-            Debug.Log(
-                "ALTURA FINAL DEL CONTENT: " +
-                content.rect.height
-            );
-
-            // Empezar arriba
-            scrollRect.verticalNormalizedPosition = 1f;
+            scrollRect.verticalNormalizedPosition = 1f; // Scroll arriba del todo
         }
 
-        // Comenzar el efecto de escritura
-        noteTextUI.maxVisibleCharacters = 0;
-
-        int totalCharacters =
-            noteTextUI.textInfo.characterCount;
+        // 4. Bucle del efecto de máquina de escribir
+        // Se usa text.Length para garantizar que recorra todos los caracteres
+        int totalCharacters = text.Length;
 
         for (int i = 0; i <= totalCharacters; i++)
         {
             noteTextUI.maxVisibleCharacters = i;
-
-            yield return new WaitForSeconds(
-                typewriterSpeed
-            );
+            yield return new WaitForSeconds(typewriterSpeed);
         }
 
-        // Mostrar todo al terminar
+        // Asegurar que al finalizar se muestre todo sin límite
         noteTextUI.maxVisibleCharacters = int.MaxValue;
-
         isTyping = false;
 
         Canvas.ForceUpdateCanvases();
@@ -509,6 +475,27 @@ public class LoreNoteSystem : MonoBehaviour
             isPlayerInside = false;
 
             InteractionPromptManager.Instance?.HidePrompt();
+        }
+    }
+
+    private void PrepareTextForDisplay()
+    {
+        if (noteTextUI == null || noteTextAsset == null)
+            return;
+
+        // Asignar el texto completo (incluyendo saltos de línea si quieres)
+        noteTextUI.text = noteTextAsset.text + "\n\n";
+        // Ocultar todos los caracteres
+        noteTextUI.maxVisibleCharacters = 0;
+        noteTextUI.ForceMeshUpdate();
+
+        // Ajustar la altura del Content del ScrollView
+        if (scrollRect != null && scrollRect.content != null)
+        {
+            float textHeight = noteTextUI.preferredHeight;
+            scrollRect.content.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, textHeight);
+            Canvas.ForceUpdateCanvases();
+            scrollRect.verticalNormalizedPosition = 1f; // Arriba del todo
         }
     }
 }
