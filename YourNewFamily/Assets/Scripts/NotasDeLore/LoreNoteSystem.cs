@@ -221,24 +221,24 @@ public class LoreNoteSystem : MonoBehaviour
     {
         isAnimating = true;
 
-        // Fade Out del panel completo
-        // Fondo + Texto
-        yield return StartCoroutine(
-            FadeCanvasGroup(1f, 0f, fadeDuration)
-        );
-
-        if (noteUIPanel != null)
-            noteUIPanel.SetActive(false);
-
-        // Animación de bajada de la nota hacia el fondo
         CalculatePositions();
+
+        // 1. Ejecutar el Fade Out y el movimiento de bajada EN PARALELO para ahorrar tiempo
+        Coroutine fadeCoroutine = StartCoroutine(FadeCanvasGroup(1f, 0f, fadeDuration * 0.5f)); // Fade 2x más rápido
+        Coroutine moveCoroutine = null;
 
         if (giantNoteTransform != null)
         {
-            yield return StartCoroutine(
-                MoveNote(hiddenPosition)
-            );
+            // Pasamos un multiplicador de velocidad 2.5f para que baje mucho más rápido
+            moveCoroutine = StartCoroutine(MoveNote(hiddenPosition, 2.5f));
         }
+
+        // Esperar a que ambas animaciones terminen
+        if (fadeCoroutine != null) yield return fadeCoroutine;
+        if (moveCoroutine != null) yield return moveCoroutine;
+
+        if (noteUIPanel != null)
+            noteUIPanel.SetActive(false);
 
         // Registrar lectura en SaveManager
         if (!string.IsNullOrEmpty(noteId) && SaveManager.Instance != null)
@@ -251,17 +251,11 @@ public class LoreNoteSystem : MonoBehaviour
         {
             if (obj != null)
             {
-                SaveableObject saveable =
-                    obj.GetComponent<SaveableObject>();
-
+                SaveableObject saveable = obj.GetComponent<SaveableObject>();
                 if (saveable != null && SaveManager.Instance != null)
                 {
-                    SaveManager.Instance.RegisterObjectState(
-                        saveable.objectId,
-                        true
-                    );
+                    SaveManager.Instance.RegisterObjectState(saveable.objectId, true);
                 }
-
                 obj.SetActive(true);
             }
         }
@@ -271,22 +265,16 @@ public class LoreNoteSystem : MonoBehaviour
         {
             if (obj != null)
             {
-                SaveableObject saveable =
-                    obj.GetComponent<SaveableObject>();
-
+                SaveableObject saveable = obj.GetComponent<SaveableObject>();
                 if (saveable != null && SaveManager.Instance != null)
                 {
-                    SaveManager.Instance.RegisterObjectState(
-                        saveable.objectId,
-                        false
-                    );
+                    SaveManager.Instance.RegisterObjectState(saveable.objectId, false);
                 }
-
                 obj.SetActive(false);
             }
         }
 
-        // Restablecer movimiento del jugador
+        // Restablecer movimiento del jugador inmediatamente
         if (playerMovement != null)
             playerMovement.enabled = true;
 
@@ -299,24 +287,16 @@ public class LoreNoteSystem : MonoBehaviour
         // Destruir o reactivar interacción
         if (destroyAfterRead)
         {
-            SaveableObject thisSaveable =
-                GetComponent<SaveableObject>();
-
+            SaveableObject thisSaveable = GetComponent<SaveableObject>();
             if (thisSaveable != null && SaveManager.Instance != null)
             {
-                SaveManager.Instance.RegisterObjectState(
-                    thisSaveable.objectId,
-                    false
-                );
+                SaveManager.Instance.RegisterObjectState(thisSaveable.objectId, false);
             }
-
             Destroy(gameObject);
         }
         else if (isPlayerInside)
         {
-            InteractionPoint point =
-                GetComponent<InteractionPoint>();
-
+            InteractionPoint point = GetComponent<InteractionPoint>();
             if (point != null)
             {
                 InteractionPromptManager.Instance?.ShowPrompt(point);
@@ -325,21 +305,17 @@ public class LoreNoteSystem : MonoBehaviour
     }
 
 
-    private IEnumerator MoveNote(Vector2 target)
+    private IEnumerator MoveNote(Vector2 target, float speedMultiplier = 1f)
     {
-        while (
-            Vector2.Distance(
-                giantNoteTransform.position,
-                target
-            ) > 0.05f
-        )
+        float currentSpeed = moveSpeed * speedMultiplier;
+
+        while (Vector2.Distance(giantNoteTransform.position, target) > 0.05f)
         {
-            giantNoteTransform.position =
-                Vector2.Lerp(
-                    giantNoteTransform.position,
-                    target,
-                    moveSpeed * Time.deltaTime
-                );
+            giantNoteTransform.position = Vector2.Lerp(
+                giantNoteTransform.position,
+                target,
+                currentSpeed * Time.deltaTime
+            );
 
             yield return null;
         }
