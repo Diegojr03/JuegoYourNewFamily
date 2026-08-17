@@ -1,15 +1,15 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuPausa : MonoBehaviour
 {
     [Header("Referencias UI")]
-    public GameObject menuPausa;          // Panel del menú de pausa
+    public GameObject menuPausa;          // Panel del menÃº de pausa
     public GameObject panelOpciones;       // Panel de opciones
     public Slider sliderVolumen;           // Slider para controlar el volumen
 
-    [Header("Configuración")]
+    [Header("ConfiguraciÃ³n")]
     public string nombreEscenaMenu = "MainMenu";
 
     private bool juegoPausado = false;
@@ -21,7 +21,7 @@ public class MenuPausa : MonoBehaviour
         Time.timeScale = 1f;
         juegoPausado = false;
 
-        // Ocultar menús al inicio
+        // Ocultar menÃºs al inicio
         if (menuPausa != null) menuPausa.SetActive(false);
         if (panelOpciones != null) panelOpciones.SetActive(false);
 
@@ -61,7 +61,7 @@ public class MenuPausa : MonoBehaviour
 
         // Luego agregamos el listener
         sliderVolumen.onValueChanged.AddListener((valor) => {
-            Debug.Log($"SLIDER CAMBIÓ A: {valor}");
+            Debug.Log($"SLIDER CAMBIÃ“ A: {valor}");
             if (musicManager != null)
             {
                 musicManager.SetVolume(valor);
