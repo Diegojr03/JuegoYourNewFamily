@@ -27002,8 +27002,8 @@ MonoBehaviour:
   interactionKey: 102
   noteTextAsset: {fileID: 4900000, guid: 48deb19256320984080180b328f2c5df, type: 3}
   noteSprite: {fileID: -1072258094547337354, guid: c3a13d4727c105242a42d4832313e293, type: 3}
-  giantNoteTransform: {fileID: 1806346500}
-  giantSprite: {fileID: 1806346502}
+  giantNoteTransform: {fileID: 607453432}
+  giantSprite: {fileID: 607453434}
   verticalPositionPercent: 0.5
   moveSpeed: 3.5
   noteUIPanel: {fileID: 72553378}
