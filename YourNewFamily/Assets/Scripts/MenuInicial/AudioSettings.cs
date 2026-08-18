@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 
 public class AudioSettings : MonoBehaviour
@@ -10,8 +10,8 @@ public class AudioSettings : MonoBehaviour
     public Slider musicSlider;
     public Slider sfxSlider;
 
-    [Header("Configuración de Música")]
-    public AudioClip[] musicTracks; // Arrastra aquí tus 3 canciones
+    [Header("Configuraciï¿½n de Mï¿½sica")]
+    public AudioClip[] musicTracks; // Arrastra aquï¿½ tus 3 canciones
     public bool shuffleTracks = false; // Opcional: reproducir en orden aleatorio
 
     private int currentTrackIndex = 0;
@@ -29,7 +29,7 @@ public class AudioSettings : MonoBehaviour
         SetMusicVolume(musicSlider.value);
         SetSFXVolume(sfxSlider.value);
 
-        // Iniciar reproducción de música si hay tracks
+        // Iniciar reproducciï¿½n de mï¿½sica si hay tracks
         if (musicTracks != null && musicTracks.Length > 0)
         {
             StartMusicPlaylist();
@@ -38,7 +38,7 @@ public class AudioSettings : MonoBehaviour
 
     void Update()
     {
-        // Verificar si la canción actual terminó y pasar a la siguiente
+        // Verificar si la canciï¿½n actual terminï¿½ y pasar a la siguiente
         if (isMusicPlaying && musicSource != null && !musicSource.isPlaying)
         {
             PlayNextTrack();
@@ -86,7 +86,7 @@ public class AudioSettings : MonoBehaviour
         PlayCurrentTrack();
     }
 
-    // Método público para forzar cambio de canción (opcional)
+    // Mï¿½todo pï¿½blico para forzar cambio de canciï¿½n (opcional)
     public void SkipToNextTrack()
     {
         if (isMusicPlaying)
@@ -121,7 +121,7 @@ public class AudioSettings : MonoBehaviour
         PlayerPrefs.SetFloat("SFXVolume", value);
     }
 
-    // Métodos adicionales para control de música
+    // Mï¿½todos adicionales para control de mï¿½sica
     public void PauseMusic()
     {
         if (musicSource != null)

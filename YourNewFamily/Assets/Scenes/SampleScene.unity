@@ -37239,6 +37239,10 @@ MonoBehaviour:
   - MenuInicial
   scenesToResumeMusic:
   - SampleScene
+  - 2daParte
+  - Creditos
+  - DialogoFinalLilith
+  - FinDelJuego
 --- !u!4 &995029975
 Transform:
   m_ObjectHideFlags: 0

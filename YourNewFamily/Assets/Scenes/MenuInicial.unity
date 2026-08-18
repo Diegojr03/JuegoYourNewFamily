@@ -288,16 +288,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca784e90aba759a41ae42e027c2928af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSource: {fileID: 0}
-  sfxSource: {fileID: 0}
-  masterSlider: {fileID: 0}
   musicSlider: {fileID: 1666053438}
-  sfxSlider: {fileID: 0}
-  musicTracks:
-  - {fileID: 8300000, guid: 384efa33c271d3d44a824e670cdb8e67, type: 3}
-  - {fileID: 8300000, guid: 8d6ba3689bae7d04a9b76ebc808b5035, type: 3}
-  - {fileID: 8300000, guid: 81a74b4e9e0f2364c8d371ec68e20482, type: 3}
-  shuffleTracks: 0
+  musicSource: {fileID: 0}
+  menuMusicClip: {fileID: 0}
 --- !u!1 &132667413
 GameObject:
   m_ObjectHideFlags: 0
@@ -1658,14 +1651,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca784e90aba759a41ae42e027c2928af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSource: {fileID: 470641300}
-  sfxSource: {fileID: 0}
-  masterSlider: {fileID: 0}
   musicSlider: {fileID: 1666053438}
-  sfxSlider: {fileID: 0}
-  musicTracks:
-  - {fileID: 8300000, guid: 5dd4f9155306800489e91e4851e36ca2, type: 3}
-  shuffleTracks: 0
+  musicSource: {fileID: 470641300}
+  menuMusicClip: {fileID: 8300000, guid: 5dd4f9155306800489e91e4851e36ca2, type: 3}
 --- !u!82 &470641300
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1855,8 +1843,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 905dad08d4051234ebc773e9f00b2fb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resolutionDropdown: {fileID: 0}
-  qualityDropdown: {fileID: 0}
   fullscreenToggle: {fileID: 606789767}
   vsyncToggle: {fileID: 1631719942}
 --- !u!1 &529491219
