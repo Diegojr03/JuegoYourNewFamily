@@ -3020,7 +3020,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 19.960001, y: 12.940572}
+    oldSize: {x: 13.823375, y: 12.799999}
     newSize: {x: 17.340002, y: 12.980574}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3072,7 +3072,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -1072258094547337354, guid: c3a13d4727c105242a42d4832313e293, type: 3}
+  m_Sprite: {fileID: -4044822811767486653, guid: ea2004c84eced4d4c9332311c1465829, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3773,7 +3773,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: 4704073244319040601, guid: c48e9b403acebb7449581c8a1e23b27c, type: 3}
+  m_Sprite: {fileID: 4704073244319040601, guid: c1b0d59a8d93aa2449c22bd17735a03d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -24494,7 +24494,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -1072258094547337354, guid: c3a13d4727c105242a42d4832313e293, type: 3}
+  m_Sprite: {fileID: -6098856227541219170, guid: 17162e67a55490d46a97284c7375d340, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -31173,7 +31173,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -1072258094547337354, guid: c3a13d4727c105242a42d4832313e293, type: 3}
+  m_Sprite: {fileID: -4044822811767486653, guid: ea2004c84eced4d4c9332311c1465829, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -33823,7 +33823,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -1072258094547337354, guid: c3a13d4727c105242a42d4832313e293, type: 3}
+  m_Sprite: {fileID: -4090991330421265385, guid: 67d216789772cfb4f862365a687d39a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -41792,7 +41792,7 @@ MonoBehaviour:
   characterRight: {fileID: 1949568917}
   spriteLeft: {fileID: 1783678098}
   spriteRight: {fileID: 1949568916}
-  defaultLeftSprite: {fileID: 4704073244319040601, guid: c48e9b403acebb7449581c8a1e23b27c, type: 3}
+  defaultLeftSprite: {fileID: 4704073244319040601, guid: c1b0d59a8d93aa2449c22bd17735a03d, type: 3}
   defaultRightSprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
   dialoguePanel: {fileID: 1834269160}
   speakerText: {fileID: 1659188321}
@@ -41808,7 +41808,7 @@ MonoBehaviour:
   - speakerName: Gamma
     dialogueText: "Anda Lilith, \xBFqu\xE9 tal vas con la gente?"
     leftSpeaker: 1
-    characterSprite: {fileID: -4831706047985285938, guid: 48f0af39b873952428ee854ea160813c, type: 3}
+    characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -41825,7 +41825,7 @@ MonoBehaviour:
   - speakerName: Gamma
     dialogueText: "Todav\xEDa me estoy adaptando a esto, eso s\xED,"
     leftSpeaker: 1
-    characterSprite: {fileID: -4831706047985285938, guid: 48f0af39b873952428ee854ea160813c, type: 3}
+    characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -41834,7 +41834,7 @@ MonoBehaviour:
     dialogueText: "he escuchado rumores de un n\xE9ctar que te quita el mono y ahora
       mismo estoy con mucha necesidad."
     leftSpeaker: 1
-    characterSprite: {fileID: -4831706047985285938, guid: 48f0af39b873952428ee854ea160813c, type: 3}
+    characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -41842,7 +41842,7 @@ MonoBehaviour:
   - speakerName: Gamma
     dialogueText: Puf, necesito ir a probarlo, estoy que no me mantengo en pie.
     leftSpeaker: 1
-    characterSprite: {fileID: -4831706047985285938, guid: 48f0af39b873952428ee854ea160813c, type: 3}
+    characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -43916,7 +43916,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 19.960001, y: 12.940572}
+    oldSize: {x: 15.723839, y: 12.570001}
     newSize: {x: 17.340002, y: 12.980574}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -43968,7 +43968,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -1072258094547337354, guid: c3a13d4727c105242a42d4832313e293, type: 3}
+  m_Sprite: {fileID: 7325919807087077963, guid: 9b0d9f0690478dc41a252ed024aab134, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -46416,7 +46416,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -2317544566924628521, guid: 4b6f621ca4c647647b6a1d59faed6d03, type: 3}
+  m_Sprite: {fileID: -2317544566924628521, guid: 92c9d05a04edb6341a3a9c8931e15915, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -52126,7 +52126,7 @@ MonoBehaviour:
     dialogueText: "\xBFTu tambi\xE9n vienes de retiro? \xBFY a ti quien te hablo
       de esto?"
     leftSpeaker: 1
-    characterSprite: {fileID: -4831706047985285938, guid: 48f0af39b873952428ee854ea160813c, type: 3}
+    characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 0
     choices:
     - choiceText: "A) Si, me dijeron que ser\xEDa un nuevo comienzo"
@@ -52143,7 +52143,7 @@ MonoBehaviour:
     dialogueText: "As\xED que un nuevo comienzo eh \u2026 En un, qu\xE9 m\xE1s da,
       tampoco hab\xEDa nada mejor que hacer que esto. Al menos es un cambio \xBFno?"
     leftSpeaker: 1
-    characterSprite: {fileID: -4831706047985285938, guid: 48f0af39b873952428ee854ea160813c, type: 3}
+    characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 0
     choices: []
     giveItemAfterThisLine: 0
@@ -52154,7 +52154,7 @@ MonoBehaviour:
     dialogueText: "Yo lo perd\xED todo: el piso, la familia, mi hija, los amigos.
       Toooodo a la mierda"
     leftSpeaker: 1
-    characterSprite: {fileID: -4831706047985285938, guid: 48f0af39b873952428ee854ea160813c, type: 3}
+    characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 0
     choices: []
     giveItemAfterThisLine: 0
@@ -52165,7 +52165,7 @@ MonoBehaviour:
     dialogueText: "Un tal Alpha me encontr\xF3 en un callej\xF3n. Estaba drogada
       y otros yonkis del barrio estaban d\xE1ndome una paliza"
     leftSpeaker: 1
-    characterSprite: {fileID: -4831706047985285938, guid: 48f0af39b873952428ee854ea160813c, type: 3}
+    characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 0
     choices: []
     giveItemAfterThisLine: 0
@@ -52176,7 +52176,7 @@ MonoBehaviour:
     dialogueText: "Los acompa\xF1antes de ese se\xF1or espantaron a mis atacantes.
       Alpha me habl\xF3 de este lugar\u2026 un retiro en las monta\xF1as o algo as\xED"
     leftSpeaker: 1
-    characterSprite: {fileID: -4831706047985285938, guid: 48f0af39b873952428ee854ea160813c, type: 3}
+    characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 0
     choices: []
     giveItemAfterThisLine: 0
@@ -52187,7 +52187,7 @@ MonoBehaviour:
     dialogueText: Dijo que no sale en los mapas, es un lugar justo para los rechazados
       como nosotros
     leftSpeaker: 1
-    characterSprite: {fileID: -4831706047985285938, guid: 48f0af39b873952428ee854ea160813c, type: 3}
+    characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 0
     choices: []
     giveItemAfterThisLine: 0
@@ -52198,7 +52198,7 @@ MonoBehaviour:
     dialogueText: "En fin\u2026 Solo s\xE9 que llevo unas horas sin tomar nada y
       necesito algo ya o me volver\xE9 loca"
     leftSpeaker: 1
-    characterSprite: {fileID: -4831706047985285938, guid: 48f0af39b873952428ee854ea160813c, type: 3}
+    characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 0
     choices: []
     giveItemAfterThisLine: 0
@@ -52209,7 +52209,7 @@ MonoBehaviour:
     dialogueText: "\xBFTienes algo? , alguna pastilla, lo que sea. Cualquier cosa
       me vale, no s\xE9 si ser\xE9 capaz de aguantar este viaje sino."
     leftSpeaker: 1
-    characterSprite: {fileID: -4831706047985285938, guid: 48f0af39b873952428ee854ea160813c, type: 3}
+    characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 1
     choices: []
     giveItemAfterThisLine: 0
@@ -52219,7 +52219,7 @@ MonoBehaviour:
   - speakerName: Gamma
     dialogueText: Me refiero a que somos productos de caridad. No tenemos donde ir.
     leftSpeaker: 1
-    characterSprite: {fileID: -4831706047985285938, guid: 48f0af39b873952428ee854ea160813c, type: 3}
+    characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 0
     choices: []
     giveItemAfterThisLine: 0
@@ -52230,7 +52230,7 @@ MonoBehaviour:
     dialogueText: "Ese tipo es raro, pero bueno, nos ha tendido una mano as\xED que
       supongo que le tendr\xE9 que estar agradecida."
     leftSpeaker: 1
-    characterSprite: {fileID: -4831706047985285938, guid: 48f0af39b873952428ee854ea160813c, type: 3}
+    characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 0
     choices: []
     giveItemAfterThisLine: 0
@@ -52241,7 +52241,7 @@ MonoBehaviour:
     dialogueText: Sienta bien que alguien no te trate como un despojo humano de vez
       en cuando.
     leftSpeaker: 1
-    characterSprite: {fileID: -4831706047985285938, guid: 48f0af39b873952428ee854ea160813c, type: 3}
+    characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 0
     choices: []
     giveItemAfterThisLine: 0
@@ -52252,7 +52252,7 @@ MonoBehaviour:
     dialogueText: "Dijo que en este lugar podr\xEDa mejorar. Pero esto de estar sobria\u2026
       Que horror."
     leftSpeaker: 1
-    characterSprite: {fileID: -4831706047985285938, guid: 48f0af39b873952428ee854ea160813c, type: 3}
+    characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 0
     choices: []
     giveItemAfterThisLine: 0
@@ -52263,7 +52263,7 @@ MonoBehaviour:
     dialogueText: "Sientes cada nervio, cada pensamiento de mierda. \xBFNo trajiste
       nada para el viaje?"
     leftSpeaker: 1
-    characterSprite: {fileID: -4831706047985285938, guid: 48f0af39b873952428ee854ea160813c, type: 3}
+    characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 0
     choices:
     - choiceText: "A) No tengo nada. Y aunque lo tuviera, no te lo dar\xEDa. Se supone
@@ -52284,7 +52284,7 @@ MonoBehaviour:
       limpia, Solo se cambia una mierda por otra. Espero que all\xED al menos den
       algo fuerte"
     leftSpeaker: 1
-    characterSprite: {fileID: -4831706047985285938, guid: 48f0af39b873952428ee854ea160813c, type: 3}
+    characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 1
     choices: []
     giveItemAfterThisLine: 0
@@ -52295,7 +52295,7 @@ MonoBehaviour:
     dialogueText: "\xBFCrees? Si\u2026 si, deben tener algo. Alpha parece saber de
       nosotros, debe tener algo bueno, algo que nos ayude."
     leftSpeaker: 1
-    characterSprite: {fileID: -4831706047985285938, guid: 48f0af39b873952428ee854ea160813c, type: 3}
+    characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 1
     choices: []
     giveItemAfterThisLine: 0
@@ -52305,7 +52305,7 @@ MonoBehaviour:
   - speakerName: Gamma
     dialogueText: "\xBFVes? T\xFA tambi\xE9n lo sientes. Este vac\xEDo... es insoportable."
     leftSpeaker: 1
-    characterSprite: {fileID: -4831706047985285938, guid: 48f0af39b873952428ee854ea160813c, type: 3}
+    characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 0
     choices: []
     giveItemAfterThisLine: 0
@@ -52316,7 +52316,7 @@ MonoBehaviour:
     dialogueText: "Prometamos que si hay algo all\xED, lo probamos juntas. No para
       volver a caer, solo... para pasar el d\xEDa."
     leftSpeaker: 1
-    characterSprite: {fileID: -4831706047985285938, guid: 48f0af39b873952428ee854ea160813c, type: 3}
+    characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 1
     choices: []
     giveItemAfterThisLine: 0
@@ -52334,7 +52334,7 @@ MonoBehaviour:
   characterRight: {fileID: 1668831008}
   spriteLeft: {fileID: 83299142}
   spriteRight: {fileID: 1668831007}
-  defaultLeftSprite: {fileID: 4704073244319040601, guid: c48e9b403acebb7449581c8a1e23b27c, type: 3}
+  defaultLeftSprite: {fileID: 4704073244319040601, guid: c1b0d59a8d93aa2449c22bd17735a03d, type: 3}
   defaultRightSprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
   moveSpeed: 5
   dialogueCooldown: 0.05
@@ -53425,7 +53425,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 19.960001, y: 12.940572}
+    oldSize: {x: 9.532327, y: 13.79}
     newSize: {x: 17.340002, y: 12.980574}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -53477,7 +53477,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -1072258094547337354, guid: c3a13d4727c105242a42d4832313e293, type: 3}
+  m_Sprite: {fileID: -6098856227541219170, guid: 17162e67a55490d46a97284c7375d340, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -56404,7 +56404,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: 4704073244319040601, guid: c48e9b403acebb7449581c8a1e23b27c, type: 3}
+  m_Sprite: {fileID: 4704073244319040601, guid: c1b0d59a8d93aa2449c22bd17735a03d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -59617,7 +59617,7 @@ MonoBehaviour:
   characterRight: {fileID: 1964579347}
   spriteLeft: {fileID: 1224690101}
   spriteRight: {fileID: 1964579348}
-  defaultLeftSprite: {fileID: -2317544566924628521, guid: 4b6f621ca4c647647b6a1d59faed6d03, type: 3}
+  defaultLeftSprite: {fileID: -2317544566924628521, guid: 92c9d05a04edb6341a3a9c8931e15915, type: 3}
   defaultRightSprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
   dialoguePanel: {fileID: 1834269160}
   speakerText: {fileID: 1659188321}
@@ -59633,7 +59633,7 @@ MonoBehaviour:
   - speakerName: Amara
     dialogueText: "\xA1Silas nos ha dicho que est\xE1s ayudando! Muchas gracias!"
     leftSpeaker: 1
-    characterSprite: {fileID: -4329823784585237373, guid: 8e03407ffd6ece243bd6500539fcefb1, type: 3}
+    characterSprite: {fileID: -4329823784585237373, guid: 87e2d9a7bbf0b7b4a8e1b7e17189c889, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -59642,7 +59642,7 @@ MonoBehaviour:
     dialogueText: "Es tan bonito saber que los nuevos ya forman parte de la familia
       desde el primer d\xEDa"
     leftSpeaker: 1
-    characterSprite: {fileID: -4329823784585237373, guid: 8e03407ffd6ece243bd6500539fcefb1, type: 3}
+    characterSprite: {fileID: -4329823784585237373, guid: 87e2d9a7bbf0b7b4a8e1b7e17189c889, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -68151,7 +68151,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: 4704073244319040601, guid: c48e9b403acebb7449581c8a1e23b27c, type: 3}
+  m_Sprite: {fileID: 4704073244319040601, guid: c1b0d59a8d93aa2449c22bd17735a03d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -69998,7 +69998,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 19.960001, y: 12.940572}
+    oldSize: {x: 0.100024424, y: 0.099999994}
     newSize: {x: 17.340002, y: 12.980574}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -70050,7 +70050,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -1072258094547337354, guid: c3a13d4727c105242a42d4832313e293, type: 3}
+  m_Sprite: {fileID: -4090991330421265385, guid: 67d216789772cfb4f862365a687d39a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -75163,7 +75163,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -1072258094547337354, guid: c3a13d4727c105242a42d4832313e293, type: 3}
+  m_Sprite: {fileID: 7325919807087077963, guid: 9b0d9f0690478dc41a252ed024aab134, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
