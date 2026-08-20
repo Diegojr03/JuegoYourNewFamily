@@ -16,6 +16,7 @@ public class SaveData
     public List<string> completedPaths = new List<string>();
     public List<ObjectState> objectStates = new List<ObjectState>();
     public List<string> unlockedZones = new List<string>();
+    public List<string> destroyedObjects = new List<string>();
     public float cameraX;
     public float cameraY;
     public float cameraSize;
@@ -127,6 +128,15 @@ public class SaveManager : MonoBehaviour
         Debug.Log("💾 Partida guardada en: " + savePath);
     }
 
+    public void RegisterObjectDestroyed(string objectId)
+    {
+        if (string.IsNullOrEmpty(objectId)) return;
+        if (!currentSave.destroyedObjects.Contains(objectId))
+            currentSave.destroyedObjects.Add(objectId);
+        // Elimina su estado de activación si existía
+        objectStates.Remove(objectId);
+    }
+
     // ---------- CARGAR ----------
     public bool LoadGame()
     {
@@ -164,6 +174,15 @@ public class SaveManager : MonoBehaviour
 
         if (isLoadingFromSave)
         {
+            SaveableObject[] allSaveables = FindObjectsOfType<SaveableObject>(true);
+            foreach (SaveableObject so in allSaveables)
+            {
+                if (currentSave.destroyedObjects.Contains(so.objectId))
+                {
+                    Destroy(so.gameObject);
+                }
+            }
+
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             if (player != null)
             {

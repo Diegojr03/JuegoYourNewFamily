@@ -244,8 +244,10 @@ public class DialogueSystem : MonoBehaviour
             {
                 SaveableObject saveable = obj.GetComponent<SaveableObject>();
                 if (saveable != null && SaveManager.Instance != null)
-                    SaveManager.Instance.RegisterObjectState(saveable.objectId, false);
-                obj.SetActive(false);
+                {
+                    SaveManager.Instance.RegisterObjectDestroyed(saveable.objectId);
+                }
+                Destroy(obj);
             }
         }
 
@@ -254,7 +256,7 @@ public class DialogueSystem : MonoBehaviour
         {
             SaveableObject thisSaveable = GetComponent<SaveableObject>();
             if (thisSaveable != null && SaveManager.Instance != null)
-                SaveManager.Instance.RegisterObjectState(thisSaveable.objectId, false);
+                SaveManager.Instance.RegisterObjectDestroyed(thisSaveable.objectId);
             Destroy(gameObject);
         }
         else
