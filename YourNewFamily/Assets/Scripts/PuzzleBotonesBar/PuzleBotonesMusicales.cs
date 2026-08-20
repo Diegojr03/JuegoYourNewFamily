@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,81 +8,100 @@ using TMPro;
 public class PuzzleBotonesMusicales : MonoBehaviour
 {
     [System.Serializable]
-    public class BotonConfig
+    public class ImagenArrastrableConfig
     {
-        public Button boton;
-        public Image imagenBoton;
+        public Image imagen;
+        public RectTransform rectTransform;
         public AudioClip sonidoBoton;
         public bool esCorrecto = false;
         [HideInInspector] public bool colocado = false;
-        [HideInInspector] public bool pulsado = false;
         [HideInInspector] public Vector3 posicionOriginal;
         [HideInInspector] public Color colorOriginal;
-        [HideInInspector] public int siblingIndexOriginal; // NUEVO: Guardar orden en jerarqu�a
+        [HideInInspector] public int idCorrecto;
+        [HideInInspector] public bool estaSiendoArrastrada = false;
     }
 
     [System.Serializable]
-    public class HuecoConfig
+    public class HuecoArrastreConfig
     {
-        public Button hueco;
-        public Image imagenHueco;
-        public int idBotonCorrecto;
+        public GameObject hueco;
+        public BoxCollider2D colliderHueco;
+        public int idImagenCorrecta;
+        public int idBotonFinalCorrespondiente;
         [HideInInspector] public bool ocupado = false;
-        [HideInInspector] public BotonConfig botonColocado = null;
+        [HideInInspector] public ImagenArrastrableConfig imagenColocada = null;
+        [HideInInspector] public Vector3 posicionOriginal;
+        [HideInInspector] public Color colorOriginal;
     }
 
-    [Header("CONFIGURACI�N BOTONES Y HUECOS")]
-    public BotonConfig[] botones = new BotonConfig[4];
-    public HuecoConfig[] huecos = new HuecoConfig[4];
+    [Header("CONFIGURACIÓN IMÁGENES ARRASTRABLES")]
+    public ImagenArrastrableConfig[] imagenesArrastrables = new ImagenArrastrableConfig[4];
+
+    [Header("CONFIGURACIÓN HUECOS")]
+    public HuecoArrastreConfig[] huecosArrastre = new HuecoArrastreConfig[4];
+
+    [Header("CONFIGURACIÓN BOTONES FINALES")]
+    public Button[] botonesFinales = new Button[4];
+    public AudioClip[] sonidosBotonesFinales = new AudioClip[4];
+    public Image[] imagenesBotonesFinales;
 
     [Header("INTERFAZ Y PANEL")]
     public GameObject panelPuzzle;
     public KeyCode teclaInteraccion = KeyCode.E;
     public float distanciaInteraccion = 2f;
+    public GameObject panelInstrucciones;
 
-    [Header("CONFIGURACI�N TECLA E")]
+    [Header("CONFIGURACIÓN TECLA E")]
     public Sprite spriteTeclaE;
     public Vector3 posicionTeclaE = new Vector3(0, 1.5f, 0);
     public Vector3 escalaTeclaE = new Vector3(0.25f, 0.25f, 0.25f);
     public float velocidadAnimacion = 3f;
     public float amplitudAnimacion = 0.1f;
 
-    [Header("CONFIGURACI�N COLORES")]
-    [Range(0f, 1f)]
-    public float factorOscurecimiento = 0.3f;
+    [Header("CONFIGURACIÓN COLORES")]
+    public Color colorHuecoCorrecto = Color.green;
+    public Color colorHuecoIncorrecto = Color.red;
+    public float tiempoFeedbackColor = 0.5f;
 
     [Header("SONIDOS")]
     public AudioClip sonidoError;
     public AudioClip sonidoAcierto;
     public AudioClip sonidoColocacion;
 
-    [Header("CONFIGURACI�N JUGADOR")]
+    [Header("CONFIGURACIÓN JUGADOR")]
     public MonoBehaviour scriptMovimientoJugador;
     private Rigidbody2D rbJugador;
     private Vector2 velocidadAntesDeBloquear;
 
-    [Header("CONFIGURACI�N UI")] // NUEVO: Secci�n para configuraci�n UI
-    public bool traerBotonesAlFrenteEnFaseFinal = true;
+    [Header("CONFIGURACIÓN FINALIZACIÓN")]
+    public GameObject[] objectsToActivateAfter;
+    public GameObject[] objectsToDestroyAfter;
+    public bool destroyAfterCompletion = false;
 
-    [Header("CONFIGURACIÓN FINALIZACIÓN")] // NUEVO: Sección para configuración al terminar
-    public GameObject[] objectsToActivateAfter; // Objetos a activar después de completar el puzzle
-    public GameObject[] objectsToDestroyAfter;  // Objetos a destruir después de completar el puzzle
-    public bool destroyAfterCompletion = false; // Si se debe destruir este objeto al terminar
-
+    // Estado del puzzle
     private bool estaMirando = false;
     private bool interfazAbierta = false;
     private bool puzzleCompletado = false;
+    private bool faseBotonesFinales = false;
     private GameObject jugador;
     private SpriteRenderer spriteTeclaERenderer;
     private GameObject teclaEObj;
 
-    private BotonConfig botonSeleccionado = null;
+    private ImagenArrastrableConfig imagenSeleccionada = null;
     private AudioSource audioSource;
     private AudioSource musicaSource;
     private bool musicaReproduciendo = false;
 
     private Canvas canvasPuzzle;
-    private bool faseFinalActivada = false;
+    private Vector3 offsetArrastre;
+    private bool arrastrando = false;
+    private GameObject objetoArrastrando = null;
+
+    // Botón correcto siempre el elemento 2 (índice 2)
+    private const int BOTON_CORRECTO_INDEX = 2;
+
+    // Contador de imágenes colocadas
+    private int imagenesColocadas = 0;
 
     private void Start()
     {
@@ -96,6 +116,7 @@ public class PuzzleBotonesMusicales : MonoBehaviour
 
         InicializarSistema();
         OcultarInterfaz();
+        OcultarBotonesFinales();
 
         if (jugador == null)
             jugador = GameObject.FindGameObjectWithTag("Player");
@@ -116,75 +137,446 @@ public class PuzzleBotonesMusicales : MonoBehaviour
         }
 
         CrearSistemaTeclaE();
+
+        Debug.Log($"Botón correcto será siempre el elemento {BOTON_CORRECTO_INDEX} (tercer botón)");
+        imagenesColocadas = 0;
     }
 
     private void InicializarSistema()
     {
-        for (int i = 0; i < botones.Length; i++)
+        // Configurar imágenes arrastrables
+        for (int i = 0; i < imagenesArrastrables.Length; i++)
         {
-            if (botones[i].boton != null)
+            if (imagenesArrastrables[i].imagen != null)
             {
-                botones[i].posicionOriginal = botones[i].boton.transform.position;
+                imagenesArrastrables[i].rectTransform = imagenesArrastrables[i].imagen.GetComponent<RectTransform>();
+                imagenesArrastrables[i].posicionOriginal = imagenesArrastrables[i].rectTransform.position;
+                imagenesArrastrables[i].colorOriginal = imagenesArrastrables[i].imagen.color;
+                imagenesArrastrables[i].idCorrecto = i;
+                imagenesArrastrables[i].estaSiendoArrastrada = false;
 
-                if (botones[i].imagenBoton != null)
-                {
-                    botones[i].colorOriginal = botones[i].imagenBoton.color;
-                }
-
-                // NUEVO: Guardar orden original en jerarqu�a
-                botones[i].siblingIndexOriginal = botones[i].boton.transform.GetSiblingIndex();
-
-                Button btn = botones[i].boton;
-                btn.onClick.RemoveAllListeners();
-
-                int index = i;
-                btn.onClick.AddListener(() => SeleccionarBoton(botones[index]));
-
-                btn.interactable = true;
-
-                // NUEVO: Configurar componentes de UI correctamente
-                ConfigurarComponentesUI(btn.gameObject);
-
-                ActualizarAparienciaBoton(botones[i]);
+                AgregarComponentesArrastreConCollider(imagenesArrastrables[i]);
             }
         }
 
-        for (int i = 0; i < huecos.Length; i++)
+        // Configurar huecos con colliders
+        foreach (var hueco in huecosArrastre)
         {
-            if (huecos[i].hueco != null)
+            if (hueco.hueco != null)
             {
-                Button btn = huecos[i].hueco;
-                btn.onClick.RemoveAllListeners();
+                hueco.posicionOriginal = hueco.hueco.transform.position;
 
-                int index = i;
-                btn.onClick.AddListener(() => IntentarColocarBoton(huecos[index]));
+                // Guardar color original
+                Image img = hueco.hueco.GetComponent<Image>();
+                if (img != null)
+                {
+                    hueco.colorOriginal = img.color;
+                }
 
-                btn.interactable = true;
-
-                // NUEVO: Configurar componentes de UI para huecos tambi�n
-                ConfigurarComponentesUI(btn.gameObject);
+                // Asegurar que tenga BoxCollider2D
+                if (hueco.colliderHueco == null)
+                {
+                    hueco.colliderHueco = hueco.hueco.GetComponent<BoxCollider2D>();
+                    if (hueco.colliderHueco == null)
+                    {
+                        hueco.colliderHueco = hueco.hueco.AddComponent<BoxCollider2D>();
+                    }
+                }
+                hueco.colliderHueco.isTrigger = true;
             }
+        }
+
+        // Configurar botones finales (inicialmente desactivados)
+        for (int i = 0; i < botonesFinales.Length; i++)
+        {
+            if (botonesFinales[i] != null)
+            {
+                botonesFinales[i].gameObject.SetActive(false);
+                int index = i;
+                botonesFinales[i].onClick.AddListener(() => ReproducirSonidoBotonFinal(index));
+            }
+        }
+
+        Debug.Log($"Botón correcto configurado en elemento {BOTON_CORRECTO_INDEX}");
+    }
+
+    private void AgregarComponentesArrastreConCollider(ImagenArrastrableConfig imagen)
+    {
+        // Agregar collider a la imagen para detectar colisiones
+        BoxCollider2D collider = imagen.imagen.GetComponent<BoxCollider2D>();
+        if (collider == null)
+        {
+            collider = imagen.imagen.gameObject.AddComponent<BoxCollider2D>();
+        }
+        collider.isTrigger = true;
+
+        // Agregar Rigidbody2D para que pueda ser arrastrada (pero que no afecte físicas)
+        Rigidbody2D rb = imagen.imagen.GetComponent<Rigidbody2D>();
+        if (rb == null)
+        {
+            rb = imagen.imagen.gameObject.AddComponent<Rigidbody2D>();
+        }
+        rb.bodyType = RigidbodyType2D.Kinematic;
+        rb.gravityScale = 0;
+
+        // Agregar Event Trigger para el drag
+        EventTrigger trigger = imagen.imagen.gameObject.GetComponent<EventTrigger>();
+        if (trigger == null)
+        {
+            trigger = imagen.imagen.gameObject.AddComponent<EventTrigger>();
+        }
+
+        trigger.triggers.Clear();
+
+        // Evento Begin Drag
+        EventTrigger.Entry beginDrag = new EventTrigger.Entry();
+        beginDrag.eventID = EventTriggerType.BeginDrag;
+        beginDrag.callback.AddListener((data) => IniciarArrastreConCollider(imagen, (PointerEventData)data));
+        trigger.triggers.Add(beginDrag);
+
+        // Evento Drag
+        EventTrigger.Entry drag = new EventTrigger.Entry();
+        drag.eventID = EventTriggerType.Drag;
+        drag.callback.AddListener((data) => MoverArrastre(imagen, (PointerEventData)data));
+        trigger.triggers.Add(drag);
+
+        // Evento End Drag
+        EventTrigger.Entry endDrag = new EventTrigger.Entry();
+        endDrag.eventID = EventTriggerType.EndDrag;
+        endDrag.callback.AddListener((data) => TerminarArrastreConCollider(imagen, (PointerEventData)data));
+        trigger.triggers.Add(endDrag);
+    }
+
+    private void IniciarArrastreConCollider(ImagenArrastrableConfig imagen, PointerEventData data)
+    {
+        if (imagen.colocado || faseBotonesFinales) return;
+
+        imagen.estaSiendoArrastrada = true;
+        objetoArrastrando = imagen.imagen.gameObject;
+
+        RectTransformUtility.ScreenPointToWorldPointInRectangle(
+            imagen.rectTransform,
+            data.position,
+            data.pressEventCamera,
+            out Vector3 globalMousePos
+        );
+        offsetArrastre = imagen.rectTransform.position - globalMousePos;
+        arrastrando = true;
+        imagenSeleccionada = imagen;
+
+        imagen.imagen.transform.SetAsLastSibling();
+
+        Debug.Log($"Comenzando arrastre de: {imagen.imagen.name}");
+    }
+
+    private void MoverArrastre(ImagenArrastrableConfig imagen, PointerEventData data)
+    {
+        if (imagen.colocado || !arrastrando || imagen != imagenSeleccionada) return;
+
+        RectTransformUtility.ScreenPointToWorldPointInRectangle(
+            imagen.rectTransform,
+            data.position,
+            data.pressEventCamera,
+            out Vector3 globalMousePos
+        );
+
+        imagen.rectTransform.position = globalMousePos + offsetArrastre;
+    }
+
+    private void TerminarArrastreConCollider(ImagenArrastrableConfig imagen, PointerEventData data)
+    {
+        if (imagen.colocado) return;
+
+        imagen.estaSiendoArrastrada = false;
+
+        // Verificar colisiones con los huecos
+        bool colocadoCorrectamente = false;
+        bool colisionConAlgunHueco = false;
+        HuecoArrastreConfig huecoIncorrecto = null;
+
+        foreach (var hueco in huecosArrastre)
+        {
+            if (hueco.ocupado) continue;
+
+            // Verificar si la imagen está dentro del collider del hueco
+            if (EstaDentroDelCollider(imagen, hueco.colliderHueco))
+            {
+                colisionConAlgunHueco = true;
+
+                // Verificar si es la imagen correcta
+                if (System.Array.IndexOf(imagenesArrastrables, imagen) == hueco.idImagenCorrecta)
+                {
+                    // Colocación correcta
+                    ColocarImagenEnHueco(imagen, hueco);
+                    colocadoCorrectamente = true;
+                    break;
+                }
+                else
+                {
+                    // Guardar referencia al hueco incorrecto para feedback
+                    huecoIncorrecto = hueco;
+                    break;
+                }
+            }
+        }
+
+        // Si hay un hueco incorrecto, mostrar feedback y volver la imagen a su posición
+        if (huecoIncorrecto != null && !colocadoCorrectamente)
+        {
+            StartCoroutine(FeedbackColocacionIncorrecta(huecoIncorrecto));
+            if (sonidoError != null)
+                audioSource.PlayOneShot(sonidoError);
+
+            // VOLVER A POSICIÓN ORIGINAL
+            imagen.rectTransform.position = imagen.posicionOriginal;
+            Debug.Log($"Imagen {imagen.imagen.name} volvió a su posición original (hueco incorrecto)");
+        }
+        else if (!colocadoCorrectamente && !colisionConAlgunHueco)
+        {
+            // No está en ningún hueco, volver a posición original
+            imagen.rectTransform.position = imagen.posicionOriginal;
+            Debug.Log($"Imagen {imagen.imagen.name} volvió a su posición original (fuera de cualquier hueco)");
+        }
+
+        // Limpiar estado de arrastre
+        arrastrando = false;
+        imagenSeleccionada = null;
+        objetoArrastrando = null;
+        imagen.estaSiendoArrastrada = false;
+    }
+
+    private bool EstaDentroDelCollider(ImagenArrastrableConfig imagen, BoxCollider2D collider)
+    {
+        if (collider == null) return false;
+
+        // Obtener la posición de la imagen en el espacio mundial
+        Vector3 imagenPos = imagen.rectTransform.position;
+
+        // Obtener los límites del collider en el espacio mundial
+        Bounds bounds = collider.bounds;
+
+        // Verificar si la posición de la imagen está dentro del collider
+        return bounds.Contains(imagenPos);
+    }
+
+    private void ColocarImagenEnHueco(ImagenArrastrableConfig imagen, HuecoArrastreConfig hueco)
+    {
+        imagen.colocado = true;
+        hueco.ocupado = true;
+        hueco.imagenColocada = imagen;
+        imagenesColocadas++;
+
+        // Reproducir sonido de colocación
+        if (sonidoColocacion != null)
+            audioSource.PlayOneShot(sonidoColocacion);
+
+        // Feedback visual de acierto
+        StartCoroutine(FeedbackColocacionCorrecta(hueco));
+
+        // Ocultar la imagen (desaparece)
+        imagen.imagen.gameObject.SetActive(false);
+
+        // Ocultar el hueco (desaparece)
+        hueco.hueco.SetActive(false);
+        if (hueco.colliderHueco != null)
+            hueco.colliderHueco.enabled = false;
+
+        // Mostrar el botón final correspondiente en esta posición
+        int idBotonFinal = hueco.idBotonFinalCorrespondiente;
+        if (idBotonFinal < botonesFinales.Length && botonesFinales[idBotonFinal] != null)
+        {
+            // Posicionar el botón en el lugar donde estaba el hueco
+            botonesFinales[idBotonFinal].transform.position = hueco.posicionOriginal;
+            botonesFinales[idBotonFinal].gameObject.SetActive(true);
+            botonesFinales[idBotonFinal].interactable = true;
+
+            // Configurar el sprite del botón si existe
+            if (idBotonFinal < imagenesBotonesFinales.Length && imagenesBotonesFinales[idBotonFinal] != null)
+            {
+                Image botonImage = botonesFinales[idBotonFinal].GetComponent<Image>();
+                if (botonImage != null)
+                {
+                    botonImage.sprite = imagenesBotonesFinales[idBotonFinal].sprite;
+                }
+            }
+
+            // Asegurar que el botón sea interactuable
+            CanvasGroup canvasGroup = botonesFinales[idBotonFinal].GetComponent<CanvasGroup>();
+            if (canvasGroup == null)
+                canvasGroup = botonesFinales[idBotonFinal].gameObject.AddComponent<CanvasGroup>();
+            canvasGroup.alpha = 1f;
+            canvasGroup.interactable = true;
+            canvasGroup.blocksRaycasts = true;
+
+            Debug.Log($"Botón final {idBotonFinal} apareció en la posición del hueco");
+        }
+
+        Debug.Log($"Imagen {imagen.imagen.name} colocada correctamente. ({imagenesColocadas}/{imagenesArrastrables.Length})");
+
+        // Verificar si todas las imágenes están colocadas
+        if (imagenesColocadas >= imagenesArrastrables.Length)
+        {
+            StartCoroutine(ActivarFaseBotonesFinalesConRetraso());
         }
     }
 
-    // NUEVO: M�todo para configurar componentes UI correctamente
-    private void ConfigurarComponentesUI(GameObject uiObject)
+    private IEnumerator FeedbackColocacionCorrecta(HuecoArrastreConfig hueco)
     {
-        CanvasGroup canvasGroup = uiObject.GetComponent<CanvasGroup>();
-        if (canvasGroup == null)
+        Image img = hueco.hueco.GetComponent<Image>();
+        if (img != null)
         {
-            canvasGroup = uiObject.AddComponent<CanvasGroup>();
+            img.color = colorHuecoCorrecto;
+            yield return new WaitForSeconds(0.3f);
+            // El hueco desaparecerá después
         }
-        canvasGroup.alpha = 1f;
-        canvasGroup.interactable = true;
-        canvasGroup.blocksRaycasts = true;
+    }
 
-        // Asegurar que tenga Image component
-        Image image = uiObject.GetComponent<Image>();
-        if (image != null)
+    private IEnumerator FeedbackColocacionIncorrecta(HuecoArrastreConfig hueco)
+    {
+        Image img = hueco.hueco.GetComponent<Image>();
+        if (img != null)
         {
-            image.raycastTarget = true;
+            // Guardar color original antes de cambiar
+            Color colorOriginal = hueco.colorOriginal;
+
+            // Cambiar a rojo
+            img.color = colorHuecoIncorrecto;
+            Debug.Log($"Hueco {hueco.hueco.name} se puso rojo (imagen incorrecta)");
+
+            // Esperar
+            yield return new WaitForSeconds(tiempoFeedbackColor);
+
+            // Restaurar color original
+            img.color = colorOriginal;
+            Debug.Log($"Hueco {hueco.hueco.name} restauró su color original");
         }
+    }
+
+    private IEnumerator ActivarFaseBotonesFinalesConRetraso()
+    {
+        yield return new WaitForSeconds(0.5f);
+        ActivarFaseBotonesFinales();
+    }
+
+    private void ActivarFaseBotonesFinales()
+    {
+        Debug.Log("¡Todas las imágenes colocadas! Fase de botones finales activada.");
+        faseBotonesFinales = true;
+
+        if (panelInstrucciones != null)
+            panelInstrucciones.SetActive(false);
+
+        // Los botones finales ya están activos individualmente desde ColocarImagenEnHueco
+        foreach (var btn in botonesFinales)
+        {
+            if (btn != null && btn.gameObject.activeSelf)
+            {
+                btn.interactable = true;
+                CanvasGroup canvasGroup = btn.GetComponent<CanvasGroup>();
+                if (canvasGroup != null)
+                {
+                    canvasGroup.interactable = true;
+                    canvasGroup.blocksRaycasts = true;
+                }
+            }
+        }
+
+        Debug.Log("Fase de botones finales activada. Botón correcto: elemento " + BOTON_CORRECTO_INDEX);
+    }
+
+    private void OcultarBotonesFinales()
+    {
+        foreach (var btn in botonesFinales)
+        {
+            if (btn != null)
+                btn.gameObject.SetActive(false);
+        }
+    }
+
+    private void ReproducirSonidoBotonFinal(int index)
+    {
+        Debug.Log($"Click en botón final {index}");
+
+        if (musicaReproduciendo)
+        {
+            musicaSource.Stop();
+            musicaReproduciendo = false;
+        }
+
+        if (index < sonidosBotonesFinales.Length && sonidosBotonesFinales[index] != null)
+        {
+            musicaSource.clip = sonidosBotonesFinales[index];
+            musicaSource.Play();
+            musicaReproduciendo = true;
+            Debug.Log($"Reproduciendo sonido: {sonidosBotonesFinales[index].name}");
+        }
+
+        if (index == BOTON_CORRECTO_INDEX)
+        {
+            Debug.Log($"¡Botón correcto (elemento {BOTON_CORRECTO_INDEX})! Completando puzzle...");
+            StartCoroutine(CompletarPuzzle());
+        }
+        else
+        {
+            if (sonidoError != null)
+                audioSource.PlayOneShot(sonidoError);
+            Debug.Log($"Botón incorrecto (se esperaba elemento {BOTON_CORRECTO_INDEX}), intenta de nuevo.");
+        }
+    }
+
+    private IEnumerator CompletarPuzzle()
+    {
+        Debug.Log("¡Puzzle completado!");
+
+        if (sonidoAcierto != null)
+        {
+            audioSource.PlayOneShot(sonidoAcierto);
+        }
+
+        yield return new WaitForSeconds(0.5f);
+
+        interfazAbierta = false;
+        OcultarInterfaz();
+        BloquearMovimientoJugador(false);
+        puzzleCompletado = true;
+
+        Collider2D collider = GetComponent<Collider2D>();
+        if (collider != null)
+        {
+            collider.enabled = false;
+        }
+
+        MostrarTeclaE(false);
+        if (teclaEObj != null)
+        {
+            Destroy(teclaEObj);
+        }
+
+        foreach (GameObject obj in objectsToActivateAfter)
+        {
+            if (obj != null)
+            {
+                obj.SetActive(true);
+                Debug.Log($"Objeto activado: {obj.name}");
+            }
+        }
+
+        foreach (GameObject obj in objectsToDestroyAfter)
+        {
+            if (obj != null)
+            {
+                Destroy(obj);
+                Debug.Log($"Objeto destruido: {obj.name}");
+            }
+        }
+
+        if (destroyAfterCompletion)
+        {
+            Debug.Log($"Destruyendo objeto del puzzle: {gameObject.name}");
+            Destroy(gameObject);
+        }
+
+        Debug.Log("Puzzle completado.");
     }
 
     private void Update()
@@ -204,11 +596,6 @@ public class PuzzleBotonesMusicales : MonoBehaviour
             {
                 teclaEObj.transform.localPosition = nuevaPosicion;
             }
-        }
-
-        if (interfazAbierta && VerificarTodosBotonesColocados() && !faseFinalActivada && !puzzleCompletado)
-        {
-            ActivarFaseFinal();
         }
     }
 
@@ -287,9 +674,10 @@ public class PuzzleBotonesMusicales : MonoBehaviour
             canvasPuzzle.sortingOrder = 100;
         }
 
-        DeseleccionarBoton();
+        if (panelInstrucciones != null && !faseBotonesFinales)
+            panelInstrucciones.SetActive(true);
 
-        Debug.Log("Interfaz abierta - Botones deber�an ser clickables");
+        Debug.Log("Interfaz abierta - Modo arrastre activado");
     }
 
     private void CerrarInterfaz()
@@ -297,7 +685,13 @@ public class PuzzleBotonesMusicales : MonoBehaviour
         interfazAbierta = false;
         OcultarInterfaz();
         BloquearMovimientoJugador(false);
-        DeseleccionarBoton();
+
+        if (imagenSeleccionada != null && !imagenSeleccionada.colocado)
+        {
+            imagenSeleccionada.rectTransform.position = imagenSeleccionada.posicionOriginal;
+            imagenSeleccionada = null;
+            arrastrando = false;
+        }
 
         if (estaMirando && !puzzleCompletado)
         {
@@ -328,8 +722,6 @@ public class PuzzleBotonesMusicales : MonoBehaviour
         {
             scriptMovimientoJugador.enabled = !bloquear;
         }
-
-        Debug.Log($"Movimiento del jugador {(bloquear ? "BLOQUEADO" : "DESBLOQUEADO")}");
     }
 
     private void MostrarInterfaz()
@@ -338,8 +730,6 @@ public class PuzzleBotonesMusicales : MonoBehaviour
         {
             panelPuzzle.SetActive(true);
             Canvas.ForceUpdateCanvases();
-
-            // NUEVO: Forzar rebuild de todos los layouts
             LayoutRebuilder.ForceRebuildLayoutImmediate(panelPuzzle.GetComponent<RectTransform>());
         }
     }
@@ -349,262 +739,6 @@ public class PuzzleBotonesMusicales : MonoBehaviour
         if (panelPuzzle != null)
         {
             panelPuzzle.SetActive(false);
-        }
-    }
-
-    private void SeleccionarBoton(BotonConfig boton)
-    {
-        if (boton.colocado || faseFinalActivada)
-        {
-            return;
-        }
-
-        DeseleccionarBoton();
-
-        botonSeleccionado = boton;
-        boton.pulsado = true;
-        ActualizarAparienciaBoton(boton);
-
-        Debug.Log($"Bot�n seleccionado: {boton.boton.name}");
-    }
-
-    private void DeseleccionarBoton()
-    {
-        if (botonSeleccionado != null)
-        {
-            botonSeleccionado.pulsado = false;
-            ActualizarAparienciaBoton(botonSeleccionado);
-            botonSeleccionado = null;
-        }
-    }
-
-    private void IntentarColocarBoton(HuecoConfig hueco)
-    {
-        if (faseFinalActivada) return;
-
-        if (botonSeleccionado == null)
-        {
-            Debug.Log("No hay bot�n seleccionado");
-            return;
-        }
-
-        if (hueco.ocupado)
-        {
-            Debug.Log("Hueco ya ocupado");
-            return;
-        }
-
-        int indexBotonSeleccionado = System.Array.IndexOf(botones, botonSeleccionado);
-
-        Debug.Log($"Intentando colocar bot�n {indexBotonSeleccionado} en hueco que espera {hueco.idBotonCorrecto}");
-
-        if (indexBotonSeleccionado == hueco.idBotonCorrecto)
-        {
-            ColocarBotonEnHueco(botonSeleccionado, hueco);
-            if (sonidoColocacion != null)
-                audioSource.PlayOneShot(sonidoColocacion);
-        }
-        else
-        {
-            if (sonidoError != null)
-                audioSource.PlayOneShot(sonidoError);
-            Debug.Log("�Hueco incorrecto!");
-        }
-
-        DeseleccionarBoton();
-    }
-
-    private void ColocarBotonEnHueco(BotonConfig boton, HuecoConfig hueco)
-    {
-        boton.colocado = true;
-        hueco.ocupado = true;
-        hueco.botonColocado = boton;
-
-        // NUEVO: Mover el bot�n como hijo del hueco para mejor organizaci�n
-        boton.boton.transform.SetParent(hueco.hueco.transform.parent, false);
-        boton.boton.transform.position = hueco.hueco.transform.position;
-
-        hueco.hueco.interactable = false;
-
-        ActualizarAparienciaBoton(boton);
-        Debug.Log($"Bot�n {boton.boton.name} colocado correctamente");
-    }
-
-    private bool VerificarTodosBotonesColocados()
-    {
-        foreach (BotonConfig boton in botones)
-        {
-            if (!boton.colocado)
-                return false;
-        }
-        return true;
-    }
-
-    private void ActivarFaseFinal()
-    {
-        Debug.Log("�Todos los botones colocados! Fase final activada.");
-        faseFinalActivada = true;
-
-        foreach (BotonConfig boton in botones)
-        {
-            if (boton.boton != null)
-            {
-                // NUEVO: Limpiar completamente y reconfigurar
-                boton.boton.onClick.RemoveAllListeners();
-
-                int index = System.Array.IndexOf(botones, boton);
-                boton.boton.onClick.AddListener(() => ReproducirSonidoBoton(botones[index]));
-
-                // NUEVO: Asegurar que el bot�n est� completamente interactuable
-                boton.boton.interactable = true;
-
-                // NUEVO: Traer botones al frente si est� configurado
-                if (traerBotonesAlFrenteEnFaseFinal)
-                {
-                    boton.boton.transform.SetAsLastSibling();
-                }
-
-                // NUEVO: Forzar actualizaci�n de componentes UI
-                ConfigurarComponentesUI(boton.boton.gameObject);
-
-                // NUEVO: Actualizar layout inmediatamente
-                LayoutRebuilder.ForceRebuildLayoutImmediate(boton.boton.GetComponent<RectTransform>());
-            }
-        }
-
-        foreach (HuecoConfig hueco in huecos)
-        {
-            if (hueco.hueco != null)
-            {
-                hueco.hueco.interactable = false;
-            }
-        }
-
-        foreach (BotonConfig boton in botones)
-        {
-            ActualizarAparienciaBoton(boton);
-        }
-
-        Debug.Log("Fase final activada - Los botones ahora reproducen sonidos");
-
-        // NUEVO: Debug adicional para verificar estado
-        DebugBotonesInteractuables();
-    }
-
-    // NUEVO: M�todo para debuguear el estado de los botones
-    private void DebugBotonesInteractuables()
-    {
-        foreach (BotonConfig boton in botones)
-        {
-            if (boton.boton != null)
-            {
-                CanvasGroup canvasGroup = boton.boton.GetComponent<CanvasGroup>();
-                Debug.Log($"Bot�n {boton.boton.name} - Interactable: {boton.boton.interactable}, " +
-                         $"CanvasGroup Alpha: {(canvasGroup != null ? canvasGroup.alpha : "N/A")}, " +
-                         $"BlocksRaycasts: {(canvasGroup != null ? canvasGroup.blocksRaycasts : "N/A")}");
-            }
-        }
-    }
-
-    private void ReproducirSonidoBoton(BotonConfig boton)
-    {
-        Debug.Log($"Click recibido en bot�n: {boton.boton.name}");
-
-        if (musicaReproduciendo)
-        {
-            musicaSource.Stop();
-        }
-
-        if (boton.sonidoBoton != null)
-        {
-            musicaSource.clip = boton.sonidoBoton;
-            musicaSource.Play();
-            musicaReproduciendo = true;
-            Debug.Log($"Reproduciendo sonido: {boton.sonidoBoton.name}");
-        }
-
-        if (boton.esCorrecto)
-        {
-            Debug.Log("�Bot�n correcto detectado! Completando puzzle...");
-            StartCoroutine(CompletarPuzzle());
-        }
-    }
-
-    private IEnumerator CompletarPuzzle()
-    {
-        Debug.Log("¡Botón correcto! Puzzle completado.");
-
-        if (sonidoAcierto != null)
-        {
-            audioSource.PlayOneShot(sonidoAcierto);
-        }
-
-        yield return new WaitForSeconds(0.5f);
-
-        interfazAbierta = false;
-        OcultarInterfaz();
-        BloquearMovimientoJugador(false);
-        puzzleCompletado = true;
-
-        Collider2D collider = GetComponent<Collider2D>();
-        if (collider != null)
-        {
-            collider.enabled = false;
-        }
-
-        MostrarTeclaE(false);
-        if (teclaEObj != null)
-        {
-            Destroy(teclaEObj);
-        }
-
-        // NUEVO: Activar y destruir objetos configurados
-        foreach (GameObject obj in objectsToActivateAfter)
-        {
-            if (obj != null)
-            {
-                obj.SetActive(true);
-                Debug.Log($"Objeto activado: {obj.name}");
-            }
-        }
-
-        foreach (GameObject obj in objectsToDestroyAfter)
-        {
-            if (obj != null)
-            {
-                Destroy(obj);
-                Debug.Log($"Objeto destruido: {obj.name}");
-            }
-        }
-
-        // NUEVO: Destruir este objeto si está configurado
-        if (destroyAfterCompletion)
-        {
-            Debug.Log($"Destruyendo objeto del puzzle: {gameObject.name}");
-            Destroy(gameObject);
-        }
-
-        Debug.Log("Puzzle completado. La música continúa reproduciéndose.");
-    }
-
-    private void ActualizarAparienciaBoton(BotonConfig boton)
-    {
-        if (boton.imagenBoton != null)
-        {
-            if (boton.colocado)
-            {
-                boton.imagenBoton.color = boton.colorOriginal;
-            }
-            else if (boton.pulsado)
-            {
-                Color colorOscurecido = boton.colorOriginal * (1f - factorOscurecimiento);
-                colorOscurecido.a = boton.colorOriginal.a;
-                boton.imagenBoton.color = colorOscurecido;
-            }
-            else
-            {
-                boton.imagenBoton.color = boton.colorOriginal;
-            }
         }
     }
 
@@ -646,61 +780,82 @@ public class PuzzleBotonesMusicales : MonoBehaviour
         Debug.Log($"=== DEBUG PUZZLE {name} ===");
         Debug.Log($"Interfaz abierta: {interfazAbierta}");
         Debug.Log($"Puzzle completado: {puzzleCompletado}");
-        Debug.Log($"Fase final activada: {faseFinalActivada}");
+        Debug.Log($"Fase botones finales: {faseBotonesFinales}");
+        Debug.Log($"Imágenes colocadas: {imagenesColocadas}/{imagenesArrastrables.Length}");
+        Debug.Log($"Botón correcto (SIEMPRE): elemento {BOTON_CORRECTO_INDEX}");
 
-        for (int i = 0; i < botones.Length; i++)
+        for (int i = 0; i < imagenesArrastrables.Length; i++)
         {
-            if (botones[i].boton != null)
+            Debug.Log($"Imagen {i} - Colocada: {imagenesArrastrables[i].colocado} - Activa: {imagenesArrastrables[i].imagen.gameObject.activeSelf}");
+        }
+
+        for (int i = 0; i < botonesFinales.Length; i++)
+        {
+            if (botonesFinales[i] != null)
             {
-                CanvasGroup canvasGroup = botones[i].boton.GetComponent<CanvasGroup>();
-                Debug.Log($"Bot�n {i} ({botones[i].boton.name}) - " +
-                         $"Colocado: {botones[i].colocado}, " +
-                         $"Interactable: {botones[i].boton.interactable}, " +
-                         $"RaycastTarget: {(botones[i].imagenBoton != null ? botones[i].imagenBoton.raycastTarget : "N/A")}");
+                Debug.Log($"Botón final {i} - Activo: {botonesFinales[i].gameObject.activeSelf} - Es correcto: {i == BOTON_CORRECTO_INDEX}");
             }
         }
     }
 
-    [ContextMenu("Forzar Fase Final")]
-    public void ForzarFaseFinal()
-    {
-        foreach (var boton in botones)
-        {
-            boton.colocado = true;
-        }
-        ActivarFaseFinal();
-    }
-
-    // NUEVO: M�todo para resetear completamente los botones (�til para testing)
     [ContextMenu("Resetear Puzzle")]
     public void ResetearPuzzle()
     {
-        faseFinalActivada = false;
+        faseBotonesFinales = false;
         puzzleCompletado = false;
+        musicaReproduciendo = false;
+        musicaSource.Stop();
+        imagenesColocadas = 0;
 
-        foreach (var boton in botones)
+        // Resetear imágenes arrastrables
+        foreach (var img in imagenesArrastrables)
         {
-            boton.colocado = false;
-            boton.pulsado = false;
-            if (boton.boton != null)
+            img.colocado = false;
+            img.estaSiendoArrastrada = false;
+            if (img.imagen != null)
             {
-                boton.boton.transform.position = boton.posicionOriginal;
-                boton.boton.transform.SetSiblingIndex(boton.siblingIndexOriginal);
-                boton.boton.interactable = true;
+                img.imagen.gameObject.SetActive(true);
+                img.imagen.raycastTarget = true;
+                img.imagen.color = img.colorOriginal;
+                if (img.rectTransform != null)
+                {
+                    img.rectTransform.position = img.posicionOriginal;
+                }
+
+                var trigger = img.imagen.gameObject.GetComponent<EventTrigger>();
+                if (trigger != null)
+                    trigger.enabled = true;
             }
         }
 
-        foreach (var hueco in huecos)
+        // Resetear huecos
+        foreach (var hueco in huecosArrastre)
         {
             hueco.ocupado = false;
-            hueco.botonColocado = null;
+            hueco.imagenColocada = null;
             if (hueco.hueco != null)
             {
-                hueco.hueco.interactable = true;
+                hueco.hueco.SetActive(true);
+                if (hueco.colliderHueco != null)
+                    hueco.colliderHueco.enabled = true;
+                Image img = hueco.hueco.GetComponent<Image>();
+                if (img != null)
+                {
+                    img.color = hueco.colorOriginal;
+                }
             }
         }
 
-        DeseleccionarBoton();
-        Debug.Log("Puzzle reseteado completamente");
+        // Ocultar botones finales
+        OcultarBotonesFinales();
+
+        if (panelInstrucciones != null)
+            panelInstrucciones.SetActive(true);
+
+        imagenSeleccionada = null;
+        arrastrando = false;
+        objetoArrastrando = null;
+
+        Debug.Log($"Puzzle reseteado completamente. Botón correcto: elemento {BOTON_CORRECTO_INDEX}");
     }
 }
