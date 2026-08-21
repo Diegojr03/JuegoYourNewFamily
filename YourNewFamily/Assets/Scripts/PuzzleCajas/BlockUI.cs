@@ -75,14 +75,15 @@ public class Block : MonoBehaviour, IPointerClickHandler
         {
             GridManagerUI.Instance.MoveBlock(this, gridDirection);
 
-            // Ocultar flechas después de mover
-            HideArrows();
-            currentlySelectedBlock = null;
+            // 🔥 CAMBIO: Actualizamos la posición de las flechas visuales
+            ShowArrows();
         }
         else
         {
             Debug.Log($"No se puede mover en dirección {gridDirection} con teclado");
         }
+
+        // 🔥 CAMBIO: Eliminamos HideArrows() y currentlySelectedBlock = null
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -233,14 +234,17 @@ public class Block : MonoBehaviour, IPointerClickHandler
         if (GridManagerUI.Instance.CanMoveBlock(this, gridDirection))
         {
             GridManagerUI.Instance.MoveBlock(this, gridDirection);
+
+            // 🔥 CAMBIO: En lugar de ocultar, volvemos a mostrar las flechas 
+            // para que se actualice su posición y sigan activas.
+            ShowArrows();
         }
         else
         {
             Debug.Log($"No se puede mover en dirección {gridDirection}");
         }
 
-        HideArrows();
-        currentlySelectedBlock = null;
+        // 🔥 CAMBIO: Eliminamos HideArrows() y currentlySelectedBlock = null
     }
 
     public List<Vector2Int> GetOccupiedCells()

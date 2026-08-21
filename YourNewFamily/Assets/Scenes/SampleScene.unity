@@ -702,9 +702,7 @@ MonoBehaviour:
   tiempoMostrarMensaje: 1
   delayAntesDeMensaje: 0.2
   objectsToActivateAfter:
-  - {fileID: 19368393}
   - {fileID: 1818855821}
-  - {fileID: 83407610}
   objectsToDestroyAfter:
   - {fileID: 1448360985}
   - {fileID: 255745970}
@@ -2976,8 +2974,8 @@ Transform:
   m_GameObject: {fileID: 52582997}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.28633, y: -4.4466796, z: 0}
-  m_LocalScale: {x: 0.039647583, y: 0.0346287, z: 0.036453746}
+  m_LocalPosition: {x: -12.211003, y: -4.4679065, z: 0}
+  m_LocalScale: {x: 0.061025556, y: 0.053300492, z: 0.056109603}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 141092657}
@@ -5142,8 +5140,8 @@ Transform:
   m_GameObject: {fileID: 109264697}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.051542, y: -4.584467, z: 0}
-  m_LocalScale: {x: 0.062319078, y: 0.09232223, z: 0.09232222}
+  m_LocalPosition: {x: -11.85, y: -4.68, z: 0}
+  m_LocalScale: {x: 0.095921524, y: 0.14210238, z: 0.14210236}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 141092657}
@@ -5162,7 +5160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionKey: 102
   noteTextAsset: {fileID: 4900000, guid: 90998bb42cc5b0e4d9b56f9b329dee72, type: 3}
-  noteSprite: {fileID: -1072258094547337354, guid: c3a13d4727c105242a42d4832313e293, type: 3}
+  noteSprite: {fileID: -4044822811767486653, guid: ea2004c84eced4d4c9332311c1465829, type: 3}
   giantNoteTransform: {fileID: 769773728}
   giantSprite: {fileID: 769773730}
   verticalPositionPercent: 0.5
@@ -7553,13 +7551,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147631969}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.2707347, w: 0.962654}
-  m_LocalPosition: {x: 6.7779346, y: -2.7514734, z: 0}
-  m_LocalScale: {x: 0.03179904, y: 0.047108505, z: 0.0471085}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.75, y: -3.086, z: 0}
+  m_LocalScale: {x: 0.046609428, y: 0.06904927, z: 0.06904926}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 470136899}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -31.416}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &147631971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7574,7 +7572,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionKey: 102
   noteTextAsset: {fileID: 4900000, guid: 603097d90450f604e87323c64e92d6ca, type: 3}
-  noteSprite: {fileID: -1072258094547337354, guid: c3a13d4727c105242a42d4832313e293, type: 3}
+  noteSprite: {fileID: -6098856227541219170, guid: 17162e67a55490d46a97284c7375d340, type: 3}
   giantNoteTransform: {fileID: 583399077}
   giantSprite: {fileID: 583399079}
   verticalPositionPercent: 0.5
@@ -9986,8 +9984,8 @@ Transform:
   m_GameObject: {fileID: 192893467}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.2996, y: -5.4457, z: 0}
-  m_LocalScale: {x: 0.17812221, y: 3.707865, z: 1}
+  m_LocalPosition: {x: 15.3011, y: -5.4073, z: 0}
+  m_LocalScale: {x: 0.17512976, y: 3.7846177, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 141092657}
@@ -10035,7 +10033,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -12223,9 +12221,7 @@ MonoBehaviour:
   tiempoMostrarMensaje: 1
   delayAntesDeMensaje: 0.2
   objectsToActivateAfter:
-  - {fileID: 19368393}
   - {fileID: 1818855821}
-  - {fileID: 83407610}
   objectsToDestroyAfter:
   - {fileID: 1448360985}
   - {fileID: 6100853}
@@ -13379,7 +13375,7 @@ Transform:
   m_GameObject: {fileID: 273984697}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.42, y: -3.074, z: 0}
+  m_LocalPosition: {x: -0.477, y: -3.193, z: 0}
   m_LocalScale: {x: 0.05754666, y: 0.08525217, z: 0.08525217}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13399,7 +13395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionKey: 102
   noteTextAsset: {fileID: 4900000, guid: edabbb4704fffd84dbac19dfd73cf169, type: 3}
-  noteSprite: {fileID: -1072258094547337354, guid: c3a13d4727c105242a42d4832313e293, type: 3}
+  noteSprite: {fileID: -7153431669907327206, guid: f3fbf2351dfd3de43ba73ab139888f8e, type: 3}
   giantNoteTransform: {fileID: 294463319}
   giantSprite: {fileID: 294463321}
   verticalPositionPercent: 0.5
@@ -23506,8 +23502,8 @@ Transform:
   m_GameObject: {fileID: 556050676}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.73, y: -3.4077902, z: 0}
-  m_LocalScale: {x: 0.062319078, y: 0.09232223, z: 0.09232222}
+  m_LocalPosition: {x: 9.6711, y: -3.4122, z: 0}
+  m_LocalScale: {x: 0.07444014, y: 0.110278904, z: 0.11027889}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 141092657}
@@ -23526,7 +23522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionKey: 102
   noteTextAsset: {fileID: 4900000, guid: 68451f439712bd6439969b0431696980, type: 3}
-  noteSprite: {fileID: -1072258094547337354, guid: c3a13d4727c105242a42d4832313e293, type: 3}
+  noteSprite: {fileID: 727326144993961072, guid: 67d216789772cfb4f862365a687d39a5, type: 3}
   giantNoteTransform: {fileID: 853481393}
   giantSprite: {fileID: 853481395}
   verticalPositionPercent: 0.5
@@ -28173,8 +28169,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionKey: 102
-  noteTextAsset: {fileID: 4900000, guid: 48deb19256320984080180b328f2c5df, type: 3}
-  noteSprite: {fileID: -1072258094547337354, guid: c3a13d4727c105242a42d4832313e293, type: 3}
+  noteTextAsset: {fileID: 4900000, guid: cce4ea9946777384c831a485abc5c3f3, type: 3}
+  noteSprite: {fileID: 2238999740505943251, guid: 2308c696c1a085440ad516beab2e73c6, type: 3}
   giantNoteTransform: {fileID: 607453432}
   giantSprite: {fileID: 607453434}
   verticalPositionPercent: 0.5
@@ -29798,7 +29794,6 @@ GameObject:
   m_Component:
   - component: {fileID: 719053293}
   - component: {fileID: 719053295}
-  - component: {fileID: 719053297}
   - component: {fileID: 719053296}
   - component: {fileID: 719053298}
   m_Layer: 0
@@ -29949,24 +29944,6 @@ MonoBehaviour:
   destroyAfterDialogue: 1
   autoActivate: 1
   reuseDelay: 0.5
---- !u!114 &719053297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 719053292}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7939d405151076242a34a8d27cc6a4a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionDistance: 2
-  promptOffset: {x: 0, y: 1, z: 0}
-  dialogueSystem: {fileID: 719053296}
-  dialogueChoiceSystem: {fileID: 0}
-  interactionKey: 102
-  isDialogueTrigger: 1
 --- !u!114 &719053298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33440,10 +33417,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c785d1312487d48bae41c65e986f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterLeft: {fileID: 410075400}
-  characterRight: {fileID: 1538476114}
-  spriteLeft: {fileID: 410075399}
-  spriteRight: {fileID: 1538476113}
+  characterLeft: {fileID: 2049564435}
+  characterRight: {fileID: 1592392217}
+  spriteLeft: {fileID: 2049564433}
+  spriteRight: {fileID: 1592392215}
   defaultLeftSprite: {fileID: -3267486010593951143, guid: 59b507b2052fe594f9783610c9224789, type: 3}
   defaultRightSprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
   dialoguePanel: {fileID: 1834269160}
@@ -38550,7 +38527,8 @@ MonoBehaviour:
   - {fileID: 731089924}
   - {fileID: 771853451}
   - {fileID: 1512184029}
-  objectsToDestroyAfter: []
+  objectsToDestroyAfter:
+  - {fileID: 1007058934}
 --- !u!61 &1007058937
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44058,7 +44036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerId: 690662a2-c437-4d7a-811c-12d9a3651536
-  textoNuevo: VE A LA PLAZA A HABLAR CON APLHA
+  textoNuevo: VE A LA PLAZA A HABLAR CON ALPHA
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
   escalaInicial: 0.7
@@ -49689,8 +49667,8 @@ Transform:
   m_GameObject: {fileID: 1313319910}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.42881078, y: -2.8927598, z: 0}
-  m_LocalScale: {x: 0.03661136, y: 0.031976826, z: 0.033662114}
+  m_LocalPosition: {x: -0.468, y: -2.772, z: 0}
+  m_LocalScale: {x: 0.04632069, y: 0.04045708, z: 0.042589307}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 628383753}
@@ -49733,7 +49711,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 19.960001, y: 12.940572}
+    oldSize: {x: 11.18273, y: 16.31}
     newSize: {x: 17.340002, y: 12.980574}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -49785,7 +49763,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -1072258094547337354, guid: c3a13d4727c105242a42d4832313e293, type: 3}
+  m_Sprite: {fileID: -7153431669907327206, guid: f3fbf2351dfd3de43ba73ab139888f8e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -50847,7 +50825,7 @@ MonoBehaviour:
   characterRight: {fileID: 468237870}
   spriteLeft: {fileID: 1461091478}
   spriteRight: {fileID: 468237869}
-  defaultLeftSprite: {fileID: -4203010012112603769, guid: 4231fbe1d95c19a49b786e6773e60a17, type: 3}
+  defaultLeftSprite: {fileID: -6717224247477546662, guid: a916264e2a8f1f24b8cad7b0e0ffebca, type: 3}
   defaultRightSprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
   dialoguePanel: {fileID: 1834269160}
   speakerText: {fileID: 1659188321}
@@ -50863,7 +50841,7 @@ MonoBehaviour:
   - speakerName: Anorah
     dialogueText: "T\xF3mate tu tiempo, querida. Los libros aqu\xED son... reconfortantes."
     leftSpeaker: 1
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 3142483317604894073, guid: 03e5afb721110ed4a800e09f67065d42, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -50871,7 +50849,7 @@ MonoBehaviour:
   - speakerName: Anorah
     dialogueText: Si necesitas escapar de tus pensamientos, este es el lugar.
     leftSpeaker: 1
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 3142483317604894073, guid: 03e5afb721110ed4a800e09f67065d42, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -53380,13 +53358,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426584289}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.2707347, w: 0.962654}
-  m_LocalPosition: {x: 6.658131, y: -2.6811657, z: 0}
-  m_LocalScale: {x: 0.020230645, y: 0.017669702, z: 0.018600954}
+  m_LocalRotation: {x: -0, y: -0, z: -0.011860946, w: 0.99992967}
+  m_LocalPosition: {x: 6.7564487, y: -3.0962324, z: 0}
+  m_LocalScale: {x: 0.032426476, y: 0.028321695, z: 0.029814342}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 470136899}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -31.416}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1.359}
 --- !u!61 &1426584291
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -53832,9 +53810,7 @@ MonoBehaviour:
   tiempoMostrarMensaje: 1
   delayAntesDeMensaje: 0.2
   objectsToActivateAfter:
-  - {fileID: 19368393}
   - {fileID: 1818855821}
-  - {fileID: 83407610}
   objectsToDestroyAfter:
   - {fileID: 255745970}
   - {fileID: 6100853}
@@ -57058,7 +57034,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -3950037698657494922, guid: 8fc6c92c09f202e4785c8a865475d439, type: 3}
+  m_Sprite: {fileID: -3950037698657494922, guid: d1220c2d0bab5484f86dc0d6ec8d1f3f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -57808,6 +57784,7 @@ Transform:
   - {fileID: 1654459073}
   - {fileID: 1229006930}
   - {fileID: 1538476114}
+  - {fileID: 1592392217}
   - {fileID: 1216146011}
   - {fileID: 212567253}
   - {fileID: 1736679050}
@@ -59445,6 +59422,107 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectId: 68a3711e-4c8e-4e99-9c76-7d2101035239
+--- !u!1 &1592392214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1592392217}
+  - component: {fileID: 1592392215}
+  - component: {fileID: 1592392216}
+  m_Layer: 0
+  m_Name: LilithTrapero2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1592392215
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592392214}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 20
+  m_Sprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.16, y: 0.16}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &1592392216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592392214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: dcd1e294-f75d-4e0b-a35b-a6f47a903e0b
+--- !u!4 &1592392217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592392214}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 115.93303, y: -81.65131, z: 0}
+  m_LocalScale: {x: 0.3502048, y: 0.36602047, z: 0.22593857}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1552049442}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1593397653
 GameObject:
   m_ObjectHideFlags: 0
@@ -64536,7 +64614,8 @@ MonoBehaviour:
   destroyAfterDialogue: 1
   objectsToActivateAfter:
   - {fileID: 566591177}
-  objectsToDestroyAfter: []
+  objectsToDestroyAfter:
+  - {fileID: 197674716}
 --- !u!61 &1708311298
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -69954,8 +70033,8 @@ Transform:
   m_GameObject: {fileID: 1811819179}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.98, y: -3.27, z: 0}
-  m_LocalScale: {x: 0.039647583, y: 0.0346287, z: 0.036453746}
+  m_LocalPosition: {x: 9.9697, y: -3.2477, z: 0}
+  m_LocalScale: {x: 0.04735904, y: 0.04136398, z: 0.043544}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 141092657}
@@ -69998,7 +70077,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.100024424, y: 0.099999994}
+    oldSize: {x: 20.394978, y: 13.96}
     newSize: {x: 17.340002, y: 12.980574}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -70050,7 +70129,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -4090991330421265385, guid: 67d216789772cfb4f862365a687d39a5, type: 3}
+  m_Sprite: {fileID: 727326144993961072, guid: 67d216789772cfb4f862365a687d39a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -70527,7 +70606,9 @@ MonoBehaviour:
   promptOffset: {x: 0, y: 1, z: 0}
   dialogueSound: {fileID: 0}
   destroyAfterDialogue: 1
-  objectsToActivateAfter: []
+  objectsToActivateAfter:
+  - {fileID: 83407610}
+  - {fileID: 19368393}
   objectsToDestroyAfter: []
 --- !u!114 &1818855825
 MonoBehaviour:
@@ -72138,7 +72219,7 @@ MonoBehaviour:
   - speakerName: Jorah
     dialogueText: "\xA1Lilith, qu\xE9 sorpresa volverte a ver!"
     leftSpeaker: 1
-    characterSprite: {fileID: -6705544094370837958, guid: eba21f176b2122f4fafe3c3ef9a58b47, type: 3}
+    characterSprite: {fileID: -6705544094370837958, guid: 616f3a2a46c871342bcb37e4215aed2f, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -72147,7 +72228,7 @@ MonoBehaviour:
     dialogueText: "Me ha dicho Cairen que te d\xE9 un poco m\xE1s de lo que le doy
       a los dem\xE1s. Pues aqu\xED tienes, disfrutalo."
     leftSpeaker: 1
-    characterSprite: {fileID: -6705544094370837958, guid: eba21f176b2122f4fafe3c3ef9a58b47, type: 3}
+    characterSprite: {fileID: -6705544094370837958, guid: 616f3a2a46c871342bcb37e4215aed2f, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -75674,9 +75755,7 @@ MonoBehaviour:
   tiempoMostrarMensaje: 1
   delayAntesDeMensaje: 0.2
   objectsToActivateAfter:
-  - {fileID: 19368393}
   - {fileID: 1818855821}
-  - {fileID: 83407610}
   objectsToDestroyAfter:
   - {fileID: 1448360985}
   - {fileID: 255745970}
@@ -77955,6 +78034,107 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectId: d5fdd1ab-c22d-44f1-acb3-fe0a460ee951
+--- !u!1 &2049564432
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2049564435}
+  - component: {fileID: 2049564433}
+  - component: {fileID: 2049564434}
+  m_Layer: 0
+  m_Name: Cairen2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &2049564433
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049564432}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 20
+  m_Sprite: {fileID: -3267486010593951143, guid: 59b507b2052fe594f9783610c9224789, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.16, y: 0.16}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &2049564434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049564432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: 92fe5776-2374-41f2-a7eb-80e08edee723
+--- !u!4 &2049564435
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049564432}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 105.93303, y: -81.65131, z: 0}
+  m_LocalScale: {x: 0.374045, y: 0.374045, z: 0.374045}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2083793914}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2053198897
 GameObject:
   m_ObjectHideFlags: 0
@@ -79118,6 +79298,7 @@ Transform:
   m_Children:
   - {fileID: 558906526}
   - {fileID: 410075400}
+  - {fileID: 2049564435}
   - {fileID: 2146275056}
   - {fileID: 664568505}
   - {fileID: 313467276}
@@ -80745,8 +80926,8 @@ MonoBehaviour:
   characterRight: {fileID: 1919964392}
   spriteLeft: {fileID: 1521650973}
   spriteRight: {fileID: 1919964393}
-  defaultLeftSprite: {fileID: 4704073244319040601, guid: c48e9b403acebb7449581c8a1e23b27c, type: 3}
-  defaultRightSprite: {fileID: -1674950913012282259, guid: 44412b1d030bb9c40b08a3042c899310, type: 3}
+  defaultLeftSprite: {fileID: 4704073244319040601, guid: c1b0d59a8d93aa2449c22bd17735a03d, type: 3}
+  defaultRightSprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
   dialoguePanel: {fileID: 1834269160}
   speakerText: {fileID: 1659188321}
   dialogueText: {fileID: 78300818}
@@ -80762,7 +80943,7 @@ MonoBehaviour:
     dialogueText: "El N\xE9ctar es una locura... es mejor que cualquier mierda de
       la ciudad."
     leftSpeaker: 1
-    characterSprite: {fileID: -4831706047985285938, guid: 48f0af39b873952428ee854ea160813c, type: 3}
+    characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 

@@ -104,26 +104,49 @@ public class LoreNoteSystem : MonoBehaviour
 
     void Update()
     {
+        // --- 1. Lógica de Interacción Original ---
         // Al pulsar F dentro del trigger: Abrir nota
         if (isPlayerInside && !isNoteActive && !isAnimating && Input.GetKeyDown(interactionKey))
         {
             StartCoroutine(OpenNoteRoutine());
         }
-
         // Mientras la nota está activa
         else if (isNoteActive && !isAnimating && Input.GetKeyDown(interactionKey))
         {
             if (isTyping)
             {
-                // Si aún se está escribiendo,
-                // pulsar F muestra todo el texto al instante
+                // Si aún se está escribiendo, pulsar F muestra todo el texto al instante
                 CompleteTyping();
             }
             else
             {
-                // Si ya terminó de escribir,
-                // pulsar F cierra la nota
+                // Si ya terminó de escribir, pulsar F cierra la nota
                 StartCoroutine(CloseNoteRoutine());
+            }
+        }
+
+        // --- 2. NUEVA LÓGICA: Seguir a la cámara ---
+        // Solo actualizamos el seguimiento si la nota no se está animando (abriendo/cerrando)
+        if (mainCamera != null && giantNoteTransform != null && !isAnimating)
+        {
+            // Recalculamos el centro y la parte inferior en base a la posición actual de la cámara
+            CalculatePositions();
+
+            if (!isNoteActive)
+            {
+                // Si la nota está inactiva (oculta), la hacemos seguir la parte inferior de la pantalla
+                giantNoteTransform.position = Vector2.Lerp(
+                    giantNoteTransform.position,
+                    hiddenPosition,
+                    moveSpeed * Time.deltaTime
+                );
+            }
+            else
+            {
+                // Si la nota está activa (leyéndose), la anclamos a su posición objetivo.
+                // Esto es útil por si tienes efectos de temblor de cámara (Camera Shake) 
+                // para que la nota no se despegue de la pantalla.
+                giantNoteTransform.position = targetPosition;
             }
         }
     }

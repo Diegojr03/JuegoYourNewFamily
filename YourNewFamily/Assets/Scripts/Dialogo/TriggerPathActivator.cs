@@ -21,14 +21,12 @@ public class TriggerPathActivator : MonoBehaviour
 
     private void OnValidate()
     {
-        // Si el ID está vacío, generamos uno nuevo
         if (string.IsNullOrEmpty(triggerId))
         {
             GenerateId();
         }
         else
         {
-            // Evitamos IDs duplicados si el componente fue copiado y pegado en el mismo GameObject
             TriggerPathActivator[] activators = GetComponents<TriggerPathActivator>();
             foreach (var act in activators)
             {
@@ -42,26 +40,53 @@ public class TriggerPathActivator : MonoBehaviour
     }
 
     [Header("Configuración del Trigger")]
-    public string triggerTag = "Player"; // Quién activa el recorrido
+    public string triggerTag = "Player";
 
     [Header("Objeto a mover")]
-    public GameObject objectToMove; // El objeto que se moverá (rata, coche, etc.)
-    public Transform[] pathPoints;  // Puntos del recorrido
+    public GameObject objectToMove;
+    public Transform[] pathPoints;
     public float moveSpeed = 3f;
     public float stoppingDistance = 0.1f;
     public bool faceDirection = true;
     public bool playOnce = true;
 
     [Header("Configuración de Destrucción")]
-    public bool destroyAfterPath = false; // Destruir el objeto después del recorrido
-    public bool destroyThisObject = false; // Destruir este objeto (el que tiene el script)
+    public bool destroyAfterPath = false;
+    public bool destroyThisObject = false;
+
+    [Header("Control de Movimiento (para personaje principal)")]
+    [Tooltip("Nombre del componente que controla el movimiento del personaje (ej: 'MovimientoPersonaje', 'PlayerMovement')")]
+    public string movementControllerTypeName = "MovimientoPersonaje";
+
+    // NUEVO: Arrays para activar/destruir objetos al completar el recorrido (igual que en DialogueSystem)
+    [Header("Acciones al Completar el Recorrido")]
+    public GameObject[] objectsToActivateAfter;
+    public GameObject[] objectsToDestroyAfter;
 
     private bool hasPlayed = false;
-    private bool isCompleted = false; // Indica si ESTE activador específico ya terminó su tarea
+    private bool isCompleted = false;
+
+    // Variables para guardar el estado original del movimiento
+    private MonoBehaviour playerMovementController;
+    private Rigidbody2D playerRigidbody;
+    private Vector2 originalVelocity;
+    private bool isPlayerCharacter = false;
 
     private void Start()
     {
-        // Al iniciar la escena, comprobamos si este recorrido ya fue activado/completado en la partida cargada
+        // Detectar si el objeto a mover es el personaje principal
+        if (objectToMove != null)
+        {
+            isPlayerCharacter = (objectToMove.CompareTag("Player") || objectToMove.name == "PersonajePrincipal");
+
+            if (isPlayerCharacter)
+            {
+                // Buscar el componente de movimiento (como en DialogueSystem)
+                playerMovementController = FindMovementController(objectToMove);
+                playerRigidbody = objectToMove.GetComponent<Rigidbody2D>();
+            }
+        }
+
         if (!string.IsNullOrEmpty(triggerId) && SaveManager.Instance != null)
         {
             if (SaveManager.Instance.IsPathCompleted(triggerId))
@@ -85,7 +110,12 @@ public class TriggerPathActivator : MonoBehaviour
             {
                 hasPlayed = true;
 
-                // Registrar inmediatamente que el recorrido se ha iniciado
+                // Bloquear movimiento si es el personaje principal (como en DialogueSystem)
+                if (isPlayerCharacter)
+                {
+                    BlockPlayerMovement(true);
+                }
+
                 if (!string.IsNullOrEmpty(triggerId) && SaveManager.Instance != null)
                 {
                     SaveManager.Instance.RegisterPathCompleted(triggerId);
@@ -138,20 +168,48 @@ public class TriggerPathActivator : MonoBehaviour
 
         isCompleted = true;
 
-        // Destruir el objeto que se movió si está marcado
+        // Desbloquear movimiento si es el personaje principal
+        if (isPlayerCharacter)
+        {
+            BlockPlayerMovement(false);
+        }
+
+        // NUEVO: Activar objetos (igual que en DialogueSystem)
+        foreach (GameObject obj in objectsToActivateAfter)
+        {
+            if (obj != null)
+            {
+                SaveableObject saveable = obj.GetComponent<SaveableObject>();
+                if (saveable != null && SaveManager.Instance != null)
+                    SaveManager.Instance.RegisterObjectState(saveable.objectId, true);
+                obj.SetActive(true);
+            }
+        }
+
+        // NUEVO: Destruir objetos (igual que en DialogueSystem)
+        foreach (GameObject obj in objectsToDestroyAfter)
+        {
+            if (obj != null)
+            {
+                SaveableObject saveable = obj.GetComponent<SaveableObject>();
+                if (saveable != null && SaveManager.Instance != null)
+                {
+                    SaveManager.Instance.RegisterObjectDestroyed(saveable.objectId);
+                }
+                Destroy(obj);
+            }
+        }
+
+        // Destruir el objeto que se movió SOLO si está marcado
         if (destroyAfterPath && objectToMove != null)
         {
             Destroy(objectToMove);
             Debug.Log($"Se ha destruido {objectToMove.name} después del recorrido.");
         }
 
-        // Verificar si se debe destruir el GameObject que contiene este trigger
         CheckAndDestroyTriggerObject();
     }
 
-    /// <summary>
-    /// Coloca el objeto directamente en el punto final del recorrido al cargar una partida guardada.
-    /// </summary>
     private void SkipToEnd()
     {
         if (pathPoints != null && pathPoints.Length > 0 && objectToMove != null)
@@ -159,17 +217,14 @@ public class TriggerPathActivator : MonoBehaviour
             Transform lastPoint = pathPoints[pathPoints.Length - 1];
             if (lastPoint != null)
             {
-                // Calcular orientación según el último tramo
                 Vector3 lastDir = Vector3.zero;
                 if (pathPoints.Length >= 2 && pathPoints[pathPoints.Length - 2] != null)
                 {
                     lastDir = (lastPoint.position - pathPoints[pathPoints.Length - 2].position).normalized;
                 }
 
-                // Posicionar en el punto final
                 objectToMove.transform.position = lastPoint.position;
 
-                // Orientar el objeto
                 if (faceDirection && lastDir.x != 0)
                 {
                     float newScaleX = lastDir.x > 0 ? Mathf.Abs(objectToMove.transform.localScale.x) : -Mathf.Abs(objectToMove.transform.localScale.x);
@@ -178,7 +233,33 @@ public class TriggerPathActivator : MonoBehaviour
             }
         }
 
-        // Aplicar destrucción del objeto en movimiento si está configurado
+        // NUEVO: Activar objetos al cargar partida guardada
+        foreach (GameObject obj in objectsToActivateAfter)
+        {
+            if (obj != null)
+            {
+                SaveableObject saveable = obj.GetComponent<SaveableObject>();
+                if (saveable != null && SaveManager.Instance != null)
+                    SaveManager.Instance.RegisterObjectState(saveable.objectId, true);
+                obj.SetActive(true);
+            }
+        }
+
+        // NUEVO: Destruir objetos al cargar partida guardada
+        foreach (GameObject obj in objectsToDestroyAfter)
+        {
+            if (obj != null)
+            {
+                SaveableObject saveable = obj.GetComponent<SaveableObject>();
+                if (saveable != null && SaveManager.Instance != null)
+                {
+                    SaveManager.Instance.RegisterObjectDestroyed(saveable.objectId);
+                }
+                Destroy(obj);
+            }
+        }
+
+        // Destruir el objeto SOLO si está marcado (como en la lógica original)
         if (destroyAfterPath && objectToMove != null)
         {
             Destroy(objectToMove);
@@ -186,9 +267,51 @@ public class TriggerPathActivator : MonoBehaviour
     }
 
     /// <summary>
-    /// Revisa todos los TriggerPathActivator presentes en este mismo GameObject.
-    /// Solo destruye el GameObject si TODOS han completado su recorrido y al menos uno solicita la destrucción.
+    /// Busca el componente de movimiento en el objeto (como en DialogueSystem)
     /// </summary>
+    private MonoBehaviour FindMovementController(GameObject obj)
+    {
+        if (obj == null) return null;
+
+        // Buscar en el objeto principal y en sus hijos
+        MonoBehaviour[] behaviours = obj.GetComponentsInChildren<MonoBehaviour>();
+        foreach (var behaviour in behaviours)
+        {
+            if (behaviour != null && behaviour.GetType().Name == movementControllerTypeName)
+            {
+                return behaviour;
+            }
+        }
+        return null;
+    }
+
+    /// <summary>
+    /// Bloquea/desbloquea el movimiento del personaje (como en DialogueSystem)
+    /// </summary>
+    private void BlockPlayerMovement(bool block)
+    {
+        // Desactivar/activar el componente de movimiento
+        if (playerMovementController != null)
+        {
+            playerMovementController.enabled = !block;
+            Debug.Log($"{(block ? "Bloqueado" : "Desbloqueado")} el movimiento del personaje (componente {movementControllerTypeName}).");
+        }
+
+        // Congelar/descongelar el Rigidbody
+        if (playerRigidbody != null)
+        {
+            if (block)
+            {
+                originalVelocity = playerRigidbody.linearVelocity;
+                playerRigidbody.linearVelocity = Vector2.zero;
+            }
+            else
+            {
+                playerRigidbody.linearVelocity = originalVelocity;
+            }
+        }
+    }
+
     private void CheckAndDestroyTriggerObject()
     {
         TriggerPathActivator[] allActivators = GetComponents<TriggerPathActivator>();
