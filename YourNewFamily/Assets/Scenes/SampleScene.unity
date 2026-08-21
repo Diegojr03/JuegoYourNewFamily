@@ -2833,6 +2833,9 @@ MonoBehaviour:
   playOnce: 1
   destroyAfterPath: 1
   destroyThisObject: 1
+  movementControllerTypeName: MovimientoPersonaje
+  objectsToActivateAfter: []
+  objectsToDestroyAfter: []
 --- !u!212 &52129813
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7233,6 +7236,9 @@ MonoBehaviour:
   playOnce: 1
   destroyAfterPath: 0
   destroyThisObject: 0
+  movementControllerTypeName: MovimientoPersonaje
+  objectsToActivateAfter: []
+  objectsToDestroyAfter: []
 --- !u!114 &141601515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7258,6 +7264,9 @@ MonoBehaviour:
   playOnce: 1
   destroyAfterPath: 0
   destroyThisObject: 0
+  movementControllerTypeName: MovimientoPersonaje
+  objectsToActivateAfter: []
+  objectsToDestroyAfter: []
 --- !u!114 &141601516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15878,6 +15887,9 @@ MonoBehaviour:
   playOnce: 1
   destroyAfterPath: 0
   destroyThisObject: 0
+  movementControllerTypeName: MovimientoPersonaje
+  objectsToActivateAfter: []
+  objectsToDestroyAfter: []
 --- !u!114 &367846540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15903,6 +15915,9 @@ MonoBehaviour:
   playOnce: 1
   destroyAfterPath: 0
   destroyThisObject: 0
+  movementControllerTypeName: MovimientoPersonaje
+  objectsToActivateAfter: []
+  objectsToDestroyAfter: []
 --- !u!61 &367846541
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18117,6 +18132,9 @@ MonoBehaviour:
   playOnce: 1
   destroyAfterPath: 1
   destroyThisObject: 1
+  movementControllerTypeName: MovimientoPersonaje
+  objectsToActivateAfter: []
+  objectsToDestroyAfter: []
 --- !u!114 &441138237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18705,6 +18723,9 @@ MonoBehaviour:
   playOnce: 1
   destroyAfterPath: 0
   destroyThisObject: 0
+  movementControllerTypeName: MovimientoPersonaje
+  objectsToActivateAfter: []
+  objectsToDestroyAfter: []
 --- !u!114 &453982329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41470,7 +41491,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 17.4, y: 9.551023}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -41499,6 +41520,7 @@ Transform:
   - {fileID: 1410001657}
   - {fileID: 17644645}
   - {fileID: 628715002}
+  - {fileID: 1875959746}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1080886125
@@ -41539,8 +41561,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 17.43, y: 9.67}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 17.4, y: 9.551023}
+    newSize: {x: 17.4, y: 9.551023}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -48509,6 +48531,9 @@ MonoBehaviour:
   playOnce: 1
   destroyAfterPath: 1
   destroyThisObject: 0
+  movementControllerTypeName: MovimientoPersonaje
+  objectsToActivateAfter: []
+  objectsToDestroyAfter: []
 --- !u!114 &1274660189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48534,6 +48559,9 @@ MonoBehaviour:
   playOnce: 1
   destroyAfterPath: 1
   destroyThisObject: 0
+  movementControllerTypeName: MovimientoPersonaje
+  objectsToActivateAfter: []
+  objectsToDestroyAfter: []
 --- !u!61 &1274660190
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -54178,6 +54206,9 @@ MonoBehaviour:
   playOnce: 1
   destroyAfterPath: 1
   destroyThisObject: 1
+  movementControllerTypeName: MovimientoPersonaje
+  objectsToActivateAfter: []
+  objectsToDestroyAfter: []
 --- !u!61 &1452488246
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -55716,6 +55747,9 @@ MonoBehaviour:
   playOnce: 1
   destroyAfterPath: 0
   destroyThisObject: 0
+  movementControllerTypeName: MovimientoPersonaje
+  objectsToActivateAfter: []
+  objectsToDestroyAfter: []
 --- !u!61 &1512184032
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -56096,6 +56130,9 @@ MonoBehaviour:
   playOnce: 1
   destroyAfterPath: 1
   destroyThisObject: 1
+  movementControllerTypeName: MovimientoPersonaje
+  objectsToActivateAfter: []
+  objectsToDestroyAfter: []
 --- !u!61 &1518578075
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -63978,6 +64015,9 @@ MonoBehaviour:
   playOnce: 1
   destroyAfterPath: 1
   destroyThisObject: 0
+  movementControllerTypeName: MovimientoPersonaje
+  objectsToActivateAfter: []
+  objectsToDestroyAfter: []
 --- !u!61 &1677640270
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -67638,6 +67678,9 @@ MonoBehaviour:
   playOnce: 1
   destroyAfterPath: 0
   destroyThisObject: 0
+  movementControllerTypeName: MovimientoPersonaje
+  objectsToActivateAfter: []
+  objectsToDestroyAfter: []
 --- !u!114 &1773320739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72860,6 +72903,93 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectId: d2bdb5f2-2bdf-46e9-8b59-d5ba9207960c
+--- !u!1 &1875959745
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1875959746}
+  - component: {fileID: 1875959747}
+  m_Layer: 0
+  m_Name: FondoPatio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1875959746
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875959745}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -226.72878, y: 86.70886, z: 0}
+  m_LocalScale: {x: 0.86544997, y: 0.86544997, z: 0.86544997}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1080886124}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1875959747
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875959745}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -1861221331037698784, guid: 9a0512c685fcfda44bf26f598165006e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 13.36, y: 9.55}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1876210825
 GameObject:
   m_ObjectHideFlags: 0
@@ -73005,6 +73135,9 @@ MonoBehaviour:
   playOnce: 1
   destroyAfterPath: 0
   destroyThisObject: 0
+  movementControllerTypeName: MovimientoPersonaje
+  objectsToActivateAfter: []
+  objectsToDestroyAfter: []
 --- !u!68 &1882571429
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -77301,6 +77434,9 @@ MonoBehaviour:
   playOnce: 1
   destroyAfterPath: 1
   destroyThisObject: 1
+  movementControllerTypeName: MovimientoPersonaje
+  objectsToActivateAfter: []
+  objectsToDestroyAfter: []
 --- !u!61 &2008359415
 BoxCollider2D:
   m_ObjectHideFlags: 0
