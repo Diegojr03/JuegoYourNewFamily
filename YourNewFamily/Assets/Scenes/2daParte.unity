@@ -34544,7 +34544,7 @@ Transform:
   m_GameObject: {fileID: 516495335}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -439.9, y: 27.86, z: 0}
+  m_LocalPosition: {x: -301.3, y: 28.1, z: 0}
   m_LocalScale: {x: 0.055475384, y: 0.055475384, z: 0.055475384}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34646,8 +34646,8 @@ MonoBehaviour:
   characterRight: {fileID: 1582708194}
   spriteLeft: {fileID: 47097082}
   spriteRight: {fileID: 1582708195}
-  defaultLeftSprite: {fileID: -6918674439176291157, guid: 7695b488ca1bb8a4ca28eb071f9e4cad, type: 3}
-  defaultRightSprite: {fileID: -1674950913012282259, guid: 44412b1d030bb9c40b08a3042c899310, type: 3}
+  defaultLeftSprite: {fileID: 8379664347739615351, guid: 79502e6f2b7c2fc4db01211d2366d4c1, type: 3}
+  defaultRightSprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
   dialogueText: {fileID: 419537938}
@@ -34670,7 +34670,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: Casi hemos terminado.
     leftSpeaker: 1
-    characterSprite: {fileID: 6623303593111430722, guid: 340b1ac41e438db4ba1f226983dd85f7, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -34687,7 +34687,7 @@ MonoBehaviour:
     dialogueText: "La profec\xEDa es precisa. Pero a\xFAn queda un paso m\xE1s. \"Cuando
       la sangre de todos haya sido ofrecida la Elegida deber\xE1 caer."
     leftSpeaker: 1
-    characterSprite: {fileID: 6623303593111430722, guid: 340b1ac41e438db4ba1f226983dd85f7, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -34696,7 +34696,7 @@ MonoBehaviour:
     dialogueText: "Solo entonces el Pastor se levantar\xE1, y guiar\xE1 al mundo
       con el poder de Beta.\" La Elegida debe morir."
     leftSpeaker: 1
-    characterSprite: {fileID: 6623303593111430722, guid: 340b1ac41e438db4ba1f226983dd85f7, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -34713,7 +34713,7 @@ MonoBehaviour:
     dialogueText: "No debes verlo como un final. Debes verlo como un honor. Tu muerte
       completar\xE1 la profec\xEDa. Y yo me alzar\xE9. Como el Pastor."
     leftSpeaker: 1
-    characterSprite: {fileID: 6623303593111430722, guid: 340b1ac41e438db4ba1f226983dd85f7, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -37109,7 +37109,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Siempre apareces cuando te necesito.\r"
     leftSpeaker: 1
-    characterSprite: {fileID: 6623303593111430722, guid: 340b1ac41e438db4ba1f226983dd85f7, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -37126,7 +37126,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Ha llegado m\xE1s lejos que nadie.\r"
     leftSpeaker: 1
-    characterSprite: {fileID: 6623303593111430722, guid: 340b1ac41e438db4ba1f226983dd85f7, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -37143,7 +37143,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Te ayudar\xE1 a entender.\r"
     leftSpeaker: 1
-    characterSprite: {fileID: 6623303593111430722, guid: 340b1ac41e438db4ba1f226983dd85f7, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -37160,7 +37160,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "La profec\xEDa debe cumplirse.\r"
     leftSpeaker: 1
-    characterSprite: {fileID: 6623303593111430722, guid: 340b1ac41e438db4ba1f226983dd85f7, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -37178,7 +37178,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Y t\xFA siempre dijiste que lo har\xEDas.\r"
     leftSpeaker: 1
-    characterSprite: {fileID: 6623303593111430722, guid: 340b1ac41e438db4ba1f226983dd85f7, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -37211,7 +37211,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Por la familia.\r"
     leftSpeaker: 1
-    characterSprite: {fileID: 6623303593111430722, guid: 340b1ac41e438db4ba1f226983dd85f7, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -38740,8 +38740,8 @@ MonoBehaviour:
   characterRight: {fileID: 618023648}
   spriteLeft: {fileID: 1729862796}
   spriteRight: {fileID: 618023649}
-  defaultLeftSprite: {fileID: 657193517335828509, guid: 114d4a2f78d4b8948925c89d60d049c2, type: 3}
-  defaultRightSprite: {fileID: -1674950913012282259, guid: 44412b1d030bb9c40b08a3042c899310, type: 3}
+  defaultLeftSprite: {fileID: 8379664347739615351, guid: 79502e6f2b7c2fc4db01211d2366d4c1, type: 3}
+  defaultRightSprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
   dialogueText: {fileID: 419537938}
@@ -38756,7 +38756,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Ah\u2026 por fin. Pens\xE9 que dormir\xEDas hasta el invierno.\r"
     leftSpeaker: 1
-    characterSprite: {fileID: -8106269189103352243, guid: bd14f137295602c4d99506bc42db21b9, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -38773,7 +38773,7 @@ MonoBehaviour:
     dialogueText: "En mi casa. Bueno\u2026 la casa de tu nueva familia, si todo sale
       como debe. Te desmayaste anoche."
     leftSpeaker: 1
-    characterSprite: {fileID: -8106269189103352243, guid: bd14f137295602c4d99506bc42db21b9, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -38790,7 +38790,7 @@ MonoBehaviour:
     dialogueText: "Desconozco la raz\xF3n. Lo importante es que est\xE1s bien, te
       necesito. La hora de completar la profec\xEDa est\xE1 llegando."
     leftSpeaker: 1
-    characterSprite: {fileID: -8106269189103352243, guid: bd14f137295602c4d99506bc42db21b9, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -38808,7 +38808,7 @@ MonoBehaviour:
       Hay un pergamino en la mansi\xF3n. En el ala este. Ah\xED est\xE1 escrito todo.
       Quiero que vayas a buscarlo."
     leftSpeaker: 1
-    characterSprite: {fileID: -8106269189103352243, guid: bd14f137295602c4d99506bc42db21b9, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -38824,7 +38824,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Sab\xEDa que pod\xEDa contar contigo."
     leftSpeaker: 1
-    characterSprite: {fileID: -8106269189103352243, guid: bd14f137295602c4d99506bc42db21b9, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -38833,7 +38833,7 @@ MonoBehaviour:
     dialogueText: "Mientras t\xFA lo buscas, yo ir\xE9 preparando el resto. Hoy\u2026
       todo terminar\xE1. O todo empezar\xE1. El ala este est\xE1 por la derecha."
     leftSpeaker: 1
-    characterSprite: {fileID: -8106269189103352243, guid: bd14f137295602c4d99506bc42db21b9, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -38842,7 +38842,7 @@ MonoBehaviour:
     dialogueText: "No tiene p\xE9rdida. Tr\xE1eme el pergamino cuando lo encuentres.
       Y Lilith\u2026 Todo esto es gracias a ti.\r"
     leftSpeaker: 1
-    characterSprite: {fileID: -8106269189103352243, guid: bd14f137295602c4d99506bc42db21b9, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -46095,7 +46095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bc6ad87cb00844cb187b7cbf5e33e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicClip: {fileID: 8300000, guid: 4bae5cf93be744f4f8ba2e9f6a950649, type: 3}
+  musicClip: {fileID: 8300000, guid: 04d72870a4b9b7d4e83480d2a08d4c2c, type: 3}
   fadeDuration: 2
   volume: 1
   useCustomVolume: 0
@@ -50387,8 +50387,8 @@ MonoBehaviour:
   characterRight: {fileID: 1935380050}
   spriteLeft: {fileID: 1185158296}
   spriteRight: {fileID: 1935380051}
-  defaultLeftSprite: {fileID: -6918674439176291157, guid: 7695b488ca1bb8a4ca28eb071f9e4cad, type: 3}
-  defaultRightSprite: {fileID: -1674950913012282259, guid: 44412b1d030bb9c40b08a3042c899310, type: 3}
+  defaultLeftSprite: {fileID: 8379664347739615351, guid: 79502e6f2b7c2fc4db01211d2366d4c1, type: 3}
+  defaultRightSprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
   dialogueText: {fileID: 419537938}
@@ -50404,7 +50404,7 @@ MonoBehaviour:
     dialogueText: "La profec\xEDa habla de un \xFAltimo sacrificio. Uno que abra
       definitivamente el camino."
     leftSpeaker: 1
-    characterSprite: {fileID: 6623303593111430722, guid: 340b1ac41e438db4ba1f226983dd85f7, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -50413,7 +50413,7 @@ MonoBehaviour:
     dialogueText: "Todos vosotros hab\xE9is bebido del \xC1rbol. Hab\xE9is servido
       a la Familia. Y ahora vais a completar su voluntad.\r"
     leftSpeaker: 1
-    characterSprite: {fileID: 6623303593111430722, guid: 340b1ac41e438db4ba1f226983dd85f7, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -74075,7 +74075,7 @@ MonoBehaviour:
   targetScore: 4000
   pointsPerHit: 50
   audioSource: {fileID: 1088321799}
-  puzzleMusic: {fileID: 8300000, guid: f0c555b944d2398418ceb77feccf907c, type: 3}
+  puzzleMusic: {fileID: 8300000, guid: cdef57a975ccb1643ad649276de8de7a, type: 3}
   fadeOutDuration: 0.5
   puzzleCanvasGroup: {fileID: 0}
   objectsToActivate:
@@ -74098,7 +74098,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: f0c555b944d2398418ceb77feccf907c, type: 3}
+  m_Resource: {fileID: 8300000, guid: cdef57a975ccb1643ad649276de8de7a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -77818,7 +77818,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1149743982
 Transform:
   m_ObjectHideFlags: 0
@@ -80073,7 +80073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bc6ad87cb00844cb187b7cbf5e33e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicClip: {fileID: 8300000, guid: 4bae5cf93be744f4f8ba2e9f6a950649, type: 3}
+  musicClip: {fileID: 8300000, guid: 04d72870a4b9b7d4e83480d2a08d4c2c, type: 3}
   fadeDuration: 2
   volume: 1
   useCustomVolume: 0
@@ -82733,8 +82733,8 @@ MonoBehaviour:
   characterRight: {fileID: 752694445}
   spriteLeft: {fileID: 1594378530}
   spriteRight: {fileID: 752694446}
-  defaultLeftSprite: {fileID: -6918674439176291157, guid: 7695b488ca1bb8a4ca28eb071f9e4cad, type: 3}
-  defaultRightSprite: {fileID: -1674950913012282259, guid: 44412b1d030bb9c40b08a3042c899310, type: 3}
+  defaultLeftSprite: {fileID: 8379664347739615351, guid: 79502e6f2b7c2fc4db01211d2366d4c1, type: 3}
+  defaultRightSprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
   dialogueText: {fileID: 419537938}
@@ -82749,7 +82749,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "M\xEDrala. El \xFAltimo obst\xE1culo."
     leftSpeaker: 1
-    characterSprite: {fileID: 6623303593111430722, guid: 340b1ac41e438db4ba1f226983dd85f7, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -82758,7 +82758,7 @@ MonoBehaviour:
     dialogueText: "Lilith\u2026 Dijiste que me ayudar\xEDas. Me dijiste que ibas
       a sacarme de ah\xED. Te cre\xED. No\u2026 No hagas esto."
     leftSpeaker: 1
-    characterSprite: {fileID: -4831706047985285938, guid: 48f0af39b873952428ee854ea160813c, type: 3}
+    characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -82768,7 +82768,7 @@ MonoBehaviour:
       el \xC1rbol. Ella dud\xF3 de la Familia. Y la duda es una enfermedad. T\xFA
       sabes lo que hay que hacer."
     leftSpeaker: 1
-    characterSprite: {fileID: 6623303593111430722, guid: 340b1ac41e438db4ba1f226983dd85f7, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -82786,7 +82786,7 @@ MonoBehaviour:
     dialogueText: "No escuches su miedo. El miedo es lo \xFAltimo que abandona a
       los d\xE9biles. Hazlo. Cumple la profec\xEDa."
     leftSpeaker: 1
-    characterSprite: {fileID: 6623303593111430722, guid: 340b1ac41e438db4ba1f226983dd85f7, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -82803,7 +82803,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: Hazlo. Es tu destino.
     leftSpeaker: 1
-    characterSprite: {fileID: 6623303593111430722, guid: 340b1ac41e438db4ba1f226983dd85f7, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -122099,7 +122099,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.8560333, y: 0.56253624}
+  m_Offset: {x: -1.073349, y: 0.28594208}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -122109,7 +122109,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.2012634, y: 2.2229042}
+  m_Size: {x: 3.6358948, y: 2.7760925}
   m_EdgeRadius: 0
 --- !u!4 &1824782566
 Transform:
@@ -125440,8 +125440,8 @@ MonoBehaviour:
   characterRight: {fileID: 339701574}
   spriteLeft: {fileID: 49897607}
   spriteRight: {fileID: 339701575}
-  defaultLeftSprite: {fileID: 657193517335828509, guid: 114d4a2f78d4b8948925c89d60d049c2, type: 3}
-  defaultRightSprite: {fileID: -1674950913012282259, guid: 44412b1d030bb9c40b08a3042c899310, type: 3}
+  defaultLeftSprite: {fileID: 8379664347739615351, guid: 79502e6f2b7c2fc4db01211d2366d4c1, type: 3}
+  defaultRightSprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
   dialogueText: {fileID: 419537938}
@@ -125456,7 +125456,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Veo que lo encontraste.\r"
     leftSpeaker: 1
-    characterSprite: {fileID: -8106269189103352243, guid: bd14f137295602c4d99506bc42db21b9, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -125473,7 +125473,7 @@ MonoBehaviour:
     dialogueText: "Perfecto. Este texto es m\xE1s antiguo que esta casa. M\xE1s antiguo
       que esta comunidad. Aqu\xED est\xE1. La siguiente parte de la profec\xEDa."
     leftSpeaker: 1
-    characterSprite: {fileID: -8106269189103352243, guid: bd14f137295602c4d99506bc42db21b9, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -125490,7 +125490,7 @@ MonoBehaviour:
     dialogueText: "Que el elegido debe demostrar su voluntad. Que antes del final\u2026
       debe aprender a dar el paso sin dudar.\r"
     leftSpeaker: 1
-    characterSprite: {fileID: -8106269189103352243, guid: bd14f137295602c4d99506bc42db21b9, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -125500,7 +125500,7 @@ MonoBehaviour:
       arma es un instrumento de fe. Con \xE9l se completar\xE1 la profec\xEDa. Ahora
       te toca a ti.\r"
     leftSpeaker: 1
-    characterSprite: {fileID: -8106269189103352243, guid: bd14f137295602c4d99506bc42db21b9, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -125524,7 +125524,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Una peque\xF1a prueba. Nada que no puedas manejar.\r"
     leftSpeaker: 1
-    characterSprite: {fileID: -8106269189103352243, guid: bd14f137295602c4d99506bc42db21b9, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -125533,7 +125533,7 @@ MonoBehaviour:
     dialogueText: "Si consigues pasar esta prueba, sabr\xE1s la verdad de todo esto.
       Me acompa\xF1aras hasta el final y juntos\u2026 Nos alzaremos.\r"
     leftSpeaker: 1
-    characterSprite: {fileID: -8106269189103352243, guid: bd14f137295602c4d99506bc42db21b9, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -128653,8 +128653,8 @@ MonoBehaviour:
   characterRight: {fileID: 2053032375}
   spriteLeft: {fileID: 1647079969}
   spriteRight: {fileID: 2053032376}
-  defaultLeftSprite: {fileID: 657193517335828509, guid: 114d4a2f78d4b8948925c89d60d049c2, type: 3}
-  defaultRightSprite: {fileID: -1674950913012282259, guid: 44412b1d030bb9c40b08a3042c899310, type: 3}
+  defaultLeftSprite: {fileID: 8379664347739615351, guid: 79502e6f2b7c2fc4db01211d2366d4c1, type: 3}
+  defaultRightSprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
   dialogueText: {fileID: 419537938}
@@ -128670,7 +128670,7 @@ MonoBehaviour:
     dialogueText: "Est\xE1s m\xE1s preparada de lo que pensaba Has cambiado mucho
       desde que llegaste En cuanto a Delta\u2026 Siempre fue un hombre leal."
     leftSpeaker: 1
-    characterSprite: {fileID: -8106269189103352243, guid: bd14f137295602c4d99506bc42db21b9, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -128679,7 +128679,7 @@ MonoBehaviour:
     dialogueText: "Eso es lo que hace fuerte a una familia. Personas capaces de darlo
       todo\u2026 sin dudar. Lo hiciste bien Lilith."
     leftSpeaker: 1
-    characterSprite: {fileID: -8106269189103352243, guid: bd14f137295602c4d99506bc42db21b9, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -128689,7 +128689,7 @@ MonoBehaviour:
       una sala a la derecha del trono. D\xE9jalo all\xED. Despu\xE9s vuelve. A\xFAn
       quedan partes de la profec\xEDa por cumplir."
     leftSpeaker: 1
-    characterSprite: {fileID: -8106269189103352243, guid: bd14f137295602c4d99506bc42db21b9, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -141708,8 +141708,8 @@ MonoBehaviour:
   characterRight: {fileID: 1188451104}
   spriteLeft: {fileID: 889739875}
   spriteRight: {fileID: 1188451105}
-  defaultLeftSprite: {fileID: -6918674439176291157, guid: 7695b488ca1bb8a4ca28eb071f9e4cad, type: 3}
-  defaultRightSprite: {fileID: -1674950913012282259, guid: 44412b1d030bb9c40b08a3042c899310, type: 3}
+  defaultLeftSprite: {fileID: 8379664347739615351, guid: 79502e6f2b7c2fc4db01211d2366d4c1, type: 3}
+  defaultRightSprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
   dialogueText: {fileID: 419537938}
@@ -141733,7 +141733,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Calma Lilith, acu\xE9rdate del plan de Beta."
     leftSpeaker: 1
-    characterSprite: {fileID: 6623303593111430722, guid: 340b1ac41e438db4ba1f226983dd85f7, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -141742,7 +141742,7 @@ MonoBehaviour:
     dialogueText: "Has recorrido un largo camino, todo esto no es en vano. La Familia
       tambi\xE9n. "
     leftSpeaker: 1
-    characterSprite: {fileID: 6623303593111430722, guid: 340b1ac41e438db4ba1f226983dd85f7, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -141750,7 +141750,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Todos los sacrificios nos han tra\xEDdo hasta este momento."
     leftSpeaker: 1
-    characterSprite: {fileID: 6623303593111430722, guid: 340b1ac41e438db4ba1f226983dd85f7, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -141766,7 +141766,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "\xBFSientes el \xC1rbol? Est\xE1 despierto. Nos estaba esperando."
     leftSpeaker: 1
-    characterSprite: {fileID: 6623303593111430722, guid: 340b1ac41e438db4ba1f226983dd85f7, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -141783,7 +141783,7 @@ MonoBehaviour:
     dialogueText: "Siempre fuiste especial. No como los otros. Ellos eran necesarios.
       Pero t\xFA\u2026 T\xFA eres imprescindible. Este es el principio del final."
     leftSpeaker: 1
-    characterSprite: {fileID: -6918674439176291157, guid: 7695b488ca1bb8a4ca28eb071f9e4cad, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -141792,7 +141792,7 @@ MonoBehaviour:
     dialogueText: " La profec\xEDa habla de un alzamiento. La Familia debe morir
       para que podamos alzarnos.\r"
     leftSpeaker: 1
-    characterSprite: {fileID: -6918674439176291157, guid: 7695b488ca1bb8a4ca28eb071f9e4cad, type: 3}
+    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 

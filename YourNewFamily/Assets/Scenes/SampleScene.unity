@@ -43221,7 +43221,7 @@ MonoBehaviour:
   sonidosBotonesFinales:
   - {fileID: 8300000, guid: 7bb003b0f643e59478a442ac564b7046, type: 3}
   - {fileID: 8300000, guid: bb227a3ab33d38a4aa2f0035661c039a, type: 3}
-  - {fileID: 8300000, guid: 0252461757746c14fa558c620146889c, type: 3}
+  - {fileID: 8300000, guid: 2cbec3213b7d687459ebaa33f6c52966, type: 3}
   - {fileID: 8300000, guid: 6e6ff8ac6ab32e141bf60342c87389a9, type: 3}
   imagenesBotonesFinales: []
   panelPuzzle: {fileID: 329921219}
