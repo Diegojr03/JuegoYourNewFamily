@@ -34,6 +34,9 @@ public class DialogueChoiceSystem : MonoBehaviour
     [Header("Identificador de Diálogo")]
     public string dialogueId = ""; // 🔥 NUEVO
 
+    [Header("Identificación")]
+    public string protagonistName = "Lilith";
+
     [Header("Sistema de Inventario")]
     public GameObject itemToAddToInventory;
     public Sprite inventoryItemIcon;
@@ -307,9 +310,7 @@ public class DialogueChoiceSystem : MonoBehaviour
     void ShowChoices()
     {
         DialogueLine line = dialogueLines[currentIndex];
-
-        if (line.choices == null || line.choices.Length == 0)
-            return;
+        if (line.choices == null || line.choices.Length == 0) return;
 
         choicePanel.SetActive(true);
 
@@ -319,17 +320,18 @@ public class DialogueChoiceSystem : MonoBehaviour
         foreach (Choice choice in line.choices)
         {
             GameObject btnObj = Instantiate(choiceButtonPrefab, choicesContainer);
-
             TextMeshProUGUI txt = btnObj.GetComponentInChildren<TextMeshProUGUI>();
             if (txt != null) txt.text = choice.choiceText;
 
             Button btn = btnObj.GetComponent<Button>();
             int targetIndex = choice.nextDialogueIndex;
+            string choiceText = choice.choiceText; // Capturamos el texto
 
+            // Ahora el listener pasa también el texto
             btn.onClick.AddListener(() =>
             {
                 choicePanel.SetActive(false);
-                SelectChoice(targetIndex);
+                SelectChoice(targetIndex, choiceText);
             });
         }
     }
@@ -380,8 +382,23 @@ public class DialogueChoiceSystem : MonoBehaviour
         AdvanceDialogue();
     }
 
-    void SelectChoice(int nextIndex)
+    void SelectChoice(int nextIndex, string choiceText)
     {
+        // ---- GUARDAR LA ELECCIÓN EN EL BACKLOG ----
+        if (BacklogManager.Instance != null)
+        {
+            // Obtenemos el dueño de la conversación (para que la elección se agrupe en la misma pestaña)
+            string owner = GetConversationOwner();
+
+            // Registramos la elección como si la hubiera dicho la protagonista
+            BacklogManager.Instance.AddDialogueWithConversationOwner(
+                protagonistName,      // speakerName = nombre de la protagonista
+                choiceText,           // dialogueText = texto de la opción elegida
+                owner                 // conversationOwner = mismo que el diálogo
+            );
+        }
+
+        // Luego avanzamos al siguiente diálogo
         if (nextIndex < 0 || nextIndex >= dialogueLines.Count)
         {
             EndDialogue();

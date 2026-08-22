@@ -801,9 +801,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1702569241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241.5, y: -375}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &12159025
@@ -921,9 +921,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1702569241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241.5, y: -4055}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &13127005
@@ -1284,6 +1284,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 1
   dialogueSections:
   - speakerName: Lilith
     dialogueText: "Menuda impresi\xF3n me estoy llevando de este sitio, y ni siquiera
@@ -2162,6 +2163,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 1
   dialogueSections:
   - speakerName: Lilith
     dialogueText: "\xBFOtra vez? Seguro que es \xE9l\u2026Ya se cansara."
@@ -2393,9 +2395,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1702569241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241.5, y: -2215}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &36464279
@@ -4266,6 +4268,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: ??
     dialogueText: "\xBFTe fijaste en esos sem\xE1foros? A veces parece que se encienden
@@ -4492,6 +4495,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 1
   dialogueSections:
   - speakerName: Lilith
     dialogueText: "Que bien huelen, me recuerdan a cuando las cosas eran m\xE1s simples.
@@ -4739,6 +4743,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: NPC1
     dialogueText: "A m\xED a\xFAn me tiemblan las manos, pero... es el primer d\xEDa
@@ -5791,6 +5796,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: Npc
     dialogueText: "\xA1QUE ALGUIEN PONGA M\xDASICA!"
@@ -6238,6 +6244,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: 
     dialogueText: Has encontrado el boton 3.
@@ -6424,9 +6431,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1702569241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241.5, y: -3135}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &133843871
@@ -7078,6 +7085,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 1
   dialogueSections:
   - speakerName: Segurata
     dialogueText: "\xA1Te dije que no pod\xEDas pasar, ven aqu\xED!"
@@ -8281,6 +8289,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 1
   dialogueSections:
   - speakerName: Casero
     dialogueText: "Le he dado otra vuelta al asunto y \xA1ESTOY HARTO DE TI!"
@@ -8519,6 +8528,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 1
   dialogueSections:
   - speakerName: 
     dialogueText: AAAAAAAAAAHHHHHHHHHHGGGGGGG
@@ -9019,9 +9029,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1702569241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241.5, y: -3825}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &185384785
@@ -9587,127 +9597,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectId: 859f20b8-6571-465f-92dd-7148a8cd352e
---- !u!1 &190800083
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 190800084}
-  - component: {fileID: 190800087}
-  - component: {fileID: 190800086}
-  - component: {fileID: 190800085}
-  m_Layer: 5
-  m_Name: Close_Button
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &190800084
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 190800083}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 356363806}
-  m_Father: {fileID: 1248110580}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &190800085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 190800083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 190800086}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &190800086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 190800083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &190800087
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 190800083}
-  m_CullTransparentMesh: 1
 --- !u!1 &191074813
 GameObject:
   m_ObjectHideFlags: 0
@@ -13204,6 +13093,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: NPC2
     dialogueText: "Alfa dijo que con el tiempo, el N\xE9ctar te purifica por completo.
@@ -14701,9 +14591,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1702569241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241.5, y: -2905}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &329354470
@@ -15047,6 +14937,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: 
     dialogueText: "\xA1Eh! \xA1Ponme otra ronda! Esta noche no vuelvo a casa, me
@@ -15348,142 +15239,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &356363805
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 356363806}
-  - component: {fileID: 356363808}
-  - component: {fileID: 356363807}
-  m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &356363806
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 356363805}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 190800084}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &356363807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 356363805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: Button
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 0
-  m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_EmojiFallbackSupport: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &356363808
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 356363805}
-  m_CullTransparentMesh: 1
 --- !u!1 &360940295
 GameObject:
   m_ObjectHideFlags: 0
@@ -16556,6 +16311,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: Bortis
     dialogueText: "Hermanos y hermanas, bienvenidos a casa. Aqu\xED dej\xE1is atr\xE1s
@@ -17463,9 +17219,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1702569241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241.5, y: -605}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &422731937
@@ -18348,6 +18104,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: 
     dialogueText: "No puedes pasar hasta parar el tr\xE1fico."
@@ -19716,6 +19473,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: 
     dialogueText: Has encontrado el boton 2.
@@ -19902,9 +19660,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1702569241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241.5, y: -3595}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &486449145
@@ -19971,7 +19729,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 160114767289012160, guid: 81b4b71c227981b42b83802f6ff0f5fb, type: 3}
+  m_Sprite: {fileID: -2317544566924628521, guid: 92c9d05a04edb6341a3a9c8931e15915, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21151,6 +20909,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: ??
     dialogueText: Te lo digo en serio, no hay forma de que ganes, llevo toda la noche
@@ -24378,10 +24137,10 @@ RectTransform:
   - {fileID: 1765734490}
   m_Father: {fileID: 513032926}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 232.5, y: -540}
-  m_SizeDelta: {x: 500, y: 650}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 500, y: 678.2991}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &578543729
 MonoBehaviour:
@@ -24396,15 +24155,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 7603930756725898131, guid: a73793479f30dc1468720f57cfd98011, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -25210,9 +24969,9 @@ RectTransform:
   - {fileID: 1541010516}
   m_Father: {fileID: 513032926}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1687.5, y: -540}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 900, y: 650}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &607360094
@@ -25235,8 +24994,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 4541375672270900756, guid: c9c4a82aa31ea3b428041e2a4767d06e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -25442,6 +25201,7 @@ GameObject:
   - component: {fileID: 608626064}
   - component: {fileID: 608626063}
   - component: {fileID: 608626062}
+  - component: {fileID: 608626065}
   m_Layer: 0
   m_Name: CartasNovio
   m_TagString: Untagged
@@ -25476,22 +25236,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueId: 
+  dialogueId: 76274550-88ed-41bc-80ac-0dfacc2d58ca
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 1
   dialogueSections:
   - speakerName: Lilith
-    dialogueText: "Hace dos d\xEDas me dej\xF3 mi novio,"
+    dialogueText: "Hace dos d\xEDas me dej\xF3 mi novio."
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
   - speakerName: Lilith
-    dialogueText: "dice que no tengo metas y que me paso el d\xEDa en casa\u2026
+    dialogueText: "Dice que no tengo metas y que me paso el d\xEDa en casa\u2026
       puf, supongo que tiene raz\xF3n."
     giveItemAfterThisLine: 0
     itemIdToGive: 
@@ -25614,6 +25375,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 11.577353, y: 15.301853}
   m_EdgeRadius: 0
+--- !u!114 &608626065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608626060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0443a37ac64d04da3ded80be0cb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectId: 76274550-88ed-41bc-80ac-0dfacc2d58ca
 --- !u!1 &609264414
 GameObject:
   m_ObjectHideFlags: 0
@@ -27061,8 +26835,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchoredPosition: {x: 5.7128906, y: 0}
+  m_SizeDelta: {x: -11.4259, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &650116034
 MonoBehaviour:
@@ -27084,7 +26858,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 5644141744634361007, guid: 58a587761b6616b4a94789c5b8e1b63e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -28722,6 +28496,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 1
   dialogueSections:
   - speakerName: Lilith
     dialogueText: "Que rara me siento aqu\xED, es como si algo me estuviese llamando
@@ -29156,9 +28931,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1702569241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241.5, y: -1065}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &693922818
@@ -29587,6 +29362,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 1
   dialogueSections:
   - speakerName: Lilith
     dialogueText: "Su chapita... Se ve tan... trivial as\xED, tirada. Alpha dijo
@@ -30282,9 +30058,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1702569241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241.5, y: -1985}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 165, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &737361207
@@ -30587,9 +30363,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1702569241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241.5, y: -4285}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &762169332
@@ -30656,7 +30432,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2371615467240862262, guid: 336108d649765dc4b8950df3c6eeb277, type: 3}
+  m_Sprite: {fileID: -6843879689614897153, guid: 86c410974de39b7499119f1f4c824b7c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -30707,9 +30483,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1702569241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241.5, y: -2675}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &763274839
@@ -31383,6 +31159,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: Gamma
     dialogueText: "Bueno, all\xE1 vamos. A nuestro \"nuevo comienzo\". Reza para
@@ -31916,6 +31693,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: 
     dialogueText: Has encontrado un cuchillo
@@ -32264,6 +32042,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: 
     dialogueText: "Todav\xEDa no puedes pasar por aqu\xED. Habla con Alpha primero."
@@ -33658,7 +33437,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &852600293
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33701,8 +33480,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -2788122817374551949, guid: 8386c3f47019c8b4f866c1f3b29a4e2c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -35243,9 +35022,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00070596294}
-  m_SizeDelta: {x: 0, y: 22}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0.0006713867}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &904854748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35260,7 +35039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding:
     m_Left: 20
-    m_Right: 20
+    m_Right: 32
     m_Top: 20
     m_Bottom: 2
   m_ChildAlignment: 0
@@ -36768,6 +36547,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: 
     dialogueText: "Esta zona no esta disponible a\xFAn."
@@ -38151,6 +37931,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: 
     dialogueText: Has encontrado el boton 1.
@@ -39007,9 +38788,10 @@ MonoBehaviour:
   - {fileID: 762169332}
   - {fileID: 1322120011}
   messagesContent: {fileID: 904854747}
+  messagesScrollRect: {fileID: 1541010517}
   messageEntryPrefab: {fileID: 3971697953119381147, guid: cdadd1a19985ba5449ae10e5f1491cb5, type: 3}
   selectedCharacterText: {fileID: 1258475458}
-  maxEntries: 100
+  maxEntries: 10000
   playerColor: {r: 0, g: 1, b: 1, a: 1}
   npcColor: {r: 0.4327802, g: 0.764151, b: 0.28475437, a: 1}
 --- !u!114 &1020001716
@@ -40834,6 +40616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueId: d17a5548-8017-4787-8d9d-b3b5278c1e3f
+  protagonistName: Lilith
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -41301,6 +41084,143 @@ Transform:
   m_Children: []
   m_Father: {fileID: 628383753}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!1 &1079113754
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1079113755}
+  - component: {fileID: 1079113757}
+  - component: {fileID: 1079113756}
+  m_Layer: 5
+  m_Name: "Explicaci\xF3n"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1079113755
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079113754}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1248110580}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -942}
+  m_SizeDelta: {x: 0, y: 50}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &1079113756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079113754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Pulsa en cada personaje para ver las conversaciones que has tenido con
+    ellos durante el juego.
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: acb12ac65ecdca54cbe17c610fde0207, type: 2}
+  m_sharedMaterial: {fileID: -5822694132099746050, guid: acb12ac65ecdca54cbe17c610fde0207, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 503.37256, y: 0, z: 420.26855, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1079113757
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079113754}
+  m_CullTransparentMesh: 1
 --- !u!1 &1080099676
 GameObject:
   m_ObjectHideFlags: 0
@@ -43313,6 +43233,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 1
   dialogueSections:
   - speakerName: 
     dialogueText: Has plantado la semilla
@@ -43675,6 +43596,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: ??
     dialogueText: "\xBFTe fijaste en esos sem\xE1foros? A veces parece que se encienden
@@ -45205,6 +45127,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: NPC A
     dialogueText: "No puedo creer que le vendiera mi guitarra por este boleto. Era
@@ -45468,9 +45391,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1702569241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241.5, y: -3365}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1188527916
@@ -47427,7 +47350,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1985646928}
-  - {fileID: 190800084}
+  - {fileID: 1079113755}
   m_Father: {fileID: 852600293}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -47538,13 +47461,13 @@ RectTransform:
   m_GameObject: {fileID: 1252143609}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.6859376, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1106154309}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -47568,8 +47491,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 4483976741546980763, guid: bf6429f164e9420459819e95a7ef89f5, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -47751,9 +47674,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1702569241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241.5, y: -145}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1255135318
@@ -47971,17 +47894,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Conversacion con: Todos'
+  m_text: "Conversaci\xF3n con: Todos"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: acb12ac65ecdca54cbe17c610fde0207, type: 2}
+  m_sharedMaterial: {fileID: -5822694132099746050, guid: acb12ac65ecdca54cbe17c610fde0207, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190335
-  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -47998,10 +47921,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24.45
-  m_fontSizeBase: 17
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -48036,7 +47959,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -109.07367, y: 0, z: -105.95703, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -48944,6 +48867,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 1
   dialogueSections:
   - speakerName: Lilith
     dialogueText: "Esto me vale\u2026 aunque... genial, es la \xFAltima. Tendr\xE9
@@ -49328,6 +49252,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: Alpha
     dialogueText: "\xA1Calma, hermanos! Mantengan la compostura. Delta se est\xE1
@@ -49582,9 +49507,9 @@ RectTransform:
   m_Father: {fileID: 1765734490}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1309193569
 MonoBehaviour:
@@ -49956,6 +49881,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 1
   dialogueSections:
   - speakerName: Lilith
     dialogueText: "\xA1Esc\xFAchame bien! No vuelvas a amenazarme. Ya te dije que
@@ -50097,9 +50023,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1702569241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241.5, y: -4515}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1322120011
@@ -50444,6 +50370,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 1
   dialogueSections:
   - speakerName: Casero
     dialogueText: "\xA1DEJA DE HUIR Y SAL YA, Y SI NO QUIERES QUE LLAME A LA POLIC\xCDA,"
@@ -51056,9 +50983,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1702569241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241.5, y: -1295}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1368985985
@@ -51890,6 +51817,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: Lilith
     dialogueText: "\xBFNo me lo pod\xEDan decir directamente? En fin\u2026 a ver
@@ -52123,6 +52051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueId: 5af37de2-877f-4cb8-b5bf-7396fa5423ff
+  protagonistName: Lilith
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -53048,6 +52977,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: NPC C
     dialogueText: "Alfa dijo que el aire all\xE1 es tan puro que te limpia los pulmones...
@@ -54028,8 +53958,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -8939044477162196245, guid: 292523a3ec1a7ef438c34efb79d0c017, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -54866,6 +54796,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: 
     dialogueText: "Esta zona no esta disponible a\xFAn."
@@ -54994,6 +54925,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 1
   dialogueSections:
   - speakerName: Lilith
     dialogueText: "(Esta va a ser mi compa\xF1era durante el viaje? Espero que no
@@ -55613,6 +55545,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 1
   dialogueSections:
   - speakerName: Lilith
     dialogueText: "Por fin podr\xE9 dormir un poco. Estoy destrozada."
@@ -55976,6 +55909,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: Boris
     dialogueText: "Hermanos y hermanas, bienvenidos a casa. Aqu\xED dej\xE1is atr\xE1s
@@ -56496,6 +56430,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: 
     dialogueText: Has encontrado el boton 4.
@@ -57355,6 +57290,7 @@ GameObject:
   - component: {fileID: 1541010519}
   - component: {fileID: 1541010518}
   - component: {fileID: 1541010517}
+  - component: {fileID: 1541010520}
   m_Layer: 5
   m_Name: Scroll View
   m_TagString: Untagged
@@ -57380,8 +57316,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 0, y: -100}
+  m_AnchoredPosition: {x: 9.006592, y: -40.9933}
+  m_SizeDelta: {x: -18.0133, y: -118.0133}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1541010517
 MonoBehaviour:
@@ -57402,7 +57338,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 0
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 75
+  m_ScrollSensitivity: 65
   m_Viewport: {fileID: 1847078504}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 1449471500}
@@ -57433,8 +57369,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 4541375672270900756, guid: c9c4a82aa31ea3b428041e2a4767d06e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -57451,6 +57387,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1541010515}
   m_CullTransparentMesh: 1
+--- !u!114 &1541010520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541010515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d6cbc62e6d127418a1b7700f38c2d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handleSize: 0.2
 --- !u!1 &1542113604
 GameObject:
   m_ObjectHideFlags: 0
@@ -58466,7 +58415,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1719247917}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.14099783
+  m_Size: 0.13878223
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -58491,8 +58440,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -4116586025808643428, guid: 5942e21c28c802e41b0c22cbb1a37d58, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -60002,6 +59951,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 1
   dialogueSections:
   - speakerName: 
     dialogueText: Has enterrado la chapa de Bortis
@@ -60205,9 +60155,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1702569241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241.5, y: -1755}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1603439431
@@ -60274,7 +60224,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5412910156287300836, guid: faf0a6d95f1bd6c4b88a6ab25c6c5f8e, type: 3}
+  m_Sprite: {fileID: 4704073244319040601, guid: c1b0d59a8d93aa2449c22bd17735a03d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -60842,9 +60792,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1702569241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241.5, y: -1525}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1621261370
@@ -61825,6 +61775,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 1
   dialogueSections:
   - speakerName: Casero
     dialogueText: "\xA1SE QUE EST\xC1S AHI DENTRO! \xA1SAL A PAGAR EL ALQUILER!"
@@ -64537,7 +64488,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 4610}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1702569242
 MonoBehaviour:
@@ -64632,6 +64583,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 1
   dialogueSections:
   - speakerName: 
     dialogueText: Has encontrado un destornillador
@@ -64909,6 +64861,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 1
   dialogueSections:
   - speakerName: 
     dialogueText: Has encontrado la llave inglesa
@@ -65095,13 +65048,13 @@ RectTransform:
   m_GameObject: {fileID: 1719247916}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.1375, y: 0.9625, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1228785043}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.8590022}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -65125,8 +65078,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 4483976741546980763, guid: bf6429f164e9420459819e95a7ef89f5, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -66305,9 +66258,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1702569241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241.5, y: -2445}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1738730411
@@ -66546,6 +66499,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: Conductor
     dialogueText: 'Ya hemos llegado a su destino
@@ -67242,8 +67196,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.39440918}
+  m_SizeDelta: {x: 0, y: -38.513}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1765734491
 MonoBehaviour:
@@ -67288,15 +67242,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 0}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -67781,6 +67735,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 1
   dialogueSections:
   - speakerName: Lilith
     dialogueText: "Necesito una llave inglesa. Buscar\xE9 por el sal\xF3n\n"
@@ -67891,9 +67846,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1702569241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241.5, y: -835}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1778549341
@@ -70629,6 +70584,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 1
   dialogueSections:
   - speakerName: Lilith
     dialogueText: 'Vaya, tienen una manera curiosa de dar la bienvenida a sus invitados. '
@@ -71648,7 +71604,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -71866,9 +71822,9 @@ RectTransform:
   m_Father: {fileID: 1541010516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1847078505
 MonoBehaviour:
@@ -74567,6 +74523,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 1
   dialogueSections:
   - speakerName: Lilith
     dialogueText: "\xBFY ese sonido?, creo que deber\xEDa ir a la plaza"
@@ -76479,7 +76436,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -61}
+  m_AnchoredPosition: {x: 0, y: -75}
   m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1985646929
@@ -76511,8 +76468,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -76529,8 +76486,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -80007,6 +79964,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: Cairen
     dialogueText: "\xA1Eh, portero! \xA1Deja de mirar tan feo, que pareces una estatua!

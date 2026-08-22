@@ -103,7 +103,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_MinWidth: -1
   m_MinHeight: -1
   m_PreferredWidth: -1
-  m_PreferredHeight: 30
+  m_PreferredHeight: 50
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
@@ -255,10 +255,10 @@ MonoBehaviour:
   dialogueText: {fileID: 6971529830427264228}
   timeText: {fileID: 0}
   backgroundImage: {fileID: 4630386214429117543}
-  playerColor: {r: 0.2, g: 0.6, b: 1, a: 0.3}
-  npcColor: {r: 0.8, g: 0.8, b: 0.8, a: 0.3}
-  playerTextColor: {r: 0, g: 1, b: 1, a: 1}
-  npcTextColor: {r: 1, g: 1, b: 1, a: 1}
+  playerColor: {r: 1, g: 1, b: 1, a: 0.6862745}
+  npcColor: {r: 1, g: 1, b: 1, a: 0.6862745}
+  playerTextColor: {r: 0.8301887, g: 0.24378817, b: 0.14489143, a: 1}
+  npcTextColor: {r: 0.7924528, g: 0.47938436, b: 0.078497685, a: 1}
 --- !u!1 &6277205920727925236
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,8 +327,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: MecagoendiosLaVd
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: acb12ac65ecdca54cbe17c610fde0207, type: 2}
+  m_sharedMaterial: {fileID: -5822694132099746050, guid: acb12ac65ecdca54cbe17c610fde0207, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -509,8 +509,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 6807196134389015263, guid: d45f36462c4c47e479ef2941a1ae2039, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -518,4 +518,4 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 10

@@ -16,6 +16,7 @@ public class BacklogManager : MonoBehaviour
 
     [Header("Panel de Mensajes (RIGHT)")]
     public Transform messagesContent;
+    public ScrollRect messagesScrollRect;
     public GameObject messageEntryPrefab;
     public TextMeshProUGUI selectedCharacterText;
 
@@ -36,6 +37,8 @@ public class BacklogManager : MonoBehaviour
 
     private string selectedCharacter = "Todos";
     private bool isBacklogOpen = false;
+
+    private HashSet<string> savedDialogueIds = new HashSet<string>();
 
     // =========================================================
     // CLASE DE DIALOGO
@@ -529,60 +532,29 @@ public class BacklogManager : MonoBehaviour
 
     private void RefreshMessagesUI()
     {
-        if (messagesContent == null)
-        {
-            Debug.LogError(
-                "[BacklogManager] messagesContent es NULL."
-            );
-
+        if (messagesContent == null || messageEntryPrefab == null)
             return;
-        }
 
-        if (messageEntryPrefab == null)
+        // Destruir mensajes anteriores
+        for (int i = messagesContent.childCount - 1; i >= 0; i--)
         {
-            Debug.LogError(
-                "[BacklogManager] messageEntryPrefab es NULL."
-            );
-
-            return;
+            Destroy(messagesContent.GetChild(i).gameObject);
         }
 
-        // -----------------------------------------------------
-        // BORRAR MENSAJES ANTERIORES
-        // -----------------------------------------------------
-
-        foreach (Transform child in messagesContent)
-        {
-            Destroy(child.gameObject);
-        }
-
-        // -----------------------------------------------------
-        // OBTENER MENSAJES
-        // -----------------------------------------------------
-
+        // Crear los nuevos mensajes
         List<DialogueEntry> messagesToShow =
             GetFilteredMessages(selectedCharacter);
-
-        // -----------------------------------------------------
-        // CREAR MENSAJES
-        // -----------------------------------------------------
 
         foreach (DialogueEntry entry in messagesToShow)
         {
             GameObject messageObj =
-                Instantiate(
-                    messageEntryPrefab,
-                    messagesContent
-                );
+                Instantiate(messageEntryPrefab, messagesContent);
 
-            SetupMessageEntry(
-                messageObj,
-                entry
-            );
+            SetupMessageEntry(messageObj, entry);
         }
 
-        // Scroll.
-        ScrollToBottom();
+        // Esperar a que Unity recalcule completamente el Content
+        StartCoroutine(ResetScrollPositionNextFrame());
     }
 
     // =========================================================
@@ -687,6 +659,39 @@ public class BacklogManager : MonoBehaviour
         }
     }
 
+    private System.Collections.IEnumerator ResetScrollPositionNextFrame()
+    {
+        // Esperar un frame para que Unity termine de calcular
+        // el tamaño del Content y sus Layout Groups.
+        yield return null;
+
+        if (messagesScrollRect == null)
+        {
+            Debug.LogWarning(
+                "[BacklogManager] messagesScrollRect es NULL."
+            );
+
+            yield break;
+        }
+
+        // Forzar actualización del Canvas
+        Canvas.ForceUpdateCanvases();
+
+        // Quitar cualquier inercia anterior
+        messagesScrollRect.velocity = Vector2.zero;
+
+        // Ir ARRIBA del todo
+        messagesScrollRect.verticalNormalizedPosition = 1f;
+
+        // Asegurarnos de que no queda desplazamiento horizontal extraño
+        messagesScrollRect.horizontalNormalizedPosition = 0f;
+
+        Canvas.ForceUpdateCanvases();
+
+        // Volver a ponerlo arriba por seguridad después del cálculo
+        messagesScrollRect.verticalNormalizedPosition = 1f;
+    }
+
     // =========================================================
     // LIMPIAR BACKLOG
     // =========================================================
@@ -694,12 +699,9 @@ public class BacklogManager : MonoBehaviour
     public void ClearBacklog()
     {
         allDialogueHistory.Clear();
-
         dialoguesByCharacter.Clear();
-
-        dialoguesByCharacter["Todos"] =
-            new List<DialogueEntry>();
-
+        dialoguesByCharacter["Todos"] = new List<DialogueEntry>();
+        savedDialogueIds.Clear(); // <-- Limpia también los IDs guardados
         RefreshMessagesUI();
     }
 
@@ -820,6 +822,9 @@ public class BacklogManager : MonoBehaviour
         messagesContent =
             newSceneManager.messagesContent;
 
+        messagesScrollRect =
+            newSceneManager.messagesScrollRect;
+
         messageEntryPrefab =
             newSceneManager.messageEntryPrefab;
 
@@ -867,5 +872,19 @@ public class BacklogManager : MonoBehaviour
             + "correctamente."
         );
     }
+
+    public bool IsDialogueSaved(string dialogueId)
+    {
+        if (string.IsNullOrEmpty(dialogueId)) return false;
+        return savedDialogueIds.Contains(dialogueId);
+    }
+
+    public void MarkDialogueAsSaved(string dialogueId)
+    {
+        if (string.IsNullOrEmpty(dialogueId)) return;
+        savedDialogueIds.Add(dialogueId);
+    }
+
+
 }
 

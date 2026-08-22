@@ -13,6 +13,7 @@ public class DialogueSystemGiantFocus : MonoBehaviour
 
     [Header("Identificador de Diálogo")]
     public string dialogueId = ""; // 🔥 NUEVO
+    public string conversationOwner = ""; // Nuevo
 
     [Header("Posicionamiento")]
     [Range(0f, 1f)]
@@ -24,6 +25,8 @@ public class DialogueSystemGiantFocus : MonoBehaviour
     public TextMeshProUGUI speakerText;
     public TextMeshProUGUI dialogueText;
     public GameObject speakerContainer;
+
+
 
     [Header("Visuales")]
     public Color dimmedColor = new Color(0.3f, 0.3f, 0.3f, 1f);
@@ -165,9 +168,19 @@ public class DialogueSystemGiantFocus : MonoBehaviour
         if (speakerText != null) speakerText.text = line.speakerName;
         if (speakerContainer != null) speakerContainer.SetActive(!string.IsNullOrEmpty(line.speakerName));
 
+        // 🔥 Guardar en Backlog
+        if (BacklogManager.Instance != null)
+        {
+            string owner = GetConversationOwner();
+            BacklogManager.Instance.AddDialogueWithConversationOwner(
+                line.speakerName,
+                line.dialogueText,
+                owner
+            );
+        }
+
         string fullText = line.dialogueText;
         Coroutine typingCoroutine = StartCoroutine(TypeText(fullText));
-
         bool typingCompleted = false;
 
         while (!typingCompleted)
@@ -214,5 +227,18 @@ public class DialogueSystemGiantFocus : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !isDialogueActive) StartDialogue();
+    }
+
+    private string GetConversationOwner()
+    {
+        if (!string.IsNullOrEmpty(conversationOwner))
+            return conversationOwner;
+
+        foreach (var line in dialogues)
+        {
+            if (!string.IsNullOrEmpty(line.speakerName) && line.speakerName != "Lilith")
+                return line.speakerName;
+        }
+        return dialogues.Count > 0 ? dialogues[0].speakerName : "Unknown";
     }
 }
