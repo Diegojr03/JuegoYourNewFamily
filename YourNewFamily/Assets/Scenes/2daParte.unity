@@ -172,6 +172,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: 
     dialogueText: "Esta zona no esta disponible a\xFAn."
@@ -685,6 +686,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: 
     dialogueText: Has purificado las plantas
@@ -3542,6 +3544,180 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectId: 3cf8d958-5d66-43fa-a5c3-1c04730c3abc
+--- !u!1 &35120289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 35120290}
+  - component: {fileID: 35120291}
+  m_Layer: 0
+  m_Name: FondoCentroDelJardin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &35120290
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35120289}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.0035923, y: 2.0035923, z: 2.0035923}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 681044496}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &35120291
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35120289}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -5106453182053124626, guid: 03d4ca63b57d8164ca1bb6f2ea5a2a01, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 13.36, y: 9.55}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &35751914
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 35751915}
+  - component: {fileID: 35751916}
+  m_Layer: 0
+  m_Name: FondoCentroDelJardin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &35751915
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35751914}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.0035872, y: 2.0035872, z: 2.0035872}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 800857018}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &35751916
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35751914}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -5106453182053124626, guid: 03d4ca63b57d8164ca1bb6f2ea5a2a01, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 13.36, y: 9.55}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &36551568
 GameObject:
   m_ObjectHideFlags: 0
@@ -6120,6 +6296,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: Lilith
     dialogueText: "\xBFQue es este sitio?"
@@ -6273,7 +6450,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: 2928949704243705097, guid: c44df298c65dde846ac23bfa14fbe202, type: 3}
+  m_Sprite: {fileID: 2928949704243705097, guid: db0da78eaf33bc04bb1b7c1ec9838136, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -7322,7 +7499,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5545005522159580563, guid: 9b55dba63bfedd54782f326d1e0feee5, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7330,7 +7507,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &85377484
@@ -12769,7 +12946,7 @@ MonoBehaviour:
   - speakerName: Cael
     dialogueText: LILITH!!!!!
     leftSpeaker: 1
-    characterSprite: {fileID: 381320091083652993, guid: c30510d09ef6b96409b78a54c0e93699, type: 3}
+    characterSprite: {fileID: 6873293635029409192, guid: c42273a8cbcfa6446a3f0e882a6ca336, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -12785,7 +12962,7 @@ MonoBehaviour:
   - speakerName: Cael
     dialogueText: ...
     leftSpeaker: 1
-    characterSprite: {fileID: 5906854784357729837, guid: 89cfb4d78d95db74993fac0085778b94, type: 3}
+    characterSprite: {fileID: 6873293635029409192, guid: c42273a8cbcfa6446a3f0e882a6ca336, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -17639,6 +17816,93 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectId: 4376e557-583d-4bac-9cfc-f690d61e723c
+--- !u!1 &252358950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 252358951}
+  - component: {fileID: 252358952}
+  m_Layer: 0
+  m_Name: "FondoCimaMonta\xF1a"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &252358951
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252358950}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.22, z: 0}
+  m_LocalScale: {x: 2.0001264, y: 2.0001264, z: 2.0001264}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1647152821}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &252358952
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252358950}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -821187524374907369, guid: 5e4d04331c9003443988027e8a7289d7, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 13.36, y: 9.55}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &253802898
 GameObject:
   m_ObjectHideFlags: 0
@@ -18317,6 +18581,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: Nota
     dialogueText: "Lilith,\r\nLa \xFAltima parte de la profec\xEDa debe cumplirse
@@ -25340,6 +25605,7 @@ MonoBehaviour:
   giantSprite: {fileID: 2119463209}
   giantScale: {x: 0.75, y: 0.75, z: 0.75}
   dialogueId: fb484788-7bad-4cfc-a81b-4b52d1e1a50c
+  conversationOwner: 
   verticalPositionPercent: 0.5
   moveSpeed: 5
   dialoguePanel: {fileID: 878597090}
@@ -27044,7 +27310,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8771163912196838983, guid: 403b780fa66209c428ef222b484101f1, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -27052,7 +27318,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &415175237
@@ -31559,6 +31825,7 @@ Transform:
   - {fileID: 1039015419}
   - {fileID: 52714297}
   - {fileID: 341452206}
+  - {fileID: 2029326042}
   m_Father: {fileID: 634673585}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!68 &473812843
@@ -31785,6 +32052,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: 
     dialogueText: AAAAAUUUUUUUUUUUUUUUUUU
@@ -38665,7 +38933,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -4248094021219397344, guid: 8219e1d30c2e8c545b5eb55b5fc7ae1f, type: 3}
+  m_Sprite: {fileID: -4248094021219397344, guid: a59cd75d32018cb46a26095b3897cc5b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -40014,6 +40282,7 @@ Transform:
   - {fileID: 1083851283}
   - {fileID: 40461911}
   - {fileID: 233303669}
+  - {fileID: 2063655883}
   m_Father: {fileID: 150133681}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!68 &589755695
@@ -43330,7 +43599,7 @@ MonoBehaviour:
   characterRight: {fileID: 859803739}
   spriteLeft: {fileID: 752811012}
   spriteRight: {fileID: 859803740}
-  defaultLeftSprite: {fileID: -4248094021219397344, guid: 8219e1d30c2e8c545b5eb55b5fc7ae1f, type: 3}
+  defaultLeftSprite: {fileID: -4248094021219397344, guid: a59cd75d32018cb46a26095b3897cc5b, type: 3}
   defaultRightSprite: {fileID: 3648207892980098720, guid: 5e6902c4807b72d4187c413fa5d64f65, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
@@ -43346,7 +43615,7 @@ MonoBehaviour:
   - speakerName: Cael
     dialogueText: "Lilith espera ah\xED, t\xFAmbate que ahora voy."
     leftSpeaker: 1
-    characterSprite: {fileID: -2707006300247289298, guid: 883d3aab279fd424fa1c73c24ca53983, type: 3}
+    characterSprite: {fileID: -2707006300247289298, guid: ade374c91e22aab4ca5688fbb312b4cf, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -45323,6 +45592,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: Lilith
     dialogueText: "Voy a volver un momento a las caba\xF1as. Creo que olvid\xE9 los
@@ -47617,6 +47887,7 @@ Transform:
   - {fileID: 1272810745}
   - {fileID: 548186689}
   - {fileID: 242611928}
+  - {fileID: 35120290}
   m_Father: {fileID: 634673585}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &681044497
@@ -48089,6 +48360,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: Lilith
     dialogueText: No... No... No... No...
@@ -51697,7 +51969,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -4248094021219397344, guid: 8219e1d30c2e8c545b5eb55b5fc7ae1f, type: 3}
+  m_Sprite: {fileID: -4248094021219397344, guid: a59cd75d32018cb46a26095b3897cc5b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -54396,6 +54668,7 @@ Transform:
   - {fileID: 450331302}
   - {fileID: 253993085}
   - {fileID: 414073274}
+  - {fileID: 35751915}
   m_Father: {fileID: 150133681}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &800857019
@@ -55356,7 +55629,7 @@ MonoBehaviour:
     dialogueText: "\xA1AH\u2014! \xA1Lilith! \xA1LILITH, AYUDA! \xA1Me est\xE1 atravesando!
       \xA1Me est\xE1\u2014 joder\u2014!\r\n"
     leftSpeaker: 1
-    characterSprite: {fileID: -4502232435908732206, guid: dfb0a8ddffaeabb4cb5bbb24d0f12852, type: 3}
+    characterSprite: {fileID: -2383032309045119739, guid: 0b6ea141e6c9c3e44b39935f08a7334a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -55373,7 +55646,7 @@ MonoBehaviour:
     dialogueText: "\xA1AP\xC1GALA! \xA1AP\xC1GALA, POR FAVOR! \xA1Duele! \xA1DUELE
       MUCHO!"
     leftSpeaker: 1
-    characterSprite: {fileID: -4502232435908732206, guid: dfb0a8ddffaeabb4cb5bbb24d0f12852, type: 3}
+    characterSprite: {fileID: -2383032309045119739, guid: 0b6ea141e6c9c3e44b39935f08a7334a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -55382,7 +55655,7 @@ MonoBehaviour:
     dialogueText: "No quiero morirme aqu\xED\u2026 no as\xED\u2026 \xA1Cael dijo
       que esto me curaba! \xA1DIJO QUE ME CURABA!"
     leftSpeaker: 1
-    characterSprite: {fileID: -4502232435908732206, guid: dfb0a8ddffaeabb4cb5bbb24d0f12852, type: 3}
+    characterSprite: {fileID: -2383032309045119739, guid: 0b6ea141e6c9c3e44b39935f08a7334a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -55400,7 +55673,7 @@ MonoBehaviour:
     dialogueText: "\xA1NO LO SIENTAS! \xA1Ay\xFAd\u2014 ay\xFAdame, por favor, yo
       no\u2014!"
     leftSpeaker: 1
-    characterSprite: {fileID: -4502232435908732206, guid: dfb0a8ddffaeabb4cb5bbb24d0f12852, type: 3}
+    characterSprite: {fileID: -2383032309045119739, guid: 0b6ea141e6c9c3e44b39935f08a7334a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -55408,7 +55681,7 @@ MonoBehaviour:
   - speakerName: "Da\xEDn"
     dialogueText: ...
     leftSpeaker: 1
-    characterSprite: {fileID: -4502232435908732206, guid: dfb0a8ddffaeabb4cb5bbb24d0f12852, type: 3}
+    characterSprite: {fileID: -2383032309045119739, guid: 0b6ea141e6c9c3e44b39935f08a7334a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -56037,7 +56310,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5602208026709858987, guid: 69ef17365234be94988919f155b460d3, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -56045,7 +56318,7 @@ SpriteRenderer:
   m_Size: {x: 20.342178, y: 29.759998}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &826920557
@@ -56070,6 +56343,7 @@ Transform:
   - {fileID: 445356592}
   - {fileID: 923366414}
   - {fileID: 409240123}
+  - {fileID: 1677962100}
   m_Father: {fileID: 634673585}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &826920558
@@ -56106,7 +56380,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -7.596649, y: 2.8284607}
+  m_Offset: {x: -7.596649, y: 4.7055473}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -56116,7 +56390,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.1746216, y: 4.468292}
+  m_Size: {x: 1.1746216, y: 8.2224655}
   m_EdgeRadius: 0
 --- !u!68 &826920559
 EdgeCollider2D:
@@ -56220,7 +56494,8 @@ EdgeCollider2D:
   - {x: -2.2707214, y: -4.043091}
   - {x: -2.1887512, y: 0.12613678}
   - {x: -4.037201, y: 0.212883}
-  - {x: -4.1769714, y: 3.342949}
+  - {x: -4.183014, y: 6.226265}
+  - {x: -5.0363464, y: 6.23658}
   - {x: -5.1811523, y: 3.376175}
   - {x: -5.088257, y: -0.9728775}
   - {x: -3.1574707, y: -0.9971924}
@@ -63217,6 +63492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueId: 78ab598c-42ce-46e5-8589-d16875154166
+  protagonistName: Lilith
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -64088,7 +64364,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8771163912196838983, guid: 403b780fa66209c428ef222b484101f1, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -64096,7 +64372,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &952293476
@@ -70133,6 +70409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueId: 96e062c3-7cb1-460a-a9bf-a118e71d8dd5
+  protagonistName: Lilith
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -72459,7 +72736,7 @@ MonoBehaviour:
   - speakerName: Cael
     dialogueText: "\u2026\xBFQu\xE9 has hecho?\r"
     leftSpeaker: 1
-    characterSprite: {fileID: 3117115070485913476, guid: 89a097a9ff3522943969adce06e21898, type: 3}
+    characterSprite: {fileID: 3117115070485913476, guid: 01da4ef0a4157a546a1cd8b24cef0e08, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -72476,7 +72753,7 @@ MonoBehaviour:
     dialogueText: "\xA1C\xC1LLATE! \xBFSabes cu\xE1nto tiempo llevaba funcionando?
       \xBFSabes lo que era? Era progreso."
     leftSpeaker: 1
-    characterSprite: {fileID: 3117115070485913476, guid: 89a097a9ff3522943969adce06e21898, type: 3}
+    characterSprite: {fileID: 3117115070485913476, guid: 01da4ef0a4157a546a1cd8b24cef0e08, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -72493,7 +72770,7 @@ MonoBehaviour:
     dialogueText: "\xA1MENTIRA! Siempre toc\xE1is lo que no entend\xE9is. Da\xEDn
       confiaba en m\xED."
     leftSpeaker: 1
-    characterSprite: {fileID: 381320091083652993, guid: c30510d09ef6b96409b78a54c0e93699, type: 3}
+    characterSprite: {fileID: -4597572049980403918, guid: 169173becb20bba4f8df5e32edb549b1, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -72502,7 +72779,7 @@ MonoBehaviour:
     dialogueText: "Y t\xFA lo has roto. Algunas heridas\u2026 Solo se curan cortando
       m\xE1s profundo."
     leftSpeaker: 1
-    characterSprite: {fileID: 381320091083652993, guid: c30510d09ef6b96409b78a54c0e93699, type: 3}
+    characterSprite: {fileID: -4597572049980403918, guid: 169173becb20bba4f8df5e32edb549b1, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -73189,6 +73466,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: 
     dialogueText: Has entregado el peluche de Amara y el lazo de NIra
@@ -73648,6 +73926,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: 
     dialogueText: "Has desbloqueado el invernadero, ve a la parte derecha en las
@@ -75393,7 +75672,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -4248094021219397344, guid: 8219e1d30c2e8c545b5eb55b5fc7ae1f, type: 3}
+  m_Sprite: {fileID: -4248094021219397344, guid: a59cd75d32018cb46a26095b3897cc5b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -76398,6 +76677,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: 
     dialogueText: Esta zona se desbloquea en la parte final de este acto.
@@ -77296,6 +77576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueId: 12083823-66d9-4516-8746-d9298cd6450c
+  protagonistName: Lilith
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -80657,7 +80938,7 @@ MonoBehaviour:
   characterRight: {fileID: 1205010240}
   spriteLeft: {fileID: 1101958740}
   spriteRight: {fileID: 1205010241}
-  defaultLeftSprite: {fileID: -4248094021219397344, guid: 8219e1d30c2e8c545b5eb55b5fc7ae1f, type: 3}
+  defaultLeftSprite: {fileID: -4248094021219397344, guid: a59cd75d32018cb46a26095b3897cc5b, type: 3}
   defaultRightSprite: {fileID: 3648207892980098720, guid: 5e6902c4807b72d4187c413fa5d64f65, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
@@ -80673,7 +80954,7 @@ MonoBehaviour:
   - speakerName: Cael
     dialogueText: "Pero Lilith, si\xE9ntate\u2026 no. \xA1T\xFAmbate en la camilla!."
     leftSpeaker: 1
-    characterSprite: {fileID: -2707006300247289298, guid: 883d3aab279fd424fa1c73c24ca53983, type: 3}
+    characterSprite: {fileID: -2707006300247289298, guid: ade374c91e22aab4ca5688fbb312b4cf, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -80689,7 +80970,7 @@ MonoBehaviour:
   - speakerName: Cael
     dialogueText: "Siempre dec\xEDs eso, todos..."
     leftSpeaker: 1
-    characterSprite: {fileID: -2707006300247289298, guid: 883d3aab279fd424fa1c73c24ca53983, type: 3}
+    characterSprite: {fileID: -2707006300247289298, guid: ade374c91e22aab4ca5688fbb312b4cf, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -81538,6 +81819,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: Lilith
     dialogueText: "No quer\xEDa\u2026 solo\u2026 que parara\u2026 Amara\u2026 yo\u2026
@@ -82777,7 +83059,7 @@ MonoBehaviour:
     dialogueText: "\xA1NO!  \xA1Lilith, m\xEDrame! \xA1M\xEDrame a la cara! Soy yo.
       Soy yo\u2026 \xA1ME MENTISTE!\r\n"
     leftSpeaker: 1
-    characterSprite: {fileID: 756657468233040248, guid: c99bc11ad0a80a044a2852bdf0486a94, type: 3}
+    characterSprite: {fileID: -5583387276452590461, guid: 005a9e797db489f44b7d1fdbbce0ce98, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -82795,7 +83077,7 @@ MonoBehaviour:
     dialogueText: "Lilith\u2026 por favor\u2026 No quiero morir aqu\xED. No as\xED\u2026
       No por \xE9l."
     leftSpeaker: 1
-    characterSprite: {fileID: 756657468233040248, guid: c99bc11ad0a80a044a2852bdf0486a94, type: 3}
+    characterSprite: {fileID: -5583387276452590461, guid: 005a9e797db489f44b7d1fdbbce0ce98, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -82827,7 +83109,7 @@ MonoBehaviour:
   - speakerName: Gamma
     dialogueText: ...mentirosa...
     leftSpeaker: 1
-    characterSprite: {fileID: 756657468233040248, guid: c99bc11ad0a80a044a2852bdf0486a94, type: 3}
+    characterSprite: {fileID: 5633302920461939930, guid: d6c8d301e1d48fb4da13f6fba40281e4, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -83790,6 +84072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueId: 6f373ad3-5e4a-47cf-a8ab-9bd63bbd33e9
+  protagonistName: Lilith
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -87305,6 +87588,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: 
     dialogueText: Has recogido el peluche de Amara y el lazo de NIra
@@ -89661,6 +89945,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: Lilith
     dialogueText: NO PUEDO MAAAAAS, PARA YAAAAAAA!!!!
@@ -90235,6 +90520,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: Lilith
     dialogueText: No puedo... de verdad que no puedo seguir con esto.
@@ -90705,7 +90991,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: 2928949704243705097, guid: c44df298c65dde846ac23bfa14fbe202, type: 3}
+  m_Sprite: {fileID: 2928949704243705097, guid: db0da78eaf33bc04bb1b7c1ec9838136, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -90930,6 +91216,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: 
     dialogueText: Has obtenido "Bolsa de Safiras de Lin"
@@ -95252,6 +95539,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: 
     dialogueText: Has recogido la mochila
@@ -95697,6 +95985,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: Lilith
     dialogueText: "Ya te tengo peque\xF1\xEDn, mira que majo eres"
@@ -97444,6 +97733,7 @@ MonoBehaviour:
   giantSprite: {fileID: 1353522024}
   giantScale: {x: 0.85, y: 0.85, z: 0.85}
   dialogueId: d7ed98ec-2ad2-462a-ae93-1a264e8d8191
+  conversationOwner: 
   verticalPositionPercent: 0.5
   moveSpeed: 5
   dialoguePanel: {fileID: 878597090}
@@ -98470,6 +98760,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: Lilith
     dialogueText: "Madre m\xEDa, no recordaba que pesaba tanto."
@@ -99510,6 +99801,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: Lilith
     dialogueText: "\xA1DEJA... DE CONTROLARMEEE!"
@@ -102921,6 +103213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueId: 22c4cc22-bab1-4a7c-b7d2-f1d56f0a27ae
+  protagonistName: Lilith
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -103310,6 +103603,93 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1507971594}
   m_CullTransparentMesh: 1
+--- !u!1 &1512335680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1512335681}
+  - component: {fileID: 1512335682}
+  m_Layer: 0
+  m_Name: FondoPasilloFinal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1512335681
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512335680}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.04, z: 0}
+  m_LocalScale: {x: 2.0078156, y: 2.0078156, z: 2.0078156}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1631213140}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1512335682
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512335680}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 2468970938879016315, guid: b2a29d06fb8cbdc4bad65f62be260b6a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 13.36, y: 9.55}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1513497151
 GameObject:
   m_ObjectHideFlags: 0
@@ -106014,7 +106394,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2277416926424782314, guid: 10e0cbcbed44300478b90b50ec11f6b4, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -106022,7 +106402,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!68 &1577703944
@@ -107190,6 +107570,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: Delta
     dialogueText: LILITH
@@ -110340,6 +110721,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: 
     dialogueText: Has purificado las plantas
@@ -110934,6 +111316,7 @@ Transform:
   - {fileID: 1304470080}
   - {fileID: 52844472}
   - {fileID: 898656212}
+  - {fileID: 1512335681}
   m_Father: {fileID: 634673585}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!68 &1631213141
@@ -111149,7 +111532,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7696456489113015551, guid: 8d9695328556b31438dd7ac71bc57e1b, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -111157,7 +111540,7 @@ SpriteRenderer:
   m_Size: {x: 16.26, y: 9.67}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1632746980
@@ -112212,6 +112595,7 @@ Transform:
   - {fileID: 1371839524}
   - {fileID: 379328613}
   - {fileID: 516682411}
+  - {fileID: 252358951}
   m_Father: {fileID: 634673585}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!68 &1647152822
@@ -112409,7 +112793,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 511767690111376624, guid: 1348f0a57e3140d4e8004f4ed3822cba, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -112417,7 +112801,7 @@ SpriteRenderer:
   m_Size: {x: 16.26, y: 9.67}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!68 &1647152824
@@ -112571,6 +112955,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: Amara
     dialogueText: "Adi\xF3s y gracias de nuevo Lilith!"
@@ -113337,6 +113722,93 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1676043748}
   m_CullTransparentMesh: 1
+--- !u!1 &1677962099
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1677962100}
+  - component: {fileID: 1677962101}
+  m_Layer: 0
+  m_Name: FondoLaberintoFInal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1677962100
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677962099}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.05, y: -0.06, z: 0}
+  m_LocalScale: {x: 1.998748, y: 1.998748, z: 1.998748}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 826920557}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1677962101
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677962099}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -2668071419484795354, guid: b78aac651ee34ec42b39396973d96e00, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 13.36, y: 9.55}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1678290577
 GameObject:
   m_ObjectHideFlags: 0
@@ -113488,8 +113960,8 @@ Transform:
   m_GameObject: {fileID: 1679666005}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4, y: 1.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -2.4, y: 1.73, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 473812842}
@@ -113537,8 +114009,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -8239601370347708411, guid: 9402975c4c1a39e4ea749c9d3b3105ba, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 7148133780980865627, guid: d32ae5ed9cffe2c43af0ea7623be5a96, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -113586,19 +114058,20 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -3.0216253, y: 7.1436377}
-  - {x: -0.6362388, y: 7.911885}
-  - {x: 1.140032, y: 8.220806}
-  - {x: 3.8402805, y: 7.732877}
-  - {x: 5.107557, y: 6.3701367}
-  - {x: 2.4550514, y: 3.7280529}
-  - {x: 3.0342422, y: -0.6497378}
-  - {x: -2.3399317, y: -0.6352736}
-  - {x: -3.068474, y: 1.5342582}
-  - {x: -3.123258, y: 2.3527977}
-  - {x: -4.547492, y: 3.9405785}
-  - {x: -4.121849, y: 6.4326153}
-  - {x: -2.9724545, y: 7.270659}
+  - {x: -1.7628472, y: 3.548399}
+  - {x: -1.5563996, y: 3.6500945}
+  - {x: -0.5792227, y: 3.8621597}
+  - {x: 0.8315668, y: 4.1175623}
+  - {x: 2.0017831, y: 3.8466985}
+  - {x: 2.4550514, y: 3.0244045}
+  - {x: 1.2635003, y: 1.671241}
+  - {x: 1.4892296, y: -0.34480202}
+  - {x: -1.197707, y: -0.44879392}
+  - {x: -1.5649455, y: 0.96315193}
+  - {x: -2.027679, y: 1.3854094}
+  - {x: -2.4145985, y: 2.0524235}
+  - {x: -2.0938177, y: 3.029276}
+  - {x: -1.7829604, y: 3.534626}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -116928,6 +117401,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: Lilith
     dialogueText: "Hola chicos, \xBFque tal vuestro d\xEDa?"
@@ -123822,6 +124296,7 @@ MonoBehaviour:
   - {fileID: 2025037071}
   - {fileID: 1853687842}
   messagesContent: {fileID: 109845284}
+  messagesScrollRect: {fileID: 0}
   messageEntryPrefab: {fileID: 3971697953119381147, guid: cdadd1a19985ba5449ae10e5f1491cb5, type: 3}
   selectedCharacterText: {fileID: 1163138655}
   maxEntries: 100
@@ -129319,7 +129794,7 @@ MonoBehaviour:
     dialogueText: "Nada grave. Ara\xF1azos y hematomas leves. Te recuperar\xE1s r\xE1pido....
       Da\xEDn necesita supervisi\xF3n, ay\xFAdame Lilith."
     leftSpeaker: 1
-    characterSprite: {fileID: -2707006300247289298, guid: 883d3aab279fd424fa1c73c24ca53983, type: 3}
+    characterSprite: {fileID: -2707006300247289298, guid: ade374c91e22aab4ca5688fbb312b4cf, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -129336,7 +129811,7 @@ MonoBehaviour:
     dialogueText: "Es sencillo. Aseg\xFArate de que la m\xE1quina que tiene al lado
       no deje de funcionar."
     leftSpeaker: 1
-    characterSprite: {fileID: -2707006300247289298, guid: 883d3aab279fd424fa1c73c24ca53983, type: 3}
+    characterSprite: {fileID: -2707006300247289298, guid: ade374c91e22aab4ca5688fbb312b4cf, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -129344,7 +129819,7 @@ MonoBehaviour:
   - speakerName: Cael
     dialogueText: "Si el sonido cambia, av\xEDsame. Tengo asuntos urgentes que atender."
     leftSpeaker: 1
-    characterSprite: {fileID: -2707006300247289298, guid: 883d3aab279fd424fa1c73c24ca53983, type: 3}
+    characterSprite: {fileID: -2707006300247289298, guid: ade374c91e22aab4ca5688fbb312b4cf, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -133680,6 +134155,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: Lilith
     dialogueText: "Me apetece descansar un poco, deber\xEDa volver a mi caba\xF1a."
@@ -135983,6 +136459,93 @@ Transform:
   m_Children: []
   m_Father: {fileID: 941902711}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2029326041
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2029326042}
+  - component: {fileID: 2029326043}
+  m_Layer: 0
+  m_Name: FondoArbol
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2029326042
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029326041}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.41, y: 1.73, z: 0}
+  m_LocalScale: {x: 2.0035872, y: 2.0035872, z: 2.0035872}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 473812842}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &2029326043
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029326041}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -4528863104474465202, guid: a100a1c15628ddd49aebcd77e39d716d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 10.01, y: 11.18}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &2030304206
 GameObject:
   m_ObjectHideFlags: 0
@@ -137721,6 +138284,93 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectId: 780a0c89-9d39-47bd-8e2d-8e8f22c71720
+--- !u!1 &2063655882
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2063655883}
+  - component: {fileID: 2063655884}
+  m_Layer: 0
+  m_Name: FondoArbol
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2063655883
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063655882}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.41, y: 1.73, z: 0}
+  m_LocalScale: {x: 2.0035872, y: 2.0035872, z: 2.0035872}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 589755694}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &2063655884
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063655882}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -4528863104474465202, guid: a100a1c15628ddd49aebcd77e39d716d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 10.01, y: 11.18}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &2063892903
 GameObject:
   m_ObjectHideFlags: 0
@@ -140931,6 +141581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueId: ac364e43-f637-495d-b5c3-14eed37be59d
+  protagonistName: Lilith
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -145416,6 +146067,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 0
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: 
     dialogueText: "Esta zona no esta disponible a\xFAn."
