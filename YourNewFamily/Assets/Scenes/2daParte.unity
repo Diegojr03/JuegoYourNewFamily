@@ -1189,7 +1189,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -334247398747001510, guid: 0f06b139cbeb33c4bbe16830d21d0c38, type: 3}
+  m_Sprite: {fileID: -334247398747001510, guid: b0f2dbceaff6ff8408a3e7cb1c254acf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1513,7 +1513,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: 7979229806177774955, guid: eef5395ccf22c0945bd0f299e6cdbfdd, type: 3}
+  m_Sprite: {fileID: 1005424255604513819, guid: 8653a370f7eed544282b714468a89697, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2110,7 +2110,7 @@ MonoBehaviour:
     dialogueText: "Hola, Orren. Te buscaba para recoger algo de tela, para un regalo.
       Me env\xEDa Lin"
     leftSpeaker: 0
-    characterSprite: {fileID: 6377917850455477399, guid: b3555c8a1e4ebba4e84c64c3e0c1ec36, type: 3}
+    characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -2127,7 +2127,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: Muchas gracias Orren!
     leftSpeaker: 0
-    characterSprite: {fileID: 6078937715035284617, guid: 3b75265a4a27f5a4fb33fc22daf3f5f1, type: 3}
+    characterSprite: {fileID: -3582710704502222356, guid: 03b328f3d751c38429f3af6a3895348b, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -3453,7 +3453,7 @@ MonoBehaviour:
     dialogueText: "No te olvides de que tambi\xE9n es el cumplea\xF1os de Delta eh?,
       no me gustar\xEDa verle triste jejeje."
     leftSpeaker: 0
-    characterSprite: {fileID: 6377917850455477399, guid: b3555c8a1e4ebba4e84c64c3e0c1ec36, type: 3}
+    characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -4892,7 +4892,7 @@ MonoBehaviour:
     dialogueText: "No ha sido nada, Lin. Lo que sea para que el bebe est\xE9 bien\u2026
       y por Amara."
     leftSpeaker: 0
-    characterSprite: {fileID: 6377917850455477399, guid: b3555c8a1e4ebba4e84c64c3e0c1ec36, type: 3}
+    characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -4918,7 +4918,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: Seguro que Amara lo va a valorar mucho. Es un regalo precioso.
     leftSpeaker: 0
-    characterSprite: {fileID: 6377917850455477399, guid: b3555c8a1e4ebba4e84c64c3e0c1ec36, type: 3}
+    characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -4935,7 +4935,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: Has hecho todo lo posible, Lin. Y con cuidado, eso es lo que cuenta.
     leftSpeaker: 0
-    characterSprite: {fileID: 6377917850455477399, guid: b3555c8a1e4ebba4e84c64c3e0c1ec36, type: 3}
+    characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -5440,7 +5440,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: Claro! Enseguida os alcanzo
     leftSpeaker: 0
-    characterSprite: {fileID: 6377917850455477399, guid: b3555c8a1e4ebba4e84c64c3e0c1ec36, type: 3}
+    characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -8508,7 +8508,7 @@ MonoBehaviour:
     dialogueText: "S\xED\u2026 creo que nos vendr\xE1 bien. Alpha dice que es importante
       cuidarnos entre nosotras.\r\n"
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -8525,7 +8525,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Podemos ir donde nos dijo, cerca del antiguo granero. \n"
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -9428,7 +9428,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Creo que esta es la hierba lunar\u2026"
     leftSpeaker: 0
-    characterSprite: {fileID: 6377917850455477399, guid: b3555c8a1e4ebba4e84c64c3e0c1ec36, type: 3}
+    characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -9445,7 +9445,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: Tengo un don.
     leftSpeaker: 0
-    characterSprite: {fileID: 6377917850455477399, guid: b3555c8a1e4ebba4e84c64c3e0c1ec36, type: 3}
+    characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -12910,7 +12910,7 @@ MonoBehaviour:
   spriteLeft: {fileID: 72490740}
   spriteRight: {fileID: 1505844581}
   defaultLeftSprite: {fileID: -4248094021219397344, guid: 8219e1d30c2e8c545b5eb55b5fc7ae1f, type: 3}
-  defaultRightSprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
+  defaultRightSprite: {fileID: 11193807160901837, guid: d47d2c5d8efee124f99a0bfe41b25392, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
   dialogueText: {fileID: 419537938}
@@ -12933,7 +12933,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: AYUDAAAAAA!
     leftSpeaker: 0
-    characterSprite: {fileID: 11193807160901837, guid: feaf89ab787e8224ea15f5b16245f391, type: 3}
+    characterSprite: {fileID: 11193807160901837, guid: d47d2c5d8efee124f99a0bfe41b25392, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -13115,7 +13115,7 @@ MonoBehaviour:
   spriteLeft: {fileID: 1013680120}
   spriteRight: {fileID: 9521842}
   defaultLeftSprite: {fileID: -6843879689614897153, guid: 86c410974de39b7499119f1f4c824b7c, type: 3}
-  defaultRightSprite: {fileID: -334247398747001510, guid: 0f06b139cbeb33c4bbe16830d21d0c38, type: 3}
+  defaultRightSprite: {fileID: -334247398747001510, guid: b0f2dbceaff6ff8408a3e7cb1c254acf, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
   dialogueText: {fileID: 419537938}
@@ -21378,7 +21378,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "La familia requer\xEDa este sacrificio."
     leftSpeaker: 0
-    characterSprite: {fileID: 6471638616864330708, guid: 2a2fa987fe86a67449a285a606665d8b, type: 3}
+    characterSprite: {fileID: 6471638616864330708, guid: bbb9b4119138bfc418c8bdf3c7807b1a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -23630,7 +23630,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -334247398747001510, guid: 0f06b139cbeb33c4bbe16830d21d0c38, type: 3}
+  m_Sprite: {fileID: -334247398747001510, guid: b0f2dbceaff6ff8408a3e7cb1c254acf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -25824,7 +25824,7 @@ MonoBehaviour:
   spriteLeft: {fileID: 14318142}
   spriteRight: {fileID: 936993111}
   defaultLeftSprite: {fileID: 6021040597011648977, guid: 331ed2a063eafdc4e9c115f301376c30, type: 3}
-  defaultRightSprite: {fileID: -334247398747001510, guid: 0f06b139cbeb33c4bbe16830d21d0c38, type: 3}
+  defaultRightSprite: {fileID: -334247398747001510, guid: b0f2dbceaff6ff8408a3e7cb1c254acf, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
   dialogueText: {fileID: 419537938}
@@ -25849,7 +25849,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\xA1Siii!"
     leftSpeaker: 0
-    characterSprite: {fileID: 6078937715035284617, guid: 3b75265a4a27f5a4fb33fc22daf3f5f1, type: 3}
+    characterSprite: {fileID: -3582710704502222356, guid: 03b328f3d751c38429f3af6a3895348b, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -26243,7 +26243,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: 3648207892980098720, guid: 5e6902c4807b72d4187c413fa5d64f65, type: 3}
+  m_Sprite: {fileID: 3648207892980098720, guid: 0c6a7482622f9b3428899aa606073ac2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -28376,7 +28376,7 @@ MonoBehaviour:
   spriteLeft: {fileID: 656313667}
   spriteRight: {fileID: 824580562}
   defaultLeftSprite: {fileID: 8379664347739615351, guid: 79502e6f2b7c2fc4db01211d2366d4c1, type: 3}
-  defaultRightSprite: {fileID: 11193807160901837, guid: feaf89ab787e8224ea15f5b16245f391, type: 3}
+  defaultRightSprite: {fileID: 11193807160901837, guid: d47d2c5d8efee124f99a0bfe41b25392, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
   dialogueText: {fileID: 419537938}
@@ -28521,7 +28521,7 @@ MonoBehaviour:
   - speakerName: 
     dialogueText: "*Bebes el n\xE9ctar de la botella que te da Alpha*"
     leftSpeaker: 0
-    characterSprite: {fileID: -6751318744405601006, guid: 377001099d54d0f478295771fe716d43, type: 3}
+    characterSprite: {fileID: 7710572272460015467, guid: 771affce6a670744f8398887fbc310cc, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -33423,7 +33423,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Oye, he visto a Cairen busc\xE1ndote. Parec\xEDa tener prisa."
     leftSpeaker: 0
-    characterSprite: {fileID: 6377917850455477399, guid: b3555c8a1e4ebba4e84c64c3e0c1ec36, type: 3}
+    characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -35106,7 +35106,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "La profec\xEDa se ha cumplido."
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -35183,7 +35183,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\xA1TU PUTA PROFEC\xCDA ES UNA MIERDA! \xA1TE VOY A MATAR CABR\xD3N!"
     leftSpeaker: 0
-    characterSprite: {fileID: 7979229806177774955, guid: eef5395ccf22c0945bd0f299e6cdbfdd, type: 3}
+    characterSprite: {fileID: 1005424255604513819, guid: 8653a370f7eed544282b714468a89697, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -37519,7 +37519,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Por la familia.\r"
     leftSpeaker: 0
-    characterSprite: {fileID: 4620459775221977171, guid: 67e6027ef20bfdc4bb7c8b92c642a1f7, type: 3}
+    characterSprite: {fileID: -6974867021855848915, guid: 1e5f94e1a36cf434e84059be518bdf15, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -38968,7 +38968,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\xBFDonde estoy?"
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -38985,7 +38985,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\xBFQue pas\xF3?"
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -39002,7 +39002,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\xBFLa\u2026 profec\xEDa?"
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -39020,7 +39020,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Vale\u2026 ir\xE9."
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -39554,7 +39554,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -334247398747001510, guid: 0f06b139cbeb33c4bbe16830d21d0c38, type: 3}
+  m_Sprite: {fileID: -334247398747001510, guid: b0f2dbceaff6ff8408a3e7cb1c254acf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -41330,7 +41330,7 @@ MonoBehaviour:
   spriteLeft: {fileID: 472337626}
   spriteRight: {fileID: 2086636626}
   defaultLeftSprite: {fileID: 2462542332831120294, guid: f87666bc22c836143bec4ff5b8e367ca, type: 3}
-  defaultRightSprite: {fileID: -334247398747001510, guid: 0f06b139cbeb33c4bbe16830d21d0c38, type: 3}
+  defaultRightSprite: {fileID: -334247398747001510, guid: b0f2dbceaff6ff8408a3e7cb1c254acf, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
   dialogueText: {fileID: 419537938}
@@ -41354,7 +41354,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Tienes raz\xF3n Silas, por fin un poco de tranquilidad."
     leftSpeaker: 0
-    characterSprite: {fileID: 6377917850455477399, guid: b3555c8a1e4ebba4e84c64c3e0c1ec36, type: 3}
+    characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -42922,7 +42922,7 @@ MonoBehaviour:
   spriteLeft: {fileID: 752811012}
   spriteRight: {fileID: 859803740}
   defaultLeftSprite: {fileID: -4248094021219397344, guid: a59cd75d32018cb46a26095b3897cc5b, type: 3}
-  defaultRightSprite: {fileID: 3648207892980098720, guid: 5e6902c4807b72d4187c413fa5d64f65, type: 3}
+  defaultRightSprite: {fileID: 3648207892980098720, guid: 0c6a7482622f9b3428899aa606073ac2, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
   dialogueText: {fileID: 419537938}
@@ -42945,7 +42945,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: Vale.
     leftSpeaker: 0
-    characterSprite: {fileID: 6471638616864330708, guid: 2a2fa987fe86a67449a285a606665d8b, type: 3}
+    characterSprite: {fileID: 6471638616864330708, guid: bbb9b4119138bfc418c8bdf3c7807b1a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -50254,7 +50254,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\xA1\xBFSe puede saber que os pasa?!"
     leftSpeaker: 0
-    characterSprite: {fileID: -2470595747785517482, guid: 92bed59e285b7604abeadd0f18f9cad2, type: 3}
+    characterSprite: {fileID: -2470595747785517482, guid: 1e90cf757f218af4da389c6b1ba8380b, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -53356,7 +53356,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Oye, he visto a Cairen busc\xE1ndote. Parec\xEDa tener prisa."
     leftSpeaker: 0
-    characterSprite: {fileID: 6377917850455477399, guid: b3555c8a1e4ebba4e84c64c3e0c1ec36, type: 3}
+    characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -55086,7 +55086,7 @@ MonoBehaviour:
   spriteLeft: {fileID: 430998031}
   spriteRight: {fileID: 1492316439}
   defaultLeftSprite: {fileID: -4502232435908732206, guid: dfb0a8ddffaeabb4cb5bbb24d0f12852, type: 3}
-  defaultRightSprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
+  defaultRightSprite: {fileID: -2470595747785517482, guid: 1e90cf757f218af4da389c6b1ba8380b, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
   dialogueText: {fileID: 419537938}
@@ -55110,7 +55110,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "No\u2026 no\u2026 no\u2026 Yo no quer\xEDa\u2026\r"
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: -2470595747785517482, guid: 1e90cf757f218af4da389c6b1ba8380b, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -55137,7 +55137,7 @@ MonoBehaviour:
     dialogueText: "No s\xE9 qu\xE9 hacer\u2026 no s\xE9 qu\xE9 tocar\u2026 Lo siento\u2026
       lo siento\u2026 lo siento\u2026"
     leftSpeaker: 0
-    characterSprite: {fileID: -793861177819025959, guid: 23788c465c8b7f445a8c698898d0f7e4, type: 3}
+    characterSprite: {fileID: -2470595747785517482, guid: 1e90cf757f218af4da389c6b1ba8380b, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -55561,7 +55561,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: 11193807160901837, guid: feaf89ab787e8224ea15f5b16245f391, type: 3}
+  m_Sprite: {fileID: 11193807160901837, guid: d47d2c5d8efee124f99a0bfe41b25392, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -57602,7 +57602,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: 3648207892980098720, guid: 5e6902c4807b72d4187c413fa5d64f65, type: 3}
+  m_Sprite: {fileID: 3648207892980098720, guid: 0c6a7482622f9b3428899aa606073ac2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -62341,7 +62341,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -334247398747001510, guid: 0f06b139cbeb33c4bbe16830d21d0c38, type: 3}
+  m_Sprite: {fileID: -334247398747001510, guid: b0f2dbceaff6ff8408a3e7cb1c254acf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -67170,7 +67170,7 @@ MonoBehaviour:
   spriteLeft: {fileID: 793005845}
   spriteRight: {fileID: 1904291897}
   defaultLeftSprite: {fileID: 5128570580311282821, guid: 5855e066a11e613408dcc9b3ae97d69c, type: 3}
-  defaultRightSprite: {fileID: 3648207892980098720, guid: 5e6902c4807b72d4187c413fa5d64f65, type: 3}
+  defaultRightSprite: {fileID: 3648207892980098720, guid: 0c6a7482622f9b3428899aa606073ac2, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
   dialogueText: {fileID: 419537938}
@@ -67193,7 +67193,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\u2026s\xED."
     leftSpeaker: 0
-    characterSprite: {fileID: 6471638616864330708, guid: 2a2fa987fe86a67449a285a606665d8b, type: 3}
+    characterSprite: {fileID: 6471638616864330708, guid: bbb9b4119138bfc418c8bdf3c7807b1a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -67209,7 +67209,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\xBFTe\u2026 duele mucho?"
     leftSpeaker: 0
-    characterSprite: {fileID: 6471638616864330708, guid: 2a2fa987fe86a67449a285a606665d8b, type: 3}
+    characterSprite: {fileID: 6471638616864330708, guid: bbb9b4119138bfc418c8bdf3c7807b1a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -67225,7 +67225,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Eso no suena\u2026 bien."
     leftSpeaker: 0
-    characterSprite: {fileID: 6471638616864330708, guid: 2a2fa987fe86a67449a285a606665d8b, type: 3}
+    characterSprite: {fileID: 6471638616864330708, guid: bbb9b4119138bfc418c8bdf3c7807b1a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -67242,7 +67242,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Espero que\u2026 te cures."
     leftSpeaker: 0
-    characterSprite: {fileID: 6471638616864330708, guid: 2a2fa987fe86a67449a285a606665d8b, type: 3}
+    characterSprite: {fileID: 6471638616864330708, guid: bbb9b4119138bfc418c8bdf3c7807b1a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -69360,7 +69360,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -334247398747001510, guid: 0f06b139cbeb33c4bbe16830d21d0c38, type: 3}
+  m_Sprite: {fileID: -334247398747001510, guid: b0f2dbceaff6ff8408a3e7cb1c254acf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -69991,7 +69991,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: Claro, sin problema Lin, yo te ayudo
     leftSpeaker: 0
-    characterSprite: {fileID: 6377917850455477399, guid: b3555c8a1e4ebba4e84c64c3e0c1ec36, type: 3}
+    characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     endDialogueHere: 0
     choices: []
     giveItemAfterThisLine: 0
@@ -70158,7 +70158,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: Claro, sin problema
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -72182,7 +72182,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Yo\u2026 yo solo\r\n\r"
     leftSpeaker: 0
-    characterSprite: {fileID: 11193807160901837, guid: feaf89ab787e8224ea15f5b16245f391, type: 3}
+    characterSprite: {fileID: 11193807160901837, guid: d47d2c5d8efee124f99a0bfe41b25392, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -72199,7 +72199,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Se descontrol\xF3. Yo no sab\xEDa\u2026"
     leftSpeaker: 0
-    characterSprite: {fileID: 11193807160901837, guid: feaf89ab787e8224ea15f5b16245f391, type: 3}
+    characterSprite: {fileID: 11193807160901837, guid: d47d2c5d8efee124f99a0bfe41b25392, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -72345,7 +72345,7 @@ MonoBehaviour:
   spriteLeft: {fileID: 1528451365}
   spriteRight: {fileID: 650283236}
   defaultLeftSprite: {fileID: 8379664347739615351, guid: 79502e6f2b7c2fc4db01211d2366d4c1, type: 3}
-  defaultRightSprite: {fileID: 11193807160901837, guid: feaf89ab787e8224ea15f5b16245f391, type: 3}
+  defaultRightSprite: {fileID: 11193807160901837, guid: d47d2c5d8efee124f99a0bfe41b25392, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
   dialogueText: {fileID: 419537938}
@@ -72387,7 +72387,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Yo\u2026 solo hice lo que era necesario."
     leftSpeaker: 0
-    characterSprite: {fileID: 11193807160901837, guid: feaf89ab787e8224ea15f5b16245f391, type: 3}
+    characterSprite: {fileID: 0}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -72457,7 +72457,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\xBFAhora\u2026?"
     leftSpeaker: 0
-    characterSprite: {fileID: -793861177819025959, guid: 23788c465c8b7f445a8c698898d0f7e4, type: 3}
+    characterSprite: {fileID: -2470595747785517482, guid: 1e90cf757f218af4da389c6b1ba8380b, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -72482,7 +72482,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\u2026"
     leftSpeaker: 0
-    characterSprite: {fileID: -1674950913012282259, guid: 44412b1d030bb9c40b08a3042c899310, type: 3}
+    characterSprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -72490,7 +72490,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Har\xE9 lo que haga falta"
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -76062,7 +76062,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\xBF\u2026Lin? No sab\xEDa que estabas aqu\xED."
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -76078,7 +76078,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\xBFQuieres hablar?"
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -76094,7 +76094,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Lo siento Lin, no quer\xEDa que Am..."
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -76110,7 +76110,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\xBFEl de Amara?"
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -76126,7 +76126,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Yo tambi\xE9n confiaba en ella."
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -76151,7 +76151,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Nadie se esperaba que pasar\xEDa eso."
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -76167,7 +76167,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Lin\u2026 por favor baja la voz."
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -76193,7 +76193,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: Eso no signifi...
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -76209,7 +76209,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: 'Lin, para '
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -76225,7 +76225,7 @@ MonoBehaviour:
   - speakerName: LIlith
     dialogueText: "Lin\u2026 por favor."
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -76241,7 +76241,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "D\xE9jame pasar."
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -78781,7 +78781,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\u2026Alpha\u2026 \xBFqu\xE9\u2026 qu\xE9 acaba de pasar?\r"
     leftSpeaker: 0
-    characterSprite: {fileID: -793861177819025959, guid: 23788c465c8b7f445a8c698898d0f7e4, type: 3}
+    characterSprite: {fileID: -2470595747785517482, guid: 1e90cf757f218af4da389c6b1ba8380b, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -78815,7 +78815,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Pero\u2026 estaba\u2026 \xE9l estaba\u2026\r"
     leftSpeaker: 0
-    characterSprite: {fileID: -793861177819025959, guid: 23788c465c8b7f445a8c698898d0f7e4, type: 3}
+    characterSprite: {fileID: -2470595747785517482, guid: 1e90cf757f218af4da389c6b1ba8380b, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -78841,7 +78841,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\u2026No s\xE9 si puedo\u2026\r"
     leftSpeaker: 0
-    characterSprite: {fileID: -793861177819025959, guid: 23788c465c8b7f445a8c698898d0f7e4, type: 3}
+    characterSprite: {fileID: -2470595747785517482, guid: 1e90cf757f218af4da389c6b1ba8380b, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -80010,7 +80010,7 @@ MonoBehaviour:
   spriteLeft: {fileID: 1101958740}
   spriteRight: {fileID: 1205010241}
   defaultLeftSprite: {fileID: -4248094021219397344, guid: a59cd75d32018cb46a26095b3897cc5b, type: 3}
-  defaultRightSprite: {fileID: 3648207892980098720, guid: 5e6902c4807b72d4187c413fa5d64f65, type: 3}
+  defaultRightSprite: {fileID: 3648207892980098720, guid: 0c6a7482622f9b3428899aa606073ac2, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
   dialogueText: {fileID: 419537938}
@@ -80033,7 +80033,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: No es grave. Me he tropezado.
     leftSpeaker: 0
-    characterSprite: {fileID: 6471638616864330708, guid: 2a2fa987fe86a67449a285a606665d8b, type: 3}
+    characterSprite: {fileID: 6471638616864330708, guid: bbb9b4119138bfc418c8bdf3c7807b1a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -81066,7 +81066,7 @@ MonoBehaviour:
   spriteLeft: {fileID: 1894344188}
   spriteRight: {fileID: 588427248}
   defaultLeftSprite: {fileID: -898178471685318745, guid: f0df01d5aa899804c9cdfba99798377c, type: 3}
-  defaultRightSprite: {fileID: -334247398747001510, guid: 0f06b139cbeb33c4bbe16830d21d0c38, type: 3}
+  defaultRightSprite: {fileID: -334247398747001510, guid: b0f2dbceaff6ff8408a3e7cb1c254acf, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
   dialogueText: {fileID: 419537938}
@@ -81091,7 +81091,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Senna, \xA1que alegr\xEDa verte!. Gracias por guardame una copa."
     leftSpeaker: 0
-    characterSprite: {fileID: 6078937715035284617, guid: 3b75265a4a27f5a4fb33fc22daf3f5f1, type: 3}
+    characterSprite: {fileID: -3582710704502222356, guid: 03b328f3d751c38429f3af6a3895348b, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -82164,7 +82164,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: Lo siento Gamma.
     leftSpeaker: 0
-    characterSprite: {fileID: 4620459775221977171, guid: 67e6027ef20bfdc4bb7c8b92c642a1f7, type: 3}
+    characterSprite: {fileID: -6974867021855848915, guid: 1e5f94e1a36cf434e84059be518bdf15, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -82172,7 +82172,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: Hoy renacemos.
     leftSpeaker: 0
-    characterSprite: {fileID: 4620459775221977171, guid: 67e6027ef20bfdc4bb7c8b92c642a1f7, type: 3}
+    characterSprite: {fileID: -6974867021855848915, guid: 1e5f94e1a36cf434e84059be518bdf15, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -82328,7 +82328,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: Gamma...
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -82372,7 +82372,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: Las cosas han cambiado
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -82409,7 +82409,7 @@ MonoBehaviour:
     dialogueText: "Desde aqu\xED no puedo hacer nada Gamma. D\xE9jame que investigue
       a ver si te puedo sacar de ah\xED."
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -83152,7 +83152,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: Cairen...?
     leftSpeaker: 0
-    characterSprite: {fileID: -793861177819025959, guid: 23788c465c8b7f445a8c698898d0f7e4, type: 3}
+    characterSprite: {fileID: -2470595747785517482, guid: 1e90cf757f218af4da389c6b1ba8380b, type: 3}
     endDialogueHere: 0
     choices: []
     giveItemAfterThisLine: 0
@@ -83221,7 +83221,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: Confiaron en ti.
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     endDialogueHere: 0
     choices: []
     giveItemAfterThisLine: 0
@@ -83302,7 +83302,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Adi\xF3s, Cairen"
     leftSpeaker: 0
-    characterSprite: {fileID: 11193807160901837, guid: feaf89ab787e8224ea15f5b16245f391, type: 3}
+    characterSprite: {fileID: 11193807160901837, guid: d47d2c5d8efee124f99a0bfe41b25392, type: 3}
     endDialogueHere: 0
     choices: []
     giveItemAfterThisLine: 0
@@ -83344,7 +83344,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: Confiaron en ti.
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     endDialogueHere: 0
     choices: []
     giveItemAfterThisLine: 0
@@ -87289,7 +87289,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: Bueno tampoco hace falta eso Cairen...
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -87337,7 +87337,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Cairen, de verdad, pi\xE9nsalo bien."
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -87397,7 +87397,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Lo pensar\xE9."
     leftSpeaker: 0
-    characterSprite: {fileID: 6377917850455477399, guid: b3555c8a1e4ebba4e84c64c3e0c1ec36, type: 3}
+    characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -87611,7 +87611,7 @@ MonoBehaviour:
   - speakerName: LIlith
     dialogueText: "\xA1PARA LIN!"
     leftSpeaker: 0
-    characterSprite: {fileID: -196720534541841653, guid: 182f058229a7ff3418052bbb8b823874, type: 3}
+    characterSprite: {fileID: -6974867021855848915, guid: 1e5f94e1a36cf434e84059be518bdf15, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -87619,7 +87619,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: ...
     leftSpeaker: 0
-    characterSprite: {fileID: -7305078188238623119, guid: 417f37a05dc22df42b02b1b0309a54a9, type: 3}
+    characterSprite: {fileID: 1395885331017514928, guid: ec3406c0193c04f49b5e960dcd3eb86c, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -88521,7 +88521,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Nira\u2026 \xBFest\xE1s bien?"
     leftSpeaker: 0
-    characterSprite: {fileID: -793861177819025959, guid: 23788c465c8b7f445a8c698898d0f7e4, type: 3}
+    characterSprite: {fileID: -2470595747785517482, guid: 1e90cf757f218af4da389c6b1ba8380b, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -88538,7 +88538,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\xBFSe ha perdido?"
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -88564,7 +88564,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\xBFQuieres que te ayude a buscarla?"
     leftSpeaker: 0
-    characterSprite: {fileID: 6377917850455477399, guid: b3555c8a1e4ebba4e84c64c3e0c1ec36, type: 3}
+    characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -88939,7 +88939,7 @@ MonoBehaviour:
   spriteLeft: {fileID: 307860658}
   spriteRight: {fileID: 2125746136}
   defaultLeftSprite: {fileID: 4704073244319040601, guid: c1b0d59a8d93aa2449c22bd17735a03d, type: 3}
-  defaultRightSprite: {fileID: 3648207892980098720, guid: 5e6902c4807b72d4187c413fa5d64f65, type: 3}
+  defaultRightSprite: {fileID: 3648207892980098720, guid: 0c6a7482622f9b3428899aa606073ac2, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
   dialogueText: {fileID: 419537938}
@@ -88963,7 +88963,7 @@ MonoBehaviour:
     dialogueText: "Oye de verdad que estoy bien, solo me he ca\xEDdo. No te preocupes
       Gamma. voy a ver a Cael para que me ayude."
     leftSpeaker: 0
-    characterSprite: {fileID: 6471638616864330708, guid: 2a2fa987fe86a67449a285a606665d8b, type: 3}
+    characterSprite: {fileID: 6471638616864330708, guid: bbb9b4119138bfc418c8bdf3c7807b1a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -88979,7 +88979,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "(S\xED, seguro)"
     leftSpeaker: 0
-    characterSprite: {fileID: 6471638616864330708, guid: 2a2fa987fe86a67449a285a606665d8b, type: 3}
+    characterSprite: {fileID: 6471638616864330708, guid: bbb9b4119138bfc418c8bdf3c7807b1a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -89495,7 +89495,7 @@ MonoBehaviour:
     dialogueText: "Amara, mira, lo encontr\xE9. Estaba escondido detr\xE1s de unas
       cajas en un granero."
     leftSpeaker: 0
-    characterSprite: {fileID: 6078937715035284617, guid: 3b75265a4a27f5a4fb33fc22daf3f5f1, type: 3}
+    characterSprite: {fileID: -3582710704502222356, guid: 03b328f3d751c38429f3af6a3895348b, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -89521,7 +89521,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: Muchas gracias Amara
     leftSpeaker: 0
-    characterSprite: {fileID: 6377917850455477399, guid: b3555c8a1e4ebba4e84c64c3e0c1ec36, type: 3}
+    characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -91509,7 +91509,7 @@ MonoBehaviour:
   spriteLeft: {fileID: 1765937653}
   spriteRight: {fileID: 381841846}
   defaultLeftSprite: {fileID: 2462542332831120294, guid: f87666bc22c836143bec4ff5b8e367ca, type: 3}
-  defaultRightSprite: {fileID: 3648207892980098720, guid: 5e6902c4807b72d4187c413fa5d64f65, type: 3}
+  defaultRightSprite: {fileID: 3648207892980098720, guid: 0c6a7482622f9b3428899aa606073ac2, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
   dialogueText: {fileID: 419537938}
@@ -91533,7 +91533,7 @@ MonoBehaviour:
     dialogueText: Hola Silas, nada tranquilo simplemente me he caido y me he hecho
       unas heridas.
     leftSpeaker: 0
-    characterSprite: {fileID: 6471638616864330708, guid: 2a2fa987fe86a67449a285a606665d8b, type: 3}
+    characterSprite: {fileID: 6471638616864330708, guid: bbb9b4119138bfc418c8bdf3c7807b1a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -92297,7 +92297,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: 7979229806177774955, guid: eef5395ccf22c0945bd0f299e6cdbfdd, type: 3}
+  m_Sprite: {fileID: 1005424255604513819, guid: 8653a370f7eed544282b714468a89697, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -92873,7 +92873,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: Claro!
     leftSpeaker: 0
-    characterSprite: {fileID: 6377917850455477399, guid: b3555c8a1e4ebba4e84c64c3e0c1ec36, type: 3}
+    characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -97934,7 +97934,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -334247398747001510, guid: 0f06b139cbeb33c4bbe16830d21d0c38, type: 3}
+  m_Sprite: {fileID: -334247398747001510, guid: b0f2dbceaff6ff8408a3e7cb1c254acf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99443,7 +99443,7 @@ MonoBehaviour:
   spriteLeft: {fileID: 1742376854}
   spriteRight: {fileID: 1711420087}
   defaultLeftSprite: {fileID: 5142150385823802636, guid: 802342952fea5994f81128c90eea6b60, type: 3}
-  defaultRightSprite: {fileID: -334247398747001510, guid: 0f06b139cbeb33c4bbe16830d21d0c38, type: 3}
+  defaultRightSprite: {fileID: -334247398747001510, guid: b0f2dbceaff6ff8408a3e7cb1c254acf, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
   dialogueText: {fileID: 419537938}
@@ -99476,7 +99476,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Pues ahora que lo dices, \xBFdonde se habr\xE1 metido Cairen?"
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -99854,7 +99854,7 @@ MonoBehaviour:
   spriteLeft: {fileID: 1602079406}
   spriteRight: {fileID: 272188646}
   defaultLeftSprite: {fileID: 6021040597011648977, guid: 331ed2a063eafdc4e9c115f301376c30, type: 3}
-  defaultRightSprite: {fileID: 3648207892980098720, guid: 5e6902c4807b72d4187c413fa5d64f65, type: 3}
+  defaultRightSprite: {fileID: 3648207892980098720, guid: 0c6a7482622f9b3428899aa606073ac2, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
   dialogueText: {fileID: 419537938}
@@ -99877,7 +99877,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Orren, solo me he caido vale?, voy de camino a la enfermer\xEDa."
     leftSpeaker: 0
-    characterSprite: {fileID: 6471638616864330708, guid: 2a2fa987fe86a67449a285a606665d8b, type: 3}
+    characterSprite: {fileID: 6471638616864330708, guid: bbb9b4119138bfc418c8bdf3c7807b1a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -99893,7 +99893,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: No de verdad que estoy bien. Gracias de todas formas.
     leftSpeaker: 0
-    characterSprite: {fileID: 6471638616864330708, guid: 2a2fa987fe86a67449a285a606665d8b, type: 3}
+    characterSprite: {fileID: 6471638616864330708, guid: bbb9b4119138bfc418c8bdf3c7807b1a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -101806,7 +101806,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Yo\u2026 no estoy segura de que\u2026de que haya sido lo correcto."
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -101857,7 +101857,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "S\xED\u2026 Alpha."
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -102576,7 +102576,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\xBFVale\u2026?"
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     endDialogueHere: 0
     choices: []
     giveItemAfterThisLine: 0
@@ -104085,7 +104085,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: Los hilos, te refieres a relaciones entre las personas?
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -104194,7 +104194,7 @@ MonoBehaviour:
   spriteLeft: {fileID: 1351997377}
   spriteRight: {fileID: 1041813934}
   defaultLeftSprite: {fileID: 5142150385823802636, guid: 802342952fea5994f81128c90eea6b60, type: 3}
-  defaultRightSprite: {fileID: -334247398747001510, guid: 0f06b139cbeb33c4bbe16830d21d0c38, type: 3}
+  defaultRightSprite: {fileID: -334247398747001510, guid: b0f2dbceaff6ff8408a3e7cb1c254acf, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
   dialogueText: {fileID: 419537938}
@@ -116107,7 +116107,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -334247398747001510, guid: 0f06b139cbeb33c4bbe16830d21d0c38, type: 3}
+  m_Sprite: {fileID: -334247398747001510, guid: b0f2dbceaff6ff8408a3e7cb1c254acf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -125983,7 +125983,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "S\xED, estaba justo donde dijiste.\r"
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -126000,7 +126000,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\xBFY qu\xE9 dice?\r"
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -126027,7 +126027,7 @@ MonoBehaviour:
   - speakerName: 
     dialogueText: '*Recibes cuchillo de ritual*'
     leftSpeaker: 0
-    characterSprite: {fileID: 4620459775221977171, guid: 67e6027ef20bfdc4bb7c8b92c642a1f7, type: 3}
+    characterSprite: {fileID: 1395885331017514928, guid: ec3406c0193c04f49b5e960dcd3eb86c, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -126035,7 +126035,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\xBFY qu\xE9 se supone que tengo que hacer con esto?\r"
     leftSpeaker: 0
-    characterSprite: {fileID: 4620459775221977171, guid: 67e6027ef20bfdc4bb7c8b92c642a1f7, type: 3}
+    characterSprite: {fileID: -6974867021855848915, guid: 1e5f94e1a36cf434e84059be518bdf15, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -126405,7 +126405,7 @@ MonoBehaviour:
   spriteLeft: {fileID: 617475721}
   spriteRight: {fileID: 1981451228}
   defaultLeftSprite: {fileID: -6717224247477546662, guid: a916264e2a8f1f24b8cad7b0e0ffebca, type: 3}
-  defaultRightSprite: {fileID: -334247398747001510, guid: 0f06b139cbeb33c4bbe16830d21d0c38, type: 3}
+  defaultRightSprite: {fileID: -334247398747001510, guid: b0f2dbceaff6ff8408a3e7cb1c254acf, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
   dialogueText: {fileID: 419537938}
@@ -126436,7 +126436,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: Siiii
     leftSpeaker: 0
-    characterSprite: {fileID: 6377917850455477399, guid: b3555c8a1e4ebba4e84c64c3e0c1ec36, type: 3}
+    characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -129216,7 +129216,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: De acuerdo, Alpha
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -129846,7 +129846,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\xBFYo?"
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -131640,7 +131640,7 @@ MonoBehaviour:
   spriteLeft: {fileID: 688821437}
   spriteRight: {fileID: 1726581661}
   defaultLeftSprite: {fileID: -4619670943869267955, guid: dbdb86a0b27d8d94a9d152fe45632273, type: 3}
-  defaultRightSprite: {fileID: 3648207892980098720, guid: 5e6902c4807b72d4187c413fa5d64f65, type: 3}
+  defaultRightSprite: {fileID: 3648207892980098720, guid: 0c6a7482622f9b3428899aa606073ac2, type: 3}
   dialoguePanel: {fileID: 878597090}
   speakerText: {fileID: 160613714}
   dialogueText: {fileID: 419537938}
@@ -131663,7 +131663,7 @@ MonoBehaviour:
   - speakerName: 'LIlith '
     dialogueText: Tengo que ver a Alpha
     leftSpeaker: 0
-    characterSprite: {fileID: 6471638616864330708, guid: 2a2fa987fe86a67449a285a606665d8b, type: 3}
+    characterSprite: {fileID: 6471638616864330708, guid: bbb9b4119138bfc418c8bdf3c7807b1a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -131679,7 +131679,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: Ha pasado algo
     leftSpeaker: 0
-    characterSprite: {fileID: 6471638616864330708, guid: 2a2fa987fe86a67449a285a606665d8b, type: 3}
+    characterSprite: {fileID: 6471638616864330708, guid: bbb9b4119138bfc418c8bdf3c7807b1a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -131695,7 +131695,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: Pero estoy toda manchada de sangre
     leftSpeaker: 0
-    characterSprite: {fileID: 6471638616864330708, guid: 2a2fa987fe86a67449a285a606665d8b, type: 3}
+    characterSprite: {fileID: 6471638616864330708, guid: bbb9b4119138bfc418c8bdf3c7807b1a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -131712,7 +131712,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Pero... \xBFy Lin?"
     leftSpeaker: 0
-    characterSprite: {fileID: 6471638616864330708, guid: 2a2fa987fe86a67449a285a606665d8b, type: 3}
+    characterSprite: {fileID: 6471638616864330708, guid: bbb9b4119138bfc418c8bdf3c7807b1a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -131728,7 +131728,7 @@ MonoBehaviour:
   - speakerName: 
     dialogueText: "*Bebes el n\xE9ctar que te ha dado Delta*\r  "
     leftSpeaker: 0
-    characterSprite: {fileID: -6751318744405601006, guid: 377001099d54d0f478295771fe716d43, type: 3}
+    characterSprite: {fileID: 8244233600422226293, guid: 2cc7b826e07bb0649861f6e95b99933c, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -132490,7 +132490,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\xBFNube? \xBFQu\xE9 ha pasado?"
     leftSpeaker: 0
-    characterSprite: {fileID: -793861177819025959, guid: 23788c465c8b7f445a8c698898d0f7e4, type: 3}
+    characterSprite: {fileID: -2470595747785517482, guid: 1e90cf757f218af4da389c6b1ba8380b, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -132517,7 +132517,7 @@ MonoBehaviour:
     dialogueText: "No es tonto. Vamos a buscarlo, \xBFvale? Dime d\xF3nde crees que
       pudo haber estado."
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -133069,7 +133069,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -334247398747001510, guid: 0f06b139cbeb33c4bbe16830d21d0c38, type: 3}
+  m_Sprite: {fileID: -334247398747001510, guid: b0f2dbceaff6ff8408a3e7cb1c254acf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -140484,7 +140484,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -334247398747001510, guid: 0f06b139cbeb33c4bbe16830d21d0c38, type: 3}
+  m_Sprite: {fileID: -334247398747001510, guid: b0f2dbceaff6ff8408a3e7cb1c254acf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -141930,7 +141930,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\xBFAlpha\u2026? \xBFQu\xE9 est\xE1s haciendo aqu\xED?"
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     endDialogueHere: 0
     choices: []
     giveItemAfterThisLine: 0
@@ -141962,7 +141962,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\xBFAbono? \xBFQuieres decir que debo hacer algo?"
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     endDialogueHere: 0
     choices: []
     giveItemAfterThisLine: 0
@@ -142018,7 +142018,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Alpha\u2026 no estoy segura de esto."
     leftSpeaker: 0
-    characterSprite: {fileID: -793861177819025959, guid: 23788c465c8b7f445a8c698898d0f7e4, type: 3}
+    characterSprite: {fileID: -2470595747785517482, guid: 1e90cf757f218af4da389c6b1ba8380b, type: 3}
     endDialogueHere: 0
     choices: []
     giveItemAfterThisLine: 0
@@ -142061,7 +142061,7 @@ MonoBehaviour:
   - speakerName: 
     dialogueText: "\u201DHas obtenido el vial\u201D"
     leftSpeaker: 0
-    characterSprite: {fileID: -1674950913012282259, guid: 44412b1d030bb9c40b08a3042c899310, type: 3}
+    characterSprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
     endDialogueHere: 0
     choices: []
     giveItemAfterThisLine: 0
@@ -142105,7 +142105,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Alpha\u2026 no estoy segura de esto."
     leftSpeaker: 0
-    characterSprite: {fileID: -793861177819025959, guid: 23788c465c8b7f445a8c698898d0f7e4, type: 3}
+    characterSprite: {fileID: -2470595747785517482, guid: 1e90cf757f218af4da389c6b1ba8380b, type: 3}
     endDialogueHere: 0
     choices: []
     giveItemAfterThisLine: 0
@@ -142148,7 +142148,7 @@ MonoBehaviour:
   - speakerName: 
     dialogueText: "\u201DHas obtenido el vial\u201D"
     leftSpeaker: 0
-    characterSprite: {fileID: -1674950913012282259, guid: 44412b1d030bb9c40b08a3042c899310, type: 3}
+    characterSprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
     endDialogueHere: 0
     choices: []
     giveItemAfterThisLine: 0
@@ -142716,7 +142716,7 @@ MonoBehaviour:
     dialogueText: "\xA1\xBFSe puede saber qu\xE9 est\xE1 pasando aqu\xED?! \xA1\xBFArven,
       Jorah\u2026 los hab\xE9is matado??!"
     leftSpeaker: 0
-    characterSprite: {fileID: -2470595747785517482, guid: 92bed59e285b7604abeadd0f18f9cad2, type: 3}
+    characterSprite: {fileID: -2470595747785517482, guid: 1e90cf757f218af4da389c6b1ba8380b, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -142749,7 +142749,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\u2026"
     leftSpeaker: 0
-    characterSprite: {fileID: -1674950913012282259, guid: 44412b1d030bb9c40b08a3042c899310, type: 3}
+    characterSprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -142765,7 +142765,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: Estoy lista.
     leftSpeaker: 0
-    characterSprite: {fileID: 5953301182136891594, guid: 2fd71506cd35b37499404742fc662a69, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -144170,7 +144170,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Vaya, parece que tienes mucho control sobre lo que pasa aqu\xED."
     leftSpeaker: 0
-    characterSprite: {fileID: 6377917850455477399, guid: b3555c8a1e4ebba4e84c64c3e0c1ec36, type: 3}
+    characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
