@@ -293,7 +293,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Ugh\u2026 bueno, me lo quiero pasar bien as\xED que toma."
     leftSpeaker: 0
-    characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -5796,7 +5796,7 @@ MonoBehaviour:
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
-  guardarEnBacklog: 0
+  guardarEnBacklog: 1
   dialogueSections:
   - speakerName: Npc
     dialogueText: "\xA1QUE ALGUIEN PONGA M\xDASICA!"
@@ -27216,7 +27216,7 @@ MonoBehaviour:
     dialogueText: "No s\xE9\u2026 todo esto me toma un poco por sorpresa. No suelo
       aceptar cosas as\xED, tan de repente"
     leftSpeaker: 0
-    characterSprite: {fileID: -2470595747785517482, guid: 1e90cf757f218af4da389c6b1ba8380b, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -27288,13 +27288,13 @@ MonoBehaviour:
     dialogueText: "No s\xE9\u2026 suena demasiado bueno para ser cierto. Y al mismo
       tiempo, algo dentro de m\xED tiene curiosidad"
     leftSpeaker: 0
-    characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
+    characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
   - speakerName: Lilith
-    dialogueText: ' Hace tiempo que no me siento en paz conmigo misma.'
+    dialogueText: Hace tiempo que no me siento en paz conmigo misma.
     leftSpeaker: 0
     characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
@@ -30052,7 +30052,7 @@ MonoBehaviour:
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
   - speakerName: 
-    dialogueText: (Recibes "Nota")
+    dialogueText: Recibes "Nota"
     leftSpeaker: 0
     characterSprite: {fileID: 0}
     giveItemAfterThisLine: 0
