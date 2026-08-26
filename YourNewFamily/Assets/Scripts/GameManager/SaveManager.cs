@@ -67,16 +67,11 @@ public class SaveManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G))
+        // Guardar con G o Alt (cualquier tecla Alt)
+        if (Input.GetKeyDown(KeyCode.LeftAlt) || Input.GetKeyDown(KeyCode.RightAlt))
         {
-            Debug.Log("🔹 G Presionada - Guardando...");
+            Debug.Log("🔹 Guardando partida (tecla)");
             SaveGame();
-        }
-
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            Debug.Log("🔹 H Presionada - Cargando...");
-            LoadGame();
         }
     }
 
@@ -315,5 +310,10 @@ public class SaveManager : MonoBehaviour
         }
 
         Debug.Log($"🔧 Restaurados {restoredCount} objetos.");
+    }
+
+    public bool HasSaveFile()
+    {
+        return File.Exists(savePath);
     }
 }
