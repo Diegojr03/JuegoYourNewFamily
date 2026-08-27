@@ -12,8 +12,8 @@ public class DialogueSystemGiantFocus : MonoBehaviour
     public Vector3 giantScale = new Vector3(2f, 2f, 1f);
 
     [Header("Identificador de Diálogo")]
-    public string dialogueId = ""; // 🔥 NUEVO
-    public string conversationOwner = ""; // Nuevo
+    public string dialogueId = "";
+    public string conversationOwner = "";
 
     [Header("Posicionamiento")]
     [Range(0f, 1f)]
@@ -25,8 +25,6 @@ public class DialogueSystemGiantFocus : MonoBehaviour
     public TextMeshProUGUI speakerText;
     public TextMeshProUGUI dialogueText;
     public GameObject speakerContainer;
-
-
 
     [Header("Visuales")]
     public Color dimmedColor = new Color(0.3f, 0.3f, 0.3f, 1f);
@@ -45,6 +43,9 @@ public class DialogueSystemGiantFocus : MonoBehaviour
         public string speakerName;
         [TextArea(3, 5)] public string dialogueText;
         public bool isGiantSpeaking;
+
+        public AudioClip gibberishClip;
+        [Range(0f, 1f)] public float gibberishVolume = 0.07f;
     }
 
     private bool isDialogueActive = false;
@@ -54,6 +55,8 @@ public class DialogueSystemGiantFocus : MonoBehaviour
     private MovimientoPersonaje playerMovement;
     private Rigidbody2D playerRigidbody;
     private Vector2 originalVelocity;
+
+    private AudioSource gibberishAudioSource;
 
     void Start()
     {
@@ -70,6 +73,10 @@ public class DialogueSystemGiantFocus : MonoBehaviour
 
         CalculatePositions();
         if (giantCharacter != null) giantCharacter.position = hiddenPosition;
+
+        gibberishAudioSource = gameObject.AddComponent<AudioSource>();
+        gibberishAudioSource.loop = false;
+        gibberishAudioSource.playOnAwake = false;
     }
 
     void CalculatePositions()
@@ -84,7 +91,6 @@ public class DialogueSystemGiantFocus : MonoBehaviour
     {
         if (isDialogueActive || dialogues.Count == 0) return;
 
-        // 🔥 Registrar diálogo completado
         if (!string.IsNullOrEmpty(dialogueId) && SaveManager.Instance != null)
             SaveManager.Instance.RegisterDialogueCompleted(dialogueId);
 
@@ -118,7 +124,6 @@ public class DialogueSystemGiantFocus : MonoBehaviour
 
         yield return StartCoroutine(MoveGiant(hiddenPosition));
 
-        // 🔥 Activar objetos y registrar estado
         foreach (GameObject obj in objectsToActivateAfter)
         {
             if (obj != null)
@@ -168,7 +173,6 @@ public class DialogueSystemGiantFocus : MonoBehaviour
         if (speakerText != null) speakerText.text = line.speakerName;
         if (speakerContainer != null) speakerContainer.SetActive(!string.IsNullOrEmpty(line.speakerName));
 
-        // 🔥 Guardar en Backlog
         if (BacklogManager.Instance != null)
         {
             string owner = GetConversationOwner();
@@ -180,7 +184,7 @@ public class DialogueSystemGiantFocus : MonoBehaviour
         }
 
         string fullText = line.dialogueText;
-        Coroutine typingCoroutine = StartCoroutine(TypeText(fullText));
+        Coroutine typingCoroutine = StartCoroutine(TypeText(fullText, line.gibberishClip, line.gibberishVolume));
         bool typingCompleted = false;
 
         while (!typingCompleted)
@@ -204,12 +208,18 @@ public class DialogueSystemGiantFocus : MonoBehaviour
         }
     }
 
-    private IEnumerator TypeText(string text)
+    private IEnumerator TypeText(string text, AudioClip clip, float volume)
     {
         dialogueText.text = "";
+        int charIndex = 0;
         foreach (char letter in text.ToCharArray())
         {
             dialogueText.text += letter;
+            if (clip != null && charIndex % 2 == 0)
+            {
+                gibberishAudioSource.PlayOneShot(clip, volume);
+            }
+            charIndex++;
             yield return new WaitForSeconds(dialogueCooldown);
         }
     }

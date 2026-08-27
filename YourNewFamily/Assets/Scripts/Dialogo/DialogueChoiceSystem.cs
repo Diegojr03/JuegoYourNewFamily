@@ -15,13 +15,16 @@ public class DialogueChoiceSystem : MonoBehaviour
         public Sprite characterSprite;
 
         public bool endDialogueHere = false;
-
         public Choice[] choices;
 
         public bool giveItemAfterThisLine = false;
         public string itemIdToGive = "";
         public string itemNameToGive = "";
         public Sprite itemIconToGive = null;
+
+        // 🔥 Sonido para cada 2 letras
+        public AudioClip gibberishClip;
+        [Range(0f, 1f)] public float gibberishVolume = 0.07f;
     }
 
     [System.Serializable]
@@ -32,7 +35,7 @@ public class DialogueChoiceSystem : MonoBehaviour
     }
 
     [Header("Identificador de Diálogo")]
-    public string dialogueId = ""; // 🔥 NUEVO
+    public string dialogueId = "";
 
     [Header("Identificación")]
     public string protagonistName = "Lilith";
@@ -99,6 +102,8 @@ public class DialogueChoiceSystem : MonoBehaviour
 
     private Coroutine typingCoroutine;
 
+    private AudioSource gibberishAudioSource;
+
     void Start()
     {
         mainCamera = Camera.main;
@@ -116,6 +121,10 @@ public class DialogueChoiceSystem : MonoBehaviour
         Collider2D col = GetComponent<Collider2D>();
         if (col != null)
             col.isTrigger = true;
+
+        gibberishAudioSource = gameObject.AddComponent<AudioSource>();
+        gibberishAudioSource.loop = false;
+        gibberishAudioSource.playOnAwake = false;
     }
 
     void Update()
@@ -163,7 +172,6 @@ public class DialogueChoiceSystem : MonoBehaviour
     {
         if (isDialogueActive || dialogueLines.Count == 0 || !canReuse) return;
 
-        // 🔥 Registrar diálogo completado
         if (!string.IsNullOrEmpty(dialogueId) && SaveManager.Instance != null)
             SaveManager.Instance.RegisterDialogueCompleted(dialogueId);
 
@@ -236,7 +244,7 @@ public class DialogueChoiceSystem : MonoBehaviour
         if (typingCoroutine != null)
             StopCoroutine(typingCoroutine);
 
-        typingCoroutine = StartCoroutine(TypeText(line.dialogueText));
+        typingCoroutine = StartCoroutine(TypeText(line.dialogueText, line.gibberishClip, line.gibberishVolume));
 
         if (line.giveItemAfterThisLine)
         {
@@ -271,15 +279,24 @@ public class DialogueChoiceSystem : MonoBehaviour
         }
     }
 
-    IEnumerator TypeText(string text)
+    IEnumerator TypeText(string text, AudioClip clip, float volume)
     {
         typing = true;
         waitingForNextLine = false;
         dialogueText.text = "";
 
+        int charIndex = 0;
         foreach (char c in text.ToCharArray())
         {
             dialogueText.text += c;
+
+            // Reproducir cada 2 letras (cuando charIndex sea par)
+            if (clip != null && charIndex % 2 == 0)
+            {
+                gibberishAudioSource.PlayOneShot(clip, volume);
+            }
+
+            charIndex++;
 
             if (!typing)
                 break;
@@ -325,9 +342,8 @@ public class DialogueChoiceSystem : MonoBehaviour
 
             Button btn = btnObj.GetComponent<Button>();
             int targetIndex = choice.nextDialogueIndex;
-            string choiceText = choice.choiceText; // Capturamos el texto
+            string choiceText = choice.choiceText;
 
-            // Ahora el listener pasa también el texto
             btn.onClick.AddListener(() =>
             {
                 choicePanel.SetActive(false);
@@ -384,21 +400,16 @@ public class DialogueChoiceSystem : MonoBehaviour
 
     void SelectChoice(int nextIndex, string choiceText)
     {
-        // ---- GUARDAR LA ELECCIÓN EN EL BACKLOG ----
         if (BacklogManager.Instance != null)
         {
-            // Obtenemos el dueño de la conversación (para que la elección se agrupe en la misma pestaña)
             string owner = GetConversationOwner();
-
-            // Registramos la elección como si la hubiera dicho la protagonista
             BacklogManager.Instance.AddDialogueWithConversationOwner(
-                protagonistName,      // speakerName = nombre de la protagonista
-                choiceText,           // dialogueText = texto de la opción elegida
-                owner                 // conversationOwner = mismo que el diálogo
+                protagonistName,
+                choiceText,
+                owner
             );
         }
 
-        // Luego avanzamos al siguiente diálogo
         if (nextIndex < 0 || nextIndex >= dialogueLines.Count)
         {
             EndDialogue();
@@ -451,7 +462,6 @@ public class DialogueChoiceSystem : MonoBehaviour
 
     void ExecuteAdvancedFunctionality()
     {
-        // 🔥 Activar objetos y registrar estado
         foreach (GameObject obj in objectsToActivateAfter)
         {
             if (obj != null)
@@ -463,7 +473,6 @@ public class DialogueChoiceSystem : MonoBehaviour
             }
         }
 
-        
         foreach (GameObject obj in objectsToDestroyAfter)
         {
             if (obj != null)
@@ -477,7 +486,6 @@ public class DialogueChoiceSystem : MonoBehaviour
             }
         }
 
-        // Destruir este objeto si está configurado
         if (destroyAfterDialogue)
         {
             SaveableObject thisSaveable = GetComponent<SaveableObject>();

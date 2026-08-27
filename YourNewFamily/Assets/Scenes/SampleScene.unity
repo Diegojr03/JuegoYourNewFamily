@@ -238,6 +238,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: "Si quieres, puedo montar un esc\xE1ndalo."
     leftSpeaker: 1
@@ -246,6 +248,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: "Ya sabes, gritar, fingir que me desmayo o romper una botella\u2026
       lo que elijas."
@@ -255,6 +259,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: "Pero eso s\xED, no trabajo gratis. \xBFNo tendr\xE1s por ah\xED
       algo de ese nuevo producto que te deja volando?"
@@ -264,6 +270,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Pues no, no tengo nada de eso que tu dices que te deja volando,
       si no ya me lo hubiese tomado yo\u2026 jajaja"
@@ -273,6 +281,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: "Venga va, por unos 5 d\xF3lares monto un esc\xE1ndalo y me llevo
       al segurata."
@@ -282,6 +292,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Te vendes muy caro, \xBFqu\xE9 te crees, piensas que soy un cajero?"
     leftSpeaker: 0
@@ -290,6 +302,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Ugh\u2026 bueno, me lo quiero pasar bien as\xED que toma."
     leftSpeaker: 0
@@ -298,6 +312,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: 
     dialogueText: "(Entregas 5 d\xF3lares)"
     leftSpeaker: 0
@@ -306,6 +322,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: "Muy bien, cruza a la otra acera y ver\xE1s la magia"
     leftSpeaker: 1
@@ -314,6 +332,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -1293,12 +1313,16 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Conductor
     dialogueText: "\xA1VENGA BAJAD TODOS YA POR FAVOR!"
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -2171,6 +2195,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -4277,18 +4303,24 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: ???
     dialogueText: "S\xED. Lo curioso es que la luz roja parpadea en m\xE1s sem\xE1foros. "
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: ???
     dialogueText: "Creo que la vi parpadear dos veces en dos sem\xE1foros diferentes."
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: ??
     dialogueText: "\xBFDos veces? Qu\xE9 raro. Yo cont\xE9 solo una vez el verde
       despu\xE9s de eso."
@@ -4296,6 +4328,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: ???
     dialogueText: "Antes de que se apagasen vi que el amarillo tambi\xE9n se encendi\xF3
       en bastantes sem\xE1foros."
@@ -4303,12 +4337,16 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: ???
     dialogueText: "Bah, seguro es solo un fallo el\xE9ctrico"
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: ??
     dialogueText: "S\xED, adem\xE1s empieza a hacer fr\xEDo. Ojal\xE1 encontremos
       algo abierto para tomar algo"
@@ -4316,6 +4354,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -4504,6 +4544,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Mi madre sol\xEDa poner estas flores en mi ventana, dec\xEDa que
       espantaban la tristeza. "
@@ -4511,12 +4553,16 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: Cuantos buenos recuerdos tengo de ella.
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -4752,6 +4798,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -5804,12 +5852,16 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "(Que remedio... lo har\xE9 yo, arreglar\xE9 la gramola)"
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -6252,6 +6304,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 0}
@@ -7093,12 +7147,16 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: No he hecho nada. Solo estoy de pie, pidiendo una maldita bebida.
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Jefe
     dialogueText: "No me importa. Aqu\xED las reglas se cumplen. Y la regla es que
       t\xFA no deber\xEDas estar aqu\xED."
@@ -7106,18 +7164,24 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: Caballeros, dejen a la muchacha en paz.
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Jefe
     dialogueText: "Alpha\u2026 Esto no es asunto tuyo. Ella no deber\xEDa estar aqu\xED."
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Tal vez. Pero mientras est\xE9 aqu\xED, merece ser escuchada.\r\n
       No es propio de este lugar tratar a un invitado como un criminal sin siquiera
@@ -7126,6 +7190,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Jefe
     dialogueText: "Ella no es invitada, Alpha. Mira como va vestida. Si la dejamos
       quedarse, no entrar\xE1n nuevos clientes."
@@ -7133,6 +7199,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Si ocurre alg\xFAn problema, yo responder\xE9 por ella. Conf\xEDen
       en mi juicio. Si algo falla, ser\xE1 mi responsabilidad."
@@ -7140,6 +7208,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Est\xE1 bien, pero que quede claro: esto es bajo tu palabra. Si
       algo pasa, no vengas a pedirme favores."
@@ -7147,6 +7217,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Muchas gracias, sab\xEDa que eras un hombre razonable. En cuanto
       a usted se\xF1orita, si me concede unos minutos, me gustar\xEDa conversar con
@@ -7155,6 +7227,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: Creo que ambos podemos salir beneficiados de una oferta que tengo
       en mente.
@@ -7162,6 +7236,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -7361,6 +7437,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Pero a veces, la p\xE9rdida de uno... alimenta el crecimiento
       de otro."
@@ -7370,6 +7448,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "\xBFTe acuerdas de lo que te dije que ten\xEDas que plantar?... "
     leftSpeaker: 1
@@ -7378,6 +7458,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: Vuelve a ese sitio, puede que sientas un impulso de visitarlo ahora.
       Escucha a tu interior.
@@ -7387,6 +7469,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -8297,18 +8381,24 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Casero
     dialogueText: "\xA1SEGUIRE AQUI HASTA QUE TE VAYAS!"
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "\xA1Oye! No hace falta que rompas la puerta."
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: Ya te dije que en cuanto tenga el dinero te voy a pagar. No estoy
       huyendo de nada.
@@ -8316,12 +8406,16 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Casero
     dialogueText: "\xA1NO VOY A ESPERAR M\xC1S! \u2026 "
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Casero
     dialogueText: "Claro, eso es si no quieres empezar a trabajar para m\xED\u2026
       como las dem\xE1s."
@@ -8329,12 +8423,16 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "(Que asco... No pienso ser como 'las dem\xE1s')"
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "(Tengo que salir de aqu\xED... Y r\xE1pido. \xBFPero c\xF3mo?,
       buscar\xE9 algo en mi habitaci\xF3n)"
@@ -8342,6 +8440,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -8536,12 +8636,16 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "\xA1\xA1\xA1\xA1\xA1\xA1\xBFPERO QUE HA SIDO ESO?!!!!!!"
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -13238,6 +13342,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -14264,6 +14370,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -15218,6 +15326,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -16592,6 +16702,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Bortis
     dialogueText: "Aqu\xED, vuestro trabajo tiene prop\xF3sito, y vuestra vida, valor.
       Sois familia."
@@ -16599,6 +16711,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Bortis
     dialogueText: "Se os proporcionar\xE1 una vivienda compartida para vosotros.
       Pod\xE9is poneros c\xF3modos cuando entr\xE9is."
@@ -16606,12 +16720,16 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Bortis
     dialogueText: Por favor id yendo a la zona de las casas.
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -18504,6 +18622,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -18802,6 +18922,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Mary
     dialogueText: "Te dir\xE9 algo, paga bastante bien, pero\u2026 bueno, ya sabes,
       es un trabajo pesado. Jajaja"
@@ -18811,6 +18933,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Mary
     dialogueText: "Por cierto, esta noche voy al bar nuevo de la esquina. Si te apetece
       despejarte un rato, nos vemos all\xED."
@@ -18820,6 +18944,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Mary
     dialogueText: "Aqu\xED tienes una nota con las indicaciones para llegar, no vaya
       a ser que te pierdas."
@@ -18829,6 +18955,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Gracias\u2026 quiz\xE1 me pase. Al fin y al cabo, no tengo nada
       mejor que hacer."
@@ -18838,6 +18966,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -19873,6 +20003,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 0}
@@ -21310,6 +21442,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: ???
     dialogueText: "\xA1S\xED, claro! Y por eso vas perdiendo desde que empez\xF3
       la partida\u2026 deja de inventar"
@@ -21317,6 +21451,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -25807,6 +25943,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Dice que no tengo metas y que me paso el d\xEDa en casa\u2026
       puf, supongo que tiene raz\xF3n."
@@ -25814,12 +25952,16 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "A\xFAn recuerdo todas las cartas que nos envi\xE1bamos."
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -26517,6 +26659,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectId: 8077079c-2bf5-43bc-ae2d-6a283aeb02ea
+--- !u!1 &617714762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 617714763}
+  m_Layer: 0
+  m_Name: SonidoPisadas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &617714763
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617714762}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 25.67, y: 28.24, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &625841212
 GameObject:
   m_ObjectHideFlags: 0
@@ -27543,6 +27716,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Entiendo que todo esto pueda parecer repentino, incluso extra\xF1o\u2026
       pero cr\xE9ame,"
@@ -27552,6 +27727,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: no es casualidad que nos hayamos encontrado hoy.
     leftSpeaker: 1
@@ -27560,6 +27737,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "No s\xE9\u2026 todo esto me toma un poco por sorpresa. No suelo
       aceptar cosas as\xED, tan de repente"
@@ -27569,6 +27748,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: Lo entiendo perfectamente. Justamente por eso quiero invitarla
       a un lugar especial.
@@ -27578,6 +27759,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Un retiro en las monta\xF1as, lejos del bullicio, del ruido y
       de las distracciones de la ciudad."
@@ -27587,6 +27770,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Un sitio donde podr\xE1 descansar, reflexionar y aprender sobre
       ti y sobre tu potencial.\r\n"
@@ -27596,6 +27781,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "\xBFUn retiro\u2026 en las monta\xF1as? Suena\u2026 interesante,
       pero tambi\xE9n un poco inquietante."
@@ -27605,6 +27792,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: No conozco a nadie que haya hecho algo similar, y apenas te conozco
       a ti.
@@ -27614,6 +27803,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "No quiero que se preocupe por el viaje. Me encargar\xE9 personalmente
       de que llegue de manera segura."
@@ -27623,6 +27814,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Todo estar\xE1 organizado y cubierto. Solo tendr\xE1 que aceptar
       venir y dejarse guiar por unos d\xEDas.\r\n"
@@ -27632,6 +27825,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "No s\xE9\u2026 suena demasiado bueno para ser cierto. Y al mismo
       tiempo, algo dentro de m\xED tiene curiosidad"
@@ -27641,6 +27836,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: Hace tiempo que no me siento en paz conmigo misma.
     leftSpeaker: 0
@@ -27649,6 +27846,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: " Precisamente. S\xE9 que la idea de alejarse de todo puede ser
       intimidante, pero piense en esto como una oportunidad."
@@ -27658,6 +27857,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Un espacio donde encontrar\xE1 paz, claridad y quiz\xE1s algo
       que ha estado buscando sin saberlo."
@@ -27667,6 +27868,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "No es una obligaci\xF3n, solo una invitaci\xF3n\u2026 una puerta
       que podr\xEDa abrirle muchas posibilidades"
@@ -27676,6 +27879,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "\u2026Supongo que\u2026 no tengo nada que perder. Tal vez un cambio
       de aire me har\xEDa bien."
@@ -27685,6 +27890,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Me asegurar\xE9 de que todo sea seguro, c\xF3modo y enriquecedor. "
     leftSpeaker: 1
@@ -27693,6 +27900,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Lo \xFAnico que necesito es que conf\xEDe en m\xED, aunque sea
       un poco, y acepte este viaje."
@@ -27702,6 +27911,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Est\xE1 bien\u2026 conf\xEDo en ti. Acepto"
     leftSpeaker: 0
@@ -27710,6 +27921,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -29144,24 +29357,32 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "\xBFEs esto lo que me dijo antes Alpha?"
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "La semilla que me di\xF3 antes es rara, brilla de una manera extra\xF1a."
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Seguramente es aqu\xED donde tengo que plantarla"
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -30010,12 +30231,16 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: 
     dialogueText: Has obtenido "Chapa De Bortis"
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -30457,6 +30682,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Nira
     dialogueText: "Me dijeron que te diera esto. Creo que te ayudar\xE1 a\u2026 encontrar
       tu casa. "
@@ -30466,6 +30693,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Nira
     dialogueText: "O\u2026 \xBFera la m\xEDa? \n"
     leftSpeaker: 1
@@ -30474,6 +30703,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Nira
     dialogueText: "No importa. Es un placer conocerte, soy Nira\u2026 hoy, al menos."
     leftSpeaker: 1
@@ -30482,6 +30713,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: 
     dialogueText: Recibes "Nota"
     leftSpeaker: 0
@@ -30490,6 +30723,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -30732,6 +30967,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: No parece nada grave, tranquila, solo quiere hablar contigo un
       momento.
@@ -30741,6 +30978,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: "Ser\xE1 mejor que vayas, no le gusta que le hagan esperar, ya
       sabes c\xF3mo es."
@@ -30750,6 +30989,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Ah\u2026 claro. No quiero hacerle esperar. Gracias, Cairen."
     leftSpeaker: 0
@@ -30758,6 +30999,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -32063,6 +32306,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -32596,6 +32841,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -32945,6 +33192,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -34138,6 +34387,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: "Si quieres, puedo montar un esc\xE1ndalo."
     leftSpeaker: 1
@@ -34146,6 +34397,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: "Ya sabes, gritar, fingir que me desmayo o romper una botella\u2026
       lo que elijas."
@@ -34155,6 +34408,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: "Pero eso s\xED, no trabajo gratis. \xBFNo tendr\xE1s por ah\xED
       algo de ese nuevo producto que te deja volando?"
@@ -34164,6 +34419,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Agh\u2026 En fin, quer\xEDa quedarme eso para m\xED pero esta
       noche prefiero entretenerme de otra manera."
@@ -34173,6 +34430,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Supongo que no me quedar\xE1 otra opci\xF3n."
     leftSpeaker: 0
@@ -34181,6 +34440,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: 
     dialogueText: (Ya no tienes Nieve Negra)
     leftSpeaker: 0
@@ -34189,6 +34450,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: "Perfecto, cruza a la otra acera y ver\xE1s la magia."
     leftSpeaker: 1
@@ -34197,6 +34460,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -34617,6 +34882,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectId: f3877a02-1b19-477b-bb70-ced1e9c2b2d9
+--- !u!1 &856612433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 856612435}
+  - component: {fileID: 856612434}
+  m_Layer: 0
+  m_Name: PisasdasManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &856612434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856612433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0550385f23ebe7642af4f025395b0ac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepInterval: 10
+  sprintStepMultiplier: 10
+  volume: 1
+  fixedPitch: 1
+  defaultFootstepSound: {fileID: 0}
+--- !u!4 &856612435
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856612433}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -57.88021, y: 38.99626, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &856639619
 GameObject:
   m_ObjectHideFlags: 0
@@ -34976,6 +35290,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -37450,6 +37766,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -38834,6 +39152,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 0}
@@ -41657,6 +41977,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: La familia es el pilar de todo.
     leftSpeaker: 1
@@ -41667,6 +41989,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Para que una familia funcione, se necesita orden, por supuesto,
       pero tambi\xE9n estructura."
@@ -41678,6 +42002,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: Por eso quiero presentarte a Delta.
     leftSpeaker: 1
@@ -41688,6 +42014,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Es mi brazo derecho y el coordinador de todo lo que ves funcionar
       aqu\xED. "
@@ -41699,6 +42027,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Si alg\xFAn d\xEDa no me encuentras, b\xFAscale a \xE9l."
     leftSpeaker: 1
@@ -41709,6 +42039,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Es la persona m\xE1s eficiente que conocer\xE1s."
     leftSpeaker: 1
@@ -41719,6 +42051,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Delta
     dialogueText: "Es un procedimiento est\xE1ndar. Conocer a los nuevos miembros."
     leftSpeaker: 1
@@ -41729,6 +42063,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Delta
     dialogueText: Evaluar sus... capacidades. Es conveniente para asignarles las
       tareas donde mejor se adapten.
@@ -41740,6 +42076,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: No le hagas caso, siempre tan formal.
     leftSpeaker: 1
@@ -41750,6 +42088,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Lo que Delta quiere decir es que nos aseguramos de que todos est\xE9n
       c\xF3modos y sean productivos."
@@ -41761,6 +42101,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "\xC9l se encarga de que el huerto tenga herramientas, que las
       caba\xF1as est\xE9n en pie y bueno..."
@@ -41772,6 +42114,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: de que no haya contratiempos en general.
     leftSpeaker: 1
@@ -41782,6 +42126,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "La seguridad y el orden son primordiales aqu\xED, lejos del caos
       del mundo."
@@ -41793,6 +42139,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Delta
     dialogueText: "El orden previene el caos, la disciplina y el sufrimiento. Aqu\xED
       no hay lugar para accidentes"
@@ -41804,6 +42152,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Exactamente. Delta es nuestro guardi\xE1n. Un pilar de fuerza."
     leftSpeaker: 1
@@ -41814,6 +42164,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "T\xFA tambi\xE9n podr\xEDas serlo, Lilith. Tienes esa chispa.
       Una fuerza que el mundo exterior no supo apreciar."
@@ -41825,6 +42177,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "\xBFVes, Delta? Esta chica tiene potencial \xBFNo lo crees?\r"
     leftSpeaker: 1
@@ -41835,6 +42189,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Delta
     dialogueText: "El potencial se demuestra con acciones, no con palabras. Ya veremos
       qu\xE9 tal lo hace la reci\xE9n llegada."
@@ -41846,6 +42202,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Que no te intimide su... frialdad. Los hombres como Delta son
       los cimientos sobre los que construimos el para\xEDso."
@@ -41857,6 +42215,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Son necesarios. Ahora, ve, disfruta del d\xEDa. Nuestra familia
       te necesita descansada."
@@ -41876,6 +42236,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: Nos vemos Lilith.
     leftSpeaker: 1
@@ -41886,6 +42248,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerText: {fileID: 1659188321}
   dialogueText: {fileID: 78300818}
@@ -42750,6 +43114,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "La verdad que bastante bien, todos me tratan genial. Es como la
       sensaci\xF3n de sentirse en casa. \xBFY t\xFA?"
@@ -42759,6 +43125,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Gamma
     dialogueText: "Todav\xEDa me estoy adaptando a esto, eso s\xED,"
     leftSpeaker: 1
@@ -42767,6 +43135,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Gamma
     dialogueText: "he escuchado rumores de un n\xE9ctar que te quita el mono y ahora
       mismo estoy con mucha necesidad."
@@ -42776,6 +43146,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Gamma
     dialogueText: Puf, necesito ir a probarlo, estoy que no me mantengo en pie.
     leftSpeaker: 1
@@ -42784,6 +43156,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -44156,10 +44530,10 @@ MonoBehaviour:
   - {fileID: 857848085}
   - {fileID: 1336326632}
   sonidosBotonesFinales:
-  - {fileID: 8300000, guid: 7bb003b0f643e59478a442ac564b7046, type: 3}
-  - {fileID: 8300000, guid: bb227a3ab33d38a4aa2f0035661c039a, type: 3}
+  - {fileID: 8300000, guid: f5b87ea936a975048b5a038584b58f34, type: 3}
+  - {fileID: 8300000, guid: 55dcb0c15f8a0244587e6e9ce7dbe13e, type: 3}
   - {fileID: 8300000, guid: 2cbec3213b7d687459ebaa33f6c52966, type: 3}
-  - {fileID: 8300000, guid: 6e6ff8ac6ab32e141bf60342c87389a9, type: 3}
+  - {fileID: 8300000, guid: 44b5ae5e7345790459581da1857b171c, type: 3}
   imagenesBotonesFinales: []
   panelPuzzle: {fileID: 329921219}
   teclaInteraccion: 101
@@ -44258,6 +44632,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -44622,18 +44998,24 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: ???
     dialogueText: "S\xED. Lo curioso es que la luz roja parpadea en m\xE1s sem\xE1foros. "
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: ???
     dialogueText: "Creo que la vi parpadear dos veces en dos sem\xE1foros diferentes."
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: ??
     dialogueText: "\xBFDos veces? Qu\xE9 raro. Yo cont\xE9 solo una vez el verde
       despu\xE9s de eso."
@@ -44641,6 +45023,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: ???
     dialogueText: "Antes de que se apagasen vi que el amarillo tambi\xE9n se encendi\xF3
       en bastantes sem\xE1foros."
@@ -44648,12 +45032,16 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: ???
     dialogueText: "Bah, seguro es solo un fallo el\xE9ctrico"
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: ??
     dialogueText: "S\xED, adem\xE1s empieza a hacer fr\xEDo. Ojal\xE1 encontremos
       algo abierto para tomar algo"
@@ -44661,6 +45049,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -45591,6 +45981,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "(Madre m\xEDa, que pesado es...)"
     leftSpeaker: 0
@@ -45599,6 +45991,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -46153,6 +46547,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: NPC B
     dialogueText: "Callate, hijo. Lo material vuelve. El alma, no. A m\xED me echaron
       de mi propia casa... mis hijos... "
@@ -46160,6 +46556,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: NPC B
     dialogueText: "prefirieron un asilo a cuidarme. Alfa me dio una mano cuando nadie
       m\xE1s lo hizo."
@@ -46167,18 +46565,24 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: NPC A
     dialogueText: "S\xED, pero... \xBFy esto ser\xE1 seguro? Lo he pensado."
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: NPC B
     dialogueText: "\xBFY qu\xE9? \xBFCrees que lo que dejamos atr\xE1s era mejor? "
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: NPC B
     dialogueText: "Un lugar con un techo y comida caliente suena mejor que la libertad
       en un parque fr\xEDo."
@@ -46186,6 +46590,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -49893,6 +50299,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Supongo que el supermercado ser\xE1 mi \xFAnico plan para hoy.
       Pero bueno, ya ir\xE9 m\xE1s tarde. "
@@ -49900,12 +50308,16 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Por ahora me tumbar\xE9 a ver algo."
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -50278,18 +50690,24 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: 'Un desafortunado accidente con una roca suelta en el camino... '
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: Estamos buscando en la zona para asegurar que no ha pasado nada
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Beta ha llamado a Bortis a su lado. No fue en vano; su partida
       nos recuerda que incluso aqu\xED, debemos ser cuidadosos."
@@ -50297,6 +50715,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Que su sacrificio nos una m\xE1s. Silas se encargar\xE1 de preparar
       el cuerpo para el ritual de despedida."
@@ -50304,12 +50724,16 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Por favor, regresen a sus caba\xF1as y recen por su alma."
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: NPC
     dialogueText: "\xA1Por todos los santos! \xC9l... \xE9l me ayud\xF3 a tejer apenas
       ayer... Qu\xE9 destino tan cruel."
@@ -50317,6 +50741,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -51071,18 +51497,24 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Hasta entonces\u2026 espera. Y deja de molestarme."
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Casero
     dialogueText: "\xBFCrees que puedes intimidarme?"
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Casero
     dialogueText: "Tienes una semana m\xE1s\u2026 si no, te saco de aqu\xED aunque
       tenga que hacerlo yo mismo."
@@ -51090,18 +51522,24 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Ser\xE1 suficiente. Y ahora qu\xEDtate de mi puerta."
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "(Madre m\xEDa... por fin podr\xE9 salir)"
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -51559,24 +51997,32 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Casero
     dialogueText: 'ARREGLA LAS MALDITAS TUBERIAS! '
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "En fin, deber\xEDa arreglar las tuber\xEDas."
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "No necesito m\xE1s problemas en mi vida\u2026 ugh"
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -51982,6 +52428,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Anorah
     dialogueText: Si necesitas escapar de tus pensamientos, este es el lugar.
     leftSpeaker: 1
@@ -51990,6 +52438,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -53007,6 +53457,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: 
     dialogueText: '*Cuatro guardianes velan tu descanso,
 
@@ -53018,6 +53470,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: 
     dialogueText: 'El primero susurra en el viento callado,
 
@@ -53029,6 +53483,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: 
     dialogueText: 'Luego busca el fuego que nunca muere,
 
@@ -53040,6 +53496,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: 
     dialogueText: "En tercer lugar mira donde nace el d\xEDa,\r\nall\xED el Sol despierta
       y todo ilumina.\r\n"
@@ -53047,6 +53505,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: 
     dialogueText: 'Y al final, donde la noche abraza el mundo,
 
@@ -53058,18 +53518,24 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: 
     dialogueText: "Solo si sigues el orden,\r\nlo que necesitas ser\xE1 revelado.\r\n"
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Bueno, mirar\xE9 por aqu\xED a ver que encuentro"
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -53255,6 +53721,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Gamma
     dialogueText: "As\xED que un nuevo comienzo eh \u2026 En un, qu\xE9 m\xE1s da,
       tampoco hab\xEDa nada mejor que hacer que esto. Al menos es un cambio \xBFno?"
@@ -53266,6 +53734,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Gamma
     dialogueText: "Yo lo perd\xED todo: el piso, la familia, mi hija, los amigos.
       Toooodo a la mierda"
@@ -53277,6 +53747,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Gamma
     dialogueText: "Un tal Alpha me encontr\xF3 en un callej\xF3n. Estaba drogada
       y otros yonkis del barrio estaban d\xE1ndome una paliza"
@@ -53288,6 +53760,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Gamma
     dialogueText: "Los acompa\xF1antes de ese se\xF1or espantaron a mis atacantes.
       Alpha me habl\xF3 de este lugar\u2026 un retiro en las monta\xF1as o algo as\xED"
@@ -53299,6 +53773,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Gamma
     dialogueText: Dijo que no sale en los mapas, es un lugar justo para los rechazados
       como nosotros
@@ -53310,6 +53786,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Gamma
     dialogueText: "En fin\u2026 Solo s\xE9 que llevo unas horas sin tomar nada y
       necesito algo ya o me volver\xE9 loca"
@@ -53321,6 +53799,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Gamma
     dialogueText: "\xBFTienes algo? , alguna pastilla, lo que sea. Cualquier cosa
       me vale, no s\xE9 si ser\xE9 capaz de aguantar este viaje sino."
@@ -53332,6 +53812,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Gamma
     dialogueText: Me refiero a que somos productos de caridad. No tenemos donde ir.
     leftSpeaker: 1
@@ -53342,6 +53824,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Gamma
     dialogueText: "Ese tipo es raro, pero bueno, nos ha tendido una mano as\xED que
       supongo que le tendr\xE9 que estar agradecida."
@@ -53353,6 +53837,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Gamma
     dialogueText: Sienta bien que alguien no te trate como un despojo humano de vez
       en cuando.
@@ -53364,6 +53850,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Gamma
     dialogueText: "Dijo que en este lugar podr\xEDa mejorar. Pero esto de estar sobria\u2026
       Que horror."
@@ -53375,6 +53863,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Gamma
     dialogueText: "Sientes cada nervio, cada pensamiento de mierda. \xBFNo trajiste
       nada para el viaje?"
@@ -53395,6 +53885,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Gamma
     dialogueText: "\xBFLimpiarnos? Ja, Ingenua\u2026 La gente como nosotros no se
       limpia, Solo se cambia una mierda por otra. Espero que all\xED al menos den
@@ -53407,6 +53899,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Gamma
     dialogueText: "\xBFCrees? Si\u2026 si, deben tener algo. Alpha parece saber de
       nosotros, debe tener algo bueno, algo que nos ayude."
@@ -53418,6 +53912,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Gamma
     dialogueText: "\xBFVes? T\xFA tambi\xE9n lo sientes. Este vac\xEDo... es insoportable."
     leftSpeaker: 1
@@ -53428,6 +53924,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Gamma
     dialogueText: "Prometamos que si hay algo all\xED, lo probamos juntas. No para
       volver a caer, solo... para pasar el d\xEDa."
@@ -53439,6 +53937,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerText: {fileID: 1659188321}
   dialogueText: {fileID: 78300818}
@@ -54167,12 +54667,16 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: NPC D
     dialogueText: "S\xED, hermano. Me dijo que el trabajo honrado purifica."
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: NPC D
     dialogueText: " Estoy listo para trabajar. Estoy listo para dar todo por la Familia.
       All\xE1 no ser\xE9 un don Nadie. All\xE1 importar\xE9."
@@ -54180,6 +54684,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -55985,6 +56491,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -56115,6 +56623,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -56734,6 +57244,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -57099,6 +57611,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Boris
     dialogueText: "Aqu\xED, vuestro trabajo tiene prop\xF3sito, y vuestra vida, valor.
       Sois familia."
@@ -57106,6 +57620,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Boris
     dialogueText: "Se os proporcionar\xE1 una vivienda compartida para vosotros.
       Pod\xE9is poneros c\xF3modos cuando entr\xE9is."
@@ -57113,12 +57629,16 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Boris
     dialogueText: Por favor id yendo a la zona de las casas.
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -57619,6 +58139,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 0}
@@ -61047,6 +61569,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Amara
     dialogueText: "Es tan bonito saber que los nuevos ya forman parte de la familia
       desde el primer d\xEDa"
@@ -61056,6 +61580,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -61304,12 +61830,16 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Voy a la habitaci\xF3n a descansar, ha sido un d\xEDa muy largo."
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -63128,18 +63658,24 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Casero
     dialogueText: "\xA1LLEVAS MESES DE RETRASO Y NO VOY A PERMITIR QUE SIGAS AQUI!"
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Casero
     dialogueText: "\xA1LLAMARE A LA POLICIA!\n"
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Qu\xE9 pesado\u2026 \xBFAcaso no tiene otra cosa que hacer en
       su vida?"
@@ -63147,12 +63683,16 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "\xBFHasta cu\xE1ndo piensa estar ah\xED plantado?"
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -63903,6 +64443,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -64016,6 +64558,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Igualmente\u2026 ehh\u2026"
     leftSpeaker: 0
@@ -64024,6 +64568,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: "Cairen. Puedes llamarme as\xED, sin formalidades. Es un placer
       tenerte aqu\xED."
@@ -64033,6 +64579,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: Mira, justo ha sonado la campana de la comida.
     leftSpeaker: 1
@@ -64041,6 +64589,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: "Aqu\xED tenemos la costumbre de comer juntos, ya ver\xE1s que
       es m\xE1s agradable as\xED."
@@ -64050,6 +64600,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: "Y, bueno\u2026 si me haces un peque\xF1o favor, puedo conseguirte
       una doble raci\xF3n."
@@ -64059,6 +64611,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: "Pero shhh, que quede entre nosotros, \xBFs\xED?"
     leftSpeaker: 1
@@ -64067,6 +64621,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -65939,12 +66495,16 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "\xA1Perfecto! Con esto podr\xE9 salir por alguna ventana \n"
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -66217,12 +66777,16 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "\xA1Genial! Con esto podr\xE9 arreglar las tuber\xEDas."
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -67005,6 +67569,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 8300000, guid: d2e607969960a8d4b9db950902e04e82, type: 3}
+    gibberishVolume: 0.1
   - speakerName: Peter
     dialogueText: "Ey, Lilith\u2026 tengo de nuevo el producto que te gusta. Ya sabes,
       el de siempre."
@@ -67014,6 +67580,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 8300000, guid: d2e607969960a8d4b9db950902e04e82, type: 3}
+    gibberishVolume: 0.1
   - speakerName: Peter
     dialogueText: "Cinco d\xF3lares el gramo. No te preocupes, es de buena calidad."
     leftSpeaker: 1
@@ -67022,6 +67590,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 8300000, guid: d2e607969960a8d4b9db950902e04e82, type: 3}
+    gibberishVolume: 0.1
   - speakerName: Lilith
     dialogueText: "\xBFCinco d\xF3lares? Oye, recuerda que la \xFAltima vez te cubr\xED
       las espaldas cuando casi te pilla el casero en el pasillo."
@@ -67031,6 +67601,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 8300000, guid: 10a618bbb2db7084cb03f59c2638a5d2, type: 3}
+    gibberishVolume: 0.1
   - speakerName: Peter
     dialogueText: Vale, vale, no hace falta que me eches en cara mis deudas.
     leftSpeaker: 1
@@ -67039,6 +67611,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 8300000, guid: d2e607969960a8d4b9db950902e04e82, type: 3}
+    gibberishVolume: 0.1
   - speakerName: Peter
     dialogueText: "Toma, esta es por cuenta de la casa. Pero que no se te suba a
       la cabeza, \xBFeh?"
@@ -67048,6 +67622,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 8300000, guid: d2e607969960a8d4b9db950902e04e82, type: 3}
+    gibberishVolume: 0.1
   - speakerName: 
     dialogueText: (obtienes bolsa de Nieve Negra)
     leftSpeaker: 0
@@ -67056,6 +67632,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -67857,6 +68435,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -69092,6 +69672,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -71948,12 +72530,16 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Que curioso que esta llave tenga un s\xEDmbolo de una hoja"
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -73579,6 +74165,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Jorah
     dialogueText: "Me ha dicho Cairen que te d\xE9 un poco m\xE1s de lo que le doy
       a los dem\xE1s. Pues aqu\xED tienes, disfrutalo."
@@ -73588,6 +74176,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: Gracias Jorah, no se lo cuentes a nadie ehh
     leftSpeaker: 0
@@ -73596,6 +74186,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -75067,6 +75659,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "La verdad que s\xED\u2026 no esperaba tanta amabilidad de vuestra
       parte"
@@ -75076,6 +75670,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Bortis
     dialogueText: "Aqu\xED todos somos familia, eso es lo de menos."
     leftSpeaker: 1
@@ -75084,6 +75680,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Bortis
     dialogueText: Mira, necesito tu ayuda para que lleves esta cesta a algunos de
       tus nuevos hermanos y hermanas.
@@ -75093,6 +75691,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Bortis
     dialogueText: "Pasa por la plaza central, la biblioteca y el jard\xEDn."
     leftSpeaker: 1
@@ -75101,6 +75701,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Bortis
     dialogueText: "Piensa que esto te ayudar\xE1 a integrarte y a conocernos mejor."
     leftSpeaker: 1
@@ -75109,6 +75711,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: 
     dialogueText: "Has conseguido: Cesta de v\xEDveres"
     leftSpeaker: 0
@@ -75117,6 +75721,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Me vendr\xE1 bien darme un paseo, ahora mismo voy para all\xE1."
     leftSpeaker: 0
@@ -75125,6 +75731,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -75887,6 +76495,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -76895,6 +77505,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Guarda esta flor. Es un s\xEDmbolo de la fe que la Familia deposita
       en ti."
@@ -76904,6 +77516,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: 
     dialogueText: "Has obtenido: La Flor de la Hesp\xE9rides"
     leftSpeaker: 0
@@ -76912,6 +77526,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Tambi\xE9n quiero que plantes esta semilla en un lugar privado,
       donde s\xF3lo t\xFA la veas crecer. "
@@ -76921,6 +77537,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Ser\xE1 el reflejo de tu propio crecimiento dentro de nosotros."
     leftSpeaker: 1
@@ -76929,6 +77547,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Cuando llegues al sitio sabr\xE1s que la debes poner all\xED,
       es un sentimiento muy fuerte. Deber\xE1s buscarlo por tu cuenta"
@@ -76938,6 +77558,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: Gracias por tu amabilidad, Alpha.
     leftSpeaker: 0
@@ -76946,6 +77568,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: Con lo que llevo ahora estoy muy contenta, es la primera vez que
       siento que me tratan bien.
@@ -76955,6 +77579,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Cualquier cosa que necesites, no dudes en dec\xEDrmelo."
     leftSpeaker: 0
@@ -76963,6 +77589,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -78882,6 +79510,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: "He preparado unas peque\xF1as indicaciones seg\xFAn las preferencias
       de cada comensal."
@@ -78891,6 +79521,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "\xBFY qu\xE9 es lo que se supone que tengo que hacer?"
     leftSpeaker: 0
@@ -78899,6 +79531,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: Nada complicado, te lo prometo.
     leftSpeaker: 1
@@ -78907,6 +79541,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: "Solo col\xF3calos donde creas que estar\xE1n m\xE1s c\xF3modos,
       para que todos puedan disfrutar en paz de la comida."
@@ -78916,6 +79552,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: "Mientras te encargas de eso, yo aprovechar\xE9 para revisar algunos
       detalles en la cocina."
@@ -78925,6 +79563,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: "Gracias por tu ayuda, Lilith. Es bonito tener a alguien dispuesto
       a colaborar desde el primer d\xEDa."
@@ -78934,6 +79574,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: 
     dialogueText: Has obtenido "Instrucciones de la mesa"
     leftSpeaker: 0
@@ -78942,6 +79584,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -79358,6 +80002,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Silas
     dialogueText: "\xBFLillith verdad?, esos dos son Lin y Amara, no he visto a nadie
       tan enamorados como ellos."
@@ -79367,6 +80013,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -81465,6 +82113,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Portero
     dialogueText: "\xA1Otra vez t\xFA! Ya te dije que si te ve\xEDa aqu\xED, te iba
       a sacar a patadas."
@@ -81472,12 +82122,16 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: (Perfecto... es mi oportunidad)
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   dialoguePanel: {fileID: 1834269160}
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -82403,6 +83057,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -82534,6 +83190,8 @@ MonoBehaviour:
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.5
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
@@ -83092,6 +83750,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 617714763}
   - {fileID: 1476943278}
   - {fileID: 977183604}
   - {fileID: 261238168}
@@ -83134,4 +83793,5 @@ SceneRoots:
   - {fileID: 1793127069}
   - {fileID: 2072442082}
   - {fileID: 995029975}
+  - {fileID: 856612435}
   - {fileID: 40920655}

@@ -19,12 +19,24 @@ public class MovimientoPersonaje : MonoBehaviour
     private Animator animator;
 
     private bool isSprinting = false;
+    private float stepTimer = 0f;
+    private bool isMoving = false;
+
+    // Referencia al gestor de pisadas
+    private FootstepManager footstepManager;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         controlManager = FindObjectOfType<ControlSettings>();
+
+        // Obtener o crear el FootstepManager
+        footstepManager = GetComponent<FootstepManager>();
+        if (footstepManager == null)
+        {
+            footstepManager = gameObject.AddComponent<FootstepManager>();
+        }
 
         if (rb != null)
         {
@@ -42,10 +54,8 @@ public class MovimientoPersonaje : MonoBehaviour
     {
         if (!enabled)
         {
-            // 🔥 CORREGIDO: Solo intentar setear parámetros si el animator existe
             if (animator != null)
             {
-                // Verificar si los parámetros existen antes de setearlos
                 if (HasParameter("MovimientoX")) animator.SetFloat("MovimientoX", 0);
                 if (HasParameter("MovimientoY")) animator.SetFloat("MovimientoY", 0);
                 if (HasParameter("IsSprinting")) animator.SetBool("IsSprinting", false);
@@ -56,7 +66,6 @@ public class MovimientoPersonaje : MonoBehaviour
         movimientoX = Input.GetAxisRaw("Horizontal");
         movimientoY = Input.GetAxisRaw("Vertical");
 
-        // 🔥 CORREGIDO: Verificar si los parámetros existen
         if (animator != null)
         {
             if (HasParameter("MovimientoX")) animator.SetFloat("MovimientoX", movimientoX);
@@ -67,15 +76,52 @@ public class MovimientoPersonaje : MonoBehaviour
         movement = movement.normalized;
 
         isSprinting = Input.GetKey(sprintKey);
+        isMoving = movement.magnitude > 0.1f;
 
-        // 🔥 CORREGIDO: Verificar si el parámetro IsSprinting existe
         if (animator != null && HasParameter("IsSprinting"))
         {
-            animator.SetBool("IsSprinting", isSprinting && movement != Vector2.zero);
+            animator.SetBool("IsSprinting", isSprinting && isMoving);
+        }
+
+        // Manejo de pasos (usando la configuración del FootstepManager)
+        HandleFootsteps();
+    }
+
+    void HandleFootsteps()
+    {
+        if (!isMoving)
+        {
+            stepTimer = 0f;
+            if (footstepManager != null)
+            {
+                footstepManager.StopFootsteps();
+            }
+            return;
+        }
+
+        // Obtener el intervalo actual del manager (con multiplicador de sprint)
+        float currentInterval = footstepManager.GetCurrentInterval(isSprinting);
+
+        stepTimer += Time.deltaTime;
+
+        if (stepTimer >= currentInterval)
+        {
+            stepTimer = 0f;
+            if (footstepManager != null)
+            {
+                footstepManager.PlayFootstep();
+            }
+        }
+        else
+        {
+            if (footstepManager != null)
+            {
+                footstepManager.EnsureFootstepsActive();
+            }
         }
     }
 
-    // 🔥 NUEVO: Método para verificar si un parámetro existe en el Animator
+    // Resto de métodos (HasParameter, GetMovementInput, FixedUpdate, etc.) se mantienen igual...
     bool HasParameter(string paramName)
     {
         if (animator == null) return false;
@@ -141,7 +187,6 @@ public class MovimientoPersonaje : MonoBehaviour
     {
         if (animator != null)
         {
-            // 🔥 CORREGIDO: Verificar antes de setear
             if (HasParameter("MovimientoX")) animator.SetFloat("MovimientoX", 0);
             if (HasParameter("MovimientoY")) animator.SetFloat("MovimientoY", 0);
             if (HasParameter("IsSprinting")) animator.SetBool("IsSprinting", false);
@@ -153,6 +198,12 @@ public class MovimientoPersonaje : MonoBehaviour
         }
 
         isSprinting = false;
+        stepTimer = 0f;
+
+        if (footstepManager != null)
+        {
+            footstepManager.StopFootsteps();
+        }
     }
 
     void OnEnable()

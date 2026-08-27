@@ -32,7 +32,7 @@ public class DialogueSystem : MonoBehaviour
     public float autoAdvanceTime = 1.5f;
 
     [Header("Identificador de Diálogo")]
-    public string dialogueId = ""; // 🔥 NUEVO
+    public string dialogueId = "";
 
     [Header("Diálogos")]
     public List<Dialogue> dialogues = new List<Dialogue>();
@@ -56,6 +56,9 @@ public class DialogueSystem : MonoBehaviour
         public string itemIdToGive = "";
         public string itemNameToGive = "";
         public Sprite itemIconToGive = null;
+
+        public AudioClip gibberishClip;
+        [Range(0f, 1f)] public float gibberishVolume = 0.07f;
     }
 
     [Header("Configuración Avanzada")]
@@ -78,6 +81,8 @@ public class DialogueSystem : MonoBehaviour
 
     public float reuseDelay = 0.5f;
     private bool canReuse = true;
+
+    private AudioSource gibberishAudioSource;
 
     void Start()
     {
@@ -102,6 +107,10 @@ public class DialogueSystem : MonoBehaviour
 
         HideCharacters();
         backlogManager = FindObjectOfType<BacklogManager>();
+
+        gibberishAudioSource = gameObject.AddComponent<AudioSource>();
+        gibberishAudioSource.loop = false;
+        gibberishAudioSource.playOnAwake = false;
     }
 
     void HideCharacters()
@@ -159,7 +168,6 @@ public class DialogueSystem : MonoBehaviour
         if (isDialogueActive || dialogues.Count == 0 || !canReuse)
             return;
 
-        // 🔥 Registrar diálogo completado
         if (!string.IsNullOrEmpty(dialogueId) && SaveManager.Instance != null)
             SaveManager.Instance.RegisterDialogueCompleted(dialogueId);
 
@@ -225,7 +233,6 @@ public class DialogueSystem : MonoBehaviour
             playerRigidbody.linearVelocity = originalVelocity;
         }
 
-        // 🔥 Activar objetos y registrar estado
         foreach (GameObject obj in objectsToActivateAfter)
         {
             if (obj != null)
@@ -237,7 +244,6 @@ public class DialogueSystem : MonoBehaviour
             }
         }
 
-        // 🔥 Desactivar objetos (en lugar de destruir) y registrar estado
         foreach (GameObject obj in objectsToDestroyAfter)
         {
             if (obj != null)
@@ -251,7 +257,6 @@ public class DialogueSystem : MonoBehaviour
             }
         }
 
-        // Destruir este objeto si está configurado
         if (destroyAfterDialogue)
         {
             SaveableObject thisSaveable = GetComponent<SaveableObject>();
@@ -366,7 +371,8 @@ public class DialogueSystem : MonoBehaviour
                 dialogue.itemIconToGive
             );
         }
-        Coroutine typingCoroutine = StartCoroutine(TypeText(fullText));
+
+        Coroutine typingCoroutine = StartCoroutine(TypeText(fullText, dialogue.gibberishClip, dialogue.gibberishVolume));
         yield return StartCoroutine(WaitForDialogueAdvance(typingCoroutine, fullText));
     }
 
@@ -437,13 +443,20 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    private IEnumerator TypeText(string text)
+    private IEnumerator TypeText(string text, AudioClip clip, float volume)
     {
         dialogueText.text = "";
-
+        int charIndex = 0;
         foreach (char letter in text.ToCharArray())
         {
             dialogueText.text += letter;
+
+            if (clip != null && charIndex % 2 == 0)
+            {
+                gibberishAudioSource.PlayOneShot(clip, volume);
+            }
+            charIndex++;
+
             yield return new WaitForSeconds(dialogueCooldown);
         }
     }
