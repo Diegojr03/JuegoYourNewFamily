@@ -885,6 +885,64 @@ public class BacklogManager : MonoBehaviour
         savedDialogueIds.Add(dialogueId);
     }
 
+    public BacklogSaveData GetBacklogSaveData()
+    {
+        BacklogSaveData data = new BacklogSaveData();
+        foreach (DialogueEntry entry in allDialogueHistory)
+        {
+            data.entries.Add(new DialogueEntryData
+            {
+                speakerName = entry.speakerName,
+                dialogueText = entry.dialogueText,
+                timestamp = entry.timestamp
+            });
+        }
+        data.selectedCharacter = selectedCharacter;
+        return data;
+    }
+
+    public void LoadBacklogFromSaveData(BacklogSaveData data)
+    {
+        if (data == null) return;
+
+        // Limpiar todo
+        allDialogueHistory.Clear();
+        dialoguesByCharacter.Clear();
+        dialoguesByCharacter["Todos"] = new List<DialogueEntry>();
+        savedDialogueIds.Clear();
+
+        // Reconstruir desde los datos guardados
+        foreach (DialogueEntryData entryData in data.entries)
+        {
+            DialogueEntry entry = new DialogueEntry
+            {
+                speakerName = entryData.speakerName,
+                dialogueText = entryData.dialogueText,
+                timestamp = entryData.timestamp
+            };
+
+            // Añadir al historial general
+            allDialogueHistory.Add(entry);
+            // Añadir a "Todos"
+            dialoguesByCharacter["Todos"].Add(entry);
+            // Añadir al personaje específico
+            if (!dialoguesByCharacter.ContainsKey(entry.speakerName))
+                dialoguesByCharacter[entry.speakerName] = new List<DialogueEntry>();
+            dialoguesByCharacter[entry.speakerName].Add(entry);
+        }
+
+        // Restaurar el personaje seleccionado
+        selectedCharacter = string.IsNullOrEmpty(data.selectedCharacter) ? "Todos" : data.selectedCharacter;
+
+        // Actualizar UI si el backlog está abierto
+        if (isBacklogOpen)
+        {
+            if (selectedCharacterText != null)
+                selectedCharacterText.text = "Conversación con: " + selectedCharacter;
+            RefreshMessagesUI();
+        }
+    }
+
 
 }
 

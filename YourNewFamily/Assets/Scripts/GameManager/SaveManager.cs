@@ -23,6 +23,8 @@ public class SaveData
 
     public string lastMissionText = "";
     public bool hasSavedMissionText = false;
+
+    public BacklogSaveData backlogData = new BacklogSaveData();
 }
 
 [System.Serializable]
@@ -30,6 +32,21 @@ public class ObjectState
 {
     public string objectId;
     public bool isActive;
+}
+
+[System.Serializable]
+public class BacklogSaveData
+{
+    public List<DialogueEntryData> entries = new List<DialogueEntryData>();
+    public string selectedCharacter = "Todos";
+}
+
+[System.Serializable]
+public class DialogueEntryData
+{
+    public string speakerName;
+    public string dialogueText;
+    public string timestamp;
 }
 
 public class SaveManager : MonoBehaviour
@@ -102,6 +119,11 @@ public class SaveManager : MonoBehaviour
             AudioClip currentClip = MusicManager.Instance.GetCurrentClip();
             currentSave.currentMusicName = currentClip != null ? currentClip.name : "";
         }
+
+        if (BacklogManager.Instance != null)
+            currentSave.backlogData = BacklogManager.Instance.GetBacklogSaveData();
+        else
+            currentSave.backlogData = new BacklogSaveData();
 
         SaveableObject[] allSaveables = FindObjectsOfType<SaveableObject>(true);
         foreach (SaveableObject so in allSaveables)
@@ -191,6 +213,11 @@ public class SaveManager : MonoBehaviour
             if (MusicManager.Instance != null && !string.IsNullOrEmpty(currentSave.currentMusicName))
             {
                 MusicManager.Instance.ChangeMusicByName(currentSave.currentMusicName);
+            }
+
+            if (currentSave.backlogData != null && BacklogManager.Instance != null)
+            {
+                BacklogManager.Instance.LoadBacklogFromSaveData(currentSave.backlogData);
             }
 
             isLoadingFromSave = false;

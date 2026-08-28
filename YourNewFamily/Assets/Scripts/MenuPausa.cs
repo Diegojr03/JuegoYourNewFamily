@@ -16,6 +16,7 @@ public class MenuPausa : MonoBehaviour
     public Button botonReanudar;
     public Button botonOpciones;
     public Button botonSalir;
+    public Button BotonVolver;
 
     [Header("Botones de confirmación")]
     public Button botonSi;
@@ -100,6 +101,7 @@ public class MenuPausa : MonoBehaviour
                 PausarJuego();
             }
         }
+
     }
 
     // =========================================================
@@ -122,6 +124,7 @@ public class MenuPausa : MonoBehaviour
 
         Debug.Log("[MenuPausa] UI configurada correctamente.");
     }
+
 
     private void ConfigurarSlider()
     {
@@ -317,5 +320,10 @@ public class MenuPausa : MonoBehaviour
         if (menuPausa != null) menuPausa.SetActive(false);
         if (panelOpciones != null) panelOpciones.SetActive(false);
         if (panelConfirmacionSalir != null) panelConfirmacionSalir.SetActive(false);
+    }
+
+    public void cerrarPanelAjustes()
+    {
+        panelOpciones.SetActive(false);
     }
 }

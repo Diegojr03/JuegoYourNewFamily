@@ -117,6 +117,9 @@ public class UIManager : MonoBehaviour
     private void StartFreshGame()
     {
         Debug.Log("Iniciando nueva partida desde cero.");
+        // 👇 Limpiar el historial de diálogos antes de cargar la escena
+        if (BacklogManager.Instance != null)
+            BacklogManager.Instance.ClearBacklog();
         SceneManager.LoadScene("SampleScene");
     }
 }
