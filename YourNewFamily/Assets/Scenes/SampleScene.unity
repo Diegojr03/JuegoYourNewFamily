@@ -24184,9 +24184,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -1937992276944667789, guid: 25292d451e63dc24ebddfc54e97cb5bd, type: 3}
+  m_Sprite: {fileID: 5755743393831232959, guid: 9b605080536234348aac13a10a0413a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.16, y: 0.16}
@@ -28627,9 +28627,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: 5146054847048157163, guid: 422e2c3cc7207b947876728546d0bdf8, type: 3}
+  m_Sprite: {fileID: 7966632683337932107, guid: 32cbd9a1c3ff4974b9cdc460e1c8016a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.16, y: 0.16}
@@ -45947,7 +45947,7 @@ MonoBehaviour:
   characterRight: {fileID: 1216146011}
   spriteLeft: {fileID: 664568504}
   spriteRight: {fileID: 1216146010}
-  defaultLeftSprite: {fileID: 5146054847048157163, guid: 422e2c3cc7207b947876728546d0bdf8, type: 3}
+  defaultLeftSprite: {fileID: 7966632683337932107, guid: 32cbd9a1c3ff4974b9cdc460e1c8016a, type: 3}
   defaultRightSprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
   dialoguePanel: {fileID: 1834269160}
   speakerText: {fileID: 1659188321}
@@ -45963,7 +45963,7 @@ MonoBehaviour:
   - speakerName: Segurata
     dialogueText: Con esas pintas no te voy a dejar pasar.
     leftSpeaker: 1
-    characterSprite: {fileID: -74184666753424748, guid: bc54b2c3afb4a0b41b6aba56b555a24c, type: 3}
+    characterSprite: {fileID: 7673725927456738206, guid: fecce0a82d8d70f41a4b7ca9ce5986ed, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -67525,7 +67525,7 @@ MonoBehaviour:
   characterRight: {fileID: 1654459073}
   spriteLeft: {fileID: 558906525}
   spriteRight: {fileID: 1654459072}
-  defaultLeftSprite: {fileID: -1937992276944667789, guid: 25292d451e63dc24ebddfc54e97cb5bd, type: 3}
+  defaultLeftSprite: {fileID: 5755743393831232959, guid: 9b605080536234348aac13a10a0413a2, type: 3}
   defaultRightSprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
   dialoguePanel: {fileID: 1834269160}
   speakerText: {fileID: 1659188321}
@@ -67542,7 +67542,7 @@ MonoBehaviour:
     dialogueText: "Estoy harto del curro, t\xEDo. Cada d\xEDa es lo mismo. Si no
       renuncio pronto, me van a encontrar muerto en esa oficina."
     leftSpeaker: 1
-    characterSprite: {fileID: -8930027434333298182, guid: 460a0b9c94307cb48a7a5da83103a70a, type: 3}
+    characterSprite: {fileID: 6982892208427895576, guid: 96d6d365aab282a4cb540e553ee6bdaa, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -67553,7 +67553,7 @@ MonoBehaviour:
     dialogueText: "Ey, Lilith\u2026 tengo de nuevo el producto que te gusta. Ya sabes,
       el de siempre."
     leftSpeaker: 1
-    characterSprite: {fileID: -8930027434333298182, guid: 460a0b9c94307cb48a7a5da83103a70a, type: 3}
+    characterSprite: {fileID: 6982892208427895576, guid: 96d6d365aab282a4cb540e553ee6bdaa, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -67563,7 +67563,7 @@ MonoBehaviour:
   - speakerName: Peter
     dialogueText: "Cinco d\xF3lares el gramo. No te preocupes, es de buena calidad."
     leftSpeaker: 1
-    characterSprite: {fileID: -8930027434333298182, guid: 460a0b9c94307cb48a7a5da83103a70a, type: 3}
+    characterSprite: {fileID: 6982892208427895576, guid: 96d6d365aab282a4cb540e553ee6bdaa, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -67584,7 +67584,7 @@ MonoBehaviour:
   - speakerName: Peter
     dialogueText: Vale, vale, no hace falta que me eches en cara mis deudas.
     leftSpeaker: 1
-    characterSprite: {fileID: -8930027434333298182, guid: 460a0b9c94307cb48a7a5da83103a70a, type: 3}
+    characterSprite: {fileID: 6982892208427895576, guid: 96d6d365aab282a4cb540e553ee6bdaa, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -67595,7 +67595,7 @@ MonoBehaviour:
     dialogueText: "Toma, esta es por cuenta de la casa. Pero que no se te suba a
       la cabeza, \xBFeh?"
     leftSpeaker: 1
-    characterSprite: {fileID: -8930027434333298182, guid: 460a0b9c94307cb48a7a5da83103a70a, type: 3}
+    characterSprite: {fileID: 6982892208427895576, guid: 96d6d365aab282a4cb540e553ee6bdaa, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
