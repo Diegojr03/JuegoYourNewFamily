@@ -13157,13 +13157,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicClip: {fileID: 8300000, guid: d6eaefe2fc268ca46ab14308d08ebc76, type: 3}
   fadeDuration: 2
-  volume: 1
-  useCustomVolume: 0
-  resetVolumeOnExit: 0
   disableOnActivate: 1
   playerTag: Player
   stopMusicOnTrigger: 0
-  restorePreviousVolumeOnExit: 0
+  restorePreviousMusicOnExit: 0
 --- !u!61 &264272793
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17361,13 +17358,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicClip: {fileID: 8300000, guid: dfbf6de8792878b4e97d9ff225893ce7, type: 3}
   fadeDuration: 2
-  volume: 1
-  useCustomVolume: 0
-  resetVolumeOnExit: 0
   disableOnActivate: 1
   playerTag: Player
   stopMusicOnTrigger: 0
-  restorePreviousVolumeOnExit: 0
+  restorePreviousMusicOnExit: 0
 --- !u!61 &415054674
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36323,13 +36317,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicClip: {fileID: 8300000, guid: 7de62180915324f40b9a554212882d84, type: 3}
   fadeDuration: 2
-  volume: 1
-  useCustomVolume: 0
-  resetVolumeOnExit: 0
   disableOnActivate: 1
   playerTag: Player
   stopMusicOnTrigger: 0
-  restorePreviousVolumeOnExit: 0
+  restorePreviousMusicOnExit: 0
 --- !u!61 &912201662
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38332,13 +38323,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicClip: {fileID: 8300000, guid: 2fd96e4df6e25ef4795c7d4e9fe85eea, type: 3}
   fadeDuration: 2
-  volume: 1
-  useCustomVolume: 0
-  resetVolumeOnExit: 0
   disableOnActivate: 1
   playerTag: Player
   stopMusicOnTrigger: 0
-  restorePreviousVolumeOnExit: 0
+  restorePreviousMusicOnExit: 0
 --- !u!61 &982364383
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38605,7 +38593,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultFadeDuration: 3
-  maxVolume: 0.2
   loopFadeDuration: 0.2
   allMusicClips:
   - {fileID: 8300000, guid: 5dd4f9155306800489e91e4851e36ca2, type: 3}
@@ -57483,13 +57470,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicClip: {fileID: 0}
   fadeDuration: 2
-  volume: 1
-  useCustomVolume: 0
-  resetVolumeOnExit: 0
   disableOnActivate: 1
   playerTag: Player
   stopMusicOnTrigger: 1
-  restorePreviousVolumeOnExit: 0
+  restorePreviousMusicOnExit: 0
 --- !u!61 &1514837268
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -60917,13 +60901,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicClip: {fileID: 8300000, guid: 412a22f8a5b4dc349b5d6dfa2427ff72, type: 3}
   fadeDuration: 2
-  volume: 1
-  useCustomVolume: 0
-  resetVolumeOnExit: 0
   disableOnActivate: 1
   playerTag: Player
   stopMusicOnTrigger: 0
-  restorePreviousVolumeOnExit: 0
+  restorePreviousMusicOnExit: 0
 --- !u!61 &1591358995
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -65404,7 +65385,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 228450234}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 0.5
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -67310,13 +67291,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicClip: {fileID: 8300000, guid: a7ce7c9f6c0bb774bb50730e717caa1e, type: 3}
   fadeDuration: 2
-  volume: 1
-  useCustomVolume: 0
-  resetVolumeOnExit: 0
   disableOnActivate: 1
   playerTag: Player
   stopMusicOnTrigger: 0
-  restorePreviousVolumeOnExit: 0
+  restorePreviousMusicOnExit: 0
 --- !u!61 &1723051480
 BoxCollider2D:
   m_ObjectHideFlags: 0

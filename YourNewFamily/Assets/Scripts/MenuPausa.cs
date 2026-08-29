@@ -141,24 +141,41 @@ public class MenuPausa : MonoBehaviour
             return;
         }
 
+        // Rango de 0 a 0.5 (50% del volumen máximo)
         sliderVolumen.minValue = 0f;
-        sliderVolumen.maxValue = 1f;
+        sliderVolumen.maxValue = 0.5f;
 
-        // Valor inicial
-        float volumenActual = musicManager.GetVolume();
-        sliderVolumen.value = volumenActual;
+        // Determinar el valor inicial del slider
+        float valorInicial;
+        if (PlayerPrefs.HasKey("VolumenMusica"))
+        {
+            // Si ya hay un volumen guardado, lo usamos (limitado al rango)
+            float saved = PlayerPrefs.GetFloat("VolumenMusica", 0.5f);
+            valorInicial = Mathf.Min(saved, 0.5f);
+        }
+        else
+        {
+            // Primera vez: establecemos 0.25 (mitad del rango)
+            valorInicial = 0.25f;
+            // Guardamos este valor en el MusicManager para que persista
+            musicManager.SetVolume(valorInicial);
+        }
 
-        // Limpiar listeners previos y añadir el nuevo
+        // Asignamos el valor al slider y sincronizamos el volumen real
+        sliderVolumen.value = valorInicial;
+        musicManager.SetVolume(valorInicial);
+
+        // Listener para cuando el usuario mueva el slider
         sliderVolumen.onValueChanged.RemoveAllListeners();
         sliderVolumen.onValueChanged.AddListener((valor) =>
         {
             if (musicManager != null)
             {
-                musicManager.SetVolume(valor);
+                musicManager.SetVolume(valor); // valor entre 0 y 0.5
             }
         });
 
-        Debug.Log($"[MenuPausa] Slider configurado - Valor inicial: {volumenActual}");
+        Debug.Log($"[MenuPausa] Slider configurado - Rango: 0 a 0.5, Valor inicial: {sliderVolumen.value}");
     }
 
     private void ConfigurarBoton(Button boton, UnityEngine.Events.UnityAction accion)
@@ -245,10 +262,11 @@ public class MenuPausa : MonoBehaviour
         if (panelOpciones != null)
         {
             panelOpciones.SetActive(true);
-            // Actualizar slider al abrir opciones
+            // Actualizar slider con el volumen actual (limitado a 0.5)
             if (sliderVolumen != null && musicManager != null)
             {
-                sliderVolumen.value = musicManager.GetVolume();
+                float vol = musicManager.GetVolume();
+                sliderVolumen.value = Mathf.Min(vol, 0.5f);
             }
         }
         if (panelConfirmacionSalir != null) panelConfirmacionSalir.SetActive(false);
@@ -325,5 +343,6 @@ public class MenuPausa : MonoBehaviour
     public void cerrarPanelAjustes()
     {
         panelOpciones.SetActive(false);
+        menuPausa.SetActive(true);
     }
 }

@@ -94,8 +94,9 @@ MonoBehaviour:
   musicClip: {fileID: 8300000, guid: dfbf6de8792878b4e97d9ff225893ce7, type: 3}
   fadeDuration: 2
   volume: 0.15
-  useCustomVolume: 1
+  useCustomVolume: 0
   resetVolumeOnExit: 0
   disableOnActivate: 1
   playerTag: Player
+  stopMusicOnTrigger: 0
   restorePreviousVolumeOnExit: 0

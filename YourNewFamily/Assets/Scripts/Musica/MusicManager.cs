@@ -9,12 +9,10 @@ public class MusicManager : MonoBehaviour
 
     [Header("Configuración")]
     [SerializeField] private float defaultFadeDuration = 2f;
-    [SerializeField][Range(0, 1)] private float maxVolume = 1f;
     [SerializeField] private float loopFadeDuration = 0.5f;
 
     [Header("Biblioteca de Canciones (Opcional)")]
-    [Tooltip("Lista de canciones de tu juego para encontrarlas por nombre al cargar partida.")]
-    [SerializeField] private List<AudioClip> allMusicClips = new List<AudioClip>(); // 👈 NUEVO: Lista de clips registrables
+    [SerializeField] private List<AudioClip> allMusicClips = new List<AudioClip>();
 
     [Header("Configuración por Escena")]
     [SerializeField] private string[] scenesToStopMusic = { "MenuInicial" };
@@ -27,13 +25,12 @@ public class MusicManager : MonoBehaviour
     private Coroutine fadeCoroutine;
     private Coroutine loopFadeCoroutine;
 
-    private float globalVolume = 1f;
+    private float globalVolume = 0.5f; // valor por defecto: 50%
     private AudioClip lastPlayedClip;
     private float lastPlayedTime = 0f;
     private bool wasPlaying = false;
     private string currentScene;
 
-    private Dictionary<string, float> clipVolumes = new Dictionary<string, float>();
     private Dictionary<string, AudioClip> loadedClips = new Dictionary<string, AudioClip>();
 
     private void Awake()
@@ -53,7 +50,8 @@ public class MusicManager : MonoBehaviour
                 }
             }
 
-            globalVolume = PlayerPrefs.GetFloat("VolumenMusica", 1f);
+            // Cargar volumen guardado, o usar 0.5 si no existe
+            globalVolume = PlayerPrefs.GetFloat("VolumenMusica", 0.5f);
 
             SceneManager.sceneLoaded += OnSceneLoaded;
 
@@ -82,7 +80,6 @@ public class MusicManager : MonoBehaviour
                 clip.UnloadAudioData();
         }
         loadedClips.Clear();
-        clipVolumes.Clear();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -90,11 +87,8 @@ public class MusicManager : MonoBehaviour
         Debug.Log($"Escena cargada: {scene.name}");
         currentScene = scene.name;
 
-        // 🔥 MODIFICADO: Si la partida se está cargando desde SaveManager, dejamos que SaveManager restaure la música guardada
         if (SaveManager.Instance != null && SaveManager.Instance.IsLoading)
-        {
             return;
-        }
 
         CheckSceneMusicState(currentScene);
     }
@@ -192,8 +186,7 @@ public class MusicManager : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
 
         elapsedTime = 0;
-
-        float targetVolume = GetFinalVolume(currentSource.clip);
+        float targetVolume = globalVolume; // ahora siempre es globalVolume
 
         while (elapsedTime < loopFadeDuration / 2)
         {
@@ -206,29 +199,13 @@ public class MusicManager : MonoBehaviour
         loopFadeCoroutine = null;
     }
 
-    private float GetFinalVolume(AudioClip clip)
-    {
-        float specificVolume = maxVolume;
-
-        if (clip != null && clipVolumes.ContainsKey(clip.name))
-        {
-            specificVolume = clipVolumes[clip.name];
-        }
-
-        return specificVolume * globalVolume;
-    }
-
     private void UpdateAllVolumes()
     {
         if (currentSource != null && currentSource.isPlaying)
-        {
-            currentSource.volume = GetFinalVolume(currentSource.clip);
-        }
+            currentSource.volume = globalVolume;
 
         if (nextSource != null && nextSource.isPlaying)
-        {
-            nextSource.volume = GetFinalVolume(nextSource.clip);
-        }
+            nextSource.volume = globalVolume;
     }
 
     public void PreloadMusic(AudioClip clip)
@@ -244,25 +221,19 @@ public class MusicManager : MonoBehaviour
         }
     }
 
-    // 🔥 NUEVO: Método para buscar y reproducir música usando únicamente su nombre
     public void ChangeMusicByName(string clipName, float fadeDuration = 0.5f)
     {
         if (string.IsNullOrEmpty(clipName)) return;
 
-        // Si ya es la que está sonando, no hacemos nada
         if (currentSource != null && currentSource.isPlaying && currentSource.clip != null && currentSource.clip.name == clipName)
-        {
             return;
-        }
 
-        // 1. Buscar en clips precargados o ya reproducidos
         if (loadedClips.TryGetValue(clipName, out AudioClip clip))
         {
             ChangeMusic(clip, fadeDuration);
             return;
         }
 
-        // 2. Buscar en la lista pública allMusicClips (asignados por inspector)
         foreach (var c in allMusicClips)
         {
             if (c != null && c.name == clipName)
@@ -272,7 +243,6 @@ public class MusicManager : MonoBehaviour
             }
         }
 
-        // 3. Intento de carga por Resources (si usas carpeta Resources)
         AudioClip resClip = Resources.Load<AudioClip>(clipName);
         if (resClip != null)
         {
@@ -281,48 +251,6 @@ public class MusicManager : MonoBehaviour
         }
 
         Debug.LogWarning($"MusicManager: No se pudo encontrar ningún AudioClip con el nombre '{clipName}'.");
-    }
-
-    public void SetClipVolume(AudioClip clip, float volume)
-    {
-        if (clip == null) return;
-
-        volume = Mathf.Clamp01(volume);
-
-        if (clipVolumes.ContainsKey(clip.name))
-        {
-            clipVolumes[clip.name] = volume;
-        }
-        else
-        {
-            clipVolumes.Add(clip.name, volume);
-        }
-
-        UpdateAllVolumes();
-    }
-
-    public float GetClipVolume(AudioClip clip)
-    {
-        if (clip == null) return maxVolume;
-
-        if (clipVolumes.ContainsKey(clip.name))
-        {
-            return clipVolumes[clip.name];
-        }
-
-        return maxVolume;
-    }
-
-    public void ResetClipVolume(AudioClip clip)
-    {
-        if (clip == null) return;
-
-        if (clipVolumes.ContainsKey(clip.name))
-        {
-            clipVolumes.Remove(clip.name);
-        }
-
-        UpdateAllVolumes();
     }
 
     public void ChangeMusic(AudioClip newClip)
@@ -375,9 +303,7 @@ public class MusicManager : MonoBehaviour
         newSource.Play();
 
         float elapsedTime = 0;
-
-        float targetVolume = GetFinalVolume(newClip);
-        float currentStartVolume = currentSource.volume;
+        float targetVolume = globalVolume;
 
         while (elapsedTime < duration)
         {
@@ -385,7 +311,7 @@ public class MusicManager : MonoBehaviour
             float t = elapsedTime / duration;
 
             if (currentSource.isPlaying)
-                currentSource.volume = Mathf.Lerp(currentStartVolume, 0, t);
+                currentSource.volume = Mathf.Lerp(currentSource.volume, 0, t);
 
             newSource.volume = Mathf.Lerp(0, targetVolume, t);
 

@@ -4,32 +4,26 @@ using UnityEngine.UI;
 public class AudioSettings : MonoBehaviour
 {
     public AudioSource musicSource;
-    public AudioSource sfxSource;
 
-    public Slider masterSlider;
-    public Slider musicSlider;
-    public Slider sfxSlider;
+    public Slider musicSlider; // Único slider: control de música
 
-    [Header("Configuraci�n de M�sica")]
-    public AudioClip[] musicTracks; // Arrastra aqu� tus 3 canciones
-    public bool shuffleTracks = false; // Opcional: reproducir en orden aleatorio
+    [Header("Configuración de Música")]
+    public AudioClip[] musicTracks; // Arrastra aquí tus canciones
+    public bool shuffleTracks = false;
 
     private int currentTrackIndex = 0;
     private bool isMusicPlaying = false;
 
     void Start()
     {
-        // Cargar valores guardados
-        masterSlider.value = PlayerPrefs.GetFloat("MasterVolume", 1f);
-        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1f);
-        sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1f);
+        // Cargar el valor guardado o usar 0.5 por defecto (50%)
+        float savedMusicVolume = PlayerPrefs.GetFloat("MusicVolume", 0.5f);
+        musicSlider.value = savedMusicVolume;
 
-        // Aplicar los valores cargados
-        SetMasterVolume(masterSlider.value);
-        SetMusicVolume(musicSlider.value);
-        SetSFXVolume(sfxSlider.value);
+        // Aplicar el volumen cargado
+        SetMusicVolume(savedMusicVolume);
 
-        // Iniciar reproducci�n de m�sica si hay tracks
+        // Iniciar reproducción de música si hay tracks
         if (musicTracks != null && musicTracks.Length > 0)
         {
             StartMusicPlaylist();
@@ -38,7 +32,7 @@ public class AudioSettings : MonoBehaviour
 
     void Update()
     {
-        // Verificar si la canci�n actual termin� y pasar a la siguiente
+        // Verificar si la canción actual terminó y pasar a la siguiente
         if (isMusicPlaying && musicSource != null && !musicSource.isPlaying)
         {
             PlayNextTrack();
@@ -86,7 +80,7 @@ public class AudioSettings : MonoBehaviour
         PlayCurrentTrack();
     }
 
-    // M�todo p�blico para forzar cambio de canci�n (opcional)
+    // Método público para forzar cambio de canción (opcional)
     public void SkipToNextTrack()
     {
         if (isMusicPlaying)
@@ -95,33 +89,18 @@ public class AudioSettings : MonoBehaviour
         }
     }
 
-    public void SetMasterVolume(float value)
-    {
-        Debug.Log($"Master Volume cambiado a: {value}");
-        AudioListener.volume = value;
-        PlayerPrefs.SetFloat("MasterVolume", value);
-    }
-
+    // Método llamado por el slider para cambiar el volumen de la música
     public void SetMusicVolume(float value)
     {
         Debug.Log($"Music Volume cambiado a: {value}");
         if (musicSource != null)
         {
             musicSource.volume = value;
-            Debug.Log($"Volumen actual del MusicSource: {musicSource.volume}");
         }
         PlayerPrefs.SetFloat("MusicVolume", value);
     }
 
-    public void SetSFXVolume(float value)
-    {
-        Debug.Log($"SFX Volume cambiado a: {value}");
-        if (sfxSource != null)
-            sfxSource.volume = value;
-        PlayerPrefs.SetFloat("SFXVolume", value);
-    }
-
-    // M�todos adicionales para control de m�sica
+    // Métodos adicionales para control de música
     public void PauseMusic()
     {
         if (musicSource != null)
