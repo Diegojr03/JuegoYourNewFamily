@@ -67017,14 +67017,14 @@ RectTransform:
   m_GameObject: {fileID: 1720112823}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 3, y: 2, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1807184149}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.027520834, y: 0.0282963}
   m_AnchorMax: {x: 0.085, y: 0.127}
-  m_AnchoredPosition: {x: -407, y: 146}
+  m_AnchoredPosition: {x: -407, y: 172.9}
   m_SizeDelta: {x: -9, y: -8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1720112825
@@ -67078,7 +67078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionDistance: 1
-  promptOffset: {x: 0, y: 1, z: 0}
+  promptOffset: {x: 0, y: 1.5, z: 0}
   dialogueSystem: {fileID: 0}
   dialogueChoiceSystem: {fileID: 0}
   interactionKey: 102
@@ -79050,7 +79050,7 @@ MonoBehaviour:
   textoInteraccion: {fileID: 0}
   spriteTeclaE: {fileID: 21300000, guid: 94cd47901f0f07747b1203ae0fdb6036, type: 3}
   posicionTeclaE: {x: 0, y: 1.5, z: 0}
-  escalaTeclaE: {x: 0.1, y: 0.1, z: 0.1}
+  escalaTeclaE: {x: 0.15, y: 0.15, z: 0.15}
   velocidadAnimacion: 3
   amplitudAnimacion: 0.1
   scriptMovimientoJugador: {fileID: 1476943280}
