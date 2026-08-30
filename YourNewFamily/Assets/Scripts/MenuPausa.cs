@@ -8,22 +8,22 @@ public class MenuPausa : MonoBehaviour
     // REFERENCIAS DE UI (se asignan en cada escena)
     // =========================================================
     [Header("Paneles principales")]
-    public GameObject menuPausa;               // Panel del menú de pausa
-    public GameObject panelOpciones;           // Panel de opciones
-    public GameObject panelConfirmacionSalir;  // Panel de confirmación para salir
+    public GameObject menuPausa;
+    public GameObject panelOpciones;
+    public GameObject panelConfirmacionSalir;
 
     [Header("Botones del menú de pausa")]
     public Button botonReanudar;
     public Button botonOpciones;
     public Button botonSalir;
-    public Button BotonVolver;
+    public Button BotonVolver;                 // Botón "Volver" en el panel de opciones
 
     [Header("Botones de confirmación")]
     public Button botonSi;
     public Button botonNo;
 
     [Header("Controles")]
-    public Slider sliderVolumen;               // Slider de volumen
+    public Slider sliderVolumen;
 
     [Header("Configuración")]
     public string nombreEscenaMenu = "MainMenu";
@@ -34,9 +34,6 @@ public class MenuPausa : MonoBehaviour
     private bool juegoPausado = false;
     private MusicManager musicManager;
 
-    // =========================================================
-    // SINGLETON
-    // =========================================================
     private static MenuPausa instance;
 
     // =========================================================
@@ -45,14 +42,12 @@ public class MenuPausa : MonoBehaviour
 
     private void Awake()
     {
-        // Si no hay instancia, ésta es la principal y persiste
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
             Debug.Log("[MenuPausa] Instancia persistente creada.");
         }
-        // Si ya existe, actualizamos sus referencias con las de esta nueva escena
         else if (instance != this)
         {
             Debug.Log("[MenuPausa] Nueva escena detectada. Actualizando referencias de UI...");
@@ -63,13 +58,10 @@ public class MenuPausa : MonoBehaviour
 
     private void Start()
     {
-        // Solo la instancia persistente ejecuta la inicialización
         if (instance != this) return;
 
-        // Configurar la UI (slider, listeners, etc.)
         ConfigurarUI();
 
-        // Estado inicial: juego en marcha, menús ocultos
         Time.timeScale = 1f;
         juegoPausado = false;
         OcultarTodosLosPaneles();
@@ -77,10 +69,8 @@ public class MenuPausa : MonoBehaviour
 
     private void Update()
     {
-        // Solo la instancia persistente procesa entrada
         if (instance != this) return;
 
-        // Tecla ESC para pausa / reanudar / cerrar subpaneles
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (panelConfirmacionSalir != null && panelConfirmacionSalir.activeSelf)
@@ -101,30 +91,25 @@ public class MenuPausa : MonoBehaviour
                 PausarJuego();
             }
         }
-
     }
 
     // =========================================================
-    // CONFIGURACIÓN DE UI (slider + botones)
+    // CONFIGURACIÓN DE UI
     // =========================================================
 
     private void ConfigurarUI()
     {
-        // 1. Slider
         ConfigurarSlider();
 
-        // 2. Botones del menú de pausa
         ConfigurarBoton(botonReanudar, ReanudarJuego);
         ConfigurarBoton(botonOpciones, BotonOpciones);
         ConfigurarBoton(botonSalir, MostrarConfirmacionSalir);
-
-        // 3. Botones de confirmación
         ConfigurarBoton(botonSi, ConfirmarSalir);
         ConfigurarBoton(botonNo, CancelarSalir);
+        ConfigurarBoton(BotonVolver, cerrarPanelAjustes);  // ← Botón Volver por código
 
         Debug.Log("[MenuPausa] UI configurada correctamente.");
     }
-
 
     private void ConfigurarSlider()
     {
@@ -145,34 +130,17 @@ public class MenuPausa : MonoBehaviour
         sliderVolumen.minValue = 0f;
         sliderVolumen.maxValue = 0.5f;
 
-        // Determinar el valor inicial del slider
-        float valorInicial;
-        if (PlayerPrefs.HasKey("VolumenMusica"))
-        {
-            // Si ya hay un volumen guardado, lo usamos (limitado al rango)
-            float saved = PlayerPrefs.GetFloat("VolumenMusica", 0.5f);
-            valorInicial = Mathf.Min(saved, 0.5f);
-        }
-        else
-        {
-            // Primera vez: establecemos 0.25 (mitad del rango)
-            valorInicial = 0.25f;
-            // Guardamos este valor en el MusicManager para que persista
-            musicManager.SetVolume(valorInicial);
-        }
+        // Siempre inicio en 0.25 (mitad del slider) → volumen real = 0.25
+        float valorInicial = 0.25f;
 
-        // Asignamos el valor al slider y sincronizamos el volumen real
         sliderVolumen.value = valorInicial;
         musicManager.SetVolume(valorInicial);
 
-        // Listener para cuando el usuario mueva el slider
         sliderVolumen.onValueChanged.RemoveAllListeners();
         sliderVolumen.onValueChanged.AddListener((valor) =>
         {
             if (musicManager != null)
-            {
-                musicManager.SetVolume(valor); // valor entre 0 y 0.5
-            }
+                musicManager.SetVolume(valor);
         });
 
         Debug.Log($"[MenuPausa] Slider configurado - Rango: 0 a 0.5, Valor inicial: {sliderVolumen.value}");
@@ -199,7 +167,6 @@ public class MenuPausa : MonoBehaviour
     {
         if (nuevoMenu == null) return;
 
-        // Copiar todas las referencias del nuevo Canvas
         menuPausa = nuevoMenu.menuPausa;
         panelOpciones = nuevoMenu.panelOpciones;
         panelConfirmacionSalir = nuevoMenu.panelConfirmacionSalir;
@@ -207,18 +174,14 @@ public class MenuPausa : MonoBehaviour
         botonReanudar = nuevoMenu.botonReanudar;
         botonOpciones = nuevoMenu.botonOpciones;
         botonSalir = nuevoMenu.botonSalir;
+        BotonVolver = nuevoMenu.BotonVolver;
         botonSi = nuevoMenu.botonSi;
         botonNo = nuevoMenu.botonNo;
 
         sliderVolumen = nuevoMenu.sliderVolumen;
 
-        // (Opcional) copiar nombreEscenaMenu si es diferente
-        // nombreEscenaMenu = nuevoMenu.nombreEscenaMenu;
-
-        // Reconfigurar la UI con las nuevas referencias
         ConfigurarUI();
 
-        // Asegurar que los paneles estén ocultos y el tiempo normal
         OcultarTodosLosPaneles();
         Time.timeScale = 1f;
         juegoPausado = false;
@@ -262,7 +225,7 @@ public class MenuPausa : MonoBehaviour
         if (panelOpciones != null)
         {
             panelOpciones.SetActive(true);
-            // Actualizar slider con el volumen actual (limitado a 0.5)
+            // Mostrar el valor actual (que siempre será 0.25 o el que haya puesto el usuario)
             if (sliderVolumen != null && musicManager != null)
             {
                 float vol = musicManager.GetVolume();
@@ -286,7 +249,6 @@ public class MenuPausa : MonoBehaviour
     public void MostrarConfirmacionSalir()
     {
         Debug.Log("[MenuPausa] Mostrando confirmación para salir");
-        // Ocultar menú de pausa y opciones, mostrar solo confirmación
         if (menuPausa != null) menuPausa.SetActive(false);
         if (panelOpciones != null) panelOpciones.SetActive(false);
         if (panelConfirmacionSalir != null) panelConfirmacionSalir.SetActive(true);
@@ -295,7 +257,7 @@ public class MenuPausa : MonoBehaviour
     public void ConfirmarSalir()
     {
         Debug.Log("[MenuPausa] Salida confirmada. Guardando partida...");
-        SaveManager.Instance.SaveGame();   // <-- directo
+        SaveManager.Instance.SaveGame();
         Time.timeScale = 1f;
         juegoPausado = false;
         SceneManager.LoadScene(nombreEscenaMenu);
@@ -305,28 +267,8 @@ public class MenuPausa : MonoBehaviour
     {
         Debug.Log("[MenuPausa] Salida cancelada.");
         if (panelConfirmacionSalir != null) panelConfirmacionSalir.SetActive(false);
-        // Volver a mostrar el menú de pausa (si el juego sigue pausado)
         if (juegoPausado && menuPausa != null)
-        {
             menuPausa.SetActive(true);
-        }
-    }
-
-    // =========================================================
-    // GUARDADO DE PARTIDA
-    // =========================================================
-
-    private void GuardarPartida()
-    {
-        if (SaveManager.Instance != null)
-        {
-            SaveManager.Instance.SaveGame();
-            Debug.Log("[MenuPausa] Partida guardada correctamente.");
-        }
-        else
-        {
-            Debug.LogError("[MenuPausa] SaveManager no disponible.");
-        }
     }
 
     // =========================================================
@@ -340,9 +282,10 @@ public class MenuPausa : MonoBehaviour
         if (panelConfirmacionSalir != null) panelConfirmacionSalir.SetActive(false);
     }
 
+    // Este método es llamado por el botón "Volver"
     public void cerrarPanelAjustes()
     {
-        panelOpciones.SetActive(false);
-        menuPausa.SetActive(true);
+        if (panelOpciones != null) panelOpciones.SetActive(false);
+        if (menuPausa != null) menuPausa.SetActive(true);
     }
 }

@@ -6,8 +6,12 @@ public class InteractionPromptManager : MonoBehaviour
     public static InteractionPromptManager Instance { get; private set; }
 
     [Header("Referencia a la imagen de tecla F (Canvas)")]
-    public Image promptImage; // ÚNICA imagen F en el Canvas
+    public Image promptImage; // Imagen F en el Canvas
     public Vector3 promptOffset = new Vector3(0, 1f, 0);
+
+    [Header("Animación de flotación (subir/bajar)")]
+    public float floatSpeed = 2f;
+    public float floatAmplitude = 5f; // en píxeles (coordenadas de pantalla)
 
     private Camera mainCamera;
     private Transform player;
@@ -48,7 +52,7 @@ public class InteractionPromptManager : MonoBehaviour
         if (promptImage != null)
         {
             promptImage.gameObject.SetActive(true);
-            UpdatePromptPosition(point.transform.position + point.promptOffset);    
+            // La posición se actualizará en Update con la animación
         }
     }
 
@@ -59,7 +63,6 @@ public class InteractionPromptManager : MonoBehaviour
         if (promptImage != null)
         {
             promptImage.gameObject.SetActive(true);
-            UpdatePromptPosition(dialogue.transform.position + dialogue.promptOffset);
         }
     }
 
@@ -77,13 +80,22 @@ public class InteractionPromptManager : MonoBehaviour
         if (promptImage == null || mainCamera == null) return;
 
         Vector3 screenPosition = mainCamera.WorldToScreenPoint(worldPosition);
-        if (screenPosition.z > 0)
+
+        // Si está detrás de la cámara, ocultar
+        if (screenPosition.z < 0)
         {
-            promptImage.transform.position = screenPosition;
+            promptImage.gameObject.SetActive(false);
+            return;
         }
-        else
-        {
-            promptImage.gameObject.SetActive(false); // Si está detrás de la cámara
-        }
+
+        // Asegurar que la imagen esté activa
+        if (!promptImage.gameObject.activeSelf)
+            promptImage.gameObject.SetActive(true);
+
+        // Calcular offset de flotación
+        float offsetY = Mathf.Sin(Time.time * floatSpeed) * floatAmplitude;
+        Vector3 finalPos = screenPosition + new Vector3(0, offsetY, 0);
+
+        promptImage.transform.position = finalPos;
     }
 }
