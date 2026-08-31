@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
         if (!misionCompletada)
         {
             VerificarObjetosPorTag();
+
         }
     }
 
@@ -71,7 +72,7 @@ public class GameManager : MonoBehaviour
 
         // Desactivar elementos antiguos
         if (npcADesactivar != null) npcADesactivar.SetActive(false);
-        if (dialogoADesactivar != null) dialogoADesactivar.SetActive(false);
+        if (dialogoADesactivar != null) Destroy(dialogoADesactivar);
 
         textoMision.text = "VE A HABLAR CON LIN DE NUEVO";
 
