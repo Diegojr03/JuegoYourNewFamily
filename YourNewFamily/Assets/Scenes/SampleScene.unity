@@ -10077,8 +10077,8 @@ Transform:
   m_GameObject: {fileID: 195365783}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.738687, y: 0.3850051, z: 0}
-  m_LocalScale: {x: 0.08173282, y: 0.08173282, z: 0.08173282}
+  m_LocalPosition: {x: 5.7395, y: 0.38438, z: 0}
+  m_LocalScale: {x: 0.0890341, y: 0.084879175, z: 0.090447344}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 628383753}
@@ -10121,7 +10121,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 12.360001, y: 19.53}
+    oldSize: {x: 12.49, y: 19.24}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -10173,8 +10173,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -7062746936621280886, guid: 196258e63333ecf499b74f24523b1856, type: 3}
-  m_Color: {r: 0.74509805, g: 0.74509805, b: 0.74509805, a: 1}
+  m_Sprite: {fileID: -7062746936621280886, guid: 99a9cde524c2dc747a94f2db078cbd6f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -17706,7 +17706,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: 4870070632428598482, guid: b66fa742ec6d4df43a3335c0617f7da6, type: 3}
-  m_Color: {r: 0.74509805, g: 0.74509805, b: 0.74509805, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -23494,7 +23494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRoomCenter: {fileID: 1310094384}
-  targetPlayerPosition: {x: -107.8, y: 49.9}
+  targetPlayerPosition: {x: -108.4, y: 49.9}
   transitionName: Estatuas-Derrumbamiento
   cameraMoveSpeed: 15
   targetCameraSize: 6
@@ -23505,7 +23505,7 @@ MonoBehaviour:
   soundVolume: 1
   prefabToSpawn: {fileID: 0}
   spawnPoint: {fileID: 0}
-  spawnAfterFadeIn: 1
+  spawnAfterFadeIn: 0
   objectsToActivateAfterFadeIn:
   - {fileID: 912201659}
   - {fileID: 1907504560}
@@ -32327,7 +32327,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.15, y: -6.23, z: 0}
-  m_LocalScale: {x: 0.091779836, y: 0.091779836, z: 0.091779836}
+  m_LocalScale: {x: 0.09414211, y: 0.09414211, z: 0.09414211}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 604768798}
@@ -32370,7 +32370,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13.68, y: 19.61}
+    oldSize: {x: 13.68, y: 19.24}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -32422,8 +32422,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -67366395193098631, guid: d9e4e232768759c43b263ff3ad129dba, type: 3}
-  m_Color: {r: 0.74509805, g: 0.74509805, b: 0.74509805, a: 1}
+  m_Sprite: {fileID: 4870070632428598482, guid: b66fa742ec6d4df43a3335c0617f7da6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -46879,8 +46879,8 @@ MonoBehaviour:
     gibberishClip: {fileID: 0}
     gibberishVolume: 0.5
   - speakerName: NPC B
-    dialogueText: "prefirieron un asilo a cuidarme. Alfa me dio una mano cuando nadie
-      m\xE1s lo hizo."
+    dialogueText: "prefirieron un asilo a cuidarme. Alpha me dio una mano cuando
+      nadie m\xE1s lo hizo."
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -58265,7 +58265,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 4050620903617946764, guid: 85fdc5a0026d93f429ba018eb9c4a234, type: 3}
-  m_Color: {r: 0.74509805, g: 0.74509805, b: 0.74509805, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0

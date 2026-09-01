@@ -17775,7 +17775,7 @@ MonoBehaviour:
   cameraSizeChangeSpeed: 10
   fadeDuration: 1
   fadeImage: {fileID: 205797062}
-  transitionSound: {fileID: 0}
+  transitionSound: {fileID: 8300000, guid: 94dfea9c1b980054d8d66148699f4d2c, type: 3}
   soundVolume: 1
   prefabToSpawn: {fileID: 0}
   spawnPoint: {fileID: 0}
@@ -19170,7 +19170,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
+  m_Sprite: {fileID: 3648207892980098720, guid: 0c6a7482622f9b3428899aa606073ac2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -26310,7 +26310,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
+  m_Sprite: {fileID: 3648207892980098720, guid: 0c6a7482622f9b3428899aa606073ac2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -28446,7 +28446,7 @@ Transform:
   m_GameObject: {fileID: 422593925}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -5.509999, y: 4.9500017, z: 0}
+  m_LocalPosition: {x: -9.19, y: 5.86, z: 0}
   m_LocalScale: {x: 3.5162838, y: 3.5000865, z: 0.096848726}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28791,7 +28791,7 @@ MonoBehaviour:
     dialogueText: "Toma esto. Te ayudar\xE1 a calmar tu mente, a que tu coraz\xF3n
       deje de desgarrarse por un momento."
     leftSpeaker: 1
-    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
+    characterSprite: {fileID: -1305627187718933871, guid: 0e40853bc10b82c499b5fd6fdf25e995, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -28801,7 +28801,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "D\xE9jate sostener, Lillith. La familia siempre te levantar\xE1."
     leftSpeaker: 1
-    characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
+    characterSprite: {fileID: -1305627187718933871, guid: 0e40853bc10b82c499b5fd6fdf25e995, type: 3}
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -35457,7 +35457,7 @@ Transform:
   m_GameObject: {fileID: 516495335}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -86.33, y: 27.96, z: 0}
+  m_LocalPosition: {x: -107.317, y: 27.025, z: 0}
   m_LocalScale: {x: 0.050201394, y: 0.051924467, z: 0.051283423}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -40082,7 +40082,7 @@ MonoBehaviour:
   cameraSizeChangeSpeed: 10
   fadeDuration: 1
   fadeImage: {fileID: 205797062}
-  transitionSound: {fileID: 0}
+  transitionSound: {fileID: 8300000, guid: 94dfea9c1b980054d8d66148699f4d2c, type: 3}
   soundVolume: 1
   prefabToSpawn: {fileID: 0}
   spawnPoint: {fileID: 0}
@@ -40327,7 +40327,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 12.9, y: 19.09}
+    oldSize: {x: 12.86, y: 18.62}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -40379,7 +40379,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -7935405377056589911, guid: e848be72067f4a649bf8930c3061e4c4, type: 3}
+  m_Sprite: {fileID: 6990202417406056353, guid: 27b8248f0bd43dd46a38de8c0cc066f4, type: 3}
   m_Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -45641,7 +45641,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.57, y: -1.75, z: 0}
-  m_LocalScale: {x: 0.11882349, y: 0.11882349, z: 0.11882349}
+  m_LocalScale: {x: 0.116722696, y: 0.116722696, z: 0.116722696}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1896329313}
@@ -52729,8 +52729,8 @@ Transform:
   m_GameObject: {fileID: 762947768}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.03, y: 6.48, z: 0}
-  m_LocalScale: {x: 0.13356422, y: 0.13356422, z: 0.13356422}
+  m_LocalPosition: {x: 9.9814, y: 6.4782, z: 0}
+  m_LocalScale: {x: 0.12766202, y: 0.12766202, z: 0.12766202}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 17872172}
@@ -76097,8 +76097,8 @@ Transform:
   m_GameObject: {fileID: 1103459569}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.61, y: 6.349999, z: 0}
-  m_LocalScale: {x: 0.12767322, y: 0.12767322, z: 0.12767322}
+  m_LocalPosition: {x: 7.6683, y: 6.354, z: 0}
+  m_LocalScale: {x: 0.122031346, y: 0.122031346, z: 0.122031346}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 17872172}
@@ -83185,7 +83185,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
+  m_Sprite: {fileID: 3648207892980098720, guid: 0c6a7482622f9b3428899aa606073ac2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -94316,7 +94316,7 @@ MonoBehaviour:
   cameraSizeChangeSpeed: 10
   fadeDuration: 1
   fadeImage: {fileID: 205797062}
-  transitionSound: {fileID: 0}
+  transitionSound: {fileID: 8300000, guid: 94dfea9c1b980054d8d66148699f4d2c, type: 3}
   soundVolume: 1
   prefabToSpawn: {fileID: 0}
   spawnPoint: {fileID: 0}
@@ -125116,7 +125116,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.46, y: -2.04, z: 0}
-  m_LocalScale: {x: 0.112371296, y: 0.112371296, z: 0.112371296}
+  m_LocalScale: {x: 0.10839785, y: 0.10839785, z: 0.10839785}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1896329313}
@@ -128097,7 +128097,7 @@ MonoBehaviour:
   cameraSizeChangeSpeed: 10
   fadeDuration: 1
   fadeImage: {fileID: 205797062}
-  transitionSound: {fileID: 0}
+  transitionSound: {fileID: 8300000, guid: 94dfea9c1b980054d8d66148699f4d2c, type: 3}
   soundVolume: 1
   prefabToSpawn: {fileID: 0}
   spawnPoint: {fileID: 0}
@@ -130271,7 +130271,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
+  m_Sprite: {fileID: 3648207892980098720, guid: 0c6a7482622f9b3428899aa606073ac2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -140054,7 +140054,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
+  m_Sprite: {fileID: 3648207892980098720, guid: 0c6a7482622f9b3428899aa606073ac2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -146876,7 +146876,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -1674950913012282259, guid: a5603edeb1e5a3d45a5e2ebd1a655387, type: 3}
+  m_Sprite: {fileID: 3648207892980098720, guid: 0c6a7482622f9b3428899aa606073ac2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -147762,7 +147762,7 @@ MonoBehaviour:
   cameraSizeChangeSpeed: 10
   fadeDuration: 1
   fadeImage: {fileID: 205797062}
-  transitionSound: {fileID: 0}
+  transitionSound: {fileID: 8300000, guid: 94dfea9c1b980054d8d66148699f4d2c, type: 3}
   soundVolume: 1
   prefabToSpawn: {fileID: 0}
   spawnPoint: {fileID: 0}
