@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using YNF.Localizacion;
 
 public class BacklogManager : MonoBehaviour
 {
@@ -351,7 +352,7 @@ public class BacklogManager : MonoBehaviour
         if (buttonText != null &&
             string.IsNullOrEmpty(buttonText.text))
         {
-            buttonText.text = characterName;
+            buttonText.text = Loc.T(characterName);
         }
 
         ConfigureCharacterButton(newButton);
@@ -475,7 +476,7 @@ public class BacklogManager : MonoBehaviour
         if (selectedCharacterText != null)
         {
             selectedCharacterText.text =
-                "Conversación con: " + characterName;
+                Loc.T("Conversación con: ") + Loc.T(characterName);
         }
         else
         {
@@ -616,7 +617,7 @@ public class BacklogManager : MonoBehaviour
             if (speakerText != null)
             {
                 speakerText.text =
-                    entry.speakerName;
+                    Loc.T(entry.speakerName);
 
                 speakerText.color =
                     entry.speakerName == "Lilith"
@@ -627,7 +628,7 @@ public class BacklogManager : MonoBehaviour
             if (messageText != null)
             {
                 messageText.text =
-                    entry.dialogueText;
+                    Loc.T(entry.dialogueText);
             }
 
             if (timeText != null)
@@ -938,7 +939,7 @@ public class BacklogManager : MonoBehaviour
         if (isBacklogOpen)
         {
             if (selectedCharacterText != null)
-                selectedCharacterText.text = "Conversación con: " + selectedCharacter;
+                selectedCharacterText.text = Loc.T("Conversación con: ") + Loc.T(selectedCharacter);
             RefreshMessagesUI();
         }
     }

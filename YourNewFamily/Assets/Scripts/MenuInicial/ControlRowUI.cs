@@ -1,6 +1,7 @@
-using TMPro;
+Ôªøusing TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using YNF.Localizacion;
 
 public class ControlRowUI : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class ControlRowUI : MonoBehaviour
 
     void Awake()
     {
-        // Obtener referencias autom·ticamente si est·n vacÌas
+        // Obtener referencias autom√°ticamente si est√°n vac√≠as
         if (actionText == null)
             actionText = transform.Find("ActionText")?.GetComponent<TextMeshProUGUI>();
         if (keyText == null)
@@ -23,7 +24,7 @@ public class ControlRowUI : MonoBehaviour
     public void Setup(string action, string key)
     {
         if (actionText != null)
-            actionText.text = action;
+            actionText.text = Loc.T(action);
         if (keyText != null)
             keyText.text = key;
     }

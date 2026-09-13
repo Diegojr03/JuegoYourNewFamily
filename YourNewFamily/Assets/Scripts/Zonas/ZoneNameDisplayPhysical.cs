@@ -1,11 +1,14 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
 using TMPro;
 using System.Collections;
+using YNF.Localizacion;
 
 public class ZoneNameDisplayPhysical : MonoBehaviour
 {
-    [Header("ConfiguraciÛn de la Zona")]
+    [Header("Configuraci√≥n de la Zona")]
     public string zoneName = "Nombre de la Zona";
+    [ClaveLocalizacion(nameof(zoneName))]
+    public string locKey;
 
     [Header("Referencias UI")]
     public RectTransform panelRect;
@@ -13,7 +16,7 @@ public class ZoneNameDisplayPhysical : MonoBehaviour
 
     [Header("Ajustes de Movimiento")]
     public float dropDistance = 500f;
-    public float dropDuration = 0.4f;   // Un poco m·s r·pido para fluidez
+    public float dropDuration = 0.4f;   // Un poco m√°s r√°pido para fluidez
     public AnimationCurve dropCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
     [Header("Ajustes de Balanceo")]
@@ -39,14 +42,14 @@ public class ZoneNameDisplayPhysical : MonoBehaviour
         // Iniciar escondido
         panelRect.anchoredPosition = hiddenPosition;
 
-        if (zoneText != null) zoneText.text = zoneName;
+        if (zoneText != null) zoneText.text = Loc.T(locKey, zoneName);
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag(playerTag))
         {
-            // 1. Traer al frente para que no lo tape ning˙n otro cartel
+            // 1. Traer al frente para que no lo tape ning√∫n otro cartel
             panelRect.SetAsLastSibling();
 
             if (currentSequence != null) StopCoroutine(currentSequence);
@@ -66,7 +69,7 @@ public class ZoneNameDisplayPhysical : MonoBehaviour
 
     IEnumerator ShowSignSequence()
     {
-        // CAÕDA
+        // CA√çDA
         float elapsed = 0;
         while (elapsed < dropDuration)
         {

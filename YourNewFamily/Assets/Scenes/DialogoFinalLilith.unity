@@ -937,41 +937,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69405e443069f544b51770be0c0f5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueId: 
   itemToAddToInventory: {fileID: 0}
   inventoryItemIcon: {fileID: 0}
   inventoryItemId: item_default
   inventoryItemName: Nuevo Item
   textSpeed: 0.05
   autoActivate: 1
+  guardarEnBacklog: 0
   dialogueSections:
   - speakerName: 
     dialogueText: Claro... ahora lo veo. Alpha hablaba de Beta como si fuera un dios.
       Como si fuera alguien que iba a venir.
+    locKey: t_f3f55a2f658c
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.07
   - speakerName: 
     dialogueText: "Pero no. No estaba esperando a nadie. Siempre estuvo ah\xED. Desde
       el principio. No era Alpha quien nos guiaba."
+    locKey: t_10a5eb70a3de
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.07
   - speakerName: 
     dialogueText: "Eres t\xFA. Beta eres t\xFA. T\xFA elegiste. T\xFA empujaste todo
       esto. Y yo solo era la que lo hac\xEDa. As\xED que esc\xFAchame bien."
+    locKey: t_08a10d6b7613
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.07
   - speakerName: 
     dialogueText: "Porque ahora s\xE9 que est\xE1s ah\xED. Y cuando te encuentre\u2026
       T\xFA ser\xE1s el siguiente."
+    locKey: t_dc17abf46a89
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
+    gibberishClip: {fileID: 0}
+    gibberishVolume: 0.07
   dialoguePanel: {fileID: 669541268}
   speakerContainer: {fileID: 268610414}
   speakerText: {fileID: 240915352}

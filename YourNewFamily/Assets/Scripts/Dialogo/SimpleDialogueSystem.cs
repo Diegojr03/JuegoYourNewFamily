@@ -1,6 +1,7 @@
-using System.Collections;
+﻿using System.Collections;
 using TMPro;
 using UnityEngine;
+using YNF.Localizacion;
 
 [System.Serializable]
 public class DialogueSection
@@ -8,6 +9,8 @@ public class DialogueSection
     public string speakerName = "";
     [TextArea(3, 5)]
     public string dialogueText;
+    [ClaveLocalizacion(nameof(dialogueText))]
+    public string locKey;
 
     public bool giveItemAfterThisLine = false;
     public string itemIdToGive = "";
@@ -193,7 +196,7 @@ public class SimpleDialogueSystem : MonoBehaviour
         if (lineIndex >= dialogueSections.Length) return;
 
         if (speakerText != null)
-            speakerText.text = dialogueSections[lineIndex].speakerName;
+            speakerText.text = Loc.T(dialogueSections[lineIndex].speakerName);
 
         if (speakerContainer != null)
             speakerContainer.SetActive(!string.IsNullOrEmpty(dialogueSections[lineIndex].speakerName));
@@ -218,7 +221,7 @@ public class SimpleDialogueSystem : MonoBehaviour
             StopCoroutine(typingCoroutine);
 
         typingCoroutine = StartCoroutine(TypeText(
-            dialogueSections[lineIndex].dialogueText,
+            Loc.T(dialogueSections[lineIndex].locKey, dialogueSections[lineIndex].dialogueText),
             dialogueSections[lineIndex].gibberishClip,
             dialogueSections[lineIndex].gibberishVolume
         ));
@@ -289,7 +292,7 @@ public class SimpleDialogueSystem : MonoBehaviour
             typingCoroutine = null;
         }
 
-        dialogueText.text = dialogueSections[currentLine].dialogueText;
+        dialogueText.text = Loc.T(dialogueSections[currentLine].locKey, dialogueSections[currentLine].dialogueText);
 
         waitingForNextLine = true;
     }

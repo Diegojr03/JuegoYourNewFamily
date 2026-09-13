@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using YNF.Localizacion;
+using YNF.Progreso;
 
 public class DialogueSystem : MonoBehaviour
 {
@@ -49,6 +51,8 @@ public class DialogueSystem : MonoBehaviour
         public string speakerName;
         [TextArea(3, 5)]
         public string dialogueText;
+        [ClaveLocalizacion(nameof(dialogueText))]
+        public string locKey;
         public bool leftSpeaker;
         public Sprite characterSprite;
 
@@ -168,6 +172,8 @@ public class DialogueSystem : MonoBehaviour
         if (isDialogueActive || dialogues.Count == 0 || !canReuse)
             return;
 
+        LogProgreso.Info($"dialogo empieza: '{dialogueId}' en {gameObject.name}", gameObject);
+
         if (!string.IsNullOrEmpty(dialogueId) && SaveManager.Instance != null)
             SaveManager.Instance.RegisterDialogueCompleted(dialogueId);
 
@@ -233,6 +239,13 @@ public class DialogueSystem : MonoBehaviour
             playerRigidbody.linearVelocity = originalVelocity;
         }
 
+        // Las consecuencias se aplican AQUI, al final de la secuencia, mientras
+        // que el evento se apunta al empezar el dialogo. Entre una cosa y otra
+        // pasan varios segundos, asi que conviene ver en consola que se aplico
+        // de verdad y que no: es la unica forma de distinguir "la consecuencia
+        // no se ejecuto" de "se ejecuto y algo la deshizo despues".
+        LogProgreso.Info($"dialogo termina: '{dialogueId}'. Aplicando consecuencias.", gameObject);
+
         foreach (GameObject obj in objectsToActivateAfter)
         {
             if (obj != null)
@@ -241,6 +254,11 @@ public class DialogueSystem : MonoBehaviour
                 if (saveable != null && SaveManager.Instance != null)
                     SaveManager.Instance.RegisterObjectState(saveable.objectId, true);
                 obj.SetActive(true);
+                LogProgreso.Info($"  activa  '{dialogueId}' -> {obj.name}", obj);
+            }
+            else
+            {
+                LogProgreso.Aviso($"'{dialogueId}' tiene un hueco vacio en objectsToActivateAfter.", gameObject);
             }
         }
 
@@ -253,7 +271,12 @@ public class DialogueSystem : MonoBehaviour
                 {
                     SaveManager.Instance.RegisterObjectDestroyed(saveable.objectId);
                 }
+                LogProgreso.Info($"  destruye '{dialogueId}' -> {obj.name}", gameObject);
                 Destroy(obj);
+            }
+            else
+            {
+                LogProgreso.Aviso($"'{dialogueId}' tiene un hueco vacio en objectsToDestroyAfter.", gameObject);
             }
         }
 
@@ -340,7 +363,7 @@ public class DialogueSystem : MonoBehaviour
     {
         if (speakerText != null)
         {
-            speakerText.text = dialogue.speakerName;
+            speakerText.text = Loc.T(dialogue.speakerName);
         }
 
         if (speakerContainer != null)
@@ -362,7 +385,7 @@ public class DialogueSystem : MonoBehaviour
         HighlightCharacter(dialogue.leftSpeaker, dialogue.characterSprite);
 
         dialogueText.text = "";
-        string fullText = dialogue.dialogueText;
+        string fullText = Loc.T(dialogue.locKey, dialogue.dialogueText);
         if (dialogue.giveItemAfterThisLine)
         {
             GiveInventoryItem(

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 public class ManagerPuzleEstatuas : MonoBehaviour
 {
-    [Header("Configuración del Puzle")]
+    [Header("ConfiguraciÃ³n del Puzle")]
     public Estatua[] estatuas; // Asignar las 4 estatuas en el inspector
-    public Estatua.Direccion[] solucionCorrecta; // La combinación ganadora
+    public Estatua.Direccion[] solucionCorrecta; // La combinaciÃ³n ganadora
 
     [Header("Efectos Visuales")]
     public ParticleSystem particulasExito;
@@ -15,6 +15,11 @@ public class ManagerPuzleEstatuas : MonoBehaviour
     [Header("Objetos a mostrar / ocultar al resolver")]
     public GameObject objetoQueAparece;
     public GameObject objetoQueDesaparece;
+
+    [Header("Guardado")]
+    [Tooltip("Id con el que este puzle se apunta en la partida. Lo rellena " +
+             "Tools > Guardado > Asignar ids a los puzles.")]
+    public string progresoId;
 
     private bool puzleResuelto = false;
 
@@ -26,10 +31,10 @@ public class ManagerPuzleEstatuas : MonoBehaviour
             Debug.LogError("Debe haber exactamente 4 estatuas en el puzle");
         }
 
-        // Validar que tenemos 4 direcciones en la solución
+        // Validar que tenemos 4 direcciones en la soluciÃ³n
         if (solucionCorrecta.Length != 4)
         {
-            Debug.LogError("Debe haber exactamente 4 direcciones en la solución");
+            Debug.LogError("Debe haber exactamente 4 direcciones en la soluciÃ³n");
         }
 
         // Configurar las estatuas
@@ -45,7 +50,7 @@ public class ManagerPuzleEstatuas : MonoBehaviour
 
     private void OnEstatuaRotada(Estatua estatua)
     {
-        Debug.Log($"Estatua {estatua.estatuaID} rotada. Verificando solución...");
+        Debug.Log($"Estatua {estatua.estatuaID} rotada. Verificando soluciÃ³n...");
         VerificarSolucion();
     }
 
@@ -55,7 +60,7 @@ public class ManagerPuzleEstatuas : MonoBehaviour
 
         bool solucionCorrectaEncontrada = true;
 
-        // Verificar que cada estatua tenga la dirección correcta
+        // Verificar que cada estatua tenga la direcciÃ³n correcta
         for (int i = 0; i < estatuas.Length; i++)
         {
             if (estatuas[i].DireccionActual != solucionCorrecta[i])
@@ -91,6 +96,12 @@ public class ManagerPuzleEstatuas : MonoBehaviour
     {
         puzleResuelto = true;
 
+        // Se apunta el progreso AQUI, en el instante en que el puzle se da por
+        // resuelto, para que al recargar la escena se puedan volver a aplicar
+        // sus consecuencias. Sin esto el puzle se rehacia solo.
+        if (!string.IsNullOrEmpty(progresoId) && SaveManager.Instance != null)
+            SaveManager.Instance.RegisterPuzzleCompleted(progresoId);
+
         // Mostrar uno
         if (objetoQueAparece != null)
             objetoQueAparece.SetActive(true);
@@ -105,16 +116,16 @@ public class ManagerPuzleEstatuas : MonoBehaviour
             audioSource.PlayOneShot(sonidoApertura);
         }
 
-        // Partículas
+        // PartÃ­culas
         if (particulasExito != null)
         {
             particulasExito.Play();
         }
 
-        Debug.Log("¡Puzle resuelto! La puerta se abre.");
+        Debug.Log("Â¡Puzle resuelto! La puerta se abre.");
     }
 
-    // Métodos para debugging y control
+    // MÃ©todos para debugging y control
     public void MostrarEstadoEstatuas()
     {
         string estado = "Estado de las estatuas:\n";
@@ -139,7 +150,7 @@ public class ManagerPuzleEstatuas : MonoBehaviour
         Debug.Log("Puzle reiniciado");
     }
 
-    // Método para verificar si el puzle está resuelto
+    // MÃ©todo para verificar si el puzle estÃ¡ resuelto
     public bool IsPuzleResuelto()
     {
         return puzleResuelto;

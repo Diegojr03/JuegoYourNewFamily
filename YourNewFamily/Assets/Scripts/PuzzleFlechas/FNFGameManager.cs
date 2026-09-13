@@ -9,7 +9,7 @@ public class FNFGameManager : MonoBehaviour
     public static FNFGameManager Instance;
     public event Action OnPuzzleCompleted;
 
-    [Header("Configuración de Flechas")]
+    [Header("ConfiguraciÃ³n de Flechas")]
     public GameObject[] arrowPrefabs;
     public RectTransform[] spawnPoints;
     public RectTransform hitLine;
@@ -17,7 +17,7 @@ public class FNFGameManager : MonoBehaviour
     public float spawnInterval = 1f;
     public float hitRange = 50f;
 
-    [Header("Puntuación")]
+    [Header("PuntuaciÃ³n")]
     public int targetScore = 500;
     public int pointsPerHit = 50;
 
@@ -31,6 +31,11 @@ public class FNFGameManager : MonoBehaviour
 
     [Header("Acciones al Completar Puzzle")]
     public GameObject[] objectsToActivate;
+    [Header("Progreso")]
+    [Tooltip("Id unico de este puzle. Sin el, completarlo no queda registrado en la partida "
+           + "y sus consecuencias no se pueden reconstruir al cargar.")]
+    public string progresoId;
+
     public GameObject[] objectsToDeactivate;
     public bool disablePuzzlePanelOnComplete = true;
     public float delayBeforeActions = 1f;
@@ -271,6 +276,11 @@ public class FNFGameManager : MonoBehaviour
 
         if (objectsToActivate != null)
         {
+            // Se apunta el puzle como completado ANTES de aplicar las consecuencias,
+            // para que al cargar la partida se puedan volver a aplicar.
+            if (!string.IsNullOrEmpty(progresoId) && SaveManager.Instance != null)
+                SaveManager.Instance.RegisterPuzzleCompleted(progresoId);
+
             foreach (GameObject obj in objectsToActivate)
             {
                 if (obj != null)

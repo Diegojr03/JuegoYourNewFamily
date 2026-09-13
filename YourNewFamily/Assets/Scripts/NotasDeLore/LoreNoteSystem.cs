@@ -1,8 +1,9 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using YNF.Localizacion;
 
 public class LoreNoteSystem : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class LoreNoteSystem : MonoBehaviour
 
     [Header("Contenido de la Nota")]
     public TextAsset noteTextAsset;
+    [ClaveLocalizacion(nameof(noteTextAsset))]
+    public string locKey;
     public Sprite noteSprite;
 
     [Header("Nota Gigante (Visual en Pantalla)")]
@@ -390,7 +393,7 @@ public class LoreNoteSystem : MonoBehaviour
         isTyping = true;
 
         // 1. Asignar el texto de la nota
-        string text = noteTextAsset.text + "\n\n";
+        string text = Loc.T(locKey, noteTextAsset.text) + "\n\n";
         noteTextUI.text = text;
         noteTextUI.maxVisibleCharacters = 0; // Ocultar texto mientras se calcula
 
@@ -483,7 +486,7 @@ public class LoreNoteSystem : MonoBehaviour
             return;
 
         // Asignar el texto completo (incluyendo saltos de línea si quieres)
-        noteTextUI.text = noteTextAsset.text + "\n\n";
+        noteTextUI.text = Loc.T(locKey, noteTextAsset.text) + "\n\n";
         // Ocultar todos los caracteres
         noteTextUI.maxVisibleCharacters = 0;
         noteTextUI.ForceMeshUpdate();

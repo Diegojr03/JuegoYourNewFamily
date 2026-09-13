@@ -1,8 +1,9 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using System;
 using TMPro;
 using System.Collections;
+using YNF.Localizacion;
 
 public class PuzzleTuberiasBotones : MonoBehaviour
 {
@@ -59,6 +60,11 @@ public class PuzzleTuberiasBotones : MonoBehaviour
     public float velocidadTexto = 0.05f;
     public float tiempoAutoAvance = 2f;
     public GameObject[] objetosParaActivar;
+    [Header("Progreso")]
+    [Tooltip("Id unico de este puzle. Sin el, completarlo no queda registrado en la partida "
+           + "y sus consecuencias no se pueden reconstruir al cargar.")]
+    public string progresoId;
+
     public bool destruirDespuesDeDialogo = true;
     public GameObject speakerContainer;
     public TextMeshProUGUI speakerText;
@@ -377,7 +383,7 @@ public class PuzzleTuberiasBotones : MonoBehaviour
         {
             StopCoroutine(corrutinaEscritura);
         }
-        corrutinaEscritura = StartCoroutine(EscribirTexto(lineasDialogo[index]));
+        corrutinaEscritura = StartCoroutine(EscribirTexto(Loc.T(lineasDialogo[index])));
     }
 
     private IEnumerator EscribirTexto(string texto)
@@ -439,6 +445,11 @@ public class PuzzleTuberiasBotones : MonoBehaviour
         yield return null;
 
         // Activar objetos
+        // Se apunta el puzle como completado ANTES de aplicar las consecuencias,
+        // para que al cargar la partida se puedan volver a aplicar.
+        if (!string.IsNullOrEmpty(progresoId) && SaveManager.Instance != null)
+            SaveManager.Instance.RegisterPuzzleCompleted(progresoId);
+
         foreach (GameObject obj in objetosParaActivar)
         {
             if (obj != null)
@@ -462,7 +473,7 @@ public class PuzzleTuberiasBotones : MonoBehaviour
             if (corrutinaEscritura != null)
             {
                 StopCoroutine(corrutinaEscritura);
-                textoDialogo.text = lineasDialogo[lineaActual];
+                textoDialogo.text = Loc.T(lineasDialogo[lineaActual]);
                 corrutinaEscritura = null;
                 StartCoroutine(AutoAvanzarDialogo());
             }
@@ -476,6 +487,13 @@ public class PuzzleTuberiasBotones : MonoBehaviour
     private void PuzzleCompletado()
     {
         puzzleCompletado = true;
+        // El progreso se apunta AQUI, en el instante en que el puzle se da por
+        // resuelto. Hasta ahora se hacia dentro de la corrutina que espera al
+        // mensaje de felicitacion, varios segundos despues: si el jugador salia
+        // al menu en esa ventana, el puzle no quedaba registrado en la partida.
+        if (!string.IsNullOrEmpty(progresoId) && SaveManager.Instance != null)
+            SaveManager.Instance.RegisterPuzzleCompleted(progresoId);
+
         Debug.Log("¡Puzzle de tuberías completado!");
 
         // Deshabilitar todos los botones para que no se puedan pulsar
@@ -516,6 +534,11 @@ public class PuzzleTuberiasBotones : MonoBehaviour
             }
 
             // Activar objetos directamente
+            // Se apunta el puzle como completado ANTES de aplicar las consecuencias,
+            // para que al cargar la partida se puedan volver a aplicar.
+            if (!string.IsNullOrEmpty(progresoId) && SaveManager.Instance != null)
+                SaveManager.Instance.RegisterPuzzleCompleted(progresoId);
+
             foreach (GameObject obj in objetosParaActivar)
             {
                 if (obj != null) obj.SetActive(true);

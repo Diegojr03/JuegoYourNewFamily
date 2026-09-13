@@ -7,9 +7,9 @@ public class PatrulleroPillaPilla : MonoBehaviour
     [Header("Puntos de Ruta")]
     [SerializeField] private Transform[] puntosRuta; // Array de puntos en el inspector
 
-    [Header("ConfiguraciÛn de Movimiento")]
+    [Header("Configuraci√≥n de Movimiento")]
     [SerializeField] private float velocidadMovimiento = 5f; // Velocidad del objeto
-    [SerializeField] private ComportamientoFinal comportamientoFinal; // QuÈ hacer al llegar al ˙ltimo punto
+    [SerializeField] private ComportamientoFinal comportamientoFinal; // Qu√© hacer al llegar al √∫ltimo punto
 
     [Header("Objetos a Activar/Desactivar al Completar/Ser Pillado")]
     [SerializeField] private GameObject[] objetosAActivar; // Objetos a activar al completar ruta o ser pillado
@@ -18,11 +18,16 @@ public class PatrulleroPillaPilla : MonoBehaviour
     [Header("Colliders de Avance (Triggers)")]
     [SerializeField] private Collider2D[] collidersAvance; // Orden: collider0 avanza al punto1, collider1 avanza al punto2, etc.
 
-    private int puntoActual = 0; // Õndice del punto donde est· actualmente
-    private int siguientePuntoIndex = 1; // Õndice del punto al que debe ir cuando se active el collider
-    private bool enMovimiento = false; // Si se est· moviendo entre puntos
-    private bool haCompletadoRuta = false; // Si ya completÛ toda la ruta
-    private bool haSidoPillado = false; // Si el personaje lo atrapÛ
+    [Header("Guardado")]
+    [Tooltip("Id con el que este puzle se apunta en la partida. Lo rellena " +
+             "Tools > Guardado > Asignar ids a los puzles.")]
+    public string progresoId;
+
+    private int puntoActual = 0; // √çndice del punto donde est√° actualmente
+    private int siguientePuntoIndex = 1; // √çndice del punto al que debe ir cuando se active el collider
+    private bool enMovimiento = false; // Si se est√° moviendo entre puntos
+    private bool haCompletadoRuta = false; // Si ya complet√≥ toda la ruta
+    private bool haSidoPillado = false; // Si el personaje lo atrap√≥
 
     private Collider2D miCollider; // Collider del patrullero (para que el player pueda atraparlo)
 
@@ -36,7 +41,7 @@ public class PatrulleroPillaPilla : MonoBehaviour
             return;
         }
 
-        // Obtener el collider del patrullero (para detecciÛn de atrapada)
+        // Obtener el collider del patrullero (para detecci√≥n de atrapada)
         miCollider = GetComponent<Collider2D>();
         if (miCollider == null)
         {
@@ -58,17 +63,17 @@ public class PatrulleroPillaPilla : MonoBehaviour
 
     void Update()
     {
-        // Este mÈtodo se puede usar para debug si es necesario
+        // Este m√©todo se puede usar para debug si es necesario
     }
 
-    // MÈtodo p˙blico para que los colliders de avance llamen cuando el player entra
+    // M√©todo p√∫blico para que los colliders de avance llamen cuando el player entra
     public void AvanzarAlSiguientePunto()
     {
-        // No hacer nada si ya completÛ la ruta, ya fue pillado, o ya se est· moviendo
+        // No hacer nada si ya complet√≥ la ruta, ya fue pillado, o ya se est√° moviendo
         if (haCompletadoRuta || haSidoPillado || enMovimiento)
             return;
 
-        // Verificar que a˙n hay puntos por recorrer
+        // Verificar que a√∫n hay puntos por recorrer
         if (siguientePuntoIndex >= puntosRuta.Length)
             return;
 
@@ -94,7 +99,7 @@ public class PatrulleroPillaPilla : MonoBehaviour
             yield break;
         }
 
-        // Asegurar posiciÛn exacta
+        // Asegurar posici√≥n exacta
         transform.position = destino;
 
         // Actualizar punto actual
@@ -103,7 +108,7 @@ public class PatrulleroPillaPilla : MonoBehaviour
 
         enMovimiento = false;
 
-        // Verificar si se completÛ la ruta (llegÛ al ˙ltimo punto)
+        // Verificar si se complet√≥ la ruta (lleg√≥ al √∫ltimo punto)
         if (puntoActual == puntosRuta.Length - 1)
         {
             CompletarRuta();
@@ -115,18 +120,24 @@ public class PatrulleroPillaPilla : MonoBehaviour
         haCompletadoRuta = true;
         enMovimiento = false;
 
-        // Activar/Desactivar objetos seg˙n configuraciÛn
+        // Se apunta el progreso AQUI, en el instante en que el puzle se da por
+        // resuelto, para que al recargar la escena se puedan volver a aplicar
+        // sus consecuencias. Sin esto el puzle se rehacia solo.
+        if (!string.IsNullOrEmpty(progresoId) && SaveManager.Instance != null)
+            SaveManager.Instance.RegisterPuzzleCompleted(progresoId);
+
+        // Activar/Desactivar objetos seg√∫n configuraci√≥n
         ActivarDesactivarObjetos();
 
-        // Comportamiento seg˙n selecciÛn
+        // Comportamiento seg√∫n selecci√≥n
         switch (comportamientoFinal)
         {
             case ComportamientoFinal.Destruirse:
-                Debug.Log("Patrullero completÛ la ruta y se destruye");
+                Debug.Log("Patrullero complet√≥ la ruta y se destruye");
                 Destroy(gameObject);
                 break;
             case ComportamientoFinal.QuedarseQuieto:
-                Debug.Log("Patrullero completÛ la ruta y se queda quieto");
+                Debug.Log("Patrullero complet√≥ la ruta y se queda quieto");
                 // El collider sigue activo para que el player pueda atraparlo
                 break;
         }
@@ -153,7 +164,7 @@ public class PatrulleroPillaPilla : MonoBehaviour
 
         ActivarDesactivarObjetos();
 
-        Debug.Log("°El patrullero ha sido pillado! Se detiene en: " + transform.position);
+        Debug.Log("¬°El patrullero ha sido pillado! Se detiene en: " + transform.position);
     }
 
     void ActivarDesactivarObjetos()
@@ -179,7 +190,7 @@ public class PatrulleroPillaPilla : MonoBehaviour
         }
     }
 
-    // MÈtodo p˙blico para reiniciar el patrullero (opcional)
+    // M√©todo p√∫blico para reiniciar el patrullero (opcional)
     public void ReiniciarPatrullero()
     {
         if (puntosRuta == null || puntosRuta.Length < 2) return;
@@ -194,7 +205,7 @@ public class PatrulleroPillaPilla : MonoBehaviour
         StopAllCoroutines();
     }
 
-    // MÈtodo para dibujar los puntos en el editor (visual)
+    // M√©todo para dibujar los puntos en el editor (visual)
     void OnDrawGizmosSelected()
     {
         if (puntosRuta == null) return;
@@ -206,7 +217,7 @@ public class PatrulleroPillaPilla : MonoBehaviour
                 Gizmos.DrawWireSphere(punto.position, 0.3f);
         }
 
-        // Dibujar lÌneas entre puntos
+        // Dibujar l√≠neas entre puntos
         Gizmos.color = Color.gray;
         for (int i = 0; i < puntosRuta.Length - 1; i++)
         {

@@ -17,16 +17,11 @@ public class SaveableObject : MonoBehaviour
         GenerateId();
     }
 
-    // Solo registramos si el objeto es destruido expresamente durante la partida en vivo
-    void OnDestroy()
-    {
-        if (SaveManager.Instance != null && !SaveManager.Instance.IsLoading)
-        {
-            // Verificamos que la escena no se esté descargando
-            if (gameObject.scene.isLoaded)
-            {
-                SaveManager.Instance.RegisterObjectState(objectId, false);
-            }
-        }
-    }
+    // Antes aqui se registraba el objeto como inactivo al destruirse. Se ha
+    // quitado a proposito: OnDestroy tambien se dispara al descargar la
+    // escena (al salir al menu, por ejemplo), y la guarda de scene.isLoaded
+    // no es fiable en ese momento, asi que media escena quedaba marcada como
+    // inactiva en memoria. La destruccion real se registra de forma explicita
+    // con RegisterObjectDestroyed desde quien destruye el objeto, y el estado
+    // del mundo se reconstruye al cargar desde los eventos de progreso.
 }

@@ -14,7 +14,7 @@ public class PuzzleFlechasTipos : MonoBehaviour
         public Sprite[] spritesBackup = new Sprite[3]; // Backup opcional si no quieres usar objetos
     }
 
-    [Header("CONFIGURACI”N TIPOS")]
+    [Header("CONFIGURACI√ìN TIPOS")]
     public TipoSprites[] tipos = new TipoSprites[5]; // 5 tipos
 
     [Header("UI ELEMENTOS")]
@@ -23,20 +23,20 @@ public class PuzzleFlechasTipos : MonoBehaviour
     public Button botonFlechaDerecha;
     public Button botonComprobar;
 
-    [Header("CONFIGURACI”N TECLA E")]
+    [Header("CONFIGURACI√ìN TECLA E")]
     public Sprite spriteTeclaE;
     public Vector3 posicionTeclaE = new Vector3(0, 1.5f, 0);
     public Vector3 escalaTeclaE = new Vector3(0.25f, 0.25f, 0.25f);
 
-    [Header("CONFIGURACI”N INTERACCI”N")]
+    [Header("CONFIGURACI√ìN INTERACCI√ìN")]
     public KeyCode teclaInteraccion = KeyCode.E;
     public float distanciaInteraccion = 2f;
 
-    [Header("CONFIGURACI”N JUGADOR")]
+    [Header("CONFIGURACI√ìN JUGADOR")]
     public MonoBehaviour scriptMovimientoJugador;
 
-    [Header("COMBINACI”N CORRECTA")]
-    public int tipoCorrecto = 0; // Õndice del tipo correcto (0-4)
+    [Header("COMBINACI√ìN CORRECTA")]
+    public int tipoCorrecto = 0; // √çndice del tipo correcto (0-4)
 
     [Header("FEEDBACK")]
     public AudioClip sonidoFlecha;
@@ -48,7 +48,7 @@ public class PuzzleFlechasTipos : MonoBehaviour
     [Header("MENSAJES")]
     public GameObject panelMensaje;
     public TextMeshProUGUI textoMensaje;
-    public string mensajeCompletado = "°Puzzle completado!";
+    public string mensajeCompletado = "¬°Puzzle completado!";
     public string mensajeIncorrecto = "Tipo incorrecto";
     public float tiempoMostrarMensaje = 3f;
     public float delayAntesDeMensaje = 0.5f;
@@ -56,6 +56,11 @@ public class PuzzleFlechasTipos : MonoBehaviour
     [Header("OBJETOS AL COMPLETAR")]
     public GameObject[] objectsToActivateAfter;
     public GameObject[] objectsToDestroyAfter;
+    [Header("Progreso")]
+    [Tooltip("Id unico de este puzle. Sin el, completarlo no queda registrado en la partida "
+           + "y sus consecuencias no se pueden reconstruir al cargar.")]
+    public string progresoId;
+
     public bool destroyAfterCompletion = false;
 
     [Header("DEBUG")]
@@ -71,7 +76,7 @@ public class PuzzleFlechasTipos : MonoBehaviour
     private AudioSource audioSource;
     private Rigidbody2D rbJugador;
     private Vector2 velocidadAntesDeBloquear;
-    private int tipoActual = 0; // Õndice del tipo actual (0-4)
+    private int tipoActual = 0; // √çndice del tipo actual (0-4)
 
     // Eventos
     public event Action OnPuzzleCompletado;
@@ -123,7 +128,7 @@ public class PuzzleFlechasTipos : MonoBehaviour
 
     void Update()
     {
-        // Verificar distancia si no est· abierto el puzzle
+        // Verificar distancia si no est√° abierto el puzzle
         if (!interfazAbierta && !puzzleCompletado)
         {
             if (jugador != null)
@@ -182,7 +187,7 @@ public class PuzzleFlechasTipos : MonoBehaviour
         }
     }
 
-    // M…TODOS DE INTERFAZ
+    // M√âTODOS DE INTERFAZ
     public void AbrirInterfaz()
     {
         if (puzzleCompletado) return;
@@ -226,7 +231,7 @@ public class PuzzleFlechasTipos : MonoBehaviour
             scriptMovimientoJugador.enabled = !bloquear;
     }
 
-    // M…TODOS DEL PUZZLE
+    // M√âTODOS DEL PUZZLE
     void OcultarTodosLosObjetosImagen()
     {
         foreach (var tipo in tipos)
@@ -302,7 +307,14 @@ public class PuzzleFlechasTipos : MonoBehaviour
     void CompletarPuzzle()
     {
         puzzleCompletado = true;
-        Debug.Log("°PUZZLE COMPLETADO!");
+        // El progreso se apunta AQUI, en el instante en que el puzle se da por
+        // resuelto. Hasta ahora se hacia dentro de la corrutina que espera al
+        // mensaje de felicitacion, varios segundos despues: si el jugador salia
+        // al menu en esa ventana, el puzle no quedaba registrado en la partida.
+        if (!string.IsNullOrEmpty(progresoId) && SaveManager.Instance != null)
+            SaveManager.Instance.RegisterPuzzleCompleted(progresoId);
+
+        Debug.Log("¬°PUZZLE COMPLETADO!");
 
         if (sonidoCompletado != null) audioSource.PlayOneShot(sonidoCompletado);
         if (particulasCompletado != null) particulasCompletado.Play();
@@ -343,6 +355,11 @@ public class PuzzleFlechasTipos : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
 
             // Activar objetos
+            // Se apunta el puzle como completado ANTES de aplicar las consecuencias,
+            // para que al cargar la partida se puedan volver a aplicar.
+            if (!string.IsNullOrEmpty(progresoId) && SaveManager.Instance != null)
+                SaveManager.Instance.RegisterPuzzleCompleted(progresoId);
+
             foreach (GameObject obj in objectsToActivateAfter)
                 if (obj != null) obj.SetActive(true);
 

@@ -232,6 +232,7 @@ MonoBehaviour:
   - speakerName: Cairen
     dialogueText: "\xBFQu\xE9 haces aqu\xED fuera empapada? No me digas que el grandote
       de la puerta no te deja entrar\u2026 jajaja"
+    locKey: t_5d6282872f3b_0304
     leftSpeaker: 1
     characterSprite: {fileID: -7517056936566813833, guid: d85c8973fa3cab64e8410b1c1f9e03e4, type: 3}
     giveItemAfterThisLine: 0
@@ -242,6 +243,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: "Si quieres, puedo montar un esc\xE1ndalo."
+    locKey: t_0e1794c2ecc3_68ff
     leftSpeaker: 1
     characterSprite: {fileID: -7517056936566813833, guid: d85c8973fa3cab64e8410b1c1f9e03e4, type: 3}
     giveItemAfterThisLine: 0
@@ -253,6 +255,7 @@ MonoBehaviour:
   - speakerName: Cairen
     dialogueText: "Ya sabes, gritar, fingir que me desmayo o romper una botella\u2026
       lo que elijas."
+    locKey: t_a2da69a4448f_93b2
     leftSpeaker: 1
     characterSprite: {fileID: -7517056936566813833, guid: d85c8973fa3cab64e8410b1c1f9e03e4, type: 3}
     giveItemAfterThisLine: 0
@@ -264,6 +267,7 @@ MonoBehaviour:
   - speakerName: Cairen
     dialogueText: "Pero eso s\xED, no trabajo gratis. \xBFNo tendr\xE1s por ah\xED
       algo de ese nuevo producto que te deja volando?"
+    locKey: t_22cef6d3fa48_20db
     leftSpeaker: 1
     characterSprite: {fileID: 6775278750140180628, guid: 823f378d910b52d4ebc4f90954058405, type: 3}
     giveItemAfterThisLine: 0
@@ -275,6 +279,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Pues no, no tengo nada de eso que tu dices que te deja volando,
       si no ya me lo hubiese tomado yo\u2026 jajaja"
+    locKey: t_751508cce773
     leftSpeaker: 0
     characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
@@ -286,6 +291,7 @@ MonoBehaviour:
   - speakerName: Cairen
     dialogueText: "Venga va, por unos 5 d\xF3lares monto un esc\xE1ndalo y me llevo
       al segurata."
+    locKey: t_229af88c28b6
     leftSpeaker: 1
     characterSprite: {fileID: -7517056936566813833, guid: d85c8973fa3cab64e8410b1c1f9e03e4, type: 3}
     giveItemAfterThisLine: 0
@@ -296,6 +302,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Te vendes muy caro, \xBFqu\xE9 te crees, piensas que soy un cajero?"
+    locKey: t_13613d7fd10e
     leftSpeaker: 0
     characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
@@ -306,6 +313,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Ugh\u2026 bueno, me lo quiero pasar bien as\xED que toma."
+    locKey: t_9771640f2460
     leftSpeaker: 0
     characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
@@ -316,6 +324,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: 
     dialogueText: "(Entregas 5 d\xF3lares)"
+    locKey: t_1b65d0869d99
     leftSpeaker: 0
     characterSprite: {fileID: 0}
     giveItemAfterThisLine: 0
@@ -326,6 +335,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: "Muy bien, cruza a la otra acera y ver\xE1s la magia"
+    locKey: t_1f0d9c47fe50
     leftSpeaker: 1
     characterSprite: {fileID: -7517056936566813833, guid: d85c8973fa3cab64e8410b1c1f9e03e4, type: 3}
     giveItemAfterThisLine: 0
@@ -728,6 +738,7 @@ MonoBehaviour:
   - {fileID: 255745970}
   - {fileID: 1957342181}
   - {fileID: 1390948122}
+  progresoId: puzzle_placas_puzzleplacas3
   destroyAfterCompletion: 1
 --- !u!61 &6100856
 BoxCollider2D:
@@ -1309,6 +1320,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Menuda impresi\xF3n me estoy llevando de este sitio, y ni siquiera
       he salido del bus\u2026"
+    locKey: t_795573048755
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -1317,6 +1329,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Conductor
     dialogueText: "\xA1VENGA BAJAD TODOS YA POR FAVOR!"
+    locKey: t_0aa5cd847a90
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -1577,6 +1590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionKey: 102
   noteTextAsset: {fileID: 4900000, guid: bf2a4889361e6934a88fff5bd8d88cb6, type: 3}
+  locKey: t_31b764c068da
   noteSprite: {fileID: -315088039572484197, guid: 0bfffdd2db038a84cb5db252cbf98376, type: 3}
   giantNoteTransform: {fileID: 1252793408}
   giantSprite: {fileID: 1252793410}
@@ -2013,7 +2027,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerId: 
-  textoNuevo: ENCUENTRATE CON CAIREN EN EL COMEDOR
+  textoNuevo: "ENCU\xC9NTRATE CON CAIREN EN EL COMEDOR"
+  locKey: t_32034cda8b6d
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
   escalaInicial: 0.7
@@ -2191,6 +2206,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: Lilith
     dialogueText: "\xBFOtra vez? Seguro que es \xE9l\u2026Ya se cansara."
+    locKey: t_6134de8128cc
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -4299,6 +4315,7 @@ MonoBehaviour:
   - speakerName: ??
     dialogueText: "\xBFTe fijaste en esos sem\xE1foros? A veces parece que se encienden
       solos\u2026 como si todav\xEDa funcionaran."
+    locKey: t_191ae8795935
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -4307,6 +4324,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: ???
     dialogueText: "S\xED. Lo curioso es que la luz roja parpadea en m\xE1s sem\xE1foros. "
+    locKey: t_5c9c768bdbbe
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -4315,6 +4333,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: ???
     dialogueText: "Creo que la vi parpadear dos veces en dos sem\xE1foros diferentes."
+    locKey: t_f0b1b16df8a7
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -4324,6 +4343,7 @@ MonoBehaviour:
   - speakerName: ??
     dialogueText: "\xBFDos veces? Qu\xE9 raro. Yo cont\xE9 solo una vez el verde
       despu\xE9s de eso."
+    locKey: t_ad59a8908358
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -4333,6 +4353,7 @@ MonoBehaviour:
   - speakerName: ???
     dialogueText: "Antes de que se apagasen vi que el amarillo tambi\xE9n se encendi\xF3
       en bastantes sem\xE1foros."
+    locKey: t_78450ad043fd
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -4341,6 +4362,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: ???
     dialogueText: "Bah, seguro es solo un fallo el\xE9ctrico"
+    locKey: t_4d86df6dac86
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -4350,6 +4372,7 @@ MonoBehaviour:
   - speakerName: ??
     dialogueText: "S\xED, adem\xE1s empieza a hacer fr\xEDo. Ojal\xE1 encontremos
       algo abierto para tomar algo"
+    locKey: t_90dae35b5a9d
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -4540,6 +4563,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Que bien huelen, me recuerdan a cuando las cosas eran m\xE1s simples.
       Espero que esto me de una nueva vida."
+    locKey: t_2483d2af4e8b
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -4549,6 +4573,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Mi madre sol\xEDa poner estas flores en mi ventana, dec\xEDa que
       espantaban la tristeza. "
+    locKey: t_1459add8e160
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -4557,6 +4582,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: Cuantos buenos recuerdos tengo de ella.
+    locKey: t_8cc66c672811
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -4794,6 +4820,7 @@ MonoBehaviour:
   - speakerName: NPC1
     dialogueText: "A m\xED a\xFAn me tiemblan las manos, pero... es el primer d\xEDa
       que las voces no me dicen... bueno, nada."
+    locKey: t_b50f84f67f55
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -5216,6 +5243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionKey: 102
   noteTextAsset: {fileID: 4900000, guid: 90998bb42cc5b0e4d9b56f9b329dee72, type: 3}
+  locKey: t_3c1c831f8019
   noteSprite: {fileID: -4044822811767486653, guid: ea2004c84eced4d4c9332311c1465829, type: 3}
   giantNoteTransform: {fileID: 769773728}
   giantSprite: {fileID: 769773730}
@@ -5655,7 +5683,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerId: 8e25d2e6-e707-404c-9491-d8f4df837715
-  textoNuevo: 'VULEVE AL SITIO DEL ACCIDENTE PARA RECOGER LA CHAPA '
+  textoNuevo: 'VUELVE AL SITIO DEL ACCIDENTE PARA RECOGER LA CHAPA '
+  locKey: t_1564841792a9
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
   escalaInicial: 0.7
@@ -5848,6 +5877,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: Npc
     dialogueText: "\xA1QUE ALGUIEN PONGA M\xDASICA!"
+    locKey: t_3c082936bff4
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -5856,6 +5886,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "(Que remedio... lo har\xE9 yo, arreglar\xE9 la gramola)"
+    locKey: t_bcdd9de76312
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -5966,6 +5997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerId: 
   textoNuevo: 
+  locKey: 
   uiText: {fileID: 570216618}
   duracionRevelado: 0.75
   escalaInicial: 0.7
@@ -6300,6 +6332,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: 
     dialogueText: Has encontrado el boton 3.
+    locKey: t_32e35c899289
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -6689,6 +6722,7 @@ GameObject:
   - component: {fileID: 139174957}
   - component: {fileID: 139174959}
   - component: {fileID: 139174958}
+  - component: {fileID: 139174960}
   m_Layer: 0
   m_Name: TextoInstrucciones
   m_TagString: Untagged
@@ -6814,6 +6848,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139174956}
   m_CullTransparentMesh: 1
+--- !u!114 &139174960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139174956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49e06f863fc4a24c8c5bfb40852b68e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoOrigen: ENCIENDE LA CANTIDAD DE LUCES CORRESPONDIENTE
+  locKey: t_0a31d08eac1b
 --- !u!1 &141092653
 GameObject:
   m_ObjectHideFlags: 0
@@ -7145,6 +7193,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: Segurata
     dialogueText: "\xA1Te dije que no pod\xEDas pasar, ven aqu\xED!"
+    locKey: t_278f3df83755
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -7153,6 +7202,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: No he hecho nada. Solo estoy de pie, pidiendo una maldita bebida.
+    locKey: t_f61a1abcfbd2
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -7162,6 +7212,7 @@ MonoBehaviour:
   - speakerName: Jefe
     dialogueText: "No me importa. Aqu\xED las reglas se cumplen. Y la regla es que
       t\xFA no deber\xEDas estar aqu\xED."
+    locKey: t_1d60c033b3bb
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -7170,6 +7221,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: Caballeros, dejen a la muchacha en paz.
+    locKey: t_647b5a8d53d0
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -7178,6 +7230,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Jefe
     dialogueText: "Alpha\u2026 Esto no es asunto tuyo. Ella no deber\xEDa estar aqu\xED."
+    locKey: t_88c824981dc0
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -7188,6 +7241,7 @@ MonoBehaviour:
     dialogueText: "Tal vez. Pero mientras est\xE9 aqu\xED, merece ser escuchada.\r\n
       No es propio de este lugar tratar a un invitado como un criminal sin siquiera
       o\xEDr lo que tiene que decir."
+    locKey: t_26d71fbe3943
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -7197,6 +7251,7 @@ MonoBehaviour:
   - speakerName: Jefe
     dialogueText: "Ella no es invitada, Alpha. Mira como va vestida. Si la dejamos
       quedarse, no entrar\xE1n nuevos clientes."
+    locKey: t_525f2895057d
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -7206,6 +7261,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Si ocurre alg\xFAn problema, yo responder\xE9 por ella. Conf\xEDen
       en mi juicio. Si algo falla, ser\xE1 mi responsabilidad."
+    locKey: t_231654a0b52c
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -7215,6 +7271,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Est\xE1 bien, pero que quede claro: esto es bajo tu palabra. Si
       algo pasa, no vengas a pedirme favores."
+    locKey: t_a9078f3c01f9
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -7225,6 +7282,7 @@ MonoBehaviour:
     dialogueText: "Muchas gracias, sab\xEDa que eras un hombre razonable. En cuanto
       a usted se\xF1orita, si me concede unos minutos, me gustar\xEDa conversar con
       usted."
+    locKey: t_58a86b64c415
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -7234,6 +7292,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: Creo que ambos podemos salir beneficiados de una oferta que tengo
       en mente.
+    locKey: t_b889ef99af85
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -7433,6 +7492,7 @@ MonoBehaviour:
   dialogues:
   - speakerName: Alpha
     dialogueText: "Lilith... La muerte es parte de la vida, incluso en nuestro para\xEDso."
+    locKey: t_4bfc44c9f799
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
@@ -7444,6 +7504,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Pero a veces, la p\xE9rdida de uno... alimenta el crecimiento
       de otro."
+    locKey: t_3cab7649324c
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
@@ -7454,6 +7515,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "\xBFTe acuerdas de lo que te dije que ten\xEDas que plantar?... "
+    locKey: t_7d15c7784dc8
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
@@ -7465,6 +7527,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: Vuelve a ese sitio, puede que sientas un impulso de visitarlo ahora.
       Escucha a tu interior.
+    locKey: t_a3460b5586e7
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
@@ -7675,6 +7738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionKey: 102
   noteTextAsset: {fileID: 4900000, guid: 603097d90450f604e87323c64e92d6ca, type: 3}
+  locKey: t_cecd801a8faa_654e
   noteSprite: {fileID: -6098856227541219170, guid: 17162e67a55490d46a97284c7375d340, type: 3}
   giantNoteTransform: {fileID: 583399077}
   giantSprite: {fileID: 583399079}
@@ -8379,6 +8443,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: Casero
     dialogueText: "Le he dado otra vuelta al asunto y \xA1ESTOY HARTO DE TI!"
+    locKey: t_46901c26d1a5
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -8387,6 +8452,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Casero
     dialogueText: "\xA1SEGUIRE AQUI HASTA QUE TE VAYAS!"
+    locKey: t_250258d31571
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -8395,6 +8461,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "\xA1Oye! No hace falta que rompas la puerta."
+    locKey: t_116c4f055b28
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -8404,6 +8471,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: Ya te dije que en cuanto tenga el dinero te voy a pagar. No estoy
       huyendo de nada.
+    locKey: t_c7893f74a99d
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -8412,6 +8480,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Casero
     dialogueText: "\xA1NO VOY A ESPERAR M\xC1S! \u2026 "
+    locKey: t_843c497d8257
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -8421,6 +8490,7 @@ MonoBehaviour:
   - speakerName: Casero
     dialogueText: "Claro, eso es si no quieres empezar a trabajar para m\xED\u2026
       como las dem\xE1s."
+    locKey: t_07a2b66118a8
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -8429,6 +8499,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "(Que asco... No pienso ser como 'las dem\xE1s')"
+    locKey: t_dc9a26411e5b
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -8438,6 +8509,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "(Tengo que salir de aqu\xED... Y r\xE1pido. \xBFPero c\xF3mo?,
       buscar\xE9 algo en mi habitaci\xF3n)"
+    locKey: t_61b2ced761c8
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -8634,6 +8706,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: 
     dialogueText: AAAAAAAAAAHHHHHHHHHHGGGGGGG
+    locKey: t_8b8b156958a1
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -8642,6 +8715,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "\xA1\xA1\xA1\xA1\xA1\xA1\xBFPERO QUE HA SIDO ESO?!!!!!!"
+    locKey: t_5780f3ac7d87
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -9495,6 +9569,7 @@ MonoBehaviour:
   - {fileID: 444919265}
   - {fileID: 1410001656}
   - {fileID: 1287630622}
+  progresoId: puzzle_semaforos_gestorsemaforos
   destroyAfterCompletion: 1
 --- !u!61 &188801046
 BoxCollider2D:
@@ -9750,6 +9825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoneName: BUS
+  locKey: t_a308a9a7de9e
   panelRect: {fileID: 516240600}
   zoneText: {fileID: 17249555}
   dropDistance: 500
@@ -11195,6 +11271,7 @@ GameObject:
   - component: {fileID: 216389910}
   - component: {fileID: 216389912}
   - component: {fileID: 216389911}
+  - component: {fileID: 216389913}
   m_Layer: 5
   m_Name: Texto Aviso 2
   m_TagString: Untagged
@@ -11241,7 +11318,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "LA PARTIDA SE GUARDAR\xC1 AUTOMATICAMENTE"
+  m_text: "LA PARTIDA SE GUARDAR\xC1 AUTOM\xC1TICAMENTE"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: acb12ac65ecdca54cbe17c610fde0207, type: 2}
   m_sharedMaterial: {fileID: -5822694132099746050, guid: acb12ac65ecdca54cbe17c610fde0207, type: 2}
@@ -11320,6 +11397,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216389909}
   m_CullTransparentMesh: 1
+--- !u!114 &216389913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216389909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49e06f863fc4a24c8c5bfb40852b68e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoOrigen: "LA PARTIDA SE GUARDAR\xC1 AUTOM\xC1TICAMENTE"
+  locKey: t_afd2373de0c2_0845
 --- !u!1 &219035407
 GameObject:
   m_ObjectHideFlags: 0
@@ -11603,6 +11694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerId: 
   textoNuevo: 
+  locKey: 
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
   escalaInicial: 0.7
@@ -12354,6 +12446,7 @@ MonoBehaviour:
   - {fileID: 6100853}
   - {fileID: 1957342181}
   - {fileID: 1390948122}
+  progresoId: puzzle_placas_puzzleplacas2
   destroyAfterCompletion: 1
 --- !u!61 &255745972
 BoxCollider2D:
@@ -12477,6 +12570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerId: 
   textoNuevo: "ARREGLA LAS TUBER\xCDAS DEL FREGADERO"
+  locKey: t_86823893ef7d
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
   escalaInicial: 0.7
@@ -13325,6 +13419,7 @@ MonoBehaviour:
   - speakerName: NPC2
     dialogueText: "Alfa dijo que con el tiempo, el N\xE9ctar te purifica por completo.
       Que te libera de todos tus demonios, espero que sea verdad."
+    locKey: t_5b6002853e19
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -13554,6 +13649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionKey: 102
   noteTextAsset: {fileID: 4900000, guid: edabbb4704fffd84dbac19dfd73cf169, type: 3}
+  locKey: t_c7928ee45a8c
   noteSprite: {fileID: -7153431669907327206, guid: f3fbf2351dfd3de43ba73ab139888f8e, type: 3}
   giantNoteTransform: {fileID: 294463319}
   giantSprite: {fileID: 294463321}
@@ -14089,6 +14185,7 @@ GameObject:
   - component: {fileID: 294248865}
   - component: {fileID: 294248867}
   - component: {fileID: 294248866}
+  - component: {fileID: 294248868}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -14214,6 +14311,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 294248864}
   m_CullTransparentMesh: 1
+--- !u!114 &294248868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294248864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49e06f863fc4a24c8c5bfb40852b68e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoOrigen: "S\xCD"
+  locKey: t_83a9dc0a7ea2_efdc
 --- !u!1 &294463318
 GameObject:
   m_ObjectHideFlags: 0
@@ -14382,6 +14493,7 @@ MonoBehaviour:
   dialogues:
   - speakerName: Delta
     dialogueText: ...
+    locKey: 
     leftSpeaker: 1
     characterSprite: {fileID: -4619670943869267955, guid: dbdb86a0b27d8d94a9d152fe45632273, type: 3}
     giveItemAfterThisLine: 0
@@ -14798,6 +14910,7 @@ GameObject:
   - component: {fileID: 315728524}
   - component: {fileID: 315728526}
   - component: {fileID: 315728525}
+  - component: {fileID: 315728527}
   m_Layer: 5
   m_Name: TextoVolver
   m_TagString: Untagged
@@ -14923,6 +15036,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315728523}
   m_CullTransparentMesh: 1
+--- !u!114 &315728527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315728523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49e06f863fc4a24c8c5bfb40852b68e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoOrigen: Volver
+  locKey: t_84a715a785a9_eeff
 --- !u!1 &320066148
 GameObject:
   m_ObjectHideFlags: 0
@@ -15478,6 +15605,7 @@ MonoBehaviour:
   - speakerName: 
     dialogueText: "\xA1Eh! \xA1Ponme otra ronda! Esta noche no vuelvo a casa, me
       da igual que ma\xF1ana tenga que trabajar."
+    locKey: t_80b1e2d7f342
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -16854,6 +16982,7 @@ MonoBehaviour:
   - speakerName: Bortis
     dialogueText: "Hermanos y hermanas, bienvenidos a casa. Aqu\xED dej\xE1is atr\xE1s
       el mundo que os dio la espalda."
+    locKey: t_76c19d82732b
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -16863,6 +16992,7 @@ MonoBehaviour:
   - speakerName: Bortis
     dialogueText: "Aqu\xED, vuestro trabajo tiene prop\xF3sito, y vuestra vida, valor.
       Sois familia."
+    locKey: t_896e66ff87c9
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -16872,6 +17002,7 @@ MonoBehaviour:
   - speakerName: Bortis
     dialogueText: "Se os proporcionar\xE1 una vivienda compartida para vosotros.
       Pod\xE9is poneros c\xF3modos cuando entr\xE9is."
+    locKey: t_e6e66effabdc
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -16880,6 +17011,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Bortis
     dialogueText: Por favor id yendo a la zona de las casas.
+    locKey: t_9a03801cdd27
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -18016,6 +18148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoneName: PLAZA
+  locKey: t_3be6ca69c723_faf7
   panelRect: {fileID: 1248747167}
   zoneText: {fileID: 2053198899}
   dropDistance: 500
@@ -18258,6 +18391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerId: e91f327b-39a1-4c3b-8640-7d369e7663aa
   textoNuevo: 
+  locKey: 
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
   escalaInicial: 0.7
@@ -18771,6 +18905,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: 
     dialogueText: "No puedes pasar hasta parar el tr\xE1fico."
+    locKey: t_83d1b716105f
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -19069,6 +19204,7 @@ MonoBehaviour:
   - speakerName: Mary
     dialogueText: "\xA1Ey, Lilith! \xBFC\xF3mo lo llevas? D\xE9jame adivinar\u2026
       \xBFel casero volvi\xF3 a pasar a ofrecerte trabajar para \xE9l? "
+    locKey: t_f7e1b9c4fa0e
     leftSpeaker: 1
     characterSprite: {fileID: 5465866427460756199, guid: 0847a9c8166a9a34da3b89f71a02c6a9, type: 3}
     giveItemAfterThisLine: 0
@@ -19080,6 +19216,7 @@ MonoBehaviour:
   - speakerName: Mary
     dialogueText: "Te dir\xE9 algo, paga bastante bien, pero\u2026 bueno, ya sabes,
       es un trabajo pesado. Jajaja"
+    locKey: t_5be54941a63e
     leftSpeaker: 1
     characterSprite: {fileID: 5465866427460756199, guid: 0847a9c8166a9a34da3b89f71a02c6a9, type: 3}
     giveItemAfterThisLine: 0
@@ -19091,6 +19228,7 @@ MonoBehaviour:
   - speakerName: Mary
     dialogueText: "Por cierto, esta noche voy al bar nuevo de la esquina. Si te apetece
       despejarte un rato, nos vemos all\xED."
+    locKey: t_acd806d7993a
     leftSpeaker: 1
     characterSprite: {fileID: 5465866427460756199, guid: 0847a9c8166a9a34da3b89f71a02c6a9, type: 3}
     giveItemAfterThisLine: 0
@@ -19102,6 +19240,7 @@ MonoBehaviour:
   - speakerName: Mary
     dialogueText: "Aqu\xED tienes una nota con las indicaciones para llegar, no vaya
       a ser que te pierdas."
+    locKey: t_13b8d65e4c95
     leftSpeaker: 1
     characterSprite: {fileID: 5465866427460756199, guid: 0847a9c8166a9a34da3b89f71a02c6a9, type: 3}
     giveItemAfterThisLine: 0
@@ -19113,6 +19252,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Gracias\u2026 quiz\xE1 me pase. Al fin y al cabo, no tengo nada
       mejor que hacer."
+    locKey: t_8294deb64fac
     leftSpeaker: 0
     characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
@@ -20152,6 +20292,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: 
     dialogueText: Has encontrado el boton 2.
+    locKey: t_ad4d1b884998
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -21105,6 +21246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerId: 
   textoNuevo: COGE ALGO DE BEBER
+  locKey: t_32e366ed9809
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
   escalaInicial: 0.7
@@ -21441,6 +21583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoneName: POZO
+  locKey: t_17837d7da2c4_7b1e
   panelRect: {fileID: 1621196270}
   zoneText: {fileID: 1284287692}
   dropDistance: 500
@@ -21591,6 +21734,7 @@ MonoBehaviour:
   - speakerName: ??
     dialogueText: Te lo digo en serio, no hay forma de que ganes, llevo toda la noche
       contando las cartas
+    locKey: t_6f39a15a4209
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -21600,6 +21744,7 @@ MonoBehaviour:
   - speakerName: ???
     dialogueText: "\xA1S\xED, claro! Y por eso vas perdiendo desde que empez\xF3
       la partida\u2026 deja de inventar"
+    locKey: t_37f35166e21b
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -22334,13 +22479,35 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5045921310131027136, guid: 7e4670c202829cb45bc544fbe27d0e69, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 526028885}
   m_SourcePrefab: {fileID: 100100000, guid: 7e4670c202829cb45bc544fbe27d0e69, type: 3}
 --- !u!224 &526028883 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3605747583928218581, guid: 7e4670c202829cb45bc544fbe27d0e69, type: 3}
   m_PrefabInstance: {fileID: 526028882}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &526028884 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5045921310131027136, guid: 7e4670c202829cb45bc544fbe27d0e69, type: 3}
+  m_PrefabInstance: {fileID: 526028882}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &526028885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526028884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49e06f863fc4a24c8c5bfb40852b68e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoOrigen: RESPUESTA
+  locKey: t_adf74ae46589_6df8
 --- !u!1 &527439603
 GameObject:
   m_ObjectHideFlags: 0
@@ -22470,6 +22637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerId: 9a7e00b6-acfd-4502-8f64-4db4a39b8829
   textoNuevo: "RESUELVE EL PUZZLE DE LAS ESTATUAS PARA AVANZAR AL CENTRO DEL JARD\xCDN"
+  locKey: t_984284765253
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
   escalaInicial: 0.7
@@ -22639,6 +22807,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionKey: 102
   noteTextAsset: {fileID: 4900000, guid: 9d53bccb41d0cab4e9691347b75f771e, type: 3}
+  locKey: t_6276b0c80086
   noteSprite: {fileID: 6337016619238746699, guid: cefcc6c80d698a241851f7769d52ed3d, type: 3}
   giantNoteTransform: {fileID: 943025421}
   giantSprite: {fileID: 943025423}
@@ -23782,6 +23951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerId: 3ec45d86-dcc2-43e9-b22a-af16f36668fb
   textoNuevo: "VE AL \xC1RBOL"
+  locKey: t_548f4a38a94c
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
   escalaInicial: 0.7
@@ -24091,6 +24261,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: 
     dialogueText: "Esta zona se desbloquear\xE1 m\xE1s tarde."
+    locKey: t_b71b2bf91704_fdbc
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -24201,6 +24372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionKey: 102
   noteTextAsset: {fileID: 4900000, guid: 68451f439712bd6439969b0431696980, type: 3}
+  locKey: t_f094c29b65ec
   noteSprite: {fileID: 727326144993961072, guid: 67d216789772cfb4f862365a687d39a5, type: 3}
   giantNoteTransform: {fileID: 853481393}
   giantSprite: {fileID: 853481395}
@@ -26224,6 +26396,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: Lilith
     dialogueText: "Hace dos d\xEDas me dej\xF3 mi novio."
+    locKey: t_c191733e1b74
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -26233,6 +26406,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Dice que no tengo metas y que me paso el d\xEDa en casa\u2026
       puf, supongo que tiene raz\xF3n."
+    locKey: t_b691f7fb11b4
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -26241,6 +26415,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "A\xFAn recuerdo todas las cartas que nos envi\xE1bamos."
+    locKey: t_9c945f7d73b7
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -28026,6 +28201,7 @@ MonoBehaviour:
   dialogues:
   - speakerName: Alpha
     dialogueText: "Se\xF1orita, antes que nada quiero agradecerle por escucharme. "
+    locKey: t_bfcb21136b5d
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
@@ -28037,6 +28213,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Entiendo que todo esto pueda parecer repentino, incluso extra\xF1o\u2026
       pero cr\xE9ame,"
+    locKey: t_be4828b6decc
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
@@ -28047,6 +28224,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: no es casualidad que nos hayamos encontrado hoy.
+    locKey: t_0a47e5b16380
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
@@ -28058,6 +28236,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "No s\xE9\u2026 todo esto me toma un poco por sorpresa. No suelo
       aceptar cosas as\xED, tan de repente"
+    locKey: t_9938ae92b7c8
     leftSpeaker: 0
     characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
@@ -28069,6 +28248,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: Lo entiendo perfectamente. Justamente por eso quiero invitarla
       a un lugar especial.
+    locKey: t_495dc29dd284
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
@@ -28080,6 +28260,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Un retiro en las monta\xF1as, lejos del bullicio, del ruido y
       de las distracciones de la ciudad."
+    locKey: t_cbe5e87cf31e
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
@@ -28091,6 +28272,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Un sitio donde podr\xE1 descansar, reflexionar y aprender sobre
       ti y sobre tu potencial.\r\n"
+    locKey: t_86ac07505e53
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
@@ -28102,6 +28284,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\xBFUn retiro\u2026 en las monta\xF1as? Suena\u2026 interesante,
       pero tambi\xE9n un poco inquietante."
+    locKey: t_2b583fbf9fc7
     leftSpeaker: 0
     characterSprite: {fileID: -7255883190028503133, guid: c71e25c1c6d3b974485111da8be9c7bd, type: 3}
     giveItemAfterThisLine: 0
@@ -28113,6 +28296,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: No conozco a nadie que haya hecho algo similar, y apenas te conozco
       a ti.
+    locKey: t_599cfa0294fe
     leftSpeaker: 0
     characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
@@ -28124,6 +28308,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "No quiero que se preocupe por el viaje. Me encargar\xE9 personalmente
       de que llegue de manera segura."
+    locKey: t_8df5d79c2071
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
@@ -28135,6 +28320,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Todo estar\xE1 organizado y cubierto. Solo tendr\xE1 que aceptar
       venir y dejarse guiar por unos d\xEDas.\r\n"
+    locKey: t_9a7f1e42b655
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
@@ -28146,6 +28332,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "No s\xE9\u2026 suena demasiado bueno para ser cierto. Y al mismo
       tiempo, algo dentro de m\xED tiene curiosidad"
+    locKey: t_9323a0f41f63
     leftSpeaker: 0
     characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
@@ -28156,6 +28343,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: Hace tiempo que no me siento en paz conmigo misma.
+    locKey: t_8c3fe4825dab
     leftSpeaker: 0
     characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
@@ -28167,6 +28355,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: " Precisamente. S\xE9 que la idea de alejarse de todo puede ser
       intimidante, pero piense en esto como una oportunidad."
+    locKey: t_c73f5ce4f68c
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
@@ -28178,6 +28367,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Un espacio donde encontrar\xE1 paz, claridad y quiz\xE1s algo
       que ha estado buscando sin saberlo."
+    locKey: t_7fc45b81a822
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
@@ -28189,6 +28379,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "No es una obligaci\xF3n, solo una invitaci\xF3n\u2026 una puerta
       que podr\xEDa abrirle muchas posibilidades"
+    locKey: t_778286aae03b
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
@@ -28200,6 +28391,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\u2026Supongo que\u2026 no tengo nada que perder. Tal vez un cambio
       de aire me har\xEDa bien."
+    locKey: t_8a787b1927c1
     leftSpeaker: 0
     characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
@@ -28210,6 +28402,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Me asegurar\xE9 de que todo sea seguro, c\xF3modo y enriquecedor. "
+    locKey: t_3de1e97f2a07
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
@@ -28221,6 +28414,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Lo \xFAnico que necesito es que conf\xEDe en m\xED, aunque sea
       un poco, y acepte este viaje."
+    locKey: t_05b1e54dd093
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
@@ -28231,6 +28425,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Est\xE1 bien\u2026 conf\xEDo en ti. Acepto"
+    locKey: t_432d54e22117
     leftSpeaker: 0
     characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
@@ -29133,6 +29328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionKey: 102
   noteTextAsset: {fileID: 4900000, guid: cce4ea9946777384c831a485abc5c3f3, type: 3}
+  locKey: t_c4d7e25cfd39
   noteSprite: {fileID: 2238999740505943251, guid: 2308c696c1a085440ad516beab2e73c6, type: 3}
   giantNoteTransform: {fileID: 607453432}
   giantSprite: {fileID: 607453434}
@@ -29280,6 +29476,7 @@ GameObject:
   - component: {fileID: 669641934}
   - component: {fileID: 669641936}
   - component: {fileID: 669641935}
+  - component: {fileID: 669641937}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -29405,6 +29602,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 669641933}
   m_CullTransparentMesh: 1
+--- !u!114 &669641937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669641933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49e06f863fc4a24c8c5bfb40852b68e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoOrigen: Pulsa F para completar o salir
+  locKey: t_1058f2bd50fa_cb41
 --- !u!1 &670990457
 GameObject:
   m_ObjectHideFlags: 0
@@ -29669,6 +29880,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Que rara me siento aqu\xED, es como si algo me estuviese llamando
       o haciendo una se\xF1al."
+    locKey: t_dd37a6476272
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -29677,6 +29889,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "\xBFEs esto lo que me dijo antes Alpha?"
+    locKey: t_432386e883c4
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -29685,6 +29898,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "La semilla que me di\xF3 antes es rara, brilla de una manera extra\xF1a."
+    locKey: t_1dffd08fd2c2
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -29693,6 +29907,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Seguramente es aqu\xED donde tengo que plantarla"
+    locKey: t_3016de2e82b7
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -30243,6 +30458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerId: cc96dde0-5eed-4643-8c6f-6c8e09412bac
   textoNuevo: "CORRE AL CENTRO DEL JARD\xCDN A VER QUE HA PASADO"
+  locKey: t_d9d978e5c56f
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
   escalaInicial: 0.7
@@ -30543,6 +30759,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Su chapita... Se ve tan... trivial as\xED, tirada. Alpha dijo
       que el \xE1rbol... \xBFQu\xE9 pasar\xE1 si llevo la chapa?"
+    locKey: t_4d9312f32574
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -30551,6 +30768,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: 
     dialogueText: Has obtenido "Chapa De Bortis"
+    locKey: t_22505e2bc550
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -30699,6 +30917,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: Lilith
     dialogueText: "\xBFEs que no se va a ir nunca?"
+    locKey: t_2502ae015140
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -31127,6 +31346,7 @@ MonoBehaviour:
   dialogues:
   - speakerName: Nira
     dialogueText: "\xBFT\xFA eres\u2026 uno de los nuevos? S\xED, claro que lo eres."
+    locKey: t_62712f1540d8
     leftSpeaker: 1
     characterSprite: {fileID: -7441966514919091945, guid: 9f9fe1a63c320df4db63aba074738e18, type: 3}
     giveItemAfterThisLine: 0
@@ -31138,6 +31358,7 @@ MonoBehaviour:
   - speakerName: Nira
     dialogueText: "Me dijeron que te diera esto. Creo que te ayudar\xE1 a\u2026 encontrar
       tu casa. "
+    locKey: t_b3b6c1d26cf0
     leftSpeaker: 1
     characterSprite: {fileID: -7441966514919091945, guid: 9f9fe1a63c320df4db63aba074738e18, type: 3}
     giveItemAfterThisLine: 0
@@ -31148,6 +31369,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Nira
     dialogueText: "O\u2026 \xBFera la m\xEDa? \n"
+    locKey: t_849e6aef5d6f
     leftSpeaker: 1
     characterSprite: {fileID: -7441966514919091945, guid: 9f9fe1a63c320df4db63aba074738e18, type: 3}
     giveItemAfterThisLine: 0
@@ -31158,6 +31380,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Nira
     dialogueText: "No importa. Es un placer conocerte, soy Nira\u2026 hoy, al menos."
+    locKey: t_d27178174bdb
     leftSpeaker: 1
     characterSprite: {fileID: -7441966514919091945, guid: 9f9fe1a63c320df4db63aba074738e18, type: 3}
     giveItemAfterThisLine: 0
@@ -31168,6 +31391,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: 
     dialogueText: Recibes "Nota"
+    locKey: t_e3d358819e62
     leftSpeaker: 0
     characterSprite: {fileID: 0}
     giveItemAfterThisLine: 0
@@ -31412,6 +31636,7 @@ MonoBehaviour:
   - speakerName: Cairen
     dialogueText: "Perdona, Lilith. Acabo de ver a Alpha, y me ha pedido que te avise
       de que te est\xE1 esperando en la plaza."
+    locKey: t_3a1211bbf356
     leftSpeaker: 1
     characterSprite: {fileID: 6775278750140180628, guid: 823f378d910b52d4ebc4f90954058405, type: 3}
     giveItemAfterThisLine: 0
@@ -31423,6 +31648,7 @@ MonoBehaviour:
   - speakerName: Cairen
     dialogueText: No parece nada grave, tranquila, solo quiere hablar contigo un
       momento.
+    locKey: t_03193161642d
     leftSpeaker: 1
     characterSprite: {fileID: 6775278750140180628, guid: 823f378d910b52d4ebc4f90954058405, type: 3}
     giveItemAfterThisLine: 0
@@ -31434,6 +31660,7 @@ MonoBehaviour:
   - speakerName: Cairen
     dialogueText: "Ser\xE1 mejor que vayas, no le gusta que le hagan esperar, ya
       sabes c\xF3mo es."
+    locKey: t_f96095384c61
     leftSpeaker: 1
     characterSprite: {fileID: 6775278750140180628, guid: 823f378d910b52d4ebc4f90954058405, type: 3}
     giveItemAfterThisLine: 0
@@ -31444,6 +31671,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Ah\u2026 claro. No quiero hacerle esperar. Gracias, Cairen."
+    locKey: t_84bf73f323ea
     leftSpeaker: 0
     characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
@@ -31647,6 +31875,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionKey: 102
   noteTextAsset: {fileID: 4900000, guid: fae7e8a0ef4211d4a934aa75830a9196, type: 3}
+  locKey: t_8d9d264a02cc
   noteSprite: {fileID: -3796866050935086388, guid: f0112c72e70c09f4c943a1241914f6f9, type: 3}
   giantNoteTransform: {fileID: 444281866}
   giantSprite: {fileID: 444281868}
@@ -32034,6 +32263,7 @@ GameObject:
   - component: {fileID: 764277264}
   - component: {fileID: 764277266}
   - component: {fileID: 764277265}
+  - component: {fileID: 764277267}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -32159,6 +32389,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 764277263}
   m_CullTransparentMesh: 1
+--- !u!114 &764277267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764277263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49e06f863fc4a24c8c5bfb40852b68e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoOrigen: NO
+  locKey: t_a0509b778062_99a5
 --- !u!1 &764342917
 GameObject:
   m_ObjectHideFlags: 0
@@ -32206,6 +32450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoneName: "CENTRO JARD\xCDN"
+  locKey: t_487b68571a23_5949
   panelRect: {fileID: 2106208640}
   zoneText: {fileID: 1620048815}
   dropDistance: 500
@@ -32753,6 +32998,7 @@ MonoBehaviour:
   - speakerName: Gamma
     dialogueText: "Bueno, all\xE1 vamos. A nuestro \"nuevo comienzo\". Reza para
       que lo que sea que den all\xED, valga la pena."
+    locKey: t_f6433083363e
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -33152,6 +33398,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: 
     dialogueText: Has encontrado un cuchillo
+    locKey: t_d05bfeb601dd
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -33503,6 +33750,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: 
     dialogueText: "Todav\xEDa no puedes pasar por aqu\xED. Habla con Alpha primero."
+    locKey: t_86a1370e80c1
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -34696,6 +34944,7 @@ MonoBehaviour:
   - speakerName: Cairen
     dialogueText: "\xBFQu\xE9 haces aqu\xED fuera empapada? No me digas que el grandote
       de la puerta no te deja entrar\u2026 jajaja"
+    locKey: t_5d6282872f3b
     leftSpeaker: 1
     characterSprite: {fileID: -7517056936566813833, guid: d85c8973fa3cab64e8410b1c1f9e03e4, type: 3}
     giveItemAfterThisLine: 0
@@ -34706,6 +34955,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: "Si quieres, puedo montar un esc\xE1ndalo."
+    locKey: t_0e1794c2ecc3
     leftSpeaker: 1
     characterSprite: {fileID: -7517056936566813833, guid: d85c8973fa3cab64e8410b1c1f9e03e4, type: 3}
     giveItemAfterThisLine: 0
@@ -34717,6 +34967,7 @@ MonoBehaviour:
   - speakerName: Cairen
     dialogueText: "Ya sabes, gritar, fingir que me desmayo o romper una botella\u2026
       lo que elijas."
+    locKey: t_a2da69a4448f
     leftSpeaker: 1
     characterSprite: {fileID: -7517056936566813833, guid: d85c8973fa3cab64e8410b1c1f9e03e4, type: 3}
     giveItemAfterThisLine: 0
@@ -34728,6 +34979,7 @@ MonoBehaviour:
   - speakerName: Cairen
     dialogueText: "Pero eso s\xED, no trabajo gratis. \xBFNo tendr\xE1s por ah\xED
       algo de ese nuevo producto que te deja volando?"
+    locKey: t_22cef6d3fa48
     leftSpeaker: 1
     characterSprite: {fileID: 6775278750140180628, guid: 823f378d910b52d4ebc4f90954058405, type: 3}
     giveItemAfterThisLine: 0
@@ -34739,6 +34991,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Agh\u2026 En fin, quer\xEDa quedarme eso para m\xED pero esta
       noche prefiero entretenerme de otra manera."
+    locKey: t_bb83c697d519
     leftSpeaker: 0
     characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
@@ -34749,6 +35002,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Supongo que no me quedar\xE1 otra opci\xF3n."
+    locKey: t_262321039627
     leftSpeaker: 0
     characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
@@ -34759,6 +35013,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: 
     dialogueText: (Ya no tienes Nieve Negra)
+    locKey: t_56947e42f124
     leftSpeaker: 0
     characterSprite: {fileID: 0}
     giveItemAfterThisLine: 0
@@ -34769,6 +35024,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: "Perfecto, cruza a la otra acera y ver\xE1s la magia."
+    locKey: t_8a7d12154175
     leftSpeaker: 1
     characterSprite: {fileID: -7517056936566813833, guid: d85c8973fa3cab64e8410b1c1f9e03e4, type: 3}
     giveItemAfterThisLine: 0
@@ -35610,6 +35866,7 @@ MonoBehaviour:
   - speakerName: Lin
     dialogueText: "S\xED... aqu\xED... Aqu\xED puedo demostrar mi amor por Amara.
       Es lo que siempre he querido."
+    locKey: t_da0e91616f45
     leftSpeaker: 1
     characterSprite: {fileID: -4920136608581562092, guid: d83500efbdad0b343b549f9be26b0880, type: 3}
     giveItemAfterThisLine: 0
@@ -35892,6 +36149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerId: 
   textoNuevo: HABLA CON ANORAH EN LA BIBLIOTECA
+  locKey: t_20b84be7612b
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
   escalaInicial: 0.7
@@ -36275,6 +36533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerId: 2f988b61-cd59-43ab-940d-6f8d42bf12b2
   textoNuevo: "VE AL CENTRO DEL JARD\xCDN A HABLAR CON ALPHA"
+  locKey: t_f832ab962741
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
   escalaInicial: 0.7
@@ -36389,6 +36648,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionKey: 102
   noteTextAsset: {fileID: 4900000, guid: b668e61b704f32f4490abf706aed1649, type: 3}
+  locKey: t_85f6612a350f
   noteSprite: {fileID: -62182436938097161, guid: b32d020f36f717b4bb289a5457752500, type: 3}
   giantNoteTransform: {fileID: 1806346500}
   giantSprite: {fileID: 1806346502}
@@ -37247,6 +37507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerId: e7df65d8-d075-47b2-94e6-79b1b7963d06
   textoNuevo: 
+  locKey: 
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
   escalaInicial: 0.7
@@ -37315,6 +37576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionKey: 102
   noteTextAsset: {fileID: 4900000, guid: 48deb19256320984080180b328f2c5df, type: 3}
+  locKey: t_c3142411add2
   noteSprite: {fileID: -5632577232604391547, guid: 09fa5499362c60549b7c64c39e5bd7fd, type: 3}
   giantNoteTransform: {fileID: 1488204199}
   giantSprite: {fileID: 1488204201}
@@ -38085,6 +38347,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: 
     dialogueText: "Esta zona se desbloquear\xE1 m\xE1s tarde."
+    locKey: t_b71b2bf91704_98e2
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -38206,6 +38469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoneName: CALLE 1
+  locKey: t_95891aed43ad
   panelRect: {fileID: 2068361059}
   zoneText: {fileID: 638451612}
   dropDistance: 500
@@ -39467,6 +39731,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: 
     dialogueText: Has encontrado el boton 1.
+    locKey: t_ae4fdd38fcec
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -40026,6 +40291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoneName: COMEDOR
+  locKey: t_0d0c877de347_cc77
   panelRect: {fileID: 969882160}
   zoneText: {fileID: 1382710172}
   dropDistance: 500
@@ -41027,6 +41293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoneName: "ENTRADA JARD\xCDN"
+  locKey: t_f050bb675869_0534
   panelRect: {fileID: 1554527774}
   zoneText: {fileID: 913502420}
   dropDistance: 500
@@ -41266,6 +41533,7 @@ MonoBehaviour:
   sonidoApertura: {fileID: 0}
   objetoQueAparece: {fileID: 1591999116}
   objetoQueDesaparece: {fileID: 201970033}
+  progresoId: puzzle_estatuas_managerpuzzle
 --- !u!4 &1048965264
 Transform:
   m_ObjectHideFlags: 0
@@ -41957,6 +42225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerId: d0ec0418-8317-4742-bd5c-9869bfdaad62
   textoNuevo: "ENCUENTRA LA ZONA DEL \xC1RBOL"
+  locKey: t_202ab7c8f71b
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
   escalaInicial: 0.7
@@ -42283,15 +42552,19 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Lilith. Justo pensaba en ti. Espero que est\xE9s encontrando la
       paz que mereces en nuestro hogar"
+    locKey: t_b3747b28a5ca
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     endDialogueHere: 0
     choices:
     - choiceText: "A) Si, la verdad, no recordaba c\xF3mo se sent\xEDa la tranquilidad."
+      locKey: t_971f2178a3ec
       nextDialogueIndex: 1
     - choiceText: "B) S\xED, todo el mundo ha sido muy amable."
+      locKey: t_079483874da2
       nextDialogueIndex: 1
     - choiceText: C) Es un lugar muy organizado.
+      locKey: t_e19b61968c6a
       nextDialogueIndex: 1
     giveItemAfterThisLine: 0
     itemIdToGive: 
@@ -42301,6 +42574,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: La familia es el pilar de todo.
+    locKey: t_f8104dbf4d5c
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     endDialogueHere: 0
@@ -42314,6 +42588,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Para que una familia funcione, se necesita orden, por supuesto,
       pero tambi\xE9n estructura."
+    locKey: t_4a1c25ce844f
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     endDialogueHere: 0
@@ -42326,6 +42601,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: Por eso quiero presentarte a Delta.
+    locKey: t_b60d6a3ed94a
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     endDialogueHere: 0
@@ -42339,6 +42615,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Es mi brazo derecho y el coordinador de todo lo que ves funcionar
       aqu\xED. "
+    locKey: t_0662fe4a15ae
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     endDialogueHere: 0
@@ -42351,6 +42628,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Si alg\xFAn d\xEDa no me encuentras, b\xFAscale a \xE9l."
+    locKey: t_f24e84f88659
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     endDialogueHere: 0
@@ -42363,6 +42641,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Es la persona m\xE1s eficiente que conocer\xE1s."
+    locKey: t_422c9234de88
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     endDialogueHere: 0
@@ -42375,6 +42654,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Delta
     dialogueText: "Es un procedimiento est\xE1ndar. Conocer a los nuevos miembros."
+    locKey: t_8fd9c21e02f3
     leftSpeaker: 1
     characterSprite: {fileID: -311131714167770203, guid: 97fa321f5b36dfa46bc8e7c875e1c5c3, type: 3}
     endDialogueHere: 0
@@ -42388,6 +42668,7 @@ MonoBehaviour:
   - speakerName: Delta
     dialogueText: Evaluar sus... capacidades. Es conveniente para asignarles las
       tareas donde mejor se adapten.
+    locKey: t_703ac2d2d556
     leftSpeaker: 1
     characterSprite: {fileID: -311131714167770203, guid: 97fa321f5b36dfa46bc8e7c875e1c5c3, type: 3}
     endDialogueHere: 0
@@ -42400,6 +42681,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: No le hagas caso, siempre tan formal.
+    locKey: t_d8573fed1ef9
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     endDialogueHere: 0
@@ -42413,6 +42695,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Lo que Delta quiere decir es que nos aseguramos de que todos est\xE9n
       c\xF3modos y sean productivos."
+    locKey: t_e8563b3961b8
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     endDialogueHere: 0
@@ -42426,6 +42709,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "\xC9l se encarga de que el huerto tenga herramientas, que las
       caba\xF1as est\xE9n en pie y bueno..."
+    locKey: t_30b89ba5b375
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     endDialogueHere: 0
@@ -42438,6 +42722,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: de que no haya contratiempos en general.
+    locKey: t_aa4c2f8c550a
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     endDialogueHere: 0
@@ -42451,6 +42736,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "La seguridad y el orden son primordiales aqu\xED, lejos del caos
       del mundo."
+    locKey: t_3022da77722c
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     endDialogueHere: 0
@@ -42462,8 +42748,9 @@ MonoBehaviour:
     gibberishClip: {fileID: 0}
     gibberishVolume: 0.5
   - speakerName: Delta
-    dialogueText: "El orden previene el caos, la disciplina y el sufrimiento. Aqu\xED
+    dialogueText: "El orden previene el caos; la disciplina, el sufrimiento. Aqu\xED
       no hay lugar para accidentes"
+    locKey: t_9c4fac2410bc
     leftSpeaker: 1
     characterSprite: {fileID: -311131714167770203, guid: 97fa321f5b36dfa46bc8e7c875e1c5c3, type: 3}
     endDialogueHere: 0
@@ -42476,6 +42763,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Exactamente. Delta es nuestro guardi\xE1n. Un pilar de fuerza."
+    locKey: t_9104d10e514e
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     endDialogueHere: 0
@@ -42489,6 +42777,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "T\xFA tambi\xE9n podr\xEDas serlo, Lilith. Tienes esa chispa.
       Una fuerza que el mundo exterior no supo apreciar."
+    locKey: t_626a4925c6ad
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     endDialogueHere: 0
@@ -42501,6 +42790,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "\xBFVes, Delta? Esta chica tiene potencial \xBFNo lo crees?\r"
+    locKey: t_8b6bd1d66acd
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     endDialogueHere: 0
@@ -42514,6 +42804,7 @@ MonoBehaviour:
   - speakerName: Delta
     dialogueText: "El potencial se demuestra con acciones, no con palabras. Ya veremos
       qu\xE9 tal lo hace la reci\xE9n llegada."
+    locKey: t_b2236f203edd
     leftSpeaker: 1
     characterSprite: {fileID: -311131714167770203, guid: 97fa321f5b36dfa46bc8e7c875e1c5c3, type: 3}
     endDialogueHere: 0
@@ -42527,6 +42818,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Que no te intimide su... frialdad. Los hombres como Delta son
       los cimientos sobre los que construimos el para\xEDso."
+    locKey: t_5f7d445fbb8d
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     endDialogueHere: 0
@@ -42540,17 +42832,21 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Son necesarios. Ahora, ve, disfruta del d\xEDa. Nuestra familia
       te necesita descansada."
+    locKey: t_20e8d137ba8a
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     endDialogueHere: 0
     choices:
     - choiceText: "A) Encantada\u2026 supongo que tiene mucho trabajo, con todo lo
         que hay que mantener en orden aqu\xED."
+      locKey: t_014000d4c3ec
       nextDialogueIndex: 22
     - choiceText: B) Un placer, Delta. Espero no ser una molestia.
+      locKey: t_3242a732d554
       nextDialogueIndex: 22
     - choiceText: "C) Parece que aqu\xED cada cosa tiene su sitio. Me alegra que
         alguien se asegure de eso."
+      locKey: t_2c73ea5ee1ce
       nextDialogueIndex: 22
     giveItemAfterThisLine: 0
     itemIdToGive: 
@@ -42560,6 +42856,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: Nos vemos Lilith.
+    locKey: t_218bfde81f0a
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     endDialogueHere: 1
@@ -42797,6 +43094,7 @@ GameObject:
   - component: {fileID: 1079113755}
   - component: {fileID: 1079113757}
   - component: {fileID: 1079113756}
+  - component: {fileID: 1079113758}
   m_Layer: 5
   m_Name: "Explicaci\xF3n"
   m_TagString: Untagged
@@ -42923,6 +43221,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079113754}
   m_CullTransparentMesh: 1
+--- !u!114 &1079113758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079113754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49e06f863fc4a24c8c5bfb40852b68e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoOrigen: Pulsa en cada personaje para ver las conversaciones que has tenido
+    con ellos durante el juego.
+  locKey: t_3ca35e1101f0_8ab9
 --- !u!1 &1080099676
 GameObject:
   m_ObjectHideFlags: 0
@@ -43296,6 +43609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerId: 
   textoNuevo: 
+  locKey: 
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
   escalaInicial: 0.7
@@ -43428,6 +43742,7 @@ MonoBehaviour:
   dialogues:
   - speakerName: Gamma
     dialogueText: "Anda Lilith, \xBFqu\xE9 tal vas con la gente?"
+    locKey: t_d49764abd22b
     leftSpeaker: 1
     characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     giveItemAfterThisLine: 0
@@ -43439,6 +43754,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "La verdad que bastante bien, todos me tratan genial. Es como la
       sensaci\xF3n de sentirse en casa. \xBFY t\xFA?"
+    locKey: t_886b28a09eba
     leftSpeaker: 0
     characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
@@ -43449,6 +43765,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Gamma
     dialogueText: "Todav\xEDa me estoy adaptando a esto, eso s\xED,"
+    locKey: t_a2c7efead339
     leftSpeaker: 1
     characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     giveItemAfterThisLine: 0
@@ -43460,6 +43777,7 @@ MonoBehaviour:
   - speakerName: Gamma
     dialogueText: "he escuchado rumores de un n\xE9ctar que te quita el mono y ahora
       mismo estoy con mucha necesidad."
+    locKey: t_a11f2bb2d927
     leftSpeaker: 1
     characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     giveItemAfterThisLine: 0
@@ -43470,6 +43788,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Gamma
     dialogueText: Puf, necesito ir a probarlo, estoy que no me mantengo en pie.
+    locKey: t_2d9f609c4fed
     leftSpeaker: 1
     characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     giveItemAfterThisLine: 0
@@ -44080,6 +44399,7 @@ MonoBehaviour:
   - {fileID: 1733156386}
   - {fileID: 1856822787}
   objectsToDestroyAfter: []
+  progresoId: puzzle_peluches_puzzlepeluches
   destroyAfterCompletion: 1
 --- !u!61 &1098190102
 BoxCollider2D:
@@ -44876,6 +45196,7 @@ MonoBehaviour:
   - {fileID: 510570277}
   - {fileID: 2134384428}
   objectsToDestroyAfter: []
+  progresoId: puzzle_gramola_collidergramola
   destroyAfterCompletion: 0
 --- !u!114 &1114556213
 MonoBehaviour:
@@ -44948,6 +45269,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: 
     dialogueText: Has plantado la semilla
+    locKey: t_5113fb72e0ee
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -45314,6 +45636,7 @@ MonoBehaviour:
   - speakerName: ??
     dialogueText: "\xBFTe fijaste en esos sem\xE1foros? A veces parece que se encienden
       solos\u2026 como si todav\xEDa funcionaran."
+    locKey: t_191ae8795935_7b7d
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -45322,6 +45645,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: ???
     dialogueText: "S\xED. Lo curioso es que la luz roja parpadea en m\xE1s sem\xE1foros. "
+    locKey: t_5c9c768bdbbe_5fce
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -45330,6 +45654,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: ???
     dialogueText: "Creo que la vi parpadear dos veces en dos sem\xE1foros diferentes."
+    locKey: t_f0b1b16df8a7_7f0b
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -45339,6 +45664,7 @@ MonoBehaviour:
   - speakerName: ??
     dialogueText: "\xBFDos veces? Qu\xE9 raro. Yo cont\xE9 solo una vez el verde
       despu\xE9s de eso."
+    locKey: t_ad59a8908358_2f5a
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -45348,6 +45674,7 @@ MonoBehaviour:
   - speakerName: ???
     dialogueText: "Antes de que se apagasen vi que el amarillo tambi\xE9n se encendi\xF3
       en bastantes sem\xE1foros."
+    locKey: t_78450ad043fd_0c3e
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -45356,6 +45683,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: ???
     dialogueText: "Bah, seguro es solo un fallo el\xE9ctrico"
+    locKey: t_4d86df6dac86_e672
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -45365,6 +45693,7 @@ MonoBehaviour:
   - speakerName: ??
     dialogueText: "S\xED, adem\xE1s empieza a hacer fr\xEDo. Ojal\xE1 encontremos
       algo abierto para tomar algo"
+    locKey: t_90dae35b5a9d_afb9
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -45708,6 +46037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerId: 690662a2-c437-4d7a-811c-12d9a3651536
   textoNuevo: VE A LA PLAZA A HABLAR CON ALPHA
+  locKey: t_b97c7eec937a
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
   escalaInicial: 0.7
@@ -45875,6 +46205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoneName: "\xC1RBOL"
+  locKey: t_a60658772d8f_0ca7
   panelRect: {fileID: 1405187981}
   zoneText: {fileID: 1102076875}
   dropDistance: 500
@@ -46295,6 +46626,7 @@ MonoBehaviour:
   dialogues:
   - speakerName: Segurata
     dialogueText: Con esas pintas no te voy a dejar pasar.
+    locKey: t_a68a43e18dce
     leftSpeaker: 1
     characterSprite: {fileID: 7673725927456738206, guid: fecce0a82d8d70f41a4b7ca9ce5986ed, type: 3}
     giveItemAfterThisLine: 0
@@ -46305,6 +46637,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "(Madre m\xEDa, que pesado es...)"
+    locKey: t_d8614db54010
     leftSpeaker: 0
     characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
@@ -46638,6 +46971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerId: 18555289-5540-4f64-97b9-a3b639c98a46
   textoNuevo: COMPRUEBA QUE HA PASADO
+  locKey: t_4c3f92a2d08e
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
   escalaInicial: 0.7
@@ -46798,13 +47132,35 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5045921310131027136, guid: 7e4670c202829cb45bc544fbe27d0e69, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1167496100}
   m_SourcePrefab: {fileID: 100100000, guid: 7e4670c202829cb45bc544fbe27d0e69, type: 3}
 --- !u!224 &1167496098 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3605747583928218581, guid: 7e4670c202829cb45bc544fbe27d0e69, type: 3}
   m_PrefabInstance: {fileID: 1167496097}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1167496099 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5045921310131027136, guid: 7e4670c202829cb45bc544fbe27d0e69, type: 3}
+  m_PrefabInstance: {fileID: 1167496097}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1167496100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167496099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49e06f863fc4a24c8c5bfb40852b68e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoOrigen: RESPUESTA
+  locKey: t_adf74ae46589_ed73
 --- !u!1 &1178223626
 GameObject:
   m_ObjectHideFlags: 0
@@ -46863,6 +47219,7 @@ MonoBehaviour:
   - speakerName: NPC A
     dialogueText: "No puedo creer que le vendiera mi guitarra por este boleto. Era
       lo \xFAltimo que me quedaba de mi abuelo."
+    locKey: t_83b60dd6ce49
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -46872,6 +47229,7 @@ MonoBehaviour:
   - speakerName: NPC B
     dialogueText: "Callate, hijo. Lo material vuelve. El alma, no. A m\xED me echaron
       de mi propia casa... mis hijos... "
+    locKey: t_6a6d7cf41871
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -46881,6 +47239,7 @@ MonoBehaviour:
   - speakerName: NPC B
     dialogueText: "prefirieron un asilo a cuidarme. Alpha me dio una mano cuando
       nadie m\xE1s lo hizo."
+    locKey: t_02ee4a1b87e7
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -46889,6 +47248,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: NPC A
     dialogueText: "S\xED, pero... \xBFy esto ser\xE1 seguro? Lo he pensado."
+    locKey: t_ef925a864f64
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -46897,6 +47257,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: NPC B
     dialogueText: "\xBFY qu\xE9? \xBFCrees que lo que dejamos atr\xE1s era mejor? "
+    locKey: t_179bf6450202
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -46906,6 +47267,7 @@ MonoBehaviour:
   - speakerName: NPC B
     dialogueText: "Un lugar con un techo y comida caliente suena mejor que la libertad
       en un parque fr\xEDo."
+    locKey: t_0a0941ae1d7e
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -50615,6 +50977,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Esto me vale\u2026 aunque... genial, es la \xFAltima. Tendr\xE9
       que comprar m\xE1s tarde. "
+    locKey: t_c321a0bdbc33
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -50624,6 +50987,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Supongo que el supermercado ser\xE1 mi \xFAnico plan para hoy.
       Pero bueno, ya ir\xE9 m\xE1s tarde. "
+    locKey: t_e5f1bccba721
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -50632,6 +50996,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Por ahora me tumbar\xE9 a ver algo."
+    locKey: t_37a13292d03f
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -51006,6 +51371,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "\xA1Calma, hermanos! Mantengan la compostura. Delta se est\xE1
       encargando."
+    locKey: t_ae91e6c70fe7
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -51014,6 +51380,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: 'Un desafortunado accidente con una roca suelta en el camino... '
+    locKey: t_96849b94b97f
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -51022,6 +51389,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: Estamos buscando en la zona para asegurar que no ha pasado nada
+    locKey: t_62e4fbc32f6c
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -51031,6 +51399,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Beta ha llamado a Bortis a su lado. No fue en vano; su partida
       nos recuerda que incluso aqu\xED, debemos ser cuidadosos."
+    locKey: t_3f27bdba7da7
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -51040,6 +51409,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Que su sacrificio nos una m\xE1s. Silas se encargar\xE1 de preparar
       el cuerpo para el ritual de despedida."
+    locKey: t_71c5842b4d0c
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -51048,6 +51418,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Por favor, regresen a sus caba\xF1as y recen por su alma."
+    locKey: t_ca4e7c119e8f
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -51057,6 +51428,7 @@ MonoBehaviour:
   - speakerName: NPC
     dialogueText: "\xA1Por todos los santos! \xC9l... \xE9l me ayud\xF3 a tejer apenas
       ayer... Qu\xE9 destino tan cruel."
+    locKey: t_36537665d5b2
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -51814,6 +52186,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\xA1Esc\xFAchame bien! No vuelvas a amenazarme. Ya te dije que
       cuando tenga el dinero, lo tendr\xE1s."
+    locKey: t_7912113ea433
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -51822,6 +52195,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Hasta entonces\u2026 espera. Y deja de molestarme."
+    locKey: t_0dd972cb216b
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -51830,6 +52204,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Casero
     dialogueText: "\xBFCrees que puedes intimidarme?"
+    locKey: t_51ff348d9d30
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -51839,6 +52214,7 @@ MonoBehaviour:
   - speakerName: Casero
     dialogueText: "Tienes una semana m\xE1s\u2026 si no, te saco de aqu\xED aunque
       tenga que hacerlo yo mismo."
+    locKey: t_f2489e85b914
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -51847,6 +52223,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Ser\xE1 suficiente. Y ahora qu\xEDtate de mi puerta."
+    locKey: t_e34f0c17de07
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -51855,6 +52232,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "(Madre m\xEDa... por fin podr\xE9 salir)"
+    locKey: t_56f15609293c
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -52314,6 +52692,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: Casero
     dialogueText: "\xA1DEJA DE HUIR Y SAL YA, Y SI NO QUIERES QUE LLAME A LA POLIC\xCDA,"
+    locKey: t_40808c01bf99
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -52322,6 +52701,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Casero
     dialogueText: 'ARREGLA LAS MALDITAS TUBERIAS! '
+    locKey: t_cc62bbf959ca
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -52330,6 +52710,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "En fin, deber\xEDa arreglar las tuber\xEDas."
+    locKey: t_4cf242fd6ecf
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -52338,6 +52719,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "No necesito m\xE1s problemas en mi vida\u2026 ugh"
+    locKey: t_ea0f2549e3c3
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -52669,13 +53051,35 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5045921310131027136, guid: 7e4670c202829cb45bc544fbe27d0e69, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1353341808}
   m_SourcePrefab: {fileID: 100100000, guid: 7e4670c202829cb45bc544fbe27d0e69, type: 3}
 --- !u!224 &1353341806 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3605747583928218581, guid: 7e4670c202829cb45bc544fbe27d0e69, type: 3}
   m_PrefabInstance: {fileID: 1353341805}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1353341807 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5045921310131027136, guid: 7e4670c202829cb45bc544fbe27d0e69, type: 3}
+  m_PrefabInstance: {fileID: 1353341805}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1353341808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353341807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49e06f863fc4a24c8c5bfb40852b68e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoOrigen: RESPUESTA
+  locKey: t_adf74ae46589_437e
 --- !u!1 &1359006196
 GameObject:
   m_ObjectHideFlags: 0
@@ -52746,6 +53150,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: 
     dialogueText: "Esta zona se desbloquear\xE1 m\xE1s tarde."
+    locKey: t_b71b2bf91704_c483
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -52874,6 +53279,7 @@ MonoBehaviour:
   dialogues:
   - speakerName: Anorah
     dialogueText: "T\xF3mate tu tiempo, querida. Los libros aqu\xED son... reconfortantes."
+    locKey: t_160dc391fe1a
     leftSpeaker: 1
     characterSprite: {fileID: 3142483317604894073, guid: 03e5afb721110ed4a800e09f67065d42, type: 3}
     giveItemAfterThisLine: 0
@@ -52884,6 +53290,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Anorah
     dialogueText: Si necesitas escapar de tus pensamientos, este es el lugar.
+    locKey: t_0289118e447d
     leftSpeaker: 1
     characterSprite: {fileID: 3142483317604894073, guid: 03e5afb721110ed4a800e09f67065d42, type: 3}
     giveItemAfterThisLine: 0
@@ -53200,6 +53607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoneName: CALLE 2
+  locKey: t_3f8b27ed2fc7
   panelRect: {fileID: 1231064964}
   zoneText: {fileID: 1626213398}
   dropDistance: 500
@@ -53463,6 +53871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerId: 790fff13-6412-4021-b72e-8bd5b01ce674
   textoNuevo: "USA LAS INSTRUCCIONES PARA COMPLETAR EL PUZZLE DE LA MESA PEQUE\xD1A"
+  locKey: t_d0bb6122d018
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
   escalaInicial: 0.7
@@ -53766,6 +54175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoneName: CASAS
+  locKey: t_ec89de773a8a_2c86
   panelRect: {fileID: 1810844433}
   zoneText: {fileID: 834368220}
   dropDistance: 500
@@ -53916,6 +54326,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\xBFNo me lo pod\xEDan decir directamente? En fin\u2026 a ver
       que pone en la nota"
+    locKey: t_41333e7ee42b
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -53929,6 +54340,7 @@ MonoBehaviour:
       descansa lo que necesitas.
 
 '
+    locKey: t_4451f7427cce
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -53942,6 +54354,7 @@ MonoBehaviour:
       senderos olvidados.
 
 '
+    locKey: t_dc5f5b2b03c5
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -53955,6 +54368,7 @@ MonoBehaviour:
       lo impuro.
 
 '
+    locKey: t_27bf0f20c38a
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -53964,6 +54378,7 @@ MonoBehaviour:
   - speakerName: 
     dialogueText: "En tercer lugar mira donde nace el d\xEDa,\r\nall\xED el Sol despierta
       y todo ilumina.\r\n"
+    locKey: t_60e2837f6115
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -53977,6 +54392,7 @@ MonoBehaviour:
       el destino profundo.
 
 '
+    locKey: t_7d622c67662e
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -53985,6 +54401,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: 
     dialogueText: "Solo si sigues el orden,\r\nlo que necesitas ser\xE1 revelado.\r\n"
+    locKey: t_85e464a59b47
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -53993,6 +54410,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Bueno, mirar\xE9 por aqu\xED a ver que encuentro"
+    locKey: t_2bcdfee2c5c0
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -54170,15 +54588,19 @@ MonoBehaviour:
   - speakerName: Gamma
     dialogueText: "\xBFTu tambi\xE9n vienes de retiro? \xBFY a ti quien te hablo
       de esto?"
+    locKey: t_f1cab0e5f8a5
     leftSpeaker: 1
     characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 0
     choices:
     - choiceText: "A) Si, me dijeron que ser\xEDa un nuevo comienzo"
+      locKey: t_eec5138b5bae
       nextDialogueIndex: 1
     - choiceText: 'B) Parece que somos el club de los desahuciados '
+      locKey: t_888750bbe0d7
       nextDialogueIndex: 1
     - choiceText: "C) \xBFA qu\xE9 te refieres con tambi\xE9n?"
+      locKey: t_81683835b9e4
       nextDialogueIndex: 8
     giveItemAfterThisLine: 0
     itemIdToGive: 
@@ -54189,6 +54611,7 @@ MonoBehaviour:
   - speakerName: Gamma
     dialogueText: "As\xED que un nuevo comienzo eh \u2026 En un, qu\xE9 m\xE1s da,
       tampoco hab\xEDa nada mejor que hacer que esto. Al menos es un cambio \xBFno?"
+    locKey: t_bcab9a7b8904
     leftSpeaker: 1
     characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 0
@@ -54202,6 +54625,7 @@ MonoBehaviour:
   - speakerName: Gamma
     dialogueText: "Yo lo perd\xED todo: el piso, la familia, mi hija, los amigos.
       Toooodo a la mierda"
+    locKey: t_405a9d4b01c4
     leftSpeaker: 1
     characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 0
@@ -54215,6 +54639,7 @@ MonoBehaviour:
   - speakerName: Gamma
     dialogueText: "Un tal Alpha me encontr\xF3 en un callej\xF3n. Estaba drogada
       y otros yonkis del barrio estaban d\xE1ndome una paliza"
+    locKey: t_dd3a66594e0d
     leftSpeaker: 1
     characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 0
@@ -54228,6 +54653,7 @@ MonoBehaviour:
   - speakerName: Gamma
     dialogueText: "Los acompa\xF1antes de ese se\xF1or espantaron a mis atacantes.
       Alpha me habl\xF3 de este lugar\u2026 un retiro en las monta\xF1as o algo as\xED"
+    locKey: t_9dc4b5d47bf9
     leftSpeaker: 1
     characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 0
@@ -54241,6 +54667,7 @@ MonoBehaviour:
   - speakerName: Gamma
     dialogueText: Dijo que no sale en los mapas, es un lugar justo para los rechazados
       como nosotros
+    locKey: t_7e2310a5ceba
     leftSpeaker: 1
     characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 0
@@ -54254,6 +54681,7 @@ MonoBehaviour:
   - speakerName: Gamma
     dialogueText: "En fin\u2026 Solo s\xE9 que llevo unas horas sin tomar nada y
       necesito algo ya o me volver\xE9 loca"
+    locKey: t_1622062b0741
     leftSpeaker: 1
     characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 0
@@ -54267,6 +54695,7 @@ MonoBehaviour:
   - speakerName: Gamma
     dialogueText: "\xBFTienes algo? , alguna pastilla, lo que sea. Cualquier cosa
       me vale, no s\xE9 si ser\xE9 capaz de aguantar este viaje sino."
+    locKey: t_dc15d348bc39
     leftSpeaker: 1
     characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 1
@@ -54279,6 +54708,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Gamma
     dialogueText: Me refiero a que somos productos de caridad. No tenemos donde ir.
+    locKey: t_146e46d7d35d
     leftSpeaker: 1
     characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 0
@@ -54292,6 +54722,7 @@ MonoBehaviour:
   - speakerName: Gamma
     dialogueText: "Ese tipo es raro, pero bueno, nos ha tendido una mano as\xED que
       supongo que le tendr\xE9 que estar agradecida."
+    locKey: t_236fdfdfba6c
     leftSpeaker: 1
     characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 0
@@ -54305,6 +54736,7 @@ MonoBehaviour:
   - speakerName: Gamma
     dialogueText: Sienta bien que alguien no te trate como un despojo humano de vez
       en cuando.
+    locKey: t_5b117f856685
     leftSpeaker: 1
     characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 0
@@ -54318,6 +54750,7 @@ MonoBehaviour:
   - speakerName: Gamma
     dialogueText: "Dijo que en este lugar podr\xEDa mejorar. Pero esto de estar sobria\u2026
       Que horror."
+    locKey: t_912cd3296c10
     leftSpeaker: 1
     characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 0
@@ -54331,18 +54764,22 @@ MonoBehaviour:
   - speakerName: Gamma
     dialogueText: "Sientes cada nervio, cada pensamiento de mierda. \xBFNo trajiste
       nada para el viaje?"
+    locKey: t_8f8e856157ef
     leftSpeaker: 1
     characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 0
     choices:
     - choiceText: "A) No tengo nada. Y aunque lo tuviera, no te lo dar\xEDa. Se supone
         que esto es para limpiarnos"
+      locKey: t_47ae2cd9b2d3
       nextDialogueIndex: 13
     - choiceText: "B) Tranquila. En ese lugar habr\xE1 algo. Seguro\u2026 En todos
         los sitios encuentras algo, aunque sean hierbas medicinales. Aguanta."
+      locKey: t_61fe61a67864
       nextDialogueIndex: 14
     - choiceText: "C) Yo.. Tambi\xE9n lo estoy deseando, si alguna encuentra algo
         lo compartimos con la otra \xBFTrato?"
+      locKey: t_105e4cd56acd
       nextDialogueIndex: 15
     giveItemAfterThisLine: 0
     itemIdToGive: 
@@ -54354,6 +54791,7 @@ MonoBehaviour:
     dialogueText: "\xBFLimpiarnos? Ja, Ingenua\u2026 La gente como nosotros no se
       limpia, Solo se cambia una mierda por otra. Espero que all\xED al menos den
       algo fuerte"
+    locKey: t_b001ce4eb4ce
     leftSpeaker: 1
     characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 1
@@ -54367,6 +54805,7 @@ MonoBehaviour:
   - speakerName: Gamma
     dialogueText: "\xBFCrees? Si\u2026 si, deben tener algo. Alpha parece saber de
       nosotros, debe tener algo bueno, algo que nos ayude."
+    locKey: t_0e34d7d174b8
     leftSpeaker: 1
     characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 1
@@ -54379,6 +54818,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Gamma
     dialogueText: "\xBFVes? T\xFA tambi\xE9n lo sientes. Este vac\xEDo... es insoportable."
+    locKey: t_7d4f3c998cac
     leftSpeaker: 1
     characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 0
@@ -54392,6 +54832,7 @@ MonoBehaviour:
   - speakerName: Gamma
     dialogueText: "Prometamos que si hay algo all\xED, lo probamos juntas. No para
       volver a caer, solo... para pasar el d\xEDa."
+    locKey: t_f608a8b21352
     leftSpeaker: 1
     characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     endDialogueHere: 1
@@ -55025,6 +55466,7 @@ MonoBehaviour:
   - speakerName: NPC C
     dialogueText: "Alfa dijo que el aire all\xE1 es tan puro que te limpia los pulmones...
       y el esp\xEDritu. Qu\xE9 encontraremos la verdad."
+    locKey: t_0f343edebcd3
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -55033,6 +55475,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: NPC D
     dialogueText: "S\xED, hermano. Me dijo que el trabajo honrado purifica."
+    locKey: t_ac2f1172de38
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -55042,6 +55485,7 @@ MonoBehaviour:
   - speakerName: NPC D
     dialogueText: " Estoy listo para trabajar. Estoy listo para dar todo por la Familia.
       All\xE1 no ser\xE9 un don Nadie. All\xE1 importar\xE9."
+    locKey: t_df1dad700cc3
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -55823,6 +56267,7 @@ MonoBehaviour:
   - {fileID: 6100853}
   - {fileID: 1957342181}
   - {fileID: 1390948122}
+  progresoId: puzzle_placas_puzzleplacas_1
   destroyAfterCompletion: 1
 --- !u!61 &1448360990
 BoxCollider2D:
@@ -56849,6 +57294,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: 
     dialogueText: "Esta zona se desbloquear\xE1 m\xE1s tarde."
+    locKey: t_b71b2bf91704
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -56981,6 +57427,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "(Esta va a ser mi compa\xF1era durante el viaje? Espero que no
       sea demasiado largo\u2026)"
+    locKey: t_b0584393b07d
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -57161,6 +57608,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionKey: 102
   noteTextAsset: {fileID: 4900000, guid: ef32b957ae2a9334ab11652524fd9b7b, type: 3}
+  locKey: t_473a405e3b64
   noteSprite: {fileID: -8461669258971744566, guid: 4aa4f89d26a6f9147a48680424909a17, type: 3}
   giantNoteTransform: {fileID: 1570147119}
   giantSprite: {fileID: 1570147121}
@@ -57602,6 +58050,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: Lilith
     dialogueText: "Por fin podr\xE9 dormir un poco. Estoy destrozada."
+    locKey: t_80b6cee24bb1
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -57963,35 +58412,39 @@ MonoBehaviour:
   autoActivate: 0
   guardarEnBacklog: 0
   dialogueSections:
-  - speakerName: Boris
+  - speakerName: Bortis
     dialogueText: "Hermanos y hermanas, bienvenidos a casa. Aqu\xED dej\xE1is atr\xE1s
       el mundo que os dio la espalda."
+    locKey: t_76c19d82732b_6e9b
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
     gibberishClip: {fileID: 0}
     gibberishVolume: 0.5
-  - speakerName: Boris
+  - speakerName: Bortis
     dialogueText: "Aqu\xED, vuestro trabajo tiene prop\xF3sito, y vuestra vida, valor.
       Sois familia."
+    locKey: t_896e66ff87c9_4852
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
     gibberishClip: {fileID: 0}
     gibberishVolume: 0.5
-  - speakerName: Boris
+  - speakerName: Bortis
     dialogueText: "Se os proporcionar\xE1 una vivienda compartida para vosotros.
       Pod\xE9is poneros c\xF3modos cuando entr\xE9is."
+    locKey: t_e6e66effabdc_3c92
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
     itemIconToGive: {fileID: 0}
     gibberishClip: {fileID: 0}
     gibberishVolume: 0.5
-  - speakerName: Boris
+  - speakerName: Bortis
     dialogueText: Por favor id yendo a la zona de las casas.
+    locKey: t_9a03801cdd27_e945
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -58494,6 +58947,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: 
     dialogueText: Has encontrado el boton 4.
+    locKey: t_758e636f26ed
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -58940,7 +59394,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerId: 
-  textoNuevo: PASADOS 2 DIAS
+  textoNuevo: "PASADOS 2 D\xCDAS"
+  locKey: t_f5c567b85a3a
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
   escalaInicial: 0.7
@@ -61350,6 +61805,7 @@ GameObject:
   - component: {fileID: 1591622914}
   - component: {fileID: 1591622916}
   - component: {fileID: 1591622915}
+  - component: {fileID: 1591622917}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -61475,6 +61931,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591622913}
   m_CullTransparentMesh: 1
+--- !u!114 &1591622917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591622913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49e06f863fc4a24c8c5bfb40852b68e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoOrigen: REANUDAR
+  locKey: t_5b5bc18006fb_5234
 --- !u!1 &1591999116
 GameObject:
   m_ObjectHideFlags: 0
@@ -61919,6 +62389,7 @@ MonoBehaviour:
   dialogues:
   - speakerName: Amara
     dialogueText: "\xA1Silas nos ha dicho que est\xE1s ayudando! Muchas gracias!"
+    locKey: t_bc7fac9fdd57
     leftSpeaker: 1
     characterSprite: {fileID: -4329823784585237373, guid: 87e2d9a7bbf0b7b4a8e1b7e17189c889, type: 3}
     giveItemAfterThisLine: 0
@@ -61930,6 +62401,7 @@ MonoBehaviour:
   - speakerName: Amara
     dialogueText: "Es tan bonito saber que los nuevos ya forman parte de la familia
       desde el primer d\xEDa"
+    locKey: t_f5b11b852d35
     leftSpeaker: 1
     characterSprite: {fileID: -4329823784585237373, guid: 87e2d9a7bbf0b7b4a8e1b7e17189c889, type: 3}
     giveItemAfterThisLine: 0
@@ -62182,6 +62654,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: 
     dialogueText: Has enterrado la chapa de Bortis
+    locKey: t_203c2cdf45dc
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -62190,6 +62663,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Voy a la habitaci\xF3n a descansar, ha sido un d\xEDa muy largo."
+    locKey: t_887eec6c8525
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -64010,6 +64484,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: Casero
     dialogueText: "\xA1SE QUE EST\xC1S AHI DENTRO! \xA1SAL A PAGAR EL ALQUILER!"
+    locKey: t_c868d07991a8
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -64018,6 +64493,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Casero
     dialogueText: "\xA1LLEVAS MESES DE RETRASO Y NO VOY A PERMITIR QUE SIGAS AQUI!"
+    locKey: t_c587dbec639c
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -64026,6 +64502,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Casero
     dialogueText: "\xA1LLAMARE A LA POLICIA!\n"
+    locKey: t_c8bb94806b28
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -64035,6 +64512,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "Qu\xE9 pesado\u2026 \xBFAcaso no tiene otra cosa que hacer en
       su vida?"
+    locKey: t_d1ba6c1fc040
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -64043,6 +64521,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "\xBFHasta cu\xE1ndo piensa estar ah\xED plantado?"
+    locKey: t_45574089adab
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -64165,6 +64644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoneName: ESTATUAS
+  locKey: t_d672dbd7e924_d8f2
   panelRect: {fileID: 1104836389}
   zoneText: {fileID: 1922679782}
   dropDistance: 500
@@ -64880,6 +65360,7 @@ MonoBehaviour:
   - speakerName: Jorah
     dialogueText: "\xA1Ah, una cara nueva! Siempre es una bendici\xF3n. \xBFVes?
       Aqu\xED nadie pasa hambre. La familia cuida de los suyos."
+    locKey: t_a3cd2954a201
     leftSpeaker: 1
     characterSprite: {fileID: -6705544094370837958, guid: 616f3a2a46c871342bcb37e4215aed2f, type: 3}
     giveItemAfterThisLine: 0
@@ -64994,7 +65475,8 @@ MonoBehaviour:
   dialogueId: 86e37fd2-252b-4e6c-86c0-676641555b0d
   dialogues:
   - speakerName: Cairen
-    dialogueText: Encantado de conocerte, Lilith
+    dialogueText: Encantada de conocerte, Lilith
+    locKey: t_5691631e4c89
     leftSpeaker: 1
     characterSprite: {fileID: -7517056936566813833, guid: d85c8973fa3cab64e8410b1c1f9e03e4, type: 3}
     giveItemAfterThisLine: 0
@@ -65005,6 +65487,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Igualmente\u2026 ehh\u2026"
+    locKey: t_99ff0ad012e7
     leftSpeaker: 0
     characterSprite: {fileID: 5953301182136891594, guid: bab0a3cb2ddcbf74782f358147544b33, type: 3}
     giveItemAfterThisLine: 0
@@ -65016,6 +65499,7 @@ MonoBehaviour:
   - speakerName: Cairen
     dialogueText: "Cairen. Puedes llamarme as\xED, sin formalidades. Es un placer
       tenerte aqu\xED."
+    locKey: t_167f2553b94a
     leftSpeaker: 1
     characterSprite: {fileID: 6775278750140180628, guid: 823f378d910b52d4ebc4f90954058405, type: 3}
     giveItemAfterThisLine: 0
@@ -65026,6 +65510,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: Mira, justo ha sonado la campana de la comida.
+    locKey: t_90ad2811e81c
     leftSpeaker: 1
     characterSprite: {fileID: 6775278750140180628, guid: 823f378d910b52d4ebc4f90954058405, type: 3}
     giveItemAfterThisLine: 0
@@ -65037,6 +65522,7 @@ MonoBehaviour:
   - speakerName: Cairen
     dialogueText: "Aqu\xED tenemos la costumbre de comer juntos, ya ver\xE1s que
       es m\xE1s agradable as\xED."
+    locKey: t_c44ddcce74e8
     leftSpeaker: 1
     characterSprite: {fileID: 6775278750140180628, guid: 823f378d910b52d4ebc4f90954058405, type: 3}
     giveItemAfterThisLine: 0
@@ -65048,6 +65534,7 @@ MonoBehaviour:
   - speakerName: Cairen
     dialogueText: "Y, bueno\u2026 si me haces un peque\xF1o favor, puedo conseguirte
       una doble raci\xF3n."
+    locKey: t_2205e11cdb9b
     leftSpeaker: 1
     characterSprite: {fileID: -7517056936566813833, guid: d85c8973fa3cab64e8410b1c1f9e03e4, type: 3}
     giveItemAfterThisLine: 0
@@ -65058,6 +65545,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: "Pero shhh, que quede entre nosotros, \xBFs\xED?"
+    locKey: t_c8a6d82c4063
     leftSpeaker: 1
     characterSprite: {fileID: -7517056936566813833, guid: d85c8973fa3cab64e8410b1c1f9e03e4, type: 3}
     giveItemAfterThisLine: 0
@@ -66187,6 +66675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerId: 
   textoNuevo: 
+  locKey: 
   uiText: {fileID: 570216618}
   duracionRevelado: 0.75
   escalaInicial: 0.7
@@ -66935,6 +67424,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: 
     dialogueText: Has encontrado un destornillador
+    locKey: t_a33bfaedd81e
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -66943,6 +67433,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "\xA1Perfecto! Con esto podr\xE9 salir por alguna ventana \n"
+    locKey: t_a410141b588f
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -67066,6 +67557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoneName: BIBLIOTECA
+  locKey: t_0b4762406bb1_c3f3
   panelRect: {fileID: 2066309834}
   zoneText: {fileID: 596384805}
   dropDistance: 500
@@ -67217,6 +67709,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: 
     dialogueText: Has encontrado la llave inglesa
+    locKey: t_008a113ecca4
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -67225,6 +67718,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "\xA1Genial! Con esto podr\xE9 arreglar las tuber\xEDas."
+    locKey: t_e12dbf81d114
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -68004,6 +68498,7 @@ MonoBehaviour:
   - speakerName: Peter
     dialogueText: "Estoy harto del curro, t\xEDo. Cada d\xEDa es lo mismo. Si no
       renuncio pronto, me van a encontrar muerto en esa oficina."
+    locKey: t_87a77c5a8c0a
     leftSpeaker: 1
     characterSprite: {fileID: 6982892208427895576, guid: 96d6d365aab282a4cb540e553ee6bdaa, type: 3}
     giveItemAfterThisLine: 0
@@ -68015,6 +68510,7 @@ MonoBehaviour:
   - speakerName: Peter
     dialogueText: "Ey, Lilith\u2026 tengo de nuevo el producto que te gusta. Ya sabes,
       el de siempre."
+    locKey: t_c1d57c4d6300
     leftSpeaker: 1
     characterSprite: {fileID: 6982892208427895576, guid: 96d6d365aab282a4cb540e553ee6bdaa, type: 3}
     giveItemAfterThisLine: 0
@@ -68025,6 +68521,7 @@ MonoBehaviour:
     gibberishVolume: 0.1
   - speakerName: Peter
     dialogueText: "Cinco d\xF3lares el gramo. No te preocupes, es de buena calidad."
+    locKey: t_e1af51667167
     leftSpeaker: 1
     characterSprite: {fileID: 6982892208427895576, guid: 96d6d365aab282a4cb540e553ee6bdaa, type: 3}
     giveItemAfterThisLine: 0
@@ -68036,6 +68533,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "\xBFCinco d\xF3lares? Oye, recuerda que la \xFAltima vez te cubr\xED
       las espaldas cuando casi te pilla el casero en el pasillo."
+    locKey: t_a8e1ad4a6ffd
     leftSpeaker: 0
     characterSprite: {fileID: -7255883190028503133, guid: c71e25c1c6d3b974485111da8be9c7bd, type: 3}
     giveItemAfterThisLine: 0
@@ -68046,6 +68544,7 @@ MonoBehaviour:
     gibberishVolume: 0.1
   - speakerName: Peter
     dialogueText: Vale, vale, no hace falta que me eches en cara mis deudas.
+    locKey: t_d104ff59de20
     leftSpeaker: 1
     characterSprite: {fileID: 6982892208427895576, guid: 96d6d365aab282a4cb540e553ee6bdaa, type: 3}
     giveItemAfterThisLine: 0
@@ -68057,6 +68556,7 @@ MonoBehaviour:
   - speakerName: Peter
     dialogueText: "Toma, esta es por cuenta de la casa. Pero que no se te suba a
       la cabeza, \xBFeh?"
+    locKey: t_c120726d41b1
     leftSpeaker: 1
     characterSprite: {fileID: 6982892208427895576, guid: 96d6d365aab282a4cb540e553ee6bdaa, type: 3}
     giveItemAfterThisLine: 0
@@ -68067,6 +68567,7 @@ MonoBehaviour:
     gibberishVolume: 0.1
   - speakerName: 
     dialogueText: (obtienes bolsa de Nieve Negra)
+    locKey: t_bfc8f481e9fe
     leftSpeaker: 0
     characterSprite: {fileID: 0}
     giveItemAfterThisLine: 0
@@ -68270,6 +68771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerId: ea7ea7a3-ca61-4bba-b240-7c82cf9a0ba6
   textoNuevo: "HABLA CON JORAH EN LA CABA\xD1A CENTRAL DEL COMEDOR"
+  locKey: t_0b57d0772810
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
   escalaInicial: 0.7
@@ -68872,6 +69374,7 @@ MonoBehaviour:
     dialogueText: 'Ya hemos llegado a su destino
 
 '
+    locKey: t_bfb8c7a1ca7a
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -69685,6 +70188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerId: 05e270a8-4730-4bcb-92a9-abd550529e34
   textoNuevo: 
+  locKey: 
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
   escalaInicial: 0.7
@@ -70109,6 +70613,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: Lilith
     dialogueText: "Necesito una llave inglesa. Buscar\xE9 por el sal\xF3n\n"
+    locKey: t_322ca64bcebc
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -70353,6 +70858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerId: 
   textoNuevo: INVESTIGA EL PUEBLO
+  locKey: t_d4cc4cb0a8dc
   uiText: {fileID: 570216618}
   duracionRevelado: 1.2
   escalaInicial: 0.7
@@ -70686,6 +71192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoneName: BAR
+  locKey: t_a5d5c1bba91f
   panelRect: {fileID: 58266043}
   zoneText: {fileID: 53226366}
   dropDistance: 500
@@ -70947,6 +71454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoneName: "HABITACI\xD3N"
+  locKey: t_e2d6334a86b7_fbac
   panelRect: {fileID: 836660224}
   zoneText: {fileID: 1293988470}
   dropDistance: 500
@@ -72981,6 +73489,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: Lilith
     dialogueText: 'Vaya, tienen una manera curiosa de dar la bienvenida a sus invitados. '
+    locKey: t_47bcdbb4d7d7
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -72989,6 +73498,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Que curioso que esta llave tenga un s\xEDmbolo de una hoja"
+    locKey: t_69a2db573b02
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -73609,6 +74119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoneName: DERRUMBAMIENTO
+  locKey: t_b85d914b597c_d96f
   panelRect: {fileID: 132547290}
   zoneText: {fileID: 844335503}
   dropDistance: 500
@@ -74614,6 +75125,7 @@ MonoBehaviour:
   dialogues:
   - speakerName: Jorah
     dialogueText: "\xA1Lilith, qu\xE9 sorpresa volverte a ver!"
+    locKey: t_7331a9b222bb
     leftSpeaker: 1
     characterSprite: {fileID: -6705544094370837958, guid: 616f3a2a46c871342bcb37e4215aed2f, type: 3}
     giveItemAfterThisLine: 0
@@ -74625,6 +75137,7 @@ MonoBehaviour:
   - speakerName: Jorah
     dialogueText: "Me ha dicho Cairen que te d\xE9 un poco m\xE1s de lo que le doy
       a los dem\xE1s. Pues aqu\xED tienes, disfrutalo."
+    locKey: t_bfd25e745e85
     leftSpeaker: 1
     characterSprite: {fileID: -6705544094370837958, guid: 616f3a2a46c871342bcb37e4215aed2f, type: 3}
     giveItemAfterThisLine: 0
@@ -74635,6 +75148,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: Gracias Jorah, no se lo cuentes a nadie ehh
+    locKey: t_203756a0944a
     leftSpeaker: 0
     characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
@@ -75231,6 +75745,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: 
     dialogueText: "Esta zona se desbloquear\xE1 m\xE1s tarde."
+    locKey: t_b71b2bf91704_2f07
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -75819,6 +76334,7 @@ GameObject:
   - component: {fileID: 1890447290}
   - component: {fileID: 1890447292}
   - component: {fileID: 1890447291}
+  - component: {fileID: 1890447293}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -75944,6 +76460,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890447289}
   m_CullTransparentMesh: 1
+--- !u!114 &1890447293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890447289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49e06f863fc4a24c8c5bfb40852b68e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoOrigen: AJUSTES
+  locKey: t_aba2d75cf84c_da7f
 --- !u!1 &1893511971
 GameObject:
   m_ObjectHideFlags: 0
@@ -76239,6 +76769,7 @@ MonoBehaviour:
   - speakerName: Bortis
     dialogueText: "\xBFQu\xE9 tal tu estancia Lilith? Espero que todo te est\xE9
       gustando"
+    locKey: t_12b5521df7f6
     leftSpeaker: 1
     characterSprite: {fileID: -7668641986847109036, guid: 24da9c70df32a1841ae7af8729ad9ad1, type: 3}
     giveItemAfterThisLine: 0
@@ -76250,6 +76781,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: "La verdad que s\xED\u2026 no esperaba tanta amabilidad de vuestra
       parte"
+    locKey: t_369fcef898bf
     leftSpeaker: 0
     characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
@@ -76260,6 +76792,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Bortis
     dialogueText: "Aqu\xED todos somos familia, eso es lo de menos."
+    locKey: t_0380e67da109
     leftSpeaker: 1
     characterSprite: {fileID: -7668641986847109036, guid: 24da9c70df32a1841ae7af8729ad9ad1, type: 3}
     giveItemAfterThisLine: 0
@@ -76271,6 +76804,7 @@ MonoBehaviour:
   - speakerName: Bortis
     dialogueText: Mira, necesito tu ayuda para que lleves esta cesta a algunos de
       tus nuevos hermanos y hermanas.
+    locKey: t_16b50dac297b
     leftSpeaker: 1
     characterSprite: {fileID: -7668641986847109036, guid: 24da9c70df32a1841ae7af8729ad9ad1, type: 3}
     giveItemAfterThisLine: 0
@@ -76281,6 +76815,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Bortis
     dialogueText: "Pasa por la plaza central, la biblioteca y el jard\xEDn."
+    locKey: t_e19af00198ae
     leftSpeaker: 1
     characterSprite: {fileID: -7668641986847109036, guid: 24da9c70df32a1841ae7af8729ad9ad1, type: 3}
     giveItemAfterThisLine: 0
@@ -76291,6 +76826,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Bortis
     dialogueText: "Piensa que esto te ayudar\xE1 a integrarte y a conocernos mejor."
+    locKey: t_5edfc27617f1
     leftSpeaker: 1
     characterSprite: {fileID: -7668641986847109036, guid: 24da9c70df32a1841ae7af8729ad9ad1, type: 3}
     giveItemAfterThisLine: 0
@@ -76300,7 +76836,8 @@ MonoBehaviour:
     gibberishClip: {fileID: 0}
     gibberishVolume: 0.5
   - speakerName: 
-    dialogueText: "Has conseguido: Cesta de v\xEDveres"
+    dialogueText: "Has obtenido \"Cesta de v\xEDveres\""
+    locKey: t_97a3d4a0892d
     leftSpeaker: 0
     characterSprite: {fileID: 0}
     giveItemAfterThisLine: 0
@@ -76311,6 +76848,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Me vendr\xE1 bien darme un paseo, ahora mismo voy para all\xE1."
+    locKey: t_c905dc6c1666
     leftSpeaker: 0
     characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
@@ -77077,6 +77615,7 @@ MonoBehaviour:
   dialogueSections:
   - speakerName: Lilith
     dialogueText: "\xBFY ese sonido?, creo que deber\xEDa ir a la plaza"
+    locKey: t_0ee5eaf91576
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -78116,6 +78655,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Lilith. Ver tus pies en esta tierra sagrada es un buen presagio.
       Para que eches ra\xEDces verdaderas, quiero darte un par de cosas."
+    locKey: t_5ed3d98e2a79
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
@@ -78127,6 +78667,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Guarda esta flor. Es un s\xEDmbolo de la fe que la Familia deposita
       en ti."
+    locKey: t_777609e8f49c
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
@@ -78136,7 +78677,8 @@ MonoBehaviour:
     gibberishClip: {fileID: 0}
     gibberishVolume: 0.5
   - speakerName: 
-    dialogueText: "Has obtenido: La Flor de la Hesp\xE9rides"
+    dialogueText: "Has obtenido \"La Flor de la Hesp\xE9rides\""
+    locKey: t_4eb36e243486
     leftSpeaker: 0
     characterSprite: {fileID: 0}
     giveItemAfterThisLine: 0
@@ -78148,6 +78690,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Tambi\xE9n quiero que plantes esta semilla en un lugar privado,
       donde s\xF3lo t\xFA la veas crecer. "
+    locKey: t_116353b19075
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
@@ -78158,6 +78701,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Alpha
     dialogueText: "Ser\xE1 el reflejo de tu propio crecimiento dentro de nosotros."
+    locKey: t_817aec83f140
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
@@ -78169,6 +78713,7 @@ MonoBehaviour:
   - speakerName: Alpha
     dialogueText: "Cuando llegues al sitio sabr\xE1s que la debes poner all\xED,
       es un sentimiento muy fuerte. Deber\xE1s buscarlo por tu cuenta"
+    locKey: t_c416860c4346
     leftSpeaker: 1
     characterSprite: {fileID: -273775725430403696, guid: 72d165fe6685fc641b687376541b7cb9, type: 3}
     giveItemAfterThisLine: 0
@@ -78179,6 +78724,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: Gracias por tu amabilidad, Alpha.
+    locKey: t_aa051831647e
     leftSpeaker: 0
     characterSprite: {fileID: -3582710704502222356, guid: 03b328f3d751c38429f3af6a3895348b, type: 3}
     giveItemAfterThisLine: 0
@@ -78190,6 +78736,7 @@ MonoBehaviour:
   - speakerName: Lilith
     dialogueText: Con lo que llevo ahora estoy muy contenta, es la primera vez que
       siento que me tratan bien.
+    locKey: t_eaaf3b9d6ef0
     leftSpeaker: 0
     characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
@@ -78200,6 +78747,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "Cualquier cosa que necesites, no dudes en dec\xEDrmelo."
+    locKey: t_5da573ed58af
     leftSpeaker: 0
     characterSprite: {fileID: 6377917850455477399, guid: 25e65e92d43918b438de921ced967a6a, type: 3}
     giveItemAfterThisLine: 0
@@ -78452,6 +79000,7 @@ MonoBehaviour:
   - {fileID: 255745970}
   - {fileID: 6100853}
   - {fileID: 1390948122}
+  progresoId: puzzle_placas_puzzleplacas4
   destroyAfterCompletion: 1
 --- !u!61 &1957342184
 BoxCollider2D:
@@ -78777,6 +79326,7 @@ GameObject:
   - component: {fileID: 1966733585}
   - component: {fileID: 1966733587}
   - component: {fileID: 1966733586}
+  - component: {fileID: 1966733588}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -78902,6 +79452,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1966733584}
   m_CullTransparentMesh: 1
+--- !u!114 &1966733588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966733584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49e06f863fc4a24c8c5bfb40852b68e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoOrigen: SALIR
+  locKey: t_c81ad1fb72c1_18a1
 --- !u!1 &1982397726
 GameObject:
   m_ObjectHideFlags: 0
@@ -79125,6 +79689,7 @@ GameObject:
   - component: {fileID: 1985646928}
   - component: {fileID: 1985646930}
   - component: {fileID: 1985646929}
+  - component: {fileID: 1985646931}
   m_Layer: 5
   m_Name: TitleText
   m_TagString: Untagged
@@ -79250,6 +79815,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985646927}
   m_CullTransparentMesh: 1
+--- !u!114 &1985646931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985646927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49e06f863fc4a24c8c5bfb40852b68e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoOrigen: BACKLOG
+  locKey: t_f3e573404df4_804f
 --- !u!1 &1986571541
 GameObject:
   m_ObjectHideFlags: 0
@@ -79632,6 +80211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionKey: 102
   noteTextAsset: {fileID: 4900000, guid: 22506e0026282384f9f22ef11e2fee0c, type: 3}
+  locKey: t_00d8fa32f1f7
   noteSprite: {fileID: -8329809790174639956, guid: 65c6091a56ec08b478ec338d6b4ad1a5, type: 3}
   giantNoteTransform: {fileID: 1317480835}
   giantSprite: {fileID: 1317480837}
@@ -79930,6 +80510,7 @@ MonoBehaviour:
   - {fileID: 176374043}
   - {fileID: 126576700}
   - {fileID: 714223660}
+  progresoId: puzzle_tuberias_managerpuzzletuberias
   destruirDespuesDeDialogo: 1
   speakerContainer: {fileID: 1863344623}
   speakerText: {fileID: 1659188321}
@@ -80345,6 +80926,7 @@ MonoBehaviour:
   dialogues:
   - speakerName: Cairen
     dialogueText: "Mira Lilith, es esta mesa de aqu\xED. "
+    locKey: t_ae5d1660c06f
     leftSpeaker: 1
     characterSprite: {fileID: 6775278750140180628, guid: 823f378d910b52d4ebc4f90954058405, type: 3}
     giveItemAfterThisLine: 0
@@ -80356,6 +80938,7 @@ MonoBehaviour:
   - speakerName: Cairen
     dialogueText: "He preparado unas peque\xF1as indicaciones seg\xFAn las preferencias
       de cada comensal."
+    locKey: t_03e9d7c46cd3
     leftSpeaker: 1
     characterSprite: {fileID: 6775278750140180628, guid: 823f378d910b52d4ebc4f90954058405, type: 3}
     giveItemAfterThisLine: 0
@@ -80366,6 +80949,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: "\xBFY qu\xE9 es lo que se supone que tengo que hacer?"
+    locKey: t_55645564379b
     leftSpeaker: 0
     characterSprite: {fileID: -7255883190028503133, guid: c71e25c1c6d3b974485111da8be9c7bd, type: 3}
     giveItemAfterThisLine: 0
@@ -80376,6 +80960,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Cairen
     dialogueText: Nada complicado, te lo prometo.
+    locKey: t_c665e5c01b03
     leftSpeaker: 1
     characterSprite: {fileID: 6775278750140180628, guid: 823f378d910b52d4ebc4f90954058405, type: 3}
     giveItemAfterThisLine: 0
@@ -80387,6 +80972,7 @@ MonoBehaviour:
   - speakerName: Cairen
     dialogueText: "Solo col\xF3calos donde creas que estar\xE1n m\xE1s c\xF3modos,
       para que todos puedan disfrutar en paz de la comida."
+    locKey: t_e99f195f255c
     leftSpeaker: 1
     characterSprite: {fileID: 6775278750140180628, guid: 823f378d910b52d4ebc4f90954058405, type: 3}
     giveItemAfterThisLine: 0
@@ -80398,6 +80984,7 @@ MonoBehaviour:
   - speakerName: Cairen
     dialogueText: "Mientras te encargas de eso, yo aprovechar\xE9 para revisar algunos
       detalles en la cocina."
+    locKey: t_616c4e2f0e64
     leftSpeaker: 1
     characterSprite: {fileID: 6775278750140180628, guid: 823f378d910b52d4ebc4f90954058405, type: 3}
     giveItemAfterThisLine: 0
@@ -80409,6 +80996,7 @@ MonoBehaviour:
   - speakerName: Cairen
     dialogueText: "Gracias por tu ayuda, Lilith. Es bonito tener a alguien dispuesto
       a colaborar desde el primer d\xEDa."
+    locKey: t_82b1141c12e6
     leftSpeaker: 1
     characterSprite: {fileID: 6775278750140180628, guid: 823f378d910b52d4ebc4f90954058405, type: 3}
     giveItemAfterThisLine: 0
@@ -80419,6 +81007,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: 
     dialogueText: Has obtenido "Instrucciones de la mesa"
+    locKey: t_1692ebadb90f
     leftSpeaker: 0
     characterSprite: {fileID: 0}
     giveItemAfterThisLine: 0
@@ -80645,6 +81234,7 @@ GameObject:
   - component: {fileID: 2038230010}
   - component: {fileID: 2038230012}
   - component: {fileID: 2038230011}
+  - component: {fileID: 2038230013}
   m_Layer: 5
   m_Name: Texto Aviso 1
   m_TagString: Untagged
@@ -80770,6 +81360,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2038230009}
   m_CullTransparentMesh: 1
+--- !u!114 &2038230013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038230009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49e06f863fc4a24c8c5bfb40852b68e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoOrigen: "\xBFSEGURO QUE QUIERES SALIR?"
+  locKey: t_8fce3f19c16c_8b8e
 --- !u!1 &2043331247
 GameObject:
   m_ObjectHideFlags: 0
@@ -80837,6 +81441,7 @@ MonoBehaviour:
   dialogues:
   - speakerName: Silas
     dialogueText: "\xA1Ah, uno de los nuevos! Ven, si\xE9ntate con nosotros."
+    locKey: t_8402efb98a57
     leftSpeaker: 1
     characterSprite: {fileID: 1686456571526281364, guid: 9cf5d9d4f6d7fe04e9519f440440837e, type: 3}
     giveItemAfterThisLine: 0
@@ -80846,8 +81451,9 @@ MonoBehaviour:
     gibberishClip: {fileID: 0}
     gibberishVolume: 0.5
   - speakerName: Silas
-    dialogueText: "\xBFLillith verdad?, esos dos son Lin y Amara, no he visto a nadie
+    dialogueText: "\xBFLilith verdad?, esos dos son Lin y Amara, no he visto a nadie
       tan enamorados como ellos."
+    locKey: t_85dac5db9897
     leftSpeaker: 1
     characterSprite: {fileID: 1686456571526281364, guid: 9cf5d9d4f6d7fe04e9519f440440837e, type: 3}
     giveItemAfterThisLine: 0
@@ -82006,6 +82612,7 @@ GameObject:
   - component: {fileID: 2072808994}
   - component: {fileID: 2072808996}
   - component: {fileID: 2072808995}
+  - component: {fileID: 2072808997}
   m_Layer: 5
   m_Name: TextoVolumen
   m_TagString: Untagged
@@ -82131,6 +82738,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2072808993}
   m_CullTransparentMesh: 1
+--- !u!114 &2072808997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072808993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49e06f863fc4a24c8c5bfb40852b68e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoOrigen: VOLUMEN
+  locKey: t_c4d009e25600_7c3c
 --- !u!1 &2075877766
 GameObject:
   m_ObjectHideFlags: 0
@@ -82550,6 +83171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionKey: 102
   noteTextAsset: {fileID: 4900000, guid: 67ca4b0a6a734be46a0b924269521478, type: 3}
+  locKey: t_c3fa24968d21
   noteSprite: {fileID: 7325919807087077963, guid: 9b0d9f0690478dc41a252ed024aab134, type: 3}
   giantNoteTransform: {fileID: 1952798839}
   giantSprite: {fileID: 1952798841}
@@ -82733,6 +83355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoneName: ENTRADA PUEBLO
+  locKey: t_675b45f78106
   panelRect: {fileID: 556191392}
   zoneText: {fileID: 407197202}
   dropDistance: 500
@@ -82960,6 +83583,7 @@ MonoBehaviour:
   - speakerName: Cairen
     dialogueText: "\xA1Eh, portero! \xA1Deja de mirar tan feo, que pareces una estatua!
       \xA1Vamos a bailar todos, esto es una fiesta!"
+    locKey: t_8e5bbd7ab908
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -82969,6 +83593,7 @@ MonoBehaviour:
   - speakerName: Portero
     dialogueText: "\xA1Otra vez t\xFA! Ya te dije que si te ve\xEDa aqu\xED, te iba
       a sacar a patadas."
+    locKey: t_c53a7b04a79c
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -82977,6 +83602,7 @@ MonoBehaviour:
     gibberishVolume: 0.5
   - speakerName: Lilith
     dialogueText: (Perfecto... es mi oportunidad)
+    locKey: t_fee89d1d5ae9
     giveItemAfterThisLine: 0
     itemIdToGive: 
     itemNameToGive: 
@@ -83902,6 +84528,7 @@ MonoBehaviour:
   - speakerName: Jefe
     dialogueText: "Un momento\u2026 yo no te he visto entrar por la puerta. \xBFC\xF3mo
       demonios has pasado, t\xFA ves como vas vestida?, aqu\xED las reglas se respetan"
+    locKey: t_baaaafb1ac9a
     leftSpeaker: 1
     characterSprite: {fileID: 8057212667675352538, guid: 8551647d74e2cf849989cd2e508651c9, type: 3}
     giveItemAfterThisLine: 0
@@ -84035,6 +84662,7 @@ MonoBehaviour:
   - speakerName: Gamma
     dialogueText: "El N\xE9ctar es una locura... es mejor que cualquier mierda de
       la ciudad."
+    locKey: t_352cceceb5ff
     leftSpeaker: 1
     characterSprite: {fileID: -4831706047985285938, guid: 06e3e07abd727584c8ebc7318360d8b6, type: 3}
     giveItemAfterThisLine: 0

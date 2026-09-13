@@ -24,6 +24,11 @@ public class PuzzleManager : MonoBehaviour
     public GameObject[] gameObjectsAActivar; // GameObjects que se activarán al completar
     public GameObject[] gameObjectsADesactivar; // GameObjects que se desactivarán al completar
 
+    [Header("Guardado")]
+    [Tooltip("Id con el que este puzle se apunta en la partida. Lo rellena " +
+             "Tools > Guardado > Asignar ids a los puzles.")]
+    public string progresoId;
+
     private bool puzzleCompletado = false;
 
     void Awake()
@@ -80,6 +85,12 @@ public class PuzzleManager : MonoBehaviour
 
         puzzleCompletado = true;
         Debug.Log("¡PUZZLE COMPLETADO!");
+
+        // Se apunta el progreso AQUI, en el instante en que el puzle se da por
+        // resuelto, para que al recargar la escena se puedan volver a aplicar
+        // sus consecuencias. Sin esto el puzle se rehacia solo.
+        if (!string.IsNullOrEmpty(progresoId) && SaveManager.Instance != null)
+            SaveManager.Instance.RegisterPuzzleCompleted(progresoId);
 
         MensajeCompletado();
         ActivarCollider(false);

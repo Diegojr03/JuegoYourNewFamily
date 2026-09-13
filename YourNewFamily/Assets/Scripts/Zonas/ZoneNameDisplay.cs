@@ -1,19 +1,22 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using YNF.Localizacion;
 
 public class ZoneNameDisplay : MonoBehaviour
 {
-    [Header("ConfiguraciÛn de la Zona")]
+    [Header("Configuraci√≥n de la Zona")]
     public string zoneName = "Nombre de la Zona";
+    [ClaveLocalizacion(nameof(zoneName))]
+    public string locKey;
 
-    [Header("Referencias UI (Arrastra aquÌ los elementos)")]
+    [Header("Referencias UI (Arrastra aqu√≠ los elementos)")]
     public GameObject uiPanel;          // El panel que contiene el fondo y texto
-    public TextMeshProUGUI zoneText;     // El texto que mostrar· el nombre
+    public TextMeshProUGUI zoneText;     // El texto que mostrar√° el nombre
     public Image backgroundImage;        // El fondo (opcional)
 
-    [Header("PersonalizaciÛn")]
+    [Header("Personalizaci√≥n")]
     public TMP_FontAsset customFont;     // Fuente personalizada
     public float fontSize = 36f;
     public Color textColor = Color.white;
@@ -22,7 +25,7 @@ public class ZoneNameDisplay : MonoBehaviour
 
     [Header("Tiempo")]
     public float displayTime = 1f;       // Tiempo que se muestra el mensaje (1 segundo)
-    public float fadeDuration = 0.3f;    // DuraciÛn del fade in/out
+    public float fadeDuration = 0.3f;    // Duraci√≥n del fade in/out
 
     [Header("Tags")]
     public string playerTag = "Player";  // Tag del jugador
@@ -45,7 +48,7 @@ public class ZoneNameDisplay : MonoBehaviour
             // Configurar texto
             if (zoneText != null)
             {
-                zoneText.text = zoneName;
+                zoneText.text = Loc.T(locKey, zoneName);
 
                 if (customFont != null)
                     zoneText.font = customFont;
@@ -83,7 +86,7 @@ public class ZoneNameDisplay : MonoBehaviour
             if (messageCoroutine != null)
                 StopCoroutine(messageCoroutine);
 
-            // Verificar que el objeto est· activo antes de iniciar la corrutina
+            // Verificar que el objeto est√° activo antes de iniciar la corrutina
             if (gameObject.activeInHierarchy)
             {
                 messageCoroutine = StartCoroutine(ShowMessageSequence());
@@ -104,14 +107,14 @@ public class ZoneNameDisplay : MonoBehaviour
                 messageCoroutine = null;
             }
 
-            // Hacer fade out inmediato solo si el objeto est· activo
+            // Hacer fade out inmediato solo si el objeto est√° activo
             if (gameObject.activeInHierarchy)
             {
                 StartCoroutine(FadeTo(0f));
             }
             else
             {
-                // Si el objeto est· inactivo, directamente poner alpha a 0
+                // Si el objeto est√° inactivo, directamente poner alpha a 0
                 if (canvasGroup != null)
                     canvasGroup.alpha = 0f;
             }
@@ -153,12 +156,12 @@ public class ZoneNameDisplay : MonoBehaviour
             yield return null;
         }
 
-        // Verificar una ˙ltima vez antes de asignar
+        // Verificar una √∫ltima vez antes de asignar
         if (canvasGroup != null)
             canvasGroup.alpha = targetAlpha;
     }
 
-    // MÈtodo p˙blico para desactivar manualmente (por si necesitas desactivar el trigger)
+    // M√©todo p√∫blico para desactivar manualmente (por si necesitas desactivar el trigger)
     public void DisableZone()
     {
         // Detener corrutinas
@@ -176,7 +179,7 @@ public class ZoneNameDisplay : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    // Detectar cuando el juego se est· cerrando
+    // Detectar cuando el juego se est√° cerrando
     void OnApplicationQuit()
     {
         isQuitting = true;

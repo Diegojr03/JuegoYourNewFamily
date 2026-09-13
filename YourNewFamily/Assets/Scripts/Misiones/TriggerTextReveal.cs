@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 using System.Collections;
+using YNF.Localizacion;
 
 public class TriggerTextReveal : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class TriggerTextReveal : MonoBehaviour
 
     [TextArea]
     public string textoNuevo;
+    [ClaveLocalizacion(nameof(textoNuevo))]
+    public string locKey;
     public TMP_Text uiText;
 
     public float duracionRevelado = 1.2f;
@@ -26,7 +29,7 @@ public class TriggerTextReveal : MonoBehaviour
         {
             if (SaveManager.Instance.TryGetLastMissionText(out string savedText))
             {
-                uiText.text = savedText;
+                uiText.text = Loc.T(savedText);
             }
         }
     }
@@ -52,7 +55,7 @@ public class TriggerTextReveal : MonoBehaviour
             return;
         }
 
-        uiText.text = textoNuevo;
+        uiText.text = Loc.T(locKey, textoNuevo);
 
         // Apagamos el collider inmediatamente para evitar dobles detecciones
         var col = GetComponent<Collider2D>();

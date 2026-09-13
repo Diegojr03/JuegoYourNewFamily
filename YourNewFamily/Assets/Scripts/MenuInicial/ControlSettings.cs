@@ -1,8 +1,9 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using YNF.Localizacion;
 
 [System.Serializable]
 public class ControlMapping
@@ -19,7 +20,7 @@ public class ControlSettings : MonoBehaviour
 
     [Header("Referencias UI")]
     public Transform controlsContainer; // Padre de todas las filas (dentro de un ScrollView)
-    public GameObject controlRowPrefab; // Prefab con ActionText y KeyText (sin botón)
+    public GameObject controlRowPrefab; // Prefab con ActionText y KeyText (sin botÃ³n)
 
     void Start()
     {
@@ -54,12 +55,12 @@ public class ControlSettings : MonoBehaviour
         TextMeshProUGUI keyText = row.transform.Find("KeyText")?.GetComponent<TextMeshProUGUI>();
 
         if (actionText != null)
-            actionText.text = mapping.actionName;
+            actionText.text = Loc.T(mapping.actionName);
 
         if (keyText != null)
             keyText.text = mapping.currentKey.ToString();
 
-        // Si el prefab tiene un botón, lo ocultamos (para que no se vea)
+        // Si el prefab tiene un botÃ³n, lo ocultamos (para que no se vea)
         Button rebindButton = row.transform.Find("RebindButton")?.GetComponent<Button>();
         if (rebindButton != null)
             rebindButton.gameObject.SetActive(false);
@@ -77,7 +78,7 @@ public class ControlSettings : MonoBehaviour
         }
     }
 
-    // Método público para que otros scripts consulten la tecla asignada a una acción
+    // MÃ©todo pÃºblico para que otros scripts consulten la tecla asignada a una acciÃ³n
     public KeyCode GetKeyForAction(string actionName)
     {
         ControlMapping mapping = controlMappings.Find(m => m.actionName == actionName);

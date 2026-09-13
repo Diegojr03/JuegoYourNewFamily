@@ -1,5 +1,6 @@
-using TMPro;
+Ôªøusing TMPro;
 using UnityEngine;
+using YNF.Localizacion;
 
 public class ArrowPuzzleTrigger : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class ArrowPuzzleTrigger : MonoBehaviour
     public TextMeshProUGUI completadoText;
     private void Start()
     {
-        // Asegurarse que el panel est· desactivado al inicio
+        // Asegurarse que el panel est√° desactivado al inicio
         if (puzzlePanel != null)
         {
             puzzlePanel.SetActive(false);
@@ -58,8 +59,8 @@ public class ArrowPuzzleTrigger : MonoBehaviour
         {
             completionText.gameObject.SetActive(true);
         }
-        completadoText.text = "COMPLETADO";
-        // Programar el cierre despuÈs de 3 segundos (usando tiempo real)
+        completadoText.text = Loc.T("COMPLETADO");
+        // Programar el cierre despu√©s de 3 segundos (usando tiempo real)
         Invoke("DeactivatePuzzle", 0f);
     }
 

@@ -57,6 +57,11 @@ public class Puzzle4Botones2D : MonoBehaviour
     [Header("OBJETOS AL COMPLETAR")]
     public GameObject[] objectsToActivateAfter;
     public GameObject[] objectsToDestroyAfter;
+    [Header("Progreso")]
+    [Tooltip("Id unico de este puzle. Sin el, completarlo no queda registrado en la partida "
+           + "y sus consecuencias no se pueden reconstruir al cargar.")]
+    public string progresoId;
+
     public bool destroyAfterCompletion = false;
 
     private bool estaMirando = false;
@@ -240,6 +245,13 @@ public class Puzzle4Botones2D : MonoBehaviour
     private void CompletarPuzzle()
     {
         puzzleCompletado = true;
+        // El progreso se apunta AQUI, en el instante en que el puzle se da por
+        // resuelto. Hasta ahora se hacia dentro de la corrutina que espera al
+        // mensaje de felicitacion, varios segundos despues: si el jugador salia
+        // al menu en esa ventana, el puzle no quedaba registrado en la partida.
+        if (!string.IsNullOrEmpty(progresoId) && SaveManager.Instance != null)
+            SaveManager.Instance.RegisterPuzzleCompleted(progresoId);
+
         Debug.Log("¡PUZZLE DE 4 BOTONES COMPLETADO!");
 
         // Sonido
@@ -329,6 +341,11 @@ public class Puzzle4Botones2D : MonoBehaviour
         yield return new WaitForSeconds(delayAntesDeMensaje + tiempoMostrarMensaje);
 
         // Activar objetos
+        // Se apunta el puzle como completado ANTES de aplicar las consecuencias,
+        // para que al cargar la partida se puedan volver a aplicar.
+        if (!string.IsNullOrEmpty(progresoId) && SaveManager.Instance != null)
+            SaveManager.Instance.RegisterPuzzleCompleted(progresoId);
+
         foreach (GameObject obj in objectsToActivateAfter)
         {
             if (obj != null)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using YNF.Localizacion;
 
 public class DialogueChoiceSystem : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class DialogueChoiceSystem : MonoBehaviour
     {
         public string speakerName;
         [TextArea(3, 5)] public string dialogueText;
+        [ClaveLocalizacion(nameof(dialogueText))]
+        public string locKey;
         public bool leftSpeaker = true;
         public Sprite characterSprite;
 
@@ -31,6 +34,8 @@ public class DialogueChoiceSystem : MonoBehaviour
     public class Choice
     {
         public string choiceText;
+        [ClaveLocalizacion(nameof(choiceText))]
+        public string locKey;
         public int nextDialogueIndex = -1;
     }
 
@@ -226,7 +231,7 @@ public class DialogueChoiceSystem : MonoBehaviour
     {
         DialogueLine line = dialogueLines[index];
 
-        speakerText.text = line.speakerName;
+        speakerText.text = Loc.T(line.speakerName);
         speakerContainer.SetActive(!string.IsNullOrEmpty(line.speakerName));
 
         if (BacklogManager.Instance != null)
@@ -244,7 +249,7 @@ public class DialogueChoiceSystem : MonoBehaviour
         if (typingCoroutine != null)
             StopCoroutine(typingCoroutine);
 
-        typingCoroutine = StartCoroutine(TypeText(line.dialogueText, line.gibberishClip, line.gibberishVolume));
+        typingCoroutine = StartCoroutine(TypeText(Loc.T(line.locKey, line.dialogueText), line.gibberishClip, line.gibberishVolume));
 
         if (line.giveItemAfterThisLine)
         {
@@ -305,7 +310,7 @@ public class DialogueChoiceSystem : MonoBehaviour
         }
 
         DialogueLine currentLine = dialogueLines[currentIndex];
-        dialogueText.text = currentLine.dialogueText;
+        dialogueText.text = Loc.T(currentLine.locKey, currentLine.dialogueText);
 
         typing = false;
 
@@ -338,7 +343,7 @@ public class DialogueChoiceSystem : MonoBehaviour
         {
             GameObject btnObj = Instantiate(choiceButtonPrefab, choicesContainer);
             TextMeshProUGUI txt = btnObj.GetComponentInChildren<TextMeshProUGUI>();
-            if (txt != null) txt.text = choice.choiceText;
+            if (txt != null) txt.text = Loc.T(choice.locKey, choice.choiceText);
 
             Button btn = btnObj.GetComponent<Button>();
             int targetIndex = choice.nextDialogueIndex;
@@ -366,7 +371,7 @@ public class DialogueChoiceSystem : MonoBehaviour
 
         DialogueLine line = dialogueLines[currentIndex];
 
-        dialogueText.text = line.dialogueText;
+        dialogueText.text = Loc.T(line.locKey, line.dialogueText);
 
         if (line.endDialogueHere)
         {

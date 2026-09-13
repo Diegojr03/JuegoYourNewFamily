@@ -1,24 +1,25 @@
-using System.Collections.Generic;
+Ôªøusing System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using YNF.Localizacion;
 
 public class InventorySystem : MonoBehaviour
 {
     public static InventorySystem Instance { get; private set; }
 
     [Header("UI de la Mochila")]
-    public GameObject backpackIcon; // Icono pequeÒo en la esquina
+    public GameObject backpackIcon; // Icono peque√±o en la esquina
     public GameObject backpackPanel; // Panel desplegable completo
     public Transform itemsContainer; // Vertical Layout Group donde van los items
     public KeyCode toggleKey = KeyCode.M;
-    public int maxSlots = 3; // M·ximo de huecos en la mochila
+    public int maxSlots = 3; // M√°ximo de huecos en la mochila
 
     [Header("Prefabs")]
     public GameObject inventoryItemPrefab; // Prefab para mostrar items en la mochila
 
-    [Header("ConfiguraciÛn")]
-    public bool autoOpenOnItemGet = true; // Abrir autom·ticamente al obtener un item
-    public float autoCloseDelay = 3f; // Tiempo antes de cerrar autom·ticamente
+    [Header("Configuraci√≥n")]
+    public bool autoOpenOnItemGet = true; // Abrir autom√°ticamente al obtener un item
+    public float autoCloseDelay = 3f; // Tiempo antes de cerrar autom√°ticamente
 
     private List<InventoryItemData> inventoryItems = new List<InventoryItemData>();
     private bool isBackpackOpen = false;
@@ -28,11 +29,11 @@ public class InventorySystem : MonoBehaviour
     [System.Serializable]
     public class InventoryItemData
     {
-        public string itemId; // Identificador ˙nico
+        public string itemId; // Identificador √∫nico
         public string itemName; // Nombre para mostrar
         public Sprite itemIcon; // Icono del item
         public GameObject itemPrefab; // Prefab del item (si es necesario)
-        public string description; // DescripciÛn opcional
+        public string description; // Descripci√≥n opcional
         public bool isUsable = true; // Si se puede usar
     }
 
@@ -81,13 +82,13 @@ public class InventorySystem : MonoBehaviour
         }
     }
 
-    // MÈtodo principal para aÒadir items
+    // M√©todo principal para a√±adir items
     public bool AddItem(InventoryItemData newItem)
     {
-        // Verificar si ya tenemos el m·ximo de items
+        // Verificar si ya tenemos el m√°ximo de items
         if (inventoryItems.Count >= maxSlots)
         {
-            Debug.LogWarning("La mochila est· llena!");
+            Debug.LogWarning("La mochila est√° llena!");
             return false;
         }
 
@@ -98,17 +99,17 @@ public class InventorySystem : MonoBehaviour
             return false;
         }
 
-        // AÒadir a la lista
+        // A√±adir a la lista
         inventoryItems.Add(newItem);
-        Debug.Log($"AÒadido a la mochila: {newItem.itemName}");
+        Debug.Log($"A√±adido a la mochila: {newItem.itemName}");
 
         // Actualizar UI
         UpdateInventoryUI();
 
-        // Mostrar notificaciÛn (opcional)
+        // Mostrar notificaci√≥n (opcional)
         ShowItemNotification(newItem.itemName);
 
-        // Abrir autom·ticamente si est· configurado
+        // Abrir autom√°ticamente si est√° configurado
         if (autoOpenOnItemGet && !isBackpackOpen)
         {
             OpenBackpack();
@@ -118,7 +119,7 @@ public class InventorySystem : MonoBehaviour
         return true;
     }
 
-    // MÈtodo simplificado para aÒadir items desde di·logos
+    // M√©todo simplificado para a√±adir items desde di√°logos
     public bool AddSimpleItem(string itemId, string itemName, Sprite itemIcon)
     {
         InventoryItemData newItem = new InventoryItemData
@@ -131,7 +132,7 @@ public class InventorySystem : MonoBehaviour
         return AddItem(newItem);
     }
 
-    // MÈtodo para aÒadir prefab desde di·logos (como solicitaste)
+    // M√©todo para a√±adir prefab desde di√°logos (como solicitaste)
     public bool AddItemFromPrefab(GameObject itemPrefab)
     {
         if (itemPrefab == null)
@@ -140,7 +141,7 @@ public class InventorySystem : MonoBehaviour
             return false;
         }
 
-        // Obtener componente InventoryItem del prefab (opcional, lo crearemos despuÈs)
+        // Obtener componente InventoryItem del prefab (opcional, lo crearemos despu√©s)
         InventoryItem itemComponent = itemPrefab.GetComponent<InventoryItem>();
 
         InventoryItemData newItem = new InventoryItemData
@@ -177,7 +178,7 @@ public class InventorySystem : MonoBehaviour
             }
             else
             {
-                // ConfiguraciÛn manual si no hay componente
+                // Configuraci√≥n manual si no hay componente
                 Image iconImage = itemUI.transform.Find("Icon")?.GetComponent<Image>();
                 if (iconImage != null && itemData.itemIcon != null)
                 {
@@ -186,12 +187,12 @@ public class InventorySystem : MonoBehaviour
             }
         }
 
-        // Crear slots vacÌos si no est·n llenos
+        // Crear slots vac√≠os si no est√°n llenos
         for (int i = inventoryItems.Count; i < maxSlots; i++)
         {
             GameObject emptySlot = Instantiate(inventoryItemPrefab, itemsContainer);
 
-            // Marcar como slot vacÌo
+            // Marcar como slot vac√≠o
             Image iconImage = emptySlot.transform.Find("Icon")?.GetComponent<Image>();
             if (iconImage != null)
             {
@@ -199,24 +200,24 @@ public class InventorySystem : MonoBehaviour
                 iconImage.sprite = null;
             }
 
-            // Opcional: aÒadir texto "VacÌo"
+            // Opcional: a√±adir texto "Vac√≠o"
             TMPro.TextMeshProUGUI text = emptySlot.GetComponentInChildren<TMPro.TextMeshProUGUI>();
             if (text != null)
             {
-                text.text = "VacÌo";
+                text.text = Loc.T("Vac√≠o");
                 text.color = Color.gray;
             }
         }
     }
 
-    // Mostrar notificaciÛn de item obtenido
+    // Mostrar notificaci√≥n de item obtenido
     private void ShowItemNotification(string itemName)
     {
-        // AquÌ puedes implementar un sistema de notificaciones en pantalla
-        Debug.Log($"°Has obtenido: {itemName}!");
+        // Aqu√≠ puedes implementar un sistema de notificaciones en pantalla
+        Debug.Log($"¬°Has obtenido: {itemName}!");
 
-        // Opcional: mostrar texto en pantalla (necesitarÌas un UI Text en el Canvas)
-        // StartCoroutine(ShowNotificationText($"°Has obtenido: {itemName}!"));
+        // Opcional: mostrar texto en pantalla (necesitar√≠as un UI Text en el Canvas)
+        // StartCoroutine(ShowNotificationText($"¬°Has obtenido: {itemName}!"));
     }
 
     // Control de apertura/cierre
@@ -238,7 +239,7 @@ public class InventorySystem : MonoBehaviour
             // Actualizar UI al abrir
             UpdateInventoryUI();
 
-            // Cancelar cierre autom·tico si est· abierto manualmente
+            // Cancelar cierre autom√°tico si est√° abierto manualmente
             if (autoCloseCoroutine != null)
             {
                 StopCoroutine(autoCloseCoroutine);
@@ -256,7 +257,7 @@ public class InventorySystem : MonoBehaviour
         }
     }
 
-    // Cierre autom·tico despuÈs de tiempo
+    // Cierre autom√°tico despu√©s de tiempo
     private void StartAutoClose()
     {
         if (autoCloseCoroutine != null)
@@ -280,7 +281,7 @@ public class InventorySystem : MonoBehaviour
         return inventoryItems.Count < maxSlots;
     }
 
-    // Verificar si tiene un item especÌfico
+    // Verificar si tiene un item espec√≠fico
     public bool HasItem(string itemId)
     {
         return inventoryItems.Exists(item => item.itemId == itemId);

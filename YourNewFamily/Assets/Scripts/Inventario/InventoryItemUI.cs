@@ -1,7 +1,8 @@
-using TMPro;
+ï»¿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using YNF.Localizacion;
 
 public class InventoryItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
@@ -33,7 +34,7 @@ public class InventoryItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExit
         // Configurar nombre
         if (itemNameText != null)
         {
-            itemNameText.text = data.itemName;
+            itemNameText.text = Loc.T(data.itemName);
         }
 
         // Ocultar highlight por defecto
@@ -45,7 +46,7 @@ public class InventoryItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExit
             tooltipPanel.SetActive(false);
     }
 
-    // Mostrar información al pasar el ratón
+    // Mostrar informaciÃ³n al pasar el ratÃ³n
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (highlightFrame != null)
@@ -54,13 +55,13 @@ public class InventoryItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExit
         if (tooltipPanel != null && itemData != null)
         {
             tooltipPanel.SetActive(true);
-            if (tooltipName != null) tooltipName.text = itemData.itemName;
+            if (tooltipName != null) tooltipName.text = Loc.T(itemData.itemName);
             if (tooltipDescription != null && !string.IsNullOrEmpty(itemData.description))
-                tooltipDescription.text = itemData.description;
+                tooltipDescription.text = Loc.T(itemData.description);
         }
     }
 
-    // Ocultar información al quitar el ratón
+    // Ocultar informaciÃ³n al quitar el ratÃ³n
     public void OnPointerExit(PointerEventData eventData)
     {
         if (highlightFrame != null && !isSelected)
@@ -82,7 +83,7 @@ public class InventoryItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExit
         }
         else if (eventData.button == PointerEventData.InputButton.Right)
         {
-            // Mostrar información detallada o menú contextual
+            // Mostrar informaciÃ³n detallada o menÃº contextual
             ShowItemDetails();
         }
     }
@@ -101,16 +102,16 @@ public class InventoryItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExit
             }
         }
 
-        // También puedes añadir lógica específica según el itemId
+        // TambiÃ©n puedes aÃ±adir lÃ³gica especÃ­fica segÃºn el itemId
         switch (itemData.itemId)
         {
             case "nieve_negra":
                 Debug.Log("Usando nieve negra...");
-                // Lógica específica para nieve negra
+                // LÃ³gica especÃ­fica para nieve negra
                 break;
             case "pocion_salud":
-                Debug.Log("Usando poción de salud...");
-                // Lógica específica para poción
+                Debug.Log("Usando pociÃ³n de salud...");
+                // LÃ³gica especÃ­fica para pociÃ³n
                 break;
         }
     }
@@ -118,10 +119,10 @@ public class InventoryItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExit
     private void ShowItemDetails()
     {
         Debug.Log($"Mostrando detalles de: {itemData.itemName}");
-        // Aquí puedes abrir un panel más grande con información detallada
+        // AquÃ­ puedes abrir un panel mÃ¡s grande con informaciÃ³n detallada
     }
 
-    // Para selección con teclado/gamepad
+    // Para selecciÃ³n con teclado/gamepad
     public void SelectItem()
     {
         isSelected = true;

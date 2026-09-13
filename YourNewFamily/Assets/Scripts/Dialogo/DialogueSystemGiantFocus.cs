@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using YNF.Localizacion;
 
 public class DialogueSystemGiantFocus : MonoBehaviour
 {
@@ -42,6 +43,8 @@ public class DialogueSystemGiantFocus : MonoBehaviour
     {
         public string speakerName;
         [TextArea(3, 5)] public string dialogueText;
+        [ClaveLocalizacion(nameof(dialogueText))]
+        public string locKey;
         public bool isGiantSpeaking;
 
         public AudioClip gibberishClip;
@@ -170,7 +173,7 @@ public class DialogueSystemGiantFocus : MonoBehaviour
 
     private IEnumerator ShowLine(DialogueLine line)
     {
-        if (speakerText != null) speakerText.text = line.speakerName;
+        if (speakerText != null) speakerText.text = Loc.T(line.speakerName);
         if (speakerContainer != null) speakerContainer.SetActive(!string.IsNullOrEmpty(line.speakerName));
 
         if (BacklogManager.Instance != null)
@@ -183,7 +186,7 @@ public class DialogueSystemGiantFocus : MonoBehaviour
             );
         }
 
-        string fullText = line.dialogueText;
+        string fullText = Loc.T(line.locKey, line.dialogueText);
         Coroutine typingCoroutine = StartCoroutine(TypeText(fullText, line.gibberishClip, line.gibberishVolume));
         bool typingCompleted = false;
 

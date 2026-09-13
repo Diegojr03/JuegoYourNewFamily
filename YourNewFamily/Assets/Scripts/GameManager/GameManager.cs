@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using YNF.Progreso;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject objetoSinNieve;
     public GameObject objetoConNieve;
 
-    [Header("Configuración de Misión por Tags")]
+    [Header("ConfiguraciÃ³n de MisiÃ³n por Tags")]
     public string tagObjetosMision = "ObjetoLin";
     public GameObject npcAAfecivar;
     public GameObject dialogoAActivar;
@@ -24,8 +25,37 @@ public class GameManager : MonoBehaviour
     private bool objetosDetectadosAlMenosUnaVez = false;
     public TextMeshProUGUI textoMision;
 
+    void Awake()
+    {
+        // Instance se declaraba pero no se asignaba nunca, asi que
+        // GameManager.Instance era siempre null. Nadie lo usaba todavia, pero
+        // era una trampa esperando a que alguien lo hiciera.
+        Instance = this;
+    }
+
     void Start()
     {
+        // AQUI ESTABA EL BLOQUEO DEL TUTORIAL.
+        //
+        // Start() corre DESPUES de OnSceneLoaded, o sea despues de que el
+        // guardado haya restaurado la foto del mundo y reproducido el
+        // progreso. TieneNieve y misionCompletada no se guardan en ninguna
+        // parte, asi que al cargar volvian a su valor del inspector (false) y
+        // estas tres lineas deshacian lo que el guardado acababa de montar:
+        // apagaban ConversacionTraperoConNieve (la unica conversacion viva
+        // con Cairen, porque la version SinNieve ya estaba destruida) y
+        // apagaban el NPC de Lin en la segunda parte. El jugador se quedaba
+        // sin poder hablar con ellos para siempre.
+        //
+        // En partida nueva estas lineas si hacen falta: fijan el estado de
+        // salida. Al cargar, manda el guardado.
+        if (SaveManager.Instance != null && SaveManager.Instance.EscenaVieneDePartidaGuardada)
+        {
+            LogProgreso.Info("GameManager: la escena viene de una partida guardada, " +
+                             "se respeta el estado reconstruido y no se fuerza el inicial.");
+            return;
+        }
+
         ActualizarObjetos();
 
         // Aseguramos que el NPC empiece desactivado
@@ -34,7 +64,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        // Solo comprobamos si la misión no ha terminado ya
+        // Solo comprobamos si la misiÃ³n no ha terminado ya
         if (!misionCompletada)
         {
             VerificarObjetosPorTag();
@@ -51,11 +81,11 @@ public class GameManager : MonoBehaviour
         if (!objetosDetectadosAlMenosUnaVez && objetosRestantes.Length > 0)
         {
             objetosDetectadosAlMenosUnaVez = true;
-            Debug.Log("Objetos de misión detectados. Esperando a su destrucción...");
+            Debug.Log("Objetos de misiÃ³n detectados. Esperando a su destrucciÃ³n...");
         }
 
-        // 2. Solo si ya existían y ahora la cuenta es 0, completamos la misión
-        // Esto garantiza que se han DESTRUIDO (ya que FindGameObjectsWithTag no los encontrará)
+        // 2. Solo si ya existÃ­an y ahora la cuenta es 0, completamos la misiÃ³n
+        // Esto garantiza que se han DESTRUIDO (ya que FindGameObjectsWithTag no los encontrarÃ¡)
         if (objetosDetectadosAlMenosUnaVez && objetosRestantes.Length == 0)
         {
             CompletarMision();
@@ -76,10 +106,10 @@ public class GameManager : MonoBehaviour
 
         textoMision.text = "VE A HABLAR CON LIN DE NUEVO";
 
-        Debug.Log("Todos los objetos 'ObjetoLin' han sido destruidos. Cambiando NPCs y Diálogos.");
+        Debug.Log("Todos los objetos 'ObjetoLin' han sido destruidos. Cambiando NPCs y DiÃ¡logos.");
     }
 
-    // --- Tus métodos anteriores ---
+    // --- Tus mÃ©todos anteriores ---
     public void SetTieneNieve(bool valor)
     {
         TieneNieve = valor;
@@ -89,9 +119,17 @@ public class GameManager : MonoBehaviour
     void ActualizarObjetos()
     {
         if (objetoSinNieve != null)
+        {
             objetoSinNieve.SetActive(!TieneNieve);
+            LogProgreso.Info($"GameManager: {objetoSinNieve.name} -> {!TieneNieve} (TieneNieve={TieneNieve})",
+                             objetoSinNieve);
+        }
 
         if (objetoConNieve != null)
+        {
             objetoConNieve.SetActive(TieneNieve);
+            LogProgreso.Info($"GameManager: {objetoConNieve.name} -> {TieneNieve} (TieneNieve={TieneNieve})",
+                             objetoConNieve);
+        }
     }
 }
