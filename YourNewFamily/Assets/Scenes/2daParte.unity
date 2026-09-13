@@ -89454,7 +89454,7 @@ MonoBehaviour:
   dialogueId: 7b63f6b0-d70c-449f-8a5a-59ad7ad46320
   dialogues:
   - speakerName: Cairen
-    dialogueText: "Cuando \xE9ramos peque\xF1as\u2026 Yo os promet\xED que nada malo
+    dialogueText: "Cuando \xE9ramos peque\xF1os\u2026 Yo os promet\xED que nada malo
       os iba a pasar."
     locKey: t_cce53aac3f61
     leftSpeaker: 1
@@ -89600,7 +89600,7 @@ MonoBehaviour:
     gibberishVolume: 0.07
   - speakerName: Cairen
     dialogueText: "Estar\xE9 bien si vosotras est\xE1is bien. Eso es todo lo que
-      necesito. Lilith, estoy segura que t\xFA entiendes lo que es no encajar aqu\xED."
+      necesito. Lilith, estoy seguro que t\xFA entiendes lo que es no encajar aqu\xED."
     locKey: t_967ffe4d67f5
     leftSpeaker: 1
     characterSprite: {fileID: 6775278750140180628, guid: 823f378d910b52d4ebc4f90954058405, type: 3}
@@ -89646,7 +89646,7 @@ MonoBehaviour:
     gibberishClip: {fileID: 0}
     gibberishVolume: 0.07
   - speakerName: Cairen
-    dialogueText: "Empezar\xE9 a trabajar. Estoy decidida. Mientras teng\xE1is una
+    dialogueText: "Empezar\xE9 a trabajar. Estoy decidido. Mientras teng\xE1is una
       vida mejor que todo esto."
     locKey: t_e8ff76e6034b
     leftSpeaker: 1
