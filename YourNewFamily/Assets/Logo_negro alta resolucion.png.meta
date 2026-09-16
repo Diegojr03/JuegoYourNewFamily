@@ -1,0 +1,442 @@
+fileFormatVersion: 2
+guid: 0ecd2091a54b9e148b5d83409848a9f1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8995532454895964995
+    second: Logo_negro alta resolucion_0
+  - first:
+      213: -7134986583677878278
+    second: Logo_negro alta resolucion_1
+  - first:
+      213: -8426465303992232157
+    second: Logo_negro alta resolucion_2
+  - first:
+      213: 2282540413760822437
+    second: Logo_negro alta resolucion_3
+  - first:
+      213: -8444429039602830959
+    second: Logo_negro alta resolucion_4
+  - first:
+      213: -2627962361821564701
+    second: Logo_negro alta resolucion_5
+  - first:
+      213: -3226170639797155813
+    second: Logo_negro alta resolucion_6
+  - first:
+      213: -779904251646440246
+    second: Logo_negro alta resolucion_7
+  - first:
+      213: 3415550410818254400
+    second: Logo_negro alta resolucion_8
+  - first:
+      213: -3396216676766945482
+    second: Logo_negro alta resolucion_9
+  - first:
+      213: -7257213398096424446
+    second: Logo_negro alta resolucion_10
+  - first:
+      213: -1692972920984809774
+    second: Logo_negro alta resolucion_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Logo_negro alta resolucion_0
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 784
+        width: 458
+        height: 915
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbcad6484e2792380800000000000000
+      internalID: -8995532454895964995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo_negro alta resolucion_1
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 1250
+        width: 267
+        height: 443
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: affb3b2418f6bfc90800000000000000
+      internalID: -7134986583677878278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo_negro alta resolucion_2
+      rect:
+        serializedVersion: 2
+        x: 1318
+        y: 1250
+        width: 267
+        height: 443
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 327936b837e2f0b80800000000000000
+      internalID: -8426465303992232157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo_negro alta resolucion_3
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 1250
+        width: 334
+        height: 443
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5acdfa3b9663daf10800000000000000
+      internalID: 2282540413760822437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo_negro alta resolucion_4
+      rect:
+        serializedVersion: 2
+        x: 1957
+        y: 1250
+        width: 223
+        height: 443
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 191fa7b678c5fca80800000000000000
+      internalID: -8444429039602830959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo_negro alta resolucion_5
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 787
+        width: 267
+        height: 443
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e0778cc72a978bd0800000000000000
+      internalID: -2627962361821564701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo_negro alta resolucion_6
+      rect:
+        serializedVersion: 2
+        x: 1318
+        y: 787
+        width: 267
+        height: 443
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b18881665e65a33d0800000000000000
+      internalID: -3226170639797155813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo_negro alta resolucion_7
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 787
+        width: 268
+        height: 443
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acc0cc917393d25f0800000000000000
+      internalID: -779904251646440246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo_negro alta resolucion_8
+      rect:
+        serializedVersion: 2
+        x: 1891
+        y: 787
+        width: 267
+        height: 443
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 046f2459009766f20800000000000000
+      internalID: 3415550410818254400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo_negro alta resolucion_9
+      rect:
+        serializedVersion: 2
+        x: 2177
+        y: 787
+        width: 224
+        height: 443
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63f6c092de63ed0d0800000000000000
+      internalID: -3396216676766945482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo_negro alta resolucion_10
+      rect:
+        serializedVersion: 2
+        x: 2420
+        y: 787
+        width: 267
+        height: 443
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 202d1436dd2394b90800000000000000
+      internalID: -7257213398096424446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo_negro alta resolucion_11
+      rect:
+        serializedVersion: 2
+        x: 2706
+        y: 787
+        width: 267
+        height: 443
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2de485e191a5188e0800000000000000
+      internalID: -1692972920984809774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Logo_negro alta resolucion_0: -8995532454895964995
+      Logo_negro alta resolucion_1: -7134986583677878278
+      Logo_negro alta resolucion_10: -7257213398096424446
+      Logo_negro alta resolucion_11: -1692972920984809774
+      Logo_negro alta resolucion_2: -8426465303992232157
+      Logo_negro alta resolucion_3: 2282540413760822437
+      Logo_negro alta resolucion_4: -8444429039602830959
+      Logo_negro alta resolucion_5: -2627962361821564701
+      Logo_negro alta resolucion_6: -3226170639797155813
+      Logo_negro alta resolucion_7: -779904251646440246
+      Logo_negro alta resolucion_8: 3415550410818254400
+      Logo_negro alta resolucion_9: -3396216676766945482
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

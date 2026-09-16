@@ -1,0 +1,416 @@
+fileFormatVersion: 2
+guid: 9ec9853962b430447989e853321ee65f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4744234896163763315
+    second: letras_blanco alta resolucion_0
+  - first:
+      213: 4356064098761041095
+    second: letras_blanco alta resolucion_1
+  - first:
+      213: -4272075163342614373
+    second: letras_blanco alta resolucion_2
+  - first:
+      213: 7355187031562987650
+    second: letras_blanco alta resolucion_3
+  - first:
+      213: -7228681563678461558
+    second: letras_blanco alta resolucion_4
+  - first:
+      213: 6319422937577984645
+    second: letras_blanco alta resolucion_5
+  - first:
+      213: 813252045909897908
+    second: letras_blanco alta resolucion_6
+  - first:
+      213: -7897011373163333234
+    second: letras_blanco alta resolucion_7
+  - first:
+      213: 5846290574465228339
+    second: letras_blanco alta resolucion_8
+  - first:
+      213: 6232530763436964184
+    second: letras_blanco alta resolucion_9
+  - first:
+      213: -5101218450881744732
+    second: letras_blanco alta resolucion_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: letras_blanco alta resolucion_0
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 1253
+        width: 358
+        height: 595
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3747ad48088e6d140800000000000000
+      internalID: 4744234896163763315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letras_blanco alta resolucion_1
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 1253
+        width: 359
+        height: 595
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c4eb79e739d37c30800000000000000
+      internalID: 4356064098761041095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letras_blanco alta resolucion_2
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 1253
+        width: 448
+        height: 595
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b90d13bf54a86b4c0800000000000000
+      internalID: -4272075163342614373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letras_blanco alta resolucion_3
+      rect:
+        serializedVersion: 2
+        x: 1693
+        y: 1253
+        width: 299
+        height: 595
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2882fd0c2afd21660800000000000000
+      internalID: 7355187031562987650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letras_blanco alta resolucion_4
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 631
+        width: 358
+        height: 595
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a81b782ca609eab90800000000000000
+      internalID: -7228681563678461558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letras_blanco alta resolucion_5
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 631
+        width: 359
+        height: 595
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5829ac31ea913b750800000000000000
+      internalID: 6319422937577984645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letras_blanco alta resolucion_6
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 631
+        width: 359
+        height: 595
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b2b15d4d60494b00800000000000000
+      internalID: 813252045909897908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letras_blanco alta resolucion_7
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 631
+        width: 359
+        height: 595
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e89316b0ffd286290800000000000000
+      internalID: -7897011373163333234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letras_blanco alta resolucion_8
+      rect:
+        serializedVersion: 2
+        x: 1989
+        y: 631
+        width: 300
+        height: 595
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33ed6b07d42322150800000000000000
+      internalID: 5846290574465228339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letras_blanco alta resolucion_9
+      rect:
+        serializedVersion: 2
+        x: 2315
+        y: 631
+        width: 359
+        height: 595
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 859ba5e35b56e7650800000000000000
+      internalID: 6232530763436964184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letras_blanco alta resolucion_10
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 631
+        width: 358
+        height: 595
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a07689a8d4d439b0800000000000000
+      internalID: -5101218450881744732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      letras_blanco alta resolucion_0: 4744234896163763315
+      letras_blanco alta resolucion_1: 4356064098761041095
+      letras_blanco alta resolucion_10: -5101218450881744732
+      letras_blanco alta resolucion_2: -4272075163342614373
+      letras_blanco alta resolucion_3: 7355187031562987650
+      letras_blanco alta resolucion_4: -7228681563678461558
+      letras_blanco alta resolucion_5: 6319422937577984645
+      letras_blanco alta resolucion_6: 813252045909897908
+      letras_blanco alta resolucion_7: -7897011373163333234
+      letras_blanco alta resolucion_8: 5846290574465228339
+      letras_blanco alta resolucion_9: 6232530763436964184
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
