@@ -55,6 +55,11 @@ public class DialogueEntryData
     public string speakerName;
     public string dialogueText;
     public string timestamp;
+
+    // Clave de localizacion de la linea. Las partidas guardadas antes de
+    // existir este campo lo leen vacio, y entonces el backlog busca la
+    // traduccion por el texto, que es como funcionaba hasta ahora.
+    public string locKey;
 }
 
 public class SaveManager : MonoBehaviour

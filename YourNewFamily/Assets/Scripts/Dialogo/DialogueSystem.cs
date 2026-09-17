@@ -378,7 +378,8 @@ public class DialogueSystem : MonoBehaviour
             BacklogManager.Instance.AddDialogueWithConversationOwner(
                 dialogue.speakerName,
                 dialogue.dialogueText,
-                conversationOwner
+                conversationOwner,
+                dialogue.locKey
             );
         }
 

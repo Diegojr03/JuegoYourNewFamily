@@ -182,7 +182,8 @@ public class DialogueSystemGiantFocus : MonoBehaviour
             BacklogManager.Instance.AddDialogueWithConversationOwner(
                 line.speakerName,
                 line.dialogueText,
-                owner
+                owner,
+                line.locKey
             );
         }
 

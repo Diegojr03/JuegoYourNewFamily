@@ -51,6 +51,12 @@ public class BacklogManager : MonoBehaviour
         public string speakerName;
         public string dialogueText;
         public string timestamp;
+
+        // Clave de localizacion de la linea. Se guarda junto al texto para
+        // que el backlog se pueda repintar en el idioma activo aunque el
+        // jugador lo cambie despues de haber tenido la conversacion.
+        // Vacia en partidas anteriores: entonces se busca por el texto.
+        public string locKey;
     }
 
     // =========================================================
@@ -390,12 +396,14 @@ public class BacklogManager : MonoBehaviour
     public void AddDialogueWithConversationOwner(
         string speakerName,
         string dialogueText,
-        string conversationOwner)
+        string conversationOwner,
+        string locKey = null)
     {
         DialogueEntry entry = new DialogueEntry
         {
             speakerName = speakerName,
             dialogueText = dialogueText,
+            locKey = locKey,
             timestamp =
                 System.DateTime.Now.ToString("HH:mm:ss")
         };
@@ -476,7 +484,7 @@ public class BacklogManager : MonoBehaviour
         if (selectedCharacterText != null)
         {
             selectedCharacterText.text =
-                Loc.T("Conversación con: ") + Loc.T(characterName);
+                Loc.T("Conversación con:") + " " + Loc.T(characterName);
         }
         else
         {
@@ -589,11 +597,16 @@ public class BacklogManager : MonoBehaviour
         MessageEntryUI messageUI =
             messageObj.GetComponent<MessageEntryUI>();
 
+        // El texto se traduce AQUI, al pintarlo, y no al guardarlo: asi el
+        // backlog sigue al idioma activo aunque la conversacion se tuviese
+        // en el otro. Antes esta rama pasaba el texto crudo y solo traducia
+        // la rama de respaldo de abajo, que no se ejecuta nunca porque el
+        // prefab de mensaje lleva su MessageEntryUI.
         if (messageUI != null)
         {
             messageUI.Setup(
-                entry.speakerName,
-                entry.dialogueText,
+                Loc.T(entry.speakerName),
+                Loc.T(entry.locKey, entry.dialogueText),
                 entry.timestamp
             );
         }
@@ -628,7 +641,7 @@ public class BacklogManager : MonoBehaviour
             if (messageText != null)
             {
                 messageText.text =
-                    Loc.T(entry.dialogueText);
+                    Loc.T(entry.locKey, entry.dialogueText);
             }
 
             if (timeText != null)
@@ -895,6 +908,7 @@ public class BacklogManager : MonoBehaviour
             {
                 speakerName = entry.speakerName,
                 dialogueText = entry.dialogueText,
+                locKey = entry.locKey,
                 timestamp = entry.timestamp
             });
         }
@@ -919,6 +933,7 @@ public class BacklogManager : MonoBehaviour
             {
                 speakerName = entryData.speakerName,
                 dialogueText = entryData.dialogueText,
+                locKey = entryData.locKey,
                 timestamp = entryData.timestamp
             };
 
@@ -939,7 +954,7 @@ public class BacklogManager : MonoBehaviour
         if (isBacklogOpen)
         {
             if (selectedCharacterText != null)
-                selectedCharacterText.text = Loc.T("Conversación con: ") + Loc.T(selectedCharacter);
+                selectedCharacterText.text = Loc.T("Conversación con:") + " " + Loc.T(selectedCharacter);
             RefreshMessagesUI();
         }
     }

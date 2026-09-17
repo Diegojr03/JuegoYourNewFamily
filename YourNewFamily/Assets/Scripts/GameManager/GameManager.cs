@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
 using YNF.Progreso;
+using YNF.Localizacion;
 
 public class GameManager : MonoBehaviour
 {
@@ -104,7 +105,7 @@ public class GameManager : MonoBehaviour
         if (npcADesactivar != null) npcADesactivar.SetActive(false);
         if (dialogoADesactivar != null) Destroy(dialogoADesactivar);
 
-        textoMision.text = "VE A HABLAR CON LIN DE NUEVO";
+        textoMision.text = Loc.T("VE A HABLAR CON LIN DE NUEVO");
 
         Debug.Log("Todos los objetos 'ObjetoLin' han sido destruidos. Cambiando NPCs y Diálogos.");
     }
