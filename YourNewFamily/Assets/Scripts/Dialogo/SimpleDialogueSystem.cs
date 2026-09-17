@@ -214,7 +214,8 @@ public class SimpleDialogueSystem : MonoBehaviour
         {
             string speaker = dialogueSections[lineIndex].speakerName;
             string text = dialogueSections[lineIndex].dialogueText;
-            BacklogManager.Instance.AddDialogueWithConversationOwner(speaker, text, "Lilith");
+            BacklogManager.Instance.AddDialogueWithConversationOwner(
+                speaker, text, "Lilith", dialogueSections[lineIndex].locKey);
         }
 
         if (typingCoroutine != null)

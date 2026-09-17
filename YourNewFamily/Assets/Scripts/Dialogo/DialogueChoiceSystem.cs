@@ -240,7 +240,8 @@ public class DialogueChoiceSystem : MonoBehaviour
             BacklogManager.Instance.AddDialogueWithConversationOwner(
                 line.speakerName,
                 line.dialogueText,
-                owner
+                owner,
+                line.locKey
             );
         }
 
@@ -348,11 +349,12 @@ public class DialogueChoiceSystem : MonoBehaviour
             Button btn = btnObj.GetComponent<Button>();
             int targetIndex = choice.nextDialogueIndex;
             string choiceText = choice.choiceText;
+            string choiceLocKey = choice.locKey;
 
             btn.onClick.AddListener(() =>
             {
                 choicePanel.SetActive(false);
-                SelectChoice(targetIndex, choiceText);
+                SelectChoice(targetIndex, choiceText, choiceLocKey);
             });
         }
     }
@@ -403,7 +405,7 @@ public class DialogueChoiceSystem : MonoBehaviour
         AdvanceDialogue();
     }
 
-    void SelectChoice(int nextIndex, string choiceText)
+    void SelectChoice(int nextIndex, string choiceText, string choiceLocKey = null)
     {
         if (BacklogManager.Instance != null)
         {
@@ -411,7 +413,8 @@ public class DialogueChoiceSystem : MonoBehaviour
             BacklogManager.Instance.AddDialogueWithConversationOwner(
                 protagonistName,
                 choiceText,
-                owner
+                owner,
+                choiceLocKey
             );
         }
 
