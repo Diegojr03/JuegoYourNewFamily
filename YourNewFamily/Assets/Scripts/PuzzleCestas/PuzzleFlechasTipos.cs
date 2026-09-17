@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 using System;
+using YNF.Localizacion;
 
 public class PuzzleFlechasTipos : MonoBehaviour
 {
@@ -262,7 +263,7 @@ public class PuzzleFlechasTipos : MonoBehaviour
                 }
             }
 
-            if (textoDebugTipo != null) textoDebugTipo.text = $"Tipo {tipoActual + 1}";
+            if (textoDebugTipo != null) textoDebugTipo.text = $"Tipo {tipoActual + 1}";   // loc-ok: etiqueta de depuracion, no esta asignada en ninguna escena
         }
     }
 
@@ -343,7 +344,7 @@ public class PuzzleFlechasTipos : MonoBehaviour
 
         if (panelMensaje != null && textoMensaje != null)
         {
-            textoMensaje.text = mensaje;
+            textoMensaje.text = Loc.T(mensaje);
             panelMensaje.SetActive(true);
 
             yield return new WaitForSeconds(tiempoMostrarMensaje);

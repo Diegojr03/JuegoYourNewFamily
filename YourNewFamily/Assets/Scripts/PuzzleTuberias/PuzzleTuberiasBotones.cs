@@ -392,7 +392,7 @@ public class PuzzleTuberiasBotones : MonoBehaviour
 
         foreach (char letra in texto.ToCharArray())
         {
-            textoDialogo.text += letra;
+            textoDialogo.text += letra;   // loc-ok: el texto entero ya salio de Loc.T, aqui solo se va escribiendo letra a letra
             yield return new WaitForSeconds(velocidadTexto);
         }
 

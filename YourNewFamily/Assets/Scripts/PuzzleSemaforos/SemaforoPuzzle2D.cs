@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 using System;
+using YNF.Localizacion;
 
 public class SemaforoPuzzle2DCompleto : MonoBehaviour
 {
@@ -407,7 +408,7 @@ public class SemaforoPuzzle2DCompleto : MonoBehaviour
 
         if (panelMensaje != null && textoMensaje != null)
         {
-            textoMensaje.text = mensajeCompletado;
+            textoMensaje.text = Loc.T(mensajeCompletado);
             panelMensaje.SetActive(true);
             Debug.Log("✅ Mensaje de completado MOSTRADO (después de 0.5s)");
 

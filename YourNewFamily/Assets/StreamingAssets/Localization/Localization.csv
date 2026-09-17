@@ -876,6 +876,7 @@ Qué honor tan grande es ser un discípulo del Gran Árbol. Formar parte de esta
 
 What a great honor it is to be a disciple of the Great Tree. To be part of this beautiful family and to know that my existence, at last, serves something greater. Handing my will over to Alpha is not a punishment, it is the greatest act of liberation there is. If tomorrow the Tree asks that my heart stop beating to feed its bark, I will do it smiling. Because here, losing yourself is the only way to find yourself."
 "t_66173474b089","Codigo:ArrowPuzzleTrigger.cs","Mensaje de puzle","COMPLETADO","COMPLETE"
+"t_6f80f030db20","Codigo:FNFGameManager.cs","Marcador de puzle","PUNTOS: {0}/{1}","POINTS: {0}/{1}"
 "t_bac7f7d4beb0","Codigo:BacklogManager.cs","Etiqueta de interfaz","Conversación con:","Conversation with:"
 "t_22070a07a5f1","Codigo:GameManager.cs","Objetivo de mision","VE A HABLAR CON LIN DE NUEVO","GO TALK TO LIN AGAIN"
 "t_28c41fac78b9","Codigo:InventorySystem.cs","Etiqueta de interfaz","Vacío","Empty"

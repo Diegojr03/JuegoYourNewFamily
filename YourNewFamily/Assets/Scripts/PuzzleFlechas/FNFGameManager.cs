@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using YNF.Localizacion;
 
 public class FNFGameManager : MonoBehaviour
 {
@@ -229,7 +230,7 @@ public class FNFGameManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = $"PUNTOS: {score}/{targetScore}";
+            scoreText.text = string.Format(Loc.T("PUNTOS: {0}/{1}"), score, targetScore);
         }
     }
 

@@ -260,7 +260,7 @@ public class SimpleDialogueSystem : MonoBehaviour
         int charIndex = 0;
         foreach (char letter in text.ToCharArray())
         {
-            dialogueText.text += letter;
+            dialogueText.text += letter;   // loc-ok: el texto entero ya salio de Loc.T, aqui solo se va escribiendo letra a letra
 
             if (clip != null && charIndex % 2 == 0)
             {
@@ -274,7 +274,7 @@ public class SimpleDialogueSystem : MonoBehaviour
             yield return new WaitForSeconds(textSpeed);
         }
 
-        dialogueText.text = text;
+        dialogueText.text = text;   // loc-ok: el texto entero ya salio de Loc.T en quien llama
 
         isTyping = false;
 

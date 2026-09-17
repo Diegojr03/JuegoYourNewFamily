@@ -294,7 +294,7 @@ public class DialogueChoiceSystem : MonoBehaviour
         int charIndex = 0;
         foreach (char c in text.ToCharArray())
         {
-            dialogueText.text += c;
+            dialogueText.text += c;   // loc-ok: el texto entero ya salio de Loc.T, aqui solo se va escribiendo letra a letra
 
             // Reproducir cada 2 letras (cuando charIndex sea par)
             if (clip != null && charIndex % 2 == 0)

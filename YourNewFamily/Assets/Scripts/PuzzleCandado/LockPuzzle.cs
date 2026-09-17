@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
+using YNF.Localizacion;
 
 public class LockPuzzle : MonoBehaviour
 {
@@ -449,7 +450,7 @@ public class LockPuzzle : MonoBehaviour
     {
         if (panelMensaje != null && textoMensaje != null)
         {
-            textoMensaje.text = mensajeCompletado;
+            textoMensaje.text = Loc.T(mensajeCompletado);
             panelMensaje.SetActive(true);
 
             // Esperar el tiempo configurado
@@ -508,7 +509,7 @@ public class LockPuzzle : MonoBehaviour
 
         if (panelMensaje != null && textoMensaje != null)
         {
-            textoMensaje.text = mensaje;
+            textoMensaje.text = Loc.T(mensaje);
             panelMensaje.SetActive(true);
 
             yield return new WaitForSeconds(tiempoMostrarMensaje);

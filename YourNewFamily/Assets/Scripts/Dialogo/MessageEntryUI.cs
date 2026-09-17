@@ -18,12 +18,12 @@ public class MessageEntryUI : MonoBehaviour
 
     public void Setup(string speaker, string message, string time)
     {
-        if (speakerNameText != null) speakerNameText.text = speaker;
-        if (dialogueText != null) dialogueText.text = message;
-        if (timeText != null) timeText.text = time;
+        if (speakerNameText != null) speakerNameText.text = speaker;   // loc-ok: BacklogManager ya lo traduce antes de llamar
+        if (dialogueText != null) dialogueText.text = message;   // loc-ok: BacklogManager ya lo traduce antes de llamar
+        if (timeText != null) timeText.text = time;   // loc-ok: es una hora, no se traduce
 
-        // Colores según si es jugador o NPC
-        bool isPlayer = speaker == "Lilith"; // Ajusta según el nombre de tu protagonista
+        // Colores segÃºn si es jugador o NPC
+        bool isPlayer = speaker == "Lilith"; // Ajusta segÃºn el nombre de tu protagonista
 
         if (backgroundImage != null)
         {

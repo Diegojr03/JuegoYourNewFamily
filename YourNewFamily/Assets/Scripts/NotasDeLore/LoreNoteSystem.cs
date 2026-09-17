@@ -394,7 +394,7 @@ public class LoreNoteSystem : MonoBehaviour
 
         // 1. Asignar el texto de la nota
         string text = Loc.T(locKey, noteTextAsset.text) + "\n\n";
-        noteTextUI.text = text;
+        noteTextUI.text = text;   // loc-ok: text ya viene de Loc.T en la linea de arriba
         noteTextUI.maxVisibleCharacters = 0; // Ocultar texto mientras se calcula
 
         // 2. Esperar a que los canvas y el layout de TMP se actualicen tras la activación
