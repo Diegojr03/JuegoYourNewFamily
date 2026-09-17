@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System;
 using TMPro;
 using UnityEngine;
@@ -58,7 +58,7 @@ public class ControlSettings : MonoBehaviour
             actionText.text = Loc.T(mapping.actionName);
 
         if (keyText != null)
-            keyText.text = mapping.currentKey.ToString();
+            keyText.text = mapping.currentKey.ToString();   // loc-ok: es un KeyCode, no se traduce
 
         // Si el prefab tiene un botón, lo ocultamos (para que no se vea)
         Button rebindButton = row.transform.Find("RebindButton")?.GetComponent<Button>();

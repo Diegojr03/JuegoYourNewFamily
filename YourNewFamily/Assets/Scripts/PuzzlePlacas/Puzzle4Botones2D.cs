@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 using System;
+using YNF.Localizacion;
 
 public class Puzzle4Botones2D : MonoBehaviour
 {
@@ -293,7 +294,7 @@ public class Puzzle4Botones2D : MonoBehaviour
 
         if (panelMensaje != null && textoMensaje != null)
         {
-            textoMensaje.text = mensaje;
+            textoMensaje.text = Loc.T(mensaje);
             panelMensaje.SetActive(true);
             Debug.Log($"✅ Mensaje MOSTRADO: {mensaje}");
 

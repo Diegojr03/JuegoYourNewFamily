@@ -444,7 +444,7 @@ public class DialogueSystem : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 StopCoroutine(typingCoroutine);
-                dialogueText.text = fullText;
+                dialogueText.text = fullText;   // loc-ok: fullText ya viene de Loc.T unas lineas mas arriba
                 typingCompleted = true;
             }
 
@@ -473,7 +473,7 @@ public class DialogueSystem : MonoBehaviour
         int charIndex = 0;
         foreach (char letter in text.ToCharArray())
         {
-            dialogueText.text += letter;
+            dialogueText.text += letter;   // loc-ok: el texto entero ya salio de Loc.T, aqui solo se va escribiendo letra a letra
 
             if (clip != null && charIndex % 2 == 0)
             {

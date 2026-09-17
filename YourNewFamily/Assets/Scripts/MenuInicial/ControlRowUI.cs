@@ -1,4 +1,4 @@
-﻿using TMPro;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using YNF.Localizacion;
@@ -26,6 +26,6 @@ public class ControlRowUI : MonoBehaviour
         if (actionText != null)
             actionText.text = Loc.T(action);
         if (keyText != null)
-            keyText.text = key;
+            keyText.text = key;   // loc-ok: es el nombre de una tecla, no se traduce
     }
 }

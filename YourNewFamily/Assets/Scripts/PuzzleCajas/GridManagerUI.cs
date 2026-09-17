@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using YNF.Localizacion;
 
 public class GridManagerUI : MonoBehaviour
 {
@@ -364,7 +365,7 @@ public class GridManagerUI : MonoBehaviour
 
         if (panelMensaje != null && textoMensaje != null)
         {
-            textoMensaje.text = mensaje;
+            textoMensaje.text = Loc.T(mensaje);
             panelMensaje.SetActive(true);
             Debug.Log($"✅ Mensaje MOSTRADO: {mensaje}");
 

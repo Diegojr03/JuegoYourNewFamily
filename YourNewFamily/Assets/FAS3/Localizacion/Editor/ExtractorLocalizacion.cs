@@ -59,6 +59,7 @@ namespace YNF.Localizacion.EditorTools
             ("InventorySystem.cs",    "Etiqueta de interfaz", "Vacío"),
             ("BacklogManager.cs",     "Etiqueta de interfaz", "Conversación con: "),
             ("ArrowPuzzleTrigger.cs", "Mensaje de puzle",     "COMPLETADO"),
+            ("FNFGameManager.cs",     "Marcador de puzle",    "PUNTOS: {0}/{1}"),
         };
 
         private class Entrada
